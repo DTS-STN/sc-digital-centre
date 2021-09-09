@@ -2,7 +2,7 @@ repositories:
   - name: stable
     url: https://charts.helm.sh/stable
 
-context: {{ requiredEnv "K8S_CLUSTER_NAME"}}
+context: {{ requiredEnv "K8S_CLUSTER_NAME" }}
    
 environments:
   dev:
@@ -15,12 +15,12 @@ environments:
 releases:
 # Single Tier Website
   - name: {{ requiredEnv "APP_NAME" }}-{{ .Environment.Name }}
-    chart: ../helm/Charts/single-tier-appliation
+    chart: ../helm/Charts/sc-digital-centre
     values:
-      - overrides/single-tier-application/single-tier-application.yaml.gotmpl
+      - overrides/sc-digital-centre/sc-digital-centre.yaml.gotmpl
     labels:
         category: dts
-        app: single-tier-website-example
+        app: sc-digital-centre
         tier: frontend
     namespace: examples-{{ .Environment.Name }}
     installed: true
