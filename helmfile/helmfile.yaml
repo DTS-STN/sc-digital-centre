@@ -22,5 +22,5 @@ releases:
         category: dts
         app: sc-digital-centre
         tier: frontend
-    namespace:  {{ requiredEnv "APP_NAME" }}-{{ .Environment.Name }}
+    namespace: sc-digital-centre-{{ .Environment.Name }}
     installed: true
