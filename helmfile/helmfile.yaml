@@ -15,12 +15,12 @@ environments:
 releases:
 # Single Tier Website
   - name: {{ requiredEnv "APP_NAME" }}-{{ .Environment.Name }}
-    chart: ../helm/Charts/{{ requiredEnv "APP_NAME" }}
+    chart: ../helm/Charts/sc-digital-centre
     values:
-      - overrides/{{ requiredEnv "APP_NAME" }}/{{ requiredEnv "APP_NAME" }}.yaml.gotmpl
+      - overrides/sc-digital-centre/sc-digital-centre.yaml.gotmpl
     labels:
         category: dts
-        app: {{ requiredEnv "APP_NAME" }}
+        app: sc-digital-centre
         tier: frontend
-    namespace: {{ requiredEnv "APP_NAME" }}-{{ .Environment.Name }}
+    namespace:  {{ requiredEnv "APP_NAME" }}-{{ .Environment.Name }}
     installed: true
