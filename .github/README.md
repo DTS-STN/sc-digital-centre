@@ -1,19 +1,31 @@
 ## Description
 
-Quick starter template for DTS projects making use of one of our commonly-used [Next.js](https://nextjs.org/) setups.
-This template uses the basic Next.js [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) bootstrap template.
+Digital Centre description coming soon!
 
 ### Technologies Used
 
-This project uses [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/) for the front-end and [Jest](https://jestjs.io/)/[Cypress](https://www.cypress.io/) for unit testing and end-to-end testing.
+This project uses [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/) for the front-end and [Jest](https://jestjs.io/)/[Cypress](https://www.cypress.io/) for unit testing and end-to-end testing. In addition, [TeamCity](https://www.jetbrains.com/teamcity/) is used for our CI/CD pipelines and deployments. [Husky](https://typicode.github.io/husky/#/) is used in correlation with prettier to format the code on pre-commit, increasing code readability.
 
 ## How to Implement/Get Started
 
-## Values that need to be configured:
+After cloning the repository, run the development server:
 
-### Configuring Helm
+```bash
+npm i
+npm run dev
+```
 
-In the helm template, the application name is single-tier-application. this will need to be changed by the current application name.
+Open http://localhost:3000 with your browser to see the result.
+
+## Configuration
+
+### TeamCity
+
+Digital Centre is configured with TeamCity in a Configuration As code approach. This allows developers to modify TeamCity configurations from the code, located in the `.teamcity/settings.kts`.
+
+In order to set this up, in TeamCity, the VCS root needs to be configured with the _SSH repository key_. Next, authentication needs to be configured from TeamCity to allow commits to the project. Inside of the VCS Root settings, under Authentication Settings, an _Uploaded Key_ must be added. It is important to point out that a simple username/password will not work as stated by a [GitHub Blog](https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/) starting August 13th, 2021.
+
+### Helm
 
 For every Kubernetes cluster, a context.sh file needs to be defined. For example, one might be called context-dev.sh and the other context-prod.sh.
 
@@ -31,25 +43,7 @@ We need to have at least one person reviewing each PR before it can be merged. A
 
 [TeamCity Link](https://teamcity.dts-stn.com/)
 
---- Default Create Next App text: remove or keep or re-use at your discretion ---
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+[Next API routes](https://nextjs.org/docs/api-routes/introduction)
 
 ## Learn More
 
