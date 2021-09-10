@@ -21,19 +21,15 @@ Open http://localhost:3000 with your browser to see the result.
 
 ### TeamCity
 
-Digital Centre is configured with TeamCity in a Configuration As code approach. This allows developers to modify TeamCity configurations from the code, located in the `.teamcity/settings.kts`.
+Digital Centre is configured with TeamCity in a Configuration As Code approach. This allows developers to modify TeamCity configurations from the code, located in the `.teamcity/settings.kts`.
 
-In order to set this up, in TeamCity, the VCS root needs to be configured with the _SSH repository key_. Next, authentication needs to be configured from TeamCity to allow commits to the project. Inside of the VCS Root settings, under Authentication Settings, an _Uploaded Key_ must be added. It is important to point out that a simple username/password will not work as stated by a [GitHub Blog](https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/) starting August 13th, 2021.
+In order to set this up, in TeamCity, the VCS Root needs to be configured with the _SSH repository key_. Next, authentication needs to be configured from TeamCity to allow commits to the project. Inside of the VCS Root settings, under Authentication Settings, an _Uploaded Key_ must be added. It is important to point out that a simple username/password will not work as stated by a [GitHub Blog](https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/) starting August 13th, 2021.
 
 ### Helm
 
 For every Kubernetes cluster, a context.sh file needs to be defined. For example, one might be called context-dev.sh and the other context-prod.sh.
 
 For more information, please visit the [DTS SRE deployment templates](https://github.com/DTS-STN/dts-sre-deployment-templates/tree/main/kubernetes-helm-template).
-
-## Deployments
-
-Write something about how deployments are done
 
 ## PR Procedures/Definition of done
 
