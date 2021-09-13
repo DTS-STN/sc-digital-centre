@@ -85,10 +85,4 @@ object Build: BuildType({
             """.trimIndent()
         }
     }
- 
-   triggers {
-      vcs {
-           branchFilter = "+:<default>"
-      }
-   }
 })
