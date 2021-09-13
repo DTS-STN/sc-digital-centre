@@ -26,19 +26,19 @@ version = "2020.2"
 
 project {
 
-    vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
+    // vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
     buildType(Build)
 }
 
-object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
-    name = "https://github.com/DTS-STN/sc-digital-centre"
-    url = "git@github.com:DTS-STN/sc-digital-centre.git"
-    branch = "refs/heads/adding-teamcity-steps"
-    authMethod = uploadedKey {
-        userName = "git"
-        uploadedKey = "dtsrobot"
-    }
-})
+// object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
+//     name = "https://github.com/DTS-STN/sc-digital-centre"
+//     url = "git@github.com:DTS-STN/sc-digital-centre.git"
+//     branch = "refs/heads/adding-teamcity-steps"
+//     authMethod = uploadedKey {
+//         userName = "git"
+//         uploadedKey = "dtsrobot"
+//     }
+// })
 
 object Build: BuildType({
    name = "Build"
