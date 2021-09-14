@@ -12,16 +12,13 @@ accordingly, and delete the patch script.
 changeProject(DslContext.projectId) {
     params {
         add {
-            param("env.K8S_CLUSTER_NAME", "EsDCDTSDevRG-K8S")
+            param("env.APP_NAME", "sc-digital-centre")
         }
         add {
             param("env.SUBSCRIPTION_ID", """${'$'}(az account show --subscription "MTS" --query 'id' -o tsv)""")
         }
         add {
             param("env.TENANT_ID", """${'$'}(az account show --subscription "MTS" --query 'homeTenantId' -o tsv)""")
-        }
-        add {
-            param("env.APP_NAME", "sc-digital-centre")
         }
         add {
             param("env.K8S_RG_NAME", "EsDCDTSDevRG")
