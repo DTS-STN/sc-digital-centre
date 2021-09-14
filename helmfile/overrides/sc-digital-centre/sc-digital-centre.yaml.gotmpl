@@ -9,14 +9,6 @@ initContainers:
       image: mtscontainers.azurecr.io/azurekvsidecar:latest
       imagePullPolicy: Always
       env:
-        - name: KEYVAULT_READ_USER
-          value: {{ requiredEnv "KEYVAULT_READ_USER" }}
-        - name: KEYVAULT_READ_PASSWORD
-          value: {{ requiredEnv "KEYVAULT_READ_PASSWORD" }}  
-        - name: SUBSCRIPTION_ID
-          value: {{ requiredEnv "SUBSCRIPTION_ID" }}  
-        - name: TENANT_ID
-          value: {{ requiredEnv "TENANT_ID" }}  
         - name: KEYVAULT_NAME
           value: {{ requiredEnv "KEYVAULT_NAME" }}  
         - name: K8S_CLUSTER_NAME
