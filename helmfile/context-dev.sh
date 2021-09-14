@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "exporting context-dev variables"
 export KEYVAULT_READ_USER=$(az keyvault secret show --vault-name dtssecrets --name dts-dev-keyvault-read-user --query value -otsv)
 export KEYVAULT_READ_PASSWORD=$(az keyvault secret show --vault-name dtssecrets --name dts-dev-keyvault-read-password --query value -otsv)
 export SUBSCRIPTION_ID=$(az account show --subscription "MTS" --query 'id' -o tsv)
