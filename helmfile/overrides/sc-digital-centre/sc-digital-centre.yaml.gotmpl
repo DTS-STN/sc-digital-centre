@@ -1,29 +1,21 @@
 {{/* nginxdemos/hello is a placeholder and should eb replaced with where the application docker image is stored. (In a docker registry)*/}}}
 image:
-  repository: nginxdemos/hello
+  repository: mtscontainers.azurecr.io/{{ requiredEnv "PROJECT" }}
   tag: "{{ env "DOCKER_TAG" | default "latest" }}" 
   pullPolicy: Always
-
-extraEnv:
-    - name: EXAMPLE_STATIC_ENVIRONMENT_VARIABLE
-      value: "hardcodedvalue"
-    - name: EXAMPLE_DYNAMIC_ENVIRONMENT_VARIABLE
-      value: dynamicvalue-{{ .Environment.Name }}
 
 ingress:
 
     enabled: true
     {{/* Use this configuration for URL Based routing (e.x. service.canada.ca/application) */}}    
-    path: /webexample
-    {{/* traefik has been used as an example and should be replaced with the application name.*/}}}
-    annotations:
-        traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+    path: /
+    annotations:{}
     hosts:
     {{- if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") }}
-        - {{ requiredEnv "PROJECT" }}.{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
-        - {{ requiredEnv "PROJECT" }}.{{ requiredEnv "BASE_DOMAIN" }}
+          - {{ requiredEnv "PROJECT" }}.{{ requiredEnv "BASE_DOMAIN" }}
     {{ else }}
-        - {{ requiredEnv "PROJECT" }}-{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
+          - {{ requiredEnv "PROJECT" }}-{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN_DEV" }}
+          - {{ requiredEnv "PROJECT" }}.{{ requiredEnv "BASE_DOMAIN_DEV" }}
     {{ end }} 
     {{/* Use this configuration for Domain Based routing (e.x. application.service.canada.ca)
     hosts:
