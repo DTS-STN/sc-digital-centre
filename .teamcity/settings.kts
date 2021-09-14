@@ -84,7 +84,7 @@ object Build: BuildType({
                 cd ./helmfile
                 az account set -s %env.SUBSCRIPTION%
                 az aks get-credentials --admin --resource-group %env.RG_DEV% --name %env.AKS_DEV%
-                helmfile --set -e ${'$'}TARGET apply
+                helmfile -e %env.TARGET% apply
             """.trimIndent()
         }
     }
