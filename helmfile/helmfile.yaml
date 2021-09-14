@@ -14,7 +14,7 @@ environments:
 
 releases:
 # Single Tier Website
-  - name: {{ requiredEnv "APP_NAME" }}-{{ .Environment.Name }}
+  - name: {{ requiredEnv "PROJECT" }}-{{ .Environment.Name }}
     chart: ../helm/Charts/sc-digital-centre
     values:
       - overrides/sc-digital-centre/sc-digital-centre.yaml.gotmpl
