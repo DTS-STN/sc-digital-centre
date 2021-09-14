@@ -18,6 +18,9 @@ changeProject(DslContext.projectId) {
             param("env.TENANT_ID", """${'$'}(az account show --subscription "MTS" --query 'homeTenantId' -o tsv)""")
         }
         add {
+            param("env.KEYVAULT_NAME", "dtssecrets")
+        }
+        add {
             param("env.KEYVAULT_READ_USER", "${'$'}(az keyvault secret show --vault-name dtssecrets --name dts-dev-keyvault-read-user --query value -otsv)")
         }
         add {
