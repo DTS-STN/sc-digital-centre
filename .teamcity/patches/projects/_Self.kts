@@ -12,13 +12,16 @@ accordingly, and delete the patch script.
 changeProject(DslContext.projectId) {
     params {
         add {
+            param("env.SUBSCRIPTION_ID", """${'$'}(az account show --subscription "MTS" --query 'id' -o tsv)""")
+        }
+        add {
+            param("env.TENANT_ID", """${'$'}(az account show --subscription "MTS" --query 'homeTenantId' -o tsv)""")
+        }
+        add {
             param("env.KEYVAULT_READ_USER", "${'$'}(az keyvault secret show --vault-name dtssecrets --name dts-dev-keyvault-read-user --query value -otsv)")
         }
         add {
             param("env.KEYVAULT_READ_PASSWORD", "${'$'}(az keyvault secret show --vault-name dtssecrets --name dts-dev-keyvault-read-password --query value -otsv)")
-        }
-        add {
-            param("env.SUBSCRIPTION_ID", """${'$'}(az account show --subscription "MTS" --query 'id' -o tsv)""")
         }
     }
 }
