@@ -47,6 +47,7 @@ object Build: BuildType({
     description = "Continuous integration"
     params {
         param("env.PROJECT", "sc-digital-centre")
+        param("env.TEST", "remove-me")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentre)
