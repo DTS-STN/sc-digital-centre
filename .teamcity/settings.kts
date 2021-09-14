@@ -43,14 +43,16 @@ object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
 })
 
 object Build: BuildType({
-   name = "Build"
-   description = "Continuous integration"
-
-   vcs {
-     root(HttpsGithubComDtsStnScDigitalCentre)
-   }
+    name = "Build"
+    description = "Continuous integration"
+    params {
+        param("env.PROJECT", "sc-digital-centre")
+    }
+    vcs {
+        root(HttpsGithubComDtsStnScDigitalCentre)
+    }
    
-   steps {
+    steps {
         dockerCommand {
             name = "Build & Tag Docker Image"
             commandType = build {
