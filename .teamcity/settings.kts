@@ -82,7 +82,6 @@ object Build: BuildType({
             name = "Deploy w/ Helmfile"
             scriptContent = """
                 cd ./helmfile
-                sh context-dev.sh
                 az account set -s %env.SUBSCRIPTION%
                 az aks get-credentials --admin --resource-group %env.RG_DEV% --name %env.AKS_DEV%
                 helmfile --set -e ${'$'}TARGET apply

@@ -4,52 +4,11 @@ image:
   tag: "{{ env "DOCKER_TAG" | default "latest" }}" 
   pullPolicy: Always
 
-initContainers:
-    - name: init-secrets
-      image: mtscontainers.azurecr.io/azurekvsidecar:latest
-      imagePullPolicy: Always
-      env:
-        - name: KEYVAULT_READ_USER
-          value: {{ requiredEnv "KEYVAULT_READ_USER" }}
-        - name: KEYVAULT_READ_PASSWORD
-          value: {{ requiredEnv "KEYVAULT_READ_PASSWORD" }}  
-        - name: SUBSCRIPTION_ID
-          value: {{ requiredEnv "SUBSCRIPTION_ID" }}  
-        - name: TENANT_ID
-          value: {{ requiredEnv "TENANT_ID" }}  
-        - name: KEYVAULT_NAME
-          value: {{ requiredEnv "KEYVAULT_NAME" }}  
-        - name: K8S_CLUSTER_NAME
-          value: {{ requiredEnv "K8S_CLUSTER_NAME" }}             
-        - name: K8S_RG_NAME
-          value: {{ requiredEnv "K8S_RG_NAME" }}   
-        - name: NAMESPACE
-          value: {{ .Release.Namespace }}
-        - name: SINGLE_SECRET
-          value: "true"        
-        - name: SINGLE_SECRET_NAME
-          value: web-example-secret    
-        - name: SECRET_LIST
-          value: "example-secret-username,example-secret-password"    
-        - name: KEY_NAME_OVERRIDES
-          value: example-secret-username=renamed-example-username
-
-
 extraEnv:
     - name: EXAMPLE_STATIC_ENVIRONMENT_VARIABLE
       value: "hardcodedvalue"
     - name: EXAMPLE_DYNAMIC_ENVIRONMENT_VARIABLE
       value: dynamicvalue-{{ .Environment.Name }}
-    - name: EXAMPLE_SECRET_USERNAME
-      valueFrom:
-        secretKeyRef:
-          name: web-example-secret
-          key: renamed-example-username
-    - name: EXAMPLE_SECRET_PASSWORD
-      valueFrom:
-        secretKeyRef:
-          name: web-example-secret
-          key: example-secret-password         
 
 ingress:
 
