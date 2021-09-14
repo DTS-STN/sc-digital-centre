@@ -21,6 +21,9 @@ changeProject(DslContext.projectId) {
             param("env.KEYVAULT_NAME", "dtssecrets")
         }
         add {
+            param("env.K8S_CLUSTER_NAME", "EsDCDTSDevRG-K8S")
+        }
+        add {
             param("env.KEYVAULT_READ_USER", "${'$'}(az keyvault secret show --vault-name dtssecrets --name dts-dev-keyvault-read-user --query value -otsv)")
         }
         add {
