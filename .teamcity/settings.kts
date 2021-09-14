@@ -54,6 +54,12 @@ object Build: BuildType({
     }
    
     steps {
+        script {
+            name = "Configure environment context shell script"
+            scriptContent = """
+                sh helmfile/context-dev.sh
+            """.trimIndent()
+        }
         dockerCommand {
             name = "Build & Tag Docker Image"
             commandType = build {
