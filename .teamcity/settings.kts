@@ -54,12 +54,6 @@ object Build: BuildType({
     }
    
     steps {
-        script {
-            name = "Configure environment context shell script"
-            scriptContent = """
-                sh helmfile/context-dev.sh
-            """.trimIndent()
-        }
         dockerCommand {
             name = "Build & Tag Docker Image"
             commandType = build {
@@ -88,6 +82,7 @@ object Build: BuildType({
             name = "Deploy w/ Helmfile"
             scriptContent = """
                 cd ./helmfile
+                sh context-dev.sh
                 az account set -s %env.SUBSCRIPTION%
                 az aks get-credentials --admin --resource-group %env.RG_DEV% --name %env.AKS_DEV%
                 helmfile -e ${'$'}TARGET apply
