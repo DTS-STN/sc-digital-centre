@@ -14,5 +14,8 @@ changeProject(DslContext.projectId) {
         add {
             param("env.KEYVAULT_READ_USER", "${'$'}(az keyvault secret show --vault-name dtssecrets --name dts-dev-keyvault-read-user --query value -otsv)")
         }
+        add {
+            param("env.KEYVAULT_READ_PASSWORD", "${'$'}(az keyvault secret show --vault-name dtssecrets --name dts-dev-keyvault-read-password --query value -otsv)")
+        }
     }
 }
