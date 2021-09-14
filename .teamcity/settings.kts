@@ -85,7 +85,7 @@ object Build: BuildType({
                 sh context-dev.sh
                 az account set -s %env.SUBSCRIPTION%
                 az aks get-credentials --admin --resource-group %env.RG_DEV% --name %env.AKS_DEV%
-                helmfile --set K8S_CLUSTER_NAME="test" -e ${'$'}TARGET apply
+                helmfile --set -e ${'$'}TARGET apply
             """.trimIndent()
         }
     }
