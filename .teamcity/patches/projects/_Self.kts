@@ -20,8 +20,5 @@ changeProject(DslContext.projectId) {
         add {
             param("env.TENANT_ID", """${'$'}(az account show --subscription "MTS" --query 'homeTenantId' -o tsv)""")
         }
-        add {
-            param("env.K8S_RG_NAME", "EsDCDTSDevRG")
-        }
     }
 }
