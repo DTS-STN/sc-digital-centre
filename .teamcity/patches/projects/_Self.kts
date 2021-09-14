@@ -15,9 +15,6 @@ changeProject(DslContext.projectId) {
             param("env.APP_NAME", "sc-digital-centre")
         }
         add {
-            param("env.SUBSCRIPTION_ID", """${'$'}(az account show --subscription "MTS" --query 'id' -o tsv)""")
-        }
-        add {
             param("env.TENANT_ID", """${'$'}(az account show --subscription "MTS" --query 'homeTenantId' -o tsv)""")
         }
     }
