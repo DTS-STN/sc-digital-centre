@@ -1,15 +1,11 @@
-{{/* nginxdemos/hello is a placeholder and should eb replaced with where the application docker image is stored. (In a docker registry)*/}}}
 image:
   repository: mtscontainers.azurecr.io/{{ requiredEnv "PROJECT" }}
   tag: "{{ env "DOCKER_TAG" | default "latest" }}" 
   pullPolicy: Always
-
 ingress:
-
     enabled: true
-    {{/* Use this configuration for URL Based routing (e.x. service.canada.ca/application) */}}    
     path: /
-    annotations:{}
+    annotations: {}
     hosts:
     {{- if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") }}
           - {{ requiredEnv "PROJECT" }}.{{ requiredEnv "BASE_DOMAIN" }}
@@ -17,15 +13,6 @@ ingress:
           - {{ requiredEnv "PROJECT" }}-{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN_DEV" }}
           - {{ requiredEnv "PROJECT" }}.{{ requiredEnv "BASE_DOMAIN_DEV" }}
     {{ end }} 
-    {{/* Use this configuration for Domain Based routing (e.x. application.service.canada.ca)
-    hosts:
-    {{- if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") }}
-        - web-example.{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
-        - web-example.{{ requiredEnv "BASE_DOMAIN" }}
-    {{ else }}
-        - web-example-{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
-    {{ end }}     
-    */}}    
 resources:
   requests:
     cpu: 200m
@@ -35,7 +22,7 @@ healthChecks:
     readinessDelay: 15
     livenessPath: /
     readinessPath: /
-port: 80
+port: 3000
 persistence:
     enabled: true
     accessMode: ReadWriteOnce

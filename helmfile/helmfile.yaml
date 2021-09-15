@@ -10,7 +10,8 @@ environments:
   main:
   sprint:
   prod-blue:
-  prod-green: 
+  prod-green:
+  benc:
 
 releases:
 # Single Tier Website
