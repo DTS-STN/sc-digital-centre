@@ -50,7 +50,7 @@ object Build: BuildType({
         param("env.PROJECT", "sc-digital-centre")
         param("env.BASE_DOMAIN", "bdm-dev.dts-stn.com")
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
-        param("env.AKS_DEV", "ESdCDPSBDMK8SDev")
+        param("env.AKS_DEV", "ESdCDTSK8SDev-K8S")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentre)
