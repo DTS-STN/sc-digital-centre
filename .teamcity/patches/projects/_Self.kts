@@ -12,6 +12,9 @@ accordingly, and delete the patch script.
 changeProject(DslContext.projectId) {
     params {
         add {
+            param("env.BASE_DOMAIN", "bdm-dev.dts-stn.com")
+        }
+        add {
             param("env.AKS_DEV", "ESdCDPSBDMK8SDev")
         }
     }
