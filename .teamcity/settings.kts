@@ -48,8 +48,6 @@ object Build: BuildType({
     description = "Continuous integration"
     params {
         param("env.PROJECT", "sc-digital-centre")
-        param("env.BASE_DOMAIN", "bdm-dev.dts-stn.com")
-        param("env.BASE_DOMAIN_DEV", "bdm-dev.dts-stn.com")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentre)
