@@ -15,6 +15,9 @@ changeProject(DslContext.projectId) {
             param("env.BASE_DOMAIN", "bdm-dev.dts-stn.com")
         }
         add {
+            param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
+        }
+        add {
             param("env.AKS_DEV", "ESdCDPSBDMK8SDev")
         }
     }
