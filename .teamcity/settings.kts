@@ -48,6 +48,9 @@ object Build: BuildType({
     description = "Continuous integration"
     params {
         param("env.PROJECT", "sc-digital-centre")
+        param("AKS_DEV", "ESdCDPSBDMK8SDev")
+        param("BASE_DOMAIN","bdm-dev.dts-stn.com")
+        param("SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentre)
