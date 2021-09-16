@@ -48,10 +48,10 @@ object Build: BuildType({
     description = "Continuous integration"
     params {
         param("env.PROJECT", "sc-digital-centre")
-        param("AKS_DEV", "ESdCDPSBDMK8SDev")
-        param("BASE_DOMAIN","bdm-dev.dts-stn.com")
-        param("BASE_DOMAIN_DEV","bdm-dev.dts-stn.com")
-        param("SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
+        param("env.AKS_DEV", "ESdCDPSBDMK8SDev")
+        param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
+        param("env.BASE_DOMAIN_DEV","bdm-dev.dts-stn.com")
+        param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentre)
