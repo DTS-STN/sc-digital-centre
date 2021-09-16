@@ -14,7 +14,7 @@ changeBuildType(RelativeId("Build")) {
             param("env.AKS_DEV", "ESdCDPSBDMK8SDev")
         }
         update {
-            param("env.AKS_DEV", "ESdCDPSBDMK8SDev-K8S")
+            param("env.AKS_DEV", "ESdCDPSBDMK8SDev-K8S-admin")
         }
     }
 }
