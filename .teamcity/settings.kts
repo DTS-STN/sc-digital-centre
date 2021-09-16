@@ -48,10 +48,9 @@ object Build: BuildType({
     description = "Continuous integration"
     params {
         param("env.PROJECT", "sc-digital-centre")
-        param("env.AKS_DEV", "ESdCDPSBDMK8SDev")
         param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
-        param("env.AKS_DEV", "ESdCDPSBDMK8SDev-K8S-admin")
+        param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S-admin")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
     }
     vcs {
@@ -88,7 +87,7 @@ object Build: BuildType({
             scriptContent = """
                 cd ./helmfile
                 az account set -s %env.SUBSCRIPTION%
-                az aks get-credentials --admin --resource-group %env.RG_DEV% --name %env.AKS_DEV%
+                az aks get-credentials --admin --resource-group %env.RG_DEV% --name %env.K8S_CLUSTER_NAME%
                 helmfile -e %env.TARGET% apply
             """.trimIndent()
         }

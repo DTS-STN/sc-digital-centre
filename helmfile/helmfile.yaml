@@ -2,7 +2,7 @@ repositories:
   - name: stable
     url: https://charts.helm.sh/stable
 
-context: {{ requiredEnv "AKS_DEV" }}
+context: {{ requiredEnv "K8S_CLUSTER_NAME" }}
    
 environments:
   dev:
