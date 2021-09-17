@@ -6,6 +6,7 @@ COPY . .
 
 FROM base AS build
 ENV NODE_ENV=production
+ENV NEXT_PUBLIC_BUILD_DATE=$BUILD_DATE
 WORKDIR /build
 COPY --from=base /base ./
 RUN npm run build
