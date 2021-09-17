@@ -3,7 +3,7 @@
 describe('home page loads', () => {
     beforeEach(() => {
       cy.visit('/')
-    //   cy.injectAxe();
+      // cy.injectAxe();
     })
   
     it('displays the index page', () => {
