@@ -22,7 +22,7 @@ const server = http.createServer(async (req, res) => {
     // Return all metrics the Prometheus exposition format
     res.setHeader('Content-Type', register.contentType)
 
-    return res.send(register.metrics())
+    return res.end(register.metrics())
   }
 })
 
