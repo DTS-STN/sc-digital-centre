@@ -8,7 +8,7 @@ const builddate = process.env.NEXT_PUBLIC_BUILD_DATE
   : 'DATE-NA'
 
 // AEM base end point
-var contentURL = process.env.NEXT_CONTENT_API
+const contentURL = process.env.NEXT_CONTENT_API
   ? process.env.NEXT_CONTENT_API
   : ''
 
