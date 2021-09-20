@@ -5,10 +5,8 @@ RUN npm ci
 COPY . .
 
 FROM base AS build
-ARG BUILD_DATE
 ENV NODE_ENV=production
 ENV NEXT_PUBLIC_BUILD_DATE=$BUILD_DATE
-RUN echo $NEXT_PUBLIC_BUILD_DATE
 WORKDIR /build
 COPY --from=base /base ./
 RUN npm run build
