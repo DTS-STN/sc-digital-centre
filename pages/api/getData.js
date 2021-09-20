@@ -11,7 +11,7 @@ export function getLocalTopics() {
   // const localData = JSON.parse(fileContents).topics;
 
   // return { localData };
-  return (localData = [])
+  return { localData: [] }
 }
 
 //
