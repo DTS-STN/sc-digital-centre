@@ -15,6 +15,7 @@ const contentURL = process.env.NEXT_CONTENT_API
 module.exports = {
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
+    NEXT_CONTENT_API: contentURL,
   },
   reactStrictMode: true,
 }
