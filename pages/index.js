@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import DateModified from '../components/atoms/DateModified'
 import styles from '../styles/Home.module.css'
+import { getLocalTopics } from './api/getData'
 
 export default function Home() {
   return (
@@ -68,4 +69,40 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  let topicsData = []
+  let errorCode = false
+
+  //
+  // IF content enabled get the data from the api
+  //
+
+  if (!process.env.NEXT_CONTENT_API) {
+    // const { apiData, error } = await getTopics(locale);
+
+    let topics = []
+
+    // extract data from apiData then add it to the array topics
+
+    topicsData = topics
+    // errorCode = error;
+    errorCode = false
+  } else {
+    //
+    // Else get the content from the local file
+    //
+    const { localData } = getLocalTopics()
+
+    topicsData = localData
+    errorCode = false
+  }
+
+  return {
+    props: {
+      topicsData,
+      errorCode,
+    },
+  }
 }
