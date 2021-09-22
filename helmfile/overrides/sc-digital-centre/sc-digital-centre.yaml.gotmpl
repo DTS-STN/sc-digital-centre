@@ -2,6 +2,11 @@ image:
   repository: mtscontainers.azurecr.io/{{ requiredEnv "PROJECT" }}
   tag: "{{ env "DOCKER_TAG" | default "latest" }}" 
   pullPolicy: Always
+deployment:
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: /api/metrics
+    prometheus.io/port: "3000"
 ingress:
     enabled: true
     path: /
