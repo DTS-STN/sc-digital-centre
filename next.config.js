@@ -18,4 +18,16 @@ module.exports = {
     NEXT_CONTENT_API: contentURL,
   },
   reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/accueil',
+        destination: '/home',
+      },
+      // {
+      //   source: " french page name with/without route ",
+      //   destination: " 'english' page ",
+      // },
+    ]
+  },
 }

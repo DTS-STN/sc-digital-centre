@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import DateModified from '../components/atoms/DateModified'
+import { ActionButton } from '../components/atoms/ActionButton'
 import styles from '../styles/Home.module.css'
 import { getLocalTopics } from './api/getData'
 
@@ -18,6 +19,27 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <DateModified />
+
+        <div className="my-16">
+          <p className="my-8 font-extrabold text-red-800 text-center">
+            Select language:{' '}
+          </p>
+
+          <ActionButton
+            id="english-button"
+            text="English"
+            lang="en"
+            className={`${styles.card} bg-blue-200 text-lg`}
+            href="/home"
+          />
+          <ActionButton
+            id="french-button"
+            text="Français"
+            className={`${styles.card} bg-blue-200 text-lg`}
+            href="/accueil"
+            lang="fr"
+          />
+        </div>
 
         <p className={styles.description}>
           Get started by editing{' '}
