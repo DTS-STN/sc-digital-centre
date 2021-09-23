@@ -12,6 +12,7 @@ environments:
   prod-blue:
   prod-green:
   benc:
+  benl: 
 
 releases:
 # Single Tier Website
