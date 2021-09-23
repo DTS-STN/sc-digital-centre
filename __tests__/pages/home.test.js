@@ -3,12 +3,12 @@
  */
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Index from '../../pages/index'
+import Splash from '../../pages/index'
 
-describe('index page', () => {
+describe('Splash page', () => {
   it('should render', () => {
-    render(<Index />)
-    const main = screen.getByRole('main')
-    expect(main).toBeInTheDocument()
+    render(<Splash />)
+    const enLink = screen.getByText('English')
+    expect(enLink).toBeInTheDocument()
   })
 })
