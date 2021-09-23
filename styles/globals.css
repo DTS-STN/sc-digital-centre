@@ -9,5 +9,16 @@
     @apply focus:outline-none;
     @apply focus-visible:ring-1;
     @apply focus-visible:ring-black;
+  }
 }
+
+@layer components {
+  .btn-primary {
+    @apply bg-button-primary;
+    @apply text-white;
+    @apply border border-btn-border-primary;
+    @apply active:bg-button-primary-pressed active:border-btn-border-primary-pressed;
+    @apply hover:bg-button-primary-hover hover:border-btn-border-primary-hover;
+    @apply text-center;
+  }
 }

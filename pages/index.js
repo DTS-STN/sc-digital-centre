@@ -25,24 +25,19 @@ export default function Splash() {
             <Link href="/en">
               <a
                 className="
-                                      focus:ring-1 focus:ring-black focus:ring-offset-2
-                                      px-4
-                                      bg-blue-primary-deep
-                                      text-white
-                                      border border-blue-primary-deep
-                                      active:bg-blue-dull
-                                      hover:bg-blue-secondary-deep
-                                      text-center text-md
-                                      h-11
-                                      xl:h-10
-                                      w-28
-                                      xl:w-36
-                                      py-3
-                                      mr-6
-                                      rounded
-                                      leading-3
-                                      shadow-md
-                                    "
+                  focus:ring-1 focus:ring-black focus:ring-offset-2
+                  px-4
+                  btn-primary
+                  text-md
+                  h-11
+                  xl:h-10
+                  w-28
+                  xl:w-36
+                  py-3
+                  rounded
+                  leading-3
+                  shadow-md
+                "
                 id="english-button"
                 data-cy="english-button"
                 role="button"
@@ -55,23 +50,19 @@ export default function Splash() {
             <Link href="/fr">
               <a
                 className="
-                                      focus:ring-1 focus:ring-black focus:ring-offset-2
-                                      px-4
-                                      bg-blue-primary-deep
-                                      text-white
-                                      border border-blue-primary-deep
-                                      active:bg-blue-dull
-                                      hover:bg-blue-secondary-deep
-                                      text-center text-md
-                                      h-11
-                                      xl:h-10
-                                      w-28
-                                      xl:w-36
-                                      py-3
-                                      rounded
-                                      leading-3
-                                      shadow-md
-                                    "
+                  focus:ring-1 focus:ring-black focus:ring-offset-2
+                  px-4
+                  btn-primary
+                  text-md
+                  h-11
+                  xl:h-10
+                  w-28
+                  xl:w-36
+                  py-3
+                  rounded
+                  leading-3
+                  shadow-md
+                "
                 id="french-button"
                 data-cy="french-button"
                 role="button"
