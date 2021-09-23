@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { ActionButton } from '../components/atoms/ActionButton'
 
 export default function Splash() {
   return (
