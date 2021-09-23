@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind screens;
 
 @layer base {
   /* consistent focus styles on all components */
@@ -10,4 +11,28 @@
     @apply focus-visible:ring-1;
     @apply focus-visible:ring-black;
 }
+}
+
+@layer utilities {
+  .layout-container {
+    @apply mx-6;
+  }
+
+  @screen xxs {
+    .layout-container {
+      @apply mx-4;
+    }
+  }
+
+  @screen xs {
+    .layout-container {
+      @apply px-0;
+    }
+  }
+
+  @screen md {
+    .layout-container {
+      @apply px-0;
+    }
+  }
 }
