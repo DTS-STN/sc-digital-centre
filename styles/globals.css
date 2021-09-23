@@ -8,7 +8,12 @@
   /* Font families */
   li {
     @apply font-body;
-}
+  }
+  * {
+    @apply focus:outline-none;
+    @apply focus-visible:ring-1;
+    @apply focus-visible:ring-black;
+  }
 }
 
 @layer utilities {

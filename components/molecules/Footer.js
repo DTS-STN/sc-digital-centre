@@ -14,7 +14,7 @@ export default function Footer(props) {
         <DateModified date={process.env.NEXT_PUBLIC_BUILD_DATE} />
       </div>
       <div className="w-full">
-        <div className="w-full h-auto bg-footer-parliament-image bg-no-repeat bg-right-bottom bg-blue-footer">
+        <div className="w-full h-auto bg-footer-parliament-image bg-no-repeat bg-right-bottom bg-blue-dark">
           <div
             className="py-7 xs:mx-4 sm:mx-6 layout-container"
             role="navigation"
@@ -62,7 +62,7 @@ export default function Footer(props) {
                       }
                     >
                       <a
-                        className="text-xs font-body text-blue-canada-footer-font hover:text-blue-canada-footer-hover-font-blue"
+                        className="text-xs font-body text-blue-anchor hover:text-blue-bright-anchor"
                         data-cy="social-media-link"
                         href={value.link}
                       >

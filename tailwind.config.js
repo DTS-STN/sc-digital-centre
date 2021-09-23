@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -7,30 +8,9 @@ module.exports = {
       display: ['Lato'],
       body: ['Noto sans'],
     },
-    fontSize: {
-      xxs: ['12px', '16px'],
-      xs: ['14px', '16px'],
-      sm: ['16px', '22px'],
-      base: ['18px', '28px'],
-      lg: ['20px', '32px'],
-      p: ['20px', '30px'],
-      h4: ['22px', '20px'],
-      h3: ['24px', '24.3px'],
-      h2: ['30px', '33.5px'],
-      h1: ['36px', '42px'],
-      h1l: ['38px', '42px'],
-      h1xl: ['45px', '54px'],
-      h1xxl: ['70px', '84px'],
-    },
     screens: {
-      'xxs': '280px',
-      'xs': '325px',
-      'sm': '450px',
-      'md': '550px',
-      'lg': '768px',
-      'xl': '992px',
-      'xxl': '1200px',
-      'v-xxs': { raw: '(min-height: 300px)' },
+      xs: '376px',
+      ...defaultTheme.screens,
     },
     extend: {
       colors: {
@@ -52,9 +32,10 @@ module.exports = {
           'secondary-deep': '#3a6b90',
           'dull': '#5996b2',
 
-          'footer': '#26374a',
-          'canada-footer-font': '#284162',
-          'canada-footer-hover-font-blue': '#0535d2',
+          // footer
+          'dark': '#26374a',
+          'anchor': '#284162',
+          'bright-anchor': '#0535d2',
         },
         green: {
           forest: '#28ae60',
