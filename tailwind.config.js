@@ -8,19 +8,16 @@ module.exports = {
         gray: {
           secondary: '#7f8c8d', //paragraphs and prefooter bg
           light: '#cfcfcf',
+          dark: '#262626',
         },
         white: {
           DEFAULT: '#FFFFFF',
           light: '#fbfbfb',
         },
-        black: {
-          DEFAULT: '#000000',
-          dark: '#262626',
-        },
         blue: {
           //primary
           'primary-deep': '#173451',
-          'bright': '##3498db',
+          'bright': '#3498db',
 
           //secondary
           'secondary-deep': '#3a6b90',
@@ -31,7 +28,7 @@ module.exports = {
           bright: '#87d37c',
         },
         red: {
-          alert: '##d94141',
+          alert: '#d94141',
         },
         orange: {
           alert: '#EE7100',
