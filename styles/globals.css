@@ -21,12 +21,6 @@
     @apply mx-6;
   }
 
-  @screen xxs {
-    .layout-container {
-      @apply mx-4;
-    }
-  }
-
   @screen xs {
     .layout-container {
       @apply px-0;
