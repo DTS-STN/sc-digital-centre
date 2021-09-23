@@ -4,6 +4,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      backgroundImage: {
+        'splash-page': 'url(/sp-bg-1.jpg)',
+      },
       colors: {
         gray: {
           secondary: '#7f8c8d', //paragraphs and prefooter bg

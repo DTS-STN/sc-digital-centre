@@ -7,12 +7,11 @@ export default function Splash() {
         className="
         z-0
         fixed
-        bg-cover bg-center
+        bg-cover bg-center bg-splash-page
         inset-0
         bg-gray-200
         min-w-[18.75rem]
         filter
-        blur-sm
       "
       ></div>
       <div className="flex flex-col justify-center items-center m-auto">
@@ -31,8 +30,8 @@ export default function Splash() {
                                       bg-blue-primary-deep
                                       text-white
                                       border border-blue-primary-deep
-                                      active:bg-blue-primary-deep
-                                      hover:bg-blue-bright
+                                      active:bg-blue-dull
+                                      hover:bg-blue-secondary-deep
                                       text-center text-md
                                       h-11
                                       xl:h-10
@@ -61,8 +60,8 @@ export default function Splash() {
                                       bg-blue-primary-deep
                                       text-white
                                       border border-blue-primary-deep
-                                      active:bg-blue-primary-deep
-                                      hover:bg-blue-bright
+                                      active:bg-blue-dull
+                                      hover:bg-blue-secondary-deep
                                       text-center text-md
                                       h-11
                                       xl:h-10
