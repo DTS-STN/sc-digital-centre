@@ -33,8 +33,8 @@ export default function Footer(props) {
           </ul>
         </div>
       </div>
-      <div className="w-full h-full bg-footer-background-color pb-4">
-        <div className="h-auto bg-footer-white pt-5 layout-container flex flex-col xl:flex xl:flex-row md:justify-between">
+      <div className="w-full h-full pb-4">
+        <div className="h-auto pt-5 layout-container flex flex-col xl:flex xl:flex-row md:justify-between">
           <div
             className="mt-3.5 xl:mt-5"
             role="navigation"
@@ -55,7 +55,7 @@ export default function Footer(props) {
                     }
                   >
                     <a
-                      className="text-xs font-body hover:text-canada-footer-hover-font-blue text-canada-footer-font"
+                      className="text-xs font-body text-blue-canada-footer-font hover:text-blue-canada-footer-hover-font-blue"
                       data-cy="social-media-link"
                       href={value.link}
                     >
