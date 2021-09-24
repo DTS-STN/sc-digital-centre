@@ -13,6 +13,10 @@ module.exports = {
       ...defaultTheme.screens,
     },
     extend: {
+      fontFamily: {
+        display: ['Lato'],
+        body: ['Noto sans'],
+      },
       backgroundImage: {
         'splash-page': 'url(/sp-bg-1.jpg)',
       },
