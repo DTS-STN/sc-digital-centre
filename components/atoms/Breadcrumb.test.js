@@ -26,8 +26,8 @@ describe('BreadCrumb', () => {
     render(
       <Breadcrumb items={[{ text: 'newPage', link: 'www.newPage.com' }]} />
     )
-    const enLink = screen.getByText('newPage')
-    expect(enLink).toBeInTheDocument()
+    const breadcrumbLink = screen.getByText('newPage')
+    expect(breadcrumbLink).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
