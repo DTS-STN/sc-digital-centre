@@ -13,9 +13,6 @@ module.exports = {
       ...defaultTheme.screens,
     },
     extend: {
-      backgroundImage: {
-        'splash-page': 'url(/sp-bg-1.jpg)',
-      },
       colors: {
         gray: {
           secondary: '#7f8c8d', //paragraphs and prefooter bg
@@ -55,6 +52,7 @@ module.exports = {
       },
       backgroundImage: () => ({
         'footer-parliament-image': 'url(../public/landscape.png)',
+        'splash-page': 'url(../public/sp-bg-1.jpg)',
       }),
     },
   },
