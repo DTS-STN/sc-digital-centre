@@ -62,7 +62,7 @@ export default function Footer(props) {
                       }
                     >
                       <a
-                        className="text-xs font-body text-blue-anchor hover:text-blue-bright-anchor"
+                        className="text-xs font-body text-blue-anchor hover:text-blue-link"
                         data-cy="social-media-link"
                         href={value.link}
                       >
