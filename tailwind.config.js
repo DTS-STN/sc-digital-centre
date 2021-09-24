@@ -4,6 +4,10 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      fontFamily: {
+        display: ['Lato'],
+        body: ['Noto sans'],
+      },
       backgroundImage: {
         'splash-page': 'url(/sp-bg-1.jpg)',
       },
@@ -25,6 +29,8 @@ module.exports = {
           //secondary
           'secondary-deep': '#3a6b90',
           'dull': '#5996b2',
+          'link': '#0535d2',
+          'dark': '#26374a',
         },
         green: {
           forest: '#28ae60',
