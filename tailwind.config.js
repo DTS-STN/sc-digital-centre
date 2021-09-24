@@ -35,7 +35,7 @@ module.exports = {
           // footer
           'dark': '#26374a',
           'anchor': '#284162',
-          'bright-anchor': '#0535d2',
+          'link': '#0535d2',
         },
         green: {
           forest: '#28ae60',
