@@ -1,8 +1,17 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false,
   theme: {
+    fontFamily: {
+      display: ['Lato'],
+      body: ['Noto sans'],
+    },
+    screens: {
+      xs: '376px',
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         display: ['Lato'],
@@ -29,8 +38,11 @@ module.exports = {
           //secondary
           'secondary-deep': '#3a6b90',
           'dull': '#5996b2',
-          'link': '#0535d2',
+
+          // footer
           'dark': '#26374a',
+          'anchor': '#284162',
+          'link': '#0535d2',
         },
         green: {
           forest: '#28ae60',
@@ -45,6 +57,9 @@ module.exports = {
         yellow: '#f39c12',
         burgundy: '#a24446',
       },
+      backgroundImage: () => ({
+        'footer-parliament-image': 'url(../public/landscape.png)',
+      }),
     },
   },
   variants: {
