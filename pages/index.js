@@ -22,7 +22,7 @@ export default function Splash() {
             alt="Government of Canada / Gouvernement du Canada logo"
           />
           <div className="flex w-max container py-11 mx-auto font-display">
-            <Link href="/en">
+            <Link href="/home">
               <a
                 className="
                                       focus:ring-1 focus:ring-black focus:ring-offset-2
@@ -52,7 +52,7 @@ export default function Splash() {
                 English
               </a>
             </Link>
-            <Link href="/fr">
+            <Link href="/accueil">
               <a
                 className="
                                       focus:ring-1 focus:ring-black focus:ring-offset-2
