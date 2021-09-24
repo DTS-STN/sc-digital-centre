@@ -2,10 +2,15 @@ import PropTypes from 'prop-types'
 import Footer from '../molecules/Footer'
 import Head from 'next/head'
 
+import en from '../../locales/en'
+import fr from '../../locales/fr'
+
 /**
  * Component which defines the layout of the page for all screen sizes
  */
-export default function Layout({ children }) {
+export default function Layout({ children, locale }) {
+  const t = locale === 'en' ? en : fr
+
   return (
     <div>
       <Head></Head>
@@ -21,59 +26,62 @@ export default function Layout({ children }) {
         footerNav2="aboutThisSite"
         links={[
           {
-            link: 'footerSocialMediaURL',
-            linkText: 'footerSocialMedia',
+            link: t.footerSocialMediaURL,
+            linkText: t.footerSocialMedia,
           },
           {
-            link: 'footerMobileAppURL',
-            linkText: 'footerMobileApp',
+            link: t.footerMobileAppURL,
+            linkText: t.footerMobileApp,
           },
           {
-            link: 'footerTermsAndConditionURL',
-            linkText: 'footerTermsAndCondition',
+            link: t.footerAboutURL,
+            linkText: t.footerAbout,
           },
           {
-            link: 'footerPrivacyURL',
-            linkText: 'footerPrivacy',
+            link: t.footerTermsAndConditionURL,
+            linkText: t.footerTermsAndCondition,
+          },
+          {
+            link: t.footerPrivacyURL,
+            linkText: t.footerPrivacy,
           },
         ]}
         footerBoxLinks={[
           {
-            footerBoxlink: 'footerContactUsURL',
-            footerBoxLinkText: 'footerContactUs',
+            footerBoxlink: t.footerContactUsURL,
+            footerBoxLinkText: t.footerContactUs,
           },
           {
-            footerBoxlink: 'footerNewsURL',
-            footerBoxLinkText: 'footerNews',
+            footerBoxlink: t.footerNewsURL,
+            footerBoxLinkText: t.footerNews,
           },
           {
-            footerBoxlink: 'footerPmURL',
-            footerBoxLinkText: 'footerPm',
+            footerBoxlink: t.footerPmURL,
+            footerBoxLinkText: t.footerPm,
           },
           {
-            footerBoxlink: 'footerDepartmentAgenciesURL',
-            footerBoxLinkText: 'footerDepartmentAgencies',
-          },
-
-          {
-            footerBoxlink: 'footerTreatiesURL',
-            footerBoxLinkText: 'footerTreaties',
+            footerBoxlink: t.footerDepartmentAgenciesURL,
+            footerBoxLinkText: t.footerDepartmentAgencies,
           },
           {
-            footerBoxlink: 'footerHowGovWorksURL',
-            footerBoxLinkText: 'footerHowGovWorks',
+            footerBoxlink: t.footerTreatiesURL,
+            footerBoxLinkText: t.footerTreaties,
           },
           {
-            footerBoxlink: 'footerPublicServiceURL',
-            footerBoxLinkText: 'footerPublicService',
+            footerBoxlink: t.footerHowGovWorksURL,
+            footerBoxLinkText: t.footerHowGovWorks,
           },
           {
-            footerBoxlink: 'footerGovReportingURL',
-            footerBoxLinkText: 'footerGovReporting',
+            footerBoxlink: t.footerPublicServiceURL,
+            footerBoxLinkText: t.footerPublicService,
           },
           {
-            footerBoxlink: 'footerOpenGovURL',
-            footerBoxLinkText: 'footerOpenGov',
+            footerBoxlink: t.footerGovReportingURL,
+            footerBoxLinkText: t.footerGovReporting,
+          },
+          {
+            footerBoxlink: t.footerOpenGovURL,
+            footerBoxLinkText: t.footerOpenGov,
           },
         ]}
       />
@@ -82,5 +90,6 @@ export default function Layout({ children }) {
 }
 
 Layout.propTypes = {
-  // Define props to pass here
+  // Locale current language
+  locale: PropTypes.string,
 }

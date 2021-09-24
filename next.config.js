@@ -18,6 +18,17 @@ module.exports = {
     NEXT_CONTENT_API: contentURL,
   },
   reactStrictMode: true,
+  //
+  // i18n setup
+  //
+  i18n: {
+    locales: ['en', 'fr'],
+    defaultLocale: 'en',
+    localDetection: true,
+  },
+  //
+  // rewrites setup
+  //
   async rewrites() {
     return [
       {

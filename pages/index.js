@@ -52,7 +52,7 @@ export default function Splash() {
                 English
               </a>
             </Link>
-            <Link href="/accueil">
+            <Link href="/fr/accueil">
               <a
                 className="
                                       focus:ring-1 focus:ring-black focus:ring-offset-2
