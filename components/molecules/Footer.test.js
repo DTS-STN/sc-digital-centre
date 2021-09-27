@@ -9,6 +9,8 @@ describe('Footer', () => {
   it('renders Footer with links', () => {
     render(
       <Footer
+        footerLogoAltText="testAltText"
+        footerLogoImage="testImage"
         footerBoxLinks={[
           {
             footerBoxlink: 'footerContactUsURL',
@@ -46,6 +48,8 @@ describe('Footer', () => {
   it('has no a11y violations', async () => {
     const { container } = render(
       <Footer
+        footerLogoAltText="testAltText"
+        footerLogoImage="testImage"
         footerBoxLinks={[
           {
             footerBoxlink: 'footerContactUsURL',
@@ -58,7 +62,6 @@ describe('Footer', () => {
             linkText: 'some-link-1',
           },
         ]}
-        footerLogoAltText="symbol2"
         footerNav1="aboutGovernment"
         footerNav2="aboutThisSite"
       />
