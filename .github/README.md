@@ -33,7 +33,8 @@ For more information, please visit the [DTS SRE deployment templates](https://gi
 
 ## PR Procedures/Definition of done
 
-We need to have at least one person reviewing each PR before it can be merged. Also, each branch should be prefixed by the relevant Jira issue, if possible e.g. **DC-13**-comprehensive-readme
+We need to have at least one person reviewing each PR before it can be merged. Also, each branch should be prefixed by the relevant Jira issue, if possible e.g. **DC-13**-comprehensive-readme.
+
 Follow the [DC Branching Strategy](https://confluence.dts-stn.com/display/DD/DC+branching+strategy) when creating your PR
 
 ## Useful Links
