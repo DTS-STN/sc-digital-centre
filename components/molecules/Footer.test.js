@@ -62,7 +62,6 @@ describe('Footer', () => {
             linkText: 'some-link-1',
           },
         ]}
-        footerLogoAltText="symbol2"
         footerNav1="aboutGovernment"
         footerNav2="aboutThisSite"
       />
