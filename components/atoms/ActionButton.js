@@ -10,8 +10,6 @@ export function ActionButton({
   className,
   onClick,
   type,
-  role,
-  draggable,
   lang,
   id,
   text,
