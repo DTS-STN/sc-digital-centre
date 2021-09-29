@@ -6,7 +6,6 @@ import Link from 'next/link'
  */
 export function ActionButton({
   href,
-  custom,
   className,
   onClick,
   type,
@@ -23,7 +22,7 @@ export function ActionButton({
   return href ? (
     <Link href={href}>
       <a
-        className={`${!custom ? defaultStyle : className}`}
+        className={`${!className ? defaultStyle : className}`}
         onClick={onClick}
         role="button"
         draggable="false"
@@ -37,7 +36,7 @@ export function ActionButton({
     </Link>
   ) : (
     <button
-      className={`${!custom ? defaultStyle : className}`}
+      className={`${!className ? defaultStyle : className}`}
       onClick={onClick}
       type={type}
       lang={lang}
@@ -81,11 +80,7 @@ ActionButton.propTypes = {
   onClick: PropTypes.func,
 
   /**
-   * Custom button styling option, use WITH className to override the default CSS
-   */
-  custom: PropTypes.bool,
-  /**
-   * css overrides for button
+   * CSS that overrides default styling
    */
   className: PropTypes.string,
 
