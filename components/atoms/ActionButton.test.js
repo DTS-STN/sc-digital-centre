@@ -23,7 +23,6 @@ describe('ActionButton', () => {
       <ActionButton
         id="testID"
         data-testid="testId"
-        custom
         className="bg-red-400 text-white border"
       />
     )
