@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types'
 
+/*
+ *  Search Bar component
+ */
 export default function SearchBar(props) {
   const btnWidthClass = props.btnText ? ' w-24 ' : ' w-8 '
   return (
@@ -16,6 +19,7 @@ export default function SearchBar(props) {
           'flex rounded-r text-white py-1 bg-blue-primary-deep ' + btnWidthClass
         }
       >
+        {/* search icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5 block my-auto mx-[0.375rem]"
@@ -32,4 +36,11 @@ export default function SearchBar(props) {
       </button>
     </div>
   )
+}
+
+SearchBar.propTypes = {
+  /*
+   * Text for the button
+   */
+  btnText: PropTypes.string,
 }
