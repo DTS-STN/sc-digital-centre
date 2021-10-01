@@ -10,6 +10,7 @@ export default function Home(props) {
       </h1>
 
       <SearchBar />
+      <SearchBar btnText="Search" />
 
       <h2 className="text-center text-blue-800 font-extrabold text-3xl mb-24">
         current language is :{' '}
