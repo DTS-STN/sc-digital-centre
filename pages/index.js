@@ -17,13 +17,12 @@ export default function Splash() {
                 className="
                                         focus:ring-1 focus:ring-black focus:ring-offset-2
                                         px-4
-                                        bg-blue-primary-deep
+                                        bg-deep-blue-solid
                                         text-white
-                                        border border-blue-primary-deep
-                                        active:bg-blue-dull
-                                        hover:bg-blue-secondary-deep
+                                        border border-deep-blue-solid
+                                        active:bg-deep-blue-light
+                                        hover:bg-bright-blue-dark
                                         text-center text-md
-                                        h-11
                                         xl:h-10
                                         w-28
                                         xl:w-36
@@ -48,11 +47,11 @@ export default function Splash() {
                 className="
                                         focus:ring-1 focus:ring-black focus:ring-offset-2
                                         px-4
-                                        bg-blue-primary-deep
+                                        bg-deep-blue-solid
                                         text-white
-                                        border border-blue-primary-deep
-                                        active:bg-blue-dull
-                                        hover:bg-blue-secondary-deep
+                                        border border-deep-blue-solid
+                                        active:bg-deep-blue-light
+                                        hover:bg-bright-blue-dark
                                         text-center text-md
                                         h-11
                                         xl:h-10
@@ -90,7 +89,7 @@ export default function Splash() {
             xl:w-[31.25rem] xl:items-center
           "
         >
-          <div className="w-28 text-base xl:text-p xl:w-max font-body text-blue-secondary-deep">
+          <div className="w-28 text-base xl:text-p xl:w-max font-body text-bright-blue-dark">
             <Link href="https://www.canada.ca/en/transparency/terms.html">
               <a
                 className="
