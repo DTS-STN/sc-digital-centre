@@ -6,17 +6,18 @@ import PropTypes from 'prop-types'
 export default function SearchBar(props) {
   const btnWidthClass = props.btnText ? ' w-24 ' : ' w-8 '
   return (
-    <div className="flex flex-row m-4">
+    <div className="flex flex-row ">
       <input
         placeholder={props.placeholderText}
         type="text"
-        className="flex placeholder-gray-600 border border-gray-300 rounded-l py-1 px-3"
+        className="flex placeholder-gray-600 border border-gray-300 py-1 px-3"
       ></input>
       <button
         type="submit"
         aria-label={props.placeholderText}
         className={
-          'flex rounded-r text-white py-1 bg-blue-primary-deep ' + btnWidthClass
+          'flex text-white py-1 bg-blue-primary-deep border border-white ' +
+          btnWidthClass
         }
       >
         {/* search icon */}
