@@ -19,7 +19,7 @@ export default {
 
   // Search bar
   search: 'Recherche',
-  searchPlaceholder: 'Rechercher dans Canada.ca',
+  searchPlaceholder: 'Rechercher dans Service Canada',
 
   //
   // Footer

@@ -1,20 +1,24 @@
 import PropTypes from 'prop-types'
 
+import en from '../../locales/en'
+import fr from '../../locales/fr'
+
 /*
  *  Search Bar component
  */
 export default function SearchBar(props) {
+  const t = locale === 'en' ? en : fr
   const btnWidthClass = props.btnText ? ' w-24 ' : ' w-8 '
   return (
     <div className="flex flex-row m-4">
       <input
-        placeholder="Search Service Canada"
+        placeholder={t.searchPlaceholder}
         type="text"
         className="flex placeholder-gray-600 border border-gray-300 rounded-l py-1 px-3"
       ></input>
       <button
         type="submit"
-        aria-label="Search Service Canada"
+        aria-label={t.searchPlaceholder}
         className={
           'flex rounded-r text-white py-1 bg-blue-primary-deep ' + btnWidthClass
         }

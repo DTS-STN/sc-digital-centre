@@ -19,7 +19,7 @@ export default {
 
   // Search bar
   search: 'Search',
-  searchPlaceholder: 'Search Canada.ca',
+  searchPlaceholder: 'Search Service Canada',
 
   //
   // Footer
