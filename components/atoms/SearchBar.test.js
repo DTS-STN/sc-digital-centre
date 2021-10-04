@@ -12,7 +12,7 @@ describe('SearchBar', () => {
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(<SearchBar />)
+    const { container } = render(<SearchBar placeholderText="test" />)
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

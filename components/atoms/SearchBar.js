@@ -1,24 +1,20 @@
 import PropTypes from 'prop-types'
 
-import en from '../../locales/en'
-import fr from '../../locales/fr'
-
 /*
  *  Search Bar component
  */
 export default function SearchBar(props) {
-  const t = locale === 'en' ? en : fr
   const btnWidthClass = props.btnText ? ' w-24 ' : ' w-8 '
   return (
     <div className="flex flex-row m-4">
       <input
-        placeholder={t.searchPlaceholder}
+        placeholder={props.placeholderText}
         type="text"
         className="flex placeholder-gray-600 border border-gray-300 rounded-l py-1 px-3"
       ></input>
       <button
         type="submit"
-        aria-label={t.searchPlaceholder}
+        aria-label={props.placeholderText}
         className={
           'flex rounded-r text-white py-1 bg-blue-primary-deep ' + btnWidthClass
         }
@@ -29,6 +25,7 @@ export default function SearchBar(props) {
           className="h-5 w-5 block my-auto mx-[0.375rem]"
           viewBox="0 0 20 20"
           fill="currentColor"
+          aria-hidden="true"
         >
           <path
             fillRule="evenodd"
@@ -47,4 +44,9 @@ SearchBar.propTypes = {
    * Text for the button
    */
   btnText: PropTypes.string,
+
+  /*
+   * Text for the placeholder/btn label text
+   */
+  placeholderText: PropTypes.string,
 }
