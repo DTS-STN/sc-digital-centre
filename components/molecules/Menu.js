@@ -16,7 +16,7 @@ export function Menu(props) {
   return (
     <nav
       title="Menu"
-      className="md:flex md:justify-between"
+      className="md:flex md:justify-between lg:layout-container"
       data-cy="menu"
       role="navigation"
       aria-labelledby="mainSiteNav"
