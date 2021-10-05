@@ -7,10 +7,10 @@ import Link from 'next/link'
 export function Breadcrumb(props) {
   return (
     <nav aria-label="breadcrumbs">
-      <ul className="block text-blue-dark text-base font-body">
+      <ul className="block text-deep-blue-dark text-base font-body">
         <li className="inline-block min-w-0 max-w-full truncate px-2">
           <Link href="https://www.canada.ca/">
-            <a className="text-sm hover:text-blue-link visited:text-purple-700 underline">
+            <a className="text-sm hover:text-bright-blue-solid visited:text-purple-solid underline">
               Canada.ca
             </a>
           </Link>
@@ -23,9 +23,9 @@ export function Breadcrumb(props) {
                   key={key}
                   className="inline-block min-w-0 max-w-full truncate px-2"
                 >
-                  <span className="inline-block align-middle text-gray-breadcrumb icon-cheveron-right mx-4" />
+                  <span className="inline-block align-middle text-dark-solid icon-cheveron-right mx-4" />
                   <Link href={item.link}>
-                    <a className="text-sm hover:text-canada-footer-hover-font-blue text-canada-footer-font visited:text-purple-700 underline">
+                    <a className="text-sm hover:text-bright-blue-solid text-bright-blue-dark visited:text-purple-solid underline">
                       {item.text}
                     </a>
                   </Link>
