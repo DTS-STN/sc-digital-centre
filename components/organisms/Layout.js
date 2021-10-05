@@ -16,20 +16,19 @@ export default function Layout({ children, locale }) {
     <div>
       <Head></Head>
       <Menu
-        menuButtonTitle="menuButtonTitle"
-        signUpText="signupBtn"
+        language={locale}
         items={[
           {
-            link: '/projectRedirect',
-            text: 'Services and benefits',
+            link: '/',
+            text: t.serviceAndBenefits,
           },
           {
-            link: '/aboutRedirect',
-            text: 'Tools',
+            link: '/',
+            text: t.tools,
           },
           {
-            link: '/signupRedirect',
-            text: 'Contact us',
+            link: '/',
+            text: t.contactUs,
           },
         ]}
       />

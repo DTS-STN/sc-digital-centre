@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { ActionButton } from '../atoms/ActionButton'
+import en from '../../locales/en'
+import fr from '../../locales/fr'
 /**
  * Menu component
  */
 export function Menu(props) {
   //Router
   const { asPath } = useRouter()
-  const router = useRouter()
+
+  const t = props.language === 'en' ? en : fr
 
   return (
     <nav
@@ -19,14 +23,17 @@ export function Menu(props) {
     >
       <div className="flex justify-between">
         <h1 className="text-2xl">Service Canada</h1>
-        <h3 className="sr-only" id="mainSiteNav">
+        <h2 className="sr-only" id="mainSiteNav">
           Menu
-        </h3>
-        <Link href="/">
-          <a className="border rounded bg-blue-700 text-white py-2 px-6 md:hidden">
-            Login
-          </a>
-        </Link>
+        </h2>
+        {/* Mobile login button */}
+        <ActionButton
+          id="mobileLoginBtn"
+          href="/"
+          className="border rounded bg-deep-blue-solid text-white py-2 px-6 md:hidden"
+        >
+          {t.login}
+        </ActionButton>
       </div>
 
       <div className="md:flex">
@@ -56,27 +63,20 @@ export function Menu(props) {
             )
           })}
         </ul>
-        <Link href="/">
-          <a className="border rounded bg-blue-700 text-white py-2 px-6 hidden md:inline-block">
-            Login
-          </a>
-        </Link>
+        {/* Desktop login button */}
+        <ActionButton
+          id="desktopLoginBtn"
+          href="/"
+          className="border rounded bg-deep-blue-solid text-white px-6 hidden md:flex md:items-center"
+        >
+          {t.login}
+        </ActionButton>
       </div>
     </nav>
   )
 }
 
 Menu.propTypes = {
-  /**
-   * Menu title for small screens
-   */
-  menuButtonTitle: PropTypes.string.isRequired,
-
-  /**
-   * text for sign up button
-   */
-  signUpText: PropTypes.string.isRequired,
-
   /**
    * Array of Items for the menu
    */
@@ -93,4 +93,8 @@ Menu.propTypes = {
       link: PropTypes.string,
     })
   ).isRequired,
+  /**
+   * Current locale
+   */
+  language: PropTypes.string.isRequired,
 }
