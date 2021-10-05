@@ -1,3 +1,6 @@
+// import fs from 'fs'
+// import path from 'path'
+
 //
 // Fetch ALL topics from local Data If no API is needed
 //
