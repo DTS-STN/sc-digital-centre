@@ -21,7 +21,7 @@ export default function Header({ language }) {
       >
         <a
           id="skipToMainContent"
-          className="bg-custom-blue-dark text-white py-1 px-2 focus:outline-black-solid hover:bg-gray-dark"
+          className="bg-custom-blue-dark text-white px-2 focus:outline-black-solid hover:bg-gray-dark"
           href="#wb-cont"
           draggable="false"
         >
@@ -30,11 +30,11 @@ export default function Header({ language }) {
       </nav>
 
       <header>
-        <div className="layout-container flex-col flex md:flex md:flex-row justify-between mt-2">
-          <div className="flex flex-row justify-between items-center lg:mt-7 mt-1.5">
+        <div className="layout-container flex-col flex md:flex md:flex-row justify-between">
+          <div className="flex flex-row justify-between items-center lg:mt-7">
             <a href={t.gocLink}>
               <img
-                className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8"
+                className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8 "
                 src={language === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
                 alt={
                   language === 'en'
@@ -51,7 +51,7 @@ export default function Header({ language }) {
               locale={language === 'en' ? 'fr' : 'en'}
             >
               <a
-                className="visible md:invisible md:text-sm ml-6 sm:ml-16 underline font-body font-bold text-canada-footer-font  text-base hover:text-canada-footer-hover-font-blue"
+                className="block md:hidden md:text-sm ml-6 pb-2 sm:ml-16 underline font-body font-bold text-canada-footer-font  text-base hover:text-canada-footer-hover-font-blue"
                 // onClick={() => setLanguage(language)}
                 lang={language === 'en' ? 'fr' : 'en'}
               >
@@ -68,7 +68,7 @@ export default function Header({ language }) {
               locale={language === 'en' ? 'fr' : 'en'}
             >
               <a
-                className="md:visible invisible pb-0 lg:pb-2 self-end underline font-body text-canada-footer-font hover:text-canada-footer-hover-font-blue "
+                className="md:block hidden pb-0 lg:pb-4 self-end underline font-body text-canada-footer-font hover:text-canada-footer-hover-font-blue "
                 data-cy="toggle-language-link"
                 // onClick={() => setLanguage(language)}
                 lang={language === 'en' ? 'fr' : 'en'}
