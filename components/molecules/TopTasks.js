@@ -10,7 +10,7 @@ export default function TopTasks(props) {
       <p className="mt-3 font-body md:hidden">{props.topTasksDescription}</p>
       <ul className="list-disc m-5">
         {props.topTasksList.map((topTask, index) => (
-          <li className="text-dark-solid">
+          <li key={index} className="text-dark-solid">
             <Link href={topTask.taskURL}>
               <a className="font-display font-semibold underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
                 {topTask.taskName}
