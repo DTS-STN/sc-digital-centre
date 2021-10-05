@@ -13,7 +13,7 @@ export default function Home(props) {
         current language is :{' '}
         <span className="text-red-800">{props.locale}</span>
       </h2>
-      <TopTasks
+      {/* <TopTasks
         topTasksList={[
           { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
           {
@@ -29,7 +29,7 @@ export default function Home(props) {
             taskURL: '/home',
           },
         ]}
-      />
+      /> */}
     </Layout>
   )
 }
