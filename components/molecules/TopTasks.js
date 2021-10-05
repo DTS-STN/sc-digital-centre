@@ -5,7 +5,7 @@ export default function TopTasks(props) {
   return (
     <>
       <h2 className="font-display font-bold text-xl md:text-2xl text-dark-solid">
-        Top Tasks
+        {props.topTasksHeader}
       </h2>
       <p className="mt-3 font-body md:hidden">{props.topTasksDescription}</p>
       <ul className="list-disc m-5">
@@ -24,6 +24,10 @@ export default function TopTasks(props) {
 }
 
 TopTasks.propTypes = {
+  /**
+   * string header of top tasks
+   */
+  topTasksHeader: PropTypes.string,
   /**
    * string description of top tasks
    */

@@ -119,4 +119,5 @@ export default {
   reportAProblemPrivacyStatementLink:
     'https://www.canada.ca/en/transparency/privacy.html',
   reportAProblemSubmit: 'Submit',
+  topTasks: 'Top Tasks',
 }

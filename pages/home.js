@@ -1,5 +1,6 @@
 import Layout from '../components/organisms/Layout'
 import { getLocalTopics } from './api/getData'
+import TopTasks from '../components/molecules/TopTasks'
 
 export default function Home(props) {
   return (
@@ -13,6 +14,7 @@ export default function Home(props) {
         <span className="text-red-800">{props.locale}</span>
       </h2>
       {/* <TopTasks
+        topTasksHeader="Top Tasks"
         topTasksDescription="Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum."
         topTasksList={[
           { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
