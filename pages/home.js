@@ -1,4 +1,3 @@
-import TopTasks from '../components/molecules/TopTasks'
 import Layout from '../components/organisms/Layout'
 import { getLocalTopics } from './api/getData'
 
