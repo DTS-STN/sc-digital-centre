@@ -21,8 +21,8 @@ export function Menu(props) {
       role="navigation"
       aria-labelledby="mainSiteNav"
     >
-      <div className="flex justify-between">
-        <h1 className="text-2xl">Service Canada</h1>
+      <div className="flex justify-between py-6 px-1 xs:px-6 md:py-1">
+        <h1 className="text-2xl pt-1 font-bold font-display">Service Canada</h1>
         <h2 className="sr-only" id="mainSiteNav">
           Menu
         </h2>
@@ -30,7 +30,7 @@ export function Menu(props) {
         <ActionButton
           id="mobileLoginBtn"
           href="/"
-          className="border rounded bg-deep-blue-solid text-white py-2 px-6 md:hidden"
+          className="border rounded bg-deep-blue-solid text-white py-2 px-6 xs:font-body md:hidden"
         >
           {t.login}
         </ActionButton>
@@ -52,7 +52,7 @@ export function Menu(props) {
                   key === 0 || key === props.items.length - 1
                     ? 'border-t border-b '
                     : 'border'
-                } border-gray-400 md:w-auto md:border-none md:px-5 md:h-12`}
+                } border-gray-400 md:w-auto md:border-none md:px-4 md:h-12`}
                 role="menuitem"
                 aria-current={exactURL ? 'page' : null}
               >
@@ -67,7 +67,7 @@ export function Menu(props) {
         <ActionButton
           id="desktopLoginBtn"
           href="/"
-          className="border rounded bg-deep-blue-solid text-white px-6 hidden md:flex md:items-center"
+          className="border rounded font-body bg-deep-blue-solid text-white px-6 hidden md:flex md:items-center"
         >
           {t.login}
         </ActionButton>
