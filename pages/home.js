@@ -14,6 +14,7 @@ export default function Home(props) {
         <span className="text-red-800">{props.locale}</span>
       </h2>
       {/* <TopTasks
+        topTasksDescription="Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum."
         topTasksList={[
           { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
           {
