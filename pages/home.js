@@ -8,7 +8,7 @@ export default function Home(props) {
         Home page -- place holder
       </h1>
 
-        <h2 className="text-center text-blue-800 font-extrabold text-3xl mb-24">
+      <h2 className="text-center text-blue-800 font-extrabold text-3xl mb-24">
         current language is :{' '}
         <span className="text-red-800">{props.locale}</span>
       </h2>

@@ -43,7 +43,7 @@
     "tailwindcss": "^2.2.9"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,md,vue}": [
+    "**/*.{js,jsx,ts,tsx,json,md}": [
       "prettier --write"
     ]
   }
