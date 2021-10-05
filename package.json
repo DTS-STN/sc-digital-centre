@@ -12,8 +12,7 @@
     "e2e": "start-server-and-test dev http://localhost:3000 cypress",
     "test:e2e": "start-server-and-test dev http://localhost:3000 cypress:run",
     "test:unit": "jest",
-    "prepare": "husky install",
-    "husky-pre-commit": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\" && git add -A ."
+    "prepare": "husky install"
   },
   "dependencies": {
     "jest-axe": "^5.0.1",
@@ -36,10 +35,16 @@
     "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.1.0",
+    "lint-staged": "^11.2.0",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
     "react-test-renderer": "^17.0.2",
     "start-server-and-test": "^1.14.0",
     "tailwindcss": "^2.2.9"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,md,vue}": [
+      "prettier --write"
+    ]
   }
 }
