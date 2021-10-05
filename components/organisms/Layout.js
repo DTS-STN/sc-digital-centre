@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import Footer from '../molecules/Footer'
 import Head from 'next/head'
+import { Menu } from '../molecules/Menu'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
@@ -14,7 +15,24 @@ export default function Layout({ children, locale }) {
   return (
     <div>
       <Head></Head>
-
+      <Menu
+        menuButtonTitle="menuButtonTitle"
+        signUpText="signupBtn"
+        items={[
+          {
+            link: '/projectRedirect',
+            text: 'Services and benefits',
+          },
+          {
+            link: '/aboutRedirect',
+            text: 'Tools',
+          },
+          {
+            link: '/signupRedirect',
+            text: 'Contact us',
+          },
+        ]}
+      />
       <main>
         <div>{children}</div>
       </main>
