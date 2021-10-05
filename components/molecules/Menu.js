@@ -67,7 +67,7 @@ export function Menu(props) {
         <ActionButton
           id="desktopLoginBtn"
           href="/"
-          className="border rounded font-body bg-deep-blue-solid text-white px-6 hidden md:flex md:items-center"
+          className="border rounded font-body bg-deep-blue-solid text-white px-5 hidden md:flex md:items-center"
         >
           {t.login}
         </ActionButton>
