@@ -1,5 +1,4 @@
 import Layout from '../components/organisms/Layout'
-import SearchBar from '../components/atoms/SearchBar'
 import { getLocalTopics } from './api/getData'
 
 export default function Home(props) {
@@ -8,9 +7,6 @@ export default function Home(props) {
       <h1 className="text-center text-blue-800  font-extrabold text-4xl my-36">
         Home page -- place holder
       </h1>
-
-      <SearchBar />
-      <SearchBar btnText="Search" />
 
       <h2 className="text-center text-blue-800 font-extrabold text-3xl mb-24">
         current language is :{' '}
