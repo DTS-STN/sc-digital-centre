@@ -1,6 +1,6 @@
 import propTypes from 'prop-types'
 import Link from 'next/link'
-
+import { Menu } from '../molecules/Menu'
 import { useRouter } from 'next/router'
 
 import en from '../../locales/en'
@@ -85,11 +85,23 @@ export default function Header({ language }) {
         {/* Border */}
         <div className="mb-2 border-t pb-2 mt-4"></div>
 
-        {/* Placeholder for the Menu and navigation bar
-        
-        <HeaderNav /> 
-        
-        */}
+        <Menu
+          language={language}
+          items={[
+            {
+              link: '/',
+              text: t.serviceAndBenefits,
+            },
+            {
+              link: '/',
+              text: t.tools,
+            },
+            {
+              link: '/',
+              text: t.contactUs,
+            },
+          ]}
+        />
 
         {/* Place Holder for the breadcrumbs 
 
