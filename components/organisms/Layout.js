@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
+import Meta from '../atoms/Meta'
+import Header from '../molecules/Header'
 import Footer from '../molecules/Footer'
-import Head from 'next/head'
-import { Menu } from '../molecules/Menu'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
@@ -9,29 +9,15 @@ import fr from '../../locales/fr'
 /**
  * Component which defines the layout of the page for all screen sizes
  */
-export default function Layout({ children, locale }) {
+export default function Layout({ children, locale, title }) {
   const t = locale === 'en' ? en : fr
 
   return (
     <div>
-      <Head></Head>
-      <Menu
-        language={locale}
-        items={[
-          {
-            link: '/',
-            text: t.serviceAndBenefits,
-          },
-          {
-            link: '/',
-            text: t.tools,
-          },
-          {
-            link: '/',
-            text: t.contactUs,
-          },
-        ]}
-      />
+      <Meta title={title} />
+
+      <Header language={locale} />
+
       <main>
         <div>{children}</div>
       </main>
@@ -107,6 +93,12 @@ export default function Layout({ children, locale }) {
 }
 
 Layout.propTypes = {
-  // Locale current language
+  /*
+   * Locale current language
+   */
   locale: PropTypes.string,
+  /*
+   * Title of the page
+   */
+  title: PropTypes.string,
 }
