@@ -17,7 +17,7 @@ export function ActionButton({
 }) {
   //Styling for buttons and links
   const defaultStyle =
-    'rounded-sm focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-4 bg-custom-blue-blue text-white border border-custom-blue-blue active:bg-custom-blue-dark hover:bg-custom-blue-light'
+    'rounded-sm focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-4 bg-deep-blue-solid text-white border border-deep-blue-solid active:bg-deep-blue-dark hover:bg-deep-blue-light'
 
   return href ? (
     <Link href={href}>

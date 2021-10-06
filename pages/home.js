@@ -1,5 +1,6 @@
 import Layout from '../components/organisms/Layout'
 import { getLocalTopics } from './api/getData'
+import FeatureBlock from '../components/molecules/FeatureBlock'
 
 export default function Home(props) {
   return (
@@ -12,6 +13,11 @@ export default function Home(props) {
         current language is :{' '}
         <span className="text-red-800">{props.locale}</span>
       </h2>
+
+      <FeatureBlock
+        title="Featured Component Life Journeys"
+        body="blah blah blah blah blah blahblah blah blahblah blah blahblah blah blahblah blah blah"
+      ></FeatureBlock>
     </Layout>
   )
 }
