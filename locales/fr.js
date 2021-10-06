@@ -121,4 +121,5 @@ export default {
   reportAProblemPrivacyStatementLink:
     'https://www.canada.ca/fr/transparence/confidentialite.html',
   reportAProblemSubmit: 'Soumettre',
+  topTasks: '(fr) Top Tasks',
 }

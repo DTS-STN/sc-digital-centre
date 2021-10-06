@@ -1,10 +1,11 @@
 import Layout from '../components/organisms/Layout'
 import { getLocalTopics } from './api/getData'
 import FeatureBlock from '../components/molecules/FeatureBlock'
+import TopTasks from '../components/molecules/TopTasks'
 
 export default function Home(props) {
   return (
-    <Layout locale={props.locale}>
+    <Layout locale={props.locale} title="home">
       <h1 className="text-center text-blue-800  font-extrabold text-4xl my-36">
         Home page -- place holder
       </h1>
@@ -13,6 +14,26 @@ export default function Home(props) {
         current language is :{' '}
         <span className="text-red-800">{props.locale}</span>
       </h2>
+
+      {/* <TopTasks
+        topTasksHeader="Top Tasks"
+        topTasksDescription="Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum."
+        topTasksList={[
+          { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
+          {
+            taskName: 'Access an ROE (Record of Employment)',
+            taskURL: '/home',
+          },
+          {
+            taskName: 'Activate my Service Canada Access Code (PAC)',
+            taskURL: '/home',
+          },
+          {
+            taskName: 'Update my address and contact information',
+            taskURL: '/home',
+          },
+        ]}
+      /> */}
 
       <FeatureBlock
         title="Featured Component Life Journeys"
