@@ -4,7 +4,7 @@ import TopTasks from '../components/molecules/TopTasks'
 
 export default function Home(props) {
   return (
-    <Layout locale={props.locale}>
+    <Layout locale={props.locale} title="home">
       <h1 className="text-center text-blue-800  font-extrabold text-4xl my-36">
         Home page -- place holder
       </h1>
