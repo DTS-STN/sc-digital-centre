@@ -10,15 +10,9 @@ export default function Home(props) {
   return (
     <Layout locale={props.locale} title="home">
       <CardWithImageLayout
-        card={
-          <SearchCard
-            headerText="Find benefits and services"
-            viewBenefitsServices="View all benefits and services"
-            paraText="Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits"
-          />
-        }
+        card={<SearchCard lang={props.locale} />}
         cardClasses="w-full sm:w-1/2 sm:min-w-[26.25rem]"
-        image={<div className="bg-green-forest w-full" />}
+        image={<div className="bg-green-solid w-full" />}
         imageClasses=" w-full h-60 sm:h-auto sm:w-1/2"
       />
       <MostRequestedList
