@@ -21,7 +21,7 @@ export function Menu(props) {
       role="navigation"
       aria-labelledby="mainSiteNav"
     >
-      <div className="flex w-full justify-between py-6 px-1 xs:px-6 md:py-1">
+      <div className="flex w-full justify-between py-6 px-1 xs:px-6 md:py-1 mb-14 md:mb-0">
         <div className="h-10 w-full sticky my-auto">
           <h1 className="text-2xl pt-1 font-bold font-display ">
             Service Canada
