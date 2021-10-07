@@ -21,56 +21,53 @@ export function Menu(props) {
       role="navigation"
       aria-labelledby="mainSiteNav"
     >
-      <div className="flex justify-between py-6 px-1 xs:px-6 md:py-1">
-        <h1 className="text-2xl pt-1 font-bold font-display">Service Canada</h1>
-        <h2 className="sr-only" id="mainSiteNav">
-          Menu
-        </h2>
-        {/* Mobile login button */}
-        <ActionButton
-          id="mobileLoginBtn"
-          href="/"
-          className="border rounded bg-deep-blue-solid text-white py-2 px-6 xs:font-body md:hidden"
-        >
-          {t.login}
-        </ActionButton>
-      </div>
+      <div className="flex w-full justify-between py-6 px-1 xs:px-6 md:py-1">
+        <div className="h-10 w-full sticky my-auto">
+          <h1 className="text-2xl pt-1 font-bold font-display ">
+            Service Canada
+          </h1>
+          <h2 className="sr-only" id="mainSiteNav">
+            Menu
+          </h2>
+        </div>
+        <div className="flex self-baseline absolute w-full left-0 mt-12 md:relative md:w-full md:mt-1">
+          <ul
+            id="menuDropdown"
+            className="flex items-center justify-evenly w-full"
+            role="menu"
+          >
+            {props.items.map((item, key) => {
+              const exactURL = asPath === item.link // it's exactly this url
 
-      <div className="md:flex">
-        <ul
-          id="menuDropdown"
-          className="flex items-center justify-evenly"
-          role="menu"
-        >
-          {props.items.map((item, key) => {
-            const exactURL = asPath === item.link // it's exactly this url
+              return (
+                <li
+                  key={key}
+                  className={`flex items-center justify-evenly cursor-pointer text-center h-14 w-full border-gray-400 md:w-auto md:border-none md:px-4 md:h-12 lg:pr-0 ${
+                    key === 0 || key === props.items.length - 1
+                      ? 'border-t border-b '
+                      : 'border'
+                  }`}
+                  role="menuitem"
+                  aria-current={exactURL ? 'page' : null}
+                >
+                  <Link href={item.link}>
+                    <a className={`font-body text-base`}>{item.text}</a>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
 
-            return (
-              <li
-                key={key}
-                className={`flex items-center justify-evenly cursor-pointer text-center h-14 w-1/3 ${
-                  key === 0 || key === props.items.length - 1
-                    ? 'border-t border-b '
-                    : 'border'
-                } border-gray-400 md:w-auto md:border-none md:px-4 md:h-12`}
-                role="menuitem"
-                aria-current={exactURL ? 'page' : null}
-              >
-                <Link href={item.link}>
-                  <a className={`font-body text-base`}>{item.text}</a>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-        {/* Desktop login button */}
-        <ActionButton
-          id="desktopLoginBtn"
-          href="/"
-          className="border rounded font-body bg-deep-blue-solid text-white px-5 hidden md:flex md:items-center"
-        >
-          {t.login}
-        </ActionButton>
+        <div className="h-10 sticky my-auto">
+          <ActionButton
+            id="loginBtn"
+            href="/"
+            className="border rounded font-body bg-deep-blue-solid text-white py-1 px-6 h-10 flex items-center"
+          >
+            {t.login}
+          </ActionButton>
+        </div>
       </div>
     </nav>
   )

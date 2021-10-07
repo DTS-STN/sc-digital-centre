@@ -6,7 +6,7 @@ export default {
   // Nav
   skipToMainContent: 'Passer au contenu principal',
   aboutGovernment: 'Passer à « Au sujet du gouvernement »',
-  login: 'Se connecter',
+  login: 'Connexion',
   serviceAndBenefits: 'Service et avantages',
   tools: 'Outils',
   contactUs: 'Nous contacter',
