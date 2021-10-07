@@ -12,7 +12,7 @@ export const ServiceCanada = ({
   return (
     <div>
       <h2 className="font-bold font-display text-2xl mb-4">{title}</h2>
-      <p className="mb-4">{text}</p>
+      <p className="mb-4 font-body">{text}</p>
       <div className="grid grid-cols-1 gap-3 md:flex">
         <ActionButton
           id="signInMyAccountId"
