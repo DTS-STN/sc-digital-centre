@@ -9,7 +9,7 @@ export default function CardWithImageLayout(props) {
   )
 }
 
-CardWithImageLayout.PropTypes = {
+CardWithImageLayout.propTypes = {
   card: PropTypes.element.isRequired,
   image: PropTypes.element.isRequired,
   cardClasses: PropTypes.string,
