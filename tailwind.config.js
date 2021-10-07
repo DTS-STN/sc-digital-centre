@@ -9,8 +9,9 @@ module.exports = {
       body: ['Noto sans', 'sans-serif'],
     },
     screens: {
-      xs: '376px',
+      'xs': '376px',
       ...defaultTheme.screens,
+      '2xl': '1920px',
     },
     extend: {
       colors: {
