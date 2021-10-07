@@ -10,12 +10,19 @@ export default function FeatureBlock(props) {
   // const t = props.language === 'en' ? en : fr
 
   return (
-    <div className="p-5 bg-gray-light" id="feature-block">
-      <div className=" container  mx-auto  p-5 bg-yellow-300">
-        <div className="bg-red-300 p-2">
+    <div
+      className="flex flex-col sm:flex-row-reverse  bg-gray-light"
+      id="feature-block"
+    >
+      <div className="bg-green-200  w-full  ">
+        this is going to be a picture
+      </div>
+      <div className="  p-3  sm:ml-5 md:ml-7   bg-yellow-300">
+        <div className="bg-red-300 p-3 mx-auto  ">
           <h2 className="my-4">{props.title}</h2>
           <p className="my-4">{props.body}</p>
-          <ActionButton className="" id="feature-block-button" href="/">
+
+          <ActionButton id="feature-block-button" href="#">
             text on button
           </ActionButton>
         </div>

@@ -7,6 +7,7 @@ import Link from 'next/link'
 export function ActionButton({
   href,
   className,
+  custom,
   onClick,
   type,
   lang,
@@ -17,12 +18,13 @@ export function ActionButton({
 }) {
   //Styling for buttons and links
   const defaultStyle =
-    'rounded-sm focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-4 bg-deep-blue-solid text-white border border-deep-blue-solid active:bg-deep-blue-dark hover:bg-deep-blue-light'
+    'font-display rounded-sm focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-4 bg-deep-blue-solid text-white border border-deep-blue-solid active:bg-deep-blue-dark hover:bg-bright-blue-dark'
 
   return href ? (
     <Link href={href}>
       <a
-        className={`${!className ? defaultStyle : className}`}
+        className={`${defaultStyle} 
+        ${custom && !className ? custom : ''}`}
         onClick={onClick}
         role="button"
         draggable="false"
@@ -83,6 +85,7 @@ ActionButton.propTypes = {
    * CSS that overrides default styling
    */
   className: PropTypes.string,
+  custom: PropTypes.string,
 
   /**
    * any other elements you want to add to the button

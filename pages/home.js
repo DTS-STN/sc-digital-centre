@@ -37,7 +37,7 @@ export default function Home(props) {
 
       <FeatureBlock
         title="Featured Component Life Journeys"
-        body="blah blah blah blah blah blahblah blah blahblah blah blahblah blah blahblah blah blah"
+        body="blah blah blah blah blah blahblah blah blahblahh blahblah blah blah"
       ></FeatureBlock>
     </Layout>
   )
