@@ -1,6 +1,7 @@
 import Layout from '../components/organisms/Layout'
 import SearchBar from '../components/atoms/SearchBar'
-import SearchCard from '../components/atoms/SearchCard'
+import SearchCard from '../components/molecules/SearchCard'
+import CardWithImageLayout from '../components/molecules/CardWithImageLayout'
 import { getLocalTopics } from './api/getData'
 
 export default function Home(props) {
@@ -11,7 +12,16 @@ export default function Home(props) {
       </h1>
 
       <SearchBar placeholderText="Service Canada Labs" btnText="Search" />
-      <SearchCard />
+      <CardWithImageLayout
+        card={
+          <SearchCard
+            headerText="Find Services and Benefits"
+            viewBenefitsServices="View all benefits and services"
+            paraText="Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits"
+          />
+        }
+        image={<img src="/landscape.png" />}
+      />
 
       <h2 className="text-center text-blue-800 font-extrabold text-3xl mb-24">
         current language is :{' '}

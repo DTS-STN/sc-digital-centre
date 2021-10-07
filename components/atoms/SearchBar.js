@@ -10,7 +10,7 @@ export default function SearchBar(props) {
       <input
         placeholder={props.placeholderText}
         type="text"
-        className="flex placeholder-gray-600 border border-gray-300 py-1 px-3"
+        className="flex placeholder-gray-600 border border-gray-300 py-1 px-3 text-black"
       ></input>
       <button
         type="submit"
