@@ -33,7 +33,7 @@ export const ServiceCanada = ({
   )
 }
 
-ServiceCanada.PropTypes = {
+ServiceCanada.propTypes = {
   /**
    * The title that the card will display
    */
