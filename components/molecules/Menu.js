@@ -42,7 +42,7 @@ export function Menu(props) {
               return (
                 <li
                   key={key}
-                  className={`flex items-center justify-evenly cursor-pointer text-center h-14 w-full border-gray-400 md:w-auto md:border-none md:px-4 md:h-12 lg:pr-0 ${
+                  className={`flex items-center justify-evenly cursor-pointer text-center h-14 w-full border-gray-400 sm:whitespace-pre md:w-auto md:border-none md:px-4 md:h-12 lg:pr-0 ${
                     key === 0 || key === props.items.length - 1
                       ? 'border-t border-b '
                       : 'border'
