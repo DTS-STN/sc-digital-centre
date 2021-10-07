@@ -1,5 +1,4 @@
 import Layout from '../components/organisms/Layout'
-import SearchBar from '../components/atoms/SearchBar'
 import SearchCard from '../components/molecules/SearchCard'
 import CardWithImageLayout from '../components/molecules/CardWithImageLayout'
 import { getLocalTopics } from './api/getData'
