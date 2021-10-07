@@ -3,14 +3,12 @@ import SearchBar from '../components/atoms/SearchBar'
 import SearchCard from '../components/molecules/SearchCard'
 import CardWithImageLayout from '../components/molecules/CardWithImageLayout'
 import { getLocalTopics } from './api/getData'
+import TopTasks from '../components/molecules/TopTasks'
+import { MostRequestedList } from '../components/molecules/MostRequestedList'
 
 export default function Home(props) {
   return (
-    <Layout locale={props.locale}>
-      <h1 className="text-center text-blue-800  font-extrabold text-4xl my-36">
-        Home page -- place holder
-      </h1>
-
+    <Layout locale={props.locale} title="home">
       <CardWithImageLayout
         card={
           <SearchCard
@@ -23,11 +21,61 @@ export default function Home(props) {
         image={<div className="bg-green-forest w-full" />}
         imageClasses=" w-full h-60 sm:h-auto sm:w-1/2"
       />
-
-      <h2 className="text-center text-blue-800 font-extrabold text-3xl mb-24">
-        current language is :{' '}
-        <span className="text-red-800">{props.locale}</span>
-      </h2>
+      <MostRequestedList
+        requestedList={[
+          {
+            id: 1,
+            title: 'Lorem Ipsum',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            callToActionText: 'Lorem Ipsum',
+            callToActionHref: '/home',
+            btnId: 'btn1',
+          },
+          {
+            id: 2,
+            title: 'Lorem Ipsum',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            callToActionText: 'Lorem Ipsum',
+            callToActionHref: '/home',
+            btnId: 'btn2',
+          },
+          {
+            id: 3,
+            title: 'Lorem Ipsum',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            callToActionText: 'Lorem Ipsum',
+            callToActionHref: '/home',
+            btnId: 'btn3',
+          },
+          {
+            id: 4,
+            title: 'Lorem Ipsum',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            callToActionText: 'Lorem Ipsum',
+            callToActionHref: '/home',
+            btnId: 'btn4',
+          },
+        ]}
+      />
+      <TopTasks
+        topTasksHeader="Top Tasks"
+        topTasksDescription="Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum."
+        topTasksList={[
+          { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
+          {
+            taskName: 'Access an ROE (Record of Employment)',
+            taskURL: '/home',
+          },
+          {
+            taskName: 'Activate my Service Canada Access Code (PAC)',
+            taskURL: '/home',
+          },
+          {
+            taskName: 'Update my address and contact information',
+            taskURL: '/home',
+          },
+        ]}
+      />
     </Layout>
   )
 }

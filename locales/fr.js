@@ -6,6 +6,10 @@ export default {
   // Nav
   skipToMainContent: 'Passer au contenu principal',
   aboutGovernment: 'Passer à « Au sujet du gouvernement »',
+  login: 'Connexion',
+  serviceAndBenefits: 'Service et avantages',
+  tools: 'Outils',
+  contactUs: 'Nous contacter',
 
   // Government of Canada symbols
   goc: 'Governement du Canada',
@@ -121,4 +125,5 @@ export default {
   reportAProblemPrivacyStatementLink:
     'https://www.canada.ca/fr/transparence/confidentialite.html',
   reportAProblemSubmit: 'Soumettre',
+  topTasks: '(fr) Top Tasks',
 }
