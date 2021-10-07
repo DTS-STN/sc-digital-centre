@@ -48,12 +48,9 @@ describe('Menu', () => {
       />
     )
     const MenuLink = screen.getByText('englishLink')
-    const loginBtn = screen.getAllByText('Login')
+    const loginBtn = screen.getByText('Login')
     expect(MenuLink).toBeInTheDocument()
-    // Mobile Login button
-    expect(loginBtn[0]).toBeInTheDocument()
-    // Desktop Login button
-    expect(loginBtn[1]).toBeInTheDocument()
+    expect(loginBtn).toBeInTheDocument()
   })
 
   it('renders Menu in French', () => {
@@ -82,13 +79,10 @@ describe('Menu', () => {
       />
     )
     const MenuLink = screen.getByText('FrLink')
-    const loginBtn = screen.getAllByText('Se connecter')
+    const loginBtn = screen.getByText('Connexion')
 
     expect(MenuLink).toBeInTheDocument()
-    // Mobile Login button
-    expect(loginBtn[0]).toBeInTheDocument()
-    // Desktop Login button
-    expect(loginBtn[1]).toBeInTheDocument()
+    expect(loginBtn).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
