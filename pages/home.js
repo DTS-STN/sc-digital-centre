@@ -2,8 +2,14 @@ import Layout from '../components/organisms/Layout'
 import { getLocalTopics } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { MostRequestedList } from '../components/molecules/MostRequestedList'
+import { ContactUs } from '../components/molecules/ContactUs'
+
+import en from '../locales/en'
+import fr from '../locales/fr'
 
 export default function Home(props) {
+  const t = props.locale === 'en' ? en : fr
+
   return (
     <Layout locale={props.locale} title="home">
       <MostRequestedList
@@ -61,6 +67,8 @@ export default function Home(props) {
           },
         ]}
       />
+
+      <ContactUs mainTitle={t.contactUs} contactList={t.contactInfo} />
     </Layout>
   )
 }
