@@ -7,7 +7,7 @@ import { MostRequestedList } from '../components/molecules/MostRequestedList'
 export default function Home(props) {
   return (
     <Layout locale={props.locale} title="home">
-      <div div className="flex flex-col sm:flex-row w-full">
+      <div className="flex flex-col sm:flex-row w-full">
         <SearchCard lang={props.locale} />
         <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
       </div>
