@@ -2,6 +2,7 @@ import Layout from '../components/organisms/Layout'
 import { getLocalTopics } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { MostRequestedList } from '../components/molecules/MostRequestedList'
+import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
 
 import en from '../locales/en'
@@ -12,6 +13,14 @@ export default function Home(props) {
 
   return (
     <Layout locale={props.locale} title="home">
+      <ServiceCanada
+        title="My Service Canada Account"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        signInHref="/"
+        signInText="Sign into My Account"
+        createAccountHref="/"
+        createAccountText="Create an Account"
+      />
       <MostRequestedList
         requestedList={[
           {
