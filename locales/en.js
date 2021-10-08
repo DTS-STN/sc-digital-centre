@@ -98,7 +98,7 @@ export default {
   //
   // Contact us Section
   //
-  contactUs: 'Get in contact with us',
+  contactUsTitle: 'Get in contact with us',
   contactInfo: [
     {
       iconSrc: './CustomerServiceAssistant.svg',

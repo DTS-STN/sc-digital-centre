@@ -77,7 +77,7 @@ export default function Home(props) {
         ]}
       />
 
-      <ContactUs mainTitle={t.contactUs} contactList={t.contactInfo} />
+      <ContactUs mainTitle={t.contactUsTitle} contactList={t.contactInfo} />
     </Layout>
   )
 }
