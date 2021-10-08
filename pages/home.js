@@ -2,6 +2,7 @@ import Layout from '../components/organisms/Layout'
 import { getLocalTopics } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { MostRequestedList } from '../components/molecules/MostRequestedList'
+import FeatureBlock from '../components/molecules/FeatureBlock'
 
 export default function Home(props) {
   return (
@@ -61,6 +62,15 @@ export default function Home(props) {
           },
         ]}
       />
+
+      {/* feature with image */}
+      <FeatureBlock
+        title="Featured: "
+        featuredContent="Life Journeys"
+        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus, tortor vitae mattis viverra, ipsum lacus malesuada ligula, eu pharetra ipsum libero a diam."
+        buttonText="Text on button"
+        id="feature-block"
+      ></FeatureBlock>
     </Layout>
   )
 }
