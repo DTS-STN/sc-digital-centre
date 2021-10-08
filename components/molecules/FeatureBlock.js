@@ -1,7 +1,7 @@
 import propTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import { ActionButton } from '../atoms/ActionButton'
-
+import Image from 'next/image'
 /**
  * Featured Content banner
  */
@@ -11,18 +11,29 @@ export default function FeatureBlock(props) {
 
   return (
     <div
-      className="flex flex-col sm:flex-row-reverse  bg-gray-light"
+      className="flex flex-col justify-between sm:flex-row-reverse bg-light-solid "
       id="feature-block"
     >
-      <div className="bg-green-200  w-full  ">
-        this is going to be a picture
+      <div className="bg-splash-page bg-cover bg-center w-full py-32  ">
+        {/* <img
+              src="/sp-bg-1.jpg"
+              alt="Picture of something nice"
+              className="object-center"
+            ></img> */}
       </div>
-      <div className="  p-3  sm:ml-5 md:ml-7   bg-yellow-300">
-        <div className="bg-red-300 p-3 mx-auto  ">
-          <h2 className="my-4">{props.title}</h2>
-          <p className="my-4">{props.body}</p>
 
-          <ActionButton id="feature-block-button" href="#">
+      <div className="p-3 grid sm:ml-7 md:ml-10 lg:ml-12 container  mx-auto md:w-3/5">
+        <h2 className="font-display font-bold text-xl md:text-2xl text-dark-solid">
+          {`${props.title} ${props.featuredContent}`}
+        </h2>
+        <p className="font-body my-5">{props.body}</p>
+        <div className=" ">
+          <ActionButton
+            defaultStyle="true"
+            extendedClass="grid justify-center whitespace-pre lg:w-1/2"
+            id="feature-link-button"
+            href="#"
+          >
             text on button
           </ActionButton>
         </div>
@@ -34,6 +45,7 @@ export default function FeatureBlock(props) {
 FeatureBlock.propTypes = {
   // title text to be displayed
   title: propTypes.string,
+  featuredContent: propTypes.string,
 
   // body text to be displayed
   body: propTypes.string,

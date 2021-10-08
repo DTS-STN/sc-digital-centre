@@ -7,7 +7,7 @@ import Link from 'next/link'
 export function ActionButton({
   href,
   className,
-  custom,
+  extendedClass,
   onClick,
   type,
   lang,
@@ -24,7 +24,7 @@ export function ActionButton({
     <Link href={href}>
       <a
         className={`${defaultStyle} 
-        ${custom && !className ? custom : ''}`}
+        ${extendedClass && !className ? extendedClass : ''}`}
         onClick={onClick}
         role="button"
         draggable="false"
@@ -85,7 +85,7 @@ ActionButton.propTypes = {
    * CSS that overrides default styling
    */
   className: PropTypes.string,
-  custom: PropTypes.string,
+  extendedClass: PropTypes.string,
 
   /**
    * any other elements you want to add to the button
