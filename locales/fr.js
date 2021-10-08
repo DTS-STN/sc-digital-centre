@@ -23,7 +23,13 @@ export default {
 
   // Search bar
   search: 'Recherche',
-  searchPlaceholder: 'Rechercher dans Canada.ca',
+  searchPlaceholder: 'Rechercher services et avantages',
+
+  //Search Card
+  searchFindBenefits: '(FR) Find benefits and services',
+  searchViewAllBenefits: '(FR) View all benefits and services',
+  searchDesc:
+    '(FR) Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits',
 
   //
   // Footer
