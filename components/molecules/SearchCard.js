@@ -9,7 +9,7 @@ export default function SearchCard(props) {
   return (
     <div
       className={
-        'flex flex-col w-full py-6 px-4 sm:px-12 sm:py-8 sm:min-w-[27.5rem] lg:px-20 lg:py-12 text-white space-y-4 bg-deep-blue-solid'
+        'flex flex-col w-full sm:w-1/2 py-6 px-4 sm:px-12 sm:py-8 sm:min-w-[27.5rem] lg:px-20 lg:py-12 text-white space-y-4 bg-deep-blue-solid'
       }
     >
       <h3 className="text-xl"> {t.searchFindBenefits} </h3>

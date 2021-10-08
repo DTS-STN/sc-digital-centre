@@ -1,6 +1,5 @@
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
-import CardWithImageLayout from '../components/molecules/CardWithImageLayout'
 import { getLocalTopics } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { MostRequestedList } from '../components/molecules/MostRequestedList'
@@ -8,12 +7,11 @@ import { MostRequestedList } from '../components/molecules/MostRequestedList'
 export default function Home(props) {
   return (
     <Layout locale={props.locale} title="home">
-      <CardWithImageLayout
-        card={<SearchCard lang={props.locale} />}
-        cardClasses="w-full sm:w-1/2 sm:min-w-[26.25rem]"
-        image={<div className="bg-green-solid w-full" />}
-        imageClasses=" w-full h-60 sm:h-auto sm:w-1/2"
-      />
+      <div div className="flex flex-col sm:flex-row w-full">
+        <SearchCard lang={props.locale} />
+        <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
+      </div>
+
       <MostRequestedList
         requestedList={[
           {
