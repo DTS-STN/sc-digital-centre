@@ -3,6 +3,7 @@ import SearchCard from '../components/molecules/SearchCard'
 import { getLocalTopics } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { MostRequestedList } from '../components/molecules/MostRequestedList'
+import { ServiceCanada } from '../components/molecules/ServiceCanada'
 
 export default function Home(props) {
   return (
@@ -11,7 +12,14 @@ export default function Home(props) {
         <SearchCard lang={props.locale} />
         <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
       </div>
-
+      <ServiceCanada
+        title="My Service Canada Account"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        signInHref="/"
+        signInText="Sign into My Account"
+        createAccountHref="/"
+        createAccountText="Create an Account"
+      />
       <MostRequestedList
         requestedList={[
           {
