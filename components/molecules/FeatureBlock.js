@@ -28,7 +28,7 @@ export default function FeatureBlock(props) {
         <p className="font-body my-5">{props.body}</p>
         <div className=" ">
           <ActionButton
-            defaultStyle="true"
+            defaultstyle="true"
             extendedClass="grid justify-center whitespace-pre lg:w-1/2"
             id="feature-link-button"
             href="#"

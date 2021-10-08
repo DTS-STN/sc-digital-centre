@@ -68,6 +68,7 @@ export default function Home(props) {
         featuredContent="Life Journeys"
         body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus, tortor vitae mattis viverra, ipsum lacus malesuada ligula, eu pharetra ipsum libero a diam."
         buttonText="Text on button"
+        id="feature-block"
       ></FeatureBlock>
     </Layout>
   )
