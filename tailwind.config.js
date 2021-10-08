@@ -9,8 +9,9 @@ module.exports = {
       body: ['Noto sans', 'sans-serif'],
     },
     screens: {
-      xs: '376px',
+      'xs': '376px',
       ...defaultTheme.screens,
+      '2xl': '1920px',
     },
     extend: {
       colors: {
@@ -75,6 +76,9 @@ module.exports = {
         'footer-parliament-image': 'url(../public/landscape.png)',
         'splash-page': 'url(../public/sp-bg-1.jpg)',
       }),
+      boxShadow: {
+        'most-requested': '0px 2px 8px rgba(0, 0, 0, 0.25)',
+      },
     },
   },
   variants: {

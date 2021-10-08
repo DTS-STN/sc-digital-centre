@@ -1,21 +1,49 @@
 import Layout from '../components/organisms/Layout'
 import { getLocalTopics } from './api/getData'
-import FeatureBlock from '../components/molecules/FeatureBlock'
 import TopTasks from '../components/molecules/TopTasks'
+import { MostRequestedList } from '../components/molecules/MostRequestedList'
+import FeatureBlock from '../components/molecules/FeatureBlock'
 
 export default function Home(props) {
   return (
     <Layout locale={props.locale} title="home">
-      <h1 className="text-center text-blue-800  font-extrabold text-4xl my-36">
-        Home page -- place holder
-      </h1>
-
-      <h2 className="text-center text-blue-800 font-extrabold text-3xl mb-24">
-        current language is :{' '}
-        <span className="text-red-800">{props.locale}</span>
-      </h2>
-
-      {/* <TopTasks
+      <MostRequestedList
+        requestedList={[
+          {
+            id: 1,
+            title: 'Lorem Ipsum',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            callToActionText: 'Lorem Ipsum',
+            callToActionHref: '/home',
+            btnId: 'btn1',
+          },
+          {
+            id: 2,
+            title: 'Lorem Ipsum',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            callToActionText: 'Lorem Ipsum',
+            callToActionHref: '/home',
+            btnId: 'btn2',
+          },
+          {
+            id: 3,
+            title: 'Lorem Ipsum',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            callToActionText: 'Lorem Ipsum',
+            callToActionHref: '/home',
+            btnId: 'btn3',
+          },
+          {
+            id: 4,
+            title: 'Lorem Ipsum',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            callToActionText: 'Lorem Ipsum',
+            callToActionHref: '/home',
+            btnId: 'btn4',
+          },
+        ]}
+      />
+      <TopTasks
         topTasksHeader="Top Tasks"
         topTasksDescription="Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum."
         topTasksList={[
@@ -33,7 +61,7 @@ export default function Home(props) {
             taskURL: '/home',
           },
         ]}
-      /> */}
+      />
 
       <FeatureBlock
         title="Featured: "
@@ -44,23 +72,17 @@ export default function Home(props) {
     </Layout>
   )
 }
-
 export async function getStaticProps({ locale }) {
   let topicsData = []
   let errorCode = false
-
   console.log('current language is:', locale)
   //
   // IF content enabled get the data from the api
   //
-
   if (!process.env.NEXT_CONTENT_API) {
     // const { apiData, error } = await getTopics(locale);
-
     let topics = []
-
     // extract data from apiData then add it to the array topics
-
     topicsData = topics
     // errorCode = error;
     errorCode = false
@@ -69,11 +91,9 @@ export async function getStaticProps({ locale }) {
     // Else get the content from the local file
     //
     const { localData } = getLocalTopics()
-
     topicsData = localData
     errorCode = false
   }
-
   return {
     props: {
       topicsData,
