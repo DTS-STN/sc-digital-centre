@@ -20,6 +20,9 @@ export default function Home(props) {
         createAccountHref="/"
         createAccountText="Create an Account"
       />
+      <h2 className="font-bold font-display text-2xl mb-4">
+        Most Requested Pages
+      </h2>
       <MostRequestedList
         requestedList={[
           {
