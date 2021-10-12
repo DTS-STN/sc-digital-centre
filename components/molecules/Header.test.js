@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import Header from './Header'
+import en from '../../locales/en'
+import fr from '../../locales/fr'
 
 import { useRouter } from 'next/router'
 
@@ -28,7 +30,7 @@ describe('Header', () => {
       asPath: '/',
     }))
 
-    render(<Header language="en" />)
+    render(<Header language="en" t={en} />)
     const HeaderLang = screen.getByText('Français')
     expect(HeaderLang).toBeInTheDocument()
   })
@@ -39,13 +41,13 @@ describe('Header', () => {
       asPath: '/',
     }))
 
-    render(<Header language="fr" />)
+    render(<Header language="fr" t={fr} />)
     const HeaderLang = screen.getByText('English')
     expect(HeaderLang).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(<Header language="en" />)
+    const { container } = render(<Header language="en" t={en} />)
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

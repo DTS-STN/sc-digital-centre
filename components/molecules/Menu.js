@@ -2,16 +2,13 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { ActionButton } from '../atoms/ActionButton'
-import en from '../../locales/en'
-import fr from '../../locales/fr'
+
 /**
  * Menu component
  */
-export function Menu(props) {
+export function Menu({ loginText, items }) {
   //Router
   const { asPath } = useRouter()
-
-  const t = props.language === 'en' ? en : fr
 
   return (
     <nav
@@ -36,14 +33,14 @@ export function Menu(props) {
             className="flex items-center justify-evenly w-full"
             role="menu"
           >
-            {props.items.map((item, key) => {
+            {items.map((item, key) => {
               const exactURL = asPath === item.link // it's exactly this url
 
               return (
                 <li
                   key={key}
                   className={`flex items-center justify-evenly cursor-pointer text-center h-14 w-full border-gray-400 sm:whitespace-pre md:w-auto md:border-none md:px-4 md:h-12 lg:pr-0 ${
-                    key === 0 || key === props.items.length - 1
+                    key === 0 || key === items.length - 1
                       ? 'border-t border-b '
                       : 'border'
                   }`}
@@ -65,7 +62,7 @@ export function Menu(props) {
             href="/"
             className="border rounded font-body bg-deep-blue-solid text-white py-1 px-6 h-10 flex items-center"
           >
-            {t.login}
+            {loginText}
           </ActionButton>
         </div>
       </div>
@@ -91,7 +88,7 @@ Menu.propTypes = {
     })
   ).isRequired,
   /**
-   * Current locale
+   * Translated text
    */
-  language: PropTypes.string.isRequired,
+  loginText: PropTypes.string.isRequired,
 }

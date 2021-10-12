@@ -30,7 +30,7 @@ describe('Menu', () => {
 
     render(
       <Menu
-        language="en"
+        loginText="Login"
         items={[
           {
             link: '/',
@@ -61,7 +61,7 @@ describe('Menu', () => {
 
     render(
       <Menu
-        language="fr"
+        loginText="Connexion"
         items={[
           {
             link: '/',
@@ -88,7 +88,7 @@ describe('Menu', () => {
   it('has no a11y violations', async () => {
     const { container } = render(
       <Menu
-        language="fr"
+        loginText="Connexion"
         items={[
           {
             link: '/',
