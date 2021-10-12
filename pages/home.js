@@ -4,8 +4,14 @@ import { getLocalTopics } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { MostRequestedList } from '../components/molecules/MostRequestedList'
 import { ServiceCanada } from '../components/molecules/ServiceCanada'
+import { ContactUs } from '../components/molecules/ContactUs'
+
+import en from '../locales/en'
+import fr from '../locales/fr'
 
 export default function Home(props) {
+  const t = props.locale === 'en' ? en : fr
+
   return (
     <Layout locale={props.locale} title="home">
       <div className="flex flex-col sm:flex-row w-full">
@@ -75,6 +81,8 @@ export default function Home(props) {
           },
         ]}
       />
+
+      <ContactUs mainTitle={t.contactUsTitle} contactList={t.contactInfo} />
     </Layout>
   )
 }
