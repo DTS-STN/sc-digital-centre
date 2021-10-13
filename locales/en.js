@@ -1,3 +1,4 @@
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   //
   // Header
@@ -23,7 +24,13 @@ export default {
 
   // Search bar
   search: 'Search',
-  searchPlaceholder: 'Search Canada.ca',
+  searchPlaceholder: 'Search benefits and services',
+
+  //Search Card
+  searchFindBenefits: 'Find benefits and services',
+  searchViewAllBenefits: 'View all benefits and services',
+  searchDesc:
+    'Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits',
 
   //
   // Footer
@@ -93,6 +100,40 @@ export default {
   //  Page Content
   //
   //
+
+  //
+  // Contact us Section
+  //
+  contactUsTitle: 'Get in contact with us',
+  contactInfo: [
+    {
+      iconSrc: './CustomerServiceAssistant.svg',
+      iconAlt: 'icon of a Customer Service Support Assistant',
+      title: 'Virtual Assistant',
+      text: 'Want to talk to us in person? Ring us at 1-800-0-Canada or explore our directory',
+      linkText: 'lorem ipsum',
+      linkHref: '#',
+      cardId: 'VA',
+    },
+    {
+      iconSrc: './Callback.png',
+      iconAlt: 'Icon of a phone for a Callback service',
+      title: 'Callback service',
+      text: "Don't want to wait? Make a request for us to call you using eServiceCanada",
+      linkText: 'lorem ipsum',
+      linkHref: '#',
+      cardId: 'CB',
+    },
+    {
+      iconSrc: './FrontDesk.svg',
+      iconAlt: 'Icon of a desk with a person',
+      title: 'Visit in person',
+      text: 'There is a service Canada location near you',
+      linkText: 'lorem ipsum',
+      linkHref: '#',
+      cardId: 'BM',
+    },
+  ],
 
   //
   //Report a problem

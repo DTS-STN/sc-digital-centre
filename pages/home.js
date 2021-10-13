@@ -1,12 +1,32 @@
 import Layout from '../components/organisms/Layout'
+import SearchCard from '../components/molecules/SearchCard'
 import { getLocalTopics } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { MostRequestedList } from '../components/molecules/MostRequestedList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
+import { ServiceCanada } from '../components/molecules/ServiceCanada'
+import { ContactUs } from '../components/molecules/ContactUs'
+
+import en from '../locales/en'
+import fr from '../locales/fr'
 
 export default function Home(props) {
+  const t = props.locale === 'en' ? en : fr
+
   return (
     <Layout locale={props.locale} title="home">
+      <div className="flex flex-col sm:flex-row w-full">
+        <SearchCard lang={props.locale} />
+        <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
+      </div>
+      <ServiceCanada
+        title="My Service Canada Account"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        signInHref="/"
+        signInText="Sign into My Account"
+        createAccountHref="/"
+        createAccountText="Create an Account"
+      />
       <MostRequestedList
         requestedList={[
           {
@@ -71,6 +91,7 @@ export default function Home(props) {
         buttonText="Text on button"
         id="feature-block"
       ></FeatureBlock>
+      <ContactUs mainTitle={t.contactUsTitle} contactList={t.contactInfo} />
     </Layout>
   )
 }

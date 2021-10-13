@@ -1,3 +1,4 @@
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   //
   // Header
@@ -23,7 +24,13 @@ export default {
 
   // Search bar
   search: 'Recherche',
-  searchPlaceholder: 'Rechercher dans Canada.ca',
+  searchPlaceholder: 'Rechercher services et avantages',
+
+  //Search Card
+  searchFindBenefits: '(FR) Find benefits and services',
+  searchViewAllBenefits: '(FR) View all benefits and services',
+  searchDesc:
+    '(FR) Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits',
 
   //
   // Footer
@@ -93,6 +100,40 @@ export default {
   //  Page Content
   //
   //
+
+  //
+  // Contact us Section
+  //
+  contactUsTitle: 'Prenez contact avec nous',
+  contactInfo: [
+    {
+      iconSrc: './CustomerServiceAssistant.svg',
+      iconAlt: "icône d'un assistant du service client",
+      title: 'Assistant virtuel',
+      text: 'Vous voulez nous parler en personne ? Appelez-nous au 1-800-0-Canada ou explorez notre répertoire',
+      linkText: 'French value',
+      linkHref: '#',
+      cardId: 'VA',
+    },
+    {
+      iconSrc: './Callback.png',
+      iconAlt: "Icône d'un téléphone pour un service de rappel",
+      title: 'Service de rappel',
+      text: 'Vous ne voulez pas attendre ? Faites une demande pour que nous vous appelions en utilisant eServiceCanada',
+      linkText: 'French value',
+      linkHref: '#',
+      cardId: 'CB',
+    },
+    {
+      iconSrc: './FrontDesk.svg',
+      iconAlt: "Icône d'un bureau avec une personne",
+      title: 'Visite en personne',
+      text: 'Il y a une succursale de Service Canada près de chez vous',
+      linkText: 'French value',
+      linkHref: '#',
+      cardId: 'BM',
+    },
+  ],
 
   //
   //Report a problem
