@@ -9,14 +9,14 @@ export default function Footer(props) {
   return (
     <footer>
       <h2 className="sr-only">siteFooter</h2>
-      <div className="container mt-5 mx-auto p-5">Report a problem</div>
-      <div className="container mx-auto mb-2">
+      <div className="layout-container mt-5">Report a problem</div>
+      <div className="layout-container mb-2">
         <DateModified date={process.env.NEXT_PUBLIC_BUILD_DATE} />
       </div>
       <div className="w-full">
         <div className="w-full h-auto bg-footer-parliament-image bg-no-repeat bg-right-bottom bg-deep-blue-solid">
           <div
-            className="py-7 xs:px-7 md:mx-auto container"
+            className="py-7 layout-container"
             role="navigation"
             aria-labelledby="footerNav1"
           >

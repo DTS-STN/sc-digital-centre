@@ -25,69 +25,78 @@ export default function Home(props) {
         />
         <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
       </div>
-      <ServiceCanada
-        title={t.serviceCanadaTitle}
-        text={t.serviceCanadaText}
-        signInHref="/"
-        signInText={t.serviceCanadaSignIn}
-        createAccountHref="/"
-        createAccountText={t.serviceCanadaCreateAccount}
-      />
-      <MostRequestedList
-        requestedList={[
-          {
-            id: 1,
-            title: 'Lorem Ipsum',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn1',
-          },
-          {
-            id: 2,
-            title: 'Lorem Ipsum',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn2',
-          },
-          {
-            id: 3,
-            title: 'Lorem Ipsum',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn3',
-          },
-          {
-            id: 4,
-            title: 'Lorem Ipsum',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn4',
-          },
-        ]}
-      />
-      <TopTasks
-        topTasksHeader={t.topTasksHeader}
-        topTasksDescription={t.topTasksDescritpion}
-        topTasksList={[
-          { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
-          {
-            taskName: 'Access an ROE (Record of Employment)',
-            taskURL: '/home',
-          },
-          {
-            taskName: 'Activate my Service Canada Access Code (PAC)',
-            taskURL: '/home',
-          },
-          {
-            taskName: 'Update my address and contact information',
-            taskURL: '/home',
-          },
-        ]}
-      />
+      <div className="layout-container md:flex mt-5">
+        <div className=" lg:w-1/4">
+          <ServiceCanada
+            title={t.serviceCanadaTitle}
+            text={t.serviceCanadaText}
+            signInHref="/"
+            signInText={t.serviceCanadaSignIn}
+            createAccountHref="/"
+            createAccountText={t.serviceCanadaCreateAccount}
+          />
+          <TopTasks
+            topTasksHeader={t.topTasksHeader}
+            topTasksDescription={t.topTasksDescritpion}
+            topTasksList={[
+              { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
+              {
+                taskName: 'Access an ROE (Record of Employment)',
+                taskURL: '/home',
+              },
+              {
+                taskName: 'Activate my Service Canada Access Code (PAC)',
+                taskURL: '/home',
+              },
+              {
+                taskName: 'Update my address and contact information',
+                taskURL: '/home',
+              },
+            ]}
+          />
+        </div>
+        <div className="lg:w-3/4 md:pl-12">
+          <h2 className="font-bold font-display text-2xl mb-4">
+            {t.mostRequestedTitle}
+          </h2>
+          <MostRequestedList
+            requestedList={[
+              {
+                id: 1,
+                title: 'Lorem Ipsum',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                callToActionText: 'Lorem Ipsum',
+                callToActionHref: '/home',
+                btnId: 'btn1',
+              },
+              {
+                id: 2,
+                title: 'Lorem Ipsum',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                callToActionText: 'Lorem Ipsum',
+                callToActionHref: '/home',
+                btnId: 'btn2',
+              },
+              {
+                id: 3,
+                title: 'Lorem Ipsum',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                callToActionText: 'Lorem Ipsum',
+                callToActionHref: '/home',
+                btnId: 'btn3',
+              },
+              {
+                id: 4,
+                title: 'Lorem Ipsum',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                callToActionText: 'Lorem Ipsum',
+                callToActionHref: '/home',
+                btnId: 'btn4',
+              },
+            ]}
+          />
+        </div>
+      </div>
 
       <ContactUs mainTitle={t.contactUsTitle} contactList={t.contactInfo} />
     </Layout>

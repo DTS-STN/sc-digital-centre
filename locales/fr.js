@@ -35,7 +35,7 @@ export default {
   // Service Canada
   serviceCanadaTitle: '(FR) My Service Canada Account',
   serviceCanadaText:
-    '(FR) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    '(FR) Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im.',
   serviceCanadaSignIn: '(FR) Sign into My Account',
   serviceCanadaCreateAccount: '(FR) Create an Account',
 
@@ -43,6 +43,9 @@ export default {
   topTasksHeader: '(FR) Top Tasks',
   topTasksDescritpion:
     '(FR) Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum.',
+
+  // Most Requested Page
+  mostRequestedTitle: 'Pages les plus demandées',
 
   //
   // Footer
