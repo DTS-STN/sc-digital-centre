@@ -18,11 +18,11 @@ export default function Home(props) {
         <SearchCard lang={props.locale} />
         <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
       </div>
-      <div className="layout-container md:flex">
-        <div>
+      <div className="layout-container md:flex mt-5">
+        <div className=" lg:w-1/4">
           <ServiceCanada
             title="My Service Canada Account"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            text="Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im."
             signInHref="/"
             signInText="Sign into My Account"
             createAccountHref="/"
@@ -48,7 +48,7 @@ export default function Home(props) {
             ]}
           />
         </div>
-        <div>
+        <div className="lg:w-3/4 md:pl-12">
           <h2 className="font-bold font-display text-2xl mb-4">
             {t.mostRequestedTitle}
           </h2>

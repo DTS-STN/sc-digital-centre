@@ -10,7 +10,7 @@ export const ServiceCanada = ({
   createAccountText,
 }) => {
   return (
-    <div className="md:pr-1">
+    <div>
       <h2 className="font-bold font-display text-2xl mb-4">{title}</h2>
       <p className="mb-4 font-body">{text}</p>
       <div className="flex justify-around md:grid md:grid-cols-1 md:gap-3">
