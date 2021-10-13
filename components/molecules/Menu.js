@@ -16,12 +16,12 @@ export function Menu(props) {
   return (
     <nav
       title="Menu"
-      className="md:flex md:justify-between lg:layout-container"
+      className="md:flex md:justify-between layout-container"
       data-cy="menu"
       role="navigation"
       aria-labelledby="mainSiteNav"
     >
-      <div className="flex w-full justify-between py-6 px-1 xs:px-6 md:py-1 mb-14 md:mb-0">
+      <div className="flex w-full justify-between py-6  md:py-1 mb-14 md:mb-0 lg:px-0">
         <div className="h-10 w-full sticky my-auto">
           <h1 className="text-2xl pt-1 font-bold font-display ">
             Service Canada
