@@ -18,18 +18,12 @@
 
 @layer utilities {
   .layout-container {
-    @apply mx-6;
-  }
-
-  @screen xs {
-    .layout-container {
-      @apply px-0;
-    }
+    @apply px-4;
   }
 
   @screen md {
     .layout-container {
-      @apply px-0;
+      @apply container mx-auto px-6;
     }
   }
 }
