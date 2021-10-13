@@ -26,13 +26,8 @@ export default function FeatureBlock(props) {
           {`${props.title} ${props.featuredContent}`}
         </h2>
         <p className="font-body my-5">{props.body}</p>
-        <div className=" ">
-          <ActionButton
-            defaultstyle="true"
-            extendedClass="grid justify-center whitespace-pre lg:w-1/2"
-            id="feature-link-button"
-            href="#"
-          >
+        <div>
+          <ActionButton id="feature-link-button" href="#">
             {props.buttonText}
           </ActionButton>
         </div>

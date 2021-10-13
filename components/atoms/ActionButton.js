@@ -23,8 +23,7 @@ export function ActionButton({
   return href ? (
     <Link href={href}>
       <a
-        className={`${defaultStyle} 
-        ${extendedClass && !className ? extendedClass : ''}`}
+        className={`${!className ? defaultStyle : className}`}
         onClick={onClick}
         role="button"
         draggable="false"
