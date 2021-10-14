@@ -3,12 +3,8 @@ import Link from 'next/link'
 import { Menu } from '../molecules/Menu'
 import { useRouter } from 'next/router'
 
-import en from '../../locales/en'
-import fr from '../../locales/fr'
-
-export default function Header({ language }) {
+export default function Header({ language, t }) {
   // const language = items.language;
-  const t = language === 'en' ? en : fr
 
   const router = useRouter()
 
@@ -86,7 +82,7 @@ export default function Header({ language }) {
         <div className="mb-2 border-t pb-2 mt-4"></div>
 
         <Menu
-          language={language}
+          loginText={t.login}
           items={[
             {
               link: '/',
@@ -123,6 +119,11 @@ Header.propTypes = {
    * current locale in the address
    */
   locale: propTypes.string,
+
+  /**
+   * Translated text
+   */
+  t: propTypes.object,
   /**
    * Array of Items for the breadcrumb
    */

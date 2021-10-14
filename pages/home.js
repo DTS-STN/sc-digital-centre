@@ -16,22 +16,29 @@ export default function Home(props) {
   return (
     <Layout locale={props.locale} title="home">
       <div className="flex flex-col sm:flex-row w-full">
-        <SearchCard lang={props.locale} />
+        <SearchCard
+          lang={props.locale}
+          headerText={t.searchFindBenefits}
+          paraText={t.searchDesc}
+          viewBenefitsServices={t.searchViewAllBenefits}
+          searchBarPlaceholder={t.searchPlaceholder}
+          searchBarText={t.search}
+        />
         <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
       </div>
       <div className="layout-container md:flex mt-5">
         <div className=" lg:w-1/4">
           <ServiceCanada
-            title="My Service Canada Account"
-            text="Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im."
+            title={t.serviceCanadaTitle}
+            text={t.serviceCanadaText}
             signInHref="/"
-            signInText="Sign into My Account"
+            signInText={t.serviceCanadaSignIn}
             createAccountHref="/"
-            createAccountText="Create an Account"
+            createAccountText={t.serviceCanadaCreateAccount}
           />
           <TopTasks
-            topTasksHeader="Top Tasks"
-            topTasksDescription="Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum."
+            topTasksHeader={t.topTasksHeader}
+            topTasksDescription={t.topTasksDescritpion}
             topTasksList={[
               { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
               {

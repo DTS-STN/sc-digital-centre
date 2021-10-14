@@ -32,6 +32,18 @@ export default {
   searchDesc:
     '(FR) Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits',
 
+  // Service Canada
+  serviceCanadaTitle: '(FR) My Service Canada Account',
+  serviceCanadaText:
+    '(FR) Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im.',
+  serviceCanadaSignIn: '(FR) Sign into My Account',
+  serviceCanadaCreateAccount: '(FR) Create an Account',
+
+  // Top Tasks
+  topTasksHeader: '(FR) Top Tasks',
+  topTasksDescritpion:
+    '(FR) Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum.',
+
   // Most Requested Page
   mostRequestedTitle: 'Pages les plus demandées',
 
