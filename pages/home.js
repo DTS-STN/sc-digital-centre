@@ -86,10 +86,12 @@ export default function Home(props) {
       {/* feature with image */}
       <FeatureBlock
         title="Featured: "
+        // featuredContent and body text will come form the CMS
         featuredContent="Life Journeys"
         body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus, tortor vitae mattis viverra, ipsum lacus malesuada ligula, eu pharetra ipsum libero a diam."
         buttonText="Text on button"
-        id="feature-block"
+        featuredHref="#"
+        btnId="featured-content"
       ></FeatureBlock>
       <ContactUs mainTitle={t.contactUsTitle} contactList={t.contactInfo} />
     </Layout>
