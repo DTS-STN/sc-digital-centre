@@ -7,7 +7,7 @@ import Image from 'next/image'
 export default function FeatureBlock(props) {
   return (
     <div
-      className="flex flex-col justify-between sm:flex-row-reverse bg-light-solid layout-container mt-5"
+      className="flex flex-col justify-between sm:flex-row-reverse bg-light-solid "
       id="feature-block"
     >
       <div className="bg-splash-page bg-cover bg-center w-full py-32  ">
@@ -21,7 +21,7 @@ export default function FeatureBlock(props) {
         </div> */}
       </div>
 
-      <div className="py-3 sm:pr-3 grid mx-auto md:w-3/5">
+      <div className="p-3 grid sm:ml-7 md:ml-10 lg:ml-12 container mx-auto md:w-3/5">
         <h2 className="font-display font-bold text-xl md:text-2xl text-dark-solid">
           {`${props.title} ${props.featuredContent}`}
         </h2>
