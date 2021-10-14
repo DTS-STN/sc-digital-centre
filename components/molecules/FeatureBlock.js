@@ -26,7 +26,7 @@ export default function FeatureBlock(props) {
           {`${props.title} ${props.featuredContent}`}
         </h2>
         <p className="font-body my-5">{props.body}</p>
-        <div className="grid grid-cols-1 sm:flex">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
           <ActionButton id={props.btnId} href={props.featuredHref}>
             {props.buttonText}
           </ActionButton>
