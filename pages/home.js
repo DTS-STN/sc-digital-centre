@@ -3,6 +3,7 @@ import SearchCard from '../components/molecules/SearchCard'
 import { getLocalTopics } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { MostRequestedList } from '../components/molecules/MostRequestedList'
+import FeatureBlock from '../components/molecules/FeatureBlock'
 import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
 
@@ -91,6 +92,16 @@ export default function Home(props) {
         </div>
       </div>
 
+      {/* feature with image */}
+      <FeatureBlock
+        title="Featured: "
+        // featuredContent and body text will come form the CMS
+        featuredContent="Life Journeys"
+        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus, tortor vitae mattis viverra, ipsum lacus malesuada ligula, eu pharetra ipsum libero a diam."
+        buttonText="Text on button"
+        featuredHref="#"
+        btnId="featured-content"
+      ></FeatureBlock>
       <ContactUs mainTitle={t.contactUsTitle} contactList={t.contactInfo} />
     </Layout>
   )
