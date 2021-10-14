@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function TopTasks(props) {
   return (
     <>
-      <h2 className="font-display font-bold text-xl md:text-2xl text-dark-solid">
+      <h2 className="font-display font-bold text-2xl text-dark-solid mt-5">
         {props.topTasksHeader}
       </h2>
       <p className="mt-3 font-body md:hidden">{props.topTasksDescription}</p>

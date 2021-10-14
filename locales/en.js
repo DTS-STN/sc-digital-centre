@@ -32,6 +32,9 @@ export default {
   searchDesc:
     'Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits',
 
+  // Most Requested Page
+  mostRequestedTitle: 'Most Requested Page',
+
   //
   // Footer
   //

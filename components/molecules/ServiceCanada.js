@@ -13,17 +13,17 @@ export const ServiceCanada = ({
     <div>
       <h2 className="font-bold font-display text-2xl mb-4">{title}</h2>
       <p className="mb-4 font-body">{text}</p>
-      <div className="grid grid-cols-1 gap-3 md:flex">
+      <div className="flex justify-around md:grid md:grid-cols-1 md:gap-3">
         <ActionButton
           id="signInMyAccountId"
-          className="font-display text-xl shadow-md text-center rounded py-3 px-10 bg-deep-blue-solid text-white hover:bg-deep-blue-light md:mr-3"
+          className="font-display text-sm xs:text-base shadow-md text-center rounded py-2 px-1 xs:px-3 bg-deep-blue-solid text-white hover:bg-deep-blue-light"
           href={signInHref}
         >
           {signInText}
         </ActionButton>
         <ActionButton
           id="createMyAccountId"
-          className="font-display text-xl shadow-md text-center rounded py-3 px-10 border border-gray-500 bg-gray-light text-deep-blue-solid hover:bg-gray-dark"
+          className="font-display text-sm xs:text-base shadow-md text-center rounded py-2 border px-1 xs:px-3 border-gray-500 bg-gray-light text-deep-blue-solid hover:bg-gray-dark"
           href={createAccountHref}
         >
           {createAccountText}

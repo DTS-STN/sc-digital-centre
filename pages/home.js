@@ -19,69 +19,78 @@ export default function Home(props) {
         <SearchCard lang={props.locale} />
         <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
       </div>
-      <ServiceCanada
-        title="My Service Canada Account"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        signInHref="/"
-        signInText="Sign into My Account"
-        createAccountHref="/"
-        createAccountText="Create an Account"
-      />
-      <MostRequestedList
-        requestedList={[
-          {
-            id: 1,
-            title: 'Lorem Ipsum',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn1',
-          },
-          {
-            id: 2,
-            title: 'Lorem Ipsum',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn2',
-          },
-          {
-            id: 3,
-            title: 'Lorem Ipsum',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn3',
-          },
-          {
-            id: 4,
-            title: 'Lorem Ipsum',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn4',
-          },
-        ]}
-      />
-      <TopTasks
-        topTasksHeader="Top Tasks"
-        topTasksDescription="Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum."
-        topTasksList={[
-          { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
-          {
-            taskName: 'Access an ROE (Record of Employment)',
-            taskURL: '/home',
-          },
-          {
-            taskName: 'Activate my Service Canada Access Code (PAC)',
-            taskURL: '/home',
-          },
-          {
-            taskName: 'Update my address and contact information',
-            taskURL: '/home',
-          },
-        ]}
-      />
+      <div className="layout-container md:flex mt-5">
+        <div className=" lg:w-1/4">
+          <ServiceCanada
+            title="My Service Canada Account"
+            text="Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im."
+            signInHref="/"
+            signInText="Sign into My Account"
+            createAccountHref="/"
+            createAccountText="Create an Account"
+          />
+          <TopTasks
+            topTasksHeader="Top Tasks"
+            topTasksDescription="Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum."
+            topTasksList={[
+              { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
+              {
+                taskName: 'Access an ROE (Record of Employment)',
+                taskURL: '/home',
+              },
+              {
+                taskName: 'Activate my Service Canada Access Code (PAC)',
+                taskURL: '/home',
+              },
+              {
+                taskName: 'Update my address and contact information',
+                taskURL: '/home',
+              },
+            ]}
+          />
+        </div>
+        <div className="lg:w-3/4 md:pl-12">
+          <h2 className="font-bold font-display text-2xl mb-4">
+            {t.mostRequestedTitle}
+          </h2>
+          <MostRequestedList
+            requestedList={[
+              {
+                id: 1,
+                title: 'Lorem Ipsum',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                callToActionText: 'Lorem Ipsum',
+                callToActionHref: '/home',
+                btnId: 'btn1',
+              },
+              {
+                id: 2,
+                title: 'Lorem Ipsum',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                callToActionText: 'Lorem Ipsum',
+                callToActionHref: '/home',
+                btnId: 'btn2',
+              },
+              {
+                id: 3,
+                title: 'Lorem Ipsum',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                callToActionText: 'Lorem Ipsum',
+                callToActionHref: '/home',
+                btnId: 'btn3',
+              },
+              {
+                id: 4,
+                title: 'Lorem Ipsum',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                callToActionText: 'Lorem Ipsum',
+                callToActionHref: '/home',
+                btnId: 'btn4',
+              },
+            ]}
+          />
+        </div>
+      </div>
 
       {/* feature with image */}
       <FeatureBlock
