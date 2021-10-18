@@ -4,6 +4,7 @@ import SearchBar from '../atoms/SearchBar'
 export default function SearchCard(props) {
   return (
     <div
+      data-testid="searchCard"
       className={
         'flex flex-col sm:w-1/2 py-6 px-4 sm:pl-12 sm:py-8 sm:min-w-[27.5rem] lg:pl-20 lg:py-12 text-white space-y-4 bg-deep-blue-solid'
       }

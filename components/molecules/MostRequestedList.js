@@ -14,7 +14,10 @@ export const MostRequestedList = ({ requestedList }) => {
     </li>
   ))
   return (
-    <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 md:pl-1">
+    <ul
+      className="grid grid-cols-1 gap-6 md:grid-cols-2 md:pl-1"
+      data-testid="mostRequestedList"
+    >
       {requestedList ? displayMostRequested : ''}
     </ul>
   )

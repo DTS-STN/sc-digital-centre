@@ -3,7 +3,7 @@ import { ContactCard } from '../atoms/ContactCard'
 
 export const ContactUs = ({ mainTitle, contactList }) => {
   return (
-    <div className="layout-container">
+    <div className="layout-container" data-testid="contactUs">
       <h2 className="font-bold text-center text-2xl my-8">{mainTitle}</h2>
 
       <ul className="grid grid-cols-1 gap-5 md:grid-cols-3">
