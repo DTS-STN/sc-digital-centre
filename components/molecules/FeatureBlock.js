@@ -9,6 +9,7 @@ export default function FeatureBlock(props) {
     <div
       className="flex flex-col justify-between sm:flex-row-reverse bg-light-solid "
       id="feature-block"
+      data-testid="featureBlock"
     >
       <div className="bg-splash-page bg-cover bg-center w-full py-32  ">
         {/* <div className="aspect-w-16 aspect-h-9">

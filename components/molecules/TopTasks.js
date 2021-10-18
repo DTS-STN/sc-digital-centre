@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function TopTasks(props) {
   return (
-    <>
+    <div data-testid="topTasks">
       <h2 className="font-display font-bold text-2xl text-dark-solid mt-5">
         {props.topTasksHeader}
       </h2>
@@ -19,7 +19,7 @@ export default function TopTasks(props) {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }
 
