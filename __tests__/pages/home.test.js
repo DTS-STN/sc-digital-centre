@@ -30,9 +30,15 @@ describe('Home page', () => {
       asPath: '/',
     }))
   })
-  it('should render', () => {
-    render(<Home />)
+  it('should render in French', () => {
+    render(<Home locale="fr" />)
     const enLink = screen.getByText('English')
+    expect(enLink).toBeInTheDocument()
+  })
+
+  it('should render in English', () => {
+    render(<Home locale="en" />)
+    const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
   })
 
