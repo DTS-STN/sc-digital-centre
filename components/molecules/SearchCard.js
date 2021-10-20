@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import SearchBar from '../atoms/SearchBar'
+import Link from 'next/link'
 
 export default function SearchCard(props) {
   return (
@@ -18,8 +19,11 @@ export default function SearchCard(props) {
         btnText={props.searchBarText}
         btnClasses={props.lang === 'en' ? 'w-24' : 'w-28'}
       />
-
-      <a className="text-sm underline">{props.viewBenefitsServices}</a>
+      <Link href="/searchResult">
+        <a className="text-sm underline" lang={props.lang}>
+          {props.viewBenefitsServices}
+        </a>
+      </Link>
     </div>
   )
 }
