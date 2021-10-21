@@ -37,7 +37,6 @@ export async function getStaticProps({ locale }) {
   let topicsData = []
   let errorCode = false
 
-  console.log('current language is:', locale)
   //
   // IF content enabled get the data from the api
   //
