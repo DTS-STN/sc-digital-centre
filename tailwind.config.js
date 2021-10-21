@@ -87,5 +87,6 @@ module.exports = {
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),
+    require('tailwind-container-break-out'),
   ],
 }
