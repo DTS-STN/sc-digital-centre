@@ -38,4 +38,10 @@ describe('SearchResult page', () => {
     const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
   })
+
+  it('has no a11y violations', async () => {
+    const { container } = render(<SearchResult locale="en" />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
 })
