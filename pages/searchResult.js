@@ -1,11 +1,23 @@
 import Layout from '../components/organisms/Layout'
 import { getLocalTopics } from './api/getData'
+import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
 
 export default function SearchResult(props) {
   const t = props.locale === 'en' ? en : fr
+  const router = useRouter()
+
+  const [search, setSearch] = useState('')
+
+  useEffect(() => {
+    if (router.query.search) {
+      setSearch(router.query.search)
+    }
+  }, [router.query.search])
+
   return (
     <Layout locale={props.locale} title="searchResult">
       <h1 className="layout-container text-3xl">
@@ -13,6 +25,9 @@ export default function SearchResult(props) {
       </h1>
       <h2 className="layout-container text-2xl">
         Locale selected: {props.locale}.
+      </h2>
+      <h2 className="layout-container text-2xl">
+        Current search: {search ? search : 'No search specified'}.
       </h2>
     </Layout>
   )

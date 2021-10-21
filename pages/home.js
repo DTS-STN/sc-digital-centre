@@ -23,6 +23,7 @@ export default function Home(props) {
           viewBenefitsServices={t.searchViewAllBenefits}
           searchBarPlaceholder={t.searchPlaceholder}
           searchBarText={t.search}
+          onSubmitHref="/searchResult"
         />
         <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
       </div>

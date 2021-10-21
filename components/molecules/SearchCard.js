@@ -18,6 +18,7 @@ export default function SearchCard(props) {
         placeholderText={props.searchBarPlaceholder}
         btnText={props.searchBarText}
         btnClasses={props.lang === 'en' ? 'w-24' : 'w-28'}
+        onSubmitHref={props.onSubmitHref}
       />
       <Link href="/searchResult">
         <a className="text-sm underline" lang={props.lang}>
@@ -53,4 +54,8 @@ SearchCard.propTypes = {
    * Search Bar Text
    */
   searchBarText: PropTypes.string,
+  /**
+   * Optional on submit to send the user to another page.
+   */
+  onSubmitHref: PropTypes.string,
 }

@@ -25,6 +25,9 @@ describe('SearchResult page', () => {
     useRouter.mockImplementation(() => ({
       pathname: '/',
       asPath: '/',
+      query: {
+        search: '',
+      },
     }))
   })
   it('should render in French', () => {
