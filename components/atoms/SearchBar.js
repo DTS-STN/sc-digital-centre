@@ -1,15 +1,34 @@
 import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 /*
  *  Search Bar component
  */
 export default function SearchBar(props) {
+  const router = useRouter()
+  const [search, setSearch] = useState('')
+  const submitSearch = (e) => {
+    e.preventDefault()
+
+    //This is to redirect user
+    if (props.onSubmitHref) {
+      router.push({
+        pathname: props.onSubmitHref,
+        query: { search: search },
+      })
+    }
+
+    // Here is where we would emit the search to parent component in order to filter the content fragments.
+  }
+
   return (
-    <div className="flex flex-row">
+    <form className="flex flex-row" onSubmit={submitSearch}>
       <input
         placeholder={props.placeholderText}
         type="text"
         className="flex placeholder-gray-dark py-1 px-3 w-48 xs:w-auto text-black"
+        onChange={(e) => setSearch(e.target.value)}
       ></input>
       <button
         type="submit"
@@ -35,7 +54,7 @@ export default function SearchBar(props) {
         </svg>
         {props.btnText ?? ''}
       </button>
-    </div>
+    </form>
   )
 }
 
@@ -49,4 +68,9 @@ SearchBar.propTypes = {
    * Text for the placeholder/btn label text
    */
   placeholderText: PropTypes.string,
+
+  /*
+   * Page to send the user after on submit. Defaults to none
+   */
+  onSubmitHref: PropTypes.string,
 }

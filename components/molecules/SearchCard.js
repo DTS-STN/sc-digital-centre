@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import SearchBar from '../atoms/SearchBar'
+import Link from 'next/link'
 
 export default function SearchCard(props) {
   return (
@@ -17,9 +18,13 @@ export default function SearchCard(props) {
         placeholderText={props.searchBarPlaceholder}
         btnText={props.searchBarText}
         btnClasses={props.lang === 'en' ? 'w-24' : 'w-28'}
+        onSubmitHref={props.onSubmitHref}
       />
-
-      <a className="text-sm underline">{props.viewBenefitsServices}</a>
+      <Link href="/searchResult">
+        <a className="text-sm underline" lang={props.lang}>
+          {props.viewBenefitsServices}
+        </a>
+      </Link>
     </div>
   )
 }
@@ -49,4 +54,8 @@ SearchCard.propTypes = {
    * Search Bar Text
    */
   searchBarText: PropTypes.string,
+  /**
+   * Optional on submit to send the user to another page.
+   */
+  onSubmitHref: PropTypes.string,
 }
