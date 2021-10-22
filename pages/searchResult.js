@@ -12,6 +12,44 @@ export default function SearchResult(props) {
   const router = useRouter()
 
   const [search, setSearch] = useState('')
+  const [benefitList, setbenefitList] = useState([
+    {
+      id: 1,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn1',
+    },
+    {
+      id: 2,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn2',
+    },
+    {
+      id: 3,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn3',
+    },
+    {
+      id: 4,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn4',
+    },
+  ])
 
   useEffect(() => {
     if (router.query.search) {
@@ -27,46 +65,7 @@ export default function SearchResult(props) {
       <h2 className="layout-container text-2xl">
         Current search: {search ? search : 'No search specified'}.
       </h2>
-      <CardList
-        cardList={[
-          {
-            id: 1,
-            title: 'Lorem Ipsum',
-            tag: 'Public Pension',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn1',
-          },
-          {
-            id: 2,
-            title: 'Lorem Ipsum',
-            tag: 'Public Pension',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn2',
-          },
-          {
-            id: 3,
-            title: 'Lorem Ipsum',
-            tag: 'Public Pension',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn3',
-          },
-          {
-            id: 4,
-            title: 'Lorem Ipsum',
-            tag: 'Public Pension',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            callToActionText: 'Lorem Ipsum',
-            callToActionHref: '/home',
-            btnId: 'btn4',
-          },
-        ]}
-      />
+      <CardList cardList={benefitList} />
     </Layout>
   )
 }
