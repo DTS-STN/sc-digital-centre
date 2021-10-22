@@ -54,9 +54,9 @@ describe('Home page', () => {
     render(<Home />)
     expect(screen.getByTestId('topTasks')).toBeTruthy()
   })
-  it('should render mostRequestedList', () => {
+  it('should render cardList', () => {
     render(<Home />)
-    expect(screen.getByTestId('mostRequestedList')).toBeTruthy()
+    expect(screen.getByTestId('cardList')).toBeTruthy()
   })
   it('should render featureBlock', () => {
     render(<Home />)

@@ -17,7 +17,7 @@ export const CardList = ({ cardList }) => {
   return (
     <ul
       className="grid grid-cols-1 gap-6 md:grid-cols-2 md:pl-1"
-      data-testid="mostRequestedList"
+      data-testid="cardList"
     >
       {cardList ? displayCards : ''}
     </ul>
