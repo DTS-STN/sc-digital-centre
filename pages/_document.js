@@ -10,14 +10,17 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{ __html: 'console.log("Do analytics")' }}
-          ></script>
+          {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
+            <script src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL} />
+          ) : (
+            ''
+          )}
         </Head>
         <body>
           <Main />
           <NextScript />
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script type="text/javascript">_satellite.pageBottom();</script>
         </body>
       </Html>
     )
