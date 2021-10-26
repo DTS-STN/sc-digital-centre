@@ -1,33 +1,34 @@
 import PropTypes from 'prop-types'
-import { MostRequestedCard } from '../atoms/MostRequestedCard'
+import { Card } from '../atoms/Card'
 
-export const MostRequestedList = ({ requestedList }) => {
-  const displayMostRequested = requestedList.map((requested) => (
-    <li key={requested.id}>
-      <MostRequestedCard
-        title={requested.title}
-        text={requested.text}
-        callToActionText={requested.callToActionText}
-        callToActionHref={requested.callToActionHref}
-        btnId={requested.btnId}
+export const CardList = ({ cardList }) => {
+  const displayCards = cardList.map((card) => (
+    <li key={card.id}>
+      <Card
+        title={card.title}
+        tag={card.tag}
+        text={card.text}
+        callToActionText={card.callToActionText}
+        callToActionHref={card.callToActionHref}
+        btnId={card.btnId}
       />
     </li>
   ))
   return (
     <ul
       className="grid grid-cols-1 gap-6 md:grid-cols-2 md:pl-1"
-      data-testid="mostRequestedList"
+      data-testid="cardList"
     >
-      {requestedList ? displayMostRequested : ''}
+      {cardList ? displayCards : ''}
     </ul>
   )
 }
 
-MostRequestedList.propTypes = {
+CardList.propTypes = {
   /**
-   * The requested page that the card will display
+   * The card page that the card will display
    */
-  requestedList: PropTypes.arrayOf(
+  cardList: PropTypes.arrayOf(
     PropTypes.shape({
       /**
        * Title for the card

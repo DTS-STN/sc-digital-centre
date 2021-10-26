@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import { MostRequestedCard } from './MostRequestedCard'
+import { Card } from './Card'
 
 import { useRouter } from 'next/router'
 // mocks useRouter to be able to use component' router.asPath
@@ -19,15 +19,16 @@ jest.mock('next/link', () => ({
 }))
 expect.extend(toHaveNoViolations)
 
-describe('MostRequestedCard', () => {
-  it('renders MostRequestedCard', () => {
+describe('Card', () => {
+  it('renders Card', () => {
     useRouter.mockImplementation(() => ({
       pathname: '/',
       asPath: '/',
     }))
     render(
-      <MostRequestedCard
+      <Card
         title="title test"
+        tag="tag test"
         text="text test"
         callToActionHref="href test"
         callToActionText="link test"
@@ -35,9 +36,11 @@ describe('MostRequestedCard', () => {
       />
     )
     const titleText = screen.getByText('title test')
+    const tagText = screen.getByText('tag test')
     const textText = screen.getByText('text test')
     const linkText = screen.getByText('link test')
     expect(titleText).toBeInTheDocument()
+    expect(tagText).toBeInTheDocument()
     expect(textText).toBeInTheDocument()
     expect(linkText).toBeInTheDocument()
   })
@@ -48,8 +51,9 @@ describe('MostRequestedCard', () => {
       asPath: '/',
     }))
     const { container } = render(
-      <MostRequestedCard
+      <Card
         title="title test"
+        tag="tag test"
         text="text test"
         callToActionHref="href test"
         callToActionText="link test"

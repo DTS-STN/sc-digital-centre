@@ -2,7 +2,7 @@ import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
 import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
-import { MostRequestedList } from '../components/molecules/MostRequestedList'
+import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
 import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
@@ -61,11 +61,12 @@ export default function Home(props) {
           <h2 className="font-bold font-display text-2xl mb-4">
             {t.mostRequestedTitle}
           </h2>
-          <MostRequestedList
-            requestedList={[
+          <CardList
+            cardList={[
               {
                 id: 1,
                 title: 'Lorem Ipsum',
+                tag: 'Public Pension',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 callToActionText: 'Lorem Ipsum',
                 callToActionHref: '/home',
@@ -74,6 +75,7 @@ export default function Home(props) {
               {
                 id: 2,
                 title: 'Lorem Ipsum',
+                tag: 'Public Pension',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 callToActionText: 'Lorem Ipsum',
                 callToActionHref: '/home',
@@ -82,6 +84,7 @@ export default function Home(props) {
               {
                 id: 3,
                 title: 'Lorem Ipsum',
+                tag: 'Public Pension',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 callToActionText: 'Lorem Ipsum',
                 callToActionHref: '/home',
@@ -90,6 +93,7 @@ export default function Home(props) {
               {
                 id: 4,
                 title: 'Lorem Ipsum',
+                tag: 'Public Pension',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 callToActionText: 'Lorem Ipsum',
                 callToActionHref: '/home',
