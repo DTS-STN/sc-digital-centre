@@ -27,6 +27,12 @@ module.exports = {
     localDetection: true,
   },
   //
+  // Image configured host
+  //
+  images: {
+    domains: ['www.canada.ca'],
+  },
+  //
   // rewrites setup
   //
   async rewrites() {
