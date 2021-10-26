@@ -1,20 +1,22 @@
 import PropTypes from 'prop-types'
-import { ActionButton } from '../atoms/ActionButton'
+import { ActionButton } from './ActionButton'
 
-export const MostRequestedCard = ({
+export const Card = ({
   title,
+  tag,
   text,
   callToActionHref,
   callToActionText,
   btnId,
 }) => {
   return (
-    <div className="shadow-most-requested p-6">
-      <h3 className="font-bold font-display text-xl mb-5">{title}</h3>
-      <p className="mb-5">{text}</p>
+    <div className="shadow-card p-6">
+      <h3 className="font-bold font-display text-xl">{title}</h3>
+      <p className="">{tag}</p>
+      <p className="my-5">{text}</p>
       <ActionButton
         id={btnId}
-        className="font-display text-xl font-semibold underline text-deep-blue-solid hover:text-blue-800 visited:text-purple-600"
+        className="font-display text-xl underline text-white bg-gray-500 rounded px-4 py-2 flex justify-center max-w-sm mx-auto"
         href={callToActionHref}
       >
         {callToActionText}
@@ -23,11 +25,16 @@ export const MostRequestedCard = ({
   )
 }
 
-MostRequestedCard.propTypes = {
+Card.propTypes = {
   /**
    * The title that the card will display
    */
   title: PropTypes.string.isRequired,
+
+  /**
+   * The tag that the card will display
+   */
+  tag: PropTypes.string.isRequired,
 
   /**
    * The text that the card will display

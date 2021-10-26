@@ -85,7 +85,7 @@ export default function Header({ language, t }) {
           loginText={t.login}
           items={[
             {
-              link: '/',
+              link: '/searchResult',
               text: t.serviceAndBenefits,
             },
             {

@@ -77,7 +77,7 @@ module.exports = {
         'splash-page': 'url(../public/sp-bg-1.jpg)',
       }),
       boxShadow: {
-        'most-requested': '0px 2px 8px rgba(0, 0, 0, 0.25)',
+        card: '0px 2px 8px rgba(0, 0, 0, 0.25)',
       },
     },
   },

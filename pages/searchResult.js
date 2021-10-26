@@ -2,6 +2,7 @@ import Layout from '../components/organisms/Layout'
 import { getLocalTopics } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import { CardList } from '../components/molecules/CardList'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
@@ -11,6 +12,44 @@ export default function SearchResult(props) {
   const router = useRouter()
 
   const [search, setSearch] = useState('')
+  const [benefitList, setbenefitList] = useState([
+    {
+      id: 1,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn1',
+    },
+    {
+      id: 2,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn2',
+    },
+    {
+      id: 3,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn3',
+    },
+    {
+      id: 4,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn4',
+    },
+  ])
 
   useEffect(() => {
     if (router.query.search) {
@@ -20,15 +59,13 @@ export default function SearchResult(props) {
 
   return (
     <Layout locale={props.locale} title="searchResult">
-      <h1 className="layout-container text-3xl">
-        Search results page placeholder.
-      </h1>
       <h2 className="layout-container text-2xl">
         Locale selected: {props.locale}.
       </h2>
       <h2 className="layout-container text-2xl">
         Current search: {search ? search : 'No search specified'}.
       </h2>
+      <CardList cardList={benefitList} />
     </Layout>
   )
 }
