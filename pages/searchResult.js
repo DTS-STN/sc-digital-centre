@@ -1,5 +1,5 @@
 import Layout from '../components/organisms/Layout'
-import { getLocalTopics } from './api/getData'
+import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { CardList } from '../components/molecules/CardList'
@@ -71,36 +71,32 @@ export default function SearchResult(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  let topicsData = []
+  let benefits = []
   let errorCode = false
 
   //
   // IF content enabled get the data from the api
   //
 
-  if (!process.env.NEXT_CONTENT_API) {
-    // const { apiData, error } = await getTopics(locale);
-
-    let topics = []
-
-    // extract data from apiData then add it to the array topics
-
-    topicsData = topics
-    // errorCode = error;
-    errorCode = false
+  if (process.env.NEXT_CONTENT_API) {
+    const { apiData, error } = await getBenefitsAndServices(locale)
+    errorCode = error
+    if (apiData && !errorCode) {
+      benefits = apiData.entities
+    }
   } else {
     //
     // Else get the content from the local file
     //
-    const { localData } = getLocalTopics()
+    const { localData } = getLocalBenefits()
 
-    topicsData = localData
+    benefits = localData
     errorCode = false
   }
 
   return {
     props: {
-      topicsData,
+      benefits,
       errorCode,
       locale,
     },

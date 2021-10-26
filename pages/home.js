@@ -1,6 +1,6 @@
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
-import { getLocalTopics } from './api/getData'
+import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
@@ -120,36 +120,36 @@ export default function Home(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  let topicsData = []
+  let benefits = []
   let errorCode = false
 
   //
   // IF content enabled get the data from the api
   //
 
-  if (!process.env.NEXT_CONTENT_API) {
-    // const { apiData, error } = await getTopics(locale);
+  if (process.env.NEXT_CONTENT_API) {
+    // Call /api to fetch "mostRequested benefits"
 
     let topics = []
 
     // extract data from apiData then add it to the array topics
 
-    topicsData = topics
+    benefits = topics
     // errorCode = error;
     errorCode = false
   } else {
     //
     // Else get the content from the local file
     //
-    const { localData } = getLocalTopics()
+    const { localData } = getLocalBenefits()
 
-    topicsData = localData
+    benefits = localData
     errorCode = false
   }
 
   return {
     props: {
-      topicsData,
+      benefits,
       errorCode,
       locale,
     },
