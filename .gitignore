@@ -9,6 +9,8 @@
 /coverage
 /cypress/screenshots
 /cypress/videos
+/cypress/reports
+/cypress/results
 
 # next.js
 /.next/
@@ -27,6 +29,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env.local
 .env.development.local
 .env.test.local
