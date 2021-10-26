@@ -14,7 +14,7 @@ export default function Layout({ children, locale, title }) {
 
   return (
     <div>
-      <Meta title={title} />
+      <Meta title={title} lang={locale} />
 
       <Header language={locale} t={t} />
 
