@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1635345182782" clover="3.2.0">
-  <project timestamp="1635345182782" name="All files">
-    <metrics statements="103" coveredstatements="67" conditionals="62" coveredconditionals="45" methods="37" coveredmethods="28" elements="202" coveredelements="140" complexity="0" loc="103" ncloc="103" packages="5" files="24" classes="24"/>
+<coverage generated="1635363831308" clover="3.2.0">
+  <project timestamp="1635363831309" name="All files">
+    <metrics statements="106" coveredstatements="67" conditionals="66" coveredconditionals="47" methods="39" coveredmethods="28" elements="211" coveredelements="142" complexity="0" loc="106" ncloc="106" packages="5" files="25" classes="25"/>
     <package name="components.atoms">
-      <metrics statements="27" coveredstatements="23" conditionals="12" coveredconditionals="10" methods="10" coveredmethods="8"/>
+      <metrics statements="27" coveredstatements="23" conditionals="14" coveredconditionals="12" methods="10" coveredmethods="8"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
         <metrics statements="3" coveredstatements="3" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="20" count="138" type="stmt"/>
@@ -35,10 +35,10 @@
         <line num="20" count="4" type="stmt"/>
       </file>
       <file name="Meta.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/Meta.js">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="5" count="13" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
       </file>
       <file name="SearchBar.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/SearchBar.js">
         <metrics statements="9" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="1"/>
@@ -118,16 +118,22 @@
       <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="Layout.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/organisms/Layout.js">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="13" count="12" type="cond" truecount="2" falsecount="0"/>
-        <line num="15" count="12" type="stmt"/>
-        <line num="95" count="2" type="stmt"/>
+        <line num="14" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="99" count="2" type="stmt"/>
       </file>
     </package>
     <package name="pages">
-      <metrics statements="33" coveredstatements="10" conditionals="16" coveredconditionals="6" methods="7" coveredmethods="4"/>
+      <metrics statements="36" coveredstatements="10" conditionals="18" coveredconditionals="6" methods="9" coveredmethods="4"/>
       <file name="_app.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/_app.js">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="_document.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/_document.js">
+        <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
       </file>
       <file name="home.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/home.js">
         <metrics statements="12" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
