@@ -11,7 +11,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
-            <script defer src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL} />
+            <script async src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL} />
           ) : (
             ''
           )}
@@ -20,12 +20,9 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           <script
-            defer
+            async
             src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
           ></script>
-          <script defer type="text/javascript">
-            _satellite.pageBottom();
-          </script>
         </body>
       </Html>
     )
