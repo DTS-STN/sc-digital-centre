@@ -32,6 +32,9 @@ export default {
   searchDesc:
     '(FR) Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits',
 
+  //Search page
+  clearResults: '(FR) Clear results',
+
   // Service Canada
   serviceCanadaTitle: '(FR) My Service Canada Account',
   serviceCanadaText:

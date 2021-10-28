@@ -1,4 +1,6 @@
 import Layout from '../components/organisms/Layout'
+import SearchHeader from '../components/atoms/SearchHeader'
+
 import { getLocalTopics } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
@@ -20,6 +22,16 @@ export default function SearchResult(props) {
 
   return (
     <Layout locale={props.locale} title="searchResult">
+      <SearchHeader
+        lang={props.locale}
+        headerText={'Benefits and Services'}
+        paraText={t.searchDesc}
+        viewBenefitsServices={t.searchViewAllBenefits}
+        searchBarPlaceholder={t.searchPlaceholder}
+        searchBarText={t.search}
+        btnClearText={t.clearResults}
+        onSubmitHref="/searchResult"
+      />
       <h1 className="layout-container text-3xl">
         Search results page placeholder.
       </h1>

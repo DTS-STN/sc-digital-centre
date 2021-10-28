@@ -27,14 +27,14 @@ export default function SearchBar(props) {
       <input
         placeholder={props.placeholderText}
         type="text"
-        className="flex placeholder-gray-dark py-1 px-3 w-48 xs:w-auto text-black"
+        className="flex placeholder-gray-dark py-1 px-3 w-36 xs:w-auto text-black"
         onChange={(e) => setSearch(e.target.value)}
       ></input>
       <button
         type="submit"
         aria-label={props.placeholderText}
         className={
-          'flex text-white py-1 bg-deep-blue-solid border border-white ' +
+          'flex align-middle text-white py-1 bg-deep-blue-solid ' +
           props.btnClasses
         }
       >
