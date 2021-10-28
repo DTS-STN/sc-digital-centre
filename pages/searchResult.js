@@ -25,11 +25,10 @@ export default function SearchResult(props) {
       <SearchHeader
         lang={props.locale}
         headerText={'Benefits and Services'}
-        paraText={t.searchDesc}
-        viewBenefitsServices={t.searchViewAllBenefits}
         searchBarPlaceholder={t.searchPlaceholder}
         searchBarText={t.search}
         btnClearText={t.clearResults}
+        btnClearLabel={t.clearResults}
         onSubmitHref="/searchResult"
       />
       <h1 className="layout-container text-3xl">
