@@ -47,6 +47,7 @@ object Build: BuildType({
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
         param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S-admin")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
+        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "//assets.adobedtm.com/be5dfd287373/0127575cd23a/launch-913b1beddf7a-staging.min.js")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentre)

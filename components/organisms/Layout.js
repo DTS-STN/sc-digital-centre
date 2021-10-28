@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import Script from 'next/script'
 import Meta from '../atoms/Meta'
 import Header from '../molecules/Header'
 import Footer from '../molecules/Footer'
@@ -14,7 +15,7 @@ export default function Layout({ children, locale, title }) {
 
   return (
     <div>
-      <Meta title={title} />
+      <Meta title={title} lang={locale} />
 
       <Header language={locale} t={t} />
 
@@ -88,6 +89,9 @@ export default function Layout({ children, locale, title }) {
           },
         ]}
       />
+      <Script id="AdobeSatellite" type="text/javascript">
+        _satellite.pageBottom();
+      </Script>
     </div>
   )
 }

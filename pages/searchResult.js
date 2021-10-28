@@ -1,9 +1,9 @@
 import Layout from '../components/organisms/Layout'
 import SearchHeader from '../components/atoms/SearchHeader'
-
-import { getLocalTopics } from './api/getData'
+import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import { CardList } from '../components/molecules/CardList'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
@@ -13,6 +13,44 @@ export default function SearchResult(props) {
   const router = useRouter()
 
   const [search, setSearch] = useState('')
+  const [benefitList, setbenefitList] = useState([
+    {
+      id: 1,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn1',
+    },
+    {
+      id: 2,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn2',
+    },
+    {
+      id: 3,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn3',
+    },
+    {
+      id: 4,
+      title: 'Lorem Ipsum',
+      tag: 'Public Pension',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      callToActionText: 'Lorem Ipsum',
+      callToActionHref: '/searchResult',
+      btnId: 'btn4',
+    },
+  ])
 
   useEffect(() => {
     if (router.query.search) {
@@ -40,41 +78,38 @@ export default function SearchResult(props) {
       <h2 className="layout-container text-2xl">
         Current search: {search ? search : 'No search specified'}.
       </h2>
+      <CardList cardList={benefitList} />
     </Layout>
   )
 }
 
 export async function getStaticProps({ locale }) {
-  let topicsData = []
+  let benefits = []
   let errorCode = false
 
   //
   // IF content enabled get the data from the api
   //
 
-  if (!process.env.NEXT_CONTENT_API) {
-    // const { apiData, error } = await getTopics(locale);
-
-    let topics = []
-
-    // extract data from apiData then add it to the array topics
-
-    topicsData = topics
-    // errorCode = error;
-    errorCode = false
+  if (process.env.NEXT_CONTENT_API) {
+    const { apiData, error } = await getBenefitsAndServices(locale)
+    errorCode = error
+    if (apiData && !errorCode) {
+      benefits = apiData.entities
+    }
   } else {
     //
     // Else get the content from the local file
     //
-    const { localData } = getLocalTopics()
+    const { localData } = getLocalBenefits()
 
-    topicsData = localData
+    benefits = localData
     errorCode = false
   }
 
   return {
     props: {
-      topicsData,
+      benefits,
       errorCode,
       locale,
     },

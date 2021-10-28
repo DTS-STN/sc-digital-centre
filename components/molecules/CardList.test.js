@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import { MostRequestedList } from './MostRequestedList'
+import { CardList } from './CardList'
 
 import { useRouter } from 'next/router'
 // mocks useRouter to be able to use component' router.asPath
@@ -19,18 +19,19 @@ jest.mock('next/link', () => ({
 }))
 expect.extend(toHaveNoViolations)
 
-describe('MostRequestedList', () => {
-  it('renders MostRequestedList', () => {
+describe('CardList', () => {
+  it('renders CardList', () => {
     useRouter.mockImplementation(() => ({
       pathname: '/',
       asPath: '/',
     }))
     render(
-      <MostRequestedList
-        requestedList={[
+      <CardList
+        cardList={[
           {
             id: 1,
             title: 'titleTest',
+            tag: 'tag test',
             text: 'text test',
             callToActionText: 'CallToActionTest',
             callToActionHref: '/home',
@@ -40,9 +41,11 @@ describe('MostRequestedList', () => {
       />
     )
     const titleText = screen.getByText('titleTest')
+    const tagText = screen.getByText('tag test')
     const textText = screen.getByText('text test')
     const linkText = screen.getByText('CallToActionTest')
     expect(titleText).toBeInTheDocument()
+    expect(tagText).toBeInTheDocument()
     expect(textText).toBeInTheDocument()
     expect(linkText).toBeInTheDocument()
   })
@@ -53,11 +56,12 @@ describe('MostRequestedList', () => {
       asPath: '/',
     }))
     const { container } = render(
-      <MostRequestedList
-        requestedList={[
+      <CardList
+        cardList={[
           {
             id: 1,
             title: 'titleTest',
+            tag: 'tag test',
             text: 'text test',
             callToActionText: 'CallToActionTest',
             callToActionHref: '/home',
