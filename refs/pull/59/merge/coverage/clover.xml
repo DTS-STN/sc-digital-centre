@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1635524921932" clover="3.2.0">
-  <project timestamp="1635524921932" name="All files">
+<coverage generated="1635532295496" clover="3.2.0">
+  <project timestamp="1635532295496" name="All files">
     <metrics statements="108" coveredstatements="69" conditionals="66" coveredconditionals="46" methods="40" coveredmethods="29" elements="214" coveredelements="144" complexity="0" loc="108" ncloc="108" packages="5" files="26" classes="26"/>
     <package name="components.atoms">
       <metrics statements="27" coveredstatements="23" conditionals="14" coveredconditionals="12" methods="10" coveredmethods="8"/>
@@ -104,7 +104,7 @@
       <file name="SearchHeader.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/SearchHeader.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="6" type="stmt"/>
-        <line num="48" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
       </file>
       <file name="ServiceCanada.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/ServiceCanada.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
