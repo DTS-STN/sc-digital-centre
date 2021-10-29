@@ -5,7 +5,7 @@
 // Fetch ALL topics from local Data If no API is needed
 //
 
-export function getLocalTopics() {
+export function getLocalBenefits() {
   // const fullPath = path.join(process.cwd(), "pages", "api", "topics.json");
   // const fileContents = fs.readFileSync(fullPath, "utf8");
   // const localData = JSON.parse(fileContents).topics;
@@ -18,12 +18,10 @@ export function getLocalTopics() {
 // Fetch ALL topics from API when available
 //
 
-export async function getTopics(language) {
-  const res = await fetch(
-    `${process.env.NEXT_CONTENT_API}${language}/lj-new-child.json?date=${process.env.NEXT_PUBLIC_BUILD_DATE}`
-  )
-  const error = res.ok ? false : res.statusCode
-  const apiData = await res.json()
+export async function getBenefitsAndServices(language) {
+  const res = await fetch(`${process.env.NEXT_CONTENT_API}${language}/dc.json`)
+  const error = res.ok ? false : res.status
+  const apiData = res.ok ? await res.json() : null
 
   return { apiData, error }
 }

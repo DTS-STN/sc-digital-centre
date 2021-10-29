@@ -1,8 +1,8 @@
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
-import { getLocalTopics } from './api/getData'
+import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
-import { MostRequestedList } from '../components/molecules/MostRequestedList'
+import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
 import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
@@ -61,11 +61,12 @@ export default function Home(props) {
           <h2 className="font-bold font-display text-2xl mb-4">
             {t.mostRequestedTitle}
           </h2>
-          <MostRequestedList
-            requestedList={[
+          <CardList
+            cardList={[
               {
                 id: 1,
                 title: 'Lorem Ipsum',
+                tag: 'Public Pension',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 callToActionText: 'Lorem Ipsum',
                 callToActionHref: '/home',
@@ -74,6 +75,7 @@ export default function Home(props) {
               {
                 id: 2,
                 title: 'Lorem Ipsum',
+                tag: 'Public Pension',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 callToActionText: 'Lorem Ipsum',
                 callToActionHref: '/home',
@@ -82,6 +84,7 @@ export default function Home(props) {
               {
                 id: 3,
                 title: 'Lorem Ipsum',
+                tag: 'Public Pension',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 callToActionText: 'Lorem Ipsum',
                 callToActionHref: '/home',
@@ -90,6 +93,7 @@ export default function Home(props) {
               {
                 id: 4,
                 title: 'Lorem Ipsum',
+                tag: 'Public Pension',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 callToActionText: 'Lorem Ipsum',
                 callToActionHref: '/home',
@@ -116,36 +120,36 @@ export default function Home(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  let topicsData = []
+  let benefits = []
   let errorCode = false
 
   //
   // IF content enabled get the data from the api
   //
 
-  if (!process.env.NEXT_CONTENT_API) {
-    // const { apiData, error } = await getTopics(locale);
+  if (process.env.NEXT_CONTENT_API) {
+    // Call /api to fetch "mostRequested benefits"
 
     let topics = []
 
     // extract data from apiData then add it to the array topics
 
-    topicsData = topics
+    benefits = topics
     // errorCode = error;
     errorCode = false
   } else {
     //
     // Else get the content from the local file
     //
-    const { localData } = getLocalTopics()
+    const { localData } = getLocalBenefits()
 
-    topicsData = localData
+    benefits = localData
     errorCode = false
   }
 
   return {
     props: {
-      topicsData,
+      benefits,
       errorCode,
       locale,
     },
