@@ -33,7 +33,8 @@ export default {
     'Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits',
 
   //Search page
-  clearResults: 'Clear results',
+  clearResults: 'Clear search',
+  filterResults: 'Filters',
 
   // Service Canada
   serviceCanadaTitle: 'My Service Canada Account',

@@ -17,9 +17,7 @@ export default function SearchCard(props) {
       <SearchBar
         placeholderText={props.searchBarPlaceholder}
         btnText={props.searchBarText}
-        btnClasses={
-          (props.lang === 'en' ? 'w-24' : 'w-28') + ' border border-white'
-        }
+        btnClasses=" border border-white"
         onSubmitHref={props.onSubmitHref}
       />
       <Link href="/searchResult">

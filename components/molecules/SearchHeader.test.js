@@ -41,6 +41,8 @@ describe('SearchHeader', () => {
         searchBarText={'t.search'}
         btnClearText={'t.clearResults'}
         btnClearLabel={'t.clearResults'}
+        btnFilterText={'t.filterResults'}
+        btnFilterLabel={'t.filterResults'}
         onSubmitHref="/searchResult"
       />
     )

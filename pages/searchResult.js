@@ -1,5 +1,5 @@
 import Layout from '../components/organisms/Layout'
-import SearchHeader from '../components/atoms/SearchHeader'
+import SearchHeader from '../components/molecules/SearchHeader'
 
 import { getLocalTopics } from './api/getData'
 import { useRouter } from 'next/router'
@@ -24,11 +24,14 @@ export default function SearchResult(props) {
     <Layout locale={props.locale} title="searchResult">
       <SearchHeader
         lang={props.locale}
-        headerText={'Benefits and Services'}
+        headerText={'Search Benefits'}
+        inputText={search ?? ''}
         searchBarPlaceholder={t.searchPlaceholder}
         searchBarText={t.search}
         btnClearText={t.clearResults}
         btnClearLabel={t.clearResults}
+        btnFilterText={t.filterResults}
+        btnFilterLabel={t.filterResults}
         onSubmitHref="/searchResult"
       />
       <h1 className="layout-container text-3xl">

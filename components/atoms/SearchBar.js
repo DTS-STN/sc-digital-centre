@@ -23,25 +23,26 @@ export default function SearchBar(props) {
   }
 
   return (
-    <form className="flex flex-row" onSubmit={submitSearch}>
+    <form className="flex" onSubmit={submitSearch}>
       <input
         placeholder={props.placeholderText}
         type="text"
-        className="flex placeholder-gray-dark py-1 px-3 w-36 xs:w-auto text-black"
+        value={props.inputText}
+        className="block placeholder-gray-dark py-1 px-3 w-36 xs:w-48 sm:w-auto text-black"
         onChange={(e) => setSearch(e.target.value)}
-      ></input>
+      />
       <button
         type="submit"
         aria-label={props.placeholderText}
         className={
-          'flex align-middle text-white py-1 bg-deep-blue-solid ' +
+          'inline-block align-middle text-white w-auto py-1 pr-2 bg-deep-blue-solid ' +
           props.btnClasses
         }
       >
         {/* search icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 block my-auto mx-[0.375rem]"
+          className="h-5 w-5 inline-block my-auto mx-[0.375rem]"
           viewBox="0 0 20 20"
           fill="currentColor"
           aria-hidden="true"
@@ -73,4 +74,9 @@ SearchBar.propTypes = {
    * Page to send the user after on submit. Defaults to none
    */
   onSubmitHref: PropTypes.string,
+
+  /*
+   * Any text that should exist in the input beforehand
+   */
+  inputText: PropTypes.string,
 }
