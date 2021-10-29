@@ -4,11 +4,8 @@ import SearchBar from '../atoms/SearchBar'
 export default function SearchHeader(props) {
   return (
     <div className="flex flex-col w-full md:layout-container text-white ">
-      <div className="flex w-full py-2 md:py-6 px-6 bg-gray-light space-y-2 md:space-y-0 md:space-x-2 lg:space-x-6">
-        <h2 className="block text-xl text-black font-bold">
-          {' '}
-          {props.headerText}{' '}
-        </h2>
+      <div className="block md:flex w-full py-2 md:py-6 px-6 bg-gray-light space-y-2 md:space-y-0 md:space-x-2 lg:space-x-6">
+        <h2 className="text-xl text-black font-bold">{props.headerText}</h2>
         {/* note that the search button's left padding looks like more (approx 2 on the tailwind scale more) than the right padding of the same amount */}
         <SearchBar
           placeholderText={props.searchBarPlaceholder}
