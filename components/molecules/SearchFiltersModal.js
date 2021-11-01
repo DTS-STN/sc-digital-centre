@@ -11,13 +11,12 @@ export default function SearchFiltersModal(props) {
           <h3 className="text-xl mb-6"> Filters </h3>
 
           <div className="mb-4 children:block">
-            <label id="age-range-label" className="  mb-2 ">
-              {' '}
-              Age Range{' '}
+            <label htmlFor="age-range" id="age-range-label" className="mb-2">
+              Age Range
             </label>
             <select
               name="age-range"
-              aria-labelledby="age-range-label"
+              id="age-range"
               className="border border-gray-solid bg-gray-100 p-2 text-gray-dark"
             >
               <option value="0">Under 18 years old</option>
@@ -26,25 +25,24 @@ export default function SearchFiltersModal(props) {
           </div>
 
           {/* Alternatively, we could do something like this 
-                    <FormElement
-                        name="age-range"
-                        labelText="Age Range"
-                        >                        
-                        <select name="age-range-select" aria-labelledby="age-range-label" className="  border border-gray-solid">
-                            <option value="0">Under 18 years old</option>
-                            <option value="1">18-100 bajillion</option>
-                        </select>
-                    </FormElement>
+                        <FormElement
+                            name="age-range"
+                            labelText="Age Range"
+                            >            
+                            <select name="age-range-select" aria-labelledby="age-range-label" className=" border border-gray-solid">
+                                <option value="0">Under 18 years old</option>
+                                <option value="1">18-100 bajillion</option>
+                            </select>
+                        </FormElement>
                     */}
 
           <div className="mb-4 children:block">
-            <label id="income-label" className="  mb-2 ">
-              {' '}
-              Annual Income{' '}
+            <label htmlFor="income" id="income-label" className="mb-2">
+              Annual Income
             </label>
             <select
               name="income"
-              aria-labelledby="income-label"
+              id="income"
               className="border border-gray-solid bg-gray-100 p-2 text-gray-dark"
             >
               <option value="0">Between $0 - $23999</option>
@@ -55,8 +53,7 @@ export default function SearchFiltersModal(props) {
 
           <div className="mb-4 children:block children:mb-2 ">
             <label id="eligibility-label" className="">
-              {' '}
-              Eligibility Criteria{' '}
+              Eligibility Criteria
             </label>
             <div className="children:align-middle">
               <input
@@ -65,7 +62,10 @@ export default function SearchFiltersModal(props) {
                 id="eligibility-living-with-disability"
                 className="w-6 h-6 border-gray-solid"
               />
-              <label for="eligibility-living-with-disability" className="ml-2 ">
+              <label
+                htmlFor="eligibility-living-with-disability"
+                className="ml-2 "
+              >
                 living with a disability
               </label>
             </div>
@@ -76,7 +76,10 @@ export default function SearchFiltersModal(props) {
                 id="eligibility-caregiver-to-disability"
                 className="w-6 h-6 border-gray-solid"
               />
-              <label for="eligibility-caregiver-to-disability" className="ml-2">
+              <label
+                htmlFor="eligibility-caregiver-to-disability"
+                className="ml-2"
+              >
                 caregiver to someone with a disability
               </label>
             </div>
@@ -87,7 +90,7 @@ export default function SearchFiltersModal(props) {
                 id="eligibility-widowed"
                 className="w-6 h-6 border-gray-solid"
               />
-              <label for="eligibility-widowed" className="ml-2">
+              <label htmlFor="eligibility-widowed" className="ml-2">
                 widowed
               </label>
             </div>
