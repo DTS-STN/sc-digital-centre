@@ -63,7 +63,7 @@ export default function SearchFiltersModal(props) {
                 type="checkbox"
                 name="eligibility-living-with-disability"
                 id="eligibility-living-with-disability"
-                className="w-6 h-6 border-gray-solid bg-gray-light"
+                className="w-6 h-6 border-gray-solid"
               />
               <label for="eligibility-living-with-disability" className="ml-2 ">
                 living with a disability
@@ -74,6 +74,7 @@ export default function SearchFiltersModal(props) {
                 type="checkbox"
                 name="eligibility-caregiver-to-disability"
                 id="eligibility-caregiver-to-disability"
+                className="w-6 h-6 border-gray-solid"
               />
               <label for="eligibility-caregiver-to-disability" className="ml-2">
                 caregiver to someone with a disability
@@ -84,6 +85,7 @@ export default function SearchFiltersModal(props) {
                 type="checkbox"
                 name="eligibility-widowed"
                 id="eligibility-widowed"
+                className="w-6 h-6 border-gray-solid"
               />
               <label for="eligibility-widowed" className="ml-2">
                 widowed
