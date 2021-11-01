@@ -1,6 +1,10 @@
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
-import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
+import {
+  getBenefitsAndServices,
+  getLocalBenefits,
+  getAEMElements,
+} from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
@@ -108,8 +112,8 @@ export default function Home(props) {
       <FeatureBlock
         title="Featured: "
         // featuredContent and body text will come form the CMS
-        featuredContent="Life Journeys"
-        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus, tortor vitae mattis viverra, ipsum lacus malesuada ligula, eu pharetra ipsum libero a diam."
+        featuredContent={props.featured.scTitleEn.value}
+        body={props.featured.scShortDescriptionEn.value}
         buttonText="Text on button"
         featuredHref="#"
         btnId="featured-content"
@@ -122,14 +126,21 @@ export default function Home(props) {
 export async function getStaticProps({ locale }) {
   let benefits = []
   let errorCode = false
+  let featured = []
 
   //
   // IF content enabled get the data from the api
   //
 
   if (process.env.NEXT_CONTENT_API) {
-    // Call /api to fetch "mostRequested benefits"
+    const { apiData, error } = await getAEMElements('benefits/oas.json')
+    errorCode = error
+    if (apiData && !errorCode) {
+      featured = apiData
+    }
 
+    // Call /api to fetch "mostRequested benefits"
+    console.log(featured)
     let topics = []
 
     // extract data from apiData then add it to the array topics
@@ -152,6 +163,7 @@ export async function getStaticProps({ locale }) {
       benefits,
       errorCode,
       locale,
+      featured,
     },
   }
 }
