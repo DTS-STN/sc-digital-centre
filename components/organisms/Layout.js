@@ -89,9 +89,9 @@ export default function Layout({ children, locale, title }) {
           },
         ]}
       />
-      <Script id="AdobeSatellite" type="text/javascript">
+      {/* <Script id="AdobeSatellite" type="text/javascript">
         _satellite.pageBottom();
-      </Script>
+      </Script> */}
     </div>
   )
 }

@@ -10,19 +10,19 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
+          {/* {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
             <script async src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL} />
           ) : (
             ''
-          )}
+          )} */}
         </Head>
         <body>
           <Main />
           <NextScript />
-          <script
+          {/* <script
             async
             src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
-          ></script>
+          ></script> */}
         </body>
       </Html>
     )
