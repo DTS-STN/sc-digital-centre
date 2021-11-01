@@ -1,4 +1,5 @@
 import Layout from '../components/organisms/Layout'
+import SearchFiltersModal from '../components/molecules/SearchFiltersModal'
 import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
@@ -59,6 +60,7 @@ export default function SearchResult(props) {
 
   return (
     <Layout locale={props.locale} title="searchResult">
+      <SearchFiltersModal />
       <h2 className="layout-container text-2xl">
         Locale selected: {props.locale}.
       </h2>
