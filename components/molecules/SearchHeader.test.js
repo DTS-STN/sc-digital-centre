@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import SearchHeader from './SearchHeader.test'
+import SearchHeader from './SearchHeader'
 
 expect.extend(toHaveNoViolations)
 

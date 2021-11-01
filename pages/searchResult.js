@@ -1,5 +1,5 @@
 import Layout from '../components/organisms/Layout'
-import SearchHeader from '../components/molecules/SearchHeader.test'
+import SearchHeader from '../components/molecules/SearchHeader'
 
 import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
 import { useRouter } from 'next/router'
