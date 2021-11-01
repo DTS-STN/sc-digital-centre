@@ -140,7 +140,7 @@ export async function getStaticProps({ locale }) {
     }
 
     // Call /api to fetch "mostRequested benefits"
-    console.log(featured)
+
     let topics = []
 
     // extract data from apiData then add it to the array topics
