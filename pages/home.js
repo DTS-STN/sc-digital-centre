@@ -133,10 +133,10 @@ export async function getStaticProps({ locale }) {
   //
 
   if (process.env.NEXT_CONTENT_API) {
-    const { apiData, error } = await getAEMElements('benefits/oas.json')
+    const { elements, error } = await getAEMElements('benefits/oas.json')
     errorCode = error
-    if (apiData && !errorCode) {
-      featured = apiData
+    if (elements && !errorCode) {
+      featured = elements
     }
 
     // Call /api to fetch "mostRequested benefits"
