@@ -31,7 +31,17 @@ project {
 object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
-    branch = "refs/heads/adding-teamcity-steps"
+    branch = "refs/heads/dev"
+    authMethod = uploadedKey {
+        userName = "git"
+        uploadedKey = "dtsrobot"
+    }
+})
+
+object HttpsGithubComDtsStnScDigitalCentreMain : GitVcsRoot({
+    name = "https://github.com/DTS-STN/sc-digital-centre"
+    url = "git@github.com:DTS-STN/sc-digital-centre.git"
+    branch = "refs/heads/main"
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "dtsrobot"
@@ -49,7 +59,7 @@ object Build: BuildType({
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
     }
     vcs {
-        root(HttpsGithubComDtsStnScDigitalCentre)
+        root(HttpsGithubComDtsStnScDigitalCentreMain)
     }
    
     steps {
