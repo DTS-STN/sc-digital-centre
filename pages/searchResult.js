@@ -82,6 +82,7 @@ export default function SearchResult(props) {
       <h2 className="layout-container text-2xl">
         Current search: {search ? search : 'No search specified'}.
       </h2>
+      <p>{props.benefits[0].properties.description}</p>
       <CardList cardList={benefitList} />
     </Layout>
   )
