@@ -32,6 +32,7 @@ object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
+    branchSpec = "+:refs/heads/dev"
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "dtsrobot"
@@ -42,6 +43,7 @@ object HttpsGithubComDtsStnScDigitalCentreMain : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre/tree/main"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/main"
+    branchSpec = "+:refs/heads/main"
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "dtsrobot"
