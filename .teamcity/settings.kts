@@ -59,8 +59,8 @@ object Build: BuildType({
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
         param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S-admin")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
-        param("env.NEXT_CONTENT_API", "%vault:dts-sercrets-dev/digitalCentre!/NEXT_CONTENT_API%")
-        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-sercrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
+        param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
+        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentre)
