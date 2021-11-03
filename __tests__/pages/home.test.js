@@ -24,6 +24,10 @@ jest.mock('next/link', () => ({
 expect.extend(toHaveNoViolations)
 
 describe('Home page', () => {
+  const featured = {
+    scTitleEn: { value: 'test' },
+    scShortDescriptionEn: { value: 'test' },
+  }
   beforeEach(() => {
     useRouter.mockImplementation(() => ({
       pathname: '/',
@@ -31,39 +35,39 @@ describe('Home page', () => {
     }))
   })
   it('should render in French', () => {
-    render(<Home locale="fr" />)
+    render(<Home locale="fr" featured={featured} />)
     const enLink = screen.getByText('English')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render in English', () => {
-    render(<Home locale="en" />)
+    render(<Home locale="en" featured={featured} />)
     const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render SearchCard', () => {
-    render(<Home />)
+    render(<Home featured={featured} />)
     expect(screen.getByTestId('searchCard')).toBeTruthy()
   })
   it('should render serviceCanada', () => {
-    render(<Home />)
+    render(<Home featured={featured} />)
     expect(screen.getByTestId('serviceCanada')).toBeTruthy()
   })
   it('should render topTasks', () => {
-    render(<Home />)
+    render(<Home featured={featured} />)
     expect(screen.getByTestId('topTasks')).toBeTruthy()
   })
   it('should render cardList', () => {
-    render(<Home />)
+    render(<Home featured={featured} />)
     expect(screen.getByTestId('cardList')).toBeTruthy()
   })
   it('should render featureBlock', () => {
-    render(<Home />)
+    render(<Home featured={featured} />)
     expect(screen.getByTestId('featureBlock')).toBeTruthy()
   })
   it('should render contactUs', () => {
-    render(<Home />)
+    render(<Home featured={featured} />)
     expect(screen.getByTestId('contactUs')).toBeTruthy()
   })
   it('has no a11y violations', async () => {
