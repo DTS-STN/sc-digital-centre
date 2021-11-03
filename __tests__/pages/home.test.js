@@ -71,7 +71,7 @@ describe('Home page', () => {
     expect(screen.getByTestId('contactUs')).toBeTruthy()
   })
   it('has no a11y violations', async () => {
-    const { container } = render(<Home />)
+    const { container } = render(<Home featured={featured} />)
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
