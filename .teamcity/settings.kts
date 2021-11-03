@@ -117,7 +117,8 @@ object Build_Integration: BuildType({
     description = "Pushing PRs to integration environment"
     params {
         param("env.PROJECT", "sc-digital-centre")
-        param("env.BASE_DOMAIN","bdm-int.dts-stn.com")
+        param("env.TARGET", "int")
+        param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
         param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S-admin")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
