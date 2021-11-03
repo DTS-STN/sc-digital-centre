@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Home from '../../pages/home'
 import { axe, toHaveNoViolations } from 'jest-axe'
@@ -25,8 +25,8 @@ expect.extend(toHaveNoViolations)
 
 describe('Home page', () => {
   const featured = {
-    scTitleEn: { value: 'test' },
-    scShortDescriptionEn: { value: 'test' },
+    scTitleEn: { value: 'title' },
+    scShortDescriptionEn: { value: 'description' },
   }
   beforeEach(() => {
     useRouter.mockImplementation(() => ({
