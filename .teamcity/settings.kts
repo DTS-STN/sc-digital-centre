@@ -23,9 +23,9 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2020.2"
 
 project {
-
     // vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
     buildType(Build)
+    buildType(Build_Integration)
 }
 
 object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
@@ -108,8 +108,8 @@ object Build: BuildType({
     }
 })
 
-object Build: BuildType({
-    name = "Build Integration"
+object Build_Integration: BuildType({
+    name = "Build_Integration"
     description = "Pushing PRs to integration environment"
     params {
         param("env.PROJECT", "sc-digital-centre")
