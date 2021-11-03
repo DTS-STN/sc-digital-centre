@@ -32,7 +32,7 @@ object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
-    branchSpec = "+:refs/heads/dev"
+    branchSpec = "+:*"
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "dtsrobot"
@@ -104,6 +104,64 @@ object Build: BuildType({
     triggers {
         vcs {
             branchFilter = "+:<default>"
+        }
+    }
+})
+
+object Build: BuildType({
+    name = "Build Integration"
+    description = "Pushing PRs to integration environment"
+    params {
+        param("env.PROJECT", "sc-digital-centre")
+        param("env.BASE_DOMAIN","bdm-int.dts-stn.com")
+        param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
+        param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S-admin")
+        param("env.RG_DEV", "ESdCDPSBDMK8SDev")
+        param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
+        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
+    }
+    vcs {
+        root(HttpsGithubComDtsStnScDigitalCentre)
+    }
+   
+    steps {
+        dockerCommand {
+            name = "Build & Tag Docker Image"
+            commandType = build {
+                source = file {
+                    path = "Dockerfile"
+                }
+                namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
+                commandArgs = "--pull --build-arg BUILD_DATE=%system.build.start.date% --build-arg TC_BUILD=%build.number% --build-arg CONTENT_API=https://www.canada.ca/api/assets/decd-endc/content-fragments/ --build-arg NEXT_PUBLIC_FEEDBACK_API=https://alphasite.dts-stn.com/api/feedback"
+            }
+        }
+        script {
+            name = "Login to Azure and ACR"
+            scriptContent = """
+                az login --service-principal -u %TEAMCITY_USER% -p %TEAMCITY_PASS% --tenant %env.TENANT-ID%
+                az account set -s %env.SUBSCRIPTION%
+                az acr login -n MTSContainers
+            """.trimIndent()
+        }
+        dockerCommand {
+            name = "Push Image to ACR"
+            commandType = push {
+                namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
+            }
+        }
+        script {
+            name = "Deploy w/ Helmfile"
+            scriptContent = """
+                cd ./helmfile
+                az account set -s %env.SUBSCRIPTION%
+                az aks get-credentials --admin --resource-group %env.RG_DEV% --name %env.K8S_CLUSTER_NAME%
+                helmfile -e %env.TARGET% apply
+            """.trimIndent()
+        }
+    }
+    triggers {
+        vcs {
+            branchFilter = "+:refs/pull/*/head"
         }
     }
 })
