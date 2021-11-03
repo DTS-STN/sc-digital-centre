@@ -23,13 +23,25 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2020.2"
 
 project {
-    // vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
     buildType(Build)
     buildType(Build_Integration)
 }
 
+//VCS ROOTS
+
 object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre"
+    url = "git@github.com:DTS-STN/sc-digital-centre.git"
+    branch = "refs/heads/dev"
+    branchSpec = "+:refs/heads/dev"
+    authMethod = uploadedKey {
+        userName = "git"
+        uploadedKey = "dtsrobot"
+    }
+})
+
+object HttpsGithubComDtsStnScDigitalCentrePR : GitVcsRoot({
+    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_pr"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
     branchSpec = "+:*"
@@ -39,16 +51,7 @@ object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
     }
 })
 
-// object HttpsGithubComDtsStnScDigitalCentreMain : GitVcsRoot({
-//     name = "https://github.com/DTS-STN/sc-digital-centre/tree/main"
-//     url = "git@github.com:DTS-STN/sc-digital-centre.git"
-//     branch = "refs/heads/main"
-//     branchSpec = "+:refs/heads/main"
-//     authMethod = uploadedKey {
-//         userName = "git"
-//         uploadedKey = "dtsrobot"
-//     }
-// })
+//BUILD CONFIGURATIONS
 
 object Build: BuildType({
     name = "Build"
@@ -121,7 +124,7 @@ object Build_Integration: BuildType({
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
     }
     vcs {
-        root(HttpsGithubComDtsStnScDigitalCentre)
+        root(HttpsGithubComDtsStnScDigitalCentrePR)
     }
    
     steps {
