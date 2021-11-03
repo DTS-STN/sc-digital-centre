@@ -23,12 +23,13 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2020.2"
 
 project {
+    vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
+    vcsRoot(HttpsGithubComDtsStnScDigitalCentrePR)
     buildType(Build)
     buildType(Build_Integration)
 }
 
 //VCS ROOTS
-
 object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
@@ -51,8 +52,8 @@ object HttpsGithubComDtsStnScDigitalCentrePR : GitVcsRoot({
     }
 })
 
-//BUILD CONFIGURATIONS
 
+//BUILD CONFIGURATIONS
 object Build: BuildType({
     name = "Build"
     description = "Continuous integration"
