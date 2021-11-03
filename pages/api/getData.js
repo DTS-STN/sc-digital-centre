@@ -29,7 +29,7 @@ export async function getBenefitsAndServices(language) {
 export async function getAEMElements(fragpath) {
   const { apiData, error } = await getAEMFragment(fragpath)
   const elements = apiData.properties.elements
-
+  console.log(apiData)
   return { elements, error }
 }
 
