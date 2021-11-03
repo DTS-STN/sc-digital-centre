@@ -31,12 +31,24 @@ project {
 object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
-    branch = "refs/heads/adding-teamcity-steps"
+    branch = "refs/heads/dev"
+    branchSpec = "+:refs/heads/dev"
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "dtsrobot"
     }
 })
+
+// object HttpsGithubComDtsStnScDigitalCentreMain : GitVcsRoot({
+//     name = "https://github.com/DTS-STN/sc-digital-centre/tree/main"
+//     url = "git@github.com:DTS-STN/sc-digital-centre.git"
+//     branch = "refs/heads/main"
+//     branchSpec = "+:refs/heads/main"
+//     authMethod = uploadedKey {
+//         userName = "git"
+//         uploadedKey = "dtsrobot"
+//     }
+// })
 
 object Build: BuildType({
     name = "Build"
@@ -47,7 +59,8 @@ object Build: BuildType({
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
         param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S-admin")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
-        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "//assets.adobedtm.com/be5dfd287373/0127575cd23a/launch-913b1beddf7a-staging.min.js")
+        param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
+        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentre)
