@@ -29,21 +29,33 @@ describe('CardList', () => {
       <CardList
         cardList={[
           {
-            id: 1,
-            title: 'titleTest',
-            tag: 'tag test',
-            text: 'text test',
-            callToActionText: 'CallToActionTest',
-            callToActionHref: '/home',
-            btnId: 'btn1',
+            properties: {
+              elements: {
+                scPageNameEn: {
+                  value: 'Page Name 1',
+                },
+                scTitleEn: {
+                  value: 'Title 1',
+                },
+                scProgram: {
+                  value: 'Program 1',
+                },
+                scShortDescriptionEn: {
+                  value: 'Short Description 1',
+                },
+                scCallToActionEn: {
+                  value: 'Call to Action 1',
+                },
+              },
+            },
           },
         ]}
       />
     )
-    const titleText = screen.getByText('titleTest')
-    const tagText = screen.getByText('tag test')
-    const textText = screen.getByText('text test')
-    const linkText = screen.getByText('CallToActionTest')
+    const titleText = screen.getByText('Title 1')
+    const tagText = screen.getByText('Program 1')
+    const textText = screen.getByText('Short Description 1')
+    const linkText = screen.getByText('Call to Action 1')
     expect(titleText).toBeInTheDocument()
     expect(tagText).toBeInTheDocument()
     expect(textText).toBeInTheDocument()
@@ -59,13 +71,25 @@ describe('CardList', () => {
       <CardList
         cardList={[
           {
-            id: 1,
-            title: 'titleTest',
-            tag: 'tag test',
-            text: 'text test',
-            callToActionText: 'CallToActionTest',
-            callToActionHref: '/home',
-            btnId: 'btn1',
+            properties: {
+              elements: {
+                scPageNameEn: {
+                  value: 'Page Name 1',
+                },
+                scTitleEn: {
+                  value: 'Title 1',
+                },
+                scProgram: {
+                  value: 'Program 1',
+                },
+                scShortDescriptionEn: {
+                  value: 'Short Description 1',
+                },
+                scCallToActionEn: {
+                  value: 'Call to Action 1',
+                },
+              },
+            },
           },
         ]}
       />
