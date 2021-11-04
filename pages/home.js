@@ -4,6 +4,7 @@ import {
   getBenefitsAndServices,
   getLocalBenefits,
   getAEMElements,
+  getAEMFragments,
 } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
@@ -107,7 +108,6 @@ export default function Home(props) {
           />
         </div>
       </div>
-
       {/* feature with image */}
       <FeatureBlock
         title="Featured: "
@@ -132,31 +132,19 @@ export async function getStaticProps({ locale }) {
   // IF content enabled get the data from the api
   //
 
-  if (process.env.NEXT_CONTENT_API) {
-    const { elements, error } = await getAEMElements('benefits/oas.json')
-    errorCode = error
-    if (elements && !errorCode) {
-      featured = elements
-    }
-
-    // Call /api to fetch "mostRequested benefits"
-
-    let topics = []
-
-    // extract data from apiData then add it to the array topics
-
-    benefits = topics
-    // errorCode = error;
-    errorCode = false
-  } else {
-    //
-    // Else get the content from the local file
-    //
-    const { localData } = getLocalBenefits()
-
-    benefits = localData
-    errorCode = false
+  let { elements, error } = await getAEMElements('benefits/oas.json')
+  errorCode = error
+  if (elements && !errorCode) {
+    featured = elements
   }
+
+  let { apiData, error } = await getAEMFragments('benefits.json')
+  errorCode = error
+  if (apiData && !errorCode) {
+    benefits = apiData
+  }
+
+  console.log(benefits)
 
   return {
     props: {

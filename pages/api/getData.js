@@ -26,7 +26,8 @@ export async function getBenefitsAndServices(language) {
   return { apiData, error }
 }
 
-export async function getAEMFragment(fragpath) {
+export async function getAEMFragments(fragpath) {
+  console.log(`${process.env.NEXT_CONTENT_API}${fragpath}`)
   const res = await fetch(`${process.env.NEXT_CONTENT_API}${fragpath}`)
   const error = res.ok ? false : res.status
   const apiData = res.ok ? await res.json() : null
@@ -35,7 +36,7 @@ export async function getAEMFragment(fragpath) {
 }
 
 export async function getAEMElements(fragpath) {
-  const { apiData, error } = await getAEMFragment(fragpath)
+  const { apiData, error } = await getAEMFragments(fragpath)
   const elements = apiData.properties.elements
   // console.log(apiData)
   return { elements, error }
