@@ -25,7 +25,7 @@ version = "2020.2"
 project {
     vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
     vcsRoot(HttpsGithubComDtsStnScDigitalCentrePR)
-    vcsRoot(HttpsGithubComDtsStnScDigitalCentreRelease)
+    vcsRoot(HttpsGithubComDtsStnScDigitalCentreReleases)
     buildType(Build)
     buildType(Build_Integration)
     buildType(Build_Release)
@@ -54,7 +54,7 @@ object HttpsGithubComDtsStnScDigitalCentrePR : GitVcsRoot({
     }
 })
 
-object HttpsGithubComDtsStnScDigitalCentreRelease : GitVcsRoot({
+object HttpsGithubComDtsStnScDigitalCentreReleases : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre/tree/_release"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
@@ -202,7 +202,7 @@ object Build_Release: BuildType({
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
     }
     vcs {
-        root(HttpsGithubComDtsStnScDigitalCentreRelease)
+        root(HttpsGithubComDtsStnScDigitalCentreReleases)
     }
    
     steps {
