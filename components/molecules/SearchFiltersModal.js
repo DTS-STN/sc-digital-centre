@@ -1,13 +1,26 @@
 import PropTypes from 'prop-types'
 
 export default function SearchFiltersModal(props) {
+  if (!props.isOpen) {
+    return null
+  }
+
+  function submitHandler(event) {
+    event.preventDefault()
+    //handle submit event here
+    props.setModalShow(false)
+  }
+
   return (
     <div className="fixed top-0 left-0 px-4 py-6 bg-dark-solid bg-opacity-50 w-full h-full">
       <div
         aria-modal="true"
-        className="bg-light-solid px-4 py-6 text-dark-solid"
+        className="bg-light-solid px-4 py-6 text-dark-solid rounded-sm"
       >
-        <form className="children:block block text-xs">
+        <form
+          className="children:block font-bold block text-xs"
+          onSubmit={submitHandler}
+        >
           <h3 className="text-xl mb-6"> {props.filterHeader} </h3>
 
           <div className="mb-4 children:block">
@@ -39,10 +52,11 @@ export default function SearchFiltersModal(props) {
             </select>
           </div>
 
-          <div className="mb-4 children:block children:mb-2 ">
-            <label id="eligibility-label" className="">
+          <div className="mb-4 children:block font-normal children:mb-2 ">
+            <label id="eligibility-label" className="font-bold">
               Eligibility Criteria
             </label>
+
             <div className="children:align-middle">
               <input
                 type="checkbox"
@@ -52,11 +66,12 @@ export default function SearchFiltersModal(props) {
               />
               <label
                 htmlFor="eligibility-living-with-disability"
-                className="ml-2 "
+                className="ml-2"
               >
                 living with a disability
               </label>
             </div>
+
             <div className="children:align-middle">
               <input
                 type="checkbox"
@@ -71,6 +86,7 @@ export default function SearchFiltersModal(props) {
                 caregiver to someone with a disability
               </label>
             </div>
+
             <div className="children:align-middle">
               <input
                 type="checkbox"
@@ -83,6 +99,13 @@ export default function SearchFiltersModal(props) {
               </label>
             </div>
           </div>
+
+          <button
+            type="submit"
+            className="py-2 px-4 bg-deep-blue-solid rounded text-light-solid"
+          >
+            {props.submitText}
+          </button>
         </form>
       </div>
     </div>
@@ -91,4 +114,7 @@ export default function SearchFiltersModal(props) {
 
 SearchFiltersModal.propTypes = {
   filterHeader: PropTypes.string,
+  submitText: PropTypes.string,
+  isOpen: PropTypes.bool,
+  setModalShow: PropTypes.func,
 }

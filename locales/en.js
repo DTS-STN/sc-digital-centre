@@ -53,6 +53,7 @@ export default {
 
   // Filters
   filters: 'Filters',
+  submit: 'Submit',
 
   //
   // Footer

@@ -14,6 +14,7 @@ export default function SearchResult(props) {
   const t = props.locale === 'en' ? en : fr
   const router = useRouter()
   const [search, setSearch] = useState('')
+  const [modalShow, setModalShow] = useState(false)
   const [benefitList, setbenefitList] = useState([
     {
       id: 1,
@@ -61,9 +62,12 @@ export default function SearchResult(props) {
 
   return (
     <Layout locale={props.locale} title="searchResult">
-      {/* <SearchFiltersModal 
-        filterHeader={t.filters} 
-      /> */}
+      <SearchFiltersModal
+        filterHeader={t.filters}
+        submitText={t.submit}
+        isOpen={modalShow}
+        setModalShow={setModalShow}
+      />
       <SearchHeader
         lang={props.locale}
         headerText={'Search Benefits'}
@@ -74,6 +78,7 @@ export default function SearchResult(props) {
         btnClearLabel={t.clearResults}
         btnFilterText={t.filterResults}
         btnFilterLabel={t.filterResults}
+        setModalShow={setModalShow}
         onSubmitHref="/searchResult"
       />
       {/*

@@ -53,6 +53,7 @@ export default {
 
   // Filters
   filters: '(FR) Filters',
+  submit: '(FR) Submit',
 
   //
   // Footer

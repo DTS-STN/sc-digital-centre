@@ -28,6 +28,7 @@ export default function SearchHeader(props) {
         <button
           aria-label={props.btnFilterLabel}
           className={'block py-2 px-4 bg-deep-blue-solid rounded w-full'}
+          onClick={() => props.setModalShow(true)}
         >
           {props.btnFilterText}
         </button>
@@ -97,4 +98,9 @@ SearchHeader.propTypes = {
    * Any text that should exist in the input beforehand
    */
   inputText: PropTypes.string,
+
+  /*
+   * Sets state for modal filter element.
+   */
+  setModalShow: PropTypes.func,
 }
