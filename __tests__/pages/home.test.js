@@ -24,6 +24,56 @@ jest.mock('next/link', () => ({
 expect.extend(toHaveNoViolations)
 
 describe('Home page', () => {
+  const featured = {
+    scTitleEn: { value: 'title' },
+    scShortDescriptionEn: { value: 'description' },
+  }
+
+  const benefits = [
+    {
+      properties: {
+        elements: {
+          scPageNameEn: {
+            value: 'Page Name 1',
+          },
+          scTitleEn: {
+            value: 'Title 1',
+          },
+          scProgram: {
+            value: 'Program 1',
+          },
+          scShortDescriptionEn: {
+            value: 'Short Description 1',
+          },
+          scCallToActionEn: {
+            value: 'Call to Action 1',
+          },
+        },
+      },
+    },
+    {
+      properties: {
+        elements: {
+          scPageNameEn: {
+            value: 'Page Name 2',
+          },
+          scTitleEn: {
+            value: 'Title 2',
+          },
+          scProgram: {
+            value: 'Program 2',
+          },
+          scShortDescriptionEn: {
+            value: 'Short Description 2',
+          },
+          scCallToActionEn: {
+            value: 'Call to Action 2',
+          },
+        },
+      },
+    },
+  ]
+
   beforeEach(() => {
     useRouter.mockImplementation(() => ({
       pathname: '/',
@@ -31,43 +81,45 @@ describe('Home page', () => {
     }))
   })
   it('should render in French', () => {
-    render(<Home locale="fr" />)
+    render(<Home locale="fr" benefits={benefits} featured={featured} />)
     const enLink = screen.getByText('English')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render in English', () => {
-    render(<Home locale="en" />)
+    render(<Home locale="en" benefits={benefits} featured={featured} />)
     const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render SearchCard', () => {
-    render(<Home />)
+    render(<Home benefits={benefits} featured={featured} />)
     expect(screen.getByTestId('searchCard')).toBeTruthy()
   })
   it('should render serviceCanada', () => {
-    render(<Home />)
+    render(<Home benefits={benefits} featured={featured} />)
     expect(screen.getByTestId('serviceCanada')).toBeTruthy()
   })
   it('should render topTasks', () => {
-    render(<Home />)
+    render(<Home benefits={benefits} featured={featured} />)
     expect(screen.getByTestId('topTasks')).toBeTruthy()
   })
   it('should render cardList', () => {
-    render(<Home />)
+    render(<Home benefits={benefits} featured={featured} />)
     expect(screen.getByTestId('cardList')).toBeTruthy()
   })
   it('should render featureBlock', () => {
-    render(<Home />)
+    render(<Home benefits={benefits} featured={featured} />)
     expect(screen.getByTestId('featureBlock')).toBeTruthy()
   })
   it('should render contactUs', () => {
-    render(<Home />)
+    render(<Home benefits={benefits} featured={featured} />)
     expect(screen.getByTestId('contactUs')).toBeTruthy()
   })
   it('has no a11y violations', async () => {
-    const { container } = render(<Home />)
+    const { container } = render(
+      <Home benefits={benefits} featured={featured} />
+    )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

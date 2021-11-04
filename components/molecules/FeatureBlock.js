@@ -8,17 +8,19 @@ export default function FeatureBlock(props) {
   return (
     <div className=" bg-light-solid">
       <div
-        className="flex flex-col  sm:flex-row-reverse bg-light-solid my-3 layout-container"
+        className="flex flex-col  sm:flex-row-reverse bg-light-solid my-3 sm:container mx-auto sm:pl-6 sm:px-2"
         id="feature-block"
         data-testid="featureBlock"
       >
         {/* <div className="bg-splash-page bg-cover bg-center w-full py-32  ">
   
       </div> */}
-        <div className="aspect-w-5 aspect-h-2 sm:aspect-h-1 lg:ml-3 w-full mr-break-out">
+        <div className="aspect-w-5 aspect-h-2 sm:aspect-h-1 xl:ml-3 w-full min-w-max mr-break-out">
           <Image
             // src="/autumn-leaves-woman-hands.png"
-            src="https://www.canada.ca/content/dam/decd-endc/images/autumn_leaves_woman_hands.png"
+            src={
+              'https://www.canada.ca/content/dam/decd-endc/images/autumn_leaves_woman_hands.png'
+            }
             alt="Picture of something nice"
             layout="fill"
             objectFit="cover"

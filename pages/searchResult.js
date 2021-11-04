@@ -2,7 +2,7 @@ import Layout from '../components/organisms/Layout'
 import SearchFiltersModal from '../components/molecules/SearchFiltersModal'
 import SearchHeader from '../components/molecules/SearchHeader'
 
-import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
+import { getAEMFragments, getLocalBenefits } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { CardList } from '../components/molecules/CardList'
@@ -15,44 +15,7 @@ export default function SearchResult(props) {
   const router = useRouter()
   const [search, setSearch] = useState('')
   const [modalShow, setModalShow] = useState(false)
-  const [benefitList, setbenefitList] = useState([
-    {
-      id: 1,
-      title: 'Lorem Ipsum',
-      tag: 'Public Pension',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      callToActionText: 'Lorem Ipsum',
-      callToActionHref: '/searchResult',
-      btnId: 'btn1',
-    },
-    {
-      id: 2,
-      title: 'Lorem Ipsum',
-      tag: 'Public Pension',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      callToActionText: 'Lorem Ipsum',
-      callToActionHref: '/searchResult',
-      btnId: 'btn2',
-    },
-    {
-      id: 3,
-      title: 'Lorem Ipsum',
-      tag: 'Public Pension',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      callToActionText: 'Lorem Ipsum',
-      callToActionHref: '/searchResult',
-      btnId: 'btn3',
-    },
-    {
-      id: 4,
-      title: 'Lorem Ipsum',
-      tag: 'Public Pension',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      callToActionText: 'Lorem Ipsum',
-      callToActionHref: '/searchResult',
-      btnId: 'btn4',
-    },
-  ])
+  const [benefitList, setbenefitList] = useState(props.benefits)
 
   useEffect(() => {
     if (router.query.search) {
@@ -81,10 +44,6 @@ export default function SearchResult(props) {
         setModalShow={setModalShow}
         onSubmitHref="/searchResult"
       />
-      {/*
-        Remove the line under
-      */}
-      {process.env.NEXT_CONTENT_API}
       <h1 className="layout-container text-3xl">
         Search results page placeholder.
       </h1>
@@ -108,10 +67,10 @@ export async function getStaticProps({ locale }) {
   //
 
   if (process.env.NEXT_CONTENT_API) {
-    const { apiData, error } = await getBenefitsAndServices(locale)
-    errorCode = error
-    if (apiData && !errorCode) {
-      benefits = apiData.entities
+    let AEMbenefits = await getAEMFragments('benefits.json')
+    errorCode = AEMbenefits.error
+    if (AEMbenefits.apiData && !errorCode) {
+      benefits = AEMbenefits.apiData.entities
     }
   } else {
     //

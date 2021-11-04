@@ -32,6 +32,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
+          NEXT_CONTENT_API: ${{ secrets.NEXT_CONTENT_API }}
+          NEXT_PUBLIC_ADOBE_ANALYTICS_URL: ${{ secrets.NEXT_PUBLIC_ADOBE_ANALYTICS_URL}}
           CI: true
 
       - name: Cypress end-to-end 🧪

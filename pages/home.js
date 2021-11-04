@@ -1,6 +1,11 @@
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
-import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
+import {
+  getBenefitsAndServices,
+  getLocalBenefits,
+  getAEMElements,
+  getAEMFragments,
+} from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
@@ -61,55 +66,15 @@ export default function Home(props) {
           <h2 className="font-bold font-display text-2xl mb-4">
             {t.mostRequestedTitle}
           </h2>
-          <CardList
-            cardList={[
-              {
-                id: 1,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn1',
-              },
-              {
-                id: 2,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn2',
-              },
-              {
-                id: 3,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn3',
-              },
-              {
-                id: 4,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn4',
-              },
-            ]}
-          />
+          <CardList cardList={props.benefits} />
         </div>
       </div>
-
       {/* feature with image */}
       <FeatureBlock
         title="Featured: "
         // featuredContent and body text will come form the CMS
-        featuredContent="Life Journeys"
-        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus, tortor vitae mattis viverra, ipsum lacus malesuada ligula, eu pharetra ipsum libero a diam."
+        featuredContent={props.featured.scTitleEn.value}
+        body={props.featured.scShortDescriptionEn.value}
         buttonText="Text on button"
         featuredHref="#"
         btnId="featured-content"
@@ -122,29 +87,22 @@ export default function Home(props) {
 export async function getStaticProps({ locale }) {
   let benefits = []
   let errorCode = false
+  let featured = []
 
   //
   // IF content enabled get the data from the api
   //
 
-  if (process.env.NEXT_CONTENT_API) {
-    // Call /api to fetch "mostRequested benefits"
+  let features = await getAEMElements('benefits/oas.json')
+  errorCode = features.error
+  if (features.elements && !errorCode) {
+    featured = features.elements
+  }
 
-    let topics = []
-
-    // extract data from apiData then add it to the array topics
-
-    benefits = topics
-    // errorCode = error;
-    errorCode = false
-  } else {
-    //
-    // Else get the content from the local file
-    //
-    const { localData } = getLocalBenefits()
-
-    benefits = localData
-    errorCode = false
+  let AEMbenefits = await getAEMFragments('benefits.json')
+  errorCode = AEMbenefits.error
+  if (AEMbenefits.apiData && !errorCode) {
+    benefits = AEMbenefits.apiData.entities
   }
 
   return {
@@ -152,6 +110,7 @@ export async function getStaticProps({ locale }) {
       benefits,
       errorCode,
       locale,
+      featured,
     },
   }
 }
