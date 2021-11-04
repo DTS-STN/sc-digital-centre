@@ -66,46 +66,7 @@ export default function Home(props) {
           <h2 className="font-bold font-display text-2xl mb-4">
             {t.mostRequestedTitle}
           </h2>
-          <CardList
-            cardList={[
-              {
-                id: 1,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn1',
-              },
-              {
-                id: 2,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn2',
-              },
-              {
-                id: 3,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn3',
-              },
-              {
-                id: 4,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn4',
-              },
-            ]}
-          />
+          <CardList cardList={props.benefits} />
         </div>
       </div>
       {/* feature with image */}
@@ -132,19 +93,17 @@ export async function getStaticProps({ locale }) {
   // IF content enabled get the data from the api
   //
 
-  let { elements, error } = await getAEMElements('benefits/oas.json')
-  errorCode = error
-  if (elements && !errorCode) {
-    featured = elements
+  let features = await getAEMElements('benefits/oas.json')
+  errorCode = features.error
+  if (features.elements && !errorCode) {
+    featured = features.elements
   }
 
-  let { apiData, error } = await getAEMFragments('benefits.json')
-  errorCode = error
-  if (apiData && !errorCode) {
-    benefits = apiData
+  let AEMbenefits = await getAEMFragments('benefits.json')
+  errorCode = AEMbenefits.error
+  if (AEMbenefits.apiData && !errorCode) {
+    benefits = AEMbenefits.apiData.entities
   }
-
-  console.log(benefits)
 
   return {
     props: {

@@ -27,8 +27,9 @@ export async function getBenefitsAndServices(language) {
 }
 
 export async function getAEMFragments(fragpath) {
-  console.log(`${process.env.NEXT_CONTENT_API}${fragpath}`)
-  const res = await fetch(`${process.env.NEXT_CONTENT_API}${fragpath}`)
+  const res = await fetch(
+    `${process.env.NEXT_CONTENT_API}${fragpath}?date=${process.env.NEXT_PUBLIC_BUILD_DATE}`
+  )
   const error = res.ok ? false : res.status
   const apiData = res.ok ? await res.json() : null
 
