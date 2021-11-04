@@ -25,7 +25,6 @@ version = "2020.2"
 project {
     vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
     vcsRoot(HttpsGithubComDtsStnScDigitalCentrePR)
-    vcsRoot(HttpsGithubComDtsStnScDigitalCentreReleases)
     buildType(Build)
     buildType(Build_Integration)
 }
