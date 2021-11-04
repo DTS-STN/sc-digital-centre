@@ -1,5 +1,7 @@
 import Layout from '../components/organisms/Layout'
 import SearchFiltersModal from '../components/molecules/SearchFiltersModal'
+import SearchHeader from '../components/molecules/SearchHeader'
+
 import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
@@ -11,7 +13,6 @@ import fr from '../locales/fr'
 export default function SearchResult(props) {
   const t = props.locale === 'en' ? en : fr
   const router = useRouter()
-
   const [search, setSearch] = useState('')
   const [benefitList, setbenefitList] = useState([
     {
@@ -60,7 +61,28 @@ export default function SearchResult(props) {
 
   return (
     <Layout locale={props.locale} title="searchResult">
-      <SearchFiltersModal filterHeader={t.filters} />
+      {/* <SearchFiltersModal 
+        filterHeader={t.filters} 
+      /> */}
+      <SearchHeader
+        lang={props.locale}
+        headerText={'Search Benefits'}
+        inputText={search ?? ''}
+        searchBarPlaceholder={t.searchPlaceholder}
+        searchBarText={t.search}
+        btnClearText={t.clearResults}
+        btnClearLabel={t.clearResults}
+        btnFilterText={t.filterResults}
+        btnFilterLabel={t.filterResults}
+        onSubmitHref="/searchResult"
+      />
+      {/*
+        Remove the line under
+      */}
+      {process.env.NEXT_CONTENT_API}
+      <h1 className="layout-container text-3xl">
+        Search results page placeholder.
+      </h1>
       <h2 className="layout-container text-2xl">
         Locale selected: {props.locale}.
       </h2>
