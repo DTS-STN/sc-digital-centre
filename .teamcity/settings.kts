@@ -28,7 +28,7 @@ project {
     vcsRoot(HttpsGithubComDtsStnScDigitalCentreReleases)
     buildType(Build)
     buildType(Build_Integration)
-    buildType(Build_Release)
+    buildType(Build_Releases)
 }
 
 //VCS ROOTS
@@ -55,7 +55,7 @@ object HttpsGithubComDtsStnScDigitalCentrePR : GitVcsRoot({
 })
 
 object HttpsGithubComDtsStnScDigitalCentreReleases : GitVcsRoot({
-    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_release"
+    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_releases"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
     branchSpec = "+:*"
@@ -187,8 +187,8 @@ object Build_Integration: BuildType({
 })
 
 
-object Build_Release: BuildType({
-    name = "Build_Release"
+object Build_Releases: BuildType({
+    name = "Build_Releases"
     description = "Deploys Pull Request to release envrionment when releases are created."
     params {
         param("env.PROJECT", "sc-digital-centre")
