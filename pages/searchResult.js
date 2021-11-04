@@ -72,10 +72,6 @@ export default function SearchResult(props) {
         btnFilterLabel={t.filterResults}
         onSubmitHref="/searchResult"
       />
-      {/*
-        Remove the line under
-      */}
-      {process.env.NEXT_CONTENT_API}
       <h1 className="layout-container text-3xl">
         Search results page placeholder.
       </h1>
