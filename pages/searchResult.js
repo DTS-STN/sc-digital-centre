@@ -1,7 +1,7 @@
 import Layout from '../components/organisms/Layout'
 import SearchHeader from '../components/molecules/SearchHeader'
 
-import { getBenefitsAndServices, getLocalBenefits } from './api/getData'
+import { getAEMFragments, getLocalBenefits } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { CardList } from '../components/molecules/CardList'

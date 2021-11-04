@@ -17,15 +17,6 @@ export function getLocalBenefits() {
 //
 // Fetch ALL topics from API when available
 //
-
-export async function getBenefitsAndServices(language) {
-  const res = await fetch(`${process.env.NEXT_CONTENT_API}${language}/dc.json`)
-  const error = res.ok ? false : res.status
-  const apiData = res.ok ? await res.json() : null
-
-  return { apiData, error }
-}
-
 export async function getAEMFragments(fragpath) {
   const res = await fetch(
     `${process.env.NEXT_CONTENT_API}${fragpath}?date=${process.env.NEXT_PUBLIC_BUILD_DATE}`
