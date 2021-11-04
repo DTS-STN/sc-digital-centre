@@ -4,6 +4,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 import FeatureBlock from './FeatureBlock'
 
 import { useRouter } from 'next/router'
+
 // mocks useRouter to be able to use component' router.asPath
 jest.mock('next/router', () => ({
   useRouter: jest.fn(),

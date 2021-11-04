@@ -89,9 +89,14 @@ export default function Layout({ children, locale, title }) {
           },
         ]}
       />
-      <Script id="AdobeSatellite" type="text/javascript">
-        _satellite.pageBottom();
-      </Script>
+
+      {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
+        <Script id="AdobeSatellite" type="text/javascript">
+          _satellite.pageBottom();
+        </Script>
+      ) : (
+        ''
+      )}
     </div>
   )
 }
