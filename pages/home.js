@@ -4,6 +4,7 @@ import {
   getBenefitsAndServices,
   getLocalBenefits,
   getAEMElements,
+  getAEMFragments,
 } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
@@ -65,49 +66,9 @@ export default function Home(props) {
           <h2 className="font-bold font-display text-2xl mb-4">
             {t.mostRequestedTitle}
           </h2>
-          <CardList
-            cardList={[
-              {
-                id: 1,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn1',
-              },
-              {
-                id: 2,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn2',
-              },
-              {
-                id: 3,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn3',
-              },
-              {
-                id: 4,
-                title: 'Lorem Ipsum',
-                tag: 'Public Pension',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                callToActionText: 'Lorem Ipsum',
-                callToActionHref: '/home',
-                btnId: 'btn4',
-              },
-            ]}
-          />
+          <CardList cardList={props.benefits} />
         </div>
       </div>
-
       {/* feature with image */}
       <FeatureBlock
         title="Featured: "
@@ -132,30 +93,16 @@ export async function getStaticProps({ locale }) {
   // IF content enabled get the data from the api
   //
 
-  if (process.env.NEXT_CONTENT_API) {
-    const { elements, error } = await getAEMElements('benefits/oas.json')
-    errorCode = error
-    if (elements && !errorCode) {
-      featured = elements
-    }
+  let features = await getAEMElements('benefits/oas.json')
+  errorCode = features.error
+  if (features.elements && !errorCode) {
+    featured = features.elements
+  }
 
-    // Call /api to fetch "mostRequested benefits"
-
-    let topics = []
-
-    // extract data from apiData then add it to the array topics
-
-    benefits = topics
-    // errorCode = error;
-    errorCode = false
-  } else {
-    //
-    // Else get the content from the local file
-    //
-    const { localData } = getLocalBenefits()
-
-    benefits = localData
-    errorCode = false
+  let AEMbenefits = await getAEMFragments('benefits.json')
+  errorCode = AEMbenefits.error
+  if (AEMbenefits.apiData && !errorCode) {
+    benefits = AEMbenefits.apiData.entities
   }
 
   return {
