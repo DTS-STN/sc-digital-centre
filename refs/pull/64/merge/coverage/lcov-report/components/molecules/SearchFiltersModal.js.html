@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -151,18 +151,10 @@
 <a name='L92'></a><a href='#L92'>92</a>
 <a name='L93'></a><a href='#L93'>93</a>
 <a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -250,18 +242,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import FormElement from '../atoms/FormElement'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import PropTypes from 'prop-types'
 &nbsp;
 export default function SearchFiltersModal(props) {
   return (
@@ -271,7 +255,7 @@ export default function SearchFiltersModal(props) {
         className="bg-light-solid px-4 py-6 text-dark-solid"
       &gt;
         &lt;form className="children:block block text-xs"&gt;
-          &lt;h3 className="text-xl mb-6"&gt; Filters &lt;/h3&gt;
+          &lt;h3 className="text-xl mb-6"&gt; {props.filterHeader} &lt;/h3&gt;
 &nbsp;
           &lt;div className="mb-4 children:block"&gt;
             &lt;label htmlFor="age-range" id="age-range-label" className="mb-2"&gt;
@@ -280,24 +264,12 @@ export default function SearchFiltersModal(props) {
             &lt;select
               name="age-range"
               id="age-range"
-              className="border border-gray-solid bg-gray-100 p-2 text-gray-dark"
+              className="border border-gray-solid bg-gray-100 p-2 text-deep-blue-dark"
             &gt;
               &lt;option value="0"&gt;Under 18 years old&lt;/option&gt;
               &lt;option value="1"&gt;18-100 bajillion&lt;/option&gt;
             &lt;/select&gt;
           &lt;/div&gt;
-&nbsp;
-          {/* Alternatively, we could do something like this 
-                        &lt;FormElement
-                            name="age-range"
-                            labelText="Age Range"
-                            &gt;            
-                            &lt;select name="age-range-select" aria-labelledby="age-range-label" className=" border border-gray-solid"&gt;
-                                &lt;option value="0"&gt;Under 18 years old&lt;/option&gt;
-                                &lt;option value="1"&gt;18-100 bajillion&lt;/option&gt;
-                            &lt;/select&gt;
-                        &lt;/FormElement&gt;
-                    */}
 &nbsp;
           &lt;div className="mb-4 children:block"&gt;
             &lt;label htmlFor="income" id="income-label" className="mb-2"&gt;
@@ -306,7 +278,7 @@ export default function SearchFiltersModal(props) {
             &lt;select
               name="income"
               id="income"
-              className="border border-gray-solid bg-gray-100 p-2 text-gray-dark"
+              className="border border-gray-solid bg-gray-100 p-2 text-deep-blue-dark"
             &gt;
               &lt;option value="0"&gt;Between $0 - $23999&lt;/option&gt;
               &lt;option value="1"&gt;Between $23999 - $42999&lt;/option&gt;
@@ -363,6 +335,10 @@ export default function SearchFiltersModal(props) {
     &lt;/div&gt;
   )
 }
+&nbsp;
+SearchFiltersModal.propTypes = {
+  filterHeader: PropTypes.string,
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -370,7 +346,7 @@ export default function SearchFiltersModal(props) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Nov 01 2021 17:09:32 GMT+0000 (Coordinated Universal Time)
+                at Thu Nov 04 2021 13:33:02 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

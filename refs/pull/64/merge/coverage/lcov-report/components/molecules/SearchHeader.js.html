@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/atoms/ActionButton.js</title>
+    <title>Code coverage report for components/molecules/SearchHeader.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/atoms</a> ActionButton.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/molecules</a> SearchHeader.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -156,28 +156,14 @@
 <a name='L97'></a><a href='#L97'>97</a>
 <a name='L98'></a><a href='#L98'>98</a>
 <a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">138x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">138x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,7 +193,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -256,103 +258,104 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import PropTypes from 'prop-types'
-import Link from 'next/link'
+import SearchBar from '../atoms/SearchBar'
 &nbsp;
-/**
- * Button component
- */
-export function ActionButton({
-  href,
-  className,
-  onClick,
-  type,
-  lang,
-  id,
-  text,
-  children,
-  ...rest
-}) {
-  //Styling for buttons and links
-  const defaultStyle =
-    'font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-deep-blue-solid text-white text-center border border-deep-blue-solid active:bg-deep-blue-dark hover:bg-bright-blue-dark grid place-items-center'
+export default function SearchHeader(props) {
+  return (
+    &lt;div className="flex flex-col w-full md:layout-container text-white "&gt;
+      &lt;div className="block md:flex w-full py-2 md:py-6 px-6 bg-gray-light space-y-2 md:space-y-0 md:space-x-2 lg:space-x-6"&gt;
+        &lt;h2 className="text-xl text-black font-bold"&gt;{props.headerText}&lt;/h2&gt;
+        {/* note that the search button's left padding looks like more (approx 2 on the tailwind scale more) than the right padding of the same amount */}
+        &lt;SearchBar
+          placeholderText={props.searchBarPlaceholder}
+          inputText={props.inputText}
+          btnText={props.searchBarText}
+          btnClasses={'py-2 md:py-4 pl-2 pr-4 md:pl-4 md:pr-6 rounded-r'}
+          onSubmitHref={props.onSubmitHref}
+        /&gt;
 &nbsp;
-  return href ? (
-    &lt;Link href={href}&gt;
-      &lt;a
-        className={`${!className ? defaultStyle : className}`}
-        onClick={onClick}
-        role="button"
-        draggable="false"
-        lang={lang}
-        {...rest}
-        id={id}
-      &gt;
-        {text}
-        {children}
-      &lt;/a&gt;
-    &lt;/Link&gt;
-  ) : (
-    &lt;button
-      className={`${!className ? defaultStyle : className}`}
-      onClick={onClick}
-      type={type}
-      lang={lang}
-      {...rest}
-      id={id}
-    &gt;
-      {text}
-      {children}
-    &lt;/button&gt;
+        &lt;button
+          aria-label={props.searchBarPlaceholder}
+          className={
+            'hidden md:inline-block py-1 px-2 lg:px-6 bg-deep-blue-solid rounded '
+          }
+        &gt;
+          {props.btnClearText}
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div className="flex flex-row md:hidden space-x-2 xs:space-x-6 w-full py-2 px-4 justify-around "&gt;
+        &lt;button
+          aria-label={props.btnFilterLabel}
+          className={'block py-2 px-4 bg-deep-blue-solid rounded w-full'}
+        &gt;
+          {props.btnFilterText}
+        &lt;/button&gt;
+        &lt;button
+          aria-label={props.btnClearLabel}
+          className={'block py-2 px-4 bg-deep-blue-solid rounded w-full'}
+        &gt;
+          {props.btnClearText}
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   )
 }
 &nbsp;
-ActionButton.propTypes = {
+SearchHeader.propTypes = {
   /**
-   * The text that the button will display
-   */
-  text: PropTypes.string,
-&nbsp;
-  /**
-   * Style link as a button when there's a href
-   */
-  href: PropTypes.string,
-&nbsp;
-  /**
-   * Identify which button being clicked
-   */
-  id: PropTypes.string.isRequired,
-&nbsp;
-  /**
-   * Lang attribute for links that do not match the language of the top level document
+   * Language currently selected
    */
   lang: PropTypes.string,
-  /**
-   * the type of the button
-   */
-  type: PropTypes.oneOf(['submit', 'reset']),
 &nbsp;
   /**
-   * Callback for a click event on the button
+   * Search Header Heading
    */
-  onClick: PropTypes.func,
+  headerText: PropTypes.string,
 &nbsp;
   /**
-   * CSS that overrides default styling
+   * Search Header Paragraph
    */
-  className: PropTypes.string,
+  paraText: PropTypes.string,
 &nbsp;
   /**
-   * any other elements you want to add to the button
+   * Search Bar Placeholder
    */
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]),
+  searchBarPlaceholder: PropTypes.string,
+&nbsp;
   /**
-   * ...rest
-   *   Any other attribute not explicity coded, like: dataCy, dataCyButton, analyticsTracking, data-testid, aria stuff, etc.
+   * Search Bar Text
    */
+  searchBarText: PropTypes.string,
+&nbsp;
+  /*
+   * Clear button text
+   */
+  btnClearText: PropTypes.string,
+&nbsp;
+  /*
+   * Page to send the user after on submit. Defaults to none
+   */
+  onSubmitHref: PropTypes.string,
+&nbsp;
+  /*
+   * Clear button label
+   */
+  btnClearLabel: PropTypes.string,
+&nbsp;
+  /*
+   * Filter button text
+   */
+  btnFilterText: PropTypes.string,
+&nbsp;
+  /*
+   * Filter button label
+   */
+  btnFilterLabel: PropTypes.string,
+&nbsp;
+  /*
+   * Any text that should exist in the input beforehand
+   */
+  inputText: PropTypes.string,
 }
 &nbsp;</pre></td></tr></table></pre>
 
