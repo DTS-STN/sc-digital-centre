@@ -21,6 +21,51 @@ jest.mock('next/link', () => ({
 expect.extend(toHaveNoViolations)
 
 describe('SearchResult page', () => {
+  const benefits = [
+    {
+      properties: {
+        elements: {
+          scPageNameEn: {
+            value: 'Page Name 1',
+          },
+          scTitleEn: {
+            value: 'Title 1',
+          },
+          scProgram: {
+            value: 'Program 1',
+          },
+          scShortDescriptionEn: {
+            value: 'Short Description 1',
+          },
+          scCallToActionEn: {
+            value: 'Call to Action 1',
+          },
+        },
+      },
+    },
+    {
+      properties: {
+        elements: {
+          scPageNameEn: {
+            value: 'Page Name 2',
+          },
+          scTitleEn: {
+            value: 'Title 2',
+          },
+          scProgram: {
+            value: 'Program 2',
+          },
+          scShortDescriptionEn: {
+            value: 'Short Description 2',
+          },
+          scCallToActionEn: {
+            value: 'Call to Action 2',
+          },
+        },
+      },
+    },
+  ]
+
   beforeEach(() => {
     useRouter.mockImplementation(() => ({
       pathname: '/',
@@ -31,19 +76,21 @@ describe('SearchResult page', () => {
     }))
   })
   it('should render in French', () => {
-    render(<SearchResult locale="fr" />)
+    render(<SearchResult locale="fr" benefits={benefits} />)
     const enLink = screen.getByText('English')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render in English', () => {
-    render(<SearchResult locale="en" />)
+    render(<SearchResult locale="en" benefits={benefits} />)
     const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(<SearchResult locale="en" />)
+    const { container } = render(
+      <SearchResult locale="en" benefits={benefits} />
+    )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
