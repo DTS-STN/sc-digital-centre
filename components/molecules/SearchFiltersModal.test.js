@@ -7,14 +7,30 @@ expect.extend(toHaveNoViolations)
 
 describe('SearchFiltersModal', () => {
   it('renders SearchFiltersModal', () => {
-    render(<SearchFiltersModal filterHeader="test header" />)
+    render(
+      <SearchFiltersModal
+        filterHeader="test header"
+        submitText={'t.submit'}
+        isOpen={true}
+        setModalShow={() => {
+          return null
+        }}
+      />
+    )
     const searchText = screen.getByText('test header')
     expect(searchText).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <SearchFiltersModal filterHeader="test header" />
+      <SearchFiltersModal
+        filterHeader="test header"
+        submitText={'t.submit'}
+        isOpen={true}
+        setModalShow={() => {
+          return null
+        }}
+      />
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
