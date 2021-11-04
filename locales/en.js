@@ -46,6 +46,10 @@ export default {
 
   // Most Requested Page
   mostRequestedTitle: 'Most Requested Page',
+
+  // Filters
+  filters: 'Filters',
+
   //
   // Footer
   //

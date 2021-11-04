@@ -1,4 +1,4 @@
-import FormElement from '../atoms/FormElement'
+import PropTypes from 'prop-types'
 
 export default function SearchFiltersModal(props) {
   return (
@@ -8,7 +8,7 @@ export default function SearchFiltersModal(props) {
         className="bg-light-solid px-4 py-6 text-dark-solid"
       >
         <form className="children:block block text-xs">
-          <h3 className="text-xl mb-6"> Filters </h3>
+          <h3 className="text-xl mb-6"> {props.filterHeader} </h3>
 
           <div className="mb-4 children:block">
             <label htmlFor="age-range" id="age-range-label" className="mb-2">
@@ -17,24 +17,12 @@ export default function SearchFiltersModal(props) {
             <select
               name="age-range"
               id="age-range"
-              className="border border-gray-solid bg-gray-100 p-2 text-gray-dark"
+              className="border border-gray-solid bg-gray-100 p-2 text-deep-blue-dark"
             >
               <option value="0">Under 18 years old</option>
               <option value="1">18-100 bajillion</option>
             </select>
           </div>
-
-          {/* Alternatively, we could do something like this 
-                        <FormElement
-                            name="age-range"
-                            labelText="Age Range"
-                            >            
-                            <select name="age-range-select" aria-labelledby="age-range-label" className=" border border-gray-solid">
-                                <option value="0">Under 18 years old</option>
-                                <option value="1">18-100 bajillion</option>
-                            </select>
-                        </FormElement>
-                    */}
 
           <div className="mb-4 children:block">
             <label htmlFor="income" id="income-label" className="mb-2">
@@ -43,7 +31,7 @@ export default function SearchFiltersModal(props) {
             <select
               name="income"
               id="income"
-              className="border border-gray-solid bg-gray-100 p-2 text-gray-dark"
+              className="border border-gray-solid bg-gray-100 p-2 text-deep-blue-dark"
             >
               <option value="0">Between $0 - $23999</option>
               <option value="1">Between $23999 - $42999</option>
@@ -99,4 +87,8 @@ export default function SearchFiltersModal(props) {
       </div>
     </div>
   )
+}
+
+SearchFiltersModal.propTypes = {
+  filterHeader: PropTypes.string,
 }

@@ -60,7 +60,7 @@ export default function SearchResult(props) {
 
   return (
     <Layout locale={props.locale} title="searchResult">
-      <SearchFiltersModal />
+      <SearchFiltersModal filterHeader={t.filters} />
       <h2 className="layout-container text-2xl">
         Locale selected: {props.locale}.
       </h2>
