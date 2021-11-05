@@ -29,7 +29,6 @@ project {
     buildType(Build_Integration)
 }
 
-//VCS ROOTS
 object VCS_digitalCentreDev : GitVcsRoot({
     name = "Digital Centre dev branch VCS"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
@@ -52,7 +51,6 @@ object VCS_digitalCentreAll : GitVcsRoot({
     }
 })
 
-//BUILD CONFIGURATIONS
 object Build: BuildType({
     name = "Build"
     description = "Build to deploy dev branch"
