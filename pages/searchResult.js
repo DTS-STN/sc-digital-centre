@@ -1,4 +1,5 @@
 import Layout from '../components/organisms/Layout'
+import SearchFiltersModal from '../components/molecules/SearchFiltersModal'
 import SearchHeader from '../components/molecules/SearchHeader'
 
 import { getAEMFragments, getLocalBenefits } from './api/getData'
@@ -13,6 +14,7 @@ export default function SearchResult(props) {
   const t = props.locale === 'en' ? en : fr
   const router = useRouter()
   const [search, setSearch] = useState('')
+  const [modalShow, setModalShow] = useState(false)
   const [benefitList, setbenefitList] = useState(props.benefits)
 
   useEffect(() => {
@@ -23,6 +25,12 @@ export default function SearchResult(props) {
 
   return (
     <Layout locale={props.locale} title="searchResult">
+      <SearchFiltersModal
+        filterHeader={t.filters}
+        submitText={t.submit}
+        isOpen={modalShow}
+        setModalShow={setModalShow}
+      />
       <SearchHeader
         lang={props.locale}
         headerText={'Search Benefits'}
@@ -33,6 +41,7 @@ export default function SearchResult(props) {
         btnClearLabel={t.clearResults}
         btnFilterText={t.filterResults}
         btnFilterLabel={t.filterResults}
+        setModalShow={setModalShow}
         onSubmitHref="/searchResult"
       />
       <h1 className="layout-container text-3xl">

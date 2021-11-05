@@ -51,6 +51,10 @@ export default {
   // Most Requested Page
   mostRequestedTitle: 'Pages les plus demandées',
 
+  // Filters
+  filters: '(FR) Filters',
+  submit: '(FR) Submit',
+
   //
   // Footer
   //
