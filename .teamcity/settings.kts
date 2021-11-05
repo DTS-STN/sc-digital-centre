@@ -193,6 +193,7 @@ object Build_Release: BuildType({
     name = "Build_Release"
     description = "Deploys Pull Request to release envrionment when releases are created."
     params {
+        param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
         param("env.PROJECT", "sc-digital-centre")
         param("env.TARGET", "release")
         param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
@@ -244,7 +245,6 @@ object Build_Release: BuildType({
     }
     triggers {
         vcs {
-            runBuildInNewEmptyBranch = true
             branchFilter = """
                 +:refs/tags/* 
                 -:build-*
