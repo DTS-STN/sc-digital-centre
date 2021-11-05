@@ -243,7 +243,7 @@ object Build_Release: BuildType({
     }
     triggers {
         vcs {
-            branchFilter = "+:refs/heads/release/*"
+            branchFilter = "+:refs/tags/*/head"
         }
     }
 })
