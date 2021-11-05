@@ -11,12 +11,19 @@ import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
 import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
+import { BenefitsContext } from '../context/benefitsProvider'
+import { useEffect, useContext } from 'react'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
 
 export default function Home(props) {
   const t = props.locale === 'en' ? en : fr
+
+  const { setBenefits } = useContext(BenefitsContext)
+  useEffect(() => {
+    setBenefits(props.benefits)
+  })
 
   return (
     <Layout locale={props.locale} title="home">
