@@ -28,7 +28,7 @@ project {
     buildType(Build_Integration)
 }
 
-object Dev_ScDigitalCentre_HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
+object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
@@ -41,7 +41,7 @@ object Dev_ScDigitalCentre_HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
 
 
 object HttpsGithubComDtsStnScDigitalCentreAll : GitVcsRoot({
-    name = "Digital Centre all branches VCS"
+    name = "https://github.com/DTS-STN/sc-digital-centre_All"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
     branchSpec = "+:*"
