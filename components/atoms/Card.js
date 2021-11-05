@@ -34,7 +34,7 @@ Card.propTypes = {
   /**
    * The tag that the card will display
    */
-  tag: PropTypes.string.isRequired,
+  tag: PropTypes.string,
 
   /**
    * The text that the card will display
