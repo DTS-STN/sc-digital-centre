@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 export default function SearchFilterForm(props) {
   return (
     <form
-      className={'font-bold block text-xs ' + props.formClasses}
+      className={'font-bold block text-xs h-auto ' + props.formClasses}
       onSubmit={props.submitHandler}
     >
       <h3 className="text-xl mb-6"> {props.filterHeader} </h3>
@@ -79,16 +79,25 @@ export default function SearchFilterForm(props) {
         </div>
       </div>
 
-      <button
-        type="submit"
-        className="py-2 px-4 bg-deep-blue-solid rounded text-light-solid"
-      >
-        {props.submitText}
-      </button>
+      <div className="space-x-4 w-full py-2">
+        <button
+          className="py-2 px-4 bg-bright-blue-solid rounded text-light-solid"
+          onClick={props.cancelHandler}
+        >
+          {props.cancelText}
+        </button>
+        <button
+          type="submit"
+          className="py-2 px-4 bg-deep-blue-solid rounded text-light-solid"
+        >
+          {props.submitText}
+        </button>
+      </div>
     </form>
   )
 }
 
 SearchFilterForm.propTypes = {
+  cancelHandler: PropTypes.func,
   submitHandler: PropTypes.func,
 }

@@ -24,8 +24,13 @@ export default function SearchResult(props) {
     }
   }, [router.query.search])
 
-  //handle submit event from modal filter form here
-  function modalFilterSubmitHandler(event) {
+  //handle submit event from filter form here
+  function filterSubmitHandler(event) {
+    event.preventDefault()
+    setModalShow(false) //set the modal to be hidden, doesnt change anything on desktop form
+  }
+
+  function filterCancelHandler(event) {
     event.preventDefault()
     setModalShow(false)
   }
@@ -39,8 +44,10 @@ export default function SearchResult(props) {
       >
         <SearchFilterForm
           filterHeader={t.filters}
+          cancelText={t.cancel}
           submitText={t.submit}
-          submitHandler={modalFilterSubmitHandler}
+          cancelHandler={filterCancelHandler}
+          submitHandler={filterSubmitHandler}
         />
       </ModalElement>
       <SearchHeader
@@ -56,6 +63,21 @@ export default function SearchResult(props) {
         setModalShow={setModalShow}
         onSubmitHref="/searchResult"
       />
+      <div className="flex layout-container h-auto mt-4 justify-between children:flex">
+        <div className="h-auto w-0 md:w-1/4">
+          <SearchFilterForm
+            formClasses=" hidden md:inline-block"
+            filterHeader={t.filters}
+            cancelText={t.cancel}
+            submitText={t.submit}
+            cancelHandler={filterCancelHandler}
+            submitHandler={filterSubmitHandler}
+          />
+        </div>
+        <div className="w-full md:w-2/3 h-auto float-right">
+          <CardList cardList={benefitList} />
+        </div>
+      </div>
 
       <h2 className="layout-container text-3xl">
         Search results page placeholder.
@@ -66,7 +88,6 @@ export default function SearchResult(props) {
       <h3 className="layout-container text-2xl">
         Current search: {search ? search : 'No search specified'}.
       </h3>
-      <CardList cardList={benefitList} />
     </Layout>
   )
 }

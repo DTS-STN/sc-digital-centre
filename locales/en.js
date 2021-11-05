@@ -54,6 +54,7 @@ export default {
   // Filters
   filters: 'Filters',
   submit: 'Submit',
+  cancel: 'Cancel',
 
   //
   // Footer
