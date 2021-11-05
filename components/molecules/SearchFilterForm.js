@@ -6,7 +6,7 @@ export default function SearchFilterForm(props) {
       className={'font-bold block text-xs h-auto ' + props.formClasses}
       onSubmit={props.submitHandler}
     >
-      <h3 className="text-xl mb-6"> {props.filterHeader} </h3>
+      <h2 className="text-xl mb-6"> {props.filterHeader} </h2>
 
       <div className="mb-4 children:block">
         <label htmlFor="age-range" id="age-range-label" className="mb-2">
@@ -98,6 +98,26 @@ export default function SearchFilterForm(props) {
 }
 
 SearchFilterForm.propTypes = {
+  /*
+   * handlers for submitting/cancelling the form supplied by parent
+   * TODO: cancel button erases changes in the form
+   */
   cancelHandler: PropTypes.func,
   submitHandler: PropTypes.func,
+
+  /*
+   * text for cancel/submit buttons
+   */
+  cancelText: PropTypes.string,
+  submitText: PropTypes.string,
+
+  /*
+   * additional classes for the main form element
+   */
+  formClasses: PropTypes.string,
+
+  /*
+   * header for this form
+   */
+  filterHeader: PropTypes.string,
 }

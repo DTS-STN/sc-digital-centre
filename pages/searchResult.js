@@ -37,19 +37,6 @@ export default function SearchResult(props) {
 
   return (
     <Layout locale={props.locale} title="searchResult">
-      <ModalElement
-        modalShow={modalShow}
-        setModalShow={setModalShow}
-        bgClasses="md:hidden" // modal should always be hidden on desktop view
-      >
-        <SearchFilterForm
-          filterHeader={t.filters}
-          cancelText={t.cancel}
-          submitText={t.submit}
-          cancelHandler={filterCancelHandler}
-          submitHandler={filterSubmitHandler}
-        />
-      </ModalElement>
       <SearchHeader
         lang={props.locale}
         headerText={'Search Benefits'}
@@ -63,6 +50,19 @@ export default function SearchResult(props) {
         setModalShow={setModalShow}
         onSubmitHref="/searchResult"
       />
+      <ModalElement
+        modalShow={modalShow}
+        setModalShow={setModalShow}
+        bgClasses="md:hidden" // modal should always be hidden on desktop view
+      >
+        <SearchFilterForm
+          filterHeader={t.filters}
+          cancelText={t.cancel}
+          submitText={t.submit}
+          cancelHandler={filterCancelHandler}
+          submitHandler={filterSubmitHandler}
+        />
+      </ModalElement>
       <div className="flex layout-container h-auto mt-4 justify-between children:flex">
         <div className="h-auto w-0 md:w-1/4">
           <SearchFilterForm
