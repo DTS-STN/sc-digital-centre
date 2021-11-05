@@ -58,7 +58,7 @@ object HttpsGithubComDtsStnScDigitalCentrePR : GitVcsRoot({
 object HttpsGithubComDtsStnScDigitalCentreRelease : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre/tree/_release"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
-    branch = "*"
+    branch = "refs/heads/dev"
     branchSpec = "+:*"
     authMethod = uploadedKey {
         userName = "git"
