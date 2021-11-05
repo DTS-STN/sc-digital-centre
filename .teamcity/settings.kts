@@ -202,7 +202,6 @@ object Build_Release: BuildType({
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
         param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
-        param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentreRelease)
@@ -245,6 +244,7 @@ object Build_Release: BuildType({
     }
     triggers {
         vcs {
+            runBuildInNewEmptyBranch = true
             branchFilter = """
                 +:refs/tags/* 
                 -:build-*
