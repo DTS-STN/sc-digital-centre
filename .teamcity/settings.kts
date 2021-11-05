@@ -23,12 +23,12 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2020.2"
 
 project {
-    vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
+    vcsRoot(Dev_ScDigitalCentre_HttpsGithubComDtsStnScDigitalCentre)
     buildType(Build)
     buildType(Build_Integration)
 }
 
-object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
+object Dev_ScDigitalCentre_HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
