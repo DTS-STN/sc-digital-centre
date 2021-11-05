@@ -23,7 +23,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2020.2"
 
 project {
-    vcsRoot(Dev_ScDigitalCentre_HttpsGithubComDtsStnScDigitalCentre)
+    vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
     buildType(Build)
     buildType(Build_Integration)
 }
