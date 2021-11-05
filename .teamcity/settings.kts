@@ -61,7 +61,7 @@ object HttpsGithubComDtsStnScDigitalCentreRelease : GitVcsRoot({
     branch = "refs/heads/dev"
     branchSpec = "+:refs/tags/*"
     useTagsAsBranches = true
-    runBuildInNewEmptyBranch=true
+    runBuildInNewEmptyBranch = true
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "dtsrobot"
