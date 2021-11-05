@@ -23,14 +23,14 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2020.2"
 
 project {
-    vcsRoot(VCS_digitalCentreAll)
-    vcsRoot(VCS_digitalCentreDev)
+    vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
+    vcsRoot(HttpsGithubComDtsStnScDigitalCentreAll)
     buildType(Build)
     buildType(Build_Integration)
 }
 
-object VCS_digitalCentreDev : GitVcsRoot({
-    name = "Digital Centre dev branch VCS"
+object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
+    name = "https://github.com/DTS-STN/sc-digital-centre"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
     branchSpec = "+:refs/heads/dev"
@@ -40,7 +40,8 @@ object VCS_digitalCentreDev : GitVcsRoot({
     }
 })
 
-object VCS_digitalCentreAll : GitVcsRoot({
+
+object HttpsGithubComDtsStnScDigitalCentreAll : GitVcsRoot({
     name = "Digital Centre all branches VCS"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
@@ -65,7 +66,7 @@ object Build: BuildType({
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
     }
     vcs {
-        root(VCS_digitalCentreDev)
+        root(HttpsGithubComDtsStnScDigitalCentre)
     }
    
     steps {
@@ -125,7 +126,7 @@ object Build_Integration: BuildType({
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
     }
     vcs {
-        root(VCS_digitalCentreAll)
+        root(HttpsGithubComDtsStnScDigitalCentre)
     }
    
     steps {
