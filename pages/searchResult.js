@@ -1,5 +1,6 @@
 import Layout from '../components/organisms/Layout'
-import SearchFiltersModal from '../components/molecules/SearchFiltersModal'
+import ModalElement from '../components/molecules/ModalElement'
+import SearchFilterForm from '../components/molecules/SearchFilterForm'
 import SearchHeader from '../components/molecules/SearchHeader'
 
 import { getAEMFragments, getLocalBenefits } from './api/getData'
@@ -23,14 +24,25 @@ export default function SearchResult(props) {
     }
   }, [router.query.search])
 
+  //handle submit event from modal filter form here
+  function modalFilterSubmitHandler(event) {
+    event.preventDefault()
+    setModalShow(false)
+  }
+
   return (
     <Layout locale={props.locale} title="searchResult">
-      <SearchFiltersModal
-        filterHeader={t.filters}
-        submitText={t.submit}
-        isOpen={modalShow}
+      <ModalElement
+        modalShow={modalShow}
         setModalShow={setModalShow}
-      />
+        bgClasses="md:hidden" // modal should always be hidden on desktop view
+      >
+        <SearchFilterForm
+          filterHeader={t.filters}
+          submitText={t.submit}
+          submitHandler={modalFilterSubmitHandler}
+        />
+      </ModalElement>
       <SearchHeader
         lang={props.locale}
         headerText={'Search Benefits'}
@@ -44,15 +56,16 @@ export default function SearchResult(props) {
         setModalShow={setModalShow}
         onSubmitHref="/searchResult"
       />
-      <h1 className="layout-container text-3xl">
+
+      <h2 className="layout-container text-3xl">
         Search results page placeholder.
-      </h1>
-      <h2 className="layout-container text-2xl">
+      </h2>
+      <h3 className="layout-container text-2xl">
         Locale selected: {props.locale}.
-      </h2>
-      <h2 className="layout-container text-2xl">
+      </h3>
+      <h3 className="layout-container text-2xl">
         Current search: {search ? search : 'No search specified'}.
-      </h2>
+      </h3>
       <CardList cardList={benefitList} />
     </Layout>
   )
