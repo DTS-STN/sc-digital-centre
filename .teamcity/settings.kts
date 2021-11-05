@@ -249,7 +249,10 @@ object Build_Release: BuildType({
     }
     triggers {
         vcs {
-            branchFilter = "+:*"
+            branchFilter = """
+                +:refs/tags/* 
+                -:build-*
+                """.trimIndent()
             }
     }
 })
