@@ -58,7 +58,7 @@ object HttpsGithubComDtsStnScDigitalCentrePR : GitVcsRoot({
 object HttpsGithubComDtsStnScDigitalCentreRelease : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre/tree/_release"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
-    branch = "refs/heads/dev"
+    branch = "*"
     branchSpec = "+:*"
     authMethod = uploadedKey {
         userName = "git"
@@ -244,6 +244,7 @@ object Build_Release: BuildType({
     triggers {
         vcs {
             branchFilter = "+:refs/tags/*"
+            branchFilter = "-:build-*"
         }
     }
 })
