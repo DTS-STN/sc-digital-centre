@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-export default function SearchFiltersModal(props) {
+export default function ModalElement(props) {
   if (!props.modalShow) {
     return null
   }
@@ -25,7 +25,7 @@ export default function SearchFiltersModal(props) {
   )
 }
 
-SearchFiltersModal.propTypes = {
+ModalElement.propTypes = {
   /*
    * Whether modal is currently open and Function to change modal open/close state, respectively
    * There should be a useState() hook in parent that should be passed to these two props
