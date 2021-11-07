@@ -82,7 +82,7 @@ describe('Home page', () => {
     }))
   })
 
-  const contextValues = jest.fn()
+  const contextValues = { benefits: jest.fn(), setBenefits: jest.fn() }
 
   it('should render in French', () => {
     render(
