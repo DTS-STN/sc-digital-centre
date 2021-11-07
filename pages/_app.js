@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import '../styles/fonts.css'
 
-import { BenefitsProvider } from '../context/benefitsProvider'
+import BenefitsProvider from '../context/benefitsContext'
 
 function MyApp({ Component, pageProps }) {
   return (
