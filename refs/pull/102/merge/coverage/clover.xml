@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636158139492" clover="3.2.0">
-  <project timestamp="1636158139492" name="All files">
+<coverage generated="1636385578977" clover="3.2.0">
+  <project timestamp="1636385578977" name="All files">
     <metrics statements="125" coveredstatements="75" conditionals="76" coveredconditionals="48" methods="46" coveredmethods="31" elements="247" coveredelements="154" complexity="0" loc="125" ncloc="125" packages="5" files="28" classes="28"/>
     <package name="components.atoms">
       <metrics statements="27" coveredstatements="23" conditionals="14" coveredconditionals="12" methods="10" coveredmethods="8"/>
@@ -98,10 +98,10 @@
       </file>
       <file name="ModalElement.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/ModalElement.js">
         <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="4" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
+        <line num="5" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
       </file>
       <file name="SearchCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/SearchCard.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
