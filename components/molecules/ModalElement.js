@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import FocusTrap from 'focus-trap-react'
 
 export default function ModalElement(props) {
   if (!props.modalShow) {
@@ -6,22 +7,24 @@ export default function ModalElement(props) {
   }
 
   return (
-    <div
-      className={
-        'fixed top-0 left-0 px-4 py-6 bg-dark-solid bg-opacity-50 w-full h-full ' +
-        props.bgClasses
-      }
-    >
+    <FocusTrap>
       <div
-        aria-modal="true"
         className={
-          'bg-light-solid px-4 py-6 text-dark-solid rounded-sm ' +
-          props.modalClasses
+          'fixed top-0 left-0 px-4 py-6 bg-dark-solid bg-opacity-50 w-full h-full ' +
+          props.bgClasses
         }
       >
-        {props.children}
+        <div
+          aria-modal="true"
+          className={
+            'bg-light-solid px-4 py-6 text-dark-solid rounded-sm ' +
+            props.modalClasses
+          }
+        >
+          {props.children}
+        </div>
       </div>
-    </div>
+    </FocusTrap>
   )
 }
 
