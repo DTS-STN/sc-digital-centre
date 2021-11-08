@@ -56,11 +56,6 @@ export default function SearchFilterForm(props) {
           className="border border-gray-solid bg-gray-100 p-2 text-deep-blue-dark"
         >
           {ageRangeOptions}
-
-          {/* 
-          <option value="0">Under 18 years old</option>
-          <option value="1">18-100 bajillion</option> 
-          */}
         </select>
       </div>
 
@@ -74,11 +69,6 @@ export default function SearchFilterForm(props) {
           className="border border-gray-solid bg-gray-100 p-2 text-deep-blue-dark"
         >
           {incomeOptions}
-          {/* 
-          <option value="0">Between $0 - $23999</option>
-          <option value="1">Between $23999 - $42999</option>
-          <option value="2">Between $42999 - $72999</option> 
-          */}
         </select>
       </div>
 
@@ -86,46 +76,7 @@ export default function SearchFilterForm(props) {
         <label id="eligibility-label" className="font-bold">
           {props.eligibilityLabel}
         </label>
-
         {eligibilityOptions}
-
-        {/* 
-        <div className="children:align-middle">
-          <input
-            type="checkbox"
-            name="eligibility-living-with-disability"
-            id="eligibility-living-with-disability"
-            className="w-6 h-6 border-gray-solid"
-          />
-          <label htmlFor="eligibility-living-with-disability" className="ml-2">
-            living with a disability
-          </label>
-        </div>
-
-        <div className="children:align-middle">
-          <input
-            type="checkbox"
-            name="eligibility-caregiver-to-disability"
-            id="eligibility-caregiver-to-disability"
-            className="w-6 h-6 border-gray-solid"
-          />
-          <label htmlFor="eligibility-caregiver-to-disability" className="ml-2">
-            caregiver to someone with a disability
-          </label>
-        </div>
-
-        <div className="children:align-middle">
-          <input
-            type="checkbox"
-            name="eligibility-widowed"
-            id="eligibility-widowed"
-            className="w-6 h-6 border-gray-solid"
-          />
-          <label htmlFor="eligibility-widowed" className="ml-2">
-            widowed
-          </label>
-        </div> 
-        */}
       </div>
 
       <div className="space-x-4 w-full py-2">
@@ -169,4 +120,61 @@ SearchFilterForm.propTypes = {
    * header for this form
    */
   filterHeader: PropTypes.string,
+
+  /*
+   * Following three are the labels for each option to filter for
+   */
+  ageRangeLabel: PropTypes.string,
+  incomeLabel: PropTypes.string,
+  eligibilityLabel: PropTypes.string,
+
+  /*
+   * Following three are the options to filter for (age range, income, true/false eligibility criteria)
+   */
+  ageRangeOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      /*
+       * numerical value associated with this option
+       */
+      key: PropTypes.number,
+
+      /*
+       * name associated with this option
+       */
+      name: PropTypes.string,
+    })
+  ),
+
+  incomeOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      /*
+       * numerical value associated with this option
+       */
+      key: PropTypes.number,
+
+      /*
+       * name associated with this option
+       */
+      name: PropTypes.string,
+    })
+  ),
+
+  eligibilityOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      /*
+       * numerical value associated with this option
+       */
+      key: PropTypes.number,
+
+      /*
+       * name associated with this option
+       */
+      name: PropTypes.string,
+
+      /*
+       * name of option but in kebab-case, to be used as an HTML id
+       */
+      id: PropTypes.string,
+    })
+  ),
 }
