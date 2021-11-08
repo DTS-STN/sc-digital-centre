@@ -18,6 +18,27 @@ export default function SearchResult(props) {
   const [modalShow, setModalShow] = useState(false)
   const [benefitList, setbenefitList] = useState(props.benefits)
 
+  //for the filter form
+  //maybe put these into state?
+  const ageRangeOptions = [
+    { key: 0, name: 'Under 18 years old' },
+    { key: 1, name: '18-100 bajillion' },
+  ]
+  const incomeOptions = [
+    { key: 0, name: 'Between $0 - $23999' },
+    { key: 1, name: 'Between $23999 - $42999' },
+    { key: 2, name: 'Between $42999 - $72999' },
+  ]
+  const eligibilityOptions = [
+    { key: 0, id: 'living-with-disability', name: 'living with a disability' },
+    {
+      key: 1,
+      id: 'caregiver-to-disability',
+      name: 'caregiver to someone with a disability',
+    },
+    { key: 2, id: 'widowed', name: 'widowed' },
+  ]
+
   useEffect(() => {
     if (router.query.search) {
       setSearch(router.query.search)
@@ -56,22 +77,34 @@ export default function SearchResult(props) {
         bgClasses="md:hidden" // modal should always be hidden on desktop view
       >
         <SearchFilterForm
+          ageRangeOptions={ageRangeOptions}
+          incomeOptions={incomeOptions}
+          eligibilityOptions={eligibilityOptions}
           filterHeader={t.filters}
           cancelText={t.cancel}
           submitText={t.submit}
           cancelHandler={filterCancelHandler}
           submitHandler={filterSubmitHandler}
+          ageRangeLabel={t.ageRange}
+          incomeLabel={t.annualIncome}
+          eligibilityLabel={t.eligibility}
         />
       </ModalElement>
       <div className="flex layout-container h-auto mt-4 justify-between children:flex">
         <div className="h-auto w-0 md:w-1/4">
           <SearchFilterForm
             formClasses=" hidden md:inline-block"
+            ageRangeOptions={ageRangeOptions}
+            incomeOptions={incomeOptions}
+            eligibilityOptions={eligibilityOptions}
             filterHeader={t.filters}
             cancelText={t.cancel}
             submitText={t.submit}
             cancelHandler={filterCancelHandler}
             submitHandler={filterSubmitHandler}
+            ageRangeLabel={t.ageRange}
+            incomeLabel={t.annualIncome}
+            eligibilityLabel={t.eligibility}
           />
         </div>
         <div className="w-full md:w-2/3 h-auto float-right">
