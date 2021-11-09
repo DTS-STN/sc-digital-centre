@@ -1,3 +1,4 @@
+
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
@@ -25,10 +26,10 @@ version = "2020.2"
 project {
     vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
     vcsRoot(HttpsGithubComDtsStnScDigitalCentrePR)
-    vcsRoot(HttpsGithubComDtsStnScDigitalCentreTags)
+    vcsRoot(HttpsGithubComDtsStnScDigitalCentreRelease)
     buildType(Build)
     buildType(Build_Integration)
-    buildType(Build_Tags)
+    buildType(Build_Release)
 }
 
 //VCS ROOTS
@@ -54,11 +55,16 @@ object HttpsGithubComDtsStnScDigitalCentrePR : GitVcsRoot({
     }
 })
 
-object HttpsGithubComDtsStnScDigitalCentreTags : GitVcsRoot({
-    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_tags"
+object HttpsGithubComDtsStnScDigitalCentreRelease : GitVcsRoot({
+    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_release"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
-    branchSpec = "+:*"
+    branchSpec = """
+                +:refs/tags/* 
+                -:build-*
+                """.trimIndent()
+
+    useTagsAsBranches = true
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "dtsrobot"
@@ -74,7 +80,7 @@ object Build: BuildType({
         param("env.PROJECT", "sc-digital-centre")
         param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
-        param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S")
+        param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S-admin")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
         param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
@@ -134,7 +140,7 @@ object Build_Integration: BuildType({
         param("env.TARGET", "int")
         param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
-        param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S")
+        param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S-admin")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
         param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
@@ -187,22 +193,23 @@ object Build_Integration: BuildType({
 })
 
 
-object Build_Tags: BuildType({
-    name = "Build_Tags"
+object Build_Release: BuildType({
+    name = "Build_Release"
     description = "Deploys Pull Request to release envrionment when releases are created."
     params {
+        param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
         param("env.PROJECT", "sc-digital-centre")
         param("env.TARGET", "release")
         param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
-        param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S")
+        param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S-admin")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
         param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
     }
     vcs {
-        root(HttpsGithubComDtsStnScDigitalCentreTags)
+        root(HttpsGithubComDtsStnScDigitalCentreRelease)
     }
    
     steps {
@@ -242,7 +249,10 @@ object Build_Tags: BuildType({
     }
     triggers {
         vcs {
-            branchFilter = "+:refs/tags/*/head"
-        }
+            branchFilter = """
+                +:refs/tags/* 
+                -:build-*
+                """.trimIndent()
+            }
     }
 })
