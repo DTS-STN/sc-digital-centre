@@ -3,7 +3,10 @@ import { Card } from '../atoms/Card'
 
 export const CardList = ({ cardList }) => {
   const displayCards = cardList.map((card) => (
-    <li key={card.properties.elements.scPageNameEn.value}>
+    <li
+      className="flex flex-grow"
+      key={card.properties.elements.scPageNameEn.value}
+    >
       <Card
         title={card.properties.elements.scTitleEn.value}
         tag={card.properties.elements.scProgram.value}
