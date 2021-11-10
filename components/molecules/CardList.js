@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import { Card } from '../atoms/Card'
 
 export const CardList = ({ cardList }) => {
-  console.log(cardList[0].properties.elements)
   const displayCards = cardList.map((card) => (
     <li key={card.properties.elements.scPageNameEn.value}>
       <Card
