@@ -9,7 +9,7 @@ export const CardList = ({ cardList }) => {
         tag={card.properties.elements.scProgram.value}
         text={card.properties.elements.scShortDescriptionEn.value}
         callToActionText={card.properties.elements.scCallToActionEn.value}
-        callToActionHref={`benefits/${card.properties.elements.scPageNameEn.value}`}
+        callToActionHref={`benefits/${card.properties.elements.scPageNameEn.value}`.toLowerCase()}
         btnId={'btn-' + card.properties.elements.scPageNameEn.value}
       />
     </li>

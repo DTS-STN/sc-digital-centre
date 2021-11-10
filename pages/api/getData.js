@@ -34,11 +34,11 @@ export async function getAEMElements(fragpath) {
   return { elements, error }
 }
 
-export async function getPageNamesFromAEM() {
+export async function getPageNamesFromAEM(fragpath) {
   const { apiData, error } = await getAEMFragments(fragpath)
-  const entities = apiData.entities
-  const elements = entities.map((entity) => {
-    return entity.properties.name
+  const elements = apiData.entities.map((entity) => {
+    return entity.properties.elements.scPageNameEn.value.toLowerCase()
   })
+
   return { elements, error }
 }

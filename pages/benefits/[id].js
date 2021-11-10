@@ -1,5 +1,5 @@
 import Layout from '../../components/organisms/Layout'
-import { getAEMElements, getAEMFragments } from '../api/getData'
+import { getPageNamesFromAEM } from '../api/getData'
 import { useContext } from 'react'
 import {
   BenefitsContext,
@@ -33,8 +33,7 @@ export default function BenefitPage(props) {
 export async function getStaticPaths() {
   const { elements } = await getPageNamesFromAEM(`benefits.json`)
   const paths = elements.map((name) => ({ params: { id: name } }))
-
-  console.log('paths', paths)
+  //console.log('paths', paths)
 
   return {
     paths,
@@ -43,7 +42,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  console.log('context = ', context)
+  //  console.log('context = ', context)
 
   return {
     props: {
