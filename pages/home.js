@@ -9,6 +9,7 @@ import {
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
+import ImageBox from '../components/organisms/ImageBox'
 import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
 
@@ -28,7 +29,7 @@ export default function Home(props) {
 
   return (
     <Layout locale={props.locale} title="home">
-      <div className="flex flex-col sm:flex-row w-full">
+      <ImageBox imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png">
         <SearchCard
           lang={props.locale}
           headerText={t.searchFindBenefits}
@@ -38,9 +39,9 @@ export default function Home(props) {
           searchBarText={t.search}
           onSubmitHref="/searchResult"
         />
-        <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
-      </div>
-      <div className="layout-container md:flex mt-5">
+      </ImageBox>
+
+      <div className="layout-container md:flex my-5">
         <div className=" lg:w-1/4">
           <ServiceCanada
             title={t.serviceCanadaTitle}

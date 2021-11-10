@@ -10,13 +10,13 @@ export const Card = ({
   btnId,
 }) => {
   return (
-    <div className="shadow-card p-6">
+    <div className="flex flex-col place-content-between w-full shadow-card p-6">
       <h3 className="font-bold font-display text-xl">{title}</h3>
       <p className="">{tag}</p>
       <p className="my-5">{text}</p>
       <ActionButton
         id={btnId}
-        className="font-display text-xl underline text-white bg-gray-500 rounded px-4 py-2 flex justify-center max-w-sm mx-auto"
+        className="font-display text-xl underline text-white bg-gray-500 rounded mx-10 md:mx-0 md:px-4 py-2 flex justify-center mx-auto"
         href={callToActionHref}
       >
         {callToActionText}
@@ -34,7 +34,7 @@ Card.propTypes = {
   /**
    * The tag that the card will display
    */
-  tag: PropTypes.string.isRequired,
+  tag: PropTypes.string,
 
   /**
    * The text that the card will display
