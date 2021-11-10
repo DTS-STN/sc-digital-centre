@@ -27,7 +27,7 @@ export async function getAEMFragments(fragpath) {
   return { apiData, error }
 }
 
-export async function getAEMElements(fragpath) {
+export async function getPageNamesFromAEM() {
   const { apiData, error } = await getAEMFragments(fragpath)
   const entities = apiData.entities
   const elements = entities.map((entity) => {
