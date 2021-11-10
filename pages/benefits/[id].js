@@ -31,7 +31,7 @@ export default function BenefitPage(props) {
 }
 
 export async function getStaticPaths() {
-  const { elements } = await getAEMElements(`benefits.json`)
+  const { elements } = await getPageNamesFromAEM(`benefits.json`)
   const paths = elements.map((name) => ({ params: { id: name } }))
 
   console.log('paths', paths)
