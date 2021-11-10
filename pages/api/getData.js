@@ -29,7 +29,9 @@ export async function getAEMFragments(fragpath) {
 
 export async function getAEMElements(fragpath) {
   const { apiData, error } = await getAEMFragments(fragpath)
-  const elements = apiData.properties.elements
-  // console.log(apiData)
+  const entities = apiData.entities
+  const elements = entities.map((entity) => {
+    return entity.properties.name
+  })
   return { elements, error }
 }

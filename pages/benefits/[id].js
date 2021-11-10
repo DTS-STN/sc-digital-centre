@@ -1,7 +1,10 @@
 import Layout from '../../components/organisms/Layout'
 import { getAEMElements, getAEMFragments } from '../api/getData'
 import { useContext } from 'react'
-import { BenefitsContext } from '../../context/benefitsContext'
+import {
+  BenefitsContext,
+  BenefitsProvider,
+} from '../../context/benefitsContext'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
@@ -14,7 +17,7 @@ export default function BenefitPage(props) {
 
   const { benefits } = useContext(BenefitsContext)
 
-  console.log(benefits)
+  console.log('Benefits stored :', benefits)
 
   return (
     <Layout locale={props.locale} title={props.benefit.id}>
@@ -28,21 +31,18 @@ export default function BenefitPage(props) {
 }
 
 export async function getStaticPaths() {
-  //let features = await getAEMElements('benefits/oas.json')
+  const { elements } = await getAEMElements(`benefits.json`)
+  const paths = elements.map((name) => ({ params: { id: name } }))
+
+  console.log('paths', paths)
+
   return {
-    paths: [
-      {
-        params: {
-          id: 'OAS',
-        },
-      },
-    ],
+    paths,
     fallback: false,
   }
 }
 
 export async function getStaticProps(context) {
-  // Here we can fetch the chosen benefits with params.id before returning it as a prop.
   console.log('context = ', context)
 
   return {
