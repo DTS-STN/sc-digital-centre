@@ -26,7 +26,7 @@ expect.extend(toHaveNoViolations)
 describe('Home page', () => {
   const featured = {
     scTitleEn: { value: 'title' },
-    scShortDescriptionEn: { value: 'description' },
+    scDescriptionEn: { value: 'description' },
   }
 
   const benefits = [
@@ -42,7 +42,7 @@ describe('Home page', () => {
           scProgram: {
             value: 'Program 1',
           },
-          scShortDescriptionEn: {
+          scDescriptionEn: {
             value: 'Short Description 1',
           },
           scCallToActionEn: {
@@ -63,7 +63,7 @@ describe('Home page', () => {
           scProgram: {
             value: 'Program 2',
           },
-          scShortDescriptionEn: {
+          scDescriptionEn: {
             value: 'Short Description 2',
           },
           scCallToActionEn: {
