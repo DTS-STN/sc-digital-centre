@@ -1,17 +1,11 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 import Image from 'next/image'
 
-import SearchCard from '../molecules/SearchCard'
-
-import en from '../../locales/en'
-import fr from '../../locales/fr'
 /**
  *
  */
 export default function ImageBox(props) {
-  const t = props.locale === 'en' ? fr : en
-
   return (
     <div className=" bg-deep-blue-solid">
       <div
@@ -19,20 +13,11 @@ export default function ImageBox(props) {
         id="image-box"
         data-testid="image-box"
       >
-        <SearchCard
-          lang={props.locale}
-          headerText={t.searchFindBenefits}
-          paraText={t.searchDesc}
-          viewBenefitsServices={t.searchViewAllBenefits}
-          searchBarPlaceholder={t.searchPlaceholder}
-          searchBarText={t.search}
-          onSubmitHref="/searchResult"
-        />
+        {props.children}
+
         <div className="aspect-w-5 aspect-h-2 md:aspect-h-1 xl:ml-3 w-full min-w-max mr-break-out">
           <Image
-            src={
-              'https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png'
-            }
+            src={props.imageSrc}
             alt="Picture of something nice"
             layout="fill"
             objectFit="cover"
@@ -46,5 +31,15 @@ export default function ImageBox(props) {
 
 ImageBox.propTypes = {
   // id of the element for testing
-  id: propTypes.string,
+  id: PropTypes.string,
+
+  // URL to get image
+  imageSrc: PropTypes.string,
+
+  // other elements you want to add
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
 }
