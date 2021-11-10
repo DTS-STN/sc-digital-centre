@@ -6,8 +6,8 @@ export const CardList = ({ cardList }) => {
     <li key={card.properties.elements.scPageNameEn.value}>
       <Card
         title={card.properties.elements.scTitleEn.value}
-        tag={card.properties.elements.scProgram.value}
-        text={card.properties.elements.scShortDescriptionEn.value}
+        tag={card.properties.elements.scProgram?.value}
+        text={card.properties.elements.scDescriptionEn?.value}
         callToActionText={card.properties.elements.scCallToActionEn.value}
         callToActionHref={card.properties.elements.scPageNameEn.value}
         btnId={'btn-' + card.properties.elements.scPageNameEn.value}
