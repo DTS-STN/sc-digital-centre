@@ -54,6 +54,10 @@ export default {
   // Filters
   filters: 'Filters',
   submit: 'Submit',
+  cancel: 'Cancel',
+  ageRange: 'Age Range',
+  annualIncome: 'Annual Income',
+  eligibility: 'Eligibility Criteria',
 
   //
   // Footer
