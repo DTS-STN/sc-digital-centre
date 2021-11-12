@@ -1,3 +1,4 @@
+
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
@@ -25,10 +26,10 @@ version = "2020.2"
 project {
     vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
     vcsRoot(HttpsGithubComDtsStnScDigitalCentrePR)
-    vcsRoot(HttpsGithubComDtsStnScDigitalCentreTags)
+    vcsRoot(HttpsGithubComDtsStnScDigitalCentreRelease)
     buildType(Build)
     buildType(Build_Integration)
-    buildType(Build_Tags)
+    buildType(Build_Release)
 }
 
 //VCS ROOTS
@@ -54,11 +55,11 @@ object HttpsGithubComDtsStnScDigitalCentrePR : GitVcsRoot({
     }
 })
 
-object HttpsGithubComDtsStnScDigitalCentreTags : GitVcsRoot({
-    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_tags"
+object HttpsGithubComDtsStnScDigitalCentreRelease : GitVcsRoot({
+    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_release"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
-    branchSpec = "+:*"
+    branchSpec = "+:refs/heads/dev"
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "dtsrobot"
@@ -187,10 +188,11 @@ object Build_Integration: BuildType({
 })
 
 
-object Build_Tags: BuildType({
-    name = "Build_Tags"
+object Build_Release: BuildType({
+    name = "Build_Release"
     description = "Deploys Pull Request to release envrionment when releases are created."
     params {
+        param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
         param("env.PROJECT", "sc-digital-centre")
         param("env.TARGET", "release")
         param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
@@ -202,7 +204,7 @@ object Build_Tags: BuildType({
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
     }
     vcs {
-        root(HttpsGithubComDtsStnScDigitalCentreTags)
+        root(HttpsGithubComDtsStnScDigitalCentreRelease)
     }
    
     steps {
@@ -242,7 +244,7 @@ object Build_Tags: BuildType({
     }
     triggers {
         vcs {
-            branchFilter = "+:refs/tags/*/head"
+            branchFilter = "+:<default>"
         }
     }
 })

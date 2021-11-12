@@ -6,6 +6,7 @@ import '@testing-library/jest-dom'
 import Home from '../../pages/home'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import { useRouter } from 'next/router'
+import { BenefitsContext } from '../../context/benefitsContext'
 
 // mocks useRouter to be able to use component' router.asPath
 jest.mock('next/router', () => ({
@@ -26,7 +27,7 @@ expect.extend(toHaveNoViolations)
 describe('Home page', () => {
   const featured = {
     scTitleEn: { value: 'title' },
-    scShortDescriptionEn: { value: 'description' },
+    scDescriptionEn: { value: 'description' },
   }
 
   const benefits = [
@@ -39,10 +40,10 @@ describe('Home page', () => {
           scTitleEn: {
             value: 'Title 1',
           },
-          scProgram: {
+          scProgramEn: {
             value: 'Program 1',
           },
-          scShortDescriptionEn: {
+          scDescriptionEn: {
             value: 'Short Description 1',
           },
           scCallToActionEn: {
@@ -60,10 +61,10 @@ describe('Home page', () => {
           scTitleEn: {
             value: 'Title 2',
           },
-          scProgram: {
+          scProgramEn: {
             value: 'Program 2',
           },
-          scShortDescriptionEn: {
+          scDescriptionEn: {
             value: 'Short Description 2',
           },
           scCallToActionEn: {
@@ -80,45 +81,88 @@ describe('Home page', () => {
       asPath: '/',
     }))
   })
+
+  const contextValues = { benefits: jest.fn(), setBenefits: jest.fn() }
+
   it('should render in French', () => {
-    render(<Home locale="fr" benefits={benefits} featured={featured} />)
+    render(
+      <BenefitsContext.Provider value={contextValues}>
+        <Home locale="fr" benefits={benefits} featured={featured} />
+      </BenefitsContext.Provider>
+    )
     const enLink = screen.getByText('English')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render in English', () => {
-    render(<Home locale="en" benefits={benefits} featured={featured} />)
+    render(
+      <BenefitsContext.Provider value={contextValues}>
+        <Home locale="en" benefits={benefits} featured={featured} />
+      </BenefitsContext.Provider>
+    )
     const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render SearchCard', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <BenefitsContext.Provider value={contextValues}>
+        <Home benefits={benefits} featured={featured} />
+      </BenefitsContext.Provider>
+    )
     expect(screen.getByTestId('searchCard')).toBeTruthy()
   })
+
   it('should render serviceCanada', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <BenefitsContext.Provider value={contextValues}>
+        <Home benefits={benefits} featured={featured} />
+      </BenefitsContext.Provider>
+    )
     expect(screen.getByTestId('serviceCanada')).toBeTruthy()
   })
+
   it('should render topTasks', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <BenefitsContext.Provider value={contextValues}>
+        <Home benefits={benefits} featured={featured} />
+      </BenefitsContext.Provider>
+    )
     expect(screen.getByTestId('topTasks')).toBeTruthy()
   })
+
   it('should render cardList', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <BenefitsContext.Provider value={contextValues}>
+        <Home benefits={benefits} featured={featured} />
+      </BenefitsContext.Provider>
+    )
     expect(screen.getByTestId('cardList')).toBeTruthy()
   })
+
   it('should render featureBlock', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <BenefitsContext.Provider value={contextValues}>
+        <Home benefits={benefits} featured={featured} />
+      </BenefitsContext.Provider>
+    )
     expect(screen.getByTestId('featureBlock')).toBeTruthy()
   })
+
   it('should render contactUs', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <BenefitsContext.Provider value={contextValues}>
+        <Home benefits={benefits} featured={featured} />
+      </BenefitsContext.Provider>
+    )
     expect(screen.getByTestId('contactUs')).toBeTruthy()
   })
+
   it('has no a11y violations', async () => {
     const { container } = render(
-      <Home benefits={benefits} featured={featured} />
+      <BenefitsContext.Provider value={contextValues}>
+        <Home benefits={benefits} featured={featured} />
+      </BenefitsContext.Provider>
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()

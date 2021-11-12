@@ -9,8 +9,12 @@ import {
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
+import ImageBox from '../components/organisms/ImageBox'
 import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
+
+import { useEffect, useContext } from 'react'
+import { BenefitsContext } from '../context/benefitsContext'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
@@ -18,9 +22,14 @@ import fr from '../locales/fr'
 export default function Home(props) {
   const t = props.locale === 'en' ? en : fr
 
+  const { setBenefits } = useContext(BenefitsContext)
+  useEffect(() => {
+    setBenefits(props.benefits)
+  })
+
   return (
     <Layout locale={props.locale} title="home">
-      <div className="flex flex-col sm:flex-row w-full">
+      <ImageBox imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png">
         <SearchCard
           lang={props.locale}
           headerText={t.searchFindBenefits}
@@ -30,9 +39,9 @@ export default function Home(props) {
           searchBarText={t.search}
           onSubmitHref="/searchResult"
         />
-        <div className="bg-green-solid w-full h-60 sm:h-auto sm:w-1/2" />
-      </div>
-      <div className="layout-container md:flex mt-5">
+      </ImageBox>
+
+      <div className="layout-container md:flex my-5">
         <div className=" lg:w-1/4">
           <ServiceCanada
             title={t.serviceCanadaTitle}
@@ -74,7 +83,7 @@ export default function Home(props) {
         title="Featured: "
         // featuredContent and body text will come form the CMS
         featuredContent={props.featured.scTitleEn.value}
-        body={props.featured.scShortDescriptionEn.value}
+        body={props.featured.scDescriptionEn?.value}
         buttonText="Text on button"
         featuredHref="#"
         btnId="featured-content"
