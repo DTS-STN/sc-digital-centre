@@ -6,8 +6,13 @@ export default function ModalElement(props) {
     return null
   }
 
+  const options = props.options ?? {
+    clickOutsideDeactivates: 'true',
+    preventScroll: 'true',
+  }
+
   return (
-    <FocusTrap>
+    <FocusTrap focusTrapOptions={options}>
       <div
         className={
           'fixed top-0 left-0 px-4 py-6 bg-dark-solid bg-opacity-50 w-full h-full ' +
@@ -41,4 +46,11 @@ ModalElement.propTypes = {
    */
   modalClasses: PropTypes.string,
   bgClasses: PropTypes.string,
+
+  /*
+   * any additional options for the focus trap
+   * relevant documentation here: https://github.com/focus-trap/focus-trap#createoptions
+   * usage: options={{option1: value1, option2: value2, ... }}
+   */
+  options: PropTypes.object,
 }
