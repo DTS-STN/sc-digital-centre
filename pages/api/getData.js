@@ -17,9 +17,11 @@ export function getLocalBenefits() {
 //
 // Fetch ALL topics from API when available
 //
+
 export async function getAEMFragments(fragpath) {
+  //
   const res = await fetch(
-    `${process.env.NEXT_CONTENT_API}${fragpath}?date=${process.env.NEXT_PUBLIC_BUILD_DATE}`
+    `${process.env.NEXT_CONTENT_API}${fragpath}?datex=${process.env.NEXT_PUBLIC_BUILD_DATE}`
   )
   const error = res.ok ? false : res.status
   const apiData = res.ok ? await res.json() : null
@@ -28,6 +30,7 @@ export async function getAEMFragments(fragpath) {
 }
 
 export async function getAEMElements(fragpath) {
+  //
   const { apiData, error } = await getAEMFragments(fragpath)
   const elements = apiData.properties.elements
   // console.log(apiData)
@@ -35,10 +38,22 @@ export async function getAEMElements(fragpath) {
 }
 
 export async function getPageNamesFromAEM(fragpath) {
+  //
   const { apiData, error } = await getAEMFragments(fragpath)
+
   const elements = apiData.entities.map((entity) => {
-    return entity.properties.elements.scPageNameEn.value.toLowerCase()
+    return entity.properties.name.toLowerCase()
   })
 
   return { elements, error }
+}
+
+export async function getBenefitFromAEM(benefitId) {
+  //
+  const { apiData, error } = await getAEMFragments(benefitId)
+
+  return {
+    benefit: apiData,
+    error,
+  }
 }

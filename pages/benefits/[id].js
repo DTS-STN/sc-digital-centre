@@ -1,36 +1,32 @@
 import Layout from '../../components/organisms/Layout'
-import { getPageNamesFromAEM } from '../api/getData'
-import { useContext } from 'react'
-import {
-  BenefitsContext,
-  BenefitsProvider,
-} from '../../context/benefitsContext'
+import { getPageNamesFromAEM, getBenefitFromAEM } from '../api/getData'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 
-export default function BenefitPage(props) {
+export default function BenefitPage({ locale, benefit }) {
   //
-  console.log('props : ', props)
+  //console.log('props benefit', benefit)
 
-  const t = props.locale === 'en' ? en : fr
+  const benefitData = benefit.properties.elements
 
-  const { benefits } = useContext(BenefitsContext)
-
-  console.log('Benefits stored :', benefits)
+  const t = locale === 'en' ? en : fr
 
   return (
-    <Layout locale={props.locale} title={props.benefit.id}>
-      <h1 className="font-extrabold text-red-800 text-3xl text-center">
-        {props.benefit.id}
+    <Layout locale={locale} title={benefitData.scTitleEn.value}>
+      <h1 className="font-extrabold text-red-800 text-3xl text-center mt-12">
+        {benefitData.scTitleEn.value}
       </h1>
 
-      <p className="text-center my-24"> ... this ia a page</p>
+      <div className="w-9/12 mx-auto border my-24">
+        <p className="p-5">{benefitData.scLongDescriptionEn.value}</p>
+      </div>
     </Layout>
   )
 }
 
 export async function getStaticPaths() {
+  //
   const { elements } = await getPageNamesFromAEM(`benefits.json`)
   const paths = elements.map((name) => ({ params: { id: name } }))
   //console.log('paths', paths)
@@ -42,12 +38,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  //  console.log('context = ', context)
+  //
+  const { benefit } = await getBenefitFromAEM(
+    `benefits/${context.params.id}.json`
+  )
 
   return {
     props: {
       locale: context.locale,
-      benefit: context.params,
+      benefit,
     },
   }
 }

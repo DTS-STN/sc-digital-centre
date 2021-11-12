@@ -34,7 +34,7 @@ describe('SearchResult page', () => {
           scProgram: {
             value: 'Program 1',
           },
-          scShortDescriptionEn: {
+          scDescriptionEn: {
             value: 'Short Description 1',
           },
           scCallToActionEn: {
@@ -55,7 +55,7 @@ describe('SearchResult page', () => {
           scProgram: {
             value: 'Program 2',
           },
-          scShortDescriptionEn: {
+          scDescriptionEn: {
             value: 'Short Description 2',
           },
           scCallToActionEn: {

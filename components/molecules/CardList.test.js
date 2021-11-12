@@ -40,7 +40,7 @@ describe('CardList', () => {
                 scProgram: {
                   value: 'Program 1',
                 },
-                scShortDescriptionEn: {
+                sctDescriptionEn: {
                   value: 'Short Description 1',
                 },
                 scCallToActionEn: {
@@ -82,7 +82,7 @@ describe('CardList', () => {
                 scProgram: {
                   value: 'Program 1',
                 },
-                scShortDescriptionEn: {
+                scDescriptionEn: {
                   value: 'Short Description 1',
                 },
                 scCallToActionEn: {

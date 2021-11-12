@@ -12,8 +12,8 @@ import FeatureBlock from '../components/molecules/FeatureBlock'
 import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
 
-import { useEffect, useContext } from 'react'
-import { BenefitsContext } from '../context/benefitsContext'
+// import { useEffect, useContext } from 'react'
+// import { BenefitsContext } from '../context/benefitsContext'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
@@ -21,10 +21,10 @@ import fr from '../locales/fr'
 export default function Home(props) {
   const t = props.locale === 'en' ? en : fr
 
-  const { setBenefits } = useContext(BenefitsContext)
-  useEffect(() => {
-    setBenefits(props.benefits)
-  })
+  // const { setBenefits } = useContext(BenefitsContext)
+  // useEffect(() => {
+  //   setBenefits(props.benefits)
+  // })
 
   return (
     <Layout locale={props.locale} title="home">
@@ -82,7 +82,7 @@ export default function Home(props) {
         title="Featured: "
         // featuredContent and body text will come form the CMS
         featuredContent={props.featured.scTitleEn.value}
-        body={props.featured.scShortDescriptionEn.value}
+        body={props.featured.scDescriptionEn.value}
         buttonText="Text on button"
         featuredHref="#"
         btnId="featured-content"
@@ -101,7 +101,7 @@ export async function getStaticProps({ locale }) {
   // IF content enabled get the data from the api
   //
 
-  let features = await getAEMElements('benefits/oas.json')
+  let features = await getAEMElements('benefits/ei-benefit.json')
   errorCode = features.error
   if (features.elements && !errorCode) {
     featured = features.elements
