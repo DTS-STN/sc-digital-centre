@@ -1,7 +1,14 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   //
+  // Phase banner
+  phaseBannerTag: 'Test Site',
+  phaseBannerText:
+    'You cannot apply for services or benefits through this test site. Parts of this site may not work and will change.',
+  //
+  //
   // Header
+  title: 'home',
   //
 
   // Nav
