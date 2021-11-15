@@ -17,7 +17,7 @@ const contentURL = process.env.NEXT_CONTENT_API
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',
-    value: '', //our CSP Policy
+    value: `frame-ancestors 'self'`, //our CSP Policy
   },
   {
     key: 'Strict-Transport-Security',
