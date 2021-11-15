@@ -21,7 +21,7 @@ export default function ImageBox(props) {
             alt="Picture of something nice"
             layout="fill"
             objectFit="cover"
-            objectPosition="50% 50%"
+            objectPosition="20% 80%"
           />
         </div>
       </div>
