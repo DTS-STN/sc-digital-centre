@@ -12,6 +12,19 @@ const contentURL = process.env.NEXT_CONTENT_API
   ? process.env.NEXT_CONTENT_API
   : ''
 
+//security headers that we want on all pages
+//more info here https://nextjs.org/docs/advanced-features/security-headers
+const securityHeaders = [
+  {
+    key: 'Content-Security-Policy',
+    value: '', //our CSP Policy
+  },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload',
+  },
+]
+
 module.exports = {
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
@@ -45,6 +58,16 @@ module.exports = {
       //   source: " french page name with/without route ",
       //   destination: " 'english' page ",
       // },
+    ]
+  },
+
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes in your application.
+        source: '/(.*)',
+        headers: securityHeaders,
+      },
     ]
   },
 }
