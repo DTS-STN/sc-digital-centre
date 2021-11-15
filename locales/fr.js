@@ -53,7 +53,11 @@ export default {
 
   // Filters
   filters: '(FR) Filters',
-  submit: '(FR) Submit',
+  submit: 'Soumettre',
+  cancel: 'Annuler',
+  ageRange: '(FR) Age Range',
+  annualIncome: '(FR) Annual Income',
+  eligibility: '(FR) Eligibility Criteria',
 
   //
   // Footer

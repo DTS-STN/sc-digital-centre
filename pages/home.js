@@ -83,7 +83,7 @@ export default function Home(props) {
         title="Featured: "
         // featuredContent and body text will come form the CMS
         featuredContent={props.featured.scTitleEn.value}
-        body={props.featured.scDescriptionEn.value}
+        body={props.featured.scDescriptionEn?.value}
         buttonText="Text on button"
         featuredHref="#"
         btnId="featured-content"
