@@ -30,6 +30,7 @@ project {
     buildType(Build)
     buildType(Build_Integration)
     buildType(Build_Release)
+    buildType(Build_Pond)
 }
 
 //VCS ROOTS
