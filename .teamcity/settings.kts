@@ -72,7 +72,7 @@ object HttpsGithubComDtsStnScDigitalCentrePond : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre/tree/_pond"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
-    branchSpec = "+:refs/heads/*pond*"
+    branchSpec = "+:refs/heads/pond*"
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "dtsrobot"
@@ -318,7 +318,7 @@ object Build_Pond: BuildType({
     }
     triggers {
         vcs {
-            branchFilter = "+:refs/heads/*pond*"
+            branchFilter = "+:refs/heads/pond*"
         }
     }
 })
