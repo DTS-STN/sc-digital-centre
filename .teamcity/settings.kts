@@ -318,7 +318,7 @@ object Build_Pond: BuildType({
     }
     triggers {
         vcs {
-            branchFilter = "+:refs/heads/pond*"
+            branchFilter = "+:*"
         }
     }
 })
