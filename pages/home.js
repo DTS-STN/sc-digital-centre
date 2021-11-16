@@ -1,11 +1,6 @@
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
-import {
-  getBenefitsAndServices,
-  getLocalBenefits,
-  getAEMElements,
-  getAEMFragments,
-} from './api/getData'
+import aemService from './api/aemService'
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
@@ -102,16 +97,16 @@ export async function getStaticProps({ locale }) {
   // IF content enabled get the data from the api
   //
 
-  let features = await getAEMElements('benefits/oas.json')
+  let features = await aemService.getElements('benefits/oas.json')
   errorCode = features.error
   if (features.elements && !errorCode) {
     featured = features.elements
   }
 
-  let AEMbenefits = await getAEMFragments('benefits.json')
+  let AEMbenefits = await aemService.getFragment('benefits.json')
   errorCode = AEMbenefits.error
   if (AEMbenefits.apiData && !errorCode) {
-    benefits = AEMbenefits.apiData.entities
+    benefits = AEMbenefits.data.entities
   }
 
   return {
