@@ -40,7 +40,7 @@ describe('Home page', () => {
           scTitleEn: {
             value: 'Title 1',
           },
-          scProgram: {
+          scProgramEn: {
             value: 'Program 1',
           },
           scDescriptionEn: {
@@ -61,7 +61,7 @@ describe('Home page', () => {
           scTitleEn: {
             value: 'Title 2',
           },
-          scProgram: {
+          scProgramEn: {
             value: 'Program 2',
           },
           scDescriptionEn: {

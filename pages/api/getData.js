@@ -21,7 +21,7 @@ export function getLocalBenefits() {
 export async function getAEMFragments(fragpath) {
   //
   const res = await fetch(
-    `${process.env.NEXT_CONTENT_API}${fragpath}?datex=${process.env.NEXT_PUBLIC_BUILD_DATE}`
+    `${process.env.NEXT_CONTENT_API}${fragpath}?dates=${process.env.NEXT_PUBLIC_BUILD_DATE}`
   )
   const error = res.ok ? false : res.status
   const apiData = res.ok ? await res.json() : null

@@ -1,5 +1,6 @@
 import Layout from '../components/organisms/Layout'
-import SearchFiltersModal from '../components/molecules/SearchFiltersModal'
+import ModalElement from '../components/molecules/ModalElement'
+import SearchFilterForm from '../components/molecules/SearchFilterForm'
 import SearchHeader from '../components/molecules/SearchHeader'
 
 import { getAEMFragments, getLocalBenefits } from './api/getData'
@@ -17,20 +18,46 @@ export default function SearchResult(props) {
   const [modalShow, setModalShow] = useState(false)
   const [benefitList, setbenefitList] = useState(props.benefits)
 
+  //for the filter form
+  //maybe put these into state?
+  const ageRangeOptions = [
+    { key: 0, name: 'Under 18 years old' },
+    { key: 1, name: '18-100 bajillion' },
+  ]
+  const incomeOptions = [
+    { key: 0, name: 'Between $0 - $23999' },
+    { key: 1, name: 'Between $23999 - $42999' },
+    { key: 2, name: 'Between $42999 - $72999' },
+  ]
+  const eligibilityOptions = [
+    { key: 0, id: 'living-with-disability', name: 'living with a disability' },
+    {
+      key: 1,
+      id: 'caregiver-to-disability',
+      name: 'caregiver to someone with a disability',
+    },
+    { key: 2, id: 'widowed', name: 'widowed' },
+  ]
+
   useEffect(() => {
     if (router.query.search) {
       setSearch(router.query.search)
     }
   }, [router.query.search])
 
+  //handle submit event from filter form here
+  function filterSubmitHandler(event) {
+    event.preventDefault()
+    setModalShow(false) //set the modal to be hidden, doesnt change anything on desktop form
+  }
+
+  function filterCancelHandler(event) {
+    event.preventDefault()
+    setModalShow(false)
+  }
+
   return (
     <Layout locale={props.locale} title="searchResult">
-      <SearchFiltersModal
-        filterHeader={t.filters}
-        submitText={t.submit}
-        isOpen={modalShow}
-        setModalShow={setModalShow}
-      />
       <SearchHeader
         lang={props.locale}
         headerText={'Search Benefits'}
@@ -44,16 +71,56 @@ export default function SearchResult(props) {
         setModalShow={setModalShow}
         onSubmitHref="/searchResult"
       />
-      <h1 className="layout-container text-3xl">
+      <ModalElement
+        modalShow={modalShow}
+        setModalShow={setModalShow}
+        bgClasses="md:hidden" // modal should always be hidden on desktop view
+      >
+        <SearchFilterForm
+          ageRangeOptions={ageRangeOptions}
+          incomeOptions={incomeOptions}
+          eligibilityOptions={eligibilityOptions}
+          filterHeader={t.filters}
+          cancelText={t.cancel}
+          submitText={t.submit}
+          cancelHandler={filterCancelHandler}
+          submitHandler={filterSubmitHandler}
+          ageRangeLabel={t.ageRange}
+          incomeLabel={t.annualIncome}
+          eligibilityLabel={t.eligibility}
+        />
+      </ModalElement>
+      <div className="flex layout-container h-auto mt-4 justify-between children:flex">
+        <div className="h-auto w-0 md:w-1/4">
+          <SearchFilterForm
+            formClasses=" hidden md:inline-block"
+            ageRangeOptions={ageRangeOptions}
+            incomeOptions={incomeOptions}
+            eligibilityOptions={eligibilityOptions}
+            filterHeader={t.filters}
+            cancelText={t.cancel}
+            submitText={t.submit}
+            cancelHandler={filterCancelHandler}
+            submitHandler={filterSubmitHandler}
+            ageRangeLabel={t.ageRange}
+            incomeLabel={t.annualIncome}
+            eligibilityLabel={t.eligibility}
+          />
+        </div>
+        <div className="w-full md:w-2/3 h-auto float-right">
+          <CardList cardList={benefitList} />
+        </div>
+      </div>
+
+      <h2 className="layout-container text-3xl">
         Search results page placeholder.
-      </h1>
-      <h2 className="layout-container text-2xl">
+      </h2>
+      <h3 className="layout-container text-2xl">
         Locale selected: {props.locale}.
-      </h2>
-      <h2 className="layout-container text-2xl">
+      </h3>
+      <h3 className="layout-container text-2xl">
         Current search: {search ? search : 'No search specified'}.
-      </h2>
-      <CardList cardList={benefitList} />
+      </h3>
     </Layout>
   )
 }
