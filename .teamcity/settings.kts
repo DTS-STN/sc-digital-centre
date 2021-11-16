@@ -27,6 +27,7 @@ project {
     vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
     vcsRoot(HttpsGithubComDtsStnScDigitalCentrePR)
     vcsRoot(HttpsGithubComDtsStnScDigitalCentreRelease)
+    vcsRoot(HttpsGithubComDtsStnScDigitalCentrePond)
     buildType(Build)
     buildType(Build_Integration)
     buildType(Build_Release)
@@ -56,19 +57,6 @@ object HttpsGithubComDtsStnScDigitalCentrePR : GitVcsRoot({
     }
 })
 
-object HttpsGithubComDtsStnScDigitalCentrePond : GitVcsRoot({
-    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_pond"
-    url = "git@github.com:DTS-STN/sc-digital-centre.git"
-    branch = "refs/heads/dev"
-    branchSpec = "+:*pond*"
-    authMethod = uploadedKey {
-        userName = "git"
-        uploadedKey = "dtsrobot"
-    }
-})
-
-
-
 object HttpsGithubComDtsStnScDigitalCentreRelease : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre/tree/_release"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
@@ -80,6 +68,16 @@ object HttpsGithubComDtsStnScDigitalCentreRelease : GitVcsRoot({
     }
 })
 
+object HttpsGithubComDtsStnScDigitalCentrePond : GitVcsRoot({
+    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_pond"
+    url = "git@github.com:DTS-STN/sc-digital-centre.git"
+    branch = "refs/heads/dev"
+    branchSpec = "+:*pond*"
+    authMethod = uploadedKey {
+        userName = "git"
+        uploadedKey = "dtsrobot"
+    }
+})
 
 //BUILD CONFIGURATIONS
 object Build: BuildType({
