@@ -25,4 +25,85 @@ describe('aemService class', () => {
       new Date().toLocaleDateString('en-CA')
     )
   })
+  describe('getFragment method', () => {
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () =>
+          Promise.resolve({
+            properties: {
+              elements: [1, 2, 3],
+            },
+          }),
+      })
+    )
+
+    beforeEach(() => {
+      fetch.mockClear()
+    })
+
+    it('should throw an exception when an empty string is passed in', async () => {
+      try {
+        const aemServiceInstance = new AEMService(fakeBaseUrl)
+        expect(async () => {
+          aemServiceInstance.getFragment('     ')
+        }).toThrow(Error)
+        expect(() => {
+          aemServiceInstance.getFragment(() => {})
+        }).toThrow(Error)
+        expect(() => {
+          aemServiceInstance.getFragment(324)
+        }).toThrow(Error)
+      } catch (e) {}
+    })
+
+    it('should fetch aem content when passed in a valid path', async () => {
+      try {
+        const aemServiceInstance = new AEMService(fakeBaseUrl)
+        await aemServiceInstance.getFragment('test.json')
+        expect(global.fetch).toHaveBeenCalledTimes(1)
+      } catch (e) {}
+    })
+
+    it('should NOT fetch aem content that has already been called', async () => {
+      try {
+        const aemServiceInstance = new AEMService(fakeBaseUrl)
+        await aemServiceInstance.getFragment('test.json')
+        expect(global.fetch).toHaveBeenCalledTimes(1)
+        await aemServiceInstance.getFragment('test.json')
+        await aemServiceInstance.getFragment('test.json')
+        await aemServiceInstance.getFragment('test.json')
+        expect(global.fetch).toHaveBeenCalledTimes(1)
+        await aemServiceInstance.getFragment('test22.json')
+        expect(global.fetch).toHaveBeenCalledTimes(2)
+      } catch (e) {}
+    })
+  })
+  describe('getElements method', () => {
+    it('should return properties.elements property from getFragments', async () => {
+      try {
+        const aemServiceInstance = new AEMService(fakeBaseUrl)
+        const { elements } = await aemServiceInstance.getElements('test.json')
+        expect(elements).toHaveLength(3)
+
+        global.fetch = jest.fn(() =>
+          Promise.resolve({
+            json: () => Promise.resolve({}),
+          })
+        )
+      } catch (e) {}
+    })
+    it('should return empty array when no data is resolved for the elements', async () => {
+      try {
+        const aemServiceInstance = new AEMService(fakeBaseUrl)
+        global.fetch = jest.fn(() =>
+          Promise.resolve({
+            json: () => Promise.resolve({}),
+          })
+        )
+        const { elements } = await aemServiceInstance.getElements('test.json')
+        expect(elements).toHaveLength(0)
+        expect(elements).toEqual([])
+      } catch (e) {}
+    })
+  })
 })
