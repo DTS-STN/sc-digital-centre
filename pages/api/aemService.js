@@ -1,8 +1,8 @@
-class AEMService {
+export class AEMService {
   constructor(baseUrl, cacheBust) {
-    if (!baseUrl) throw new Error(`Provide a base URL for AEM.`)
+    if (!baseUrl?.trim?.()) throw new Error(`Provide a base URL for AEM.`)
 
-    this.cacheBustString = cacheBust?.trim?.()
+    this.cacheBustString = !!cacheBust?.trim?.()
       ? cacheBust
       : new Date().toLocaleDateString('en-CA')
     this.baseUrl = baseUrl
