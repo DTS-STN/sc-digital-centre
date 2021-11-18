@@ -16,12 +16,10 @@ export class AEMService {
 
     // return memoized fragPath data if it's stored
     if (this.store.has(fragPath)) {
-      console.log(`returning memoized data for fragment ${fragPath}`)
       return { data: this.store.get(fragPath), error: null }
     }
 
     // otherwise, fetch from AEM
-    console.log(`calling AEM for fragment ${fragPath} data`)
     const res = await fetch(
       `${this.baseUrl}${fragPath}?dates=${this.cacheBustString}`
     )
@@ -37,17 +35,10 @@ export class AEMService {
   }
 
   async getElements(elementsPath) {
-    try {
-      const { data, error } = await this.getFragment(elementsPath)
-      return {
-        elements: data?.properties?.elements || [],
-        error: error,
-      }
-    } catch (e) {
-      return {
-        elements: [],
-        error: true,
-      }
+    const { data, error } = await this.getFragment(elementsPath)
+    return {
+      elements: data?.properties?.elements || [],
+      error: error,
     }
   }
 }
