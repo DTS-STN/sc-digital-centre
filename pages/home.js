@@ -1,6 +1,7 @@
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
 import aemService from './api/aemService'
+import { getAEMElements, getAEMFragments } from './api/getData'
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
@@ -8,22 +9,19 @@ import ImageBox from '../components/organisms/ImageBox'
 import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
 
-import { useEffect, useContext } from 'react'
-import { BenefitsContext } from '../context/benefitsContext'
-
 import en from '../locales/en'
 import fr from '../locales/fr'
 
 export default function Home(props) {
   const t = props.locale === 'en' ? en : fr
 
-  const { setBenefits } = useContext(BenefitsContext)
-  useEffect(() => {
-    setBenefits(props.benefits)
-  })
-
   return (
-    <Layout locale={props.locale} title="home">
+    <Layout
+      locale={props.locale}
+      title={t.title}
+      phase={t.phaseBannerTag}
+      bannerText={t.phaseBannerText}
+    >
       <ImageBox imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png">
         <SearchCard
           lang={props.locale}
@@ -97,7 +95,7 @@ export async function getStaticProps({ locale }) {
   // IF content enabled get the data from the api
   //
 
-  let features = await aemService.getElements('benefits/oas.json')
+  let features = await aemService.getElements('benefits/ei-benefit.json')
   errorCode = features.error
   if (features.elements && !errorCode) {
     featured = features.elements

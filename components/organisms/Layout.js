@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import Script from 'next/script'
 import Meta from '../atoms/Meta'
+import PhaseBanner from '../atoms/PhaseBanner'
 import Header from '../molecules/Header'
 import Footer from '../molecules/Footer'
 
@@ -10,12 +11,17 @@ import fr from '../../locales/fr'
 /**
  * Component which defines the layout of the page for all screen sizes
  */
-export default function Layout({ children, locale, title }) {
+export default function Layout({ children, locale, title, phase, bannerText }) {
   const t = locale === 'en' ? en : fr
 
   return (
     <div>
       <Meta title={title} lang={locale} />
+      <PhaseBanner
+        phase={phase}
+        bannerText={bannerText}
+        lang={locale}
+      ></PhaseBanner>
 
       <Header language={locale} t={t} />
 
