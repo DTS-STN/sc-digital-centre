@@ -22,7 +22,9 @@ export class AEMService {
     // otherwise, fetch from AEM
     const res = await fetch(
       `${this.baseUrl}${fragPath}?dates=${this.cacheBustString}`
-    )
+    ).catch((e) => {
+      console.error(e.message)
+    })
     const error = res.ok ? false : res.status
     const data = res.ok ? await res.json() : null
 
