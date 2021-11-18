@@ -11,12 +11,15 @@ export const Card = ({
 }) => {
   return (
     <div className="flex flex-col place-content-between w-full shadow-card p-6">
-      <h3 className="font-bold font-display text-xl">{title}</h3>
-      {/* <p className="">{tag}</p> */}
-      <p className="my-5">{text}</p>
+      <div>
+        <h3 className="font-bold font-display text-xl">{title}</h3>
+        {/* <p className="">{tag}</p> */}
+        <p className="my-5">{text}</p>
+      </div>
+
       <ActionButton
         id={btnId}
-        className="font-display text-xl underline text-white bg-gray-500 rounded mx-10 md:mx-0 md:px-4 py-2 flex justify-center mx-auto"
+        className="font-display text-xl underline text-white bg-gray-500 rounded mx-10 md:mx-0 md:px-4 py-2 flex justify-center "
         href={callToActionHref}
       >
         {callToActionText}

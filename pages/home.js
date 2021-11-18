@@ -15,7 +15,12 @@ export default function Home(props) {
   const t = props.locale === 'en' ? en : fr
 
   return (
-    <Layout locale={props.locale} title="home">
+    <Layout
+      locale={props.locale}
+      title={t.title}
+      phase={t.phaseBannerTag}
+      bannerText={t.phaseBannerText}
+    >
       <ImageBox imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png">
         <SearchCard
           lang={props.locale}
