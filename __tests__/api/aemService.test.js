@@ -41,18 +41,18 @@ describe('aemService class', () => {
       fetch.mockClear()
     })
 
-    it('should throw an exception when an empty string is passed in', async () => {
+    it('should return undefined an empty string is passed in', async () => {
       try {
         const aemServiceInstance = new AEMService(fakeBaseUrl)
         expect(async () => {
           aemServiceInstance.getFragment('     ')
-        }).toThrow(Error)
+        }).toEqual(undefined)
         expect(() => {
           aemServiceInstance.getFragment(() => {})
-        }).toThrow(Error)
+        }).toEqual(undefined)
         expect(() => {
           aemServiceInstance.getFragment(324)
-        }).toThrow(Error)
+        }).toEqual(undefined)
       } catch (e) {}
     })
 
