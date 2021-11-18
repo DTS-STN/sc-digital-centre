@@ -12,7 +12,7 @@ export const Card = ({
   return (
     <div className="flex flex-col place-content-between w-full shadow-card p-6">
       <h3 className="font-bold font-display text-xl">{title}</h3>
-      <p className="">{tag}</p>
+      {/* <p className="">{tag}</p> */}
       <p className="my-5">{text}</p>
       <ActionButton
         id={btnId}
@@ -39,7 +39,7 @@ Card.propTypes = {
   /**
    * The text that the card will display
    */
-  text: PropTypes.string.isRequired,
+  //text: PropTypes.string.isRequired,
 
   /**
    * The text that the Call-To-Action will display
