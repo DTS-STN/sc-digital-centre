@@ -29,7 +29,13 @@ export default function Home(props) {
 
   return (
     <Layout locale={props.locale} title="home">
-      <ImageBox imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png">
+      <ImageBox
+        imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png"
+        alt="Picture of something nice"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="50% 50%"
+      >
         <SearchCard
           lang={props.locale}
           headerText={t.searchFindBenefits}
