@@ -10,6 +10,7 @@
     @apply font-body;
   }
   * {
+    @apply font-display;
     @apply focus:outline-none;
     @apply focus-visible:ring-1;
     @apply focus-visible:ring-black;

@@ -36,11 +36,11 @@ describe('Card', () => {
       />
     )
     const titleText = screen.getByText('title test')
-    const tagText = screen.getByText('tag test')
+    // const tagText = screen.getByText('tag test')   there are no tags in the current version of Card
     const textText = screen.getByText('text test')
     const linkText = screen.getByText('link test')
     expect(titleText).toBeInTheDocument()
-    expect(tagText).toBeInTheDocument()
+    // expect(tagText).toBeInTheDocument()            there are no tags in the current version of Card
     expect(textText).toBeInTheDocument()
     expect(linkText).toBeInTheDocument()
   })
