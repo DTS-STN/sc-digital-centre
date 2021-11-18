@@ -12,7 +12,7 @@ export class AEMService {
   }
 
   async getFragment(fragPath) {
-    if (!fragPath?.trim?.()) throw new Error(`Provide non-empty fragment path.`)
+    if (!fragPath?.trim?.()) return
 
     // return memoized fragPath data if it's stored
     if (this.store.has(fragPath)) {
@@ -22,9 +22,7 @@ export class AEMService {
     // otherwise, fetch from AEM
     const res = await fetch(
       `${this.baseUrl}${fragPath}?dates=${this.cacheBustString}`
-    ).catch((e) => {
-      console.error(e.message)
-    })
+    )
     const error = res.ok ? false : res.status
     const data = res.ok ? await res.json() : null
 
@@ -37,9 +35,7 @@ export class AEMService {
   }
 
   async getElements(elementsPath) {
-    const { data, error } = await this.getFragment(elementsPath).catch((e) => {
-      console.error(e.message)
-    })
+    const { data, error } = await this.getFragment(elementsPath)
     return {
       elements: data?.properties?.elements || [],
       error: error,
