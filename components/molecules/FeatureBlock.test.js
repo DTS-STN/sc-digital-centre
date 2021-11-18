@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, act } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import FeatureBlock from './FeatureBlock'
@@ -21,29 +21,27 @@ jest.mock('next/link', () => ({
 expect.extend(toHaveNoViolations)
 
 describe('FeatureBlock', () => {
-  it('renders FeatureBlock', () => {
-    useRouter.mockImplementation(() => ({
-      pathname: '/',
-      asPath: '/',
-    }))
-    render(
-      <FeatureBlock
-        title="title text"
-        featuredContent="featured text"
-        body="desctiption text"
-        buttonText="button text"
-        featuredHref="href text"
-        btnId="btnTestId"
-      />
-    )
-    const titleText = screen.getByRole('heading', {
-      name: /title text featured text/i,
+  it('renders FeatureBlock', async () => {
+    await act(async () => {
+      render(
+        <FeatureBlock
+          title="title text"
+          featuredContent="featured text"
+          body="desctiption text"
+          buttonText="button text"
+          featuredHref="href text"
+          btnId="btnTestId"
+        />
+      )
+      const titleText = screen.getByRole('heading', {
+        name: /title text featured text/i,
+      })
+      const bodyText = screen.getByText('desctiption text')
+      const buttonText = screen.getByText('button text')
+      expect(titleText).toBeInTheDocument()
+      expect(bodyText).toBeInTheDocument()
+      expect(buttonText).toBeInTheDocument()
     })
-    const bodyText = screen.getByText('desctiption text')
-    const buttonText = screen.getByText('button text')
-    expect(titleText).toBeInTheDocument()
-    expect(bodyText).toBeInTheDocument()
-    expect(buttonText).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
@@ -51,17 +49,19 @@ describe('FeatureBlock', () => {
       pathname: '/',
       asPath: '/',
     }))
-    const { container } = render(
-      <FeatureBlock
-        title="title text"
-        featuredContent="featured text"
-        body="desctiption text"
-        buttonText="button text"
-        featuredHref="href text"
-        btnId="btnTestId"
-      />
-    )
-    const results = await axe(container)
-    expect(results).toHaveNoViolations()
+    await act(async () => {
+      const { container } = render(
+        <FeatureBlock
+          title="title text"
+          featuredContent="featured text"
+          body="desctiption text"
+          buttonText="button text"
+          featuredHref="href text"
+          btnId="btnTestId"
+        />
+      )
+      const results = await axe(container)
+      expect(results).toHaveNoViolations()
+    })
   })
 })
