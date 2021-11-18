@@ -37,10 +37,17 @@ export class AEMService {
   }
 
   async getElements(elementsPath) {
-    const { data, error } = await this.getFragment(elementsPath)
-    return {
-      elements: data?.properties?.elements || [],
-      error: error,
+    try {
+      const { data, error } = await this.getFragment(elementsPath)
+      return {
+        elements: data?.properties?.elements || [],
+        error: error,
+      }
+    } catch (e) {
+      return {
+        elements: [],
+        error: true,
+      }
     }
   }
 }
