@@ -35,7 +35,9 @@ export class AEMService {
   }
 
   async getElements(elementsPath) {
-    const { data, error } = await this.getFragment(elementsPath)
+    const { data, error } = await this.getFragment(elementsPath).catch((e) => {
+      console.error(e.message)
+    })
     return {
       elements: data?.properties?.elements || [],
       error: error,
