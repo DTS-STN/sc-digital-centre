@@ -1,9 +1,5 @@
-import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { AEMService } from '../../pages/api/aemService'
-import SearchResult from '../../pages/searchResult'
-import { axe, toHaveNoViolations } from 'jest-axe'
-import { useRouter } from 'next/router'
 
 const fakeBaseUrl = 'https://example.com'
 
