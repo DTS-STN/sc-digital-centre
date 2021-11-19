@@ -4,6 +4,7 @@ module.exports = {
     'components/**/*.{js,jsx}',
     'pages/**/*.{js,jsx}',
     '!**/node_modules/**',
+    '!<rootDir>/__tests__/setup.js',
   ],
   moduleNameMapper: {
     /* Handle CSS imports (with CSS modules)
@@ -28,4 +29,5 @@ module.exports = {
     '/node_modules/',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
+  setupFiles: ['<rootDir>/jest.setup.js'],
 }
