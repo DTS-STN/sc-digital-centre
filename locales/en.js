@@ -154,8 +154,8 @@ export default {
       iconAlt: 'Icon of a phone for a Callback service',
       title: 'Callback service',
       text: "Don't want to wait? Make a request for us to call you using eServiceCanada",
-      linkText: 'lorem ipsum',
-      linkHref: '#',
+      linkText: 'Service Request Form',
+      linkHref: 'https://eservices.canada.ca/en/service/',
       cardId: 'CB',
     },
     {
