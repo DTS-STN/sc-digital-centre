@@ -10,7 +10,6 @@ export default function ImageBox(props) {
     <div className=" bg-deep-blue-solid">
       <div
         className="flex flex-col md:flex-row  bg-deep-blue-solid  md:container mx-auto md:pl-6 md:px-2"
-        id="image-box"
         data-testid="image-box"
       >
         {props.children}
@@ -18,10 +17,10 @@ export default function ImageBox(props) {
         <div className="aspect-w-5 aspect-h-2 md:aspect-h-1 xl:ml-3 w-full min-w-max mr-break-out">
           <Image
             src={props.imageSrc}
-            alt="Picture of something nice"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="20% 80%"
+            alt={props.alt}
+            layout={props.layout}
+            objectFit={props.objectFit}
+            objectPosition={props.objectPosition}
           />
         </div>
       </div>
@@ -35,6 +34,15 @@ ImageBox.propTypes = {
 
   // URL to get image
   imageSrc: PropTypes.string,
+
+  // image alt text
+  alt: PropTypes.string,
+  // image layout
+  layout: PropTypes.string,
+  // image object fit
+  objectFit: PropTypes.string,
+  // image objectPosition
+  objectPosition: PropTypes.string,
 
   // other elements you want to add
   children: PropTypes.oneOfType([

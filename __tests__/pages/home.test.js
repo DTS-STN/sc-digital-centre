@@ -21,6 +21,15 @@ jest.mock('next/link', () => ({
   ),
 }))
 
+jest.mock(
+  'next/image',
+  () =>
+    function Image({ imageSrc, alt }) {
+      // eslint-disable-next-line @next/next/no-img-element
+      return <img src={imageSrc} alt={alt} />
+    }
+)
+
 expect.extend(toHaveNoViolations)
 
 describe('Home page', () => {
