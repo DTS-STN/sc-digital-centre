@@ -154,8 +154,8 @@ export default {
       iconAlt: "Icône d'un téléphone pour un service de rappel",
       title: 'Service de rappel',
       text: 'Vous ne voulez pas attendre ? Faites une demande pour que nous vous appelions en utilisant eServiceCanada',
-      linkText: 'French value',
-      linkHref: '#',
+      linkText: 'Formulaire de demande de services',
+      linkHref: 'https://eservices.canada.ca/fr/service/',
       cardId: 'CB',
     },
     {

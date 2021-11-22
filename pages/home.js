@@ -1,6 +1,6 @@
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
-import { getAEMElements, getAEMFragments } from './api/getData'
+import aemService from './api/aemService'
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
@@ -80,7 +80,7 @@ export default function Home(props) {
       <FeatureBlock
         title="Featured: "
         // featuredContent and body text will come form the CMS
-        featuredContent={props.featured.scTitleEn.value}
+        featuredContent={props.featured.scTitleEn?.value}
         body={props.featured.scDescriptionEn?.value}
         buttonText="Text on button"
         featuredHref="#"
@@ -100,16 +100,16 @@ export async function getStaticProps({ locale }) {
   // IF content enabled get the data from the api
   //
 
-  let features = await getAEMElements('benefits/ei-benefit.json')
+  let features = await aemService.getElements('benefits/ei-benefit.json')
   errorCode = features.error
   if (features.elements && !errorCode) {
     featured = features.elements
   }
 
-  let AEMbenefits = await getAEMFragments('benefits.json')
+  let AEMbenefits = await aemService.getFragment('benefits.json')
   errorCode = AEMbenefits.error
   if (AEMbenefits.apiData && !errorCode) {
-    benefits = AEMbenefits.apiData.entities
+    benefits = AEMbenefits.data.entities
   }
 
   return {
