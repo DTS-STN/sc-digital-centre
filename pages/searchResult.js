@@ -22,7 +22,12 @@ export default function SearchResult(props) {
   //maybe put these into state?
   const ageRangeOptions = [
     { key: 0, name: 'Under 18 years old' },
-    { key: 1, name: '18-100 bajillion' },
+    { key: 1, name: '19-24 years old' },
+    { key: 2, name: '25-34 years old' },
+    { key: 3, name: '35-44 years old' },
+    { key: 4, name: '45-54 years old' },
+    { key: 5, name: '55-64 years old' },
+    { key: 6, name: '65 years or older' },
   ]
   const incomeOptions = [
     { key: 0, name: 'Between $0 - $23999' },
