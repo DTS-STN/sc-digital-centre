@@ -1,9 +1,18 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, act } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import SearchCard from './SearchCard'
 
 expect.extend(toHaveNoViolations)
+
+jest.mock(
+  'next/link',
+  () =>
+    function Link({ url }) {
+      // eslint-disable-next-line @next/next/no-img-element
+      return <a href={url}>children </a>
+    }
+)
 
 describe('SearchCard', () => {
   it('renders SearchCard in english', () => {
@@ -18,21 +27,6 @@ describe('SearchCard', () => {
       />
     )
     const searchText = screen.getByText('search text')
-    expect(searchText).toBeInTheDocument()
-  })
-
-  it('renders SearchCard in french', () => {
-    render(
-      <SearchCard
-        lang="fr"
-        headerText="header text"
-        paraText="paragraph text"
-        viewBenefitsServices="View all Test"
-        searchBarPlaceholder="placeholder text"
-        searchBarText="Recherche"
-      />
-    )
-    const searchText = screen.getByText('Recherche')
     expect(searchText).toBeInTheDocument()
   })
 
