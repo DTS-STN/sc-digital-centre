@@ -74,6 +74,28 @@ describe('Home page', () => {
     },
   ]
 
+  const topTasks = [
+    {
+      properties: {
+        elements: {
+          scTitleEn: { title: 'titleEn' },
+          scTitleFr: { title: 'titleFr' },
+          scLinkURLEn: { value: '/' },
+          scLinkURLFr: { value: '/' },
+        },
+      },
+    },
+  ]
+
+  const topTaskTitle = {
+    properties: {
+      elements: {
+        scLabelFr: { value: 'test' },
+        scLabelEn: { value: 'test' },
+      },
+    },
+  }
+
   beforeEach(() => {
     useRouter.mockImplementation(() => ({
       pathname: '/',
@@ -82,50 +104,113 @@ describe('Home page', () => {
   })
 
   it('should render in French', () => {
-    render(<Home locale="fr" benefits={benefits} featured={featured} />)
+    render(
+      <Home
+        locale="fr"
+        benefits={benefits}
+        featured={featured}
+        topTasks={topTasks}
+        topTaskTitle={topTaskTitle}
+      />
+    )
     const enLink = screen.getByText('English')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render in English', () => {
-    render(<Home locale="en" benefits={benefits} featured={featured} />)
+    render(
+      <Home
+        locale="en"
+        benefits={benefits}
+        featured={featured}
+        topTasks={topTasks}
+        topTaskTitle={topTaskTitle}
+      />
+    )
     const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render SearchCard', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <Home
+        benefits={benefits}
+        featured={featured}
+        topTasks={topTasks}
+        topTaskTitle={topTaskTitle}
+      />
+    )
     expect(screen.getByTestId('searchCard')).toBeTruthy()
   })
 
   it('should render serviceCanada', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <Home
+        benefits={benefits}
+        featured={featured}
+        topTasks={topTasks}
+        topTaskTitle={topTaskTitle}
+      />
+    )
     expect(screen.getByTestId('serviceCanada')).toBeTruthy()
   })
 
   it('should render topTasks', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <Home
+        benefits={benefits}
+        featured={featured}
+        topTasks={topTasks}
+        topTaskTitle={topTaskTitle}
+      />
+    )
     expect(screen.getByTestId('topTasks')).toBeTruthy()
   })
 
   it('should render cardList', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <Home
+        benefits={benefits}
+        featured={featured}
+        topTasks={topTasks}
+        topTaskTitle={topTaskTitle}
+      />
+    )
     expect(screen.getByTestId('cardList')).toBeTruthy()
   })
 
   it('should render featureBlock', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <Home
+        benefits={benefits}
+        featured={featured}
+        topTasks={topTasks}
+        topTaskTitle={topTaskTitle}
+      />
+    )
     expect(screen.getByTestId('featureBlock')).toBeTruthy()
   })
 
   it('should render contactUs', () => {
-    render(<Home benefits={benefits} featured={featured} />)
+    render(
+      <Home
+        benefits={benefits}
+        featured={featured}
+        topTasks={topTasks}
+        topTaskTitle={topTaskTitle}
+      />
+    )
     expect(screen.getByTestId('contactUs')).toBeTruthy()
   })
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <Home benefits={benefits} featured={featured} />
+      <Home
+        benefits={benefits}
+        featured={featured}
+        topTasks={topTasks}
+        topTaskTitle={topTaskTitle}
+      />
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
