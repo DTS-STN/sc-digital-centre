@@ -57,7 +57,12 @@ export default function SearchResult(props) {
   }
 
   return (
-    <Layout locale={props.locale} title="searchResult">
+    <Layout
+      locale={props.locale}
+      title="searchResult"
+      phase={t.phaseBannerTag}
+      bannerText={t.phaseBannerText}
+    >
       <SearchHeader
         lang={props.locale}
         headerText={'Search Benefits'}
