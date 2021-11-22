@@ -102,7 +102,7 @@ export async function getStaticProps({ locale }) {
 
   let AEMbenefits = await aemService.getFragment('benefits.json')
   errorCode = AEMbenefits.error
-  if (AEMbenefits.apiData && !errorCode) {
+  if (AEMbenefits.data && !errorCode) {
     benefits = AEMbenefits.data.entities
   }
 
