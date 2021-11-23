@@ -1,5 +1,5 @@
-import AEMService from './pages/api/AEMService.js'
-import { SEARCH_PAGE, HOME_PAGE } from './constants/aemPages.js'
+const AEMService = require('./pages/api/AEMService')
+const { SEARCH_PAGE, HOME_PAGE } = require('./constants/aemPages')
 
 //formatting TC Date
 const builddate = process.env.NEXT_PUBLIC_BUILD_DATE
@@ -54,9 +54,6 @@ const config = {
 // rewrites setup
 //
 config.rewrites = async () => {
-  
-  
-
   const aemService = new AEMService(
     process.env.NEXT_CONTENT_API,
     process.env.NEXT_PUBLIC_BUILD_DATE
@@ -89,4 +86,4 @@ config.headers = async () => {
     },
   ]
 }
-export default config
+module.exports = config
