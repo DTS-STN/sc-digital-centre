@@ -17,7 +17,17 @@ export default function Layout({ children, locale, title, phase, bannerText }) {
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
-      window.adobeDataLayer.push({ event: 'pageLoad' })
+      window.adobeDataLayer.push({
+        event: 'pageLoad',
+        page: {
+          title: document.title,
+          language: locale === 'en' ? 'eng' : 'fra',
+          creator:
+            'Employment and Social Development Canada/Emploi et Développement social Canada',
+          accessRights: '2',
+          service: 'ESDC-EDSC_DC-CD',
+        },
+      })
     }
   }, [])
 
