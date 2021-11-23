@@ -53,12 +53,12 @@ const config = {
 // rewrites setup
 //
 config.rewrites = async () => {
-  const AEMService = require(path.join(__dirname, 'pages', 'api', 'AEMService'))
+  const AEMService = require('./pages/api/AEMService.js')
   const aemService = new AEMService(
     process.env.NEXT_CONTENT_API,
     process.env.NEXT_PUBLIC_BUILD_DATE
   )
-  const { SEARCH_PAGE, HOME_PAGE } = require('./constants/aemPages')
+  const { SEARCH_PAGE, HOME_PAGE } = require('./constants/aemPages.js')
 
   // get and cache pages from aem
   await aemService.getPage(HOME_PAGE)
