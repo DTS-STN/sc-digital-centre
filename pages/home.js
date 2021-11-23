@@ -29,7 +29,13 @@ export default function Home({
       aemPage={aemPage}
       searchPageHref={searchPageHref}
     >
-      <ImageBox imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png">
+      <ImageBox
+        imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png"
+        alt="Picture of something nice"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="20% 80%"
+      >
         <SearchCard
           lang={locale}
           headerText={t.searchFindBenefits}
@@ -105,7 +111,7 @@ export async function getStaticProps({ locale }) {
 
   let AEMbenefits = await aemService.getFragment('benefits.json')
   errorCode = AEMbenefits.error
-  if (AEMbenefits.apiData && !errorCode) {
+  if (AEMbenefits.data && !errorCode) {
     benefits = AEMbenefits.data.entities
   }
 

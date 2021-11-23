@@ -117,14 +117,6 @@ export default function SearchResult({
           <CardList cardList={benefitList} />
         </div>
       </div>
-
-      <h2 className="layout-container text-3xl">
-        Search results page placeholder.
-      </h2>
-      <h3 className="layout-container text-2xl">Locale selected: {locale}.</h3>
-      <h3 className="layout-container text-2xl">
-        Current search: {search ? search : 'No search specified'}.
-      </h3>
     </Layout>
   )
 }
