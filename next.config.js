@@ -1,8 +1,3 @@
-const { SEARCH_PAGE, HOME_PAGE } = require('./constants/pagesDirectory')
-const { generatePageRewrite } = require('./helpers')
-
-const aemService = require('./pages/api/aemServiceInstance')
-
 //formatting TC Date
 const builddate = process.env.NEXT_PUBLIC_BUILD_DATE
   ? process.env.NEXT_PUBLIC_BUILD_DATE.substr(0, 4) +
@@ -56,15 +51,19 @@ const config = {
 // rewrites setup
 //
 config.rewrites = async () => {
+  const { SEARCH_PAGE, HOME_PAGE } = require('./constants/pagesDirectory')
+  const { generatePageRewrite } = require('./helpers')
+
+  const aemService = require('./pages/api/aemServiceInstance')
+
   // get and cache pages from aem
   await aemService.getPage(HOME_PAGE)
   await aemService.getPage(SEARCH_PAGE)
 
   // loop over all cached pages and build rewrite rules for next
-  const aemPagesRewrites = []
-  for (const [, normalizedPage] of Object.entries(aemService.pages)) {
-    aemPagesRewrites.push(generatePageRewrite(normalizedPage))
-  }
+  const aemPagesRewrites = Object.values(aemService.pages).map(
+    (normalizedPage) => generatePageRewrite(normalizedPage)
+  )
 
   return {
     afterFiles: aemPagesRewrites,
