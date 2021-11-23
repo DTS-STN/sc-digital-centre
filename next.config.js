@@ -1,6 +1,3 @@
-const AEMService = require('./pages/api/AEMService')
-const { SEARCH_PAGE, HOME_PAGE } = require('./constants/aemPages')
-
 //formatting TC Date
 const builddate = process.env.NEXT_PUBLIC_BUILD_DATE
   ? process.env.NEXT_PUBLIC_BUILD_DATE.substr(0, 4) +
@@ -54,10 +51,12 @@ const config = {
 // rewrites setup
 //
 config.rewrites = async () => {
+  const AEMService = require('./pages/api/AEMService')
   const aemService = new AEMService(
     process.env.NEXT_CONTENT_API,
     process.env.NEXT_PUBLIC_BUILD_DATE
   )
+  const { SEARCH_PAGE, HOME_PAGE } = require('./constants/aemPages')
 
   // get and cache pages from aem
   await aemService.getPage(HOME_PAGE)
