@@ -1,4 +1,4 @@
-import AEMService from './AEMService-original'
+import AEMService from './AEMService'
 
 const aemServiceInstance = new AEMService(
   process.env.NEXT_CONTENT_API,
