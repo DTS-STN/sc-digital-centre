@@ -53,7 +53,6 @@ const config = {
 config.rewrites = async () => {
   const { SEARCH_PAGE, HOME_PAGE } = require('./constants/pagesDirectory')
   const { generatePageRewrite } = require('./helpers')
-
   const aemService = require('./pages/api/aemServiceInstance')
 
   // get and cache pages from aem
