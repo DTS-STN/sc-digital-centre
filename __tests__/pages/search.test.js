@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import SearchResult from '../../pages/searchResult'
+import Search from '../../pages/search'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import { useRouter } from 'next/router'
 
@@ -20,7 +20,7 @@ jest.mock('next/link', () => ({
 
 expect.extend(toHaveNoViolations)
 
-describe('SearchResult page', () => {
+describe('Search page', () => {
   const benefits = [
     {
       properties: {
@@ -76,21 +76,19 @@ describe('SearchResult page', () => {
     }))
   })
   it('should render in French', () => {
-    render(<SearchResult locale="fr" benefits={benefits} />)
+    render(<Search locale="fr" benefits={benefits} />)
     const enLink = screen.getByText('English')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render in English', () => {
-    render(<SearchResult locale="en" benefits={benefits} />)
+    render(<Search locale="en" benefits={benefits} />)
     const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(
-      <SearchResult locale="en" benefits={benefits} />
-    )
+    const { container } = render(<Search locale="en" benefits={benefits} />)
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
