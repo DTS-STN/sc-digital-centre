@@ -13,7 +13,27 @@ import fr from '../locales/fr'
 
 export default function Home(props) {
   const t = props.locale === 'en' ? en : fr
+  const topTasks = () => {
+    return props.topTasks?.map((task) => {
+      try {
+        let title = task.properties.elements.scTitleEn.title
+        let link = task.properties.elements.scLinkURLEn.value
+        if (props.locale !== 'en') {
+          link = task.properties.elements.scLinkURLFr.value
+          title = task.properties.elements.scTitleFr.title
+        }
+        return { taskName: title, taskURL: link }
+      } catch (e) {
+        return { taskName: 'undefined', taskURL: '/' }
+      }
+    })
+  }
 
+  const topTaskTitle = () => {
+    return props.locale !== 'en'
+      ? props.topTaskTitle?.properties.elements.scLabelFr.value
+      : props.topTaskTitle?.properties.elements.scLabelEn.value
+  }
   return (
     <Layout
       locale={props.locale}
@@ -50,23 +70,9 @@ export default function Home(props) {
             createAccountText={t.serviceCanadaCreateAccount}
           />
           <TopTasks
-            topTasksHeader={t.topTasksHeader}
+            topTasksHeader={topTaskTitle()}
             topTasksDescription={t.topTasksDescritpion}
-            topTasksList={[
-              { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
-              {
-                taskName: 'Access an ROE (Record of Employment)',
-                taskURL: '/home',
-              },
-              {
-                taskName: 'Activate my Service Canada Access Code (PAC)',
-                taskURL: '/home',
-              },
-              {
-                taskName: 'Update my address and contact information',
-                taskURL: '/home',
-              },
-            ]}
+            topTasksList={topTasks()}
           />
         </div>
         <div className="lg:w-3/4 md:pl-12">
@@ -95,6 +101,8 @@ export async function getStaticProps({ locale }) {
   let benefits = []
   let errorCode = false
   let featured = []
+  let topTasks = []
+  let topTaskTitle = []
 
   //
   // IF content enabled get the data from the api
@@ -112,12 +120,38 @@ export async function getStaticProps({ locale }) {
     benefits = AEMbenefits.data.entities
   }
 
+  // Get list of top tasks
+  let topTasksReturned = await aemService.getFragment(
+    'alpha/components/top-tasks.json'
+  )
+  errorCode = topTasksReturned.error
+  if (topTasksReturned.data && !errorCode) {
+    topTasks = topTasksReturned.data.entities
+  }
+
+  // Get miscellaneous components content
+  let miscellaneousRes = await aemService.getFragment(
+    'alpha/components/dictionary.json'
+  )
+  errorCode = miscellaneousRes.error
+  if (miscellaneousRes.data && !errorCode) {
+    miscellaneousRes.data.entities.forEach((item) => {
+      // Extracting Top Task component content (Title and whatever else we add in AEM later on)
+      if (item.properties.elements.scId.value === 'TOP-TASKS') {
+        topTaskTitle = item
+      }
+      // Add any if statements to capture other misc component contents
+    })
+  }
+
   return {
     props: {
       benefits,
       errorCode,
       locale,
       featured,
+      topTasks,
+      topTaskTitle,
     },
   }
 }
