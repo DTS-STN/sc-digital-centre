@@ -3,10 +3,10 @@ const SEARCH_PAGE = 'SEARCH_PAGE'
 
 const directory = {
   [HOME_PAGE]: {
-    fetchPath: 'alpha/home.json',
+    fetchPath: 'home.json',
   },
   [SEARCH_PAGE]: {
-    fetchPath: 'alpha/search.json',
+    fetchPath: 'search.json',
   },
 }
 
