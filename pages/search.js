@@ -10,7 +10,7 @@ import { CardList } from '../components/molecules/CardList'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
-import { SEARCH_PAGE } from '../constants/pagesDirectory'
+import { SEARCH_PAGE } from '../constants/aemPages'
 
 export default function SearchResult({
   locale,

@@ -46,7 +46,7 @@ class AEMService {
   async getPage(pageId) {
     if (this.pages[pageId]) return this.pages[pageId]
 
-    const { directory } = require('../../constants/pagesDirectory')
+    const { directory } = require('../../constants/aemPages')
     if (!directory?.[pageId]?.fetchPath)
       throw new Error('Page not defined with a fetch path in pages directory.')
     const { elements, error } = await this.getElements(

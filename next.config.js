@@ -51,7 +51,7 @@ const config = {
 // rewrites setup
 //
 config.rewrites = async () => {
-  const { SEARCH_PAGE, HOME_PAGE } = require('./constants/pagesDirectory')
+  const { SEARCH_PAGE, HOME_PAGE } = require('./constants/aemPages')
   const { generatePageRewrite } = require('./helpers')
   const AEMService = require('./pages/api/AEMService')
 
