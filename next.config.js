@@ -1,3 +1,8 @@
+const { SEARCH_PAGE, HOME_PAGE } = require('./constants/pagesDirectory')
+const { generatePageRewrite } = require('./helpers')
+
+const aemService = require('./pages/api/aemServiceInstance')
+
 //formatting TC Date
 const builddate = process.env.NEXT_PUBLIC_BUILD_DATE
   ? process.env.NEXT_PUBLIC_BUILD_DATE.substr(0, 4) +
@@ -25,7 +30,7 @@ const securityHeaders = [
   },
 ]
 
-module.exports = {
+const config = {
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
     NEXT_CONTENT_API: contentURL,
@@ -45,29 +50,35 @@ module.exports = {
   images: {
     domains: ['www.canada.ca'],
   },
-  //
-  // rewrites setup
-  //
-  async rewrites() {
-    return [
-      {
-        source: '/accueil',
-        destination: '/home',
-      },
-      // {
-      //   source: " french page name with/without route ",
-      //   destination: " 'english' page ",
-      // },
-    ]
-  },
-
-  async headers() {
-    return [
-      {
-        // Apply these headers to all routes in your application.
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ]
-  },
 }
+
+//
+// rewrites setup
+//
+config.rewrites = async () => {
+  // get and cache pages from aem
+  await aemService.getPage(HOME_PAGE)
+  await aemService.getPage(SEARCH_PAGE)
+
+  // loop over all cached pages and build rewrite rules for next
+  const aemPagesRewrites = []
+  for (const [, normalizedPage] of Object.entries(aemService.pages)) {
+    aemPagesRewrites.push(generatePageRewrite(normalizedPage))
+  }
+
+  return {
+    afterFiles: aemPagesRewrites,
+  }
+}
+
+config.headers = async () => {
+  return [
+    {
+      // Apply these headers to all routes in your application.
+      source: '/(.*)',
+      headers: securityHeaders,
+    },
+  ]
+}
+
+module.exports = config

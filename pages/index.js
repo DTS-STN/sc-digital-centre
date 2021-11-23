@@ -1,6 +1,11 @@
 import Link from 'next/link'
+import { HOME_PAGE } from '../constants/pagesDirectory'
+import aemService from './api/aemServiceInstance'
 
-export default function Splash() {
+export default function Splash({ homePage }) {
+  const HOME_PAGE_HREF_EN = homePage.link.en
+  const HOME_PAGE_HREF_FR = homePage.link.fr
+
   return (
     <section className="flex h-screen bg-cover bg-center bg-splash-page">
       <div className="flex flex-col justify-center items-center m-auto">
@@ -12,7 +17,7 @@ export default function Splash() {
           />
 
           <div className="flex w-max container py-11 mx-auto font-display">
-            <Link href="/home">
+            <Link href={HOME_PAGE_HREF_EN}>
               <a
                 className="
                                         focus:ring-1 focus:ring-black focus:ring-offset-2
@@ -42,7 +47,7 @@ export default function Splash() {
               </a>
             </Link>
 
-            <Link href="/fr/accueil">
+            <Link href={HOME_PAGE_HREF_FR}>
               <a
                 className="
                                         focus:ring-1 focus:ring-black focus:ring-offset-2
@@ -126,4 +131,13 @@ export default function Splash() {
       </div>
     </section>
   )
+}
+
+export async function getStaticProps() {
+  const homePage = await aemService.getPage(HOME_PAGE)
+  return {
+    props: {
+      homePage,
+    },
+  }
 }

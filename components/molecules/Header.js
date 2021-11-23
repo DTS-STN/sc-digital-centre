@@ -1,12 +1,27 @@
+import React from 'react'
 import propTypes from 'prop-types'
 import Link from 'next/link'
 import { Menu } from '../molecules/Menu'
 import { useRouter } from 'next/router'
 
-export default function Header({ language, t }) {
-  // const language = items.language;
-
+export default function Header({ language, t, aemPage, searchPageHref }) {
   const router = useRouter()
+  const currentRouteQueryParams = router.query
+
+  const [langToggleLink, setLangToggleLink] = React.useState()
+  React.useEffect(() => {
+    let updatedLangToggleLink
+    if (aemPage && router?.route && router.locale) {
+      const toLocale = router.locale === 'en' ? 'fr' : 'en'
+      if (aemPage?.link) {
+        updatedLangToggleLink = {
+          pathname: aemPage.link[toLocale],
+          query: currentRouteQueryParams,
+        }
+      }
+    }
+    setLangToggleLink(updatedLangToggleLink)
+  }, [router?.route, router?.locale, router?.query, aemPage])
 
   return (
     <>
@@ -43,7 +58,7 @@ export default function Header({ language, t }) {
             {/* Language selector for small screens */}
             <Link
               key={language}
-              href={router.asPath}
+              href={langToggleLink || '/'}
               locale={language === 'en' ? 'fr' : 'en'}
             >
               <a
@@ -60,7 +75,7 @@ export default function Header({ language, t }) {
             {/* Language selector for mid to larger screens */}
             <Link
               key={language}
-              href={router.asPath}
+              href={langToggleLink || '/'}
               locale={language === 'en' ? 'fr' : 'en'}
             >
               <a
@@ -85,7 +100,7 @@ export default function Header({ language, t }) {
           loginText={t.login}
           items={[
             {
-              link: '/searchResult',
+              link: searchPageHref,
               text: t.serviceAndBenefits,
             },
             {
@@ -103,8 +118,7 @@ export default function Header({ language, t }) {
 
         <div className="layout-container my-2">
           <Breadcrumb items={breadcrumbItems} />
-        </div> 
-        
+        </div>
         */}
       </header>
     </>

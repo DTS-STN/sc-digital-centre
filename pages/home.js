@@ -1,38 +1,45 @@
+import React from 'react'
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
-import aemService from './api/aemService'
 import TopTasks from '../components/molecules/TopTasks'
 import { CardList } from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
 import ImageBox from '../components/organisms/ImageBox'
 import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
-
 import en from '../locales/en'
 import fr from '../locales/fr'
+import { HOME_PAGE, SEARCH_PAGE } from '../constants/pagesDirectory'
+import aemService from './api/aemServiceInstance'
 
-export default function Home(props) {
-  const t = props.locale === 'en' ? en : fr
+export default function Home({
+  aemPage,
+  locale,
+  searchPageHref,
+  featured,
+  benefits,
+}) {
+  const t = locale === 'en' ? en : fr
 
   return (
     <Layout
-      locale={props.locale}
-      title={t.title}
+      locale={locale}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
+      aemPage={aemPage}
+      searchPageHref={searchPageHref}
     >
       <ImageBox imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png">
         <SearchCard
-          lang={props.locale}
+          lang={locale}
           headerText={t.searchFindBenefits}
           paraText={t.searchDesc}
           viewBenefitsServices={t.searchViewAllBenefits}
           searchBarPlaceholder={t.searchPlaceholder}
           searchBarText={t.search}
-          onSubmitHref="/searchResult"
+          onSubmitHref={searchPageHref}
         />
       </ImageBox>
-
       <div className="layout-container md:flex my-5">
         <div className=" lg:w-1/4">
           <ServiceCanada
@@ -67,15 +74,15 @@ export default function Home(props) {
           <h2 className="font-bold font-display text-2xl mb-4">
             {t.mostRequestedTitle}
           </h2>
-          <CardList cardList={props.benefits} />
+          <CardList cardList={benefits} />
         </div>
       </div>
       {/* feature with image */}
       <FeatureBlock
         title="Featured: "
         // featuredContent and body text will come form the CMS
-        featuredContent={props.featured.scTitleEn?.value}
-        body={props.featured.scDescriptionEn?.value}
+        featuredContent={featured.scTitleEn?.value}
+        body={featured.scDescriptionEn?.value}
         buttonText="Text on button"
         featuredHref="#"
         btnId="featured-content"
@@ -90,10 +97,6 @@ export async function getStaticProps({ locale }) {
   let errorCode = false
   let featured = []
 
-  //
-  // IF content enabled get the data from the api
-  //
-
   let features = await aemService.getElements('benefits/ei-benefit.json')
   errorCode = features.error
   if (features.elements && !errorCode) {
@@ -106,12 +109,18 @@ export async function getStaticProps({ locale }) {
     benefits = AEMbenefits.data.entities
   }
 
+  const aemPage = await aemService.getPage(HOME_PAGE)
+  const searchPage = await aemService.getPage(SEARCH_PAGE)
+  const searchPageHref = searchPage.link[locale]
+
   return {
     props: {
       benefits,
       errorCode,
       locale,
       featured,
+      aemPage,
+      searchPageHref,
     },
   }
 }

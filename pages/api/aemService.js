@@ -1,4 +1,4 @@
-export class AEMService {
+class AEMService {
   constructor(baseUrl, cacheBust) {
     if (!baseUrl?.trim?.()) throw new Error(`Provide a base URL for AEM.`)
 
@@ -8,15 +8,16 @@ export class AEMService {
     this.baseUrl = baseUrl
 
     // maintain all fragments by their path
-    this.store = new Map()
+    this.store = {}
+    this.pages = {}
   }
 
   async getFragment(fragPath) {
     if (!fragPath?.trim?.()) return
 
     // return memoized fragPath data if it's stored
-    if (this.store.has(fragPath)) {
-      return { data: this.store.get(fragPath), error: null }
+    if (this.store[fragPath]) {
+      return { data: this.store[fragPath], error: null }
     }
 
     // otherwise, fetch from AEM
@@ -28,7 +29,7 @@ export class AEMService {
 
     // if there's no error, store for memoization
     if (!error) {
-      this.store.set(fragPath, data)
+      this.store[fragPath] = data
     }
 
     return { data, error }
@@ -41,11 +42,39 @@ export class AEMService {
       error: error,
     }
   }
+
+  async getPage(pageId) {
+    if (this.pages[pageId]) return this.pages[pageId]
+
+    const { directory } = require('../../constants/pagesDirectory')
+    if (!directory?.[pageId]?.fetchPath)
+      throw new Error('Page not defined with a fetch path in pages directory.')
+    const { elements, error } = await this.getElements(
+      directory[pageId].fetchPath
+    )
+
+    const normalizedPage = {
+      id: pageId,
+      name: {
+        en: elements?.scPageNameEn?.value,
+        fr: elements?.scPageNameFr?.value,
+      },
+      link: {
+        en: `/${elements?.scPageNameEn?.value}`,
+        fr: `/fr/${elements?.scPageNameFr?.value}`,
+      },
+      title: {
+        en: elements?.scTitleEn?.value,
+        fr: elements?.scTitleFr?.value,
+      },
+    }
+
+    if (!error) {
+      this.pages[pageId] = normalizedPage
+    }
+
+    return this.pages[pageId]
+  }
 }
 
-const aemServiceInstance = new AEMService(
-  process.env.NEXT_CONTENT_API,
-  process.env.NEXT_PUBLIC_BUILD_DATE
-)
-
-export default aemServiceInstance
+module.exports = AEMService
