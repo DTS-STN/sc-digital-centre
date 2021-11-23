@@ -9,7 +9,7 @@ import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
 import en from '../locales/en'
 import fr from '../locales/fr'
-import { HOME_PAGE, SEARCH_PAGE } from '../constants/pagesDirectory'
+import { HOME_PAGE, SEARCH_PAGE } from '../constants/aemPages'
 import aemService from './api/aemServiceInstance'
 
 export default function Home({
