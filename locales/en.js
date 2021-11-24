@@ -51,7 +51,6 @@ export default {
   serviceCanadaCreateAccount: 'Create an Account',
 
   // Top Tasks
-  topTasksHeader: 'Top Tasks',
   topTasksDescritpion:
     'Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum.',
 
