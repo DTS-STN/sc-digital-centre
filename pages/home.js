@@ -122,7 +122,7 @@ export async function getStaticProps({ locale }) {
 
   // Get list of top tasks
   let topTasksReturned = await aemService.getFragment(
-    'alpha/components/top-tasks.json'
+    'components/top-tasks.json'
   )
   errorCode = topTasksReturned.error
   if (topTasksReturned.data && !errorCode) {
@@ -131,7 +131,7 @@ export async function getStaticProps({ locale }) {
 
   // Get miscellaneous components content
   let miscellaneousRes = await aemService.getFragment(
-    'alpha/components/dictionary.json'
+    'components/dictionary.json'
   )
   errorCode = miscellaneousRes.error
   if (miscellaneousRes.data && !errorCode) {
