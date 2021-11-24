@@ -124,7 +124,7 @@ object Build_Release: BuildType({
 
 object Build_Dynamic: BuildType({
     name = "Build_Dynamic"
-    var branch_lower = str.lowercase("%teamcity.build.branch%")
+    var branch_lower = lowercase("%teamcity.build.branch%")
     description = "Deploys branches with pond in the name"
     params {
         param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
