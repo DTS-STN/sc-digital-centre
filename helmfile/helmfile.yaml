@@ -21,3 +21,4 @@ releases:
         tier: frontend
     namespace: sc-digital-centre-{{ requiredEnv "BRANCH" }}
     installed: true
+    
