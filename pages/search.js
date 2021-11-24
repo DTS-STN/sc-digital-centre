@@ -28,7 +28,12 @@ export default function SearchResult({
   //maybe put these into state?
   const ageRangeOptions = [
     { key: 0, name: 'Under 18 years old' },
-    { key: 1, name: '18-100 bajillion' },
+    { key: 1, name: '19-24 years old' },
+    { key: 2, name: '25-34 years old' },
+    { key: 3, name: '35-44 years old' },
+    { key: 4, name: '45-54 years old' },
+    { key: 5, name: '55-64 years old' },
+    { key: 6, name: '65 years or older' },
   ]
   const incomeOptions = [
     { key: 0, name: 'Between $0 - $23999' },
@@ -63,7 +68,14 @@ export default function SearchResult({
   }
 
   return (
-    <Layout locale={locale} aemPage={aemPage} searchPageHref={searchPageHref}>
+    <Layout
+      locale={props.locale}
+      title="searchResult"
+      phase={t.phaseBannerTag}
+      bannerText={t.phaseBannerText}
+      aemPage={aemPage}
+      searchPageHref={searchPageHref}
+    >
       <SearchHeader
         lang={locale}
         headerText={'Search Benefits'}
@@ -132,8 +144,8 @@ export async function getStaticProps({ locale }) {
   if (process.env.NEXT_CONTENT_API) {
     let AEMbenefits = await aemService.getFragment('benefits.json')
     errorCode = AEMbenefits.error
-    if (AEMbenefits.apiData && !errorCode) {
-      benefits = AEMbenefits.apiData.entities
+    if (AEMbenefits.benefits && !errorCode) {
+      benefits = AEMbenefits.benefits
     }
   } else {
     //

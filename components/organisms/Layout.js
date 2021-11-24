@@ -4,6 +4,7 @@ import Meta from '../atoms/Meta'
 import PhaseBanner from '../atoms/PhaseBanner'
 import Header from '../molecules/Header'
 import Footer from '../molecules/Footer'
+import { useEffect } from 'react'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
@@ -21,6 +22,22 @@ export default function Layout({
   searchPageHref,
 }) {
   const t = locale === 'en' ? en : fr
+
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
+      window.adobeDataLayer.push({
+        event: 'pageLoad',
+        page: {
+          title: document.title,
+          language: locale === 'en' ? 'eng' : 'fra',
+          creator:
+            'Employment and Social Development Canada/Emploi et Développement social Canada',
+          accessRights: '2',
+          service: 'ESDC-EDSC_DC-CD',
+        },
+      })
+    }
+  }, [])
 
   return (
     <div>

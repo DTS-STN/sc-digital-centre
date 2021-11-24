@@ -12,15 +12,37 @@ import fr from '../locales/fr'
 import { HOME_PAGE, SEARCH_PAGE } from '../constants/aemPages'
 import aemService from './api/aemServiceInstance'
 
-export default function Home({
+export default function Home(
   aemPage,
   locale,
   searchPageHref,
   featured,
   benefits,
-}) {
+  topTasks,
+  topTaskTitle
+) {
   const t = locale === 'en' ? en : fr
+  const topTasks = () => {
+    return topTasks?.map((task) => {
+      try {
+        let title = task.properties.elements.scTitleEn.title
+        let link = task.properties.elements.scLinkURLEn.value
+        if (locale !== 'en') {
+          link = task.properties.elements.scLinkURLFr.value
+          title = task.properties.elements.scTitleFr.title
+        }
+        return { taskName: title, taskURL: link }
+      } catch (e) {
+        return { taskName: 'undefined', taskURL: '/' }
+      }
+    })
+  }
 
+  const topTaskTitle = () => {
+    return locale !== 'en'
+      ? topTaskTitle?.properties.elements.scLabelFr.value
+      : topTaskTitle?.properties.elements.scLabelEn.value
+  }
   return (
     <Layout
       locale={locale}
@@ -57,23 +79,9 @@ export default function Home({
             createAccountText={t.serviceCanadaCreateAccount}
           />
           <TopTasks
-            topTasksHeader={t.topTasksHeader}
+            topTasksHeader={topTaskTitle()}
             topTasksDescription={t.topTasksDescritpion}
-            topTasksList={[
-              { taskName: 'Apply for Employment Insurance', taskURL: '/home' },
-              {
-                taskName: 'Access an ROE (Record of Employment)',
-                taskURL: '/home',
-              },
-              {
-                taskName: 'Activate my Service Canada Access Code (PAC)',
-                taskURL: '/home',
-              },
-              {
-                taskName: 'Update my address and contact information',
-                taskURL: '/home',
-              },
-            ]}
+            topTasksList={topTasks()}
           />
         </div>
         <div className="lg:w-3/4 md:pl-12">
@@ -102,17 +110,41 @@ export async function getStaticProps({ locale }) {
   let benefits = []
   let errorCode = false
   let featured = []
+  let topTasks = []
+  let topTaskTitle = []
 
-  let features = await aemService.getElements('benefits/ei-benefit.json')
-  errorCode = features.error
-  if (features.elements && !errorCode) {
-    featured = features.elements
+  let { elements: featured, error: errorCode } = await aemService.getElements(
+    'benefits/ei.json'
+  )
+
+  let AEMbenefits = await aemService.getBenefits('benefits.json')
+  errorCode = AEMbenefits.error
+  if (AEMbenefits.benefits && !errorCode) {
+    benefits = AEMbenefits.benefits
   }
 
-  let AEMbenefits = await aemService.getFragment('benefits.json')
-  errorCode = AEMbenefits.error
-  if (AEMbenefits.data && !errorCode) {
-    benefits = AEMbenefits.data.entities
+  // Get list of top tasks
+  let topTasksReturned = await aemService.getFragment(
+    'components/top-tasks.json'
+  )
+  errorCode = topTasksReturned.error
+  if (topTasksReturned.data && !errorCode) {
+    topTasks = topTasksReturned.data.entities
+  }
+
+  // Get miscellaneous components content
+  let miscellaneousRes = await aemService.getFragment(
+    'components/dictionary.json'
+  )
+  errorCode = miscellaneousRes.error
+  if (miscellaneousRes.data && !errorCode) {
+    miscellaneousRes.data.entities.forEach((item) => {
+      // Extracting Top Task component content (Title and whatever else we add in AEM later on)
+      if (item.properties.elements.scId.value === 'TOP-TASKS') {
+        topTaskTitle = item
+      }
+      // Add any if statements to capture other misc component contents
+    })
   }
 
   const aemPage = await aemService.getPage(HOME_PAGE)
@@ -127,6 +159,8 @@ export async function getStaticProps({ locale }) {
       featured,
       aemPage,
       searchPageHref,
+      topTasks,
+      topTaskTitle,
     },
   }
 }

@@ -23,7 +23,7 @@ expect.extend(toHaveNoViolations)
 describe('Search page', () => {
   const benefits = [
     {
-      properties: {
+      benefit: {
         elements: {
           scPageNameEn: {
             value: 'Page Name 1',
@@ -44,7 +44,7 @@ describe('Search page', () => {
       },
     },
     {
-      properties: {
+      benefit: {
         elements: {
           scPageNameEn: {
             value: 'Page Name 2',
