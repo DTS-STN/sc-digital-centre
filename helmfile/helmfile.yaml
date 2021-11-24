@@ -11,7 +11,7 @@ environments:
 
 releases:
 # Single Tier Website
-  - name: {{ requiredEnv "PROJECT" }}-{{ .Environment.Name }}
+  - name: {{ requiredEnv "PROJECT" }}-{{ requiredEnv "BRANCH" }}
     chart: ../helm/charts/sc-digital-centre
     values:
       - overrides/sc-digital-centre/sc-digital-centre.yaml.gotmpl
@@ -19,5 +19,6 @@ releases:
         category: dts
         app: sc-digital-centre
         tier: frontend
-    namespace: sc-digital-centre-{{ .Environment.Name }}
+    namespace: sc-digital-centre-{{ requiredEnv "BRANCH" }}
     installed: true
+    
