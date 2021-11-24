@@ -21,6 +21,15 @@ jest.mock('next/link', () => ({
   ),
 }))
 
+jest.mock(
+  'next/image',
+  () =>
+    function Image({ imageSrc, alt }) {
+      // eslint-disable-next-line @next/next/no-img-element
+      return <img src={imageSrc} alt={alt} />
+    }
+)
+
 expect.extend(toHaveNoViolations)
 
 describe('Home page', () => {
@@ -31,7 +40,7 @@ describe('Home page', () => {
 
   const benefits = [
     {
-      properties: {
+      benefit: {
         elements: {
           scPageNameEn: {
             value: 'Page Name 1',
@@ -52,7 +61,7 @@ describe('Home page', () => {
       },
     },
     {
-      properties: {
+      benefit: {
         elements: {
           scPageNameEn: {
             value: 'Page Name 2',
