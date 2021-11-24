@@ -100,16 +100,16 @@ export async function getStaticProps({ locale }) {
   // IF content enabled get the data from the api
   //
 
-  let features = await aemService.getElements('benefits/ei-benefit.json')
+  let features = await aemService.getBenefit('benefits/ei.json')
   errorCode = features.error
   if (features.elements && !errorCode) {
     featured = features.elements
   }
 
-  let AEMbenefits = await aemService.getFragment('benefits.json')
+  let AEMbenefits = await aemService.getBenefits('benefits.json')
   errorCode = AEMbenefits.error
-  if (AEMbenefits.data && !errorCode) {
-    benefits = AEMbenefits.data.entities
+  if (AEMbenefits.benefits && !errorCode) {
+    benefits = AEMbenefits.benefits
   }
 
   return {
