@@ -3,6 +3,12 @@
 
 name: Comment environment in PR
 
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
 jobs:
   comment_environment:
     runs-on: ubuntu-latest
