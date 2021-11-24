@@ -54,13 +54,17 @@ object HttpsGithubComDtsStnScDigitalCentreDynamic : GitVcsRoot({
 })
 
 //BUILD CONFIGURATIONS
+//Note: BRANCH variable is used to create dynamic urls, using
+//the branch name most of the time.  in some circumstances
+//like the release build below, we do not want to use the branch
+//name, so we inject a hardcoded value to create a url that works
+//such as: https://sc-digital-center-release/blahblahblah.com
 object Build_Release: BuildType({
     name = "Build_Release"
     description = "Deploys Pull Request to release envrionment when releases are created."
     params {
         param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
         param("env.PROJECT", "sc-digital-centre")
-        param("env.TARGET", "release")
         param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
         param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S")
@@ -68,6 +72,8 @@ object Build_Release: BuildType({
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
         param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
+        param("env.TARGET", "release")
+        param("env.BRANCH", "release")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentreRelease)
@@ -122,7 +128,6 @@ object Build_Pond: BuildType({
     params {
         param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
         param("env.PROJECT", "sc-digital-centre")
-        param("env.TARGET", "dev")
         param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
         param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
         param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S")
@@ -130,6 +135,7 @@ object Build_Pond: BuildType({
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
         param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
+        param("env.TARGET", "dev")
         param("env.BRANCH", "%teamcity.build.branch%")
     }
     vcs {
