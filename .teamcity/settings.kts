@@ -122,7 +122,7 @@ object Build_Release: BuildType({
 })
 
 
-object Build_Pond: BuildType({
+object Build_Dynamic: BuildType({
     name = "Build_Dynamic"
     description = "Deploys branches with pond in the name"
     params {
