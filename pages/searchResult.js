@@ -3,7 +3,8 @@ import ModalElement from '../components/molecules/ModalElement'
 import SearchFilterForm from '../components/molecules/SearchFilterForm'
 import SearchHeader from '../components/molecules/SearchHeader'
 
-import { getAEMFragments, getLocalBenefits } from './api/getData'
+import aemService from './api/aemService'
+import { getLocalBenefits } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { CardList } from '../components/molecules/CardList'
@@ -134,10 +135,10 @@ export async function getStaticProps({ locale }) {
   //
 
   if (process.env.NEXT_CONTENT_API) {
-    let AEMbenefits = await getAEMFragments('benefits.json')
+    let AEMbenefits = await aemService.getBenefits('benefits.json')
     errorCode = AEMbenefits.error
-    if (AEMbenefits.apiData && !errorCode) {
-      benefits = AEMbenefits.apiData.entities
+    if (AEMbenefits.benefits && !errorCode) {
+      benefits = AEMbenefits.benefits
     }
   } else {
     //

@@ -6,9 +6,7 @@ import fr from '../../locales/fr'
 
 export default function BenefitPage({ locale, benefit }) {
   //
-  //console.log('props benefit', benefit)
-
-  const benefitData = benefit.properties.elements
+  const benefitData = benefit.elements
 
   const t = locale === 'en' ? en : fr
 

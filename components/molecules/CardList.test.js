@@ -29,7 +29,7 @@ describe('CardList', () => {
       <CardList
         cardList={[
           {
-            properties: {
+            benefit: {
               elements: {
                 scPageNameEn: {
                   value: 'Page Name 1',
@@ -71,7 +71,7 @@ describe('CardList', () => {
       <CardList
         cardList={[
           {
-            properties: {
+            benefit: {
               elements: {
                 scPageNameEn: {
                   value: 'Page Name 1',
