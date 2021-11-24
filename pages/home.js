@@ -12,17 +12,17 @@ import fr from '../locales/fr'
 import { HOME_PAGE, SEARCH_PAGE } from '../constants/aemPages'
 import aemService from './api/aemServiceInstance'
 
-export default function Home(
+export default function Home({
   aemPage,
   locale,
   searchPageHref,
   featured,
   benefits,
   topTasks,
-  topTaskTitle
-) {
+  topTaskTitle,
+}) {
   const t = locale === 'en' ? en : fr
-  const topTasks = () => {
+  const normalizedTopTasks = () => {
     return topTasks?.map((task) => {
       try {
         let title = task.properties.elements.scTitleEn.title
@@ -38,7 +38,7 @@ export default function Home(
     })
   }
 
-  const topTaskTitle = () => {
+  const localizedTopTaskTitle = () => {
     return locale !== 'en'
       ? topTaskTitle?.properties.elements.scLabelFr.value
       : topTaskTitle?.properties.elements.scLabelEn.value
@@ -79,9 +79,9 @@ export default function Home(
             createAccountText={t.serviceCanadaCreateAccount}
           />
           <TopTasks
-            topTasksHeader={topTaskTitle()}
+            topTasksHeader={localizedTopTaskTitle()}
             topTasksDescription={t.topTasksDescritpion}
-            topTasksList={topTasks()}
+            topTasksList={normalizedTopTasks()}
           />
         </div>
         <div className="lg:w-3/4 md:pl-12">
@@ -108,12 +108,10 @@ export default function Home(
 
 export async function getStaticProps({ locale }) {
   let benefits = []
-  let errorCode = false
-  let featured = []
   let topTasks = []
   let topTaskTitle = []
 
-  let { elements: featured, error: errorCode } = await aemService.getElements(
+  let { elements: featured, error: errorCode } = await aemService.getBenefit(
     'benefits/ei.json'
   )
 

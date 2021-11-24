@@ -69,7 +69,7 @@ export default function SearchResult({
 
   return (
     <Layout
-      locale={props.locale}
+      locale={locale}
       title="searchResult"
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
