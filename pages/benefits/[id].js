@@ -13,7 +13,12 @@ export default function BenefitPage({ locale, benefit }) {
   const t = locale === 'en' ? en : fr
 
   return (
-    <Layout locale={locale} title={benefitData.scTitleEn.value}>
+    <Layout
+      locale={locale}
+      title={benefitData.scTitleEn.value}
+      phase={t.phaseBannerTag}
+      bannerText={t.phaseBannerText}
+    >
       <h1 className="font-extrabold text-red-800 text-3xl text-center mt-12">
         {benefitData.scTitleEn.value}
       </h1>
