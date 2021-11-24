@@ -3,7 +3,8 @@ import ModalElement from '../components/molecules/ModalElement'
 import SearchFilterForm from '../components/molecules/SearchFilterForm'
 import SearchHeader from '../components/molecules/SearchHeader'
 
-import { getAEMFragments, getLocalBenefits } from './api/getData'
+import aemService from './api/aemService'
+import { getLocalBenefits } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { CardList } from '../components/molecules/CardList'
@@ -22,7 +23,12 @@ export default function SearchResult(props) {
   //maybe put these into state?
   const ageRangeOptions = [
     { key: 0, name: 'Under 18 years old' },
-    { key: 1, name: '18-100 bajillion' },
+    { key: 1, name: '19-24 years old' },
+    { key: 2, name: '25-34 years old' },
+    { key: 3, name: '35-44 years old' },
+    { key: 4, name: '45-54 years old' },
+    { key: 5, name: '55-64 years old' },
+    { key: 6, name: '65 years or older' },
   ]
   const incomeOptions = [
     { key: 0, name: 'Between $0 - $23999' },
@@ -57,7 +63,12 @@ export default function SearchResult(props) {
   }
 
   return (
-    <Layout locale={props.locale} title="searchResult">
+    <Layout
+      locale={props.locale}
+      title="searchResult"
+      phase={t.phaseBannerTag}
+      bannerText={t.phaseBannerText}
+    >
       <SearchHeader
         lang={props.locale}
         headerText={'Search Benefits'}
@@ -124,10 +135,10 @@ export async function getStaticProps({ locale }) {
   //
 
   if (process.env.NEXT_CONTENT_API) {
-    let AEMbenefits = await getAEMFragments('benefits.json')
+    let AEMbenefits = await aemService.getBenefits('benefits.json')
     errorCode = AEMbenefits.error
-    if (AEMbenefits.apiData && !errorCode) {
-      benefits = AEMbenefits.apiData.entities
+    if (AEMbenefits.benefits && !errorCode) {
+      benefits = AEMbenefits.benefits
     }
   } else {
     //

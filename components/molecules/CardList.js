@@ -5,15 +5,15 @@ export const CardList = ({ cardList }) => {
   const displayCards = cardList.map((card) => (
     <li
       className="flex flex-grow"
-      key={card.properties.elements.scPageNameEn.value}
+      key={card.benefit.elements.scPageNameEn.value}
     >
       <Card
-        title={card.properties.elements.scTitleEn.value}
-        tag={card.properties.elements.scProgramEn?.value}
-        text={card.properties.elements.scDescriptionEn?.value}
-        callToActionText={card.properties.elements.scCallToActionEn.value}
-        callToActionHref={`/benefits/${card.properties.name}`.toLowerCase()}
-        btnId={'btn-' + card.properties.elements.scPageNameEn.value}
+        title={card.benefit.elements.scTitleEn.value}
+        tag={card.benefit.elements.scProgramEn?.value}
+        text={card.benefit.elements.scDescriptionEn?.value}
+        callToActionText={card.benefit.elements.scCallToActionEn.value}
+        callToActionHref={`/benefits/${card.benefit.name}`.toLowerCase()}
+        btnId={'btn-' + card.benefit.elements.scPageNameEn.value}
       />
     </li>
   ))

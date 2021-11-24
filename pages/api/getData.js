@@ -39,18 +39,37 @@ export async function getAEMElements(fragpath) {
 
 export async function getPageNamesFromAEM(fragpath) {
   //
-  const { apiData, error } = await getAEMFragments(fragpath)
+  // const { apiData, error } = await getAEMFragments(fragpath)
 
-  const elements = apiData.entities.map((entity) => {
-    return entity.properties.name.toLowerCase()
-  })
+  // const elements = apiData.entities.map((entity) => {
+  //   return entity.properties.name.toLowerCase()
+  // })
 
+  // FAKED data to pass the build as this will be changed by zyan
+
+  const elements = [
+    'ei-benefit',
+    'oas',
+    'canada-pension-plan',
+    'student-grants-and-loans',
+  ]
+  const error = false
   return { elements, error }
 }
 
 export async function getBenefitFromAEM(benefitId) {
   //
-  const { apiData, error } = await getAEMFragments(benefitId)
+  //const { apiData, error } = await getAEMFragments(benefitId)
+
+  // FAKED data to pass the build as this will be changed by zyan
+
+  const apiData = {
+    elements: {
+      scTitleEn: { value: ' FAKED title english ' },
+      scLongDescriptionEn: { value: ' FAKED long description ' },
+    },
+  }
+  const error = false
 
   return {
     benefit: apiData,

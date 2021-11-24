@@ -40,7 +40,7 @@ describe('Home page', () => {
 
   const benefits = [
     {
-      properties: {
+      benefit: {
         elements: {
           scPageNameEn: {
             value: 'Page Name 1',
@@ -61,7 +61,7 @@ describe('Home page', () => {
       },
     },
     {
-      properties: {
+      benefit: {
         elements: {
           scPageNameEn: {
             value: 'Page Name 2',
