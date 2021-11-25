@@ -30,9 +30,9 @@ export default function BenefitPage({ locale, benefit, searchPageHref }) {
 }
 
 export async function getStaticPaths() {
-  const { benefits } = await aemService.getBenefits(BENEFITS)
-  const paths = benefits.map(({ benefit }) => {
-    return { params: { id: benefit.name } }
+  const benefits = await aemService.getFragment(BENEFITS)
+  const paths = benefits.data.entities.map(({ properties }) => {
+    return { params: { id: properties.name } }
   })
 
   return {

@@ -122,16 +122,28 @@ class AEMService {
 
       benefitData = await Promise.all(
         benefitsUrls.map(async (benefit) => {
-          let { elements, name, description, title, error } =
-            await this.getBenefit(
-              benefit.href
-                .replace(this.baseUrl, '')
-                .replace(`?dates=${this.cacheBustString}`, '')
-            )
-          errorCode = error === null ? false : false
+          const { data, error } = await this.getFragment(
+            benefit.href
+              .replace(this.baseUrl, '')
+              .replace(`?dates=${this.cacheBustString}`, '')
+          )
           return {
-            benefit: { elements, name, description, title } || [],
+            elements: data?.entities[0]?.properties?.elements || [],
+            name: data?.entities[0]?.properties?.name || '',
+            description: data?.entities[0]?.properties?.description || '',
+            title: data?.entities[0]?.properties?.title || '',
+            error: error,
           }
+          // let { elements, name, description, title, error } =
+          //   await this.getBenefit(
+          //     benefit.href
+          //     .replace(this.baseUrl, '')
+          //     .replace(`?dates=${this.cacheBustString}`, '')
+          //   )
+          // errorCode = error === null ? false : false
+          // return {
+          //   benefit: { elements, name, description, title } || [],
+          // }
         })
       )
     }
