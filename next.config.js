@@ -56,7 +56,7 @@ config.rewrites = async () => {
     process.env.NEXT_CONTENT_API,
     process.env.NEXT_PUBLIC_BUILD_DATE
   )
-  const { SEARCH_PAGE, HOME_PAGE } = require('./constants/aemPages')
+  const { HOME_PAGE, SEARCH_PAGE } = require('./constants/aem')
 
   // get and cache pages from aem
   await aemService.getPage(HOME_PAGE)

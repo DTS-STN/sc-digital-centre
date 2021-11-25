@@ -9,7 +9,14 @@ import { ServiceCanada } from '../components/molecules/ServiceCanada'
 import { ContactUs } from '../components/molecules/ContactUs'
 import en from '../locales/en'
 import fr from '../locales/fr'
-import { HOME_PAGE, SEARCH_PAGE } from '../constants/aemPages'
+import {
+  BENEFIT_EI,
+  BENEFITS,
+  HOME_PAGE,
+  SEARCH_PAGE,
+  TOP_TASKS,
+  DICTIONARY,
+} from '../constants/aem'
 import aemService from './api/aemServiceInstance'
 
 export default function Home({
@@ -112,28 +119,24 @@ export async function getStaticProps({ locale }) {
   let topTaskTitle = []
 
   let { elements: featured, error: errorCode } = await aemService.getBenefit(
-    'benefits/ei.json'
+    BENEFIT_EI
   )
 
-  let AEMbenefits = await aemService.getBenefits('benefits.json')
+  let AEMbenefits = await aemService.getBenefits(BENEFITS)
   errorCode = AEMbenefits.error
   if (AEMbenefits.benefits && !errorCode) {
     benefits = AEMbenefits.benefits
   }
 
   // Get list of top tasks
-  let topTasksReturned = await aemService.getFragment(
-    'components/top-tasks.json'
-  )
+  let topTasksReturned = await aemService.getFragment(TOP_TASKS)
   errorCode = topTasksReturned.error
   if (topTasksReturned.data && !errorCode) {
     topTasks = topTasksReturned.data.entities
   }
 
   // Get miscellaneous components content
-  let miscellaneousRes = await aemService.getFragment(
-    'components/dictionary.json'
-  )
+  let miscellaneousRes = await aemService.getFragment(DICTIONARY)
   errorCode = miscellaneousRes.error
   if (miscellaneousRes.data && !errorCode) {
     miscellaneousRes.data.entities.forEach((item) => {

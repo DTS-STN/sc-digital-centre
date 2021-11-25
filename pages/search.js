@@ -10,7 +10,7 @@ import { CardList } from '../components/molecules/CardList'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
-import { SEARCH_PAGE } from '../constants/aemPages'
+import { HOME_PAGE, SEARCH_PAGE, BENEFITS, BENEFIT_EI } from '../constants/aem'
 
 export default function SearchResult({
   locale,
@@ -134,29 +134,8 @@ export default function SearchResult({
 }
 
 export async function getStaticProps({ locale }) {
-  let benefits = []
-  let errorCode = false
-
-  //
-  // IF content enabled get the data from the api
-  //
-
-  if (process.env.NEXT_CONTENT_API) {
-    let AEMbenefits = await aemService.getFragment('benefits.json')
-    errorCode = AEMbenefits.error
-    if (AEMbenefits.benefits && !errorCode) {
-      benefits = AEMbenefits.benefits
-    }
-  } else {
-    //
-    // Else get the content from the local file
-    //
-    const { localData } = getLocalBenefits()
-
-    benefits = localData
-    errorCode = false
-  }
-
+  const { benefits } = await aemService.getBenefits(BENEFITS)
+  console.log('BENE??', benefits)
   const aemPage = await aemService.getPage(SEARCH_PAGE)
   const searchPage = await aemService.getPage(SEARCH_PAGE)
   const searchPageHref = searchPage.link[locale]
@@ -164,7 +143,6 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       benefits,
-      errorCode,
       locale,
       searchPageHref,
       aemPage,

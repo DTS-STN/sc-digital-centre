@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { HOME_PAGE } from '../constants/aemPages'
+import { HOME_PAGE } from '../constants/aem'
 import aemService from './api/aemServiceInstance'
 
 export default function Splash({ homePage }) {

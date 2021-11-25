@@ -1,3 +1,37 @@
+const {
+  HOME_PAGE,
+  SEARCH_PAGE,
+  BENEFITS,
+  BENEFIT_EI,
+  TOP_TASKS,
+  DICTIONARY,
+} = require('../../constants/aem')
+
+const DIRECTORY = {
+  PAGES: {
+    [HOME_PAGE]: {
+      fetchPath: 'home.json',
+    },
+    [SEARCH_PAGE]: {
+      fetchPath: 'search.json',
+    },
+  },
+  FRAGMENTS: {
+    [BENEFITS]: {
+      fetchPath: 'benefits.json',
+    },
+    [BENEFIT_EI]: {
+      fetchPath: 'benefits/ei.json',
+    },
+    [TOP_TASKS]: {
+      fetchPath: 'components/top-tasks.json',
+    },
+    [DICTIONARY]: {
+      fetchPath: 'components/dictionary.json',
+    },
+  },
+}
+
 class AEMService {
   constructor(baseUrl, cacheBust) {
     if (!baseUrl?.trim?.()) throw new Error(`Provide a base URL for AEM.`)
@@ -12,24 +46,29 @@ class AEMService {
     this.pages = {}
   }
 
-  async getFragment(fragPath) {
-    if (!fragPath?.trim?.()) return
+  async getFragment(fragId) {
+    if (!fragId?.trim?.()) return
 
-    // return memoized fragPath data if it's stored
-    if (this.store[fragPath]) {
-      return { data: this.store[fragPath], error: null }
+    // return memoized fragId data if it's stored
+    if (this.store[fragId]) {
+      return { data: this.store[fragId], error: null }
     }
+
+    if (!DIRECTORY.FRAGMENTS?.[fragId]?.fetchPath)
+      throw new Error(
+        'Fragment not defined with a fetch path in pages directory.'
+      )
 
     // otherwise, fetch from AEM
     const res = await fetch(
-      `${this.baseUrl}${fragPath}?dates=${this.cacheBustString}`
+      `${this.baseUrl}${fragId}?dates=${this.cacheBustString}`
     )
     const error = res.ok ? false : res.status
     const data = res.ok ? await res.json() : null
 
     // if there's no error, store for memoization
     if (!error) {
-      this.store[fragPath] = data
+      this.store[fragId] = data
     }
 
     return { data, error }
@@ -43,18 +82,17 @@ class AEMService {
     }
   }
 
-  async getPage(pageId) {
-    if (this.pages[pageId]) return this.pages[pageId]
+  async getPage(pathId) {
+    if (this.pages[pathId]) return this.pages[pathId]
 
-    const { directory } = require('../../constants/aemPages')
-    if (!directory?.[pageId]?.fetchPath)
+    if (!DIRECTORY.PAGES?.[pathId]?.fetchPath)
       throw new Error('Page not defined with a fetch path in pages directory.')
     const { elements, error } = await this.getElements(
-      directory[pageId].fetchPath
+      DIRECTORY.PAGES[pathId].fetchPath
     )
 
     const normalizedPage = {
-      id: pageId,
+      id: pathId,
       name: {
         en: elements?.scPageNameEn?.value,
         fr: elements?.scPageNameFr?.value,
@@ -70,19 +108,19 @@ class AEMService {
     }
 
     if (!error) {
-      this.pages[pageId] = normalizedPage
+      this.pages[pathId] = normalizedPage
     }
 
-    return this.pages[pageId]
+    return this.pages[pathId]
   }
 
   //
   // gets the data for all benefits, start by getting the urls for each, then get the benefit data using the url
   //
-
-  async getBenefits(basePath) {
-    const { data, error } = await this.getFragment(basePath)
-
+  async getBenefits(fragId) {
+    const { data, error } = await this.getFragment(
+      DIRECTORY.FRAGMENTS[fragId].fetchPath
+    )
     let benefitsUrls = []
     let benefitData = []
     let errorCode = error
@@ -121,9 +159,8 @@ class AEMService {
   //
   // gets the data for a single benefit
   //
-
-  async getBenefit(benefitPath) {
-    const { data, error } = await this.getFragment(benefitPath)
+  async getBenefit(benefitId) {
+    const { data, error } = await this.getFragment(benefitId)
     return {
       elements: data?.entities[0]?.properties?.elements || [],
       name: data?.entities[0]?.properties?.name || '',
