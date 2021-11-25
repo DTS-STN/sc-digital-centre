@@ -5,7 +5,6 @@ import en from '../../locales/en'
 import fr from '../../locales/fr'
 
 export default function BenefitPage({ locale, benefit }) {
-  //
   const benefitData = benefit.elements
 
   const t = locale === 'en' ? en : fr
@@ -29,10 +28,8 @@ export default function BenefitPage({ locale, benefit }) {
 }
 
 export async function getStaticPaths() {
-  //
   const { elements } = await getPageNamesFromAEM(`benefits.json`)
   const paths = elements.map((name) => ({ params: { id: name } }))
-  //console.log('paths', paths)
 
   return {
     paths,
@@ -41,7 +38,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  //
   const { benefit } = await getBenefitFromAEM(
     `benefits/${context.params.id}.json`
   )

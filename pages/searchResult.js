@@ -54,7 +54,7 @@ export default function SearchResult(props) {
   //handle submit event from filter form here
   function filterSubmitHandler(event) {
     event.preventDefault()
-    setModalShow(false) //set the modal to be hidden, doesnt change anything on desktop form
+    setModalShow(false) //set the modal to be hidden, doesn't change anything on desktop form
   }
 
   function filterCancelHandler(event) {

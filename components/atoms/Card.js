@@ -3,7 +3,7 @@ import { ActionButton } from './ActionButton'
 
 export const Card = ({
   title,
-  tag,
+  tag, //tag is currently not used, will be needed in future
   text,
   callToActionHref,
   callToActionText,
@@ -37,12 +37,12 @@ Card.propTypes = {
   /**
    * The tag that the card will display
    */
-  tag: PropTypes.string,
+  // tag: PropTypes.string,
 
   /**
    * The text that the card will display
    */
-  //text: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 
   /**
    * The text that the Call-To-Action will display

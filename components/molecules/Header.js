@@ -4,8 +4,6 @@ import { Menu } from '../molecules/Menu'
 import { useRouter } from 'next/router'
 
 export default function Header({ language, t }) {
-  // const language = items.language;
-
   const router = useRouter()
 
   return (
@@ -48,7 +46,6 @@ export default function Header({ language, t }) {
             >
               <a
                 className="block md:hidden md:text-sm ml-6 pb-2 sm:ml-16 underline font-body font-bold text-canada-footer-font  text-base hover:text-canada-footer-hover-font-blue"
-                // onClick={() => setLanguage(language)}
                 lang={language === 'en' ? 'fr' : 'en'}
               >
                 {language === 'en' ? 'FR' : 'EN'}
@@ -66,7 +63,6 @@ export default function Header({ language, t }) {
               <a
                 className="md:block hidden pb-0 lg:pb-4 self-end underline font-body text-canada-footer-font hover:text-canada-footer-hover-font-blue "
                 data-cy="toggle-language-link"
-                // onClick={() => setLanguage(language)}
                 lang={language === 'en' ? 'fr' : 'en'}
               >
                 {language === 'en' ? 'Français' : 'English'}

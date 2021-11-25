@@ -9,7 +9,6 @@ jest.mock(
   'next/link',
   () =>
     function Link({ url }) {
-      // eslint-disable-next-line @next/next/no-img-element
       return <a href={url}>children </a>
     }
 )

@@ -15,23 +15,23 @@ export default function Splash() {
             <Link href="/home">
               <a
                 className="
-                                        focus:ring-1 focus:ring-black focus:ring-offset-2
-                                        px-4
-                                        bg-deep-blue-solid
-                                        text-white
-                                        border border-deep-blue-solid
-                                        active:bg-deep-blue-light
-                                        hover:bg-bright-blue-dark
-                                        text-center text-md
-                                        xl:h-10
-                                        w-28
-                                        xl:w-36
-                                        py-3
-                                        mr-6
-                                        rounded
-                                        leading-3
-                                        shadow-md
-                                      "
+                focus:ring-1 focus:ring-black focus:ring-offset-2
+                px-4
+                bg-deep-blue-solid
+                text-white
+                border border-deep-blue-solid
+                active:bg-deep-blue-light
+                hover:bg-bright-blue-dark
+                text-center text-md
+                xl:h-10
+                w-28
+                xl:w-36
+                py-3
+                mr-6
+                rounded
+                leading-3
+                shadow-md
+              "
                 id="english-button"
                 data-cy="english-button"
                 role="button"
@@ -45,23 +45,23 @@ export default function Splash() {
             <Link href="/fr/accueil">
               <a
                 className="
-                                        focus:ring-1 focus:ring-black focus:ring-offset-2
-                                        px-4
-                                        bg-deep-blue-solid
-                                        text-white
-                                        border border-deep-blue-solid
-                                        active:bg-deep-blue-light
-                                        hover:bg-bright-blue-dark
-                                        text-center text-md
-                                        h-11
-                                        xl:h-10
-                                        w-28
-                                        xl:w-36
-                                        py-3
-                                        rounded
-                                        leading-3
-                                        shadow-md
-                                      "
+                  focus:ring-1 focus:ring-black focus:ring-offset-2
+                  px-4
+                  bg-deep-blue-solid
+                  text-white
+                  border border-deep-blue-solid
+                  active:bg-deep-blue-light
+                  hover:bg-bright-blue-dark
+                  text-center text-md
+                  h-11
+                  xl:h-10
+                  w-28
+                  xl:w-36
+                  py-3
+                  rounded
+                  leading-3
+                  shadow-md
+                "
                 id="french-button"
                 data-cy="french-button"
                 role="button"
@@ -93,14 +93,14 @@ export default function Splash() {
             <Link href="https://www.canada.ca/en/transparency/terms.html">
               <a
                 className="
-                                            inline-block
-                                            w-28
-                                            xl:w-max
-                                            mr-0
-                                            hover:underline
-                                            splash-a
-                                            text-lg
-                                          "
+                  inline-block
+                  w-28
+                  xl:w-max
+                  mr-0
+                  hover:underline
+                  splash-a
+                  text-lg
+                "
                 lang="en"
               >
                 Terms &amp; conditions
@@ -110,11 +110,11 @@ export default function Splash() {
             <Link href="https://www.canada.ca/fr/transparence/avis.html">
               <a
                 className="
-                                            inline-block
-                                            hover:underline
-                                            font-body
-                                            text-lg
-                                          "
+                  inline-block
+                  hover:underline
+                  font-body
+                  text-lg
+                "
                 lang="fr"
               >
                 Avis
