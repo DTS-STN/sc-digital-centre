@@ -115,16 +115,16 @@ class AEMService {
     if (!error) {
       benefitsUrls = data.entities.map((benefit) => {
         return {
-          benefitName: benefit.properties.name,
-          benefitUrl: benefit.links[0].href,
+          name: benefit.properties.name,
+          href: benefit.links[0].href,
         }
       })
 
       benefitData = await Promise.all(
-        benefitsUrls.map(async (url) => {
+        benefitsUrls.map(async (benefit) => {
           let { elements, name, description, title, error } =
             await this.getBenefit(
-              url.benefitUrl
+              benefit.href
                 .replace(this.baseUrl, '')
                 .replace(`?dates=${this.cacheBustString}`, '')
             )
