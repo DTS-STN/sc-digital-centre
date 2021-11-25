@@ -8,27 +8,23 @@ const {
 } = require('../../constants/aem')
 
 const DIRECTORY = {
-  PAGES: {
-    [HOME_PAGE]: {
-      fetchPath: 'home.json',
-    },
-    [SEARCH_PAGE]: {
-      fetchPath: 'search.json',
-    },
+  [HOME_PAGE]: {
+    fetchPath: 'home.json',
   },
-  FRAGMENTS: {
-    [BENEFITS]: {
-      fetchPath: 'benefits.json',
-    },
-    [BENEFIT_EI]: {
-      fetchPath: 'benefits/ei.json',
-    },
-    [TOP_TASKS]: {
-      fetchPath: 'components/top-tasks.json',
-    },
-    [DICTIONARY]: {
-      fetchPath: 'components/dictionary.json',
-    },
+  [SEARCH_PAGE]: {
+    fetchPath: 'search.json',
+  },
+  [BENEFITS]: {
+    fetchPath: 'benefits.json',
+  },
+  [BENEFIT_EI]: {
+    fetchPath: 'benefits/ei.json',
+  },
+  [TOP_TASKS]: {
+    fetchPath: 'components/top-tasks.json',
+  },
+  [DICTIONARY]: {
+    fetchPath: 'components/dictionary.json',
   },
 }
 
@@ -41,9 +37,8 @@ class AEMService {
       : new Date().toLocaleDateString('en-CA')
     this.baseUrl = baseUrl
 
-    // maintain all fragments by their path
+    // maintain all fragments by their ids
     this.store = {}
-    this.pages = {}
   }
 
   async getFragment(fragId) {
@@ -54,15 +49,21 @@ class AEMService {
       return { data: this.store[fragId], error: null }
     }
 
-    if (!DIRECTORY.FRAGMENTS?.[fragId]?.fetchPath)
-      throw new Error(
-        'Fragment not defined with a fetch path in pages directory.'
-      )
+    let path
+
+    if (DIRECTORY?.[fragId]?.fetchPath) {
+      path = DIRECTORY[fragId].fetchPath
+    } else if (fragId.endsWith('.json')) {
+      path = fragId
+    } else {
+      throw new Error(`Pass in either a directory constant or a json path`)
+    }
 
     // otherwise, fetch from AEM
     const res = await fetch(
-      `${this.baseUrl}${fragId}?dates=${this.cacheBustString}`
+      `${this.baseUrl}${path}?dates=${this.cacheBustString}`
     )
+
     const error = res.ok ? false : res.status
     const data = res.ok ? await res.json() : null
 
@@ -74,25 +75,19 @@ class AEMService {
     return { data, error }
   }
 
-  async getElements(elementsPath) {
-    const { data, error } = await this.getFragment(elementsPath)
+  async getElements(fragId) {
+    const { data, error } = await this.getFragment(fragId)
     return {
       elements: data?.properties?.elements || [],
       error: error,
     }
   }
 
-  async getPage(pathId) {
-    if (this.pages[pathId]) return this.pages[pathId]
+  async getPage(pageId) {
+    const { elements } = await this.getElements(pageId)
 
-    if (!DIRECTORY.PAGES?.[pathId]?.fetchPath)
-      throw new Error('Page not defined with a fetch path in pages directory.')
-    const { elements, error } = await this.getElements(
-      DIRECTORY.PAGES[pathId].fetchPath
-    )
-
-    const normalizedPage = {
-      id: pathId,
+    return {
+      id: pageId,
       name: {
         en: elements?.scPageNameEn?.value,
         fr: elements?.scPageNameFr?.value,
@@ -106,21 +101,13 @@ class AEMService {
         fr: elements?.scTitleFr?.value,
       },
     }
-
-    if (!error) {
-      this.pages[pathId] = normalizedPage
-    }
-
-    return this.pages[pathId]
   }
 
   //
   // gets the data for all benefits, start by getting the urls for each, then get the benefit data using the url
   //
   async getBenefits(fragId) {
-    const { data, error } = await this.getFragment(
-      DIRECTORY.FRAGMENTS[fragId].fetchPath
-    )
+    const { data, error } = await this.getFragment(fragId)
     let benefitsUrls = []
     let benefitData = []
     let errorCode = error

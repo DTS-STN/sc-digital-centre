@@ -118,27 +118,23 @@ export async function getStaticProps({ locale }) {
   let topTasks = []
   let topTaskTitle = []
 
-  let { elements: featured, error: errorCode } = await aemService.getBenefit(
-    BENEFIT_EI
-  )
+  const features = await aemService.getBenefit(BENEFIT_EI)
+  const featured = features.elements
 
   let AEMbenefits = await aemService.getBenefits(BENEFITS)
-  errorCode = AEMbenefits.error
-  if (AEMbenefits.benefits && !errorCode) {
+  if (AEMbenefits.benefits) {
     benefits = AEMbenefits.benefits
   }
 
   // Get list of top tasks
   let topTasksReturned = await aemService.getFragment(TOP_TASKS)
-  errorCode = topTasksReturned.error
-  if (topTasksReturned.data && !errorCode) {
+  if (topTasksReturned.data) {
     topTasks = topTasksReturned.data.entities
   }
 
   // Get miscellaneous components content
   let miscellaneousRes = await aemService.getFragment(DICTIONARY)
-  errorCode = miscellaneousRes.error
-  if (miscellaneousRes.data && !errorCode) {
+  if (miscellaneousRes.data) {
     miscellaneousRes.data.entities.forEach((item) => {
       // Extracting Top Task component content (Title and whatever else we add in AEM later on)
       if (item.properties.elements.scId.value === 'TOP-TASKS') {
@@ -155,7 +151,6 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       benefits,
-      errorCode,
       locale,
       featured,
       aemPage,
