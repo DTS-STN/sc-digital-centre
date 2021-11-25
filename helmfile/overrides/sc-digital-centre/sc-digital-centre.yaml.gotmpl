@@ -15,7 +15,7 @@ ingress:
     {{- if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") }}
           - {{ requiredEnv "PROJECT" }}.{{ requiredEnv "BASE_DOMAIN" }}
     {{ else }}
-          - {{ requiredEnv "PROJECT" }}-{{ requiredEnv "BRANCH" }}.{{ requiredEnv "BASE_DOMAIN" }}
+          - {{ requiredEnv "PROJECT" }}-{{ requiredEnv "BRANCH" | lower }}.{{ requiredEnv "BASE_DOMAIN" }}
     {{ end }} 
 resources:
   requests:
