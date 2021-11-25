@@ -42,7 +42,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ locale, params }) {
-  const benefit = await aemService.getBenefit(`benefits/${params.id}.json`)
+  const benefit = await aemService.getBenefit(
+    `benefits/${params.id}/${params.id}.json`
+  )
   const searchPage = await aemService.getPage(SEARCH_PAGE)
   const searchPageHref = searchPage.link[locale]
 
