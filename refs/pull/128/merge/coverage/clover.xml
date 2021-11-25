@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1637788983478" clover="3.2.0">
-  <project timestamp="1637788983478" name="All files">
+<coverage generated="1637853981457" clover="3.2.0">
+  <project timestamp="1637853981458" name="All files">
     <metrics statements="208" coveredstatements="115" conditionals="128" coveredconditionals="66" methods="68" coveredmethods="42" elements="404" coveredelements="223" complexity="0" loc="208" ncloc="208" packages="6" files="32" classes="32"/>
     <package name="components.atoms">
       <metrics statements="29" coveredstatements="25" conditionals="12" coveredconditionals="10" methods="11" coveredmethods="9"/>
@@ -47,13 +47,13 @@
       </file>
       <file name="SearchBar.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/SearchBar.js">
         <metrics statements="9" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="1"/>
-        <line num="9" count="20" type="stmt"/>
-        <line num="10" count="20" type="stmt"/>
-        <line num="11" count="20" type="stmt"/>
+        <line num="9" count="19" type="stmt"/>
+        <line num="10" count="19" type="stmt"/>
+        <line num="11" count="19" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="25" count="20" type="stmt"/>
+        <line num="25" count="19" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="62" count="5" type="stmt"/>
       </file>
@@ -111,7 +111,7 @@
       </file>
       <file name="SearchCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/SearchCard.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="13" type="stmt"/>
+        <line num="6" count="11" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
       </file>
       <file name="SearchFilterForm.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/SearchFilterForm.js">
