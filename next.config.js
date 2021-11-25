@@ -51,7 +51,7 @@ const config = {
 // rewrites setup
 //
 config.rewrites = async () => {
-  const AEMService = require('./pages/api/AEMService')
+  const AEMService = require('./pages/api/AEMServiceClass')
   const aemService = new AEMService(
     process.env.NEXT_CONTENT_API,
     process.env.NEXT_PUBLIC_BUILD_DATE
