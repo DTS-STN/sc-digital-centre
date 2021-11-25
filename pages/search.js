@@ -136,8 +136,7 @@ export default function SearchResult({
 export async function getStaticProps({ locale }) {
   const { benefits } = await aemService.getBenefits(BENEFITS)
   const aemPage = await aemService.getPage(SEARCH_PAGE)
-  const searchPage = await aemService.getPage(SEARCH_PAGE)
-  const searchPageHref = searchPage.link[locale]
+  const searchPageHref = aemPage.link[locale]
 
   return {
     props: {
