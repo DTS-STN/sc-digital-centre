@@ -47,6 +47,7 @@ export default function Home(props) {
         layout="fill"
         objectFit="cover"
         objectPosition="20% 80%"
+        priority={true}
       >
         <SearchCard
           lang={props.locale}
