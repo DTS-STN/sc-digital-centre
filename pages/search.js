@@ -3,14 +3,13 @@ import ModalElement from '../components/molecules/ModalElement'
 import SearchFilterForm from '../components/molecules/SearchFilterForm'
 import SearchHeader from '../components/molecules/SearchHeader'
 import aemService from './api/aemServiceInstance'
-import { getLocalBenefits } from './api/getData'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { CardList } from '../components/molecules/CardList'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
-import { HOME_PAGE, SEARCH_PAGE, BENEFITS, BENEFIT_EI } from '../constants/aem'
+import { SEARCH_PAGE, BENEFITS } from '../constants/aem'
 
 export default function SearchResult({
   locale,
