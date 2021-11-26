@@ -2,16 +2,16 @@
 
 describe('home page loads', () => {
     beforeEach(() => {
-      cy.visit('/')
-    //   cy.injectAxe();
+      cy.visit('/home')
+      cy.injectAxe();
     })
   
-    it('displays the index page', () => {
-        cy.url().should("contains", "/");
+    it('displays the home page', () => {
+        cy.url().should("contains", "/home");
     })
 
     it('Has no detectable a11y violations on load', () => {
-        // cy.checkA11y()
+        cy.checkA11y()
     })
   })
   
