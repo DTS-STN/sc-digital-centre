@@ -5,7 +5,6 @@ import aemService from '../api/aemServiceInstance'
 import { BENEFITS, SEARCH_PAGE } from '../../constants/aem'
 
 export default function BenefitPage({ locale, benefit, searchPageHref }) {
-  //
   const benefitData = benefit.elements
 
   const t = locale === 'en' ? en : fr

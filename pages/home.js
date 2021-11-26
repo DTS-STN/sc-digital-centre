@@ -118,8 +118,7 @@ export async function getStaticProps({ locale }) {
   let topTasks = []
   let topTaskTitle = []
 
-  const features = await aemService.getBenefit(BENEFIT_EI)
-  const featured = features.elements
+  const { elements: featured } = await aemService.getBenefit(BENEFIT_EI)
 
   let AEMbenefits = await aemService.getBenefits(BENEFITS)
   if (AEMbenefits.benefits) {

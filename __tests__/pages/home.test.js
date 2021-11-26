@@ -40,44 +40,40 @@ describe('Home page', () => {
 
   const benefits = [
     {
-      benefit: {
-        elements: {
-          scPageNameEn: {
-            value: 'Page Name 1',
-          },
-          scTitleEn: {
-            value: 'Title 1',
-          },
-          scProgramEn: {
-            value: 'Program 1',
-          },
-          scDescriptionEn: {
-            value: 'Short Description 1',
-          },
-          scCallToActionEn: {
-            value: 'Call to Action 1',
-          },
+      elements: {
+        scPageNameEn: {
+          value: 'Page Name 1',
+        },
+        scTitleEn: {
+          value: 'Title 1',
+        },
+        scProgramEn: {
+          value: 'Program 1',
+        },
+        scDescriptionEn: {
+          value: 'Short Description 1',
+        },
+        scCallToActionEn: {
+          value: 'Call to Action 1',
         },
       },
     },
     {
-      benefit: {
-        elements: {
-          scPageNameEn: {
-            value: 'Page Name 2',
-          },
-          scTitleEn: {
-            value: 'Title 2',
-          },
-          scProgramEn: {
-            value: 'Program 2',
-          },
-          scDescriptionEn: {
-            value: 'Short Description 2',
-          },
-          scCallToActionEn: {
-            value: 'Call to Action 2',
-          },
+      elements: {
+        scPageNameEn: {
+          value: 'Page Name 2',
+        },
+        scTitleEn: {
+          value: 'Title 2',
+        },
+        scProgramEn: {
+          value: 'Program 2',
+        },
+        scDescriptionEn: {
+          value: 'Short Description 2',
+        },
+        scCallToActionEn: {
+          value: 'Call to Action 2',
         },
       },
     },
