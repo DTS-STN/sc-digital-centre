@@ -64,6 +64,7 @@ export default function Home({
         layout="fill"
         objectFit="cover"
         objectPosition="20% 80%"
+        priority={true}
       >
         <SearchCard
           lang={locale}

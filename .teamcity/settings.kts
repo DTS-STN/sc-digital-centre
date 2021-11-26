@@ -124,8 +124,6 @@ object Build_Release: BuildType({
 
 object Build_Dynamic: BuildType({
     name = "Build_Dynamic"
-    var branch = "%teamcity.build.branch%"
-    var branch_lower = branch.lowercase()
     description = "Deploys branches with pond in the name"
     params {
         param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
@@ -138,7 +136,7 @@ object Build_Dynamic: BuildType({
         param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
         param("env.TARGET", "dev")
-        param("env.BRANCH", branch_lower)
+        param("env.BRANCH", "%teamcity.build.branch%")
     }
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentreDynamic)

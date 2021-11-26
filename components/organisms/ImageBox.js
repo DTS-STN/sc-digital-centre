@@ -21,6 +21,7 @@ export default function ImageBox(props) {
             layout={props.layout}
             objectFit={props.objectFit}
             objectPosition={props.objectPosition}
+            priority={props.priority}
           />
         </div>
       </div>
@@ -43,6 +44,9 @@ ImageBox.propTypes = {
   objectFit: PropTypes.string,
   // image objectPosition
   objectPosition: PropTypes.string,
+  // image priority - if the image is above the fold set to true otherwise it should be false
+  // more info here https://nextjs.org/docs/api-reference/next/image#priority
+  priority: PropTypes.bool,
 
   // other elements you want to add
   children: PropTypes.oneOfType([
