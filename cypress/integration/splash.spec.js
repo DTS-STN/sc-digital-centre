@@ -27,10 +27,7 @@ describe('Splash page loads and', () => {
 
 
     it('French button click goes to fr/accueil page', () => {
-        // cy.intercept('GET', '/home').as('home')
         cy.get('[data-cy=french-button]').click({ force: true })
-        // cy.intercept('home').as('home')
-        // cy.wait('@home')
         cy.wait(500)
         cy.url().should("contains", "/fr/accueil");
     })
