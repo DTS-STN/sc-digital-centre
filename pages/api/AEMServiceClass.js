@@ -100,6 +100,37 @@ class AEMService {
         en: elements?.scTitleEn?.value,
         fr: elements?.scTitleFr?.value,
       },
+      meta: {
+        keywords: {
+          en: elements?.scKeywordsEn?.value || '',
+          fr: elements?.scKeywordsFr?.value || '',
+        },
+        owner: {
+          en: elements?.scOwnerEn?.value || '',
+          fr: elements?.scOwnerFr?.value || '',
+        },
+        description: {
+          en: elements?.scDescriptionEn?.value || '',
+          fr: elements?.scDescriptionFr?.value || '',
+        },
+        dcTerms: elements?.scSubject?.value || [],
+        audience: elements?.scAudience.value || '',
+        type: elements?.scContentType.value || '',
+        img: {
+          en: {
+            src: elements?.scImageEn?.value || '',
+            title: elements?.scTitleEn?.value || '',
+            alt: elements?.scImageAltTextEn?.value || '',
+            description: elements?.scDescriptionEn?.value || '',
+          },
+          fr: {
+            src: elements?.scImageFr?.value || '',
+            title: elements?.scTitleFr?.value || '',
+            alt: elements?.scImageAltTextFr?.value || '',
+            description: elements?.scDescriptionFr?.value || '',
+          },
+        },
+      },
     }
   }
 

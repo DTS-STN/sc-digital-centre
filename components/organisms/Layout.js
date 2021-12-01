@@ -41,7 +41,7 @@ export default function Layout({
 
   return (
     <div>
-      <Meta title={aemPage?.title?.[locale] || title} lang={locale} />
+      <Meta locale={locale} aemPage={aemPage} title={title} />
       <PhaseBanner
         phase={phase}
         bannerText={bannerText}
