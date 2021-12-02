@@ -14,6 +14,8 @@ export default function FeatureBlock(props) {
       >
         <div className="aspect-w-5 aspect-h-2 sm:aspect-h-1 xl:ml-3 w-full min-w-max mr-break-out">
           <Image
+            // src="/autumn-leaves-woman-hands.png"
+            // hardcoded for now, but should be defined by AEM
             src={
               'https://www.canada.ca/content/dam/decd-endc/images/autumn_leaves_woman_hands.png'
             }
