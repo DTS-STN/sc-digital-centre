@@ -1,12 +1,19 @@
 import Link from 'next/link'
-import { HOME_PAGE } from '../constants/aem'
-import aemService from './api/aemServiceInstance'
+import Head from 'next/head'
 
 export default function Splash({ homePage }) {
   return (
-    <section className="flex h-screen bg-cover bg-center bg-splash-page">
+    <section
+      role="main"
+      className="flex h-screen bg-cover bg-center bg-splash-page"
+    >
+      <Head>
+        <title>Digital Centre</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="flex flex-col justify-center items-center m-auto">
         <div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]">
+          <h1 className="sr-only">service.canada.ca-digital-center</h1>
           <img
             className="h-auto w-64 mx-auto pt-6 xl:w-2/3 xl:mx-0 xl:px-6"
             src="/sig-blk-en.svg"
@@ -104,6 +111,7 @@ export default function Splash({ homePage }) {
                                             text-lg
                                           "
                 lang="en"
+                data-cy="terms"
               >
                 Terms &amp; conditions
               </a>
@@ -118,6 +126,7 @@ export default function Splash({ homePage }) {
                                             text-lg
                                           "
                 lang="fr"
+                data-cy="avis"
               >
                 Avis
               </a>
@@ -128,13 +137,4 @@ export default function Splash({ homePage }) {
       </div>
     </section>
   )
-}
-
-export async function getStaticProps() {
-  const homePage = await aemService.getPage(HOME_PAGE)
-  return {
-    props: {
-      homePage,
-    },
-  }
 }
