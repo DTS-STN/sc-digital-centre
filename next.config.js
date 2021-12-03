@@ -25,7 +25,7 @@ const securityHeaders = [
   },
 ]
 
-module.exports = {
+const config = {
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
     NEXT_CONTENT_API: contentURL,
@@ -45,29 +45,48 @@ module.exports = {
   images: {
     domains: ['www.canada.ca'],
   },
-  //
-  // rewrites setup
-  //
-  async rewrites() {
-    return [
-      {
-        source: '/accueil',
-        destination: '/home',
-      },
-      // {
-      //   source: " french page name with/without route ",
-      //   destination: " 'english' page ",
-      // },
-    ]
-  },
-
-  async headers() {
-    return [
-      {
-        // Apply these headers to all routes in your application.
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ]
-  },
 }
+
+//
+// rewrites setup
+//
+config.rewrites = async () => {
+  const AEMService = require('./pages/api/AEMServiceClass')
+  const aemService = new AEMService(
+    process.env.NEXT_CONTENT_API,
+    process.env.NEXT_PUBLIC_BUILD_DATE
+  )
+  const { HOME_PAGE, SEARCH_PAGE } = require('./constants/aem')
+
+  // get and cache pages from aem
+  const pages = [await aemService.getPage(SEARCH_PAGE)]
+
+  // loop over all cached pages and build rewrite rules for next
+  const aemPagesRewrites = Object.values(pages).map((normalizedPage) => ({
+    source: normalizedPage.link.fr,
+    destination: normalizedPage.link.en,
+    locale: false,
+  }))
+
+  return {
+    afterFiles: [
+      {
+        source: '/fr/accueil',
+        destination: '/home',
+        locale: false,
+      },
+      ...aemPagesRewrites,
+    ],
+  }
+}
+
+config.headers = async () => {
+  return [
+    {
+      // Apply these headers to all routes in your application.
+      source: '/(.*)',
+      headers: securityHeaders,
+    },
+  ]
+}
+module.exports = config

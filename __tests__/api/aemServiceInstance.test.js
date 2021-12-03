@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom'
-import { AEMService } from '../../pages/api/aemService'
+import AEMService from '../../pages/api/AEMServiceClass'
 
 const fakeBaseUrl = 'https://example.com'
 
-describe('aemService class', () => {
+describe('AEMService + instance', () => {
   it('should instantiate with a baseUrl property if the first arg is not an empty string', () => {
     expect(() => {
       new AEMService()

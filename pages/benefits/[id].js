@@ -1,11 +1,10 @@
 import Layout from '../../components/organisms/Layout'
-import { getPageNamesFromAEM, getBenefitFromAEM } from '../api/getData'
-
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import aemService from '../api/aemServiceInstance'
+import { BENEFITS, SEARCH_PAGE } from '../../constants/aem'
 
 export default function BenefitPage({ locale, benefit }) {
-  //
   const benefitData = benefit.elements
 
   const t = locale === 'en' ? en : fr
@@ -29,10 +28,10 @@ export default function BenefitPage({ locale, benefit }) {
 }
 
 export async function getStaticPaths() {
-  //
-  const { elements } = await getPageNamesFromAEM(`benefits.json`)
-  const paths = elements.map((name) => ({ params: { id: name } }))
-  //console.log('paths', paths)
+  const benefits = await aemService.getFragment(BENEFITS)
+  const paths = benefits.data.entities.map(({ properties }) => {
+    return { params: { id: properties.name } }
+  })
 
   return {
     paths,
@@ -40,15 +39,13 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps(context) {
-  //
-  const { benefit } = await getBenefitFromAEM(
-    `benefits/${context.params.id}.json`
-  )
+export async function getStaticProps({ locale, params }) {
+  const benefit = await aemService.getBenefit(`benefits/${params.id}.json`)
+  const searchPage = await aemService.getPage(SEARCH_PAGE)
 
   return {
     props: {
-      locale: context.locale,
+      locale: locale,
       benefit,
     },
   }

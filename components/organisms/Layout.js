@@ -12,7 +12,14 @@ import fr from '../../locales/fr'
 /**
  * Component which defines the layout of the page for all screen sizes
  */
-export default function Layout({ children, locale, title, phase, bannerText }) {
+export default function Layout({
+  children,
+  locale,
+  title,
+  phase,
+  bannerText,
+  aemPage,
+}) {
   const t = locale === 'en' ? en : fr
 
   useEffect(() => {
@@ -33,14 +40,14 @@ export default function Layout({ children, locale, title, phase, bannerText }) {
 
   return (
     <div>
-      <Meta title={title} lang={locale} />
+      <Meta title={aemPage?.title?.[locale] || title} lang={locale} />
       <PhaseBanner
         phase={phase}
         bannerText={bannerText}
         lang={locale}
       ></PhaseBanner>
 
-      <Header language={locale} t={t} />
+      <Header language={locale} t={t} aemPage={aemPage} />
 
       <main>
         <div>{children}</div>

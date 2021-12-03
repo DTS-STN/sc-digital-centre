@@ -40,48 +40,49 @@ describe('Home page', () => {
 
   const benefits = [
     {
-      benefit: {
-        elements: {
-          scPageNameEn: {
-            value: 'Page Name 1',
-          },
-          scTitleEn: {
-            value: 'Title 1',
-          },
-          scProgramEn: {
-            value: 'Program 1',
-          },
-          scDescriptionEn: {
-            value: 'Short Description 1',
-          },
-          scCallToActionEn: {
-            value: 'Call to Action 1',
-          },
+      elements: {
+        scPageNameEn: {
+          value: 'Page Name 1',
+        },
+        scTitleEn: {
+          value: 'Title 1',
+        },
+        scProgramEn: {
+          value: 'Program 1',
+        },
+        scDescriptionEn: {
+          value: 'Short Description 1',
+        },
+        scCallToActionEn: {
+          value: 'Call to Action 1',
         },
       },
     },
     {
-      benefit: {
-        elements: {
-          scPageNameEn: {
-            value: 'Page Name 2',
-          },
-          scTitleEn: {
-            value: 'Title 2',
-          },
-          scProgramEn: {
-            value: 'Program 2',
-          },
-          scDescriptionEn: {
-            value: 'Short Description 2',
-          },
-          scCallToActionEn: {
-            value: 'Call to Action 2',
-          },
+      elements: {
+        scPageNameEn: {
+          value: 'Page Name 2',
+        },
+        scTitleEn: {
+          value: 'Title 2',
+        },
+        scProgramEn: {
+          value: 'Program 2',
+        },
+        scDescriptionEn: {
+          value: 'Short Description 2',
+        },
+        scCallToActionEn: {
+          value: 'Call to Action 2',
         },
       },
     },
   ]
+
+  const searchPageHref = {
+    en: '/search',
+    fr: '/fr/search',
+  }
 
   const topTasks = [
     {
@@ -120,6 +121,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     const enLink = screen.getByText('English')
@@ -134,6 +136,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     const enLink = screen.getByText('Français')
@@ -147,6 +150,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('searchCard')).toBeTruthy()
@@ -159,6 +163,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('serviceCanada')).toBeTruthy()
@@ -171,6 +176,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('topTasks')).toBeTruthy()
@@ -183,6 +189,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('cardList')).toBeTruthy()
@@ -195,6 +202,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('featureBlock')).toBeTruthy()
@@ -207,6 +215,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('contactUs')).toBeTruthy()
@@ -219,6 +228,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     const results = await axe(container)

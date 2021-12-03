@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Head from 'next/head'
 
-export default function Splash() {
+export default function Splash({ homePage }) {
   return (
     <section
       role="main"

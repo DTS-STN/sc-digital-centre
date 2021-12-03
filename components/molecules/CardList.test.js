@@ -29,23 +29,21 @@ describe('CardList', () => {
       <CardList
         cardList={[
           {
-            benefit: {
-              elements: {
-                scPageNameEn: {
-                  value: 'Page Name 1',
-                },
-                scTitleEn: {
-                  value: 'Title 1',
-                },
-                scProgramEn: {
-                  value: 'Program 1',
-                },
-                scDescriptionEn: {
-                  value: 'Short Description 1',
-                },
-                scCallToActionEn: {
-                  value: 'Call to Action 1',
-                },
+            elements: {
+              scPageNameEn: {
+                value: 'Page Name 1',
+              },
+              scTitleEn: {
+                value: 'Title 1',
+              },
+              scProgramEn: {
+                value: 'Program 1',
+              },
+              scDescriptionEn: {
+                value: 'Short Description 1',
+              },
+              scCallToActionEn: {
+                value: 'Call to Action 1',
               },
             },
           },
@@ -71,23 +69,21 @@ describe('CardList', () => {
       <CardList
         cardList={[
           {
-            benefit: {
-              elements: {
-                scPageNameEn: {
-                  value: 'Page Name 1',
-                },
-                scTitleEn: {
-                  value: 'Title 1',
-                },
-                scProgramEn: {
-                  value: 'Program 1',
-                },
-                scDescriptionEn: {
-                  value: 'Short Description 1',
-                },
-                scCallToActionEn: {
-                  value: 'Call to Action 1',
-                },
+            elements: {
+              scPageNameEn: {
+                value: 'Page Name 1',
+              },
+              scTitleEn: {
+                value: 'Title 1',
+              },
+              scProgramEn: {
+                value: 'Program 1',
+              },
+              scDescriptionEn: {
+                value: 'Short Description 1',
+              },
+              scCallToActionEn: {
+                value: 'Call to Action 1',
               },
             },
           },

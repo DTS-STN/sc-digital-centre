@@ -2,22 +2,26 @@ import Layout from '../components/organisms/Layout'
 import ModalElement from '../components/molecules/ModalElement'
 import SearchFilterForm from '../components/molecules/SearchFilterForm'
 import SearchHeader from '../components/molecules/SearchHeader'
-
-import aemService from './api/aemService'
-import { getLocalBenefits } from './api/getData'
+import aemService from './api/aemServiceInstance'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { CardList } from '../components/molecules/CardList'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
+import { SEARCH_PAGE, BENEFITS } from '../constants/aem'
 
-export default function SearchResult(props) {
-  const t = props.locale === 'en' ? en : fr
+export default function SearchResult({
+  locale,
+  searchPageHref,
+  benefits,
+  aemPage,
+}) {
+  const t = locale === 'en' ? en : fr
   const router = useRouter()
   const [search, setSearch] = useState('')
   const [modalShow, setModalShow] = useState(false)
-  const [benefitList, setbenefitList] = useState(props.benefits)
+  const [benefitList, setbenefitList] = useState(benefits)
 
   //for the filter form
   //maybe put these into state?
@@ -46,10 +50,10 @@ export default function SearchResult(props) {
   ]
 
   useEffect(() => {
-    if (router.query.search) {
-      setSearch(router.query.search)
+    if (router.query.q) {
+      setSearch(router.query.q)
     }
-  }, [router.query.search])
+  }, [router.query.q])
 
   //handle submit event from filter form here
   function filterSubmitHandler(event) {
@@ -64,13 +68,14 @@ export default function SearchResult(props) {
 
   return (
     <Layout
-      locale={props.locale}
+      locale={locale}
       title="searchResult"
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
+      aemPage={aemPage}
     >
       <SearchHeader
-        lang={props.locale}
+        lang={locale}
         headerText={'Search Benefits'}
         inputText={search ?? ''}
         searchBarPlaceholder={t.searchPlaceholder}
@@ -80,7 +85,7 @@ export default function SearchResult(props) {
         btnFilterText={t.filterResults}
         btnFilterLabel={t.filterResults}
         setModalShow={setModalShow}
-        onSubmitHref="/searchResult"
+        onSubmitHref={searchPageHref[locale]}
       />
       <ModalElement
         modalShow={modalShow}
@@ -127,34 +132,16 @@ export default function SearchResult(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  let benefits = []
-  let errorCode = false
-
-  //
-  // IF content enabled get the data from the api
-  //
-
-  if (process.env.NEXT_CONTENT_API) {
-    let AEMbenefits = await aemService.getBenefits('benefits.json')
-    errorCode = AEMbenefits.error
-    if (AEMbenefits.benefits && !errorCode) {
-      benefits = AEMbenefits.benefits
-    }
-  } else {
-    //
-    // Else get the content from the local file
-    //
-    const { localData } = getLocalBenefits()
-
-    benefits = localData
-    errorCode = false
-  }
+  const { benefits } = await aemService.getBenefits(BENEFITS)
+  const aemPage = await aemService.getPage(SEARCH_PAGE)
+  const searchPageHref = aemPage.link
 
   return {
     props: {
       benefits,
-      errorCode,
       locale,
+      searchPageHref,
+      aemPage,
     },
   }
 }
