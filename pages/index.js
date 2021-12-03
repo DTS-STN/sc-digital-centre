@@ -3,9 +3,6 @@ import { HOME_PAGE } from '../constants/aem'
 import aemService from './api/aemServiceInstance'
 
 export default function Splash({ homePage }) {
-  const HOME_PAGE_HREF_EN = homePage.link.en
-  const HOME_PAGE_HREF_FR = homePage.link.fr
-
   return (
     <section className="flex h-screen bg-cover bg-center bg-splash-page">
       <div className="flex flex-col justify-center items-center m-auto">
@@ -17,7 +14,7 @@ export default function Splash({ homePage }) {
           />
 
           <div className="flex w-max container py-11 mx-auto font-display">
-            <Link href={HOME_PAGE_HREF_EN}>
+            <Link href="/home">
               <a
                 className="
                                         focus:ring-1 focus:ring-black focus:ring-offset-2
@@ -47,7 +44,7 @@ export default function Splash({ homePage }) {
               </a>
             </Link>
 
-            <Link href={HOME_PAGE_HREF_FR}>
+            <Link href="/fr/accueil">
               <a
                 className="
                                         focus:ring-1 focus:ring-black focus:ring-offset-2

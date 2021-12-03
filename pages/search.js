@@ -73,7 +73,6 @@ export default function SearchResult({
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
       aemPage={aemPage}
-      searchPageHref={searchPageHref}
     >
       <SearchHeader
         lang={locale}
@@ -86,7 +85,7 @@ export default function SearchResult({
         btnFilterText={t.filterResults}
         btnFilterLabel={t.filterResults}
         setModalShow={setModalShow}
-        onSubmitHref={searchPageHref}
+        onSubmitHref={searchPageHref[locale]}
       />
       <ModalElement
         modalShow={modalShow}
@@ -135,7 +134,7 @@ export default function SearchResult({
 export async function getStaticProps({ locale }) {
   const { benefits } = await aemService.getBenefits(BENEFITS)
   const aemPage = await aemService.getPage(SEARCH_PAGE)
-  const searchPageHref = aemPage.link[locale]
+  const searchPageHref = aemPage.link
 
   return {
     props: {

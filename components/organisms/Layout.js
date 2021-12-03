@@ -19,7 +19,6 @@ export default function Layout({
   phase,
   bannerText,
   aemPage,
-  searchPageHref,
 }) {
   const t = locale === 'en' ? en : fr
 
@@ -48,12 +47,7 @@ export default function Layout({
         lang={locale}
       ></PhaseBanner>
 
-      <Header
-        language={locale}
-        t={t}
-        aemPage={aemPage}
-        searchPageHref={searchPageHref}
-      />
+      <Header language={locale} t={t} aemPage={aemPage} />
 
       <main>
         <div>{children}</div>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Menu } from '../molecules/Menu'
 import { useRouter } from 'next/router'
 
-export default function Header({ language, t, aemPage, searchPageHref }) {
+export default function Header({ language, t, aemPage }) {
   const router = useRouter()
   const currentRouteQueryParams = router.query
 
@@ -100,7 +100,7 @@ export default function Header({ language, t, aemPage, searchPageHref }) {
           loginText={t.login}
           items={[
             {
-              link: searchPageHref,
+              link: '/search',
               text: t.serviceAndBenefits,
             },
             {
