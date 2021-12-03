@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -197,18 +197,12 @@
 <a name='L138'></a><a href='#L138'>138</a>
 <a name='L139'></a><a href='#L139'>139</a>
 <a name='L140'></a><a href='#L140'>140</a>
-<a name='L141'></a><a href='#L141'>141</a>
-<a name='L142'></a><a href='#L142'>142</a>
-<a name='L143'></a><a href='#L143'>143</a>
-<a name='L144'></a><a href='#L144'>144</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L141'></a><a href='#L141'>141</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -336,25 +330,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Link from 'next/link'
-import { HOME_PAGE } from '../constants/aem'
-import aemService from './api/aemServiceInstance'
+import Head from 'next/head'
 &nbsp;
 export default function Splash({ homePage }) {
-  const HOME_PAGE_HREF_EN = homePage.link.en
-  const HOME_PAGE_HREF_FR = homePage.link.fr
-&nbsp;
   return (
-    &lt;section className="flex h-screen bg-cover bg-center bg-splash-page"&gt;
+    &lt;section
+      role="main"
+      className="flex h-screen bg-cover bg-center bg-splash-page"
+    &gt;
+      &lt;Head&gt;
+        &lt;title&gt;Digital Centre&lt;/title&gt;
+        &lt;meta name="viewport" content="initial-scale=1.0, width=device-width" /&gt;
+      &lt;/Head&gt;
       &lt;div className="flex flex-col justify-center items-center m-auto"&gt;
         &lt;div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]"&gt;
+          &lt;h1 className="sr-only"&gt;service.canada.ca-digital-center&lt;/h1&gt;
           &lt;img
             className="h-auto w-64 mx-auto pt-6 xl:w-2/3 xl:mx-0 xl:px-6"
             src="/sig-blk-en.svg"
@@ -362,7 +360,7 @@ export default function Splash({ homePage }) {
           /&gt;
 &nbsp;
           &lt;div className="flex w-max container py-11 mx-auto font-display"&gt;
-            &lt;Link href={HOME_PAGE_HREF_EN}&gt;
+            &lt;Link href="/home"&gt;
               &lt;a
                 className="
                                         focus:ring-1 focus:ring-black focus:ring-offset-2
@@ -392,7 +390,7 @@ export default function Splash({ homePage }) {
               &lt;/a&gt;
             &lt;/Link&gt;
 &nbsp;
-            &lt;Link href={HOME_PAGE_HREF_FR}&gt;
+            &lt;Link href="/fr/accueil"&gt;
               &lt;a
                 className="
                                         focus:ring-1 focus:ring-black focus:ring-offset-2
@@ -452,6 +450,7 @@ export default function Splash({ homePage }) {
                                             text-lg
                                           "
                 lang="en"
+                data-cy="terms"
               &gt;
                 Terms &amp;amp; conditions
               &lt;/a&gt;
@@ -466,6 +465,7 @@ export default function Splash({ homePage }) {
                                             text-lg
                                           "
                 lang="fr"
+                data-cy="avis"
               &gt;
                 Avis
               &lt;/a&gt;
@@ -477,15 +477,6 @@ export default function Splash({ homePage }) {
     &lt;/section&gt;
   )
 }
-&nbsp;
-export async function <span class="fstat-no" title="function not covered" >getStaticProps(</span>) {
-  const homePage = <span class="cstat-no" title="statement not covered" >await aemService.getPage(HOME_PAGE)</span>
-<span class="cstat-no" title="statement not covered" >  return {</span>
-    props: {
-      homePage,
-    },
-  }
-}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -493,7 +484,7 @@ export async function <span class="fstat-no" title="function not covered" >getSt
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Nov 26 2021 22:02:13 GMT+0000 (Coordinated Universal Time)
+                at Fri Dec 03 2021 15:28:08 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
