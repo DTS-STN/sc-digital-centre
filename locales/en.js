@@ -34,7 +34,7 @@ export default {
   searchPlaceholder: 'Search benefits and services',
 
   //Search Card
-  searchFindBenefits: 'Find benefits and services',
+  searchFindBenefits: 'Find benefits and services test',
   searchViewAllBenefits: 'View all benefits and services',
   searchDesc:
     'Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits',
