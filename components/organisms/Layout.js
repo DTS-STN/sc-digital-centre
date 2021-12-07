@@ -23,7 +23,7 @@ export default function Layout({
   const t = locale === 'en' ? en : fr
 
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
+    if (/*process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL*/ false) {
       window.adobeDataLayer.push({
         event: 'pageLoad',
         page: {
@@ -120,13 +120,15 @@ export default function Layout({
         ]}
       />
 
-      {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
-        <Script id="AdobeSatellite" type="text/javascript">
-          _satellite.pageBottom();
-        </Script>
-      ) : (
-        ''
-      )}
+      {
+        /*process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL */ false ? (
+          <Script id="AdobeSatellite" type="text/javascript">
+            _satellite.pageBottom();
+          </Script>
+        ) : (
+          ''
+        )
+      }
     </div>
   )
 }
