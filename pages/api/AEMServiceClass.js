@@ -86,7 +86,7 @@ class AEMService {
   async getPage(pageId) {
     const { elements } = await this.getElements(pageId)
 
-    return this.extractPageDetails(elements)
+    return this.extractPageDetails({ elements })
   }
 
   //
@@ -120,16 +120,6 @@ class AEMService {
             title: data?.entities[0]?.properties?.title || '',
             error: error,
           }
-          // let { elements, name, description, title, error } =
-          //   await this.getBenefit(
-          //     benefit.href
-          //     .replace(this.baseUrl, '')
-          //     .replace(`?dates=${this.cacheBustString}`, '')
-          //   )
-          // errorCode = error === null ? false : false
-          // return {
-          //   benefit: { elements, name, description, title } || [],
-          // }
         })
       )
     }
@@ -169,6 +159,10 @@ class AEMService {
       title: {
         en: elements?.scTitleEn?.value || '',
         fr: elements?.scTitleFr?.value || '',
+      },
+      longDescription: {
+        en: elements?.scLongDescriptionEn?.value || '',
+        fr: elements?.scLongDescriptionFr?.value || '',
       },
       meta: {
         keywords: {

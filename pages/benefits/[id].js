@@ -4,9 +4,7 @@ import fr from '../../locales/fr'
 import aemService from '../api/aemServiceInstance'
 import { BENEFITS } from '../../constants/aem'
 
-export default function BenefitPage({ locale, aemPage, benefit }) {
-  const benefitData = benefit.elements
-
+export default function BenefitPage({ locale, aemPage }) {
   const t = locale === 'en' ? en : fr
 
   return (
@@ -17,11 +15,11 @@ export default function BenefitPage({ locale, aemPage, benefit }) {
       bannerText={t.phaseBannerText}
     >
       <h1 className="font-extrabold text-red-800 text-3xl text-center mt-12">
-        {benefitData.scTitleEn.value}
+        {aemPage.title[locale]}
       </h1>
 
       <div className="w-9/12 mx-auto border my-24">
-        <p className="p-5">{benefitData.scLongDescriptionEn.value}</p>
+        <p className="p-5">{aemPage.longDescription[locale]}</p>
       </div>
     </Layout>
   )
@@ -40,14 +38,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ locale, params }) {
-  const benefit = await aemService.getBenefit(`benefits/${params.id}.json`)
-  const aemPage = aemService.extractPageDetails({ elements: benefit })
+  const aemPage = await aemService.getPage(
+    `benefits/${params.id}/${params.id}.json`
+  )
 
   return {
     props: {
       locale: locale,
       aemPage,
-      benefit,
     },
   }
 }
