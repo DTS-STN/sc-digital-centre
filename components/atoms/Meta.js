@@ -6,12 +6,12 @@ export default function Meta({ locale, aemPage }) {
   const title = aemPage.title[locale]
   const currentUrl = useRouter().asPath
   const keywords = aemPage.meta.keywords[locale]
-  const owner = aemPage.meta.owner[locale]
+  const owner = aemPage.meta.owner?.[locale]
   const description = aemPage.meta.description[locale]
-  const dcTerms = aemPage.meta.dcTerms
+  const dcTerms = aemPage.meta?.dcTerms || []
   const audience = aemPage.meta.audience
   const type = aemPage.meta.type
-  const img = aemPage.meta.img[locale]
+  const img = aemPage.meta.img?.[locale]
 
   return (
     <Head prefix="og:http://ogp.me/ns#">

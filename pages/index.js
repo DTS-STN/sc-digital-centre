@@ -1,16 +1,13 @@
 import Link from 'next/link'
-import Head from 'next/head'
+import Meta from '../components/atoms/Meta'
 
-export default function Splash({ homePage }) {
+export default function Splash({ locale, page: aemPage }) {
   return (
     <section
       role="main"
       className="flex h-screen bg-cover bg-center bg-splash-page"
     >
-      <Head>
-        <title>Digital Centre</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+      <Meta locale={locale} aemPage={aemPage} />
       <div className="flex flex-col justify-center items-center m-auto">
         <div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]">
           <h1 className="sr-only">service.canada.ca-digital-center</h1>
@@ -137,4 +134,28 @@ export default function Splash({ homePage }) {
       </div>
     </section>
   )
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      locale,
+      page: {
+        title: {
+          en: 'Digital Centre (en) + Digital Centre (fr)',
+          fr: 'Digital Centre (en) + Digital Centre (fr)',
+        },
+        meta: {
+          keywords: {
+            en: 'en + fr keywords',
+            fr: 'en + fr keywords',
+          },
+          description: {
+            en: 'en + fr description',
+            fr: 'en + fr description',
+          },
+        },
+      },
+    },
+  }
 }

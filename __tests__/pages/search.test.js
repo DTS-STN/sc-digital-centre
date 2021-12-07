@@ -20,6 +20,23 @@ jest.mock('next/link', () => ({
 
 expect.extend(toHaveNoViolations)
 
+const aemPage = {
+  title: {
+    en: 'Search (en)',
+    fr: 'Search (fr)',
+  },
+  meta: {
+    keywords: {
+      en: 'en keywords',
+      fr: 'fr keywords',
+    },
+    description: {
+      en: 'en description',
+      fr: 'fr description',
+    },
+  },
+}
+
 describe('Search page', () => {
   const searchPageHref = {
     en: '/search',
@@ -78,7 +95,12 @@ describe('Search page', () => {
   })
   it('should render in French', () => {
     render(
-      <Search locale="fr" benefits={benefits} searchPageHref={searchPageHref} />
+      <Search
+        locale="fr"
+        benefits={benefits}
+        searchPageHref={searchPageHref}
+        aemPage={aemPage}
+      />
     )
     const enLink = screen.getByText('English')
     expect(enLink).toBeInTheDocument()
@@ -86,7 +108,12 @@ describe('Search page', () => {
 
   it('should render in English', () => {
     render(
-      <Search locale="en" benefits={benefits} searchPageHref={searchPageHref} />
+      <Search
+        locale="en"
+        benefits={benefits}
+        searchPageHref={searchPageHref}
+        aemPage={aemPage}
+      />
     )
     const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
@@ -94,7 +121,12 @@ describe('Search page', () => {
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <Search locale="en" benefits={benefits} searchPageHref={searchPageHref} />
+      <Search
+        locale="en"
+        benefits={benefits}
+        searchPageHref={searchPageHref}
+        aemPage={aemPage}
+      />
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()

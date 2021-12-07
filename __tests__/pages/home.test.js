@@ -32,6 +32,23 @@ jest.mock(
 
 expect.extend(toHaveNoViolations)
 
+const aemPage = {
+  title: {
+    en: 'Home (en)',
+    fr: 'Home (fr)',
+  },
+  meta: {
+    keywords: {
+      en: 'en keywords',
+      fr: 'fr keywords',
+    },
+    description: {
+      en: 'en description',
+      fr: 'fr description',
+    },
+  },
+}
+
 describe('Home page', () => {
   const featured = {
     scTitleEn: { value: 'title' },
@@ -122,6 +139,7 @@ describe('Home page', () => {
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
         searchPageHref={searchPageHref}
+        aemPage={aemPage}
       />
     )
     const enLink = screen.getByText('English')
@@ -137,6 +155,7 @@ describe('Home page', () => {
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
         searchPageHref={searchPageHref}
+        aemPage={aemPage}
       />
     )
     const enLink = screen.getByText('Français')
@@ -151,6 +170,7 @@ describe('Home page', () => {
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
         searchPageHref={searchPageHref}
+        aemPage={aemPage}
       />
     )
     expect(screen.getByTestId('searchCard')).toBeTruthy()
@@ -164,6 +184,7 @@ describe('Home page', () => {
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
         searchPageHref={searchPageHref}
+        aemPage={aemPage}
       />
     )
     expect(screen.getByTestId('serviceCanada')).toBeTruthy()
@@ -177,6 +198,7 @@ describe('Home page', () => {
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
         searchPageHref={searchPageHref}
+        aemPage={aemPage}
       />
     )
     expect(screen.getByTestId('topTasks')).toBeTruthy()
@@ -190,6 +212,7 @@ describe('Home page', () => {
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
         searchPageHref={searchPageHref}
+        aemPage={aemPage}
       />
     )
     expect(screen.getByTestId('cardList')).toBeTruthy()
@@ -203,6 +226,7 @@ describe('Home page', () => {
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
         searchPageHref={searchPageHref}
+        aemPage={aemPage}
       />
     )
     expect(screen.getByTestId('featureBlock')).toBeTruthy()
@@ -216,6 +240,7 @@ describe('Home page', () => {
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
         searchPageHref={searchPageHref}
+        aemPage={aemPage}
       />
     )
     expect(screen.getByTestId('contactUs')).toBeTruthy()
@@ -229,6 +254,7 @@ describe('Home page', () => {
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
         searchPageHref={searchPageHref}
+        aemPage={aemPage}
       />
     )
     const results = await axe(container)
