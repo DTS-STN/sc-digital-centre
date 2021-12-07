@@ -2,9 +2,9 @@ import Layout from '../../components/organisms/Layout'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import aemService from '../api/aemServiceInstance'
-import { BENEFITS, SEARCH_PAGE } from '../../constants/aem'
+import { BENEFITS } from '../../constants/aem'
 
-export default function BenefitPage({ locale, benefit }) {
+export default function BenefitPage({ locale, aemPage, benefit }) {
   const benefitData = benefit.elements
 
   const t = locale === 'en' ? en : fr
@@ -12,7 +12,7 @@ export default function BenefitPage({ locale, benefit }) {
   return (
     <Layout
       locale={locale}
-      title={benefitData.scTitleEn.value}
+      aemPage={aemPage}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
     >
@@ -41,11 +41,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ locale, params }) {
   const benefit = await aemService.getBenefit(`benefits/${params.id}.json`)
-  const searchPage = await aemService.getPage(SEARCH_PAGE)
+  const aemPage = aemService.extractPageDetails({ elements: benefit })
 
   return {
     props: {
       locale: locale,
+      aemPage,
       benefit,
     },
   }

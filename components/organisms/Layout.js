@@ -15,7 +15,6 @@ import fr from '../../locales/fr'
 export default function Layout({
   children,
   locale,
-  title,
   phase,
   bannerText,
   aemPage,

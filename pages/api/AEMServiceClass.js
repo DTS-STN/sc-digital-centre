@@ -86,52 +86,7 @@ class AEMService {
   async getPage(pageId) {
     const { elements } = await this.getElements(pageId)
 
-    return {
-      id: pageId,
-      name: {
-        en: elements?.scPageNameEn?.value,
-        fr: elements?.scPageNameFr?.value,
-      },
-      link: {
-        en: `/${elements?.scPageNameEn?.value}`,
-        fr: `/fr/${elements?.scPageNameFr?.value}`,
-      },
-      title: {
-        en: elements?.scTitleEn?.value,
-        fr: elements?.scTitleFr?.value,
-      },
-      meta: {
-        keywords: {
-          en: elements?.scKeywordsEn?.value || '',
-          fr: elements?.scKeywordsFr?.value || '',
-        },
-        owner: {
-          en: elements?.scOwnerEn?.value || '',
-          fr: elements?.scOwnerFr?.value || '',
-        },
-        description: {
-          en: elements?.scDescriptionEn?.value || '',
-          fr: elements?.scDescriptionFr?.value || '',
-        },
-        dcTerms: elements?.scSubject?.value || [],
-        audience: elements?.scAudience.value || '',
-        type: elements?.scContentType.value || '',
-        img: {
-          en: {
-            src: elements?.scImageEn?.value || '',
-            title: elements?.scTitleEn?.value || '',
-            alt: elements?.scImageAltTextEn?.value || '',
-            description: elements?.scDescriptionEn?.value || '',
-          },
-          fr: {
-            src: elements?.scImageFr?.value || '',
-            title: elements?.scTitleFr?.value || '',
-            alt: elements?.scImageAltTextFr?.value || '',
-            description: elements?.scDescriptionFr?.value || '',
-          },
-        },
-      },
-    }
+    return this.extractPageDetails(elements)
   }
 
   //
@@ -197,6 +152,55 @@ class AEMService {
       description: data?.entities[0]?.properties?.description || '',
       title: data?.entities[0]?.properties?.title || '',
       error: error,
+    }
+  }
+
+  extractPageDetails(data) {
+    const { elements } = data
+    return {
+      name: {
+        en: elements?.scPageNameEn?.value || '',
+        fr: elements?.scPageNameFr?.value || '',
+      },
+      link: {
+        en: `/${elements?.scPageNameEn?.value}`,
+        fr: `/fr/${elements?.scPageNameFr?.value}`,
+      },
+      title: {
+        en: elements?.scTitleEn?.value || '',
+        fr: elements?.scTitleFr?.value || '',
+      },
+      meta: {
+        keywords: {
+          en: elements?.scKeywordsEn?.value || '',
+          fr: elements?.scKeywordsFr?.value || '',
+        },
+        owner: {
+          en: elements?.scOwnerEn?.value || '',
+          fr: elements?.scOwnerFr?.value || '',
+        },
+        description: {
+          en: elements?.scDescriptionEn?.value || '',
+          fr: elements?.scDescriptionFr?.value || '',
+        },
+        dcTerms: elements?.scSubject?.value || [],
+        audience: elements?.scAudience?.value || '',
+        type: elements?.scContentType?.value || '',
+        img: {
+          en: {
+            src: elements?.scImageEn?.value || '',
+            title: elements?.scTitleEn?.value || '',
+            alt: elements?.scImageAltTextEn?.value || '',
+            description: elements?.scDescriptionEn?.value || '',
+          },
+          fr: {
+            src: elements?.scImageFr?.value || '',
+            title: elements?.scTitleFr?.value || '',
+            alt: elements?.scImageAltTextFr?.value || '',
+            description: elements?.scDescriptionFr?.value || '',
+          },
+        },
+      },
     }
   }
 }
