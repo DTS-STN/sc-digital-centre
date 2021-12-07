@@ -3,15 +3,15 @@
 describe('home page loads', () => {
     beforeEach(() => {
       cy.visit('/')
-    //   cy.injectAxe();
+      // cy.injectAxe();
     })
   
-    it('displays the index page', () => {
-        cy.url().should("contains", "/");
+    it.skip('displays the home page', () => {
+        cy.url().should("contains", "/home");
     })
 
-    it('Has no detectable a11y violations on load', () => {
-        // cy.checkA11y()
+    it.skip('Has no detectable a11y violations on load', () => {
+        cy.checkA11y()
     })
   })
   

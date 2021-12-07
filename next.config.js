@@ -59,10 +59,7 @@ config.rewrites = async () => {
   const { HOME_PAGE, SEARCH_PAGE } = require('./constants/aem')
 
   // get and cache pages from aem
-  const pages = [
-    await aemService.getPage(HOME_PAGE),
-    await aemService.getPage(SEARCH_PAGE),
-  ]
+  const pages = [await aemService.getPage(SEARCH_PAGE)]
 
   // loop over all cached pages and build rewrite rules for next
   const aemPagesRewrites = Object.values(pages).map((normalizedPage) => ({
@@ -72,7 +69,14 @@ config.rewrites = async () => {
   }))
 
   return {
-    afterFiles: aemPagesRewrites,
+    afterFiles: [
+      {
+        source: '/fr/accueil',
+        destination: '/home',
+        locale: false,
+      },
+      ...aemPagesRewrites,
+    ],
   }
 }
 

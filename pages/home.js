@@ -56,7 +56,6 @@ export default function Home({
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
       aemPage={aemPage}
-      searchPageHref={searchPageHref}
     >
       <ImageBox
         imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png"
@@ -73,7 +72,7 @@ export default function Home({
           viewBenefitsServices={t.searchViewAllBenefits}
           searchBarPlaceholder={t.searchPlaceholder}
           searchBarText={t.search}
-          onSubmitHref={searchPageHref}
+          onSubmitHref={searchPageHref[locale]}
         />
       </ImageBox>
       <div className="layout-container md:flex my-5">
@@ -146,7 +145,7 @@ export async function getStaticProps({ locale }) {
 
   const aemPage = await aemService.getPage(HOME_PAGE)
   const searchPage = await aemService.getPage(SEARCH_PAGE)
-  const searchPageHref = searchPage.link[locale]
+  const searchPageHref = searchPage.link
 
   return {
     props: {

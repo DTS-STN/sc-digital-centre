@@ -16,11 +16,13 @@ class MyDocument extends Document {
         xmlns="http://www.w3.org/1999/xhtml"
       >
         <Head>
-          {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
-            <script async src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL} />
-          ) : (
-            ''
-          )}
+          {
+            /*process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL*/ false ? (
+              <script async src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL} />
+            ) : (
+              ''
+            )
+          }
         </Head>
         <body>
           <Main />

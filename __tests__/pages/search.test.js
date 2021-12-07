@@ -21,6 +21,11 @@ jest.mock('next/link', () => ({
 expect.extend(toHaveNoViolations)
 
 describe('Search page', () => {
+  const searchPageHref = {
+    en: '/search',
+    fr: '/fr/search',
+  }
+
   const benefits = [
     {
       elements: {
@@ -72,19 +77,25 @@ describe('Search page', () => {
     }))
   })
   it('should render in French', () => {
-    render(<Search locale="fr" benefits={benefits} />)
+    render(
+      <Search locale="fr" benefits={benefits} searchPageHref={searchPageHref} />
+    )
     const enLink = screen.getByText('English')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render in English', () => {
-    render(<Search locale="en" benefits={benefits} />)
+    render(
+      <Search locale="en" benefits={benefits} searchPageHref={searchPageHref} />
+    )
     const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(<Search locale="en" benefits={benefits} />)
+    const { container } = render(
+      <Search locale="en" benefits={benefits} searchPageHref={searchPageHref} />
+    )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

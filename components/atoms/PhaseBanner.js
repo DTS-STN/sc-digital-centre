@@ -17,7 +17,10 @@ export default function PhaseBanner(props) {
           </span>
         </div>
 
-        <p className="ml-4 lg:ml-8 xl:ml-12 pt-2 md:pt-0 h-full font-body text-sm lg:text-md text-white my-auto flex content-center">
+        <p
+          role="alert"
+          className="ml-4 lg:ml-8 xl:ml-12 pt-2 md:pt-0 h-full font-body text-sm lg:text-md text-white my-auto flex content-center"
+        >
           {props.bannerText}
         </p>
       </div>

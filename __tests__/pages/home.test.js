@@ -79,6 +79,11 @@ describe('Home page', () => {
     },
   ]
 
+  const searchPageHref = {
+    en: '/search',
+    fr: '/fr/search',
+  }
+
   const topTasks = [
     {
       properties: {
@@ -116,6 +121,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     const enLink = screen.getByText('English')
@@ -130,6 +136,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     const enLink = screen.getByText('Français')
@@ -143,6 +150,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('searchCard')).toBeTruthy()
@@ -155,6 +163,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('serviceCanada')).toBeTruthy()
@@ -167,6 +176,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('topTasks')).toBeTruthy()
@@ -179,6 +189,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('cardList')).toBeTruthy()
@@ -191,6 +202,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('featureBlock')).toBeTruthy()
@@ -203,6 +215,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     expect(screen.getByTestId('contactUs')).toBeTruthy()
@@ -215,6 +228,7 @@ describe('Home page', () => {
         featured={featured}
         topTasks={topTasks}
         topTaskTitle={topTaskTitle}
+        searchPageHref={searchPageHref}
       />
     )
     const results = await axe(container)
