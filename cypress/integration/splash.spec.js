@@ -18,7 +18,7 @@ describe('Splash page loads and', () => {
        
         cy.get('[data-cy=english-button]').click({ force: true })
        
-        cy.wait(500)
+        cy.wait(1000)
       
         cy.url().should("contains", "/home");
     })
@@ -28,9 +28,10 @@ describe('Splash page loads and', () => {
 
     it('French button click goes to fr/accueil page', () => {
         cy.get('[data-cy=french-button]').click({ force: true })
-        cy.wait(500)
+        cy.wait(1000)
         cy.url().should("contains", "/fr/accueil");
     })
+    
     it('Terms and condition links appear on the page', () => {
         cy.get('[data-cy=terms]').should("be.visible")
         .and('have.attr',
