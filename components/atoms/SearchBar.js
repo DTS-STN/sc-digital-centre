@@ -27,9 +27,10 @@ export default function SearchBar(props) {
       <input
         placeholder={props.placeholderText}
         type="text"
-        value={props.inputText}
+        defaultValue={props.inputText}
         className="block placeholder-gray-dark py-1 px-3 w-36 xs:w-48 sm:w-auto text-black"
         onChange={(e) => setSearch(e.target.value)}
+        data-cy={props.dataCyInput}
       />
       <button
         type="submit"
@@ -38,6 +39,7 @@ export default function SearchBar(props) {
           'inline-block align-middle text-white w-auto py-1 pr-2 bg-deep-blue-solid ' +
           props.btnClasses
         }
+        data-cy={props.dataCyButton}
       >
         {/* search icon */}
         <svg
@@ -79,4 +81,12 @@ SearchBar.propTypes = {
    * Any text that should exist in the input beforehand
    */
   inputText: PropTypes.string,
+  /**
+   * Test id for e2e test
+   */
+  dataCyInput: PropTypes.string,
+  /**
+   * Test id for e2e test
+   */
+  dataCyButton: PropTypes.string,
 }

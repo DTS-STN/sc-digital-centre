@@ -19,6 +19,8 @@ export default function SearchCard(props) {
         btnText={props.searchBarText}
         btnClasses=" border border-white"
         onSubmitHref={props.onSubmitHref}
+        dataCyInput={props.dataCyInput}
+        dataCyButton={props.dataCyButton}
       />
       <Link href="/searchResult">
         <a className="text-sm underline" lang={props.lang}>
@@ -58,4 +60,12 @@ SearchCard.propTypes = {
    * Optional on submit to send the user to another page.
    */
   onSubmitHref: PropTypes.string,
+  /**
+   * Test id for e2e test
+   */
+  dataCyInput: PropTypes.string,
+  /**
+   * Test id for e2e test
+   */
+  dataCyButton: PropTypes.string,
 }
