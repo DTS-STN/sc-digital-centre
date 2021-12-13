@@ -15,7 +15,7 @@ export default function SearchBar(props) {
     if (props.onSubmitHref) {
       router.push({
         pathname: props.onSubmitHref,
-        query: { q: search },
+        query: { q: encodeURIComponent(search) },
       })
     }
 

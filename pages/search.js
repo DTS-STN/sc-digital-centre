@@ -51,7 +51,7 @@ export default function SearchResult({
 
   useEffect(() => {
     if (router.query.q) {
-      setSearch(router.query.q)
+      setSearch(decodeURIComponent(router.query.q))
     }
   }, [router.query.q])
 
