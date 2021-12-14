@@ -23,7 +23,7 @@ export default function Layout({
   const t = locale === 'en' ? en : fr
 
   useEffect(() => {
-    if (/*process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL*/ false) {
+    if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
       window.adobeDataLayer.push({
         event: 'pageLoad',
         page: {
@@ -36,7 +36,7 @@ export default function Layout({
         },
       })
     }
-  }, [])
+  }, [locale])
 
   return (
     <div>
@@ -89,6 +89,7 @@ export default function Layout({
             footerBoxlink: t.footerNewsURL,
             footerBoxLinkText: t.footerNews,
           },
+
           {
             footerBoxlink: t.footerPmURL,
             footerBoxLinkText: t.footerPm,
@@ -119,16 +120,6 @@ export default function Layout({
           },
         ]}
       />
-
-      {
-        /*process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL */ false ? (
-          <Script id="AdobeSatellite" type="text/javascript">
-            _satellite.pageBottom();
-          </Script>
-        ) : (
-          ''
-        )
-      }
     </div>
   )
 }
