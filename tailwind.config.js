@@ -5,59 +5,86 @@ module.exports = {
   darkMode: false,
   theme: {
     fontFamily: {
-      display: ['Lato'],
-      body: ['Noto sans'],
+      display: ['Lato', 'sans-serif'],
+      body: ['Noto sans', 'sans-serif'],
     },
     screens: {
-      xs: '376px',
+      'xs': '376px',
       ...defaultTheme.screens,
+      '2xl': '1920px',
     },
     extend: {
       colors: {
-        gray: {
-          secondary: '#7f8c8d', //paragraphs and prefooter bg
-          light: '#cfcfcf',
-          dark: '#262626',
+        'gray': {
+          light: '#DBDBDB',
+          solid: '#B9B9B9',
+          dark: '#7F8C8D',
         },
-        white: {
-          DEFAULT: '#FFFFFF',
-          light: '#fbfbfb',
+        'dark': {
+          solid: '#262626',
         },
-        blue: {
-          //primary
-          'primary-deep': '#173451',
-          'bright': '#3498db',
-
-          //secondary
-          'secondary-deep': '#3a6b90',
-          'dull': '#5996b2',
-
-          // footer
-          'dark': '#26374a',
-          'anchor': '#284162',
-          'link': '#0535d2',
+        'light': {
+          solid: '#FBFBFB',
         },
-        green: {
-          forest: '#28ae60',
-          bright: '#87d37c',
+        'bright-blue': {
+          light: '#78B9E4',
+          solid: '#3498DB',
+          dark: '#245C81',
         },
-        red: {
-          alert: '#d94141',
+        'deep-blue': {
+          light: '#5E8EBD',
+          solid: '#173451',
+          dark: '#21303F',
         },
-        orange: {
-          alert: '#EE7100',
+        'red': {
+          light: '#B76565',
+          solid: '#D94141',
+          dark: '#881515',
         },
-        yellow: '#f39c12',
-        burgundy: '#a24446',
+        'burgundy': {
+          light: '#E77A7C',
+          solid: '#A24446',
+          dark: '#C94447',
+        },
+        'orange': {
+          light: '#F19E7A',
+          solid: '#D96F41',
+          dark: '#AC5028',
+        },
+        'yellow': {
+          light: '#E6BF81',
+          solid: '#F39C12',
+          dark: '#B17921',
+        },
+        'green': {
+          light: '#81DEA8',
+          solid: '#28AE60',
+          dark: '#247E49',
+        },
+        'purple': {
+          light: '#9E81CB',
+          solid: '#6D29D5',
+          dark: '#40216E',
+        },
+        'pink': {
+          light: '#C197A9',
+          solid: '#DC2875',
+          dark: '#9E4068',
+        },
       },
       backgroundImage: () => ({
         'footer-parliament-image': 'url(../public/landscape.png)',
         'splash-page': 'url(../public/sp-bg-1.jpg)',
       }),
+      boxShadow: {
+        card: '0px 2px 8px rgba(0, 0, 0, 0.25)',
+      },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),
+    require('tailwind-container-break-out'),
+    require('tailwindcss-children'),
+  ],
 }

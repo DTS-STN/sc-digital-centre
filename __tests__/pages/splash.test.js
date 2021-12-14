@@ -7,7 +7,16 @@ import Splash from '../../pages/index'
 
 describe('Splash page', () => {
   it('should render', () => {
-    render(<Splash />)
+    render(
+      <Splash
+        homePage={{
+          link: {
+            en: '/',
+            fr: '/fr/',
+          },
+        }}
+      />
+    )
     const enLink = screen.getByText('English')
     expect(enLink).toBeInTheDocument()
   })

@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types'
+import Script from 'next/script'
+import Meta from '../atoms/Meta'
+import PhaseBanner from '../atoms/PhaseBanner'
+import Header from '../molecules/Header'
 import Footer from '../molecules/Footer'
-import Head from 'next/head'
+import { useEffect } from 'react'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
@@ -8,12 +12,42 @@ import fr from '../../locales/fr'
 /**
  * Component which defines the layout of the page for all screen sizes
  */
-export default function Layout({ children, locale }) {
+export default function Layout({
+  children,
+  locale,
+  title,
+  phase,
+  bannerText,
+  aemPage,
+}) {
   const t = locale === 'en' ? en : fr
+
+  useEffect(() => {
+    if (/*process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL*/ false) {
+      window.adobeDataLayer.push({
+        event: 'pageLoad',
+        page: {
+          title: document.title,
+          language: locale === 'en' ? 'eng' : 'fra',
+          creator:
+            'Employment and Social Development Canada/Emploi et Développement social Canada',
+          accessRights: '2',
+          service: 'ESDC-EDSC_DC-CD',
+        },
+      })
+    }
+  }, [])
 
   return (
     <div>
-      <Head></Head>
+      <Meta title={aemPage?.title?.[locale] || title} lang={locale} />
+      <PhaseBanner
+        phase={phase}
+        bannerText={bannerText}
+        lang={locale}
+      ></PhaseBanner>
+
+      <Header language={locale} t={t} aemPage={aemPage} />
 
       <main>
         <div>{children}</div>
@@ -85,11 +119,27 @@ export default function Layout({ children, locale }) {
           },
         ]}
       />
+
+      {
+        /*process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL */ false ? (
+          <Script id="AdobeSatellite" type="text/javascript">
+            _satellite.pageBottom();
+          </Script>
+        ) : (
+          ''
+        )
+      }
     </div>
   )
 }
 
 Layout.propTypes = {
-  // Locale current language
+  /*
+   * Locale current language
+   */
   locale: PropTypes.string,
+  /*
+   * Title of the page
+   */
+  title: PropTypes.string,
 }

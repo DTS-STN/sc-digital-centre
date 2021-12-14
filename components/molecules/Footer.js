@@ -14,16 +14,16 @@ export default function Footer(props) {
         <DateModified date={process.env.NEXT_PUBLIC_BUILD_DATE} />
       </div>
       <div className="w-full">
-        <div className="w-full h-auto bg-footer-parliament-image bg-no-repeat bg-right-bottom bg-blue-dark">
+        <div className="w-full h-auto bg-footer-parliament-image bg-no-repeat bg-right-bottom bg-deep-blue-solid">
           <div
-            className="py-7 xs:mx-4 sm:mx-6 layout-container"
+            className="py-7 layout-container"
             role="navigation"
             aria-labelledby="footerNav1"
           >
             <h3 className="sr-only" id="footerNav1">
               {props.footerNav1}
             </h3>
-            <ul className="flex flex-col text-xs lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-3 lg:gap-1">
+            <ul className="flex flex-col text-sm sm:grid sm:grid-cols-2 xl:grid xl:grid-cols-3 sm:gap-1">
               {' '}
               {props.footerBoxLinks.map((value, index) => {
                 return (
@@ -57,12 +57,12 @@ export default function Footer(props) {
                       key={index}
                       className={
                         index === 0
-                          ? 'lg:mb-4 mb-5 mr-2.5 list-inside list-disc xl:list-none text-xxs'
-                          : 'lg:mb-4 mb-5 mr-2.5 list-inside list-disc text-xxs'
+                          ? 'lg:mb-4 mb-5 mr-2.5 list-inside list-disc xl:list-none text-sm'
+                          : 'lg:mb-4 mb-5 mr-2.5 list-inside list-disc text-sm'
                       }
                     >
                       <a
-                        className="text-xs font-body text-blue-anchor hover:text-blue-link"
+                        className="text-xs font-body text-deep-blue-dark hover:text-deep-blue-light"
                         data-cy="social-media-link"
                         href={value.link}
                       >

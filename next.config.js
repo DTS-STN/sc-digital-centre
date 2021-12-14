@@ -12,7 +12,20 @@ const contentURL = process.env.NEXT_CONTENT_API
   ? process.env.NEXT_CONTENT_API
   : ''
 
-module.exports = {
+//security headers that we want on all pages
+//more info here https://nextjs.org/docs/advanced-features/security-headers
+const securityHeaders = [
+  {
+    key: 'Content-Security-Policy',
+    value: `frame-ancestors 'self'`, //our CSP Policy
+  },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload',
+  },
+]
+
+const config = {
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
     NEXT_CONTENT_API: contentURL,
@@ -27,18 +40,53 @@ module.exports = {
     localDetection: true,
   },
   //
-  // rewrites setup
+  // Image configured host
   //
-  async rewrites() {
-    return [
-      {
-        source: '/accueil',
-        destination: '/home',
-      },
-      // {
-      //   source: " french page name with/without route ",
-      //   destination: " 'english' page ",
-      // },
-    ]
+  images: {
+    domains: ['www.canada.ca'],
   },
 }
+
+//
+// rewrites setup
+//
+config.rewrites = async () => {
+  const AEMService = require('./pages/api/AEMServiceClass')
+  const aemService = new AEMService(
+    process.env.NEXT_CONTENT_API,
+    process.env.NEXT_PUBLIC_BUILD_DATE
+  )
+  const { HOME_PAGE, SEARCH_PAGE } = require('./constants/aem')
+
+  // get and cache pages from aem
+  const pages = [await aemService.getPage(SEARCH_PAGE)]
+
+  // loop over all cached pages and build rewrite rules for next
+  const aemPagesRewrites = Object.values(pages).map((normalizedPage) => ({
+    source: normalizedPage.link.fr,
+    destination: normalizedPage.link.en,
+    locale: false,
+  }))
+
+  return {
+    afterFiles: [
+      {
+        source: '/fr/accueil',
+        destination: '/home',
+        locale: false,
+      },
+      ...aemPagesRewrites,
+    ],
+  }
+}
+
+config.headers = async () => {
+  return [
+    {
+      // Apply these headers to all routes in your application.
+      source: '/(.*)',
+      headers: securityHeaders,
+    },
+  ]
+}
+module.exports = config

@@ -1,9 +1,10 @@
 module.exports = {
   modulePathIgnorePatterns: ['./cypress'],
   collectCoverageFrom: [
-    '**/*.{js,jsx,ts,tsx}',
-    '!**/*.d.ts',
+    'components/**/*.{js,jsx}',
+    'pages/**/*.{js,jsx}',
     '!**/node_modules/**',
+    '!<rootDir>/__tests__/setup.js',
   ],
   moduleNameMapper: {
     /* Handle CSS imports (with CSS modules)
@@ -28,4 +29,6 @@ module.exports = {
     '/node_modules/',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
+  clearMocks: true,
+  setupFiles: ['<rootDir>/jest.setup.js'],
 }

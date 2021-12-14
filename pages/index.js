@@ -1,77 +1,62 @@
 import Link from 'next/link'
+import Head from 'next/head'
+import { ActionButton } from '../components/atoms/ActionButton'
+import Image from 'next/image'
 
-export default function Splash() {
+export default function Splash({ homePage }) {
   return (
-    <section className="flex h-screen bg-cover bg-center bg-splash-page">
+    <section
+      role="main"
+      className="flex h-screen bg-cover bg-center bg-splash-page"
+    >
+      <Head>
+        <title>Digital Centre</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="flex flex-col justify-center items-center m-auto">
         <div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]">
-          <img
+          <h1 className="sr-only">service.canada.ca-digital-center</h1>
+
+          <div className="h-auto w-64 mx-auto pt-6 xl:w-2/3 xl:mx-0 xl:px-6">
+            <Image
+              src="/sig-blk-en.svg"
+              alt="Government of Canada / Gouvernement du Canada logo"
+              width={10}
+              height={1}
+              layout="responsive"
+              objectFit="scale-down"
+            ></Image>
+          </div>
+
+          {/* <img
             className="h-auto w-64 mx-auto pt-6 xl:w-2/3 xl:mx-0 xl:px-6"
             src="/sig-blk-en.svg"
             alt="Government of Canada / Gouvernement du Canada logo"
-          />
+          /> */}
 
           <div className="flex w-max container py-11 mx-auto font-display">
-            <Link href="/home">
-              <a
-                className="
-                                        focus:ring-1 focus:ring-black focus:ring-offset-2
-                                        px-4
-                                        bg-blue-primary-deep
-                                        text-white
-                                        border border-blue-primary-deep
-                                        active:bg-blue-dull
-                                        hover:bg-blue-secondary-deep
-                                        text-center text-md
-                                        h-11
-                                        xl:h-10
-                                        w-28
-                                        xl:w-36
-                                        py-3
-                                        mr-6
-                                        rounded
-                                        leading-3
-                                        shadow-md
-                                      "
+            <div className="grid grid-cols-2 gap-2 xl:gap-6">
+              <ActionButton
+                lang="en"
+                href="/home"
                 id="english-button"
                 data-cy="english-button"
                 role="button"
                 draggable="false"
-                lang="en"
               >
                 English
-              </a>
-            </Link>
-
-            <Link href="/fr/accueil">
-              <a
-                className="
-                                        focus:ring-1 focus:ring-black focus:ring-offset-2
-                                        px-4
-                                        bg-blue-primary-deep
-                                        text-white
-                                        border border-blue-primary-deep
-                                        active:bg-blue-dull
-                                        hover:bg-blue-secondary-deep
-                                        text-center text-md
-                                        h-11
-                                        xl:h-10
-                                        w-28
-                                        xl:w-36
-                                        py-3
-                                        rounded
-                                        leading-3
-                                        shadow-md
-                                      "
+              </ActionButton>
+              <ActionButton
+                lang="fr"
+                href="/fr/accueil"
                 id="french-button"
                 data-cy="french-button"
                 role="button"
                 draggable="false"
-                lang="fr"
               >
                 Français
-              </a>
-            </Link>
+              </ActionButton>
+            </div>
           </div>
         </div>
 
@@ -90,7 +75,7 @@ export default function Splash() {
             xl:w-[31.25rem] xl:items-center
           "
         >
-          <div className="w-28 text-base xl:text-p xl:w-max font-body text-blue-secondary-deep">
+          <div className="w-28 text-base xl:text-p xl:w-max font-body text-bright-blue-dark">
             <Link href="https://www.canada.ca/en/transparency/terms.html">
               <a
                 className="
@@ -103,6 +88,7 @@ export default function Splash() {
                                             text-lg
                                           "
                 lang="en"
+                data-cy="terms"
               >
                 Terms &amp; conditions
               </a>
@@ -117,6 +103,7 @@ export default function Splash() {
                                             text-lg
                                           "
                 lang="fr"
+                data-cy="avis"
               >
                 Avis
               </a>

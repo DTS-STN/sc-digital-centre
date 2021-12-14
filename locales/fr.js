@@ -1,11 +1,23 @@
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   //
+  // Phase banner
+  phaseBannerTag: "Site d'essai",
+  phaseBannerText:
+    'Vous ne pouvez pas demander de services ou de prestations par l’intermédiaire de ce site d’essai. Certaines parties du site pourraient ne pas fonctionner et seront modifiées.',
+  //
+  //
   // Header
+  title: 'accueil',
   //
 
   // Nav
   skipToMainContent: 'Passer au contenu principal',
   aboutGovernment: 'Passer à « Au sujet du gouvernement »',
+  login: 'Connexion',
+  serviceAndBenefits: 'Service et avantages',
+  tools: 'Outils',
+  contactUs: 'Nous contacter',
 
   // Government of Canada symbols
   goc: 'Governement du Canada',
@@ -19,7 +31,39 @@ export default {
 
   // Search bar
   search: 'Recherche',
-  searchPlaceholder: 'Rechercher dans Canada.ca',
+  searchPlaceholder: 'Rechercher services et avantages',
+
+  //Search Card
+  searchFindBenefits: '(FR) Find benefits and services',
+  searchViewAllBenefits: '(FR) View all benefits and services',
+  searchDesc:
+    '(FR) Service Canada Digital Centre is a single point of access connecting you to a wide range of government services and benefits',
+
+  //Search page
+  clearResults: '(FR) Clear search',
+  filterResults: '(FR) Filters',
+
+  // Service Canada
+  serviceCanadaTitle: '(FR) My Service Canada Account',
+  serviceCanadaText:
+    '(FR) Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im. Lorem ipsum dolor ipsum loret im.',
+  serviceCanadaSignIn: '(FR) Sign into My Account',
+  serviceCanadaCreateAccount: '(FR) Create an Account',
+
+  // Top Tasks
+  topTasksDescritpion:
+    '(FR) Lorem ipsum dolor ipsum lorem ipsum dolor ipsum. Lorem ipsum dolor ipsum.',
+
+  // Most Requested Page
+  mostRequestedTitle: 'Pages les plus demandées',
+
+  // Filters
+  filters: '(FR) Filters',
+  submit: 'Soumettre',
+  cancel: 'Annuler',
+  ageRange: '(FR) Age Range',
+  annualIncome: '(FR) Annual Income',
+  eligibility: '(FR) Eligibility Criteria',
 
   //
   // Footer
@@ -91,6 +135,40 @@ export default {
   //
 
   //
+  // Contact us Section
+  //
+  contactUsTitle: 'Prenez contact avec nous',
+  contactInfo: [
+    {
+      iconSrc: './CustomerServiceAssistant.svg',
+      iconAlt: "icône d'un assistant du service client",
+      title: 'Assistant virtuel',
+      text: 'Vous voulez nous parler en personne ? Appelez-nous au 1-800-0-Canada ou explorez notre répertoire',
+      linkText: 'French value',
+      linkHref: '#',
+      cardId: 'VA',
+    },
+    {
+      iconSrc: './Callback.png',
+      iconAlt: "Icône d'un téléphone pour un service de rappel",
+      title: 'Service de rappel',
+      text: 'Vous ne voulez pas attendre ? Faites une demande pour que nous vous appelions en utilisant eServiceCanada',
+      linkText: 'Formulaire de demande de services',
+      linkHref: 'https://eservices.canada.ca/fr/service/',
+      cardId: 'CB',
+    },
+    {
+      iconSrc: './FrontDesk.svg',
+      iconAlt: "Icône d'un bureau avec une personne",
+      title: 'Visite en personne',
+      text: 'Il y a une succursale de Service Canada près de chez vous',
+      linkText: 'French value',
+      linkHref: '#',
+      cardId: 'BM',
+    },
+  ],
+
+  //
   //Report a problem
   //
   reportAProblemTitle: 'Signaler un problème ou une erreur sur cette page',
@@ -121,4 +199,5 @@ export default {
   reportAProblemPrivacyStatementLink:
     'https://www.canada.ca/fr/transparence/confidentialite.html',
   reportAProblemSubmit: 'Soumettre',
+  topTasks: '(fr) Top Tasks',
 }
