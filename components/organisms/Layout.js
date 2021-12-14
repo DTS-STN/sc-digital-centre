@@ -41,13 +41,23 @@ export default function Layout({
 
   return (
     <div>
-      <Head>
-        {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
-          <Script src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL} />
-        ) : (
-          ''
-        )}
-      </Head>
+      {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
+        <>
+          <Script
+            strategy="beforeInteractive"
+            src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL}
+          />
+          <Script
+            strategy="afterInteractive"
+            id="AdobeSatellite"
+            type="text/javascript"
+          >
+            _satellite.pageBottom();
+          </Script>
+        </>
+      ) : (
+        ''
+      )}
       <Meta title={aemPage?.title?.[locale] || title} lang={locale} />
       <PhaseBanner
         phase={phase}
