@@ -5,6 +5,7 @@ import PhaseBanner from '../atoms/PhaseBanner'
 import Header from '../molecules/Header'
 import Footer from '../molecules/Footer'
 import { useEffect } from 'react'
+import Head from 'next/head'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
@@ -40,6 +41,13 @@ export default function Layout({
 
   return (
     <div>
+      <Head>
+        {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
+          <Script src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL} />
+        ) : (
+          ''
+        )}
+      </Head>
       <Meta title={aemPage?.title?.[locale] || title} lang={locale} />
       <PhaseBanner
         phase={phase}
