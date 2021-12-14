@@ -5,7 +5,6 @@ import PhaseBanner from '../atoms/PhaseBanner'
 import Header from '../molecules/Header'
 import Footer from '../molecules/Footer'
 import { useEffect } from 'react'
-import Head from 'next/head'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'

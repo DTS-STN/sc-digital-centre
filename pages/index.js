@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { ActionButton } from '../components/atoms/ActionButton'
 import Image from 'next/image'
+import Script from 'next/script'
 
 export default function Splash({ homePage }) {
   return (
@@ -9,6 +10,14 @@ export default function Splash({ homePage }) {
       role="main"
       className="flex h-screen bg-cover bg-center bg-splash-page"
     >
+      {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
+        <Script
+          strategy="beforeInteractive"
+          src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL}
+        />
+      ) : (
+        ''
+      )}
       <Head>
         <title>Digital Centre</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
