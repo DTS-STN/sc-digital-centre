@@ -9,15 +9,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          {
-            /*process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL*/ false ? (
-              <script async src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL} />
-            ) : (
-              ''
-            )
-          }
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />
