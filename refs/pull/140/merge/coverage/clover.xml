@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1639494285496" clover="3.2.0">
-  <project timestamp="1639494285496" name="All files">
-    <metrics statements="202" coveredstatements="127" conditionals="131" coveredconditionals="77" methods="65" coveredmethods="44" elements="398" coveredelements="248" complexity="0" loc="202" ncloc="202" packages="6" files="31" classes="31"/>
+<coverage generated="1639494949945" clover="3.2.0">
+  <project timestamp="1639494949946" name="All files">
+    <metrics statements="202" coveredstatements="127" conditionals="133" coveredconditionals="78" methods="65" coveredmethods="44" elements="400" coveredelements="249" complexity="0" loc="202" ncloc="202" packages="6" files="31" classes="31"/>
     <package name="components.atoms">
       <metrics statements="29" coveredstatements="25" conditionals="12" coveredconditionals="10" methods="11" coveredmethods="9"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -161,16 +161,16 @@
       </file>
       <file name="Layout.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/organisms/Layout.js">
         <metrics statements="6" coveredstatements="5" conditionals="10" coveredconditionals="6" methods="2" coveredmethods="2"/>
-        <line num="24" count="12" type="cond" truecount="2" falsecount="0"/>
-        <line num="26" count="12" type="stmt"/>
-        <line num="27" count="12" type="cond" truecount="1" falsecount="1"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="42" count="12" type="stmt"/>
-        <line num="145" count="2" type="stmt"/>
+        <line num="23" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="12" type="stmt"/>
+        <line num="26" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="41" count="12" type="stmt"/>
+        <line num="144" count="2" type="stmt"/>
       </file>
     </package>
     <package name="pages">
-      <metrics statements="58" coveredstatements="25" conditionals="20" coveredconditionals="10" methods="15" coveredmethods="7"/>
+      <metrics statements="58" coveredstatements="25" conditionals="22" coveredconditionals="11" methods="15" coveredmethods="7"/>
       <file name="_app.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/_app.js">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
@@ -218,8 +218,8 @@
         <line num="150" count="0" type="stmt"/>
       </file>
       <file name="index.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/index.js">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="7" count="1" type="stmt"/>
+        <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
       </file>
       <file name="search.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/search.js">
         <metrics statements="20" coveredstatements="11" conditionals="6" coveredconditionals="4" methods="5" coveredmethods="2"/>
