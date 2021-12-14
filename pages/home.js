@@ -73,6 +73,8 @@ export default function Home({
           searchBarPlaceholder={t.searchPlaceholder}
           searchBarText={t.search}
           onSubmitHref={searchPageHref[locale]}
+          dataCyInput="searchInput"
+          dataCyButton="searchButton"
         />
       </ImageBox>
       <div className="layout-container md:flex my-5">
