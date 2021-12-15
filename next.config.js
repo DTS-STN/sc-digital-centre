@@ -35,6 +35,10 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: `frame-ancestors 'self'`,
   },
+  {
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN',
+  },
 ]
 
 const config = {
