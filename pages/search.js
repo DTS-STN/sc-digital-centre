@@ -6,10 +6,11 @@ import aemService from './api/aemServiceInstance'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { CardList } from '../components/molecules/CardList'
+import { getPageContent } from './../lib/pageContent'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
-import { SEARCH_PAGE, BENEFITS } from '../constants/aem'
+import { SEARCH_PAGE } from '../constants/aem'
 
 export default function SearchResult({
   locale,
@@ -132,8 +133,7 @@ export default function SearchResult({
 }
 
 export async function getStaticProps({ locale }) {
-  const { benefits } = await aemService.getBenefits(BENEFITS)
-  const aemPage = await aemService.getPage(SEARCH_PAGE)
+  const { benefits, aemPage } = await getPageContent(SEARCH_PAGE)
   const searchPageHref = aemPage.link
 
   return {
