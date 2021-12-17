@@ -18,6 +18,7 @@ import {
   DICTIONARY,
 } from '../constants/aem'
 import aemService from './api/aemServiceInstance'
+import { getPageContent } from '../lib/pageContent'
 
 export default function Home({
   aemPage,
@@ -116,6 +117,9 @@ export default function Home({
 }
 
 export async function getStaticProps({ locale }) {
+  let homeContent = getPageContent(HOME_PAGE)
+  console.log(homeContent)
+
   let benefits = []
   let topTasks = []
   let topTaskTitle = []
