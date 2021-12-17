@@ -27,30 +27,9 @@ export default function Home({
   featured,
   benefits,
   topTasks,
-  topTaskTitle,
 }) {
   const t = locale === 'en' ? en : fr
-  const normalizedTopTasks = () => {
-    return topTasks?.map((task) => {
-      try {
-        let title = task.properties.elements.scTitleEn.title
-        let link = task.properties.elements.scLinkURLEn.value
-        if (locale !== 'en') {
-          link = task.properties.elements.scLinkURLFr.value
-          title = task.properties.elements.scTitleFr.title
-        }
-        return { taskName: title, taskURL: link }
-      } catch (e) {
-        return { taskName: 'undefined', taskURL: '/' }
-      }
-    })
-  }
 
-  const localizedTopTaskTitle = () => {
-    return locale !== 'en'
-      ? topTaskTitle?.properties.elements.scLabelFr.value
-      : topTaskTitle?.properties.elements.scLabelEn.value
-  }
   return (
     <Layout
       locale={locale}
@@ -89,9 +68,9 @@ export default function Home({
             createAccountText={t.serviceCanadaCreateAccount}
           />
           <TopTasks
-            topTasksHeader={localizedTopTaskTitle()}
+            topTasksHeader={topTasks.topTaskTitle}
             topTasksDescription={t.topTasksDescritpion}
-            topTasksList={normalizedTopTasks()}
+            topTasksList={topTasks.topTasksList}
           />
         </div>
         <div className="lg:w-3/4 md:pl-12">
@@ -117,12 +96,9 @@ export default function Home({
 }
 
 export async function getStaticProps({ locale }) {
-  let homeContent = getPageContent(HOME_PAGE)
-  console.log(homeContent)
+  let homeContent = await getPageContent(HOME_PAGE, locale)
 
   let benefits = []
-  let topTasks = []
-  let topTaskTitle = []
 
   const { elements: featured } = await aemService.getBenefit(BENEFIT_EI)
 
@@ -131,28 +107,9 @@ export async function getStaticProps({ locale }) {
     benefits = AEMbenefits.benefits
   }
 
-  // Get list of top tasks
-  let topTasksReturned = await aemService.getFragment(TOP_TASKS)
-  if (topTasksReturned.data) {
-    topTasks = topTasksReturned.data.entities
-  }
-
-  // Get miscellaneous components content
-  let miscellaneousRes = await aemService.getFragment(DICTIONARY)
-  if (miscellaneousRes.data) {
-    miscellaneousRes.data.entities.forEach((item) => {
-      // Extracting Top Task component content (Title and whatever else we add in AEM later on)
-      if (item.properties.elements.scId.value === 'TOP-TASKS') {
-        topTaskTitle = item
-      }
-      // Add any if statements to capture other misc component contents
-    })
-  }
-
   const aemPage = await aemService.getPage(HOME_PAGE)
   const searchPage = await aemService.getPage(SEARCH_PAGE)
   const searchPageHref = searchPage.link
-
   return {
     props: {
       benefits,
@@ -160,8 +117,7 @@ export async function getStaticProps({ locale }) {
       featured,
       aemPage,
       searchPageHref,
-      topTasks,
-      topTaskTitle,
+      topTasks: homeContent.topTasks,
     },
   }
 }
