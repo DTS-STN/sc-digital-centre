@@ -82,10 +82,10 @@ export default function Home({
       </div>
       {/* feature with image */}
       <FeatureBlock
-        title="Featured: "
-        // featuredContent and body text will come form the CMS
-        featuredContent={featured.scTitleEn?.value}
-        body={featured.scDescriptionEn?.value}
+        title={featured.header}
+        body={featured.body}
+        imgSrc={featured.imgSrc}
+        imgAlt={featured.imgAlt}
         buttonText="Text on button"
         featuredHref="#"
         btnId="featured-content"
@@ -96,9 +96,10 @@ export default function Home({
 }
 
 export async function getStaticProps({ locale }) {
-  let { mostRequestedPages, topTasks } = await getPageContent(HOME_PAGE, locale)
-
-  const { elements: featured } = await aemService.getBenefit(BENEFIT_EI)
+  let { mostRequestedPages, topTasks, featured } = await getPageContent(
+    HOME_PAGE,
+    locale
+  )
 
   const aemPage = await aemService.getPage(HOME_PAGE)
   const searchPage = await aemService.getPage(SEARCH_PAGE)
