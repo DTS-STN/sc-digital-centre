@@ -25,7 +25,7 @@ export default function Home({
   locale,
   searchPageHref,
   featured,
-  benefitCards,
+  mostRequestedPages,
   topTasks,
 }) {
   const t = locale === 'en' ? en : fr
@@ -77,7 +77,7 @@ export default function Home({
           <h2 className="font-bold font-display text-2xl mb-4">
             {t.mostRequestedTitle}
           </h2>
-          <CardList cardList={benefitCards} />
+          <CardList cardList={mostRequestedPages.cards} />
         </div>
       </div>
       {/* feature with image */}
@@ -96,7 +96,7 @@ export default function Home({
 }
 
 export async function getStaticProps({ locale }) {
-  let { benefitCards, topTasks } = await getPageContent(HOME_PAGE, locale)
+  let { mostRequestedPages, topTasks } = await getPageContent(HOME_PAGE, locale)
 
   const { elements: featured } = await aemService.getBenefit(BENEFIT_EI)
 
@@ -106,7 +106,7 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      benefitCards,
+      mostRequestedPages,
       locale,
       featured,
       aemPage,
