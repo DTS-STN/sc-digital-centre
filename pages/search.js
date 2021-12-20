@@ -6,17 +6,17 @@ import aemService from './api/aemServiceInstance'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { CardList } from '../components/molecules/CardList'
-import { getPageContent } from './../lib/pageContent'
+import { getSearchPageContent } from './../lib/pageContent'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { SEARCH_PAGE } from '../constants/aem'
 
 export default function SearchResult({
+  metadata,
   locale,
   searchPageHref,
   benefits,
-  aemPage,
 }) {
   const t = locale === 'en' ? en : fr
   const router = useRouter()
@@ -70,10 +70,10 @@ export default function SearchResult({
   return (
     <Layout
       locale={locale}
-      title="searchResult"
+      title={metadata.title}
+      toggleLangLink={metadata.toggleLangLink}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
-      aemPage={aemPage}
     >
       <SearchHeader
         lang={locale}
@@ -133,15 +133,15 @@ export default function SearchResult({
 }
 
 export async function getStaticProps({ locale }) {
-  const { benefits, aemPage } = await getPageContent(SEARCH_PAGE)
-  const searchPageHref = aemPage.link
+  const { metadata, benefits } = await getSearchPageContent(locale)
+  const searchPageHref = metadata.currentLink
 
   return {
     props: {
+      metadata,
       benefits,
       locale,
       searchPageHref,
-      aemPage,
     },
   }
 }

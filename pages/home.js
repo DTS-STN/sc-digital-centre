@@ -18,10 +18,10 @@ import {
   DICTIONARY,
 } from '../constants/aem'
 import aemService from './api/aemServiceInstance'
-import { getPageContent } from '../lib/pageContent'
+import { getHomePageContent } from '../lib/pageContent'
 
 export default function Home({
-  aemPage,
+  metadata,
   locale,
   searchPageHref,
   featured,
@@ -35,7 +35,8 @@ export default function Home({
       locale={locale}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
-      aemPage={aemPage}
+      title={metadata.title}
+      toggleLangLink={metadata.toggleLangLink}
     >
       <ImageBox
         imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png"
@@ -96,21 +97,18 @@ export default function Home({
 }
 
 export async function getStaticProps({ locale }) {
-  let { mostRequestedPages, topTasks, featured } = await getPageContent(
-    HOME_PAGE,
-    locale
-  )
+  let { metadata, mostRequestedPages, topTasks, featured } =
+    await getHomePageContent(locale)
 
-  const aemPage = await aemService.getPage(HOME_PAGE)
   const searchPage = await aemService.getPage(SEARCH_PAGE)
   const searchPageHref = searchPage.link
 
   return {
     props: {
       mostRequestedPages,
+      metadata,
       locale,
       featured,
-      aemPage,
       searchPageHref,
       topTasks,
     },

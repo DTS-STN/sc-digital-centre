@@ -16,9 +16,9 @@ export default function Layout({
   children,
   locale,
   title,
+  toggleLangLink,
   phase,
   bannerText,
-  aemPage,
   displayHeader,
   displayFooter,
 }) {
@@ -59,7 +59,7 @@ export default function Layout({
       ) : (
         ''
       )}
-      <Meta title={aemPage?.title?.[locale] || title} lang={locale} />
+      <Meta title={title} lang={locale} />
 
       {displayHeader ? (
         <>
@@ -68,7 +68,7 @@ export default function Layout({
             bannerText={bannerText}
             lang={locale}
           ></PhaseBanner>
-          <Header language={locale} t={t} aemPage={aemPage} />
+          <Header language={locale} t={t} toggleLangLink={toggleLangLink} />
         </>
       ) : (
         ''
@@ -160,6 +160,10 @@ Layout.propTypes = {
    * Title of the page
    */
   title: PropTypes.string,
+  /*
+   * Link of the page in opposite language
+   */
+  toggleLangLink: PropTypes.string,
   /*
    * Toggle use of header
    */
