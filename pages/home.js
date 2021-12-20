@@ -23,7 +23,7 @@ import { getHomePageContent } from '../lib/pageContent'
 export default function Home({
   metadata,
   locale,
-  searchPageHref,
+  findBenefitsAndServices,
   featured,
   mostRequestedPages,
   topTasks,
@@ -53,7 +53,7 @@ export default function Home({
           viewBenefitsServices={t.searchViewAllBenefits}
           searchBarPlaceholder={t.searchPlaceholder}
           searchBarText={t.search}
-          onSubmitHref={searchPageHref[locale]}
+          onSubmitHref={findBenefitsAndServices.searchLink[locale]}
           dataCyInput="searchInput"
           dataCyButton="searchButton"
         />
@@ -97,19 +97,21 @@ export default function Home({
 }
 
 export async function getStaticProps({ locale }) {
-  let { metadata, mostRequestedPages, topTasks, featured } =
-    await getHomePageContent(locale)
-
-  const searchPage = await aemService.getPage(SEARCH_PAGE)
-  const searchPageHref = searchPage.link
+  let {
+    metadata,
+    findBenefitsAndServices,
+    mostRequestedPages,
+    topTasks,
+    featured,
+  } = await getHomePageContent(locale)
 
   return {
     props: {
-      mostRequestedPages,
       metadata,
+      findBenefitsAndServices,
+      mostRequestedPages,
       locale,
       featured,
-      searchPageHref,
       topTasks,
     },
   }
