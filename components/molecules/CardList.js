@@ -3,14 +3,14 @@ import { Card } from '../atoms/Card'
 
 export const CardList = ({ cardList }) => {
   const displayCards = cardList.map((card) => (
-    <li className="flex flex-grow" key={card.elements.scPageNameEn.value}>
+    <li className="flex flex-grow" key={card.key}>
       <Card
-        title={card.elements.scTitleEn.value}
-        tag={card.elements.scProgramEn?.value}
-        text={card.elements.scDescriptionEn?.value}
-        callToActionText={card.elements.scCallToActionEn.value}
-        callToActionHref={`/benefits/${card.name}`.toLowerCase()}
-        btnId={'btn-' + card.elements.scPageNameEn.value}
+        title={card.title}
+        tag={card.tag}
+        text={card.text}
+        callToActionText={card.callToActionText}
+        callToActionHref={card.callToActionHref}
+        btnId={card.btnId}
       />
     </li>
   ))
