@@ -24,9 +24,9 @@ export default function Home({
   metadata,
   locale,
   findBenefitsAndServices,
-  featured,
-  mostRequestedPages,
   topTasks,
+  mostRequestedPages,
+  featured,
 }) {
   const t = locale === 'en' ? en : fr
 
@@ -100,19 +100,19 @@ export async function getStaticProps({ locale }) {
   let {
     metadata,
     findBenefitsAndServices,
-    mostRequestedPages,
     topTasks,
+    mostRequestedPages,
     featured,
   } = await getHomePageContent(locale)
 
   return {
     props: {
       metadata,
-      findBenefitsAndServices,
-      mostRequestedPages,
       locale,
-      featured,
+      findBenefitsAndServices,
       topTasks,
+      mostRequestedPages,
+      featured,
     },
   }
 }
