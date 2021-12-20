@@ -12,12 +12,7 @@ import en from '../locales/en'
 import fr from '../locales/fr'
 import { SEARCH_PAGE } from '../constants/aem'
 
-export default function SearchResult({
-  metadata,
-  locale,
-  searchPageHref,
-  benefits,
-}) {
+export default function SearchResult({ metadata, locale, benefits }) {
   const t = locale === 'en' ? en : fr
   const router = useRouter()
   const [search, setSearch] = useState('')
@@ -86,7 +81,7 @@ export default function SearchResult({
         btnFilterText={t.filterResults}
         btnFilterLabel={t.filterResults}
         setModalShow={setModalShow}
-        onSubmitHref={searchPageHref[locale]}
+        onSubmitHref={metadata.currentLink[locale]}
       />
       <ModalElement
         modalShow={modalShow}
@@ -134,14 +129,12 @@ export default function SearchResult({
 
 export async function getStaticProps({ locale }) {
   const { metadata, benefits } = await getSearchPageContent(locale)
-  const searchPageHref = metadata.currentLink
 
   return {
     props: {
       metadata,
       benefits,
       locale,
-      searchPageHref,
     },
   }
 }
