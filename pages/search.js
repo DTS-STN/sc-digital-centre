@@ -17,7 +17,6 @@ export default function SearchResult({ metadata, locale, benefits }) {
   const router = useRouter()
   const [search, setSearch] = useState('')
   const [modalShow, setModalShow] = useState(false)
-  const [benefitList, setbenefitList] = useState(benefits)
 
   //for the filter form
   //maybe put these into state?
@@ -120,7 +119,7 @@ export default function SearchResult({ metadata, locale, benefits }) {
           />
         </div>
         <div className="w-full md:w-2/3 h-auto float-right">
-          <CardList cardList={benefitList} />
+          <CardList cardList={benefits} />
         </div>
       </div>
     </Layout>
