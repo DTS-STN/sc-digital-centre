@@ -26,15 +26,16 @@ describe('FeatureBlock', () => {
       render(
         <FeatureBlock
           title="title text"
-          featuredContent="featured text"
           body="desctiption text"
           buttonText="button text"
           featuredHref="href text"
           btnId="btnTestId"
+          imgSrc="/"
+          imgAlt=""
         />
       )
       const titleText = screen.getByRole('heading', {
-        name: /title text featured text/i,
+        name: /title text/i,
       })
       const bodyText = screen.getByText('desctiption text')
       const buttonText = screen.getByText('button text')
@@ -58,6 +59,8 @@ describe('FeatureBlock', () => {
           buttonText="button text"
           featuredHref="href text"
           btnId="btnTestId"
+          imgSrc="/"
+          imgAlt=""
         />
       )
       const results = await axe(container)

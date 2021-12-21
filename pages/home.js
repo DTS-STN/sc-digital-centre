@@ -69,7 +69,7 @@ export default function Home({
             createAccountText={t.serviceCanadaCreateAccount}
           />
           <TopTasks
-            topTasksHeader={topTasks.topTaskTitle}
+            topTasksHeader={topTasks.header}
             topTasksDescription={t.topTasksDescritpion}
             topTasksList={topTasks.topTasksList}
           />

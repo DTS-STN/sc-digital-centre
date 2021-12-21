@@ -29,7 +29,7 @@ describe('TopTasks', () => {
       <TopTasks
         topTasksHeader="header text"
         topTasksDescription="desc text"
-        topTasksList={[{ taskName: 'task text', taskURL: '/home' }]}
+        topTasksList={[{ title: 'task text', link: '/home' }]}
       />
     )
     const headerText = screen.getByText('header text')
@@ -49,7 +49,7 @@ describe('TopTasks', () => {
       <TopTasks
         topTasksHeader="header text"
         topTasksDescription="desc text"
-        topTasksList={[{ taskName: 'task text', taskURL: '/home' }]}
+        topTasksList={[{ title: 'task text', link: '/home' }]}
       />
     )
     const results = await axe(container)
