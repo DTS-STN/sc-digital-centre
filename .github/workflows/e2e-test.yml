@@ -8,6 +8,9 @@ on:
     branches:
       - main
       - dev
+  push:
+    branches: 
+      - dev   
 
 jobs:
   test:
@@ -45,11 +48,6 @@ jobs:
           install: false
           start: npm run start
           continue-on-error: true
-
-      # - name: Copy test execution reports
-      #   run: |
-      #     mkdir report
-      #     cp -r cypress/results report/results
 
       - name: Merge test results into one
         run: npm run report:merge
