@@ -35,8 +35,7 @@ export default function Home({
       locale={locale}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
-      title={metadata.title}
-      toggleLangLink={metadata.toggleLangLink}
+      metadata={metadata}
     >
       <ImageBox
         imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png"
@@ -53,7 +52,7 @@ export default function Home({
           viewBenefitsServices={t.searchViewAllBenefits}
           searchBarPlaceholder={t.searchPlaceholder}
           searchBarText={t.search}
-          onSubmitHref={findBenefitsAndServices.searchLink[locale]}
+          onSubmitHref={findBenefitsAndServices.searchLink}
           dataCyInput="searchInput"
           dataCyButton="searchButton"
         />

@@ -64,8 +64,7 @@ export default function SearchResult({ metadata, locale, benefits }) {
   return (
     <Layout
       locale={locale}
-      title={metadata.title}
-      toggleLangLink={metadata.toggleLangLink}
+      metadata={metadata}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
     >
@@ -80,7 +79,7 @@ export default function SearchResult({ metadata, locale, benefits }) {
         btnFilterText={t.filterResults}
         btnFilterLabel={t.filterResults}
         setModalShow={setModalShow}
-        onSubmitHref={metadata.currentLink[locale]}
+        onSubmitHref={metadata.currentLink}
       />
       <ModalElement
         modalShow={modalShow}

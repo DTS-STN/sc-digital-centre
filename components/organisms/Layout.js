@@ -15,8 +15,7 @@ import fr from '../../locales/fr'
 export default function Layout({
   children,
   locale,
-  title,
-  toggleLangLink,
+  metadata,
   phase,
   bannerText,
   displayHeader,
@@ -59,7 +58,7 @@ export default function Layout({
       ) : (
         ''
       )}
-      <Meta title={title} lang={locale} />
+      <Meta lang={locale} metadata={metadata} />
 
       {displayHeader ? (
         <>
@@ -68,7 +67,11 @@ export default function Layout({
             bannerText={bannerText}
             lang={locale}
           ></PhaseBanner>
-          <Header language={locale} t={t} toggleLangLink={toggleLangLink} />
+          <Header
+            language={locale}
+            t={t}
+            toggleLangLink={metadata.toggleLangLink}
+          />
         </>
       ) : (
         ''
