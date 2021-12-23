@@ -21,49 +21,26 @@ jest.mock('next/link', () => ({
 expect.extend(toHaveNoViolations)
 
 describe('Search page', () => {
-  const searchPageHref = {
-    en: '/search',
-    fr: '/fr/search',
+  const metadata = {
+    title: 'Search',
+    toggleLangLink: '/fr/search',
+    currentLink: '/search',
   }
 
   const benefits = [
     {
-      elements: {
-        scPageNameEn: {
-          value: 'Page Name 1',
-        },
-        scTitleEn: {
-          value: 'Title 1',
-        },
-        scProgramEn: {
-          value: 'Program 1',
-        },
-        scDescriptionEn: {
-          value: 'Short Description 1',
-        },
-        scCallToActionEn: {
-          value: 'Call to Action 1',
-        },
-      },
+      key: 'Page Name 1',
+      title: 'Title 1',
+      tag: 'Program 1',
+      text: 'Short Description 1',
+      callToActionText: 'Call to Action 1',
     },
     {
-      elements: {
-        scPageNameEn: {
-          value: 'Page Name 2',
-        },
-        scTitleEn: {
-          value: 'Title 2',
-        },
-        scProgramEn: {
-          value: 'Program 2',
-        },
-        scDescriptionEn: {
-          value: 'Short Description 2',
-        },
-        scCallToActionEn: {
-          value: 'Call to Action 2',
-        },
-      },
+      key: 'Page Name 2',
+      title: 'Title 1',
+      tag: 'Program 2',
+      text: 'Short Description 2',
+      callToActionText: 'Call to Action 2',
     },
   ]
 
@@ -77,24 +54,20 @@ describe('Search page', () => {
     }))
   })
   it('should render in French', () => {
-    render(
-      <Search locale="fr" benefits={benefits} searchPageHref={searchPageHref} />
-    )
+    render(<Search locale="fr" metadata={metadata} benefits={benefits} />)
     const enLink = screen.getByText('English')
     expect(enLink).toBeInTheDocument()
   })
 
   it('should render in English', () => {
-    render(
-      <Search locale="en" benefits={benefits} searchPageHref={searchPageHref} />
-    )
+    render(<Search locale="en" metadata={metadata} benefits={benefits} />)
     const enLink = screen.getByText('Français')
     expect(enLink).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <Search locale="en" benefits={benefits} searchPageHref={searchPageHref} />
+      <Search locale="en" metadata={metadata} benefits={benefits} />
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()

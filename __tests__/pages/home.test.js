@@ -33,77 +33,50 @@ jest.mock(
 expect.extend(toHaveNoViolations)
 
 describe('Home page', () => {
+  const metadata = {
+    title: 'Home page',
+    toggleLangLink: '/fr/home',
+  }
+
+  const findBenefitsAndServices = {
+    searchLink: '/search',
+  }
+
   const featured = {
-    scTitleEn: { value: 'title' },
-    scDescriptionEn: { value: 'description' },
+    header: 'Featured: OAS',
+    body: 'Featured body',
+    imgSrc: '',
+    imgAlt: '',
   }
 
-  const benefits = [
-    {
-      elements: {
-        scPageNameEn: {
-          value: 'Page Name 1',
-        },
-        scTitleEn: {
-          value: 'Title 1',
-        },
-        scProgramEn: {
-          value: 'Program 1',
-        },
-        scDescriptionEn: {
-          value: 'Short Description 1',
-        },
-        scCallToActionEn: {
-          value: 'Call to Action 1',
-        },
+  const mostRequestedPages = {
+    header: 'Most Requested Pages',
+    cards: [
+      {
+        key: 'Page Name 1',
+        title: 'Title 1',
+        tag: 'Program 1',
+        text: 'Short Description 1',
+        callToActionText: 'Call to Action 1',
       },
-    },
-    {
-      elements: {
-        scPageNameEn: {
-          value: 'Page Name 2',
-        },
-        scTitleEn: {
-          value: 'Title 2',
-        },
-        scProgramEn: {
-          value: 'Program 2',
-        },
-        scDescriptionEn: {
-          value: 'Short Description 2',
-        },
-        scCallToActionEn: {
-          value: 'Call to Action 2',
-        },
+      {
+        key: 'Page Name 2',
+        title: 'Title 2',
+        tag: 'Program 2',
+        text: 'Short Description 2',
+        callToActionText: 'Call to Action 2',
       },
-    },
-  ]
-
-  const searchPageHref = {
-    en: '/search',
-    fr: '/fr/search',
+    ],
   }
 
-  const topTasks = [
-    {
-      properties: {
-        elements: {
-          scTitleEn: { title: 'titleEn' },
-          scTitleFr: { title: 'titleFr' },
-          scLinkURLEn: { value: '/' },
-          scLinkURLFr: { value: '/' },
-        },
+  const topTasks = {
+    header: 'header text',
+    topTasksList: [
+      {
+        title: 'task text',
+        link: '/home',
       },
-    },
-  ]
-
-  const topTaskTitle = {
-    properties: {
-      elements: {
-        scLabelFr: { value: 'test' },
-        scLabelEn: { value: 'test' },
-      },
-    },
+    ],
   }
 
   beforeEach(() => {
@@ -117,11 +90,11 @@ describe('Home page', () => {
     render(
       <Home
         locale="fr"
-        benefits={benefits}
-        featured={featured}
+        metadata={metadata}
+        findBenefitsAndServices={findBenefitsAndServices}
         topTasks={topTasks}
-        topTaskTitle={topTaskTitle}
-        searchPageHref={searchPageHref}
+        mostRequestedPages={mostRequestedPages}
+        featured={featured}
       />
     )
     const enLink = screen.getByText('English')
@@ -132,11 +105,11 @@ describe('Home page', () => {
     render(
       <Home
         locale="en"
-        benefits={benefits}
-        featured={featured}
+        metadata={metadata}
+        findBenefitsAndServices={findBenefitsAndServices}
         topTasks={topTasks}
-        topTaskTitle={topTaskTitle}
-        searchPageHref={searchPageHref}
+        mostRequestedPages={mostRequestedPages}
+        featured={featured}
       />
     )
     const enLink = screen.getByText('Français')
@@ -146,11 +119,11 @@ describe('Home page', () => {
   it('should render SearchCard', () => {
     render(
       <Home
-        benefits={benefits}
-        featured={featured}
+        metadata={metadata}
+        findBenefitsAndServices={findBenefitsAndServices}
         topTasks={topTasks}
-        topTaskTitle={topTaskTitle}
-        searchPageHref={searchPageHref}
+        mostRequestedPages={mostRequestedPages}
+        featured={featured}
       />
     )
     expect(screen.getByTestId('searchCard')).toBeTruthy()
@@ -159,11 +132,11 @@ describe('Home page', () => {
   it('should render serviceCanada', () => {
     render(
       <Home
-        benefits={benefits}
-        featured={featured}
+        metadata={metadata}
+        findBenefitsAndServices={findBenefitsAndServices}
         topTasks={topTasks}
-        topTaskTitle={topTaskTitle}
-        searchPageHref={searchPageHref}
+        mostRequestedPages={mostRequestedPages}
+        featured={featured}
       />
     )
     expect(screen.getByTestId('serviceCanada')).toBeTruthy()
@@ -172,11 +145,11 @@ describe('Home page', () => {
   it('should render topTasks', () => {
     render(
       <Home
-        benefits={benefits}
-        featured={featured}
+        metadata={metadata}
+        findBenefitsAndServices={findBenefitsAndServices}
         topTasks={topTasks}
-        topTaskTitle={topTaskTitle}
-        searchPageHref={searchPageHref}
+        mostRequestedPages={mostRequestedPages}
+        featured={featured}
       />
     )
     expect(screen.getByTestId('topTasks')).toBeTruthy()
@@ -185,11 +158,11 @@ describe('Home page', () => {
   it('should render cardList', () => {
     render(
       <Home
-        benefits={benefits}
-        featured={featured}
+        metadata={metadata}
+        findBenefitsAndServices={findBenefitsAndServices}
         topTasks={topTasks}
-        topTaskTitle={topTaskTitle}
-        searchPageHref={searchPageHref}
+        mostRequestedPages={mostRequestedPages}
+        featured={featured}
       />
     )
     expect(screen.getByTestId('cardList')).toBeTruthy()
@@ -198,11 +171,11 @@ describe('Home page', () => {
   it('should render featureBlock', () => {
     render(
       <Home
-        benefits={benefits}
-        featured={featured}
+        metadata={metadata}
+        findBenefitsAndServices={findBenefitsAndServices}
         topTasks={topTasks}
-        topTaskTitle={topTaskTitle}
-        searchPageHref={searchPageHref}
+        mostRequestedPages={mostRequestedPages}
+        featured={featured}
       />
     )
     expect(screen.getByTestId('featureBlock')).toBeTruthy()
@@ -211,11 +184,12 @@ describe('Home page', () => {
   it('should render contactUs', () => {
     render(
       <Home
-        benefits={benefits}
-        featured={featured}
+        metadata={metadata}
+        locale="en"
+        findBenefitsAndServices={findBenefitsAndServices}
         topTasks={topTasks}
-        topTaskTitle={topTaskTitle}
-        searchPageHref={searchPageHref}
+        mostRequestedPages={mostRequestedPages}
+        featured={featured}
       />
     )
     expect(screen.getByTestId('contactUs')).toBeTruthy()
@@ -224,11 +198,12 @@ describe('Home page', () => {
   it('has no a11y violations', async () => {
     const { container } = render(
       <Home
-        benefits={benefits}
-        featured={featured}
+        metadata={metadata}
+        locale="en"
+        findBenefitsAndServices={findBenefitsAndServices}
         topTasks={topTasks}
-        topTaskTitle={topTaskTitle}
-        searchPageHref={searchPageHref}
+        mostRequestedPages={mostRequestedPages}
+        featured={featured}
       />
     )
     const results = await axe(container)

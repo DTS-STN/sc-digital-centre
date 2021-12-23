@@ -11,9 +11,9 @@ export default function TopTasks(props) {
       <ul className="list-disc m-5">
         {props.topTasksList.map((topTask, index) => (
           <li key={index} className="text-dark-solid">
-            <Link href={topTask.taskURL}>
+            <Link href={topTask.link}>
               <a className="font-display font-semibold underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
-                {topTask.taskName}
+                {topTask.title}
               </a>
             </Link>
           </li>
@@ -37,8 +37,8 @@ TopTasks.propTypes = {
    */
   topTasksList: PropTypes.arrayOf(
     PropTypes.exact({
-      taskName: PropTypes.string,
-      taskURL: PropTypes.string,
+      title: PropTypes.string,
+      link: PropTypes.string,
     })
   ),
 }

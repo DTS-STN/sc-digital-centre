@@ -29,23 +29,11 @@ describe('CardList', () => {
       <CardList
         cardList={[
           {
-            elements: {
-              scPageNameEn: {
-                value: 'Page Name 1',
-              },
-              scTitleEn: {
-                value: 'Title 1',
-              },
-              scProgramEn: {
-                value: 'Program 1',
-              },
-              scDescriptionEn: {
-                value: 'Short Description 1',
-              },
-              scCallToActionEn: {
-                value: 'Call to Action 1',
-              },
-            },
+            key: 'Page Name 1',
+            title: 'Title 1',
+            tag: 'Program 1',
+            text: 'Short Description 1',
+            callToActionText: 'Call to Action 1',
           },
         ]}
       />
@@ -69,23 +57,11 @@ describe('CardList', () => {
       <CardList
         cardList={[
           {
-            elements: {
-              scPageNameEn: {
-                value: 'Page Name 1',
-              },
-              scTitleEn: {
-                value: 'Title 1',
-              },
-              scProgramEn: {
-                value: 'Program 1',
-              },
-              scDescriptionEn: {
-                value: 'Short Description 1',
-              },
-              scCallToActionEn: {
-                value: 'Call to Action 1',
-              },
-            },
+            key: 'Page Name 1',
+            title: 'Title 1',
+            tag: 'Program 1',
+            text: 'Short Description 1',
+            callToActionText: 'Call to Action 1',
           },
         ]}
       />

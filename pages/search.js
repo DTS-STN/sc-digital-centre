@@ -6,22 +6,17 @@ import aemService from './api/aemServiceInstance'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { CardList } from '../components/molecules/CardList'
+import { getSearchPageContent } from './../lib/pageContent'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
-import { SEARCH_PAGE, BENEFITS } from '../constants/aem'
+import { SEARCH_PAGE } from '../constants/aem'
 
-export default function SearchResult({
-  locale,
-  searchPageHref,
-  benefits,
-  aemPage,
-}) {
+export default function SearchResult({ metadata, locale, benefits }) {
   const t = locale === 'en' ? en : fr
   const router = useRouter()
   const [search, setSearch] = useState('')
   const [modalShow, setModalShow] = useState(false)
-  const [benefitList, setbenefitList] = useState(benefits)
 
   //for the filter form
   //maybe put these into state?
@@ -69,10 +64,10 @@ export default function SearchResult({
   return (
     <Layout
       locale={locale}
-      title="searchResult"
+      title={metadata.title}
+      toggleLangLink={metadata.toggleLangLink}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
-      aemPage={aemPage}
     >
       <SearchHeader
         lang={locale}
@@ -85,7 +80,7 @@ export default function SearchResult({
         btnFilterText={t.filterResults}
         btnFilterLabel={t.filterResults}
         setModalShow={setModalShow}
-        onSubmitHref={searchPageHref[locale]}
+        onSubmitHref={metadata.currentLink[locale]}
       />
       <ModalElement
         modalShow={modalShow}
@@ -124,7 +119,7 @@ export default function SearchResult({
           />
         </div>
         <div className="w-full md:w-2/3 h-auto float-right">
-          <CardList cardList={benefitList} />
+          <CardList cardList={benefits} />
         </div>
       </div>
     </Layout>
@@ -132,16 +127,13 @@ export default function SearchResult({
 }
 
 export async function getStaticProps({ locale }) {
-  const { benefits } = await aemService.getBenefits(BENEFITS)
-  const aemPage = await aemService.getPage(SEARCH_PAGE)
-  const searchPageHref = aemPage.link
+  const { metadata, benefits } = await getSearchPageContent(locale)
 
   return {
     props: {
+      metadata,
       benefits,
       locale,
-      searchPageHref,
-      aemPage,
     },
   }
 }

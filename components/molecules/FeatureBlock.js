@@ -17,11 +17,8 @@ export default function FeatureBlock(props) {
       </div> */}
         <div className="aspect-w-5 aspect-h-2 sm:aspect-h-1 xl:ml-3 w-full min-w-max mr-break-out">
           <Image
-            // src="/autumn-leaves-woman-hands.png"
-            src={
-              'https://www.canada.ca/content/dam/decd-endc/images/autumn_leaves_woman_hands.png'
-            }
-            alt="Picture of something nice"
+            src={props.imgSrc}
+            alt={props.imgAlt}
             layout="fill"
             objectFit="cover"
             objectPosition="50% 50%"
@@ -31,7 +28,7 @@ export default function FeatureBlock(props) {
         <div className="flex flex-col place-content-between mx-auto md:w-3/5">
           <div className="flex flex-col m-2">
             <h2 className="font-display font-bold text-xl sm:text-2xl text-dark-solid">
-              {`${props.title} ${props.featuredContent}`}
+              {props.title}
             </h2>
             <p className="font-body my-5">{props.body}</p>
           </div>
@@ -51,9 +48,6 @@ FeatureBlock.propTypes = {
   // title text to be displayed
   title: propTypes.string,
 
-  // Featured content title text to be displayed
-  featuredContent: propTypes.string,
-
   // body text to be displayed
   body: propTypes.string,
 
@@ -68,4 +62,10 @@ FeatureBlock.propTypes = {
 
   // id of the element for testing
   id: propTypes.string,
+
+  // Image src for right side of featured component
+  imgSrc: propTypes.string,
+
+  // Image alt text for right side of featured component
+  imgAlt: propTypes.string,
 }
