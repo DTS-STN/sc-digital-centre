@@ -16,14 +16,16 @@ export default function Layout({
   children,
   locale,
   title,
+  toggleLangLink,
   phase,
   bannerText,
-  aemPage,
+  displayHeader,
+  displayFooter,
 }) {
   const t = locale === 'en' ? en : fr
 
   useEffect(() => {
-    if (/*process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL*/ false) {
+    if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
       window.adobeDataLayer.push({
         event: 'pageLoad',
         page: {
@@ -36,100 +38,116 @@ export default function Layout({
         },
       })
     }
-  }, [])
+  }, [locale])
 
   return (
-    <div>
-      <Meta title={aemPage?.title?.[locale] || title} lang={locale} />
-      <PhaseBanner
-        phase={phase}
-        bannerText={bannerText}
-        lang={locale}
-      ></PhaseBanner>
+    <>
+      {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
+        <>
+          <Script
+            strategy="beforeInteractive"
+            src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL}
+          />
+          <Script
+            strategy="afterInteractive"
+            id="AdobeSatellite"
+            type="text/javascript"
+          >
+            _satellite.pageBottom();
+          </Script>
+        </>
+      ) : (
+        ''
+      )}
+      <Meta title={title} lang={locale} />
 
-      <Header language={locale} t={t} aemPage={aemPage} />
-
+      {displayHeader ? (
+        <>
+          <PhaseBanner
+            phase={phase}
+            bannerText={bannerText}
+            lang={locale}
+          ></PhaseBanner>
+          <Header language={locale} t={t} toggleLangLink={toggleLangLink} />
+        </>
+      ) : (
+        ''
+      )}
       <main>
         <div>{children}</div>
       </main>
+      {displayFooter ? (
+        <Footer
+          footerLogoAltText="symbol2"
+          footerLogoImage="/wmms-blk.svg"
+          footerNav1="aboutGovernment"
+          footerNav2="aboutThisSite"
+          links={[
+            {
+              link: t.footerSocialMediaURL,
+              linkText: t.footerSocialMedia,
+            },
+            {
+              link: t.footerMobileAppURL,
+              linkText: t.footerMobileApp,
+            },
+            {
+              link: t.footerAboutURL,
+              linkText: t.footerAbout,
+            },
+            {
+              link: t.footerTermsAndConditionURL,
+              linkText: t.footerTermsAndCondition,
+            },
+            {
+              link: t.footerPrivacyURL,
+              linkText: t.footerPrivacy,
+            },
+          ]}
+          footerBoxLinks={[
+            {
+              footerBoxlink: t.footerContactUsURL,
+              footerBoxLinkText: t.footerContactUs,
+            },
+            {
+              footerBoxlink: t.footerNewsURL,
+              footerBoxLinkText: t.footerNews,
+            },
 
-      <Footer
-        footerLogoAltText="symbol2"
-        footerLogoImage="/wmms-blk.svg"
-        footerNav1="aboutGovernment"
-        footerNav2="aboutThisSite"
-        links={[
-          {
-            link: t.footerSocialMediaURL,
-            linkText: t.footerSocialMedia,
-          },
-          {
-            link: t.footerMobileAppURL,
-            linkText: t.footerMobileApp,
-          },
-          {
-            link: t.footerAboutURL,
-            linkText: t.footerAbout,
-          },
-          {
-            link: t.footerTermsAndConditionURL,
-            linkText: t.footerTermsAndCondition,
-          },
-          {
-            link: t.footerPrivacyURL,
-            linkText: t.footerPrivacy,
-          },
-        ]}
-        footerBoxLinks={[
-          {
-            footerBoxlink: t.footerContactUsURL,
-            footerBoxLinkText: t.footerContactUs,
-          },
-          {
-            footerBoxlink: t.footerNewsURL,
-            footerBoxLinkText: t.footerNews,
-          },
-          {
-            footerBoxlink: t.footerPmURL,
-            footerBoxLinkText: t.footerPm,
-          },
-          {
-            footerBoxlink: t.footerDepartmentAgenciesURL,
-            footerBoxLinkText: t.footerDepartmentAgencies,
-          },
-          {
-            footerBoxlink: t.footerTreatiesURL,
-            footerBoxLinkText: t.footerTreaties,
-          },
-          {
-            footerBoxlink: t.footerHowGovWorksURL,
-            footerBoxLinkText: t.footerHowGovWorks,
-          },
-          {
-            footerBoxlink: t.footerPublicServiceURL,
-            footerBoxLinkText: t.footerPublicService,
-          },
-          {
-            footerBoxlink: t.footerGovReportingURL,
-            footerBoxLinkText: t.footerGovReporting,
-          },
-          {
-            footerBoxlink: t.footerOpenGovURL,
-            footerBoxLinkText: t.footerOpenGov,
-          },
-        ]}
-      />
-
-      {
-        /*process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL */ false ? (
-          <Script id="AdobeSatellite" type="text/javascript">
-            _satellite.pageBottom();
-          </Script>
-        ) : (
-          ''
-        )
-      }
-    </div>
+            {
+              footerBoxlink: t.footerPmURL,
+              footerBoxLinkText: t.footerPm,
+            },
+            {
+              footerBoxlink: t.footerDepartmentAgenciesURL,
+              footerBoxLinkText: t.footerDepartmentAgencies,
+            },
+            {
+              footerBoxlink: t.footerTreatiesURL,
+              footerBoxLinkText: t.footerTreaties,
+            },
+            {
+              footerBoxlink: t.footerHowGovWorksURL,
+              footerBoxLinkText: t.footerHowGovWorks,
+            },
+            {
+              footerBoxlink: t.footerPublicServiceURL,
+              footerBoxLinkText: t.footerPublicService,
+            },
+            {
+              footerBoxlink: t.footerGovReportingURL,
+              footerBoxLinkText: t.footerGovReporting,
+            },
+            {
+              footerBoxlink: t.footerOpenGovURL,
+              footerBoxLinkText: t.footerOpenGov,
+            },
+          ]}
+        />
+      ) : (
+        ''
+      )}
+    </>
   )
 }
 
@@ -142,4 +160,21 @@ Layout.propTypes = {
    * Title of the page
    */
   title: PropTypes.string,
+  /*
+   * Link of the page in opposite language
+   */
+  toggleLangLink: PropTypes.string,
+  /*
+   * Toggle use of header
+   */
+  displayHeader: PropTypes.bool,
+  /*
+   * Toggle use of footer
+   */
+  displayFooter: PropTypes.bool,
+}
+
+Layout.defaultProps = {
+  displayHeader: true,
+  displayFooter: true,
 }

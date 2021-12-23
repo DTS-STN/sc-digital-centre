@@ -4,24 +4,21 @@ import Link from 'next/link'
 import { Menu } from '../molecules/Menu'
 import { useRouter } from 'next/router'
 
-export default function Header({ language, t, aemPage }) {
+export default function Header({ language, t, toggleLangLink }) {
   const router = useRouter()
   const currentRouteQueryParams = router.query
 
   const [langToggleLink, setLangToggleLink] = React.useState()
   React.useEffect(() => {
     let updatedLangToggleLink
-    if (aemPage && router?.route && router.locale) {
-      const toLocale = router.locale === 'en' ? 'fr' : 'en'
-      if (aemPage?.link) {
-        updatedLangToggleLink = {
-          pathname: aemPage.link[toLocale],
-          query: currentRouteQueryParams,
-        }
+    if (toggleLangLink && router?.route && router.locale) {
+      updatedLangToggleLink = {
+        pathname: toggleLangLink,
+        query: currentRouteQueryParams,
       }
     }
     setLangToggleLink(updatedLangToggleLink)
-  }, [router?.route, router?.locale, router?.query, aemPage])
+  }, [router?.route, router?.locale, router?.query])
 
   return (
     <>
@@ -138,6 +135,12 @@ Header.propTypes = {
    * Translated text
    */
   t: propTypes.object,
+
+  /**
+   * Link to change locals
+   */
+  toggleLangLink: propTypes.string,
+
   /**
    * Array of Items for the breadcrumb
    */

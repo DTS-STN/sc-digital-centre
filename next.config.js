@@ -14,14 +14,30 @@ const contentURL = process.env.NEXT_CONTENT_API
 
 //security headers that we want on all pages
 //more info here https://nextjs.org/docs/advanced-features/security-headers
+
 const securityHeaders = [
-  {
-    key: 'Content-Security-Policy',
-    value: `frame-ancestors 'self'`, //our CSP Policy
-  },
+  // Only ever use HTTPS
   {
     key: 'Strict-Transport-Security',
-    value: 'max-age=63072000; includeSubDomains; preload',
+    value: 'max-age=31536000; includeSubDomains; preload',
+  },
+  // Prevents the browser from attempting to guess the type of content
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff',
+  },
+  // Only allow secure origin to be delivered over HTTPS
+  {
+    key: 'Referrer-Policy',
+    value: 'same-origin',
+  },
+  {
+    key: 'Content-Security-Policy',
+    value: `frame-ancestors 'self'`,
+  },
+  {
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN',
   },
 ]
 

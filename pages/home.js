@@ -18,44 +18,25 @@ import {
   DICTIONARY,
 } from '../constants/aem'
 import aemService from './api/aemServiceInstance'
+import { getHomePageContent } from '../lib/pageContent'
 
 export default function Home({
-  aemPage,
+  metadata,
   locale,
-  searchPageHref,
-  featured,
-  benefits,
+  findBenefitsAndServices,
   topTasks,
-  topTaskTitle,
+  mostRequestedPages,
+  featured,
 }) {
   const t = locale === 'en' ? en : fr
-  const normalizedTopTasks = () => {
-    return topTasks?.map((task) => {
-      try {
-        let title = task.properties.elements.scTitleEn.title
-        let link = task.properties.elements.scLinkURLEn.value
-        if (locale !== 'en') {
-          link = task.properties.elements.scLinkURLFr.value
-          title = task.properties.elements.scTitleFr.title
-        }
-        return { taskName: title, taskURL: link }
-      } catch (e) {
-        return { taskName: 'undefined', taskURL: '/' }
-      }
-    })
-  }
 
-  const localizedTopTaskTitle = () => {
-    return locale !== 'en'
-      ? topTaskTitle?.properties.elements.scLabelFr.value
-      : topTaskTitle?.properties.elements.scLabelEn.value
-  }
   return (
     <Layout
       locale={locale}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
-      aemPage={aemPage}
+      title={metadata.title}
+      toggleLangLink={metadata.toggleLangLink}
     >
       <ImageBox
         imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png"
@@ -72,7 +53,9 @@ export default function Home({
           viewBenefitsServices={t.searchViewAllBenefits}
           searchBarPlaceholder={t.searchPlaceholder}
           searchBarText={t.search}
-          onSubmitHref={searchPageHref[locale]}
+          onSubmitHref={findBenefitsAndServices.searchLink[locale]}
+          dataCyInput="searchInput"
+          dataCyButton="searchButton"
         />
       </ImageBox>
       <div className="layout-container md:flex my-5">
@@ -86,24 +69,24 @@ export default function Home({
             createAccountText={t.serviceCanadaCreateAccount}
           />
           <TopTasks
-            topTasksHeader={localizedTopTaskTitle()}
+            topTasksHeader={topTasks.header}
             topTasksDescription={t.topTasksDescritpion}
-            topTasksList={normalizedTopTasks()}
+            topTasksList={topTasks.topTasksList}
           />
         </div>
         <div className="lg:w-3/4 md:pl-12">
           <h2 className="font-bold font-display text-2xl mb-4">
             {t.mostRequestedTitle}
           </h2>
-          <CardList cardList={benefits} />
+          <CardList cardList={mostRequestedPages.cards} />
         </div>
       </div>
       {/* feature with image */}
       <FeatureBlock
-        title="Featured: "
-        // featuredContent and body text will come form the CMS
-        featuredContent={featured.scTitleEn?.value}
-        body={featured.scDescriptionEn?.value}
+        title={featured.header}
+        body={featured.body}
+        imgSrc={featured.imgSrc}
+        imgAlt={featured.imgAlt}
         buttonText="Text on button"
         featuredHref="#"
         btnId="featured-content"
@@ -114,48 +97,22 @@ export default function Home({
 }
 
 export async function getStaticProps({ locale }) {
-  let benefits = []
-  let topTasks = []
-  let topTaskTitle = []
-
-  const { elements: featured } = await aemService.getBenefit(BENEFIT_EI)
-
-  let AEMbenefits = await aemService.getBenefits(BENEFITS)
-  if (AEMbenefits.benefits) {
-    benefits = AEMbenefits.benefits
-  }
-
-  // Get list of top tasks
-  let topTasksReturned = await aemService.getFragment(TOP_TASKS)
-  if (topTasksReturned.data) {
-    topTasks = topTasksReturned.data.entities
-  }
-
-  // Get miscellaneous components content
-  let miscellaneousRes = await aemService.getFragment(DICTIONARY)
-  if (miscellaneousRes.data) {
-    miscellaneousRes.data.entities.forEach((item) => {
-      // Extracting Top Task component content (Title and whatever else we add in AEM later on)
-      if (item.properties.elements.scId.value === 'TOP-TASKS') {
-        topTaskTitle = item
-      }
-      // Add any if statements to capture other misc component contents
-    })
-  }
-
-  const aemPage = await aemService.getPage(HOME_PAGE)
-  const searchPage = await aemService.getPage(SEARCH_PAGE)
-  const searchPageHref = searchPage.link
+  let {
+    metadata,
+    findBenefitsAndServices,
+    topTasks,
+    mostRequestedPages,
+    featured,
+  } = await getHomePageContent(locale)
 
   return {
     props: {
-      benefits,
+      metadata,
       locale,
-      featured,
-      aemPage,
-      searchPageHref,
+      findBenefitsAndServices,
       topTasks,
-      topTaskTitle,
+      mostRequestedPages,
+      featured,
     },
   }
 }
