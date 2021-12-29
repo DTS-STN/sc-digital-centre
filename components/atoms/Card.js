@@ -12,7 +12,7 @@ export const Card = ({
   return (
     <div className="flex flex-col place-content-between w-full shadow-card p-6">
       <div>
-        <h3 className="font-bold font-display text-xl">{title}</h3>
+        <h2 className="font-bold font-display text-xl">{title}</h2>
         {/* <p className="">{tag}</p> */}
         <p className="my-5">{text}</p>
       </div>

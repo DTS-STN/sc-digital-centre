@@ -75,9 +75,9 @@ export default function Home({
           />
         </div>
         <div className="lg:w-3/4 md:pl-12">
-          <h2 className="font-bold font-display text-2xl mb-4">
+          <h1 className="font-bold font-display text-2xl mb-4">
             {t.mostRequestedTitle}
-          </h2>
+          </h1>
           <CardList cardList={mostRequestedPages.cards} />
         </div>
       </div>
