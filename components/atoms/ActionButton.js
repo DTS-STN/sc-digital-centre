@@ -4,47 +4,38 @@ import Link from 'next/link'
 /**
  * Button component
  */
-export function ActionButton({
-  href,
-  className,
-  onClick,
-  type,
-  lang,
-  id,
-  text,
-  children,
-  ...rest
-}) {
+export function ActionButton(props) {
+  var { ...rest } = props
   //Styling for buttons and links
   const defaultStyle =
     'font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-deep-blue-solid text-white text-center border border-deep-blue-solid active:bg-deep-blue-dark hover:bg-bright-blue-dark grid place-items-center'
 
-  return href ? (
-    <Link href={href}>
+  return props.href ? (
+    <Link href={props.href}>
       <a
-        className={`${!className ? defaultStyle : className}`}
-        onClick={onClick}
+        className={`${!props.className ? defaultStyle : props.className}`}
+        onClick={props.onClick}
         role="button"
         draggable="false"
-        lang={lang}
+        lang={props.lang}
         {...rest}
-        id={id}
+        id={props.id}
       >
-        {text}
-        {children}
+        {props.text}
+        {props.children}
       </a>
     </Link>
   ) : (
     <button
-      className={`${!className ? defaultStyle : className}`}
-      onClick={onClick}
-      type={type}
-      lang={lang}
+      className={`${!props.className ? defaultStyle : props.className}`}
+      onClick={props.onClick}
+      type={props.type}
+      lang={props.lang}
       {...rest}
-      id={id}
+      id={props.id}
     >
-      {text}
-      {children}
+      {props.text}
+      {props.children}
     </button>
   )
 }
