@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Script from 'next/script'
 import Layout from '../components/organisms/Layout'
 
-export default function Splash({ homePage }) {
+export default function Splash(props) {
   return (
     <Layout locale="en" displayHeader={false} displayFooter={false}>
       <div className="flex h-screen bg-cover bg-center bg-splash-page">

@@ -4,16 +4,17 @@ import Link from 'next/link'
 import { Menu } from '../molecules/Menu'
 import { useRouter } from 'next/router'
 
-export default function Header({ language, t, toggleLangLink }) {
+export default function Header(props) {
   const router = useRouter()
   const currentRouteQueryParams = router.query
+  const { t } = props
 
   const [langToggleLink, setLangToggleLink] = React.useState()
   React.useEffect(() => {
     let updatedLangToggleLink
-    if (toggleLangLink && router?.route && router.locale) {
+    if (props.toggleLangLink && router?.route && router.locale) {
       updatedLangToggleLink = {
-        pathname: toggleLangLink,
+        pathname: props.toggleLangLink,
         query: currentRouteQueryParams,
       }
     }
@@ -43,9 +44,13 @@ export default function Header({ language, t, toggleLangLink }) {
             <a href={t.gocLink}>
               <img
                 className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8 "
-                src={language === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
+                src={
+                  props.language === 'en'
+                    ? '/sig-blk-en.svg'
+                    : '/sig-blk-fr.svg'
+                }
                 alt={
-                  language === 'en'
+                  props.language === 'en'
                     ? 'Government of Canada'
                     : 'Gouvernement du Canada'
                 }
@@ -54,16 +59,16 @@ export default function Header({ language, t, toggleLangLink }) {
 
             {/* Language selector for small screens */}
             <Link
-              key={language}
+              key={props.language}
               href={langToggleLink || '/'}
-              locale={language === 'en' ? 'fr' : 'en'}
+              locale={props.language === 'en' ? 'fr' : 'en'}
             >
               <a
                 className="block md:hidden md:text-sm ml-6 pb-2 sm:ml-16 underline font-body font-bold text-canada-footer-font  text-base hover:text-canada-footer-hover-font-blue"
                 // onClick={() => setLanguage(language)}
-                lang={language === 'en' ? 'fr' : 'en'}
+                lang={props.language === 'en' ? 'fr' : 'en'}
               >
-                {language === 'en' ? 'FR' : 'EN'}
+                {props.language === 'en' ? 'FR' : 'EN'}
               </a>
             </Link>
           </div>
@@ -71,17 +76,17 @@ export default function Header({ language, t, toggleLangLink }) {
           <div className="flex-col flex">
             {/* Language selector for mid to larger screens */}
             <Link
-              key={language}
+              key={props.language}
               href={langToggleLink || '/'}
-              locale={language === 'en' ? 'fr' : 'en'}
+              locale={props.language === 'en' ? 'fr' : 'en'}
             >
               <a
                 className="md:block hidden pb-0 lg:pb-4 self-end underline font-body text-canada-footer-font hover:text-canada-footer-hover-font-blue "
                 data-cy="toggle-language-link"
                 // onClick={() => setLanguage(language)}
-                lang={language === 'en' ? 'fr' : 'en'}
+                lang={props.language === 'en' ? 'fr' : 'en'}
               >
-                {language === 'en' ? 'Français' : 'English'}
+                {props.language === 'en' ? 'Français' : 'English'}
               </a>
             </Link>
 
