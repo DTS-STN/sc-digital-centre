@@ -25,7 +25,7 @@ export function Menu({ loginText, items }) {
               className="text-2xl pt-1 font-bold font-display "
               data-cy="homeButton"
             >
-              Service Canada
+              <h1>Service Canada</h1>
             </a>
           </Link>
           <h2 className="sr-only" id="mainSiteNav">
