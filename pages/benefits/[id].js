@@ -4,14 +4,14 @@ import fr from '../../locales/fr'
 import aemService from '../api/aemServiceInstance'
 import { BENEFITS, SEARCH_PAGE } from '../../constants/aem'
 
-export default function BenefitPage({ locale, benefit }) {
-  const benefitData = benefit.elements
+export default function BenefitPage(props) {
+  const benefitData = props.benefit.elements
 
-  const t = locale === 'en' ? en : fr
+  const t = props.locale === 'en' ? en : fr
 
   return (
     <Layout
-      locale={locale}
+      locale={props.locale}
       title={benefitData.scTitleEn.value}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}

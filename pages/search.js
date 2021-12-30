@@ -12,8 +12,8 @@ import en from '../locales/en'
 import fr from '../locales/fr'
 import { SEARCH_PAGE } from '../constants/aem'
 
-export default function SearchResult({ metadata, locale, benefits }) {
-  const t = locale === 'en' ? en : fr
+export default function SearchResult(props) {
+  const t = props.locale === 'en' ? en : fr
   const router = useRouter()
   const [search, setSearch] = useState('')
   const [modalShow, setModalShow] = useState(false)
@@ -63,14 +63,14 @@ export default function SearchResult({ metadata, locale, benefits }) {
 
   return (
     <Layout
-      locale={locale}
-      title={metadata.title}
-      toggleLangLink={metadata.toggleLangLink}
+      locale={props.locale}
+      title={props.metadata.title}
+      toggleLangLink={props.metadata.toggleLangLink}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
     >
       <SearchHeader
-        lang={locale}
+        lang={props.locale}
         headerText={'Search Benefits'}
         inputText={search ?? ''}
         searchBarPlaceholder={t.searchPlaceholder}
@@ -80,7 +80,7 @@ export default function SearchResult({ metadata, locale, benefits }) {
         btnFilterText={t.filterResults}
         btnFilterLabel={t.filterResults}
         setModalShow={setModalShow}
-        onSubmitHref={metadata.currentLink[locale]}
+        onSubmitHref={props.metadata.currentLink[props.locale]}
       />
       <ModalElement
         modalShow={modalShow}
@@ -119,7 +119,7 @@ export default function SearchResult({ metadata, locale, benefits }) {
           />
         </div>
         <div className="w-full md:w-2/3 h-auto float-right">
-          <CardList cardList={benefits} />
+          <CardList cardList={props.benefits} />
         </div>
       </div>
     </Layout>

@@ -12,17 +12,8 @@ import fr from '../../locales/fr'
 /**
  * Component which defines the layout of the page for all screen sizes
  */
-export default function Layout({
-  children,
-  locale,
-  title,
-  toggleLangLink,
-  phase,
-  bannerText,
-  displayHeader,
-  displayFooter,
-}) {
-  const t = locale === 'en' ? en : fr
+export default function Layout(props) {
+  const t = props.locale === 'en' ? en : fr
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
@@ -30,7 +21,7 @@ export default function Layout({
         event: 'pageLoad',
         page: {
           title: document.title,
-          language: locale === 'en' ? 'eng' : 'fra',
+          language: props.locale === 'en' ? 'eng' : 'fra',
           creator:
             'Employment and Social Development Canada/Emploi et Développement social Canada',
           accessRights: '2',
@@ -38,7 +29,7 @@ export default function Layout({
         },
       })
     }
-  }, [locale])
+  }, [props.locale])
 
   return (
     <>
@@ -59,24 +50,28 @@ export default function Layout({
       ) : (
         ''
       )}
-      <Meta title={title} lang={locale} />
+      <Meta title={props.title} lang={props.locale} />
 
-      {displayHeader ? (
+      {props.displayHeader ? (
         <>
           <PhaseBanner
-            phase={phase}
-            bannerText={bannerText}
-            lang={locale}
+            phase={props.phase}
+            bannerText={props.bannerText}
+            lang={props.locale}
           ></PhaseBanner>
-          <Header language={locale} t={t} toggleLangLink={toggleLangLink} />
+          <Header
+            language={props.locale}
+            t={t}
+            toggleLangLink={props.toggleLangLink}
+          />
         </>
       ) : (
         ''
       )}
       <main>
-        <div>{children}</div>
+        <div>{props.children}</div>
       </main>
-      {displayFooter ? (
+      {props.displayFooter ? (
         <Footer
           footerLogoAltText="symbol2"
           footerLogoImage="/wmms-blk.svg"
