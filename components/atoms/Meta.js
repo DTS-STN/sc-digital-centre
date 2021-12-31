@@ -2,26 +2,26 @@ import propTypes from 'prop-types'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-export default function Meta({ locale, metadata }) {
+export default function Meta(props) {
   return (
     <Head>
-      <title>{metadata.title} - Canada.ca</title>
+      <title>{props.metadata.title} - Canada.ca</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
-      <meta name="dcterms.title" content={metadata.title} />
-      <meta name="dcterms.description" content={metadata.description} />
-      <meta name="dcterms.creator" content={metadata.owner} />
+      <meta name="dcterms.title" content={props.metadata.title} />
+      <meta name="dcterms.description" content={props.metadata.description} />
+      <meta name="dcterms.creator" content={props.metadata.owner} />
       <meta
         name="dcterms.language"
         title="ISO639-2/T"
-        content={locale === 'en' ? 'eng' : 'fra'}
+        content={props.locale === 'en' ? 'eng' : 'fra'}
       />
       <meta name="dcterms.issued" title="W3CDTF" content="2017-01-23" />
-      <meta name="dcterms.audience" content={metadata.audience} />
+      <meta name="dcterms.audience" content={props.metadata.audience} />
       <meta name="dcterms.spatial" content="Canada" />
-      <meta name="dcterms.type" content={metadata.type} />
-      {metadata.dcTerms?.map((term, i) => (
+      <meta name="dcterms.type" content={props.metadata.type} />
+      {props.metadata.dcTerms?.map((term, i) => (
         <meta
           key={`dc-term-${i}`}
           name="dcterms.subject"
@@ -29,25 +29,25 @@ export default function Meta({ locale, metadata }) {
           content={term}
         />
       ))}
-      <meta name="keywords" content={metadata.keywords} />
-      <meta name="description" content={metadata.description} />
-      <link rel="canonical" href={useRouter()?.asPath} />
-      <meta name="author" content={metadata.owner} />
+      <meta name="keywords" content={props.metadata.keywords} />
+      <meta name="description" content={props.metadata.description} />
+      <link rel="canonical" href={props.useRouter()?.asPath} />
+      <meta name="author" content={props.metadata.owner} />
       <meta name="robots" content="noindex,nofollow" />
       <link rel="icon" href="/favicon.ico" />
       <meta name="twitter:card" content="summary_large_image" />
-      {metadata.img?.src && (
+      {props.metadata.img?.src && (
         <>
-          <meta name="twitter:title" content={metadata.img.title} />
-          <meta name="twitter:image" content={metadata.img.src} />
-          <meta name="twitter:image:alt" content={metadata.img.alt} />
-          <meta name="twitter:description" content={metadata.img.description} />
-          <meta property="og:image" content={metadata.img.src} />
-          <meta property="og:image:alt" content={metadata.img.alt} />
-          <meta property="og:description" content={metadata.img.description} />
+          <meta name="twitter:title" content={props.metadata.img.title} />
+          <meta name="twitter:image" content={props.metadata.img.src} />
+          <meta name="twitter:image:alt" content={props.metadata.img.alt} />
+          <meta name="twitter:description" content={props.metadata.img.description} />
+          <meta property="og:image" content={props.metadata.img.src} />
+          <meta property="og:image:alt" content={props.metadata.img.alt} />
+          <meta property="og:description" content={props.metadata.img.description} />
         </>
       )}
-      <meta property="og:title" content={metadata.title} />
+      <meta property="og:title" content={props.metadata.title} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={useRouter()?.asPath} />
     </Head>

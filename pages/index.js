@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Layout from '../components/organisms/Layout'
 import { getIndexPageContent } from './../lib/pageContent'
 
-export default function Splash({ metadata }) {
+export default function Splash(props) {
   return (
     <Layout
       locale="en"

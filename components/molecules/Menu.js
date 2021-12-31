@@ -6,7 +6,7 @@ import { ActionButton } from '../atoms/ActionButton'
 /**
  * Menu component
  */
-export function Menu({ loginText, items }) {
+export function Menu(props) {
   //Router
   const { asPath } = useRouter()
 
@@ -33,14 +33,14 @@ export function Menu({ loginText, items }) {
             className="flex items-center justify-evenly w-full"
             role="menu"
           >
-            {items.map((item, key) => {
+            {props.items.map((item, key) => {
               const exactURL = asPath === item.link // it's exactly this url
 
               return (
                 <li
                   key={key}
                   className={`flex items-center justify-evenly cursor-pointer text-center h-14 w-full border-gray-400 sm:whitespace-pre md:w-auto md:border-none md:px-4 md:h-12 lg:pr-0 ${
-                    key === 0 || key === items.length - 1
+                    key === 0 || key === props.items.length - 1
                       ? 'border-t border-b '
                       : 'border'
                   }`}
@@ -62,7 +62,7 @@ export function Menu({ loginText, items }) {
             href="/"
             className="border rounded font-body bg-deep-blue-solid text-white py-1 px-6 h-10 flex items-center"
           >
-            {loginText}
+            {props.loginText}
           </ActionButton>
         </div>
       </div>
