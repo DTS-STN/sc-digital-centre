@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
@@ -217,13 +217,19 @@
 <a name='L158'></a><a href='#L158'>158</a>
 <a name='L159'></a><a href='#L159'>159</a>
 <a name='L160'></a><a href='#L160'>160</a>
-<a name='L161'></a><a href='#L161'>161</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -240,6 +246,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -383,16 +393,17 @@ import Link from 'next/link'
 import { Menu } from '../molecules/Menu'
 import { useRouter } from 'next/router'
 &nbsp;
-export default function Header({ language, t, toggleLangLink }) {
+export default function Header(props) {
   const router = useRouter()
   const currentRouteQueryParams = router.query
+  const { t } = props
 &nbsp;
   const [langToggleLink, setLangToggleLink] = React.useState()
   React.useEffect(() =&gt; {
     let updatedLangToggleLink
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (toggleLangLink &amp;&amp; router?.route &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >router.locale)</span> {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (props.toggleLangLink &amp;&amp; router?.route &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >router.locale)</span> {
 <span class="cstat-no" title="statement not covered" >      updatedLangToggleLink = {</span>
-        pathname: toggleLangLink,
+        pathname: props.toggleLangLink,
         query: currentRouteQueryParams,
       }
     }
@@ -422,9 +433,13 @@ export default function Header({ language, t, toggleLangLink }) {
             &lt;a href={t.gocLink}&gt;
               &lt;img
                 className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8 "
-                src={language === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'}
+                src={
+                  props.language === 'en'
+                    ? '/sig-blk-en.svg'
+                    : '/sig-blk-fr.svg'
+                }
                 alt={
-                  language === 'en'
+                  props.language === 'en'
                     ? 'Government of Canada'
                     : 'Gouvernement du Canada'
                 }
@@ -433,16 +448,16 @@ export default function Header({ language, t, toggleLangLink }) {
 &nbsp;
             {/* Language selector for small screens */}
             &lt;Link
-              key={language}
+              key={props.language}
               href={langToggleLink || '/'}
-              locale={language === 'en' ? 'fr' : 'en'}
+              locale={props.language === 'en' ? 'fr' : 'en'}
             &gt;
               &lt;a
                 className="block md:hidden md:text-sm ml-6 pb-2 sm:ml-16 underline font-body font-bold text-canada-footer-font  text-base hover:text-canada-footer-hover-font-blue"
                 // onClick={() =&gt; setLanguage(language)}
-                lang={language === 'en' ? 'fr' : 'en'}
+                lang={props.language === 'en' ? 'fr' : 'en'}
               &gt;
-                {language === 'en' ? 'FR' : 'EN'}
+                {props.language === 'en' ? 'FR' : 'EN'}
               &lt;/a&gt;
             &lt;/Link&gt;
           &lt;/div&gt;
@@ -450,17 +465,17 @@ export default function Header({ language, t, toggleLangLink }) {
           &lt;div className="flex-col flex"&gt;
             {/* Language selector for mid to larger screens */}
             &lt;Link
-              key={language}
+              key={props.language}
               href={langToggleLink || '/'}
-              locale={language === 'en' ? 'fr' : 'en'}
+              locale={props.language === 'en' ? 'fr' : 'en'}
             &gt;
               &lt;a
                 className="md:block hidden pb-0 lg:pb-4 self-end underline font-body text-canada-footer-font hover:text-canada-footer-hover-font-blue "
                 data-cy="toggle-language-link"
                 // onClick={() =&gt; setLanguage(language)}
-                lang={language === 'en' ? 'fr' : 'en'}
+                lang={props.language === 'en' ? 'fr' : 'en'}
               &gt;
-                {language === 'en' ? 'Français' : 'English'}
+                {props.language === 'en' ? 'Français' : 'English'}
               &lt;/a&gt;
             &lt;/Link&gt;
 &nbsp;
@@ -544,7 +559,7 @@ Header.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 23 2021 14:56:35 GMT+0000 (Coordinated Universal Time)
+                at Fri Dec 31 2021 13:41:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

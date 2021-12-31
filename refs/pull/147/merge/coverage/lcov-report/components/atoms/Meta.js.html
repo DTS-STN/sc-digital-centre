@@ -140,12 +140,18 @@
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,6 +171,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -227,26 +239,26 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 &nbsp;
-export default function Meta({ locale, metadata }) {
+export default function Meta(props) {
   return (
     &lt;Head&gt;
-      &lt;title&gt;{metadata.title} - Canada.ca&lt;/title&gt;
+      &lt;title&gt;{props.metadata.title} - Canada.ca&lt;/title&gt;
       &lt;meta charSet="utf-8" /&gt;
       &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
       &lt;link rel="schema.dcterms" href="http://purl.org/dc/terms/" /&gt;
-      &lt;meta name="dcterms.title" content={metadata.title} /&gt;
-      &lt;meta name="dcterms.description" content={metadata.description} /&gt;
-      &lt;meta name="dcterms.creator" content={metadata.owner} /&gt;
+      &lt;meta name="dcterms.title" content={props.metadata.title} /&gt;
+      &lt;meta name="dcterms.description" content={props.metadata.description} /&gt;
+      &lt;meta name="dcterms.creator" content={props.metadata.owner} /&gt;
       &lt;meta
         name="dcterms.language"
         title="ISO639-2/T"
-        content={locale === 'en' ? 'eng' : 'fra'}
+        content={props.locale === 'en' ? 'eng' : 'fra'}
       /&gt;
       &lt;meta name="dcterms.issued" title="W3CDTF" content="2017-01-23" /&gt;
-      &lt;meta name="dcterms.audience" content={metadata.audience} /&gt;
+      &lt;meta name="dcterms.audience" content={props.metadata.audience} /&gt;
       &lt;meta name="dcterms.spatial" content="Canada" /&gt;
-      &lt;meta name="dcterms.type" content={metadata.type} /&gt;
-      {metadata.dcTerms?.map((term, i) =&gt; (
+      &lt;meta name="dcterms.type" content={props.metadata.type} /&gt;
+      {props.metadata.dcTerms?.map((term, i) =&gt; (
         &lt;meta
           key={`dc-term-${i}`}
           name="dcterms.subject"
@@ -254,25 +266,31 @@ export default function Meta({ locale, metadata }) {
           content={term}
         /&gt;
       ))}
-      &lt;meta name="keywords" content={metadata.keywords} /&gt;
-      &lt;meta name="description" content={metadata.description} /&gt;
+      &lt;meta name="keywords" content={props.metadata.keywords} /&gt;
+      &lt;meta name="description" content={props.metadata.description} /&gt;
       &lt;link rel="canonical" href={useRouter()?.asPath} /&gt;
-      &lt;meta name="author" content={metadata.owner} /&gt;
+      &lt;meta name="author" content={props.metadata.owner} /&gt;
       &lt;meta name="robots" content="noindex,nofollow" /&gt;
       &lt;link rel="icon" href="/favicon.ico" /&gt;
       &lt;meta name="twitter:card" content="summary_large_image" /&gt;
-      {metadata.img?.src &amp;&amp; (
+      {props.metadata.img?.src &amp;&amp; (
         &lt;&gt;
-          &lt;meta name="twitter:title" content={metadata.img.title} /&gt;
-          &lt;meta name="twitter:image" content={metadata.img.src} /&gt;
-          &lt;meta name="twitter:image:alt" content={metadata.img.alt} /&gt;
-          &lt;meta name="twitter:description" content={metadata.img.description} /&gt;
-          &lt;meta property="og:image" content={metadata.img.src} /&gt;
-          &lt;meta property="og:image:alt" content={metadata.img.alt} /&gt;
-          &lt;meta property="og:description" content={metadata.img.description} /&gt;
+          &lt;meta name="twitter:title" content={props.metadata.img.title} /&gt;
+          &lt;meta name="twitter:image" content={props.metadata.img.src} /&gt;
+          &lt;meta name="twitter:image:alt" content={props.metadata.img.alt} /&gt;
+          &lt;meta
+            name="twitter:description"
+            content={props.metadata.img.description}
+          /&gt;
+          &lt;meta property="og:image" content={props.metadata.img.src} /&gt;
+          &lt;meta property="og:image:alt" content={props.metadata.img.alt} /&gt;
+          &lt;meta
+            property="og:description"
+            content={props.metadata.img.description}
+          /&gt;
         &lt;/&gt;
       )}
-      &lt;meta property="og:title" content={metadata.title} /&gt;
+      &lt;meta property="og:title" content={props.metadata.title} /&gt;
       &lt;meta property="og:type" content="website" /&gt;
       &lt;meta property="og:url" content={useRouter()?.asPath} /&gt;
     &lt;/Head&gt;
@@ -313,7 +331,7 @@ Meta.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 23 2021 14:56:35 GMT+0000 (Coordinated Universal Time)
+                at Fri Dec 31 2021 13:41:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
