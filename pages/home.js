@@ -20,23 +20,15 @@ import {
 import aemService from './api/aemServiceInstance'
 import { getHomePageContent } from '../lib/pageContent'
 
-export default function Home({
-  metadata,
-  locale,
-  findBenefitsAndServices,
-  topTasks,
-  mostRequestedPages,
-  featured,
-}) {
-  const t = locale === 'en' ? en : fr
+export default function Home(props) {
+  const t = props.locale === 'en' ? en : fr
 
   return (
     <Layout
-      locale={locale}
+      locale={props.locale}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
-      title={metadata.title}
-      toggleLangLink={metadata.toggleLangLink}
+      metadata={props.metadata}
     >
       <ImageBox
         imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png"
@@ -47,13 +39,13 @@ export default function Home({
         priority={true}
       >
         <SearchCard
-          lang={locale}
+          lang={props.locale}
           headerText={t.searchFindBenefits}
           paraText={t.searchDesc}
           viewBenefitsServices={t.searchViewAllBenefits}
           searchBarPlaceholder={t.searchPlaceholder}
           searchBarText={t.search}
-          onSubmitHref={findBenefitsAndServices.searchLink[locale]}
+          onSubmitHref={props.findBenefitsAndServices.searchLink}
           dataCyInput="searchInput"
           dataCyButton="searchButton"
         />
@@ -69,22 +61,22 @@ export default function Home({
             createAccountText={t.serviceCanadaCreateAccount}
           />
           <TopTasks
-            topTasksHeader={topTasks.header}
+            topTasksHeader={props.topTasks.header}
             topTasksDescription={t.topTasksDescritpion}
-            topTasksList={topTasks.topTasksList}
+            topTasksList={props.topTasks.topTasksList}
           />
         </div>
         <MostRequestedPages
           title={t.mostRequestedTitle}
-          cardList={mostRequestedPages.cards}
+          cardList={props.mostRequestedPages.cards}
         />
       </div>
       {/* feature with image */}
       <FeatureBlock
-        title={featured.header}
-        body={featured.body}
-        imgSrc={featured.imgSrc}
-        imgAlt={featured.imgAlt}
+        title={props.featured.header}
+        body={props.featured.body}
+        imgSrc={props.featured.imgSrc}
+        imgAlt={props.featured.imgAlt}
         buttonText="Text on button"
         featuredHref="#"
         btnId="featured-content"

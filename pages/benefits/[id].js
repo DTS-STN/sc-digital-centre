@@ -3,18 +3,20 @@ import en from '../../locales/en'
 import fr from '../../locales/fr'
 import aemService from '../api/aemServiceInstance'
 import { BENEFITS, SEARCH_PAGE } from '../../constants/aem'
+import { getBenefitsPageContent } from '../../lib/pageContent'
 
-export default function BenefitPage({ locale, benefit }) {
-  const benefitData = benefit.elements
+export default function BenefitPage(props) {
+  const benefitData = props.benefit.elements
 
-  const t = locale === 'en' ? en : fr
+  const t = props.locale === 'en' ? en : fr
 
   return (
     <Layout
-      locale={locale}
+      locale={props.locale}
       title={benefitData.scTitleEn.value}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
+      metadata={props.metadata}
     >
       <h1 className="font-extrabold text-red-800 text-3xl text-center mt-12">
         {benefitData.scTitleEn.value}
@@ -40,12 +42,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ locale, params }) {
-  const benefit = await aemService.getBenefit(`benefits/${params.id}.json`)
-  const searchPage = await aemService.getPage(SEARCH_PAGE)
+  let { metadata, benefit } = await getBenefitsPageContent(locale, params.id)
 
   return {
     props: {
-      locale: locale,
+      locale,
+      metadata,
       benefit,
     },
   }

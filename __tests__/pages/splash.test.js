@@ -9,11 +9,10 @@ describe('Splash page', () => {
   it('should render', () => {
     render(
       <Splash
-        homePage={{
-          link: {
-            en: '/',
-            fr: '/fr/',
-          },
+        metadata={{
+          title: 'Digital Centre (en) + Digital Centre (fr)',
+          keywords: 'en + fr keywords',
+          description: 'en + fr description',
         }}
       />
     )

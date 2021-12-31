@@ -85,22 +85,7 @@ class AEMService {
 
   async getPage(pageId) {
     const { elements } = await this.getElements(pageId)
-
-    return {
-      id: pageId,
-      name: {
-        en: elements?.scPageNameEn?.value,
-        fr: elements?.scPageNameFr?.value,
-      },
-      link: {
-        en: `/${elements?.scPageNameEn?.value}`,
-        fr: `/fr/${elements?.scPageNameFr?.value}`,
-      },
-      title: {
-        en: elements?.scTitleEn?.value,
-        fr: elements?.scTitleFr?.value,
-      },
-    }
+    return elements
   }
 
   //
