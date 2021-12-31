@@ -10,7 +10,7 @@ export default function Splash(props) {
       locale="en"
       displayHeader={false}
       displayFooter={false}
-      metadata={metadata}
+      metadata={props.metadata}
     >
       <div className="flex h-screen bg-cover bg-center bg-splash-page">
         <div className="flex flex-col justify-center items-center m-auto">

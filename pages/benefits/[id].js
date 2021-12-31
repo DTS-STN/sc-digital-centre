@@ -16,7 +16,7 @@ export default function BenefitPage(props) {
       title={benefitData.scTitleEn.value}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
-      metadata={metadata}
+      metadata={props.metadata}
     >
       <h1 className="font-extrabold text-red-800 text-3xl text-center mt-12">
         {benefitData.scTitleEn.value}

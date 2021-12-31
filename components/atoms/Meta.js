@@ -31,7 +31,7 @@ export default function Meta(props) {
       ))}
       <meta name="keywords" content={props.metadata.keywords} />
       <meta name="description" content={props.metadata.description} />
-      <link rel="canonical" href={props.useRouter()?.asPath} />
+      <link rel="canonical" href={useRouter()?.asPath} />
       <meta name="author" content={props.metadata.owner} />
       <meta name="robots" content="noindex,nofollow" />
       <link rel="icon" href="/favicon.ico" />
@@ -41,10 +41,16 @@ export default function Meta(props) {
           <meta name="twitter:title" content={props.metadata.img.title} />
           <meta name="twitter:image" content={props.metadata.img.src} />
           <meta name="twitter:image:alt" content={props.metadata.img.alt} />
-          <meta name="twitter:description" content={props.metadata.img.description} />
+          <meta
+            name="twitter:description"
+            content={props.metadata.img.description}
+          />
           <meta property="og:image" content={props.metadata.img.src} />
           <meta property="og:image:alt" content={props.metadata.img.alt} />
-          <meta property="og:description" content={props.metadata.img.description} />
+          <meta
+            property="og:description"
+            content={props.metadata.img.description}
+          />
         </>
       )}
       <meta property="og:title" content={props.metadata.title} />

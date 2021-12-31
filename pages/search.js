@@ -63,8 +63,8 @@ export default function SearchResult(props) {
 
   return (
     <Layout
-      locale={locale}
-      metadata={metadata}
+      locale={props.locale}
+      metadata={props.metadata}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
     >
