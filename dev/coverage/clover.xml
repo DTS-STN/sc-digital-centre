@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1640958246332" clover="3.2.0">
-  <project timestamp="1640958246332" name="All files">
+<coverage generated="1640969529237" clover="3.2.0">
+  <project timestamp="1640969529237" name="All files">
     <metrics statements="173" coveredstatements="119" conditionals="121" coveredconditionals="80" methods="63" coveredmethods="42" elements="357" coveredelements="241" complexity="0" loc="173" ncloc="173" packages="6" files="31" classes="31"/>
     <package name="components.atoms">
       <metrics statements="31" coveredstatements="27" conditionals="16" coveredconditionals="14" methods="12" coveredmethods="10"/>
@@ -106,9 +106,9 @@
         <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="11" count="18" type="stmt"/>
         <line num="13" count="18" type="stmt"/>
-        <line num="37" count="54" type="stmt"/>
-        <line num="39" count="54" type="stmt"/>
-        <line num="73" count="5" type="stmt"/>
+        <line num="42" count="54" type="stmt"/>
+        <line num="44" count="54" type="stmt"/>
+        <line num="78" count="5" type="stmt"/>
       </file>
       <file name="ModalElement.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/ModalElement.js">
         <metrics statements="5" coveredstatements="3" conditionals="4" coveredconditionals="1" methods="1" coveredmethods="1"/>
