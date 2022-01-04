@@ -6,7 +6,6 @@ export default function CardList(props) {
     <li className="flex flex-grow" key={card.key}>
       <Card
         title={card.title}
-        tag={card.tag}
         text={card.text}
         callToActionText={card.callToActionText}
         callToActionHref={card.callToActionHref}

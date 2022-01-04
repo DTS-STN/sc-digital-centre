@@ -40,10 +40,20 @@ ServiceCanada.propTypes = {
   /**
    * The text that the Call-To-Action will display
    */
-  createAccountHref: PropTypes.string.isRequired,
+  signInText: PropTypes.string.isRequired,
 
   /**
    * The href that the Call-To-Action will send the user to
    */
+  signInHref: PropTypes.string.isRequired,
+
+  /**
+   * The text that the Call-To-Action will display
+   */
   createAccountText: PropTypes.string.isRequired,
+
+  /**
+   * The href that the Call-To-Action will send the user to
+   */
+  createAccountHref: PropTypes.string.isRequired,
 }

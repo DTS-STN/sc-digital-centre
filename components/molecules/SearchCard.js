@@ -22,7 +22,7 @@ export default function SearchCard(props) {
         dataCyInput={props.dataCyInput}
         dataCyButton={props.dataCyButton}
       />
-      <Link href="/searchResult">
+      <Link href="/search">
         <a className="text-sm underline" lang={props.lang}>
           {props.viewBenefitsServices}
         </a>

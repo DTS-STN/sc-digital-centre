@@ -19,6 +19,7 @@ import {
 } from '../constants/aem'
 import aemService from './api/aemServiceInstance'
 import { getHomePageContent } from '../lib/pageContent'
+import PropTypes from 'prop-types'
 
 export default function Home(props) {
   const t = props.locale === 'en' ? en : fr
@@ -107,4 +108,29 @@ export async function getStaticProps({ locale }) {
       featured,
     },
   }
+}
+
+Home.propTypes = {
+  /**
+   * Metadata for the Head of Digital Centre
+   */
+  metadata: PropTypes.object,
+
+  /**
+   * current locale in the address
+   */
+  locale: PropTypes.string,
+
+  /**
+   * Top Benefits to be displayed on the home page
+   */
+  topTasks: PropTypes.object,
+  /**
+   * Most requested pages to be displayed on the home page
+   */
+  mostRequestedPages: PropTypes.object,
+  /**
+   * The currently featured benefit
+   */
+  featured: PropTypes.object,
 }
