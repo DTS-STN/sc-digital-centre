@@ -50,7 +50,7 @@ export default function Layout(props) {
       ) : (
         ''
       )}
-      <Meta title={props.title} lang={props.locale} />
+      <Meta lang={props.locale} metadata={props.metadata} />
 
       {props.displayHeader ? (
         <>
@@ -62,7 +62,7 @@ export default function Layout(props) {
           <Header
             language={props.locale}
             t={t}
-            toggleLangLink={props.toggleLangLink}
+            toggleLangLink={props.metadata.toggleLangLink}
           />
         </>
       ) : (

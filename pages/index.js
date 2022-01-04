@@ -1,21 +1,18 @@
 import Link from 'next/link'
-import Head from 'next/head'
 import { ActionButton } from '../components/atoms/ActionButton'
 import Image from 'next/image'
-import Script from 'next/script'
 import Layout from '../components/organisms/Layout'
+import { getIndexPageContent } from './../lib/pageContent'
 
 export default function Splash(props) {
   return (
-    <Layout locale="en" displayHeader={false} displayFooter={false}>
+    <Layout
+      locale="en"
+      displayHeader={false}
+      displayFooter={false}
+      metadata={props.metadata}
+    >
       <div className="flex h-screen bg-cover bg-center bg-splash-page">
-        <Head>
-          <title>Digital Centre</title>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-        </Head>
         <div className="flex flex-col justify-center items-center m-auto">
           <div className="z-10 bg-white h-auto w-[18.75rem] xl:w-[31.25rem]">
             <h1 className="sr-only">service.canada.ca-digital-center</h1>
@@ -118,4 +115,14 @@ export default function Splash(props) {
       </div>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const { metadata } = await getIndexPageContent()
+
+  return {
+    props: {
+      metadata,
+    },
+  }
 }
