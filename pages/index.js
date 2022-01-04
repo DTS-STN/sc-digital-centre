@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ActionButton } from '../components/atoms/ActionButton'
+import ActionButton from '../components/atoms/ActionButton'
 import Image from 'next/image'
 import Layout from '../components/organisms/Layout'
 import { getIndexPageContent } from './../lib/pageContent'

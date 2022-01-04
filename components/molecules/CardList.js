@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Card } from '../atoms/Card'
+import Card from '../atoms/Card'
 
 export default function CardList(props) {
   const displayCards = props.cardList.map((card) => (

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { ActionButton } from '../atoms/ActionButton'
+import ActionButton from '../atoms/ActionButton'
 
 export default function ContactCard(props) {
   return (

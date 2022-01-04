@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { ContactCard } from '../atoms/ContactCard'
+import ContactCard from '../atoms/ContactCard'
 
 export default function ContactUs(props) {
   return (
