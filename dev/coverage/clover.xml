@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1640969529237" clover="3.2.0">
-  <project timestamp="1640969529237" name="All files">
-    <metrics statements="173" coveredstatements="119" conditionals="121" coveredconditionals="80" methods="63" coveredmethods="42" elements="357" coveredelements="241" complexity="0" loc="173" ncloc="173" packages="6" files="31" classes="31"/>
+<coverage generated="1641326685466" clover="3.2.0">
+  <project timestamp="1641326685466" name="All files">
+    <metrics statements="168" coveredstatements="114" conditionals="121" coveredconditionals="80" methods="63" coveredmethods="42" elements="352" coveredelements="236" complexity="0" loc="168" ncloc="168" packages="6" files="31" classes="31"/>
     <package name="components.atoms">
-      <metrics statements="31" coveredstatements="27" conditionals="16" coveredconditionals="14" methods="12" coveredmethods="10"/>
+      <metrics statements="29" coveredstatements="25" conditionals="16" coveredconditionals="14" methods="12" coveredmethods="10"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
         <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="8" count="119" type="stmt"/>
@@ -18,14 +18,12 @@
         <line num="41" count="1" type="stmt"/>
       </file>
       <file name="Card.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/Card.js">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="4" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="34" type="stmt"/>
         <line num="24" count="4" type="stmt"/>
       </file>
       <file name="ContactCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ContactCard.js">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="3" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="31" type="stmt"/>
         <line num="32" count="3" type="stmt"/>
       </file>
@@ -61,18 +59,16 @@
       </file>
     </package>
     <package name="components.molecules">
-      <metrics statements="54" coveredstatements="50" conditionals="45" coveredconditionals="39" methods="23" coveredmethods="22"/>
+      <metrics statements="51" coveredstatements="47" conditionals="45" coveredconditionals="39" methods="23" coveredmethods="22"/>
       <file name="CardList.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/CardList.js">
-        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="4" count="3" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="5" count="17" type="stmt"/>
         <line num="6" count="26" type="stmt"/>
         <line num="17" count="14" type="stmt"/>
         <line num="27" count="3" type="stmt"/>
       </file>
       <file name="ContactUs.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/ContactUs.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="2" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="5" count="11" type="stmt"/>
         <line num="11" count="29" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
@@ -141,8 +137,7 @@
         <line num="46" count="2" type="stmt"/>
       </file>
       <file name="ServiceCanada.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/ServiceCanada.js">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="2" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="11" type="stmt"/>
         <line num="29" count="2" type="stmt"/>
       </file>
