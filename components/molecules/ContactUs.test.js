@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import { ContactUs } from './ContactUs'
+import ContactUs from './ContactUs'
 import icon from './../../public/Callback.png'
 
 import { useRouter } from 'next/router'

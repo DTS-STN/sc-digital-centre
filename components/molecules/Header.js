@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Link from 'next/link'
-import { Menu } from '../molecules/Menu'
+import Menu from '../molecules/Menu'
 import { useRouter } from 'next/router'
 
 export default function Header(props) {

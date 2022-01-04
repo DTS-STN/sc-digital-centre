@@ -1,5 +1,5 @@
 import propTypes from 'prop-types'
-import { ActionButton } from '../atoms/ActionButton'
+import ActionButton from '../atoms/ActionButton'
 import Image from 'next/image'
 /**
  * Featured Content banner

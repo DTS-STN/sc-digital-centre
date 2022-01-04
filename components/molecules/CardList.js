@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import { Card } from '../atoms/Card'
+import Card from '../atoms/Card'
 
-export const CardList = (props) => {
+export default function CardList(props) {
   const displayCards = props.cardList.map((card) => (
     <li className="flex flex-grow" key={card.key}>
       <Card

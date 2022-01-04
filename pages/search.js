@@ -5,7 +5,7 @@ import SearchHeader from '../components/molecules/SearchHeader'
 import aemService from './api/aemServiceInstance'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-import { CardList } from '../components/molecules/CardList'
+import CardList from '../components/molecules/CardList'
 import { getSearchPageContent } from './../lib/pageContent'
 
 import en from '../locales/en'
