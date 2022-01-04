@@ -8,8 +8,8 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
-        <Head></Head>
+      <Html className="no-js" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+        <Head prefix="og:http://ogp.me/ns#"></Head>
         <body>
           <Main />
           <NextScript />

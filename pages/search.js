@@ -5,15 +5,16 @@ import SearchHeader from '../components/molecules/SearchHeader'
 import aemService from './api/aemServiceInstance'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-import { CardList } from '../components/molecules/CardList'
+import CardList from '../components/molecules/CardList'
 import { getSearchPageContent } from './../lib/pageContent'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { SEARCH_PAGE } from '../constants/aem'
+import PropTypes from 'prop-types'
 
-export default function SearchResult({ metadata, locale, benefits }) {
-  const t = locale === 'en' ? en : fr
+export default function Search(props) {
+  const t = props.locale === 'en' ? en : fr
   const router = useRouter()
   const [search, setSearch] = useState('')
   const [modalShow, setModalShow] = useState(false)
@@ -63,14 +64,13 @@ export default function SearchResult({ metadata, locale, benefits }) {
 
   return (
     <Layout
-      locale={locale}
-      title={metadata.title}
-      toggleLangLink={metadata.toggleLangLink}
+      locale={props.locale}
+      metadata={props.metadata}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
     >
       <SearchHeader
-        lang={locale}
+        lang={props.locale}
         headerText={'Search Benefits'}
         inputText={search ?? ''}
         searchBarPlaceholder={t.searchPlaceholder}
@@ -80,7 +80,7 @@ export default function SearchResult({ metadata, locale, benefits }) {
         btnFilterText={t.filterResults}
         btnFilterLabel={t.filterResults}
         setModalShow={setModalShow}
-        onSubmitHref={metadata.currentLink[locale]}
+        onSubmitHref={props.metadata.currentLink}
       />
       <ModalElement
         modalShow={modalShow}
@@ -119,7 +119,7 @@ export default function SearchResult({ metadata, locale, benefits }) {
           />
         </div>
         <div className="w-full md:w-2/3 h-auto float-right">
-          <CardList cardList={benefits} />
+          <CardList cardList={props.benefits} />
         </div>
       </div>
     </Layout>
@@ -136,4 +136,21 @@ export async function getStaticProps({ locale }) {
       locale,
     },
   }
+}
+
+Search.propTypes = {
+  /**
+   * Metadata for the Head of Digital Centre
+   */
+  metadata: PropTypes.object,
+
+  /**
+   * current locale in the address
+   */
+  locale: PropTypes.string,
+
+  /**
+   * List of benefits
+   */
+  benefits: PropTypes.array,
 }

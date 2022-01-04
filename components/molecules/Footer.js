@@ -89,6 +89,15 @@ export default function Footer(props) {
 
 Footer.propTypes = {
   /**
+   * Screenreader section indicator
+   */
+  footerNav1: PropTypes.string,
+
+  /**
+   * Screenreader section indicator
+   */
+  footerNav2: PropTypes.string,
+  /**
    * array of objects containing the link text and link
    */
   footerBoxLinks: PropTypes.arrayOf(

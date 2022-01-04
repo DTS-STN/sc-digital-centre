@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
-import { Card } from '../atoms/Card'
+import Card from '../atoms/Card'
 
-export const CardList = ({ cardList }) => {
-  const displayCards = cardList.map((card) => (
+export default function CardList(props) {
+  const displayCards = props.cardList.map((card) => (
     <li className="flex flex-grow" key={card.key}>
       <Card
         title={card.title}
-        tag={card.tag}
         text={card.text}
         callToActionText={card.callToActionText}
         callToActionHref={card.callToActionHref}
@@ -19,7 +18,7 @@ export const CardList = ({ cardList }) => {
       className="grid grid-cols-1 gap-6 md:grid-cols-2 md:pl-1"
       data-testid="cardList"
     >
-      {cardList ? displayCards : ''}
+      {props.cardList ? displayCards : ''}
     </ul>
   )
 }

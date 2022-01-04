@@ -79,8 +79,8 @@ config.rewrites = async () => {
 
   // loop over all cached pages and build rewrite rules for next
   const aemPagesRewrites = Object.values(pages).map((normalizedPage) => ({
-    source: normalizedPage.link.fr,
-    destination: normalizedPage.link.en,
+    source: `/${normalizedPage.elements?.scPageNameFr?.value}`,
+    destination: `/${normalizedPage.elements?.scPageNameEn?.value}`,
     locale: false,
   }))
 

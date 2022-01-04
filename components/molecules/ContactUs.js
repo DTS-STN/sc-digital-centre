@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
-import { ContactCard } from '../atoms/ContactCard'
+import ContactCard from '../atoms/ContactCard'
 
-export const ContactUs = ({ mainTitle, contactList }) => {
+export default function ContactUs(props) {
   return (
     <div className="layout-container" data-testid="contactUs">
-      <h2 className="font-bold text-center text-2xl my-8">{mainTitle}</h2>
+      <h2 className="font-bold text-center text-2xl my-8">{props.mainTitle}</h2>
 
       <ul className="grid grid-cols-1 gap-5 md:grid-cols-3">
-        {contactList.map((contact) => (
+        {props.contactList.map((contact) => (
           <li key={contact.cardId}>
             <ContactCard
               iconSrc={contact.iconSrc}
