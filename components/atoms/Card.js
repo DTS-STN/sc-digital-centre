@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { ActionButton } from './ActionButton'
 
-export const Card = (props) => {
+export default function Card(props) {
   return (
     <div className="flex flex-col place-content-between w-full shadow-card p-6">
       <div>

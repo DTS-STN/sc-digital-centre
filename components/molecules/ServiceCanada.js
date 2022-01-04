@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { ActionButton } from '../atoms/ActionButton'
 
-export const ServiceCanada = (props) => {
+export default function ServiceCanada(props) {
   return (
     <div data-testid="serviceCanada">
       <h2 className="font-bold font-display text-2xl mb-4">{props.title}</h2>

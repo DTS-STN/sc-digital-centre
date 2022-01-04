@@ -6,7 +6,7 @@ import { ActionButton } from '../atoms/ActionButton'
 /**
  * Menu component
  */
-export function Menu(props) {
+export default function Menu(props) {
   //Router
   const { asPath } = useRouter()
 
