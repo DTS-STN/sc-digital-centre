@@ -4,6 +4,7 @@ import fr from '../../locales/fr'
 import aemService from '../api/aemServiceInstance'
 import { BENEFITS, SEARCH_PAGE } from '../../constants/aem'
 import { getBenefitsPageContent } from '../../lib/pageContent'
+import PropTypes from 'prop-types'
 
 export default function BenefitPage(props) {
   const benefitData = props.benefit.elements
@@ -51,4 +52,21 @@ export async function getStaticProps({ locale, params }) {
       benefit,
     },
   }
+}
+
+BenefitPage.propTypes = {
+  /**
+   * Metadata for the Head of Digital Centre
+   */
+  metadata: PropTypes.object,
+
+  /**
+   * current locale in the address
+   */
+  locale: PropTypes.string,
+
+  /**
+   * Selected benefit
+   */
+  benefit: PropTypes.object,
 }
