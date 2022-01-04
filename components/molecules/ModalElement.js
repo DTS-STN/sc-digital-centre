@@ -7,8 +7,8 @@ export default function ModalElement(props) {
   }
 
   const options = props.options ?? {
-    clickOutsideDeactivates: 'true',
-    preventScroll: 'true',
+    clickOutsideDeactivates: false,
+    preventScroll: true,
   }
 
   return (
