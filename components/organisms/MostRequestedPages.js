@@ -1,4 +1,4 @@
-import { CardList } from '../molecules/CardList'
+import CardList from '../molecules/CardList'
 import PropTypes from 'prop-types'
 
 export default function MostRequestedPages({ title, cardList }) {

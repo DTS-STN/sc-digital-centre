@@ -1,4 +1,4 @@
-import { ActionButton } from '../atoms/ActionButton'
+import ActionButton from '../atoms/ActionButton'
 import Image from 'next/image'
 import Link from 'next/link'
 
