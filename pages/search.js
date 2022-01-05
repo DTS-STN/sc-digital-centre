@@ -5,14 +5,15 @@ import SearchHeader from '../components/molecules/SearchHeader'
 import aemService from './api/aemServiceInstance'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-import { CardList } from '../components/molecules/CardList'
+import CardList from '../components/molecules/CardList'
 import { getSearchPageContent } from './../lib/pageContent'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { SEARCH_PAGE } from '../constants/aem'
+import PropTypes from 'prop-types'
 
-export default function SearchResult(props) {
+export default function Search(props) {
   const t = props.locale === 'en' ? en : fr
   const router = useRouter()
   const [search, setSearch] = useState('')
@@ -135,4 +136,21 @@ export async function getStaticProps({ locale }) {
       locale,
     },
   }
+}
+
+Search.propTypes = {
+  /**
+   * Metadata for the Head of Digital Centre
+   */
+  metadata: PropTypes.object,
+
+  /**
+   * current locale in the address
+   */
+  locale: PropTypes.string,
+
+  /**
+   * List of benefits
+   */
+  benefits: PropTypes.array,
 }

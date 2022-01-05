@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { ActionButton } from '../atoms/ActionButton'
+import ActionButton from '../atoms/ActionButton'
 
 /**
  * Menu component
  */
-export function Menu(props) {
+export default function Menu(props) {
   //Router
   const { asPath } = useRouter()
 

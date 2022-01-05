@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
-import { ActionButton } from './ActionButton'
+import ActionButton from './ActionButton'
 
-export const Card = (props) => {
+export default function Card(props) {
   return (
     <div className="flex flex-col place-content-between w-full shadow-card p-6">
       <div>
         <h3 className="font-bold font-display text-xl">{props.title}</h3>
-        {/* <p className="">{props.tag}</p> */}
         <p className="my-5">{props.text}</p>
       </div>
 
@@ -23,19 +22,9 @@ export const Card = (props) => {
 
 Card.propTypes = {
   /**
-   * The title that the card will display
-   */
-  title: PropTypes.string.isRequired,
-
-  /**
-   * The tag that the card will display
-   */
-  tag: PropTypes.string,
-
-  /**
    * The text that the card will display
    */
-  //text: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 
   /**
    * The text that the Call-To-Action will display

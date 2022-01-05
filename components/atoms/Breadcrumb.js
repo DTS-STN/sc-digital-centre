@@ -4,7 +4,7 @@ import Link from 'next/link'
 /**
  *  Breadcrumb component
  */
-export function Breadcrumb(props) {
+export default function Breadcrumb(props) {
   return (
     <nav aria-label="breadcrumbs">
       <ul className="block text-deep-blue-dark text-base font-body">

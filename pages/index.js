@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import { ActionButton } from '../components/atoms/ActionButton'
+import ActionButton from '../components/atoms/ActionButton'
 import Image from 'next/image'
 import Layout from '../components/organisms/Layout'
 import { getIndexPageContent } from './../lib/pageContent'
+import PropTypes from 'prop-types'
 
-export default function Splash(props) {
+export default function Index(props) {
   return (
     <Layout
       locale="en"
@@ -125,4 +126,11 @@ export async function getStaticProps() {
       metadata,
     },
   }
+}
+
+Index.propTypes = {
+  /**
+   * Metadata for the Head of Digital Centre
+   */
+  metadata: PropTypes.object,
 }
