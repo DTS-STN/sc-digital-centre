@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
 import TopTasks from '../components/molecules/TopTasks'
+import MostRequestedPages from '../components/organisms/MostRequestedPages'
 import CardList from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
 import ImageBox from '../components/organisms/ImageBox'
@@ -67,12 +68,10 @@ export default function Home(props) {
             topTasksList={props.topTasks.topTasksList}
           />
         </div>
-        <div className="lg:w-3/4 md:pl-12">
-          <h2 className="font-bold font-display text-2xl mb-4">
-            {t.mostRequestedTitle}
-          </h2>
-          <CardList cardList={props.mostRequestedPages.cards} />
-        </div>
+        <MostRequestedPages
+          title={t.mostRequestedTitle}
+          cardList={props.mostRequestedPages.cards}
+        />
       </div>
       {/* feature with image */}
       <FeatureBlock
