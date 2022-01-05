@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/molecules/ServiceCanada.js</title>
+    <title>Code coverage report for components/organisms/MostRequestedPages.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/molecules</a> ServiceCanada.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/organisms</a> MostRequestedPages.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -105,38 +105,11 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,64 +148,58 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import PropTypes from 'prop-types'
-import ActionButton from '../atoms/ActionButton'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import CardList from '../molecules/CardList'
+import PropTypes from 'prop-types'
 &nbsp;
-export default function ServiceCanada(props) {
+export default function MostRequestedPages({ title, cardList }) {
   return (
-    &lt;div data-testid="serviceCanada"&gt;
-      &lt;h2 className="font-bold font-display text-2xl mb-4"&gt;{props.title}&lt;/h2&gt;
-      &lt;p className="mb-4 font-body"&gt;{props.text}&lt;/p&gt;
-      &lt;div className="flex justify-around md:grid md:grid-cols-1 md:gap-3"&gt;
-        &lt;ActionButton
-          id="signInMyAccountId"
-          className="font-display text-sm xs:text-base shadow-md text-center rounded py-2 px-1 xs:px-3 bg-deep-blue-solid text-white hover:bg-deep-blue-light"
-          href={props.signInHref}
-        &gt;
-          {props.signInText}
-        &lt;/ActionButton&gt;
-        &lt;ActionButton
-          id="createMyAccountId"
-          className="font-display text-sm xs:text-base shadow-md text-center rounded py-2 border px-1 xs:px-3 border-gray-500 bg-gray-light text-deep-blue-solid hover:bg-gray-dark"
-          href={props.createAccountHref}
-        &gt;
-          {props.createAccountText}
-        &lt;/ActionButton&gt;
-      &lt;/div&gt;
+    &lt;div className="lg:w-3/4 md:pl-12"&gt;
+      &lt;h2 className="font-bold font-display text-2xl mb-4"&gt;{title}&lt;/h2&gt;
+      &lt;CardList cardList={cardList} /&gt;
     &lt;/div&gt;
   )
 }
 &nbsp;
-ServiceCanada.propTypes = {
-  /**
-   * The title that the card will display
-   */
-  title: PropTypes.string.isRequired,
+MostRequestedPages.propTypes = {
+  // title of the cardlist
+  title: PropTypes.string,
 &nbsp;
   /**
-   * The text that the card will display
+   * The card page that the card will display
    */
-  text: PropTypes.string.isRequired,
+  cardList: PropTypes.arrayOf(
+    PropTypes.shape({
+      /**
+       * Title for the card
+       */
+      title: PropTypes.string,
 &nbsp;
-  /**
-   * The text that the Call-To-Action will display
-   */
-  signInText: PropTypes.string.isRequired,
+      /**
+       * Text for the card
+       */
+      text: PropTypes.string,
 &nbsp;
-  /**
-   * The href that the Call-To-Action will send the user to
-   */
-  signInHref: PropTypes.string.isRequired,
+      /**
+       * CallToAction Text for the card
+       */
+      callToActionText: PropTypes.string,
 &nbsp;
-  /**
-   * The text that the Call-To-Action will display
-   */
-  createAccountText: PropTypes.string.isRequired,
+      /**
+       * Text for the card
+       */
+      callToActionHref: PropTypes.string,
 &nbsp;
-  /**
-   * The href that the Call-To-Action will send the user to
-   */
-  createAccountHref: PropTypes.string.isRequired,
+      /**
+       * Id for the callToAction btn on the card
+       */
+      btnId: PropTypes.string,
+    })
+  ).isRequired,
 }
 &nbsp;</pre></td></tr></table></pre>
 
