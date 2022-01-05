@@ -3,12 +3,12 @@
  */
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Splash from '../../pages/index'
+import Index from '../../pages/index'
 
-describe('Splash page', () => {
+describe('Index page', () => {
   it('should render', () => {
     render(
-      <Splash
+      <Index
         metadata={{
           title: 'Digital Centre (en) + Digital Centre (fr)',
           keywords: 'en + fr keywords',

@@ -4,7 +4,7 @@ import Link from 'next/link'
 /**
  * Button component
  */
-export function ActionButton(props) {
+export default function ActionButton(props) {
   const { ...rest } = props
   //Styling for buttons and links
   const defaultStyle =

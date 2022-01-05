@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import { ContactCard } from '../atoms/ContactCard'
+import ContactCard from '../atoms/ContactCard'
 
-export const ContactUs = (props) => {
+export default function ContactUs(props) {
   return (
     <div className="layout-container" data-testid="contactUs">
       <h2 className="font-bold text-center text-2xl my-8">{props.mainTitle}</h2>

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import { ActionButton } from '../atoms/ActionButton'
+import ActionButton from '../atoms/ActionButton'
 
-export const ContactCard = (props) => {
+export default function ContactCard(props) {
   return (
     <div className="p-6" id={props.cardId}>
       <img

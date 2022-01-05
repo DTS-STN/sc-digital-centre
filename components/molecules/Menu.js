@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { ActionButton } from '../atoms/ActionButton'
+import ActionButton from '../atoms/ActionButton'
 
 /**
  * Menu component
  */
-export function Menu(props) {
+export default function Menu(props) {
   //Router
   const { asPath } = useRouter()
 
@@ -20,9 +20,14 @@ export function Menu(props) {
     >
       <div className="flex w-full justify-between py-6  md:py-1 mb-14 md:mb-0 lg:px-0">
         <div className="h-10 w-full sticky my-auto">
-          <h1 className="text-2xl pt-1 font-bold font-display ">
-            Service Canada
-          </h1>
+          <Link href="/home">
+            <a
+              className="text-2xl pt-1 font-bold font-display "
+              data-cy="homeButton"
+            >
+              <h1>Service Canada</h1>
+            </a>
+          </Link>
           <h2 className="sr-only" id="mainSiteNav">
             Menu
           </h2>
@@ -60,7 +65,7 @@ export function Menu(props) {
           <ActionButton
             id="loginBtn"
             href="/"
-            className="border rounded font-body bg-deep-blue-solid text-white py-1 px-6 h-10 flex items-center"
+            className="border rounded font-body bg-deep-blue-solid text-white py-1 px-4 xs:px-6 h-10 flex items-center"
           >
             {props.loginText}
           </ActionButton>
