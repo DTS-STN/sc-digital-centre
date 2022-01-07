@@ -2,7 +2,7 @@ import Layout from '../../components/organisms/Layout'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import aemService from '../api/aemServiceInstance'
-import { BENEFITS, SEARCH_PAGE } from '../../constants/aem'
+import { BENEFITS } from '../../constants/aem'
 import { getBenefitsPageContent } from '../../lib/pageContent'
 import PropTypes from 'prop-types'
 
