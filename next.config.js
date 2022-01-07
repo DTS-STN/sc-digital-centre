@@ -61,40 +61,64 @@ const config = {
   images: {
     domains: ['www.canada.ca'],
   },
+  //
+  async rewrites() {
+    return [
+      {
+        source: '/accueil',
+        destination: '/home',
+      },
+      {
+        source: '/prestations/:id',
+        destination: '/benefits/:id',
+      },
+      {
+        source: '/recherche',
+        destination: '/search',
+      },
+    ]
+  },
 }
 
 //
 // rewrites setup
 //
-config.rewrites = async () => {
-  const AEMService = require('./pages/api/AEMServiceClass')
-  const aemService = new AEMService(
-    process.env.NEXT_CONTENT_API,
-    process.env.NEXT_PUBLIC_BUILD_DATE
-  )
-  const { HOME_PAGE, SEARCH_PAGE } = require('./constants/aem')
+// config.rewrites = async () => {
+//   const AEMService = require('./pages/api/AEMServiceClass')
+//   const aemService = new AEMService(
+//     process.env.NEXT_CONTENT_API,
+//     process.env.NEXT_PUBLIC_BUILD_DATE
+//   )
+//   const { HOME_PAGE, SEARCH_PAGE } = require('./constants/aem')
 
-  // get and cache pages from aem
-  const pages = [await aemService.getPage(SEARCH_PAGE)]
+//   // get and cache pages from aem
+//   const pages = [await aemService.getPage(SEARCH_PAGE)]
 
-  // loop over all cached pages and build rewrite rules for next
-  const aemPagesRewrites = Object.values(pages).map((normalizedPage) => ({
-    source: `/${normalizedPage.elements?.scPageNameFr?.value}`,
-    destination: `/${normalizedPage.elements?.scPageNameEn?.value}`,
-    locale: false,
-  }))
+//   // loop over all cached pages and build rewrite rules for next
+//   const aemPagesRewrites = Object.values(pages).map((normalizedPage) => ({
+//     source: `/${normalizedPage.elements?.scPageNameFr?.value}`,
+//     destination: `/${normalizedPage.elements?.scPageNameEn?.value}`,
+//     locale: false,
+//   }))
 
-  return {
-    afterFiles: [
-      {
-        source: '/fr/accueil',
-        destination: '/home',
-        locale: false,
-      },
-      ...aemPagesRewrites,
-    ],
-  }
-}
+//   return {
+//     afterFiles: [
+//       {
+//         source: '/accueil',
+//         destination: '/home',
+//       },
+//       {
+//         source: '/prestations/:id',
+//         destination: '/benefits/',
+//       },
+//       {
+//         source: '/recherche',
+//         destination: '/search',
+//       },
+//       ...aemPagesRewrites,
+//     ],
+//   }
+// }
 
 config.headers = async () => {
   return [
