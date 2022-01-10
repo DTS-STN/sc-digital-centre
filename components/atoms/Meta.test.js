@@ -11,8 +11,8 @@ describe('Meta', () => {
       title: 'Meta title',
       description: 'Meta description',
       owner: 'Meta owner',
-      audience: 'Meta audience',
-      type: 'Meta type',
+      audience: ['Meta audience'],
+      type: ['Meta type'],
       dcTerms: ['Meta dcterms1', 'Meta dcterms2'],
       keywords: 'Meta keywords',
       img: {

@@ -58,6 +58,8 @@ describe('Home page', () => {
         tag: 'Program 1',
         text: 'Short Description 1',
         callToActionText: 'Call to Action 1',
+        btnId: 'idx1',
+        callToActionHref: '#',
       },
       {
         key: 'Page Name 2',
@@ -65,6 +67,8 @@ describe('Home page', () => {
         tag: 'Program 2',
         text: 'Short Description 2',
         callToActionText: 'Call to Action 2',
+        btnId: 'idx2',
+        callToActionHref: '#',
       },
     ],
   }

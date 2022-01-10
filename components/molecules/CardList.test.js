@@ -34,6 +34,8 @@ describe('CardList', () => {
             tag: 'Program 1',
             text: 'Short Description 1',
             callToActionText: 'Call to Action 1',
+            btnId: 'idx',
+            callToActionHref: '#',
           },
         ]}
       />
@@ -62,6 +64,8 @@ describe('CardList', () => {
             tag: 'Program 1',
             text: 'Short Description 1',
             callToActionText: 'Call to Action 1',
+            btnId: 'idx',
+            callToActionHref: '#',
           },
         ]}
       />
