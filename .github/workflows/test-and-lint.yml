@@ -61,7 +61,6 @@ jobs:
           FOLDER: coverage
 
       - name: Find Comment
-        if: steps.extract_branch.outputs.branch != 'main'
         uses: peter-evans/find-comment@v1
         id: fc
         with:
@@ -70,8 +69,8 @@ jobs:
           body-includes: |
             Jest Coverage Report Link for Branch
             https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/lcov-report
+      
       - name: Create or update comment # comment in pull request
-        if: steps.extract_branch.outputs.branch != 'main'
         uses: peter-evans/create-or-update-comment@v1
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
