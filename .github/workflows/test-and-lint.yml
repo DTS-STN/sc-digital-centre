@@ -61,6 +61,7 @@ jobs:
           FOLDER: coverage
      
       - name: Find Comment
+        if: steps.extract_branch.outputs.branch != 'dev'
         uses: peter-evans/find-comment@v1
         id: fc
         with:
@@ -68,15 +69,16 @@ jobs:
           comment-author: 'github-actions[bot]'
           body-includes: |
             e2e Coverage Report Link for Branch
-            https://dts-stn.github.io/sc-digital-centre/${{ steps.extract_branch.outputs.branch }}/coverage/e2e-report
+            https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/e2e-report
 
       - name: Create or update comment # comment in pull request
+        if: steps.extract_branch.outputs.branch != 'dev'
         uses: peter-evans/create-or-update-comment@v1
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             Jest Coverage Report Link for Branch
-            https://dts-stn.github.io/sc-digital-centre/${{ steps.extract_branch.outputs.branch }}/coverage/lcov-report
+            https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/lcov-report
          
           
