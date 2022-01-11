@@ -63,7 +63,6 @@ jobs:
       - name: Create or update comment # comment in pull request
         uses: peter-evans/create-or-update-comment@v1
         with:
-          comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             Jest Coverage Report Link for Branch
