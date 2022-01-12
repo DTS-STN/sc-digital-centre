@@ -8,6 +8,6 @@ import Error404 from '../../pages/404'
 describe('404', () => {
   it('renders without crashing', () => {
     render(<Error404 />)
-    expect(screen.getByText('404 - Page Not Found')).toBeInTheDocument()
+    expect(screen.getByText('404 Error - Page Not Found')).toBeInTheDocument()
   })
 })
