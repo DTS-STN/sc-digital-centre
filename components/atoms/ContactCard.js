@@ -1,33 +1,27 @@
 import PropTypes from 'prop-types'
-import { ActionButton } from '../atoms/ActionButton'
+import ActionButton from '../atoms/ActionButton'
 
-export const ContactCard = ({
-  title,
-  text,
-  linkHref,
-  linkText,
-  iconSrc,
-  iconAlt,
-  cardId,
-}) => {
+export default function ContactCard(props) {
   return (
-    <div className="p-6" id={cardId}>
+    <div className="p-6" id={props.cardId}>
       <img
         className="md:m-auto md:float-none float-left"
         width="75"
         height="75"
-        src={iconSrc}
-        alt={iconAlt}
+        src={props.iconSrc}
+        alt={props.iconAlt}
       />
       <div className="ml-24 md:ml-0 md:text-center md:float-none">
-        <h3 className="mb-5 text-blue-800 font-bold text-2xl  ">{title}</h3>
-        <p className="mb-5 ">{text}</p>
+        <h3 className="mb-5 text-blue-800 font-bold text-2xl  ">
+          {props.title}
+        </h3>
+        <p className="mb-5 ">{props.text}</p>
         <div className="flex">
           <ActionButton
-            id={`${cardId}_btn`}
+            id={`${props.cardId}_btn`}
             className="md:m-auto rounded-sm bg-gray-solid text-black focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 py-2 px-4 border-b-2 border-r-2 border-gray-dark active:bg-gray-300 hover:bg-gray-400 text-center shadow-md"
-            text={linkText}
-            href={linkHref}
+            text={props.linkText}
+            href={props.linkHref}
           />
         </div>
       </div>

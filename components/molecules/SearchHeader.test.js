@@ -43,7 +43,7 @@ describe('SearchHeader', () => {
         btnClearLabel={'t.clearResults'}
         btnFilterText={'t.filterResults'}
         btnFilterLabel={'t.filterResults'}
-        onSubmitHref="/searchResult"
+        onSubmitHref="/search"
       />
     )
     const results = await axe(container)

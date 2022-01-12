@@ -2,11 +2,12 @@ import React from 'react'
 import Layout from '../components/organisms/Layout'
 import SearchCard from '../components/molecules/SearchCard'
 import TopTasks from '../components/molecules/TopTasks'
-import { CardList } from '../components/molecules/CardList'
+import MostRequestedPages from '../components/organisms/MostRequestedPages'
+import CardList from '../components/molecules/CardList'
 import FeatureBlock from '../components/molecules/FeatureBlock'
 import ImageBox from '../components/organisms/ImageBox'
-import { ServiceCanada } from '../components/molecules/ServiceCanada'
-import { ContactUs } from '../components/molecules/ContactUs'
+import ServiceCanada from '../components/molecules/ServiceCanada'
+import ContactUs from '../components/molecules/ContactUs'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import {
@@ -19,24 +20,17 @@ import {
 } from '../constants/aem'
 import aemService from './api/aemServiceInstance'
 import { getHomePageContent } from '../lib/pageContent'
+import PropTypes from 'prop-types'
 
-export default function Home({
-  metadata,
-  locale,
-  findBenefitsAndServices,
-  topTasks,
-  mostRequestedPages,
-  featured,
-}) {
-  const t = locale === 'en' ? en : fr
+export default function Home(props) {
+  const t = props.locale === 'en' ? en : fr
 
   return (
     <Layout
-      locale={locale}
+      locale={props.locale}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
-      title={metadata.title}
-      toggleLangLink={metadata.toggleLangLink}
+      metadata={props.metadata}
     >
       <ImageBox
         imageSrc="https://www.canada.ca/content/dam/decd-endc/images/clear-lake-snowy-mountain.png"
@@ -47,13 +41,13 @@ export default function Home({
         priority={true}
       >
         <SearchCard
-          lang={locale}
+          lang={props.locale}
           headerText={t.searchFindBenefits}
           paraText={t.searchDesc}
           viewBenefitsServices={t.searchViewAllBenefits}
           searchBarPlaceholder={t.searchPlaceholder}
           searchBarText={t.search}
-          onSubmitHref={findBenefitsAndServices.searchLink[locale]}
+          onSubmitHref={props.findBenefitsAndServices.searchLink}
           dataCyInput="searchInput"
           dataCyButton="searchButton"
         />
@@ -69,24 +63,22 @@ export default function Home({
             createAccountText={t.serviceCanadaCreateAccount}
           />
           <TopTasks
-            topTasksHeader={topTasks.header}
+            topTasksHeader={props.topTasks.header}
             topTasksDescription={t.topTasksDescritpion}
-            topTasksList={topTasks.topTasksList}
+            topTasksList={props.topTasks.topTasksList}
           />
         </div>
-        <div className="lg:w-3/4 md:pl-12">
-          <h2 className="font-bold font-display text-2xl mb-4">
-            {t.mostRequestedTitle}
-          </h2>
-          <CardList cardList={mostRequestedPages.cards} />
-        </div>
+        <MostRequestedPages
+          title={t.mostRequestedTitle}
+          cardList={props.mostRequestedPages.cards}
+        />
       </div>
       {/* feature with image */}
       <FeatureBlock
-        title={featured.header}
-        body={featured.body}
-        imgSrc={featured.imgSrc}
-        imgAlt={featured.imgAlt}
+        title={props.featured.header}
+        body={props.featured.body}
+        imgSrc={props.featured.imgSrc}
+        imgAlt={props.featured.imgAlt}
         buttonText="Text on button"
         featuredHref="#"
         btnId="featured-content"
@@ -115,4 +107,29 @@ export async function getStaticProps({ locale }) {
       featured,
     },
   }
+}
+
+Home.propTypes = {
+  /**
+   * Metadata for the Head of Digital Centre
+   */
+  metadata: PropTypes.object,
+
+  /**
+   * current locale in the address
+   */
+  locale: PropTypes.string,
+
+  /**
+   * Top Benefits to be displayed on the home page
+   */
+  topTasks: PropTypes.object,
+  /**
+   * Most requested pages to be displayed on the home page
+   */
+  mostRequestedPages: PropTypes.object,
+  /**
+   * The currently featured benefit
+   */
+  featured: PropTypes.object,
 }

@@ -1,29 +1,19 @@
+import CardList from '../molecules/CardList'
 import PropTypes from 'prop-types'
-import Card from '../atoms/Card'
 
-export default function CardList(props) {
-  const displayCards = props.cardList.map((card) => (
-    <li className="flex flex-grow" key={card.key}>
-      <Card
-        title={card.title}
-        text={card.text}
-        callToActionText={card.callToActionText}
-        callToActionHref={card.callToActionHref}
-        btnId={card.btnId}
-      />
-    </li>
-  ))
+export default function MostRequestedPages({ title, cardList }) {
   return (
-    <ul
-      className="grid grid-cols-1 gap-6 md:grid-cols-2 md:pl-1"
-      data-testid="cardList"
-    >
-      {props.cardList ? displayCards : ''}
-    </ul>
+    <div className="lg:w-3/4 md:pl-12">
+      <h2 className="font-bold font-display text-2xl mb-4">{title}</h2>
+      <CardList cardList={cardList} />
+    </div>
   )
 }
 
-CardList.propTypes = {
+MostRequestedPages.propTypes = {
+  // title of the cardlist
+  title: PropTypes.string,
+
   /**
    * The card page that the card will display
    */

@@ -1,12 +1,12 @@
 /// <reference types="cypress" />
 
-describe('Splash page loads and', () => {
+describe('Index page loads and', () => {
     beforeEach(() => {
       cy.visit('/')
       cy.injectAxe();
     })
   
-    it('displays the index (Splash) page', () => {
+    it('displays the index (Index) page', () => {
         cy.url().should("contains", "/");
     })
 

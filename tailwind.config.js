@@ -1,8 +1,11 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false,
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  darkMode: 'media',
   theme: {
     fontFamily: {
       display: ['Lato', 'sans-serif'],
@@ -28,7 +31,7 @@ module.exports = {
         },
         'bright-blue': {
           light: '#78B9E4',
-          solid: '#3498DB',
+          solid: '#0069AD',
           dark: '#245C81',
         },
         'deep-blue': {

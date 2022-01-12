@@ -1,5 +1,5 @@
 import propTypes from 'prop-types'
-import { ActionButton } from '../atoms/ActionButton'
+import ActionButton from '../atoms/ActionButton'
 import Image from 'next/image'
 /**
  * Featured Content banner
@@ -12,9 +12,6 @@ export default function FeatureBlock(props) {
         id="feature-block"
         data-testid="featureBlock"
       >
-        {/* <div className="bg-splash-page bg-cover bg-center w-full py-32  ">
-  
-      </div> */}
         <div className="aspect-w-5 aspect-h-2 sm:aspect-h-1 xl:ml-3 w-full min-w-max mr-break-out">
           <Image
             src={props.imgSrc}
@@ -24,7 +21,6 @@ export default function FeatureBlock(props) {
             objectPosition="50% 50%"
           />
         </div>
-        {/* grid sm:ml-7 md:ml-10 lg:ml-12 layout-container */}
         <div className="flex flex-col place-content-between mx-auto md:w-3/5">
           <div className="flex flex-col m-2">
             <h2 className="font-display font-bold text-xl sm:text-2xl text-dark-solid">

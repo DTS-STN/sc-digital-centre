@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import CardList from './CardList'
+import MostRequestedPages from './MostRequestedPages'
 
 import { useRouter } from 'next/router'
 // mocks useRouter to be able to use component' router.asPath
@@ -19,14 +19,11 @@ jest.mock('next/link', () => ({
 }))
 expect.extend(toHaveNoViolations)
 
-describe('CardList', () => {
-  it('renders CardList', () => {
-    useRouter.mockImplementation(() => ({
-      pathname: '/',
-      asPath: '/',
-    }))
-    render(
-      <CardList
+describe('MostRequestedPages', () => {
+  it('renders MostRequestedPages component', () => {
+    const { container } = render(
+      <MostRequestedPages
+        title="CardList Title"
         cardList={[
           {
             key: 'Page Name 1',
@@ -38,25 +35,18 @@ describe('CardList', () => {
             callToActionHref: '#',
           },
         ]}
-      />
+      ></MostRequestedPages>
     )
-    const titleText = screen.getByText('Title 1')
-    // const tagText = screen.getByText('Program 1')  there are no tags in the current version of Card
-    const textText = screen.getByText('Short Description 1')
-    const linkText = screen.getByText('Call to Action 1')
-    expect(titleText).toBeInTheDocument()
-    // expect(tagText).toBeInTheDocument()            there are no tags in the current version of Card
-    expect(textText).toBeInTheDocument()
-    expect(linkText).toBeInTheDocument()
+    const titletext = screen.getByText('CardList Title')
+    expect(titletext).toBeInTheDocument()
+    const cardTitleText = screen.getByText('Title 1')
+    expect(cardTitleText).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
-    useRouter.mockImplementation(() => ({
-      pathname: '/',
-      asPath: '/',
-    }))
     const { container } = render(
-      <CardList
+      <MostRequestedPages
+        title="Card Title"
         cardList={[
           {
             key: 'Page Name 1',
@@ -68,7 +58,7 @@ describe('CardList', () => {
             callToActionHref: '#',
           },
         ]}
-      />
+      ></MostRequestedPages>
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()

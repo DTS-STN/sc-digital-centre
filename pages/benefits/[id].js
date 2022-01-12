@@ -2,37 +2,48 @@ import Layout from '../../components/organisms/Layout'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import aemService from '../api/aemServiceInstance'
-import { BENEFITS, SEARCH_PAGE } from '../../constants/aem'
+import { BENEFITS } from '../../constants/aem'
+import { getBenefitsPageContent } from '../../lib/pageContent'
+import PropTypes from 'prop-types'
 
-export default function BenefitPage({ locale, benefit }) {
-  const benefitData = benefit.elements
+export default function BenefitPage(props) {
+  const benefitData = props.benefit.elements
 
-  const t = locale === 'en' ? en : fr
+  const t = props.locale === 'en' ? en : fr
 
   return (
     <Layout
-      locale={locale}
+      locale={props.locale}
       title={benefitData.scTitleEn.value}
       phase={t.phaseBannerTag}
       bannerText={t.phaseBannerText}
+      metadata={props.metadata}
     >
       <h1 className="font-extrabold text-red-800 text-3xl text-center mt-12">
-        {benefitData.scTitleEn.value}
+        {props.locale === 'en'
+          ? benefitData.scTitleEn.value
+          : benefitData.scTitleFr.value}
       </h1>
 
       <div className="w-9/12 mx-auto border my-24">
-        <p className="p-5">{benefitData.scLongDescriptionEn.value}</p>
+        <p className="p-5">
+          {props.locale === 'en'
+            ? benefitData.scLongDescriptionEn.value
+            : benefitData.scLongDescriptionFr.value}
+        </p>
       </div>
     </Layout>
   )
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
   const benefits = await aemService.getFragment(BENEFITS)
-  const paths = benefits.data.entities.map(({ properties }) => {
-    return { params: { id: properties.name } }
+  const paths = benefits.data.entities.flatMap(({ properties }) => {
+    return [
+      { params: { id: properties.name }, locale: locales[0] },
+      { params: { id: properties.name }, locale: locales[1] },
+    ]
   })
-
   return {
     paths,
     fallback: false,
@@ -40,13 +51,30 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ locale, params }) {
-  const benefit = await aemService.getBenefit(`benefits/${params.id}.json`)
-  const searchPage = await aemService.getPage(SEARCH_PAGE)
+  let { metadata, benefit } = await getBenefitsPageContent(locale, params.id)
 
   return {
     props: {
-      locale: locale,
+      locale,
+      metadata,
       benefit,
     },
   }
+}
+
+BenefitPage.propTypes = {
+  /**
+   * Metadata for the Head of Digital Centre
+   */
+  metadata: PropTypes.object,
+
+  /**
+   * current locale in the address
+   */
+  locale: PropTypes.string,
+
+  /**
+   * Selected benefit
+   */
+  benefit: PropTypes.object,
 }
