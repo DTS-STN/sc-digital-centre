@@ -3,6 +3,20 @@ import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import MostRequestedPages from './MostRequestedPages'
 
+import { useRouter } from 'next/router'
+// mocks useRouter to be able to use component' router.asPath
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
+}))
+
+// the code below is to avoid the following error:
+//    "An update to Link inside a test was not wrapped in act(...)"
+jest.mock('next/link', () => ({
+  __esModule: true,
+  default: ({ children, href }) => (
+    <children.type {...children.props} href={href} />
+  ),
+}))
 expect.extend(toHaveNoViolations)
 
 describe('MostRequestedPages', () => {
@@ -17,6 +31,8 @@ describe('MostRequestedPages', () => {
             tag: 'Program 1',
             text: 'Short Description 1',
             callToActionText: 'Call to Action 1',
+            btnId: 'idx',
+            callToActionHref: '#',
           },
         ]}
       ></MostRequestedPages>
@@ -38,6 +54,8 @@ describe('MostRequestedPages', () => {
             tag: 'Program 1',
             text: 'Short Description 1',
             callToActionText: 'Call to Action 1',
+            btnId: 'idx',
+            callToActionHref: '#',
           },
         ]}
       ></MostRequestedPages>
