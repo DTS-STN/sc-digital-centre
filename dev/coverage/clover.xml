@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1641930138163" clover="3.2.0">
-  <project timestamp="1641930138164" name="All files">
-    <metrics statements="175" coveredstatements="120" conditionals="125" coveredconditionals="80" methods="65" coveredmethods="44" elements="365" coveredelements="244" complexity="0" loc="175" ncloc="175" packages="6" files="33" classes="33"/>
+<coverage generated="1642084727699" clover="3.2.0">
+  <project timestamp="1642084727699" name="All files">
+    <metrics statements="177" coveredstatements="122" conditionals="125" coveredconditionals="80" methods="67" coveredmethods="46" elements="369" coveredelements="248" complexity="0" loc="177" ncloc="177" packages="6" files="35" classes="35"/>
     <package name="components.atoms">
       <metrics statements="29" coveredstatements="25" conditionals="16" coveredconditionals="14" methods="12" coveredmethods="10"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -176,7 +176,15 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="31" coveredstatements="16" conditionals="8" coveredconditionals="6" methods="12" coveredmethods="4"/>
+      <metrics statements="33" coveredstatements="18" conditionals="8" coveredconditionals="6" methods="14" coveredmethods="6"/>
+      <file name="404.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/404.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+      <file name="500.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/500.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
       <file name="_app.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/_app.js">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
