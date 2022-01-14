@@ -15,7 +15,6 @@ export default function Header(props) {
     if (props.toggleLangLink && router?.route && router.locale) {
       updatedLangToggleLink = {
         pathname: props.toggleLangLink,
-        query: currentRouteQueryParams,
       }
     }
     setLangToggleLink(updatedLangToggleLink)
