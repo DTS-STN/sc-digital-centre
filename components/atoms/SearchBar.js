@@ -2,8 +2,6 @@ import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-// Ben's Comment
-
 /*
  *  Search Bar component
  */
