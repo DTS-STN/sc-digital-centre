@@ -8,6 +8,7 @@ environments:
   benc:
   benl: 
   release:
+  dashboard:
 
 releases:
 # Single Tier Website
