@@ -25,8 +25,10 @@ version = "2020.2"
 
 project {
     vcsRoot(HttpsGithubComDtsStnScDigitalCentreRelease)
+    vcsRoot(HttpsGithubComDtsStnScDigitalCentreDashboard)
     vcsRoot(HttpsGithubComDtsStnScDigitalCentreDynamic)
     buildType(Build_Release)
+    buildType(Build_Dashboard)
     buildType(Build_Dynamic)
 }
 
@@ -36,6 +38,17 @@ object HttpsGithubComDtsStnScDigitalCentreRelease : GitVcsRoot({
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
     branchSpec = "+:refs/heads/dev"
+    authMethod = uploadedKey {
+        userName = "git"
+        uploadedKey = "dtsrobot"
+    }
+})
+
+object HttpsGithubComDtsStnScDigitalCentreDashboard : GitVcsRoot({
+    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_dashboard"
+    url = "git@github.com:DTS-STN/sc-digital-centre.git"
+    branch = "refs/heads/dashboard"
+    branchSpec = "+:refs/heads/dashboard"
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "dtsrobot"
@@ -79,6 +92,69 @@ object Build_Release: BuildType({
         root(HttpsGithubComDtsStnScDigitalCentreRelease)
     }
    
+    steps {
+        dockerCommand {
+            name = "Build & Tag Docker Image"
+            commandType = build {
+                source = file {
+                    path = "Dockerfile"
+                }
+                namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
+                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL%"
+            }
+        }
+        script {
+            name = "Login to Azure and ACR"
+            scriptContent = """
+                az login --service-principal -u %TEAMCITY_USER% -p %TEAMCITY_PASS% --tenant %env.TENANT-ID%
+                az account set -s %env.SUBSCRIPTION%
+                az acr login -n MTSContainers
+            """.trimIndent()
+        }
+        dockerCommand {
+            name = "Push Image to ACR"
+            commandType = push {
+                namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
+            }
+        }
+        script {
+            name = "Deploy w/ Helmfile"
+            scriptContent = """
+                cd ./helmfile
+                az account set -s %env.SUBSCRIPTION%
+                az aks get-credentials --admin --resource-group %env.RG_DEV% --name %env.K8S_CLUSTER_NAME%
+                helmfile -e %env.TARGET% apply
+            """.trimIndent()
+        }
+    }
+    triggers {
+        vcs {
+            branchFilter = "+:*"
+        }
+    }
+})
+
+
+object Build_Dashboard: BuildType({
+    name = "Build_Dashboard"
+    description = "Deploys Pull Request to release envrionment when Dashboard are created."
+    params {
+        param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
+        param("env.PROJECT", "sc-digital-centre")
+        param("env.BASE_DOMAIN","bdm-dev.dts-stn.com")
+        param("env.SUBSCRIPTION", "%vault:dts-sre/azure!/decd-dev-subscription-id%")
+        param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S")
+        param("env.RG_DEV", "ESdCDPSBDMK8SDev")
+        param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
+        param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
+        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
+        param("env.TARGET", "dashboard")
+        param("env.BRANCH", "dashboard")
+    }
+    vcs {
+        root(HttpsGithubComDtsStnScDigitalCentreDashboard)
+    }
+
     steps {
         dockerCommand {
             name = "Build & Tag Docker Image"
