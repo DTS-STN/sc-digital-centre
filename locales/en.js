@@ -198,4 +198,25 @@ export default {
     'https://www.canada.ca/en/transparency/privacy.html',
   reportAProblemSubmit: 'Submit',
   topTasks: 'Top Tasks',
+
+  //
+  // Dashboard
+  //
+
+  // Benefit Card
+  pendingBenefits: 'Pending benefits:',
+  viewMore: 'View more +',
+  viewLess: 'View less +',
+
+  // Benefit Card Header
+  applicationSubmitted: 'Application submitted on:',
+  estimatedDateOfReviewCompletion: 'Estimeated date of review completion',
+
+  // Benefit Card details
+  applicationDetails: 'Application details',
+  applicationDate: 'Application date',
+  applicationDescription: 'Application description',
+  additionalInformation: 'Additional description',
+  claimUpdates: 'Claim updates',
+  viewAllActivityButton: 'View all activity and benefits history +',
 }
