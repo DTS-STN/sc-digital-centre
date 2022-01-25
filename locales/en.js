@@ -210,13 +210,13 @@ export default {
 
   // Benefit Card Header
   applicationSubmitted: 'Application submitted on:',
-  estimatedDateOfReviewCompletion: 'Estimeated date of review completion',
+  estimatedDateOfReviewCompletion: 'Estimated date of review completion',
 
   // Benefit Card details
   applicationDetails: 'Application details',
   applicationDate: 'Application date',
   applicationDescription: 'Application description',
-  additionalInformation: 'Additional description',
+  additionalInformation: 'Additional information',
   claimUpdates: 'Claim updates',
   viewAllActivityButton: 'View all activity and benefits history +',
 }

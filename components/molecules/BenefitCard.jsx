@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import OasBenefitCard from './OasBenefitCard'
+import PendingBenefitCard from './PendingBenefitCard'
 import BenefitCardHeader from '../atoms/BenefitCardHeader'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
@@ -15,17 +16,13 @@ const BenefitCard = (props) => {
   }
 
   const renderBenefitDetails = () => {
-    switch (props.benefit.benefitType) {
-      case 'CPP':
-      case 'OAS':
+    switch (props.benefit.status) {
+      case 'Pending':
         return (
-          <OasBenefitCard
-            oldAgeSecurity={props.benefit}
-            locale={props.locale}
-          />
+          <PendingBenefitCard benefit={props.benefit} locale={props.locale} />
         )
-      case 'EI':
-      case 'GIS':
+      case 'Active':
+        return null
       default:
         return null
     }
