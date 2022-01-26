@@ -53,9 +53,7 @@ export default function BenefitTasks(props) {
   return (
     <div className="bg-gray-lighter mt-6 px-8 py-6">
       <h3 className="font-display font-bold text-xl">
-        {props.isExpanded
-          ? `All ${props.benefitType} Tasks`
-          : `My Top ${props.benefitType} Tasks`}
+        {`All ${props.benefitType} Tasks`}
       </h3>
       <ul className="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6">
         {displayedTasks.map((value, index) => {
