@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import PendingBenefitCard from './PendingBenefitCard'
-import BenefitCardHeader from '../atoms/BenefitCardHeader'
 import BenefitTasks from './BenefitTasks'
+import BenefitCardHeaderActive from '../atoms/BenefitCardHeaderActive'
+import BenefitCardHeaderPending from '../atoms/BenefitCardHeaderPending'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 
@@ -33,13 +34,27 @@ const BenefitCard = (props) => {
       <div className="w-12/12 mx-auto rounded overflow-hidden shadow-lg grid grid-cols-1 divide-y divide-grey-500">
         {/* Benefit Card Header */}
         <section>
-          <BenefitCardHeader benefit={props.benefit} locale={props.locale} />
+          {props.benefit.status == 'Active' ? (
+            <BenefitCardHeaderActive
+              benefit={props.benefit}
+              locale={props.locale}
+            />
+          ) : (
+            <BenefitCardHeaderPending
+              benefit={props.benefit}
+              locale={props.locale}
+            />
+          )}
         </section>
 
         {/* Pending benefits */}
         <section>
           <div className="font-display text-lg ml-8 py-5">
-            <span className="font-bold">{t.pendingBenefits}</span>
+            <span className="font-bold">
+              {props.benefit.status == 'Active'
+                ? t.activeBenefits
+                : t.pendingBenefits}
+            </span>
             <span className="ml-2">{props.benefit.pendingBenefits}</span>
           </div>
         </section>
