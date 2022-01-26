@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import OasBenefitCard from './OasBenefitCard'
 import PendingBenefitCard from './PendingBenefitCard'
 import BenefitCardHeader from '../atoms/BenefitCardHeader'
+import BenefitTasks from './BenefitTasks'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 
@@ -38,7 +38,7 @@ const BenefitCard = (props) => {
 
         {/* Pending benefits */}
         <section>
-          <div className="font-display text-lg ml-10 py-5">
+          <div className="font-display text-lg ml-8 py-5">
             <span className="font-bold">{t.pendingBenefits}</span>
             <span className="ml-2">{props.benefit.pendingBenefits}</span>
           </div>
@@ -46,11 +46,10 @@ const BenefitCard = (props) => {
 
         {/* Top tasks */}
         <section>
-          <div className="mt-5">
-            <div className="pl-10 pt-5 h-32 bg-gray-solid">
-              All {props.benefit.benefitType} tasks
-            </div>
-          </div>
+          <BenefitTasks
+            benefitType={props.benefit.benefitType}
+            isExpanded={isOpen}
+          />
         </section>
 
         {/* Benefit Card Details */}
