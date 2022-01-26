@@ -205,12 +205,18 @@ export default {
 
   // Benefit Card
   pendingBenefits: 'Pending benefits:',
+  activeBenefits: 'Active benefits:',
   viewMore: 'View more +',
   viewLess: 'View less +',
 
   // Benefit Card Header
   applicationSubmitted: 'Application submitted on:',
   estimatedDateOfReviewCompletion: 'Estimated date of review completion',
+  paymentAmount: 'Payment amount',
+  daysUntilNextPayment: 'Days until next payment',
+  latestUpdate: 'Latest update',
+  documentReviewed: 'Document reviewed',
+  viewPaymentHistory: 'View payment history +',
 
   // Benefit Card details
   applicationDetails: 'Application details',
