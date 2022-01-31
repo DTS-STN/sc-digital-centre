@@ -8,12 +8,12 @@ const PendingBenefitCard = (props) => {
   const t = props.locale === 'en' ? en : fr
 
   return (
-    <div className="grid grid-cols-1 divide-y divide-grey-500 font-display my-4">
+    <div className="grid grid-cols-1 divide-y divide-grey-500 my-4">
       <section>
-        <div className="sm:flex sm:justify-around sm:grid sm:grid-cols-7 sm:gap-4 sm:mx-auto sm:mt-4">
+        <div className="sm:grid sm:grid-cols-7 sm:mx-auto sm:mt-4">
           <div
             id="claimUpdates"
-            className="col-span-2 sm:col-span-3 lg:col-span-2 sm:w-60 ml-7 mb-6 sm:mb-3"
+            className="col-span-2 mb-3 sm:col-span-3 lg:col-span-2 sm:w-60 sm:ml-7"
           >
             <VerticalStepper
               benefitStatus={props.benefit.status}

@@ -16,8 +16,8 @@ export default function PendingHeader(props) {
         </h2>
       </div>
 
-      <div className="sm:flex sm:justify-around sm:grid sm:grid-cols-4 divide-x-2 sm:mx-auto">
-        <div id="paymentStartDate" className="col-span-1 px-3 py-4">
+      <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
+        <div id="paymentStartDate" className="col-span-1 py-4 sm:px-3">
           <div className="font-bold font-display text-5xl mb-2">
             {props.benefit.benefitType}
           </div>
@@ -25,17 +25,17 @@ export default function PendingHeader(props) {
             {props.benefit.benefitName}
           </p>
         </div>
-
+        <div className="flex-grow w-1/3 border-t-2 border-gray-solid-400 sm:hidden"></div>
         <div
           id="paymentStartDate"
           className="font-display col-span-3 sm:grid grid-cols-3"
         >
-          <div id="paymentEndDate" className="pl-10 py-4">
+          <div id="paymentEndDate" className="py-4 sm:pl-10">
             <p className="text-base">{t.applicationSubmitted}</p>
             <p className="font-bold text-lg">{props.benefit.applicationDate}</p>
           </div>
 
-          <div id="paymentEndDate" className="pl-10 py-4">
+          <div id="paymentEndDate" className="py-4 sm:pl-10">
             <p className="text-base w-44">
               {t.estimatedDateOfReviewCompletion}
             </p>
@@ -45,7 +45,7 @@ export default function PendingHeader(props) {
           </div>
 
           {/* Progressbar Placeholder */}
-          <div id="paymentEndDate" className="pl-10 py-4">
+          <div id="paymentEndDate" className="py-4 sm:pl-10">
             <p className="font-display font-bold text-lg">{'Progressbar'}</p>
             <p className="font-display text-base">4 out of 6 review</p>
             <p className="font-display text-base">steps complete</p>
