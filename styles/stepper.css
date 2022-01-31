@@ -98,6 +98,13 @@
     text-align: left;
 }
 
+@media only screen and (max-width: 640px) {
+    .stepper-container h1 {
+        margin: 0;
+        padding-left: 1rem;
+    }
+}
+
 .circle-progress-indicator {
     display: flex;
     justify-content: center;
