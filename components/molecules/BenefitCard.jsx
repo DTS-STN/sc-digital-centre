@@ -20,7 +20,10 @@ const BenefitCard = (props) => {
     switch (props.benefit.status) {
       case 'Pending':
         return (
-          <PendingBenefitCard benefit={props.benefit} locale={props.locale} />
+          <>
+            <PendingBenefitCard benefit={props.benefit} locale={props.locale} />
+            <div className="flex-grow border-t-2 border-gray-solid-400 mx-4 sm:mx-0"></div>
+          </>
         )
       case 'Active':
         return null
@@ -31,7 +34,7 @@ const BenefitCard = (props) => {
 
   return (
     <div className="layout-container py-4">
-      <div className="w-12/12 mx-auto rounded overflow-hidden shadow-lg grid grid-cols-1 divide-y divide-grey-500">
+      <div className="w-full mx-auto rounded overflow-hidden shadow-lg grid grid-cols-1">
         {/* Benefit Card Header */}
         <section>
           {props.benefit.status == 'Active' ? (
@@ -46,10 +49,10 @@ const BenefitCard = (props) => {
             />
           )}
         </section>
-
         {/* Pending benefits */}
         <section>
-          <div className="font-display text-lg ml-8 py-5">
+          <div className="flex-grow border-t-2 border-gray-solid-400 mx-4 sm:mx-0"></div>
+          <div className="font-display text-lg ml-4 py-5 sm:ml-8">
             <span className="font-bold">
               {props.benefit.status == 'Active'
                 ? t.activeBenefits
@@ -57,6 +60,7 @@ const BenefitCard = (props) => {
             </span>
             <span className="ml-2">{props.benefit.pendingBenefits}</span>
           </div>
+          <div className="flex-grow border-t-2 border-gray-solid-400 mx-4 sm:mx-0"></div>
         </section>
 
         {/* Top tasks */}
@@ -70,7 +74,7 @@ const BenefitCard = (props) => {
         {/* Benefit Card Details */}
         <div>{isOpen && renderBenefitDetails()}</div>
         <section>
-          <button onClick={handleClick} className="px-10 py-5">
+          <button onClick={handleClick} className="pl-5 py-5 sm:pl-10">
             {btnCaption}
           </button>
         </section>
