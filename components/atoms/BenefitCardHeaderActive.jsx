@@ -44,7 +44,12 @@ export default function ActiveHeader(props) {
               {props.benefit.nextPaymentAmount}
             </p>
             <button onClick={viewPaymentHistory}>
-              <p className="mt-1 text-sm">{t.viewPaymentHistory}</p>
+              <a
+                href={'./dashboard'}
+                className="text-sm mt-1 text-bright-blue-solid underline"
+              >
+                {t.viewPaymentHistory}
+              </a>
             </button>
           </div>
 
@@ -62,7 +67,12 @@ export default function ActiveHeader(props) {
               {props.benefit.lastUpdates[0]?.description}
             </p>
             <button onClick={viewAllActivityAndBenefitHistory}>
-              <p className="text-sm mt-1">{t.viewAllActivityButton}</p>
+              <a
+                href={'./dashboard'}
+                className="text-sm mt-1 text-bright-blue-solid underline"
+              >
+                {t.viewAllActivityButton}
+              </a>
             </button>
           </div>
         </div>
