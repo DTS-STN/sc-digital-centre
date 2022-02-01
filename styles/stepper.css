@@ -9,7 +9,7 @@
     margin-bottom: 16px;
     margin-left: 10px;
 }
-  
+
 .step {
     padding: 10px;
     display: flex;
@@ -43,7 +43,7 @@
     background-color: rgb(15, 161, 15);
     border-color: rgb(15, 161, 15);
 }
-  
+
 .step.empty .circle {
     visibility: hidden;
 }
@@ -54,11 +54,11 @@
     width: 2px;
     margin-top: 5px;
     margin-left: auto;
-    margin-right: auto;  
+    margin-right: auto;
 }
 
 .step.pending .line {
-    background-color: rgb(255, 162, 22); 
+    background-color: rgb(255, 162, 22);
 }
 
 .step.active .line {
@@ -74,7 +74,7 @@
     height: 100%;
     margin-top: 0px;
 }
-  
+
 .stepper-content {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -104,4 +104,3 @@
         padding-left: 1rem;
     }
 }
-
