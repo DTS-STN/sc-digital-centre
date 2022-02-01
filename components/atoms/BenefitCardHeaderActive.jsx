@@ -49,9 +49,11 @@ export default function ActiveHeader(props) {
             </button>
           </div>
 
-          <div id="paymentEndDate" className="pl-10 py-4">
+          <div id="nextPaymentDueDate" className="pl-10 py-4 relative">
             <p className="text-base">{t.daysUntilNextPayment}</p>
-            <CircleProgressBar progress={11} steps={22} />
+            <div className="pl-10 py-6">
+              <CircleProgressBar progress={11} steps={22} />
+            </div>
           </div>
 
           {/* Progressbar Placeholder */}
