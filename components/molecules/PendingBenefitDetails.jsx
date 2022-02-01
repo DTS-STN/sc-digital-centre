@@ -4,16 +4,16 @@ import VerticalStepper from '../atoms/VerticalStepper'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 
-const PendingBenefitCard = (props) => {
+const PendingBenefitDetails = (props) => {
   const t = props.locale === 'en' ? en : fr
 
   return (
-    <div className="grid grid-cols-1 divide-y divide-grey-500 font-display my-4">
+    <div className="grid grid-cols-1 divide-y divide-grey-500 my-4">
       <section>
-        <div className="sm:justify-around sm:grid sm:grid-cols-7 sm:gap-4 sm:mx-auto sm:mt-4">
+        <div className="sm:grid sm:grid-cols-7 sm:mx-auto sm:mt-4">
           <div
             id="claimUpdates"
-            className="col-span-2 sm:col-span-3 lg:col-span-2 sm:w-60 sm:ml-7 mb-6 sm:mb-3"
+            className="col-span-2 mb-3 sm:col-span-3 lg:col-span-2 sm:w-60 sm:ml-7"
           >
             <VerticalStepper
               benefitStatus={props.benefit.status}
@@ -24,21 +24,21 @@ const PendingBenefitCard = (props) => {
 
           <div
             id="details"
-            className="col-span-5 sm:col-span-4 lg:col-span-5 sm:grid ml-5 mr-5"
+            className="col-span-5 sm:col-span-4 lg:col-span-5 sm:grid mr-5"
           >
-            <div id="application_details" className="mb-5 sm:mb-0">
+            <div id="application_details" className="ml-5 mb-5 sm:mb-0">
               <p className="font-bold text-xl">{t.applicationDetails}</p>
               <p className="font-normal text-base">
                 {props.benefit.statusDescription}
               </p>
             </div>
-            <div id="application_description" className="mb-5 sm:mb-0">
+            <div id="application_description" className="ml-5 mb-5 sm:mb-0">
               <p className="font-bold text-base">{t.applicationDescription}</p>
               <p className="text-base">
                 {props.benefit.applicationDescription}
               </p>
             </div>
-            <div id="additionalInformation" className="mb-5 sm:mb-0">
+            <div id="additionalInformation" className="ml-5 mb-5 sm:mb-0">
               <p className="font-bold text-base">{t.additionalInformation}</p>
               <p className="text-base">{props.benefit.additionalInformation}</p>
             </div>
@@ -49,7 +49,7 @@ const PendingBenefitCard = (props) => {
   )
 }
 
-PendingBenefitCard.propTypes = {
+PendingBenefitDetails.propTypes = {
   benefit: PropTypes.shape({
     benefitType: PropTypes.string,
     benefitName: PropTypes.string,
@@ -61,4 +61,4 @@ PendingBenefitCard.propTypes = {
   }),
 }
 
-export default PendingBenefitCard
+export default PendingBenefitDetails
