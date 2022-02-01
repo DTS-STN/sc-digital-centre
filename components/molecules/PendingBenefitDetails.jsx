@@ -13,7 +13,7 @@ const PendingBenefitCard = (props) => {
         <div className="sm:justify-around sm:grid sm:grid-cols-7 sm:gap-4 sm:mx-auto sm:mt-4">
           <div
             id="claimUpdates"
-            className="col-span-2 sm:col-span-3 lg:col-span-2 sm:w-60 ml-7 mb-6 sm:mb-3"
+            className="col-span-2 sm:col-span-3 lg:col-span-2 sm:w-60 sm:ml-7 mb-6 sm:mb-3"
           >
             <VerticalStepper
               benefitStatus={props.benefit.status}
