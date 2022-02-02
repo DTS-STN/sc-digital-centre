@@ -11,12 +11,14 @@ const ActiveBenefitDetails = (props) => {
   return (
     <section>
       <div className="flex-col ml-4 my-4 sm:m-6 sm:flex sm:flex-row">
-        <VerticalStepper
-          benefitStatus={props.benefit.status}
-          lastUpdates={props.benefit.lastUpdates}
-          locale={props.locale}
-        />
-        <div className="flex-col mt-7 sm:mt-0 sm:ml-5 lg:ml-20">
+        <div className="lg:ml-7">
+          <VerticalStepper
+            benefitStatus={props.benefit.status}
+            lastUpdates={props.benefit.lastUpdates}
+            locale={props.locale}
+          />
+        </div>
+        <div className="flex-col mt-7 sm:mt-0 sm:ml-5 lg:ml-24">
           <p className="font-bold text-xl">{t.pensionDetails}</p>
           <div className="flex-col sm:mt-3 sm:flex sm:flex-row">
             <div>
@@ -41,7 +43,7 @@ const ActiveBenefitDetails = (props) => {
                 </p>
               </div>
             </div>
-            <div className="mt-7 sm:mt-0 sm:ml-5 lg:ml-10">
+            <div className="mt-7 sm:mt-0 sm:ml-5 lg:ml-32">
               <div id="payee_address">
                 <span className="font-bold text-base">{t.payeeAddress}</span>
                 {props.benefit.payeeAddress != '' ? (
@@ -87,7 +89,7 @@ const ActiveBenefitDetails = (props) => {
             </div>
             <div
               id="payment_details"
-              className="w-44 mt-7 sm:mt-0 sm:ml-5 lg:ml-10"
+              className="w-44 mt-7 sm:mt-0 sm:ml-5 lg:ml-32"
             >
               <span className="font-bold text-base">{t.paymentDetails}</span>
               {props.benefit.paymentType != '' ? (

@@ -34,11 +34,7 @@ export default function BenefitCardHeaderActive(props) {
             {props.benefit.benefitName}
           </p>
         </div>
-        <HorizontalRule
-          width="w-1/3"
-          colour="dark-solid"
-          visibility="sm:hidden"
-        />
+        <HorizontalRule width="w-1/3" visibility="sm:hidden" />
         <div
           id="paymentStartDate"
           className="font-display col-span-3 sm:grid grid-cols-3 sm:pl-10"
