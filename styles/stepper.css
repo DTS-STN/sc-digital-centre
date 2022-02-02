@@ -1,17 +1,12 @@
-.stepper-container {
-    width: 100%;
-}
-
 .stepper-container h1 {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size:20px;
-    margin-bottom: 16px;
-    margin-left: 10px;
 }
   
 .step {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -30,7 +25,6 @@
     width: 12px;
     height: 12px;
     margin-top: 5px;
-    margin-left: auto;
     margin-right: auto;
 }
 
@@ -51,9 +45,9 @@
 .step .line {
     height: 96%;
     background-color: gray;
-    width: 2px;
+    width: 2.5px;
     margin-top: 5px;
-    margin-left: auto;
+    margin-left: 5px;
     margin-right: auto;  
 }
 
@@ -79,7 +73,7 @@
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 14px;
-    margin-left: 20px;
+    margin-left: 16px;
     display: inline-block;
 }
 
@@ -96,11 +90,4 @@
 
     width: 140px;
     text-align: left;
-}
-
-@media only screen and (max-width: 640px) {
-    .stepper-container h1 {
-        margin: 0;
-        padding-left: 1rem;
-    }
 }

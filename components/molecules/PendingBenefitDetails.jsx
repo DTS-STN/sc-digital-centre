@@ -3,49 +3,38 @@ import PropTypes from 'prop-types'
 import VerticalStepper from '../atoms/VerticalStepper'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import HorizontalRule from '../atoms/HorizontalRule'
 
 const PendingBenefitDetails = (props) => {
   const t = props.locale === 'en' ? en : fr
 
   return (
-    <div className="grid grid-cols-1 divide-y divide-grey-500 my-4">
-      <section>
-        <div className="sm:grid sm:grid-cols-7 sm:mx-auto sm:mt-4">
-          <div
-            id="claimUpdates"
-            className="col-span-2 mb-3 sm:col-span-3 lg:col-span-2 sm:w-60 sm:ml-7"
-          >
-            <VerticalStepper
-              benefitStatus={props.benefit.status}
-              lastUpdates={props.benefit.lastUpdates}
-              locale={props.locale}
-            />
+    <section>
+      <div className="flex-col ml-4 my-4 sm:m-8 sm:flex sm:flex-row">
+        <VerticalStepper
+          benefitStatus={props.benefit.status}
+          lastUpdates={props.benefit.lastUpdates}
+          locale={props.locale}
+        />
+        <div id="details" className="mt-4 sm:mt-0 sm:ml-20">
+          <div id="application_details" className="mb-5 sm:mb-14">
+            <p className="font-bold text-xl">{t.applicationDetails}</p>
+            <p className="font-normal text-base">
+              {props.benefit.statusDescription}
+            </p>
           </div>
-
-          <div
-            id="details"
-            className="col-span-5 sm:col-span-4 lg:col-span-5 sm:grid mr-5"
-          >
-            <div id="application_details" className="ml-5 mb-5 sm:mb-0">
-              <p className="font-bold text-xl">{t.applicationDetails}</p>
-              <p className="font-normal text-base">
-                {props.benefit.statusDescription}
-              </p>
-            </div>
-            <div id="application_description" className="ml-5 mb-5 sm:mb-0">
-              <p className="font-bold text-base">{t.applicationDescription}</p>
-              <p className="text-base">
-                {props.benefit.applicationDescription}
-              </p>
-            </div>
-            <div id="additionalInformation" className="ml-5 mb-5 sm:mb-0">
-              <p className="font-bold text-base">{t.additionalInformation}</p>
-              <p className="text-base">{props.benefit.additionalInformation}</p>
-            </div>
+          <div id="application_description" className="mb-5 sm:mb-14">
+            <p className="font-bold text-base">{t.applicationDescription}</p>
+            <p className="text-base">{props.benefit.applicationDescription}</p>
+          </div>
+          <div id="additionalInformation">
+            <p className="font-bold text-base">{t.additionalInformation}</p>
+            <p className="text-base">{props.benefit.additionalInformation}</p>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+      <HorizontalRule width="w-auto sm:w-full" />
+    </section>
   )
 }
 

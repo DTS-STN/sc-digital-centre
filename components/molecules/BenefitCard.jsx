@@ -7,6 +7,7 @@ import BenefitCardHeaderActive from '../atoms/BenefitCardHeaderActive'
 import BenefitCardHeaderPending from '../atoms/BenefitCardHeaderPending'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import HorizontalRule from '../atoms/HorizontalRule'
 
 const BenefitCard = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -21,23 +22,14 @@ const BenefitCard = (props) => {
     switch (props.benefit.status) {
       case 'Pending':
         return (
-          <>
-            <PendingBenefitDetails
-              benefit={props.benefit}
-              locale={props.locale}
-            />
-            <div className="flex-grow border-t-2 border-gray-solid-400 mx-4 sm:mx-0"></div>
-          </>
+          <PendingBenefitDetails
+            benefit={props.benefit}
+            locale={props.locale}
+          />
         )
       case 'Active':
         return (
-          <>
-            <ActiveBenefitDetails
-              benefit={props.benefit}
-              locale={props.locale}
-            />
-            <div className="flex-grow border-t-2 border-gray-solid-400 mx-4 sm:mx-0"></div>
-          </>
+          <ActiveBenefitDetails benefit={props.benefit} locale={props.locale} />
         )
       default:
         return null
@@ -45,8 +37,8 @@ const BenefitCard = (props) => {
   }
 
   return (
-    <div className="layout-container py-4">
-      <div className="w-full mx-auto rounded overflow-hidden shadow-lg grid grid-cols-1">
+    <div className="layout-container py-8">
+      <div className="rounded-lg shadow-lg overflow-hidden">
         {/* Benefit Card Header */}
         <section>
           {props.benefit.status == 'Active' ? (
@@ -63,7 +55,7 @@ const BenefitCard = (props) => {
         </section>
         {/* Pending benefits */}
         <section>
-          <div className="flex-grow border-t-2 border-gray-solid-400 mx-4 sm:mx-0"></div>
+          <HorizontalRule width="w-auto sm:w-full" />
           <div className="font-display text-lg ml-4 py-5 sm:ml-8">
             <span className="font-bold">
               {props.benefit.status == 'Active'
@@ -72,7 +64,7 @@ const BenefitCard = (props) => {
             </span>
             <span className="ml-2">{props.benefit.pendingBenefits}</span>
           </div>
-          <div className="flex-grow border-t-2 border-gray-solid-400 mx-4 sm:mx-0"></div>
+          <HorizontalRule width="w-auto sm:w-full" />
         </section>
 
         {/* Top tasks */}
@@ -84,7 +76,7 @@ const BenefitCard = (props) => {
         </section>
 
         {/* Benefit Card Details */}
-        <div>{isOpen && renderBenefitDetails()}</div>
+        {isOpen && renderBenefitDetails()}
         <section>
           <button onClick={handleClick} className="pl-5 py-5 sm:pl-10">
             {btnCaption}

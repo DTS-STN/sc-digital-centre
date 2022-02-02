@@ -1,7 +1,8 @@
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import HorizontalRule from './HorizontalRule'
 
-export default function PendingHeader(props) {
+export default function BenefitCardHeaderPending(props) {
   const t = props.locale === 'en' ? en : fr
 
   return (
@@ -9,13 +10,12 @@ export default function PendingHeader(props) {
       <div className="flex mr-12 justify-end">
         <h2
           className={
-            'font-bold font-display text-lg ml-2 px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-400'
+            'font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-400'
           }
         >
           {props.benefit.applicationStatus}
         </h2>
       </div>
-
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
         <div id="paymentStartDate" className="col-span-1 py-4 sm:px-3">
           <div className="font-bold font-display text-5xl mb-2">
@@ -25,7 +25,11 @@ export default function PendingHeader(props) {
             {props.benefit.benefitName}
           </p>
         </div>
-        <div className="flex-grow w-1/3 border-t-2 border-gray-solid-400 sm:hidden"></div>
+        <HorizontalRule
+          width="w-1/3"
+          colour="dark-solid"
+          visibility="sm:hidden"
+        />
         <div
           id="paymentStartDate"
           className="font-display col-span-3 sm:grid grid-cols-3"
