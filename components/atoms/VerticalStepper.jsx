@@ -30,7 +30,7 @@ const VerticalLinearStepper = (props) => {
 
   return (
     <div className="stepper-container">
-      <h1>{t.claimUpdates}</h1>
+      <h1>{t.latestActivity}</h1>
       {StepList()}
 
       <div className={'step ' + props.benefitStatus.toLowerCase()}>
@@ -40,7 +40,12 @@ const VerticalLinearStepper = (props) => {
 
         <div className="stepper-content">
           <button onClick={onClick}>
-            <p className="w-36">{t.viewAllActivityButton}</p>
+            <a
+              href={'./dashboard'}
+              className="text-xs text-bright-blue-solid underline"
+            >
+              {t.viewAllActivityButton}
+            </a>
           </button>
         </div>
       </div>

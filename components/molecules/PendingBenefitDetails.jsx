@@ -4,7 +4,7 @@ import VerticalStepper from '../atoms/VerticalStepper'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 
-const PendingBenefitCard = (props) => {
+const PendingBenefitDetails = (props) => {
   const t = props.locale === 'en' ? en : fr
 
   return (
@@ -49,7 +49,7 @@ const PendingBenefitCard = (props) => {
   )
 }
 
-PendingBenefitCard.propTypes = {
+PendingBenefitDetails.propTypes = {
   benefit: PropTypes.shape({
     benefitType: PropTypes.string,
     benefitName: PropTypes.string,
@@ -61,4 +61,4 @@ PendingBenefitCard.propTypes = {
   }),
 }
 
-export default PendingBenefitCard
+export default PendingBenefitDetails

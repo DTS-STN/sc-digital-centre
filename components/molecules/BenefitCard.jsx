@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import PendingBenefitCard from './PendingBenefitCard'
+import PendingBenefitDetails from './PendingBenefitDetails'
+import ActiveBenefitDetails from './ActiveBenefitDetails'
 import BenefitTasks from './BenefitTasks'
 import BenefitCardHeaderActive from '../atoms/BenefitCardHeaderActive'
 import BenefitCardHeaderPending from '../atoms/BenefitCardHeaderPending'
@@ -21,12 +22,23 @@ const BenefitCard = (props) => {
       case 'Pending':
         return (
           <>
-            <PendingBenefitCard benefit={props.benefit} locale={props.locale} />
+            <PendingBenefitDetails
+              benefit={props.benefit}
+              locale={props.locale}
+            />
             <div className="flex-grow border-t-2 border-gray-solid-400 mx-4 sm:mx-0"></div>
           </>
         )
       case 'Active':
-        return null
+        return (
+          <>
+            <ActiveBenefitDetails
+              benefit={props.benefit}
+              locale={props.locale}
+            />
+            <div className="flex-grow border-t-2 border-gray-solid-400 mx-4 sm:mx-0"></div>
+          </>
+        )
       default:
         return null
     }
