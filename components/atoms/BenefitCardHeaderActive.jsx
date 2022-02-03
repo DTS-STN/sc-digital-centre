@@ -1,5 +1,6 @@
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import CircleProgressBar from './CircleProgressBar'
 
 export default function ActiveHeader(props) {
   const t = props.locale === 'en' ? en : fr
@@ -53,10 +54,11 @@ export default function ActiveHeader(props) {
             </button>
           </div>
 
-          <div id="paymentEndDate" className="pl-10 py-4">
+          <div id="nextPaymentDueDate" className="pl-10 py-4 relative">
             <p className="text-base">{t.daysUntilNextPayment}</p>
-            <p className="font-bold text-lg">Placeholder for</p>
-            <p className="font-bold text-lg">circle progress</p>
+            <div className="pl-10 py-6">
+              <CircleProgressBar progress={11} steps={22} />
+            </div>
           </div>
 
           {/* Progressbar Placeholder */}
