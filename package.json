@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "focus-trap-react": "^8.9.0",
+    "focus-trap-react": "^8.9.1",
     "jest-axe": "^5.0.1",
     "next": "12.0.9",
     "prom-client": "^12.0.0",
