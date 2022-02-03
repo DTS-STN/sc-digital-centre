@@ -5,20 +5,26 @@ export default function HorizontalRule(props) {
   if (props.colour && props.visibility) {
     return (
       <div
-        className={`${props.visibility} ${props.width} bg-${props.colour} h-px`}
+        className={`${props.visibility} ${props.width} border-${props.colour} flex-grow border-t`}
       ></div>
     )
   } else if (props.colour) {
-    return <div className={`${props.width} bg-${props.colour} h-px`}></div>
+    return (
+      <div
+        className={`${props.width} border-${props.colour} flex-grow border-t`}
+      ></div>
+    )
   } else if (props.visibility) {
     return (
       <div
-        className={`${props.visibility} ${props.width} bg-gray-light h-px`}
+        className={`${props.visibility} ${props.width} flex-grow border-t border-gray-light`}
       ></div>
     )
   } else {
     return (
-      <div className={`${props.width} bg-gray-light h-px mx-4 sm:mx-0`}></div>
+      <div
+        className={`${props.width} flex-grow border-t border-gray-light mx-4 sm:mx-0`}
+      ></div>
     )
   }
 }
