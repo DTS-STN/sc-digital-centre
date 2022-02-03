@@ -80,6 +80,7 @@ const BenefitCard = (props) => {
           <BenefitTasks
             benefitType={props.benefit.benefitType}
             isExpanded={isOpen}
+            tasks={props.tasks}
           />
         </section>
 
