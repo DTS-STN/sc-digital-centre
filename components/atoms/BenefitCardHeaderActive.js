@@ -1,7 +1,9 @@
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import HorizontalRule from './HorizontalRule'
+import CircleProgressBar from './CircleProgressBar'
 
-export default function ActiveHeader(props) {
+export default function BenefitCardHeaderActive(props) {
   const t = props.locale === 'en' ? en : fr
 
   function viewPaymentHistory() {
@@ -24,8 +26,8 @@ export default function ActiveHeader(props) {
         </h2>
       </div>
 
-      <div className="sm:flex sm:justify-around sm:grid sm:grid-cols-4 divide-x-2 sm:mx-auto">
-        <div id="paymentStartDate" className="col-span-1 px-3 py-4">
+      <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
+        <div id="paymentStartDate" className="col-span-1 py-4 sm:px-3">
           <div className="font-bold font-display text-5xl mb-2">
             {props.benefit.benefitType}
           </div>
@@ -33,12 +35,12 @@ export default function ActiveHeader(props) {
             {props.benefit.benefitName}
           </p>
         </div>
-
+        <HorizontalRule width="w-1/3" visibility="sm:hidden" />
         <div
           id="paymentStartDate"
-          className="font-display col-span-3 sm:grid grid-cols-3"
+          className="font-display col-span-3 py-4 sm:grid grid-cols-3 sm:pl-10"
         >
-          <div id="paymentEndDate" className="pl-10 py-4">
+          <div id="paymentEndDate">
             <p className="text-base">{t.paymentAmount}</p>
             <p className="font-bold text-4xl mt-1">
               {props.benefit.nextPaymentAmount}
@@ -53,15 +55,13 @@ export default function ActiveHeader(props) {
             </button>
           </div>
 
-          <div id="paymentEndDate" className="pl-10 py-4">
-            <p className="text-base">{t.daysUntilNextPayment}</p>
-            <p className="font-bold text-lg">Placeholder for</p>
-            <p className="font-bold text-lg">circle progress</p>
+          <div id="nextPaymentDueDate" className="relative mb-20">
+            <p>{t.daysUntilNextPayment}</p>
+            <CircleProgressBar progress={11} steps={22} />
           </div>
 
-          {/* Progressbar Placeholder */}
-          <div id="paymentEndDate" className="pl-10 py-4">
-            <p className="text-base">{t.latestUpdate}</p>
+          <div id="paymentEndDate">
+            <p className="font-display">{t.latestUpdate}</p>
             <p className="font-bold text-lg mt-1">{t.documentReviewed}</p>
             <p className="font-bold text-lg">
               {props.benefit.lastUpdates[0]?.description}
