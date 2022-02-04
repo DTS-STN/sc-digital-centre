@@ -10,8 +10,8 @@ export default function BenefitCardHeaderActive(props) {
     console.log('View payment history button is Clicked')
   }
 
-  function viewAllActivityAndBenefitHistory() {
-    console.log('View all activity and benefit history button is Clicked')
+  function viewMyStatusAndMessages() {
+    console.log('View my status and messages')
   }
 
   return (
@@ -25,15 +25,11 @@ export default function BenefitCardHeaderActive(props) {
           {props.benefit.applicationStatus}
         </h2>
       </div>
-
-      <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
-        <div id="paymentStartDate" className="col-span-1 py-4 sm:px-3">
-          <div className="font-bold font-display text-5xl mb-2">
-            {props.benefit.benefitType}
-          </div>
-          <p className="font-display font-bold text-lg">
+      <div className="sm:flex sm:justify-around sm:grid sm:grid-cols-4 divide-x-2 sm:mx-auto">
+        <div id="benefitName" className="col-span-1 py-4 sm:px-3">
+          <div className="font-bold font-display text-4xl mb-2 w-44">
             {props.benefit.benefitName}
-          </p>
+          </div>
         </div>
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
         <div
@@ -66,12 +62,12 @@ export default function BenefitCardHeaderActive(props) {
             <p className="font-bold text-lg">
               {props.benefit.lastUpdates[0]?.description}
             </p>
-            <button onClick={viewAllActivityAndBenefitHistory}>
+            <button onClick={viewMyStatusAndMessages}>
               <a
                 href={'./dashboard'}
                 className="text-sm mt-1 text-bright-blue-solid underline"
               >
-                {t.viewAllActivityButton}
+                {t.viewMyStatusAndMessages}
               </a>
             </button>
           </div>
