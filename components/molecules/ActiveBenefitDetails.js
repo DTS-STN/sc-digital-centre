@@ -3,34 +3,26 @@ import PropTypes from 'prop-types'
 import VerticalStepper from '../atoms/VerticalStepper'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import HorizontalRule from '../atoms/HorizontalRule'
 
-const OasBenefitCard = (props) => {
+const ActiveBenefitDetails = (props) => {
   const t = props.locale === 'en' ? en : fr
 
   return (
-    <div className="grid grid-cols-1 divide-y divide-grey-500 font-display my-4">
-      <section>
-        <div className="sm:flex sm:justify-around sm:grid sm:grid-cols-7 sm:gap-4 sm:mx-auto sm:mt-4">
-          <div
-            id="vertical_stepper"
-            className="col-span-2 sm:col-span-3 lg:col-span-2 sm:w-60 sm:ml-7 mb-6 sm:mb-3"
-          >
-            <VerticalStepper
-              benefitStatus={props.benefit.status}
-              lastUpdates={props.benefit.lastUpdates}
-              locale={props.locale}
-            />
-          </div>
-
-          <div
-            id="details"
-            className="col-span-5 sm:col-span-4 lg:col-span-5 sm:grid sm:grid-cols-3 mr-5"
-          >
-            <p className="font-bold text-xl col-span-3 ml-10 sm:ml-0">
-              {t.pensionDetails}
-            </p>
-            <div className="sm:col-span-1 ml-10 sm:ml-0 mb-5 sm:mb-0">
-              <div id="application_date" className="mt-5 sm:mt-0">
+    <section>
+      <div className="flex-col ml-4 my-4 sm:m-6 sm:flex sm:flex-row">
+        <div className="lg:ml-7">
+          <VerticalStepper
+            benefitStatus={props.benefit.status}
+            lastUpdates={props.benefit.lastUpdates}
+            locale={props.locale}
+          />
+        </div>
+        <div className="flex-col mt-7 sm:mt-0 sm:ml-5 lg:ml-24">
+          <p className="font-bold text-xl">{t.pensionDetails}</p>
+          <div className="flex-col sm:mt-3 sm:flex sm:flex-row">
+            <div>
+              <div id="application_date" className="mt-4 sm:mt-0">
                 <p className="font-bold text-base">{t.nextPayment}</p>
                 <p className="text-sm">{props.benefit.nextPaymentDate}</p>
               </div>
@@ -51,7 +43,7 @@ const OasBenefitCard = (props) => {
                 </p>
               </div>
             </div>
-            <div className="sm:col-span-1 ml-10 sm:ml-0 mb-5 sm:mb-0 sm:w-24 lg:w-48">
+            <div className="mt-7 sm:mt-0 sm:ml-5 lg:ml-32">
               <div id="payee_address">
                 <span className="font-bold text-base">{t.payeeAddress}</span>
                 {props.benefit.payeeAddress != '' ? (
@@ -72,12 +64,12 @@ const OasBenefitCard = (props) => {
                   </a>
                 )}
               </div>
-              <div id="phone_number" className="mt-7">
+              <div id="phone_number" className="mt-7 w-36">
                 <span className="font-bold text-base">
                   {t.payeePhoneNumber}
                 </span>
                 {props.benefit.payeePhoneNumber != '' ? (
-                  <button className="ml-5">
+                  <button className="ml-4">
                     <img src={'/edit.svg'} alt="Edit" className="w-5 h-4" />
                   </button>
                 ) : (
@@ -95,10 +87,13 @@ const OasBenefitCard = (props) => {
                 )}
               </div>
             </div>
-            <div id="payment_details" className="ml-10 sm:ml-0">
+            <div
+              id="payment_details"
+              className="w-44 mt-7 sm:mt-0 sm:ml-5 lg:ml-32"
+            >
               <span className="font-bold text-base">{t.paymentDetails}</span>
               {props.benefit.paymentType != '' ? (
-                <button className="ml-5">
+                <button className="ml-4">
                   <img src={'/edit.svg'} alt="Edit" className="w-5 h-4" />
                 </button>
               ) : (
@@ -121,12 +116,13 @@ const OasBenefitCard = (props) => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+      <HorizontalRule width="w-auto sm:w-full" />
+    </section>
   )
 }
 
-OasBenefitCard.propTypes = {
+ActiveBenefitDetails.propTypes = {
   benefit: PropTypes.shape({
     benefitType: PropTypes.string,
     benefitName: PropTypes.string,
@@ -143,4 +139,4 @@ OasBenefitCard.propTypes = {
   }),
 }
 
-export default OasBenefitCard
+export default ActiveBenefitDetails
