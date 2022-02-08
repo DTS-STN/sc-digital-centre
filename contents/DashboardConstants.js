@@ -1,7 +1,7 @@
 import en from '../locales/en'
 
 const t = en
-const OLD_AGE_SECURITY = {
+const SUBMITTED_OAS = {
   benefitType: 'OAS',
   benefitName: 'Old Age Security',
   status: 'Pending',
@@ -36,7 +36,7 @@ const OLD_AGE_SECURITY = {
   ],
 }
 
-const SUBMITTED_CANADA_PENSION_PLAN = {
+const SUBMITTED_CPP = {
   benefitType: 'CPP',
   benefitName: 'Canada Pension Plan',
   status: 'Pending',
@@ -78,7 +78,7 @@ const SUBMITTED_CANADA_PENSION_PLAN = {
   ],
 }
 
-const ACTIVE_CANADA_PENSION_PLAN = {
+const ACTIVE_CPP = {
   benefitType: 'CPP',
   benefitName: 'Canada Pension Plan',
   status: 'Active',
@@ -272,9 +272,9 @@ const SUBMITTED_OAS_TASKS = [
 ]
 
 module.exports = {
-  ACTIVE_CANADA_PENSION_PLAN,
-  SUBMITTED_CANADA_PENSION_PLAN,
-  OLD_AGE_SECURITY,
+  ACTIVE_CPP: ACTIVE_CPP,
+  SUBMITTED_CPP: SUBMITTED_CPP,
+  SUBMITTED_OAS: SUBMITTED_OAS,
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
   SUBMITTED_OAS_TASKS,
