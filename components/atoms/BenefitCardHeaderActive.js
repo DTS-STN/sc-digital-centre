@@ -25,7 +25,7 @@ export default function BenefitCardHeaderActive(props) {
           {props.benefit.applicationStatus}
         </h2>
       </div>
-      <div className="sm:flex sm:justify-around sm:grid sm:grid-cols-4 divide-x-2 sm:mx-auto">
+      <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
         <div id="benefitName" className="col-span-1 py-4 sm:px-3">
           <div className="font-bold font-display text-4xl mb-2 w-44">
             {props.benefit.benefitName}
