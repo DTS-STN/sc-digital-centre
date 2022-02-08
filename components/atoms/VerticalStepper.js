@@ -44,7 +44,7 @@ const VerticalLinearStepper = (props) => {
               href={'./dashboard'}
               className="text-xs text-bright-blue-solid underline"
             >
-              {t.viewAllActivityButton}
+              {t.viewMyStatusAndMessages}
             </a>
           </button>
         </div>
