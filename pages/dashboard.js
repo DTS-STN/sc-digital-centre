@@ -3,9 +3,11 @@ import {
   ACTIVE_CPP,
   SUBMITTED_CPP,
   SUBMITTED_OAS,
+  ACTIVE_OAS,
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
   SUBMITTED_OAS_TASKS,
+  ACTIVE_OAS_TASKS,
 } from '../contents/DashboardConstants'
 export default function Dashboard() {
   return (
@@ -21,6 +23,7 @@ export default function Dashboard() {
         benefit={SUBMITTED_OAS}
         tasks={SUBMITTED_OAS_TASKS}
       />
+      <BenefitCard locale="en" benefit={ACTIVE_OAS} tasks={ACTIVE_OAS_TASKS} />
     </div>
   )
 }

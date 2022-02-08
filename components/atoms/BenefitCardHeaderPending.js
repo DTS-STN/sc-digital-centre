@@ -17,13 +17,10 @@ export default function BenefitCardHeaderPending(props) {
         </h2>
       </div>
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
-        <div id="paymentStartDate" className="col-span-1 py-4 sm:px-3">
-          <div className="font-bold font-display text-5xl mb-2">
-            {props.benefit.benefitType}
-          </div>
-          <p className="font-display font-bold text-lg">
+        <div id="benefitName" className="col-span-1 py-4 sm:px-3">
+          <div className="font-bold font-display text-4xl mb-2 w-44">
             {props.benefit.benefitName}
-          </p>
+          </div>
         </div>
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
         <div

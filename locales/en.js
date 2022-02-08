@@ -216,7 +216,7 @@ export default {
   daysUntilNextPayment: 'Days until next payment',
   latestUpdate: 'Latest update',
   documentReviewed: 'Document reviewed',
-  viewPaymentHistory: 'View payment history +',
+  viewPaymentHistory: 'View my payments +',
 
   // Benefit Card details
   applicationDetails: 'Application details',
@@ -224,7 +224,7 @@ export default {
   applicationDescription: 'Application description',
   additionalInformation: 'Additional information',
   latestActivity: 'Latest activity',
-  viewAllActivityButton: 'View all activity and benefits history +',
+  viewMyStatusAndMessages: 'View my status and messages +',
   pensionDetails: 'Pension details',
   nextPayment: 'Next payment',
   lastPayment: 'Last payment',
