@@ -15,7 +15,11 @@ export default function BenefitTasks(props) {
           return (
             <li key={index} className="font-display font-bold text-left pb-6">
               <a href={value.taskLink}>
-                <img src={value.taskIcon} className="font-normal pb-3 px-8" />
+                <img
+                  src={value.taskIcon}
+                  className="font-normal pb-3 px-8"
+                  alt=""
+                />
                 <p className="w-36 font-normal px-5 text-sm">{value.task}</p>
               </a>
             </li>

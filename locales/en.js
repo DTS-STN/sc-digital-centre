@@ -237,7 +237,7 @@ export default {
   addYourPhoneNumber: 'Add your phone number +',
   addYourPaymentDetails: 'Add your payment details +',
 
-  // tasks
+  // dashboard benefits tasks
   allPaymentsTask: 'View all payments',
   statusUpdateTask: 'View my status and messages',
   retirementIncomeTask: 'Estimate retirement income',
