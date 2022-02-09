@@ -54,6 +54,7 @@ module.exports = {
           light: '#F19E7A',
           solid: '#D96F41',
           dark: '#AC5028',
+          pending: '#FFA216',
         },
         'yellow': {
           light: '#E6BF81',
