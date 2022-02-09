@@ -13,6 +13,7 @@
     "test:e2e": "start-server-and-test dev http://localhost:3000 cypress:run",
     "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
     "report:generate": "marge index.json --reportDir report --assetsDir report/assets --reportPageTitle index.html",
+    "test": "jest",
     "test:unit": "jest",
     "test:coverage": "jest --coverage --forceExit",
     "prepare": "husky install"
