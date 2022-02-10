@@ -3,8 +3,6 @@ import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import BenefitTasks from './BenefitTasks'
 
-import { useRouter } from 'next/router'
-
 jest.mock('next/router', () => ({
   useRouter: jest.fn(),
 }))
@@ -28,10 +26,6 @@ expect.extend(toHaveNoViolations)
 
 describe('BenefitTask', () => {
   it('renders BenefitTask', () => {
-    useRouter.mockImplementation(() => ({
-      pathname: '/',
-      asPath: '/',
-    }))
     render(
       <BenefitTasks
         tasks={[
@@ -56,10 +50,6 @@ describe('BenefitTask', () => {
   })
 
   it('has no a11y violations', async () => {
-    useRouter.mockImplementation(() => ({
-      pathname: '/',
-      asPath: '/',
-    }))
     const { container } = render(
       <BenefitTasks
         tasks={[
