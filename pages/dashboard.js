@@ -4,11 +4,13 @@ import {
   SUBMITTED_CPP,
   SUBMITTED_OAS,
   ACTIVE_OAS,
+} from '../contents/DashboardBenefitCardConstants'
+import {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
   SUBMITTED_OAS_TASKS,
   ACTIVE_OAS_TASKS,
-} from '../contents/DashboardConstants'
+} from '../contents/DashboardBenefitTasksConstants'
 export default function Dashboard() {
   return (
     <div>
