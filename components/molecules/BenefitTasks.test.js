@@ -3,10 +3,6 @@ import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import BenefitTasks from './BenefitTasks'
 
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
-}))
-
 jest.mock('next/link', () => ({
   __esModule: true,
   default: ({ children, href }) => (
