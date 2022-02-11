@@ -3,10 +3,6 @@ import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import CircleProgressBar from './CircleProgressBar'
 
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
-}))
-
 expect.extend(toHaveNoViolations)
 
 describe('CircleProgressBar', () => {
