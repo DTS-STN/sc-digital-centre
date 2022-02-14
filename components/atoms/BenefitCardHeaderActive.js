@@ -2,17 +2,10 @@ import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
 import CircleProgressBar from './CircleProgressBar'
+import Link from 'next/link'
 
 export default function BenefitCardHeaderActive(props) {
   const t = props.locale === 'en' ? en : fr
-
-  function viewPaymentHistory() {
-    window.open('./dashboard', 'ViewMyPayments')
-  }
-
-  function viewMyStatusAndMessages() {
-    window.open('./dashboard', 'ViewMyStatusAndMessages')
-  }
 
   return (
     <div className="layout-container">
@@ -41,12 +34,11 @@ export default function BenefitCardHeaderActive(props) {
             <p className="font-bold text-4xl mt-1">
               {props.benefit.nextPaymentAmount}
             </p>
-            <button
-              onClick={viewPaymentHistory}
-              className="text-sm mt-1 text-bright-blue-solid underline"
-            >
-              {t.viewPaymentHistory}
-            </button>
+            <Link href="./dashboard">
+              <a className="text-sm mt-1 text-bright-blue-solid underline">
+                {t.viewPaymentHistory}
+              </a>
+            </Link>
           </div>
 
           <div id="nextPaymentDueDate" className="relative mb-20">
@@ -60,12 +52,11 @@ export default function BenefitCardHeaderActive(props) {
             <p className="font-bold text-lg">
               {props.benefit.lastUpdates[0]?.description}
             </p>
-            <button
-              onClick={viewMyStatusAndMessages}
-              className="text-sm mt-1 text-bright-blue-solid underline"
-            >
-              {t.viewMyStatusAndMessages}
-            </button>
+            <Link href="./dashboard">
+              <a className="text-sm mt-1 text-bright-blue-solid underline">
+                {t.viewMyStatusAndMessages}
+              </a>
+            </Link>
           </div>
         </div>
       </div>
