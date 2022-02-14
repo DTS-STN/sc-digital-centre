@@ -2,7 +2,7 @@ import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { toHaveNoViolations } from 'jest-axe'
 
-import Dashboard from './dashboard'
+import Dashboard from '../../pages/dashboard'
 
 expect.extend(toHaveNoViolations)
 
