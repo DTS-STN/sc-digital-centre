@@ -15,8 +15,8 @@ export default function BenefitCardHeaderActive(props) {
   }
 
   return (
-    <div className="layout-container">
-      <div className="flex mr-12 justify-end">
+    <div className="px-4 md:px-6">
+      <div className="flex mr-10 justify-end">
         <h2
           className={
             'font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active'
@@ -34,7 +34,7 @@ export default function BenefitCardHeaderActive(props) {
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
         <div
           id="paymentStartDate"
-          className="font-display col-span-3 py-4 sm:grid grid-cols-3 sm:pl-10"
+          className="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
         >
           <div id="paymentEndDate">
             <p className="text-base">{t.paymentAmount}</p>
@@ -51,12 +51,12 @@ export default function BenefitCardHeaderActive(props) {
             </button>
           </div>
 
-          <div id="nextPaymentDueDate" className="relative mb-20">
+          <div id="nextPaymentDueDate" className="relative mb-20 mt-7 sm:mt-0">
             <p>{t.daysUntilNextPayment}</p>
             <CircleProgressBar progress={11} steps={22} />
           </div>
 
-          <div id="paymentEndDate">
+          <div id="paymentEndDate" className="pt-5 sm:pt-0">
             <p className="font-display">{t.latestUpdate}</p>
             <p className="font-bold text-lg mt-1">{t.documentReviewed}</p>
             <p className="font-bold text-lg">

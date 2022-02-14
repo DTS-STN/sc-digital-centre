@@ -176,7 +176,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div>
+    <div className="layout-container">
       <BenefitCard locale="en" benefit={pendingCanadaPensionPlan} />
       <BenefitCard locale="en" benefit={activeCanadaPensionPlan} />
       <BenefitCard locale="en" benefit={pendingOldAgeSecurity} />
