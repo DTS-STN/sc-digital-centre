@@ -298,7 +298,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   </p>
                   <a
                     class="text-sm mt-1 text-bright-blue-solid underline"
-                    href="/dashboard"
+                    href="./dashboard"
                   >
                     View my payments +
                   </a>
@@ -381,7 +381,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   </p>
                   <a
                     class="text-sm mt-1 text-bright-blue-solid underline"
-                    href="/dashboard"
+                    href="./dashboard"
                   >
                     View my status and messages +
                   </a>
@@ -833,7 +833,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   </p>
                   <a
                     class="text-sm mt-1 text-bright-blue-solid underline"
-                    href="/dashboard"
+                    href="./dashboard"
                   >
                     View my payments +
                   </a>
@@ -916,7 +916,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   </p>
                   <a
                     class="text-sm mt-1 text-bright-blue-solid underline"
-                    href="/dashboard"
+                    href="./dashboard"
                   >
                     View my status and messages +
                   </a>
