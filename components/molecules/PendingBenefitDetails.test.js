@@ -30,7 +30,6 @@ describe('PendingBenefitDetails Tests', () => {
     paymentType: 'Direct Deposit',
     additionalInformation:
       'We will notify you as soon as we have process your application.',
-    applicationStatus: 'Active',
     pendingBenefits: 'Retirement pension',
     lastUpdates: [
       {

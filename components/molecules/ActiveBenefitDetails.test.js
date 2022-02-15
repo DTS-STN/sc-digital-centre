@@ -12,7 +12,6 @@ const activeCanadaPensionPlan = {
   applicationDate: 'July 1, 2021',
   estimatedReviewCompletionDate: 'July 31, 2021',
   applicationType: 'Canada Pension Plan (CPP)',
-  applicationStatus: 'Application Submitted',
   applicationDescription: 'Online application received',
   nextPaymentAmount: 734.34,
   nextPaymentDate: 'September 30, 2021',
