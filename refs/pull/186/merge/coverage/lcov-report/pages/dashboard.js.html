@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -246,7 +246,7 @@
 <a name='L187'></a><a href='#L187'>187</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -289,7 +289,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -334,7 +334,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -377,7 +377,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -420,7 +420,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -431,8 +431,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import BenefitCard from '../components/molecules/BenefitCard'
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >Dashboard(</span>) {
-  const pendingCanadaPensionPlan = <span class="cstat-no" title="statement not covered" >{</span>
+export default function Dashboard() {
+  const pendingCanadaPensionPlan = {
     benefitType: 'CPP',
     benefitName: 'Canada Pension Plan',
     status: 'Pending',
@@ -475,7 +475,7 @@ export default function <span class="fstat-no" title="function not covered" >Das
     ],
   }
 &nbsp;
-  const activeCanadaPensionPlan = <span class="cstat-no" title="statement not covered" >{</span>
+  const activeCanadaPensionPlan = {
     benefitType: 'CPP',
     benefitName: 'Canada Pension Plan',
     status: 'Active',
@@ -520,7 +520,7 @@ export default function <span class="fstat-no" title="function not covered" >Das
     ],
   }
 &nbsp;
-  const pendingOldAgeSecurity = <span class="cstat-no" title="statement not covered" >{</span>
+  const pendingOldAgeSecurity = {
     benefitType: 'OAS',
     benefitName: 'Old Age Security',
     status: 'Pending',
@@ -563,7 +563,7 @@ export default function <span class="fstat-no" title="function not covered" >Das
     ],
   }
 &nbsp;
-  const activeOldAgeSecurity = <span class="cstat-no" title="statement not covered" >{</span>
+  const activeOldAgeSecurity = {
     benefitType: 'OAS',
     benefitName: 'Old Age Security',
     status: 'Active',
@@ -606,7 +606,7 @@ export default function <span class="fstat-no" title="function not covered" >Das
     ],
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;div&gt;
       &lt;BenefitCard locale="en" benefit={pendingCanadaPensionPlan} /&gt;
       &lt;BenefitCard locale="en" benefit={activeCanadaPensionPlan} /&gt;
@@ -622,7 +622,7 @@ export default function <span class="fstat-no" title="function not covered" >Das
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 08 2022 15:50:12 GMT+0000 (Coordinated Universal Time)
+                at Tue Feb 15 2022 15:12:14 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

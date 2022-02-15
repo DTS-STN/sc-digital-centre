@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -147,7 +147,7 @@
 <a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,16 +194,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -222,7 +222,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -233,8 +233,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import PropTypes from 'prop-types'
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >BenefitTasks(</span>props) {
-  const tasks = <span class="cstat-no" title="statement not covered" >[</span>
+export default function BenefitTasks(props) {
+  const tasks = [
     {
       task: 'Task 1',
       taskIcon: '/placeholder.svg',
@@ -281,16 +281,16 @@ export default function <span class="fstat-no" title="function not covered" >Ben
       taskLink: '/dashboard',
     },
   ]
-  let displayedTasks = <span class="cstat-no" title="statement not covered" >props.isExpanded ? tasks : tasks.slice(0, 6)</span>
+  let displayedTasks = props.isExpanded ? <span class="branch-0 cbranch-no" title="branch not covered" >tasks </span>: tasks.slice(0, 6)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;div className="bg-gray-lighter mt-6 px-8 py-6"&gt;
       &lt;h3 className="font-display font-bold text-xl"&gt;
         {`All ${props.benefitType} Tasks`}
       &lt;/h3&gt;
       &lt;ul className="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"&gt;
-        {displayedTasks.map(<span class="fstat-no" title="function not covered" >(v</span>alue, index) =&gt; {
-<span class="cstat-no" title="statement not covered" >          return (</span>
+        {displayedTasks.map((value, index) =&gt; {
+          return (
             &lt;li key={index} className="font-display font-bold text-center pb-6"&gt;
               &lt;a href={value.taskLink}&gt;
                 &lt;svg
@@ -309,7 +309,7 @@ export default function <span class="fstat-no" title="function not covered" >Ben
   )
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >BenefitTasks.propTypes = {</span>
+BenefitTasks.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
       task: PropTypes.string.isRequired,
@@ -325,7 +325,7 @@ export default function <span class="fstat-no" title="function not covered" >Ben
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 08 2022 15:50:12 GMT+0000 (Coordinated Universal Time)
+                at Tue Feb 15 2022 15:12:14 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -122,42 +122,16 @@
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -217,19 +191,12 @@
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
 import CircleProgressBar from './CircleProgressBar'
+import Link from 'next/link'
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >BenefitCardHeaderActive(</span>props) {
-  const t = <span class="cstat-no" title="statement not covered" >props.locale === 'en' ? en : fr</span>
+export default function BenefitCardHeaderActive(props) {
+  const t = props.locale === 'en' ? en : <span class="branch-1 cbranch-no" title="branch not covered" >fr</span>
 &nbsp;
-  function <span class="fstat-no" title="function not covered" >viewPaymentHistory(</span>) {
-<span class="cstat-no" title="statement not covered" >    console.log('View payment history button is Clicked')</span>
-  }
-&nbsp;
-  function <span class="fstat-no" title="function not covered" >viewMyStatusAndMessages(</span>) {
-<span class="cstat-no" title="statement not covered" >    console.log('View my status and messages')</span>
-  }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;div className="layout-container"&gt;
       &lt;div className="flex mr-12 justify-end"&gt;
         &lt;h2
@@ -251,19 +218,16 @@ export default function <span class="fstat-no" title="function not covered" >Ben
           id="paymentStartDate"
           className="font-display col-span-3 py-4 sm:grid grid-cols-3 sm:pl-10"
         &gt;
-          &lt;div id="paymentEndDate"&gt;
+          &lt;div id="nextPaymentAmount"&gt;
             &lt;p className="text-base"&gt;{t.paymentAmount}&lt;/p&gt;
             &lt;p className="font-bold text-4xl mt-1"&gt;
               {props.benefit.nextPaymentAmount}
             &lt;/p&gt;
-            &lt;button onClick={viewPaymentHistory}&gt;
-              &lt;a
-                href={'./dashboard'}
-                className="text-sm mt-1 text-bright-blue-solid underline"
-              &gt;
+            &lt;Link href="./dashboard"&gt;
+              &lt;a className="text-sm mt-1 text-bright-blue-solid underline"&gt;
                 {t.viewPaymentHistory}
               &lt;/a&gt;
-            &lt;/button&gt;
+            &lt;/Link&gt;
           &lt;/div&gt;
 &nbsp;
           &lt;div id="nextPaymentDueDate" className="relative mb-20"&gt;
@@ -271,20 +235,17 @@ export default function <span class="fstat-no" title="function not covered" >Ben
             &lt;CircleProgressBar progress={11} steps={22} /&gt;
           &lt;/div&gt;
 &nbsp;
-          &lt;div id="paymentEndDate"&gt;
+          &lt;div id="lastUpdates"&gt;
             &lt;p className="font-display"&gt;{t.latestUpdate}&lt;/p&gt;
             &lt;p className="font-bold text-lg mt-1"&gt;{t.documentReviewed}&lt;/p&gt;
             &lt;p className="font-bold text-lg"&gt;
               {props.benefit.lastUpdates[0]?.description}
             &lt;/p&gt;
-            &lt;button onClick={viewMyStatusAndMessages}&gt;
-              &lt;a
-                href={'./dashboard'}
-                className="text-sm mt-1 text-bright-blue-solid underline"
-              &gt;
+            &lt;Link href="./dashboard"&gt;
+              &lt;a className="text-sm mt-1 text-bright-blue-solid underline"&gt;
                 {t.viewMyStatusAndMessages}
               &lt;/a&gt;
-            &lt;/button&gt;
+            &lt;/Link&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -298,7 +259,7 @@ export default function <span class="fstat-no" title="function not covered" >Ben
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 08 2022 15:50:12 GMT+0000 (Coordinated Universal Time)
+                at Tue Feb 15 2022 15:12:14 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

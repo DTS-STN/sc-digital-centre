@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>8/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">46.15% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>6/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>8/14</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -171,26 +171,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -202,6 +198,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -251,7 +248,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -274,16 +274,16 @@ import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from '../atoms/HorizontalRule'
 &nbsp;
-const BenefitCard = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; {</span>
-  const t = <span class="cstat-no" title="statement not covered" >props.locale === 'en' ? en : fr</span>
-  const [isOpen, setIsOpen] = <span class="cstat-no" title="statement not covered" >useState(false)</span>
-  const [btnCaption, setBtnCaption] = <span class="cstat-no" title="statement not covered" >useState(t.viewMore)</span>
-  const handleClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+const BenefitCard = (props) =&gt; {
+  const t = props.locale === 'en' ? en : <span class="branch-1 cbranch-no" title="branch not covered" >fr</span>
+  const [isOpen, setIsOpen] = useState(false)
+  const [btnCaption, setBtnCaption] = useState(t.viewMore)
+  const handleClick = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    setBtnCaption(isOpen ? t.viewMore : t.viewLess)</span>
 <span class="cstat-no" title="statement not covered" >    setIsOpen(!isOpen)</span>
   }
 &nbsp;
-  const renderBenefitDetails = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+  const renderBenefitDetails = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    switch (props.benefit.status) {</span>
       case 'Pending':
 <span class="cstat-no" title="statement not covered" >        return (</span>
@@ -301,7 +301,7 @@ const BenefitCard = <span class="cstat-no" title="statement not covered" ><span 
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;div className="layout-container py-8"&gt;
       &lt;div className="rounded-lg shadow-lg overflow-hidden"&gt;
         {/* Benefit Card Header */}
@@ -341,7 +341,7 @@ const BenefitCard = <span class="cstat-no" title="statement not covered" ><span 
         &lt;/section&gt;
 &nbsp;
         {/* Benefit Card Details */}
-        {isOpen &amp;&amp; renderBenefitDetails()}
+        {isOpen &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >renderBenefitDetails()}</span>
         &lt;section&gt;
           &lt;button onClick={handleClick} className="pl-5 py-5 sm:pl-10"&gt;
             {btnCaption}
@@ -354,7 +354,7 @@ const BenefitCard = <span class="cstat-no" title="statement not covered" ><span 
 &nbsp;
 export default BenefitCard
 &nbsp;
-<span class="cstat-no" title="statement not covered" >BenefitCard.propTypes = {</span>
+BenefitCard.propTypes = {
   benefit: PropTypes.shape({
     benefitType: PropTypes.oneOf(['CPP', 'OAS', 'GIS', 'EI']),
     benefitName: PropTypes.oneOf([
@@ -373,7 +373,7 @@ export default BenefitCard
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 08 2022 15:50:12 GMT+0000 (Coordinated Universal Time)
+                at Tue Feb 15 2022 15:12:14 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

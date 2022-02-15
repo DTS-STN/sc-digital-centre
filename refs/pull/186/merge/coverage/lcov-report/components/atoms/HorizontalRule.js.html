@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -91,26 +91,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -120,27 +120,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Styled horizontal line component
 // Must receive a width prop &amp; optional color or visibility modifier that follows tailwind styling
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >HorizontalRule(</span>props) {
-<span class="cstat-no" title="statement not covered" >  if (props.colour &amp;&amp; props.visibility) {</span>
+export default function HorizontalRule(props) {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (props.colour &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >props.visibility)</span> {
 <span class="cstat-no" title="statement not covered" >    return (</span>
       &lt;div
         className={`${props.visibility} ${props.width} border-${props.colour} flex-grow border-t`}
       &gt;&lt;/div&gt;
     )
-  } else <span class="cstat-no" title="statement not covered" >if (props.colour) {</span>
+  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (props.colour) {
 <span class="cstat-no" title="statement not covered" >    return (</span>
       &lt;div
         className={`${props.width} border-${props.colour} flex-grow border-t`}
       &gt;&lt;/div&gt;
     )
-  } else <span class="cstat-no" title="statement not covered" >if (props.visibility) {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
+  } else if (props.visibility) {
+    return (
       &lt;div
         className={`${props.visibility} ${props.width} flex-grow border-t border-gray-light`}
       &gt;&lt;/div&gt;
     )
   } else {
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
       &lt;div
         className={`${props.width} flex-grow border-t border-gray-light mx-4 sm:mx-0`}
       &gt;&lt;/div&gt;
@@ -154,7 +154,7 @@ export default function <span class="fstat-no" title="function not covered" >Hor
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 08 2022 15:50:12 GMT+0000 (Coordinated Universal Time)
+                at Tue Feb 15 2022 15:12:14 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
