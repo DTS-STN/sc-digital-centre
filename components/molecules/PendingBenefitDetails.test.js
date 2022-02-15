@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import PendingBenefitDetails from '../../../components/molecules/PendingBenefitDetails'
+import PendingBenefitDetails from './PendingBenefitDetails'
 
 describe('PendingBenefitDetails Tests', () => {
   const testBenefitObject = {
