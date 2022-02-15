@@ -6,14 +6,6 @@ import CircleProgressBar from './CircleProgressBar'
 export default function BenefitCardHeaderActive(props) {
   const t = props.locale === 'en' ? en : fr
 
-  function viewPaymentHistory() {
-    console.log('View payment history button is Clicked')
-  }
-
-  function viewMyStatusAndMessages() {
-    console.log('View my status and messages')
-  }
-
   return (
     <div className="layout-container">
       <div className="flex mr-12 justify-end">
@@ -36,19 +28,17 @@ export default function BenefitCardHeaderActive(props) {
           id="paymentStartDate"
           className="font-display col-span-3 py-4 sm:grid grid-cols-3 sm:pl-10"
         >
-          <div id="paymentEndDate">
+          <div id="nextPaymentAmount">
             <p className="text-base">{t.paymentAmount}</p>
             <p className="font-bold text-4xl mt-1">
               {props.benefit.nextPaymentAmount}
             </p>
-            <button onClick={viewPaymentHistory}>
-              <a
-                href={'./dashboard'}
-                className="text-sm mt-1 text-bright-blue-solid underline"
-              >
-                {t.viewPaymentHistory}
-              </a>
-            </button>
+            <a
+              href="./dashboard"
+              className="text-sm mt-1 text-bright-blue-solid underline"
+            >
+              {t.viewPaymentHistory}
+            </a>
           </div>
 
           <div id="nextPaymentDueDate" className="relative mb-20">
@@ -56,20 +46,18 @@ export default function BenefitCardHeaderActive(props) {
             <CircleProgressBar progress={11} steps={22} />
           </div>
 
-          <div id="paymentEndDate">
+          <div id="lastUpdates">
             <p className="font-display">{t.latestUpdate}</p>
             <p className="font-bold text-lg mt-1">{t.documentReviewed}</p>
             <p className="font-bold text-lg">
               {props.benefit.lastUpdates[0]?.description}
             </p>
-            <button onClick={viewMyStatusAndMessages}>
-              <a
-                href={'./dashboard'}
-                className="text-sm mt-1 text-bright-blue-solid underline"
-              >
-                {t.viewMyStatusAndMessages}
-              </a>
-            </button>
+            <a
+              href="./dashboard"
+              className="text-sm mt-1 text-bright-blue-solid underline"
+            >
+              {t.viewMyStatusAndMessages}
+            </a>
           </div>
         </div>
       </div>
