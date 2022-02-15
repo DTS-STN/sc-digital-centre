@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1644958962844" clover="3.2.0">
-  <project timestamp="1644958962844" name="All files">
-    <metrics statements="231" coveredstatements="167" conditionals="176" coveredconditionals="108" methods="83" coveredmethods="59" elements="490" coveredelements="334" complexity="0" loc="231" ncloc="231" packages="6" files="45" classes="45"/>
+<coverage generated="1644961195479" clover="3.2.0">
+  <project timestamp="1644961195479" name="All files">
+    <metrics statements="230" coveredstatements="167" conditionals="176" coveredconditionals="108" methods="82" coveredmethods="59" elements="488" coveredelements="334" complexity="0" loc="230" ncloc="230" packages="6" files="45" classes="45"/>
     <package name="components.atoms">
-      <metrics statements="51" coveredstatements="44" conditionals="32" coveredconditionals="25" methods="20" coveredmethods="17"/>
+      <metrics statements="50" coveredstatements="44" conditionals="32" coveredconditionals="25" methods="19" coveredmethods="17"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
         <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="8" count="122" type="stmt"/>
@@ -84,15 +84,14 @@
         <line num="64" count="5" type="stmt"/>
       </file>
       <file name="VerticalStepper.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/VerticalStepper.js">
-        <metrics statements="8" coveredstatements="7" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="3"/>
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
         <line num="6" count="4" type="stmt"/>
         <line num="7" count="5" type="cond" truecount="2" falsecount="0"/>
         <line num="9" count="5" type="cond" truecount="1" falsecount="1"/>
         <line num="12" count="5" type="stmt"/>
         <line num="13" count="15" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="33" count="5" type="stmt"/>
-        <line num="56" count="4" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="52" count="4" type="stmt"/>
       </file>
     </package>
     <package name="components.molecules">
