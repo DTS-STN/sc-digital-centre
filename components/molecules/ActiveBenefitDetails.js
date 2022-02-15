@@ -128,7 +128,7 @@ ActiveBenefitDetails.propTypes = {
     benefitName: PropTypes.string,
     status: PropTypes.oneOf(['Active', 'Pending']),
     statusDesciption: PropTypes.string,
-    applicationdate: PropTypes.date,
+    applicationDate: PropTypes.string,
     applicationType: PropTypes.string,
     applicationDescription: PropTypes.string,
     withdrawalRequest: PropTypes.string,
