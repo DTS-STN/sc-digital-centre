@@ -26,10 +26,6 @@ const VerticalLinearStepper = (props) => {
     ))
   }
 
-  function onClick() {
-    window.open('./dashboard', 'Dashboard')
-  }
-
   return (
     <div id="stepper-container">
       <h1 className="text-xl font-bold">{t.latestActivity}</h1>
@@ -40,13 +36,13 @@ const VerticalLinearStepper = (props) => {
           <div className={'w-0.5 mt-1.5 ml-[5px] h-[92%] ' + statusColor}></div>
         </div>
 
-        <div id="stepper-content">
-          <button
-            className="text-left ml-6 text-xs text-bright-blue-solid underline"
-            onClick={onClick}
+        <div id="stepper-content" className="mt-1 ml-6">
+          <a
+            href="./dashboard"
+            className="text-xs text-left text-bright-blue-solid underline"
           >
             {t.viewMyStatusAndMessages}
-          </button>
+          </a>
         </div>
       </div>
     </div>
