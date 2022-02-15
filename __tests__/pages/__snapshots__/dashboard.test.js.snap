@@ -284,7 +284,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 id="paymentStartDate"
               >
                 <div
-                  id="paymentEndDate"
+                  id="nextPaymentAmount"
                 >
                   <p
                     class="text-base"
@@ -296,14 +296,12 @@ exports[`Dashboard renders Dashboard 1`] = `
                   >
                     734.34
                   </p>
-                  <button>
-                    <a
-                      class="text-sm mt-1 text-bright-blue-solid underline"
-                      href="./dashboard"
-                    >
-                      View my payments +
-                    </a>
-                  </button>
+                  <a
+                    class="text-sm mt-1 text-bright-blue-solid underline"
+                    href="./dashboard"
+                  >
+                    View my payments +
+                  </a>
                 </div>
                 <div
                   class="relative mb-20"
@@ -364,7 +362,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   </div>
                 </div>
                 <div
-                  id="paymentEndDate"
+                  id="lastUpdates"
                 >
                   <p
                     class="font-display"
@@ -381,14 +379,12 @@ exports[`Dashboard renders Dashboard 1`] = `
                   >
                     September 8, 2021
                   </p>
-                  <button>
-                    <a
-                      class="text-sm mt-1 text-bright-blue-solid underline"
-                      href="./dashboard"
-                    >
-                      View my status and messages +
-                    </a>
-                  </button>
+                  <a
+                    class="text-sm mt-1 text-bright-blue-solid underline"
+                    href="./dashboard"
+                  >
+                    View my status and messages +
+                  </a>
                 </div>
               </div>
             </div>
@@ -823,7 +819,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 id="paymentStartDate"
               >
                 <div
-                  id="paymentEndDate"
+                  id="nextPaymentAmount"
                 >
                   <p
                     class="text-base"
@@ -835,14 +831,12 @@ exports[`Dashboard renders Dashboard 1`] = `
                   >
                     691.45
                   </p>
-                  <button>
-                    <a
-                      class="text-sm mt-1 text-bright-blue-solid underline"
-                      href="./dashboard"
-                    >
-                      View my payments +
-                    </a>
-                  </button>
+                  <a
+                    class="text-sm mt-1 text-bright-blue-solid underline"
+                    href="./dashboard"
+                  >
+                    View my payments +
+                  </a>
                 </div>
                 <div
                   class="relative mb-20"
@@ -903,7 +897,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   </div>
                 </div>
                 <div
-                  id="paymentEndDate"
+                  id="lastUpdates"
                 >
                   <p
                     class="font-display"
@@ -920,14 +914,12 @@ exports[`Dashboard renders Dashboard 1`] = `
                   >
                     September 8, 2021
                   </p>
-                  <button>
-                    <a
-                      class="text-sm mt-1 text-bright-blue-solid underline"
-                      href="./dashboard"
-                    >
-                      View my status and messages +
-                    </a>
-                  </button>
+                  <a
+                    class="text-sm mt-1 text-bright-blue-solid underline"
+                    href="./dashboard"
+                  >
+                    View my status and messages +
+                  </a>
                 </div>
               </div>
             </div>

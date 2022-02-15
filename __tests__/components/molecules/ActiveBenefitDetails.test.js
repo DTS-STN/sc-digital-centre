@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import BenefitCardHeaderActive from './../atoms/BenefitCardHeaderActive'
-import ActiveBenefitDetails from './ActiveBenefitDetails'
+import ActiveBenefitDetails from '../../../components/molecules/ActiveBenefitDetails'
 
 const activeCanadaPensionPlan = {
   benefitType: 'CPP',
@@ -71,10 +70,7 @@ describe('ActiveBenefitDetails', () => {
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <BenefitCardHeaderActive
-        benefit={activeCanadaPensionPlan}
-        locale={'en'}
-      />
+      <ActiveBenefitDetails benefit={activeCanadaPensionPlan} locale={'en'} />
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()

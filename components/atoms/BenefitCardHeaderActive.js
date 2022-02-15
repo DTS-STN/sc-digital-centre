@@ -2,7 +2,6 @@ import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
 import CircleProgressBar from './CircleProgressBar'
-import Link from 'next/link'
 
 export default function BenefitCardHeaderActive(props) {
   const t = props.locale === 'en' ? en : fr
@@ -34,11 +33,12 @@ export default function BenefitCardHeaderActive(props) {
             <p className="font-bold text-4xl mt-1">
               {props.benefit.nextPaymentAmount}
             </p>
-            <Link href="./dashboard">
-              <a className="text-sm mt-1 text-bright-blue-solid underline">
-                {t.viewPaymentHistory}
-              </a>
-            </Link>
+            <a
+              href="./dashboard"
+              className="text-sm mt-1 text-bright-blue-solid underline"
+            >
+              {t.viewPaymentHistory}
+            </a>
           </div>
 
           <div id="nextPaymentDueDate" className="relative mb-20">
@@ -52,11 +52,12 @@ export default function BenefitCardHeaderActive(props) {
             <p className="font-bold text-lg">
               {props.benefit.lastUpdates[0]?.description}
             </p>
-            <Link href="./dashboard">
-              <a className="text-sm mt-1 text-bright-blue-solid underline">
-                {t.viewMyStatusAndMessages}
-              </a>
-            </Link>
+            <a
+              href="./dashboard"
+              className="text-sm mt-1 text-bright-blue-solid underline"
+            >
+              {t.viewMyStatusAndMessages}
+            </a>
           </div>
         </div>
       </div>
