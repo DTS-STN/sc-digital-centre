@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import BenefitCardHeaderPending from '../../../components/atoms/BenefitCardHeaderPending'
+import BenefitCardHeaderPending from './BenefitCardHeaderPending'
 
 describe('BenefitCardHeaderPending Tests', () => {
   it('renders the Header of a Pending Benefit', () => {

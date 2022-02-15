@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import HorizontalRule from '../../../components/atoms/HorizontalRule'
+import HorizontalRule from './HorizontalRule'
 
 describe('HorizontalRule Component Tests', () => {
   it('renders HorizontalRule no width', () => {

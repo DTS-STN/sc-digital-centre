@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import ActiveBenefitDetails from '../../../components/molecules/ActiveBenefitDetails'
+import ActiveBenefitDetails from './ActiveBenefitDetails'
 
 const activeCanadaPensionPlan = {
   benefitType: 'CPP',
@@ -12,7 +12,6 @@ const activeCanadaPensionPlan = {
   applicationDate: 'July 1, 2021',
   estimatedReviewCompletionDate: 'July 31, 2021',
   applicationType: 'Canada Pension Plan (CPP)',
-  applicationStatus: 'Application Submitted',
   applicationDescription: 'Online application received',
   nextPaymentAmount: 734.34,
   nextPaymentDate: 'September 30, 2021',
