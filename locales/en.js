@@ -211,7 +211,7 @@ export default {
 
   // Benefit Card Header
   applicationSubmitted: 'Application submitted on:',
-  estimatedDateOfReviewCompletion: 'Estimated date of review completion',
+  estimatedDateOfDecision: 'Estimated date of decision',
   paymentAmount: 'Payment amount',
   daysUntilNextPayment: 'Days until next payment',
   latestUpdate: 'Latest update',
@@ -236,4 +236,27 @@ export default {
   addYourAddress: 'Add your address +',
   addYourPhoneNumber: 'Add your phone number +',
   addYourPaymentDetails: 'Add your payment details +',
+
+  // dashboard benefits tasks
+  allPaymentsTask: 'View all payments',
+  statusUpdateTask: 'View my status and messages',
+  retirementIncomeTask: 'Estimate retirement income',
+  cppContributionTask: 'View my Canada Pension Plan contributions',
+  taxDeductionsTask: 'Ask for tax deductions',
+  delayOasPensionTask: 'Delay receiving my OAS pension',
+  giveConsentTask: 'Give consent for someone to communicate on my behalf',
+  taxSlipTask: 'View tax slips',
+  reconsiderationTask: 'Request for reconsideration',
+  taxSlipMailingTask: 'Tax slip mailing options',
+
+  allPaymentsTaskLink: '/dashboard',
+  statusUpdateTaskLink: '/dashboard',
+  retirementIncomeTaskLink: '/dashboard',
+  cppContributionTaskLink: '/dashboard',
+  taxDeductionsTaskLink: '/dashboard',
+  delayOasPensionTaskLink: '/dashboard',
+  giveConsentTaskLink: '/dashboard',
+  taxSlipTaskLink: '/dashboard',
+  reconsiderationLink: '/dashboard',
+  taxSlipMailingLink: '/dashboard',
 }

@@ -63,10 +63,13 @@ const BenefitCard = (props) => {
       <HorizontalRule width="w-auto sm:w-full" />
 
       {/* Top tasks */}
-      <BenefitTasks
-        benefitType={props.benefit.benefitType}
-        isExpanded={isOpen}
-      />
+      <section>
+        <BenefitTasks
+          benefitType={props.benefit.benefitType}
+          isExpanded={isOpen}
+          tasks={props.tasks}
+        />
+      </section>
 
       {/* Benefit Card Details */}
       {isOpen && renderBenefitDetails()}
