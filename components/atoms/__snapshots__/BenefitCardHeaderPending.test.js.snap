@@ -12,18 +12,18 @@ Object {
           class="flex mr-12 justify-end"
         >
           <h2
-            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-400"
+            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
           />
         </div>
         <div
           class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
         >
           <div
-            class="col-span-1 py-4 sm:px-3"
+            class="col-span-1 py-4 md:px-0 lg:px-3"
             id="benefitName"
           >
             <div
-              class="font-bold font-display text-4xl mb-2 w-44"
+              class="font-bold font-display text-4xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
             />
           </div>
           <div
@@ -88,18 +88,18 @@ Object {
         class="flex mr-12 justify-end"
       >
         <h2
-          class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-400"
+          class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
         />
       </div>
       <div
         class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
       >
         <div
-          class="col-span-1 py-4 sm:px-3"
+          class="col-span-1 py-4 md:px-0 lg:px-3"
           id="benefitName"
         >
           <div
-            class="font-bold font-display text-4xl mb-2 w-44"
+            class="font-bold font-display text-4xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
           />
         </div>
         <div

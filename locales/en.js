@@ -211,7 +211,7 @@ export default {
 
   // Benefit Card Header
   applicationSubmitted: 'Application submitted on:',
-  estimatedDateOfReviewCompletion: 'Estimated date of review completion',
+  estimatedDateOfDecision: 'Estimated date of decision',
   paymentAmount: 'Payment amount',
   daysUntilNextPayment: 'Days until next payment',
   latestUpdate: 'Latest update',
