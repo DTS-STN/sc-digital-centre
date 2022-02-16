@@ -2,7 +2,9 @@
 
 exports[`Dashboard renders Dashboard 1`] = `
 <div>
-  <div>
+  <div
+    class="layout-container"
+  >
     <div
       class="mt-12 rounded-lg shadow-tile"
     >
@@ -64,7 +66,9 @@ exports[`Dashboard renders Dashboard 1`] = `
               </p>
               <p
                 class="font-bold text-lg"
-              />
+              >
+                July 31, 2021
+              </p>
             </div>
             <div
               class="py-4 sm:pl-10"
@@ -109,7 +113,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       <div
         class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
       />
-      <section>
+      <div>
         <div
           class="bg-gray-lighter mt-6 px-8 py-6"
         >
@@ -231,7 +235,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </li>
           </ul>
         </div>
-      </section>
+      </div>
       <button
         class="pl-5 py-5 sm:pl-10"
       >
@@ -400,7 +404,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       <div
         class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
       />
-      <section>
+      <div>
         <div
           class="bg-gray-lighter mt-6 px-8 py-6"
         >
@@ -522,7 +526,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </li>
           </ul>
         </div>
-      </section>
+      </div>
       <button
         class="pl-5 py-5 sm:pl-10"
       >
@@ -590,7 +594,9 @@ exports[`Dashboard renders Dashboard 1`] = `
               </p>
               <p
                 class="font-bold text-lg"
-              />
+              >
+                July 31, 2021
+              </p>
             </div>
             <div
               class="py-4 sm:pl-10"
@@ -635,7 +641,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       <div
         class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
       />
-      <section>
+      <div>
         <div
           class="bg-gray-lighter mt-6 px-8 py-6"
         >
@@ -757,7 +763,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </li>
           </ul>
         </div>
-      </section>
+      </div>
       <button
         class="pl-5 py-5 sm:pl-10"
       >
@@ -926,7 +932,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       <div
         class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
       />
-      <section>
+      <div>
         <div
           class="bg-gray-lighter mt-6 px-8 py-6"
         >
@@ -1048,7 +1054,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </li>
           </ul>
         </div>
-      </section>
+      </div>
       <button
         class="pl-5 py-5 sm:pl-10"
       >
@@ -1163,7 +1169,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       <div
         class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
       />
-      <section>
+      <div>
         <div
           class="bg-gray-lighter mt-6 px-8 py-6"
         >
@@ -1285,7 +1291,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </li>
           </ul>
         </div>
-      </section>
+      </div>
       <button
         class="pl-5 py-5 sm:pl-10"
       >
@@ -1454,7 +1460,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       <div
         class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
       />
-      <section>
+      <div>
         <div
           class="bg-gray-lighter mt-6 px-8 py-6"
         >
@@ -1576,7 +1582,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </li>
           </ul>
         </div>
-      </section>
+      </div>
       <button
         class="pl-5 py-5 sm:pl-10"
       >

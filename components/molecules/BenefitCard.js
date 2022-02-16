@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import en from '../../locales/en'
-import fr from '../../locales/fr'
+import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import BenefitCardHeaderActive from '../atoms/BenefitCardHeaderActive'
 import BenefitCardHeaderPending from '../atoms/BenefitCardHeaderPending'
@@ -8,14 +6,31 @@ import BenefitTasks from './BenefitTasks'
 import PendingBenefitDetails from './PendingBenefitDetails'
 import ActiveBenefitDetails from './ActiveBenefitDetails'
 import HorizontalRule from '../atoms/HorizontalRule'
+import en from '../../locales/en'
+import fr from '../../locales/fr'
 
 const BenefitCard = (props) => {
   const t = props.locale === 'en' ? en : fr
   const [isOpen, setIsOpen] = useState(false)
   const [btnCaption, setBtnCaption] = useState(t.viewMore)
+  const topOfCardRef = useRef(null)
+  const topOfTaskRef = useRef(null)
   const handleClick = () => {
     setBtnCaption(isOpen ? t.viewMore : t.viewLess)
     setIsOpen(!isOpen)
+  }
+
+  const scrollTo = () => {
+    if (!topOfTaskRef.current || !topOfCardRef.current) return
+    isOpen
+      ? topOfCardRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      : topOfTaskRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
   }
 
   const renderBenefitDetails = () => {
@@ -37,7 +52,7 @@ const BenefitCard = (props) => {
   }
 
   return (
-    <div className="mt-12 rounded-lg shadow-tile">
+    <div className="mt-12 rounded-lg shadow-tile" ref={topOfCardRef}>
       {/* Benefit Card Header */}
       {props.benefit.status == 'Active' ? (
         <BenefitCardHeaderActive
@@ -63,17 +78,22 @@ const BenefitCard = (props) => {
       <HorizontalRule width="w-auto sm:w-full" />
 
       {/* Top tasks */}
-      <section>
+      <div ref={topOfTaskRef}>
         <BenefitTasks
           benefitType={props.benefit.benefitType}
           isExpanded={isOpen}
           tasks={props.tasks}
         />
-      </section>
-
+      </div>
       {/* Benefit Card Details */}
       {isOpen && renderBenefitDetails()}
-      <button onClick={handleClick} className="pl-5 py-5 sm:pl-10">
+      <button
+        onClick={() => {
+          handleClick()
+          scrollTo()
+        }}
+        className="pl-5 py-5 sm:pl-10"
+      >
         {btnCaption}
       </button>
     </div>
