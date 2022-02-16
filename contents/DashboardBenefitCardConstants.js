@@ -8,7 +8,7 @@ const SUBMITTED_OAS = {
   statusDescription:
     'Your application is pending, we will notify you with decision',
   applicationDate: 'July 1, 2021',
-  estimatedReviewCompletionDate: 'July 31, 2021',
+  estimatedDateOfDecision: 'July 31, 2021',
   applicationType: 'Old Age Security Benefits (OAS)',
   applicationStatus: 'Application Submitted',
   applicationDescription: 'Electronic application received',
@@ -43,7 +43,7 @@ const ACTIVE_OAS = {
   statusDescription:
     'Your application is pending, we will notify you with decision',
   applicationDate: 'July 1, 2021',
-  estimatedReviewCompletionDate: 'July 31, 2021',
+  estimatedDateOfDecision: 'July 31, 2021',
   applicationStatus: 'Active',
   applicationDescription: 'Online application received',
   nextPaymentAmount: 691.45,
@@ -86,7 +86,7 @@ const SUBMITTED_CPP = {
   statusDescription:
     'Your application is pending, we will notify you with decision',
   applicationDate: 'July 1, 2021',
-  estimatedReviewCompletionDate: 'July 31, 2021',
+  estimatedDateOfDecision: 'July 31, 2021',
   applicationType: 'Canada Pension Plan (CPP)',
   applicationDescription: 'Online application received',
   nextPaymentAmount: 735.34,
@@ -128,7 +128,7 @@ const ACTIVE_CPP = {
   statusDescription:
     'Your application is pending, we will notify you with decision',
   applicationDate: 'July 1, 2021',
-  estimatedReviewCompletionDate: 'July 31, 2021',
+  estimatedDateOfDecision: 'July 31, 2021',
   applicationType: 'Canada Pension Plan (CPP)',
   applicationDescription: 'Online application received',
   nextPaymentAmount: 734.34,
