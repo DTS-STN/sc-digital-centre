@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import ActiveBenefitDetails from '../../../components/molecules/ActiveBenefitDetails'
+import BenefitCard from './BenefitCard'
 
 const activeCanadaPensionPlan = {
   benefitType: 'CPP',
@@ -12,14 +12,13 @@ const activeCanadaPensionPlan = {
   applicationDate: 'July 1, 2021',
   estimatedReviewCompletionDate: 'July 31, 2021',
   applicationType: 'Canada Pension Plan (CPP)',
-  applicationStatus: 'Application Submitted',
   applicationDescription: 'Online application received',
   nextPaymentAmount: 734.34,
   nextPaymentDate: 'September 30, 2021',
   lastPaymentDate: 'August 30, 2021',
   pensionStartDate: 'August 1, 2021',
   payeeFullName: 'John Smith Doe',
-  payeeAddress: '',
+  payeeAddress: '', // 123 - 00 Fake Street, Ottawa, On A1A-1A1
   payeePhoneNumber: '1-613-555-5455',
   accountNumber: 'XXXX-123',
   institutionNumber: '002',
@@ -49,28 +48,21 @@ const activeCanadaPensionPlan = {
 }
 
 expect.extend(toHaveNoViolations)
+describe('BenefitCard', () => {
+  it('renders BenefitCard', () => {
+    render(<BenefitCard locale="en" benefit={activeCanadaPensionPlan} />)
+    const benefitName = screen.getByText('Canada Pension Plan')
+    const status = screen.getByText('Active')
+    const nextPaymentAmount = screen.getByText('734.34')
 
-describe('ActiveBenefitDetails', () => {
-  it('Renders ActiveBenefitDetails', () => {
-    render(
-      <ActiveBenefitDetails benefit={activeCanadaPensionPlan} locale={'en'} />
-    )
-    const titleText = screen.getByText('Pension details')
-    const nextPaymentDate = screen.getByText('September 30, 2021')
-    const lastPaymentDate = screen.getByText('August 30, 2021')
-    const pensionStartDate = screen.getByText('August 1, 2021')
-    const payeePhoneNumber = screen.getByText('1-613-555-5455')
-
-    expect(titleText).toBeInTheDocument()
-    expect(nextPaymentDate).toBeInTheDocument()
-    expect(lastPaymentDate).toBeInTheDocument()
-    expect(pensionStartDate).toBeInTheDocument()
-    expect(payeePhoneNumber).toBeInTheDocument()
+    expect(benefitName).toBeInTheDocument()
+    expect(status).toBeInTheDocument()
+    expect(nextPaymentAmount).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <ActiveBenefitDetails benefit={activeCanadaPensionPlan} locale={'en'} />
+      <BenefitCard locale="en" benefit={activeCanadaPensionPlan} />
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()

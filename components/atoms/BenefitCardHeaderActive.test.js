@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import BenefitCardHeaderActive from '../../../components/atoms/BenefitCardHeaderActive'
+import BenefitCardHeaderActive from './BenefitCardHeaderActive'
 
 const activeCanadaPensionPlan = {
   benefitType: 'CPP',
