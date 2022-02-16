@@ -15,7 +15,7 @@ import {
 } from '../contents/DashboardBenefitTasksConstants'
 export default function Dashboard() {
   return (
-    <div>
+    <div className="layout-container">
       <BenefitCard
         locale="en"
         benefit={SUBMITTED_CPP}
