@@ -1190,24 +1190,6 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/oas-payment-icon.svg"
-                />
-                <p
-                  class="w-36 font-normal px-5 text-sm"
-                >
-                  View all payments
-                </p>
-              </a>
-            </li>
-            <li
-              class="font-display font-bold text-left pb-6"
-            >
-              <a
-                href="/dashboard"
-              >
-                <img
-                  alt=""
-                  class="font-normal pb-3 px-8"
                   src="/images/dashboard/oas-updates-message-icon.svg"
                 />
                 <p
@@ -1226,12 +1208,12 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/oas-tax-slip-icon.svg"
+                  src="/images/dashboard/ei-insurance-report-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
                 >
-                  View tax slips
+                  Complete your Employment Insurance reports
                 </p>
               </a>
             </li>
@@ -1244,12 +1226,12 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/oas-tax-slip-mailing-icon.svg"
+                  src="/images/dashboard/ei-view-payment-info-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
                 >
-                  Tax slip mailing options
+                  View my payment information
                 </p>
               </a>
             </li>
@@ -1262,12 +1244,12 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/oas-federal-tax-deductions-icon.svg"
+                  src="/images/dashboard/ei-submit-documents-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
                 >
-                  Ask for tax deductions
+                  Submit documents
                 </p>
               </a>
             </li>
@@ -1280,12 +1262,30 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/oas-delay-receiving-pension-icon.svg"
+                  src="/images/dashboard/ei-view-documents-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
                 >
-                  Delay receiving my OAS pension
+                  View documents
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-past-claims-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my past claims
                 </p>
               </a>
             </li>
@@ -1481,24 +1481,6 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/oas-payment-icon.svg"
-                />
-                <p
-                  class="w-36 font-normal px-5 text-sm"
-                >
-                  View all payments
-                </p>
-              </a>
-            </li>
-            <li
-              class="font-display font-bold text-left pb-6"
-            >
-              <a
-                href="/dashboard"
-              >
-                <img
-                  alt=""
-                  class="font-normal pb-3 px-8"
                   src="/images/dashboard/oas-updates-message-icon.svg"
                 />
                 <p
@@ -1517,66 +1499,84 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-insurance-report-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Complete your Employment Insurance reports
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-view-payment-info-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my payment information
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-past-claims-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my past claims
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-record-of-employment-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my Records of Employment
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
                   src="/images/dashboard/oas-tax-slip-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
                 >
                   View tax slips
-                </p>
-              </a>
-            </li>
-            <li
-              class="font-display font-bold text-left pb-6"
-            >
-              <a
-                href="/dashboard"
-              >
-                <img
-                  alt=""
-                  class="font-normal pb-3 px-8"
-                  src="/images/dashboard/oas-tax-slip-mailing-icon.svg"
-                />
-                <p
-                  class="w-36 font-normal px-5 text-sm"
-                >
-                  Tax slip mailing options
-                </p>
-              </a>
-            </li>
-            <li
-              class="font-display font-bold text-left pb-6"
-            >
-              <a
-                href="/dashboard"
-              >
-                <img
-                  alt=""
-                  class="font-normal pb-3 px-8"
-                  src="/images/dashboard/oas-federal-tax-deductions-icon.svg"
-                />
-                <p
-                  class="w-36 font-normal px-5 text-sm"
-                >
-                  Ask for tax deductions
-                </p>
-              </a>
-            </li>
-            <li
-              class="font-display font-bold text-left pb-6"
-            >
-              <a
-                href="/dashboard"
-              >
-                <img
-                  alt=""
-                  class="font-normal pb-3 px-8"
-                  src="/images/dashboard/oas-delay-receiving-pension-icon.svg"
-                />
-                <p
-                  class="w-36 font-normal px-5 text-sm"
-                >
-                  Delay receiving my OAS pension
                 </p>
               </a>
             </li>
