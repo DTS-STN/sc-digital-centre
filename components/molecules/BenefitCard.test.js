@@ -10,7 +10,7 @@ const activeCanadaPensionPlan = {
   statusDescription:
     'Your application is pending, we will notify you with decision',
   applicationDate: 'July 1, 2021',
-  estimatedReviewCompletionDate: 'July 31, 2021',
+  estimatedDateOfDecision: 'July 31, 2021',
   applicationType: 'Canada Pension Plan (CPP)',
   applicationDescription: 'Online application received',
   nextPaymentAmount: 734.34,
@@ -47,10 +47,64 @@ const activeCanadaPensionPlan = {
   ],
 }
 
+const activeCppTasks = [
+  {
+    task: 'task 1',
+    taskIcon: '/images/dashboard/oas-payment-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: 'task 2',
+    taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: 'task 3',
+    taskIcon: '/images/dashboard/oas-retirement-income-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: 'task 4',
+    taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: 'task 5',
+    taskIcon: '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
+    taskLink: '/dashboard',
+  },
+  {
+    task: 'task 6',
+    taskIcon: '/images/dashboard/oas-delay-receiving-pension-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: 'task 7',
+    taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: 'task 8',
+    taskIcon: '/images/dashboard/oas-federal-tax-deductions-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: 'task 9',
+    taskIcon: '/images/dashboard/oas-consent-icon.svg',
+    taskLink: '/dashboard',
+  },
+]
+
 expect.extend(toHaveNoViolations)
 describe('BenefitCard', () => {
   it('renders BenefitCard', () => {
-    render(<BenefitCard locale="en" benefit={activeCanadaPensionPlan} />)
+    render(
+      <BenefitCard
+        locale="en"
+        benefit={activeCanadaPensionPlan}
+        tasks={activeCppTasks}
+      />
+    )
     const benefitName = screen.getByText('Canada Pension Plan')
     const status = screen.getByText('Active')
     const nextPaymentAmount = screen.getByText('734.34')
@@ -62,7 +116,11 @@ describe('BenefitCard', () => {
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <BenefitCard locale="en" benefit={activeCanadaPensionPlan} />
+      <BenefitCard
+        locale="en"
+        benefit={activeCanadaPensionPlan}
+        tasks={activeCppTasks}
+      />
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()

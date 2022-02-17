@@ -204,9 +204,122 @@ const ACTIVE_OAS_TASKS = [
   },
 ]
 
+const SUBMITTED_EI_TASKS = [
+  {
+    task: t.statusUpdateTask,
+    taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.completeInsuranceReportTask,
+    taskIcon: '/images/dashboard/ei-insurance-report-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.viewPaymentInfo,
+    taskIcon: '/images/dashboard/ei-view-payment-info-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.submitDocuments,
+    taskIcon: '/images/dashboard/ei-submit-documents-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.viewDocuments,
+    taskIcon: '/images/dashboard/ei-view-documents-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.viewPastClaimsTask,
+    taskIcon: '/images/dashboard/ei-past-claims-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.submitEformsTask,
+    taskIcon: '/images/dashboard/ei-submit-eform-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.taxSlipTask,
+    taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.taxSlipMailingTask,
+    taskIcon: '/images/dashboard/oas-tax-slip-mailing-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.registerForAlerts,
+    taskIcon: '/images/dashboard/ei-register-for-alert-icon.svg ',
+    taskLink: '/dashboard',
+  },
+]
+
+const ACTIVE_EI_TASKS = [
+  {
+    task: t.statusUpdateTask,
+    taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.completeInsuranceReportTask,
+    taskIcon: '/images/dashboard/ei-insurance-report-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.viewPaymentInfo,
+    taskIcon: '/images/dashboard/ei-view-payment-info-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.viewPastClaimsTask,
+    taskIcon: '/images/dashboard/ei-past-claims-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.recordOfEmployment,
+    taskIcon: '/images/dashboard/ei-record-of-employment-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.taxSlipTask,
+    taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.taxSlipMailingTask,
+    taskIcon: '/images/dashboard/oas-tax-slip-mailing-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.submitDocuments,
+    taskIcon: '/images/dashboard/ei-submit-documents-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.viewDocuments,
+    taskIcon: '/images/dashboard/ei-view-documents-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.submitEformsTask,
+    taskIcon: '/images/dashboard/ei-submit-eform-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.reportMistake,
+    taskIcon: '/images/dashboard/ei-report-mistake-icon.svg ',
+    taskLink: '/dashboard',
+  },
+]
+
 module.exports = {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
   SUBMITTED_OAS_TASKS,
   ACTIVE_OAS_TASKS,
+  SUBMITTED_EI_TASKS,
+  ACTIVE_EI_TASKS,
 }
