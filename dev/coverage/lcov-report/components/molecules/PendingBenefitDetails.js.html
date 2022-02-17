@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/molecules/FeatureBlock.js</title>
+    <title>Code coverage report for components/molecules/PendingBenefitDetails.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/molecules</a> FeatureBlock.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/molecules</a> PendingBenefitDetails.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -112,27 +112,17 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,9 +154,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -177,87 +167,61 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import propTypes from 'prop-types'
-import ActionButton from '../atoms/ActionButton'
-import Image from 'next/image'
-/**
- * Featured Content banner
- */
-export default function FeatureBlock(props) {
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
+import PropTypes from 'prop-types'
+import VerticalStepper from '../atoms/VerticalStepper'
+import en from '../../locales/en'
+import fr from '../../locales/fr'
+import HorizontalRule from '../atoms/HorizontalRule'
+&nbsp;
+const PendingBenefitDetails = (props) =&gt; {
+  const t = props.locale === 'en' ? <span class="branch-0 cbranch-no" title="branch not covered" >en </span>: fr
+&nbsp;
   return (
-    &lt;div className=" bg-light-solid"&gt;
-      &lt;div
-        className="flex flex-col  sm:flex-row-reverse bg-light-solid my-3 sm:container mx-auto sm:pl-6 sm:px-2"
-        id="feature-block"
-        data-testid="featureBlock"
-      &gt;
-        &lt;div className="aspect-w-5 aspect-h-2 sm:aspect-h-1 xl:ml-3 w-full min-w-max mr-break-out"&gt;
-          &lt;Image
-            src={props.imgSrc}
-            alt={props.imgAlt}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="50% 50%"
+    &lt;section&gt;
+      &lt;div className="flex-col ml-4 my-4 sm:m-8 sm:flex sm:flex-row"&gt;
+        &lt;div className="lg:ml-7"&gt;
+          &lt;VerticalStepper
+            benefitStatus={props.benefit.status}
+            lastUpdates={props.benefit.lastUpdates}
+            locale={props.locale}
           /&gt;
         &lt;/div&gt;
-        &lt;div className="flex flex-col place-content-between mx-auto md:w-3/5"&gt;
-          &lt;div className="flex flex-col m-2"&gt;
-            &lt;h2 className="font-display font-bold text-xl sm:text-2xl text-dark-solid"&gt;
-              {props.title}
-            &lt;/h2&gt;
-            &lt;p className="font-body my-5"&gt;{props.body}&lt;/p&gt;
+        &lt;div id="details" className="mt-4 sm:mt-0 sm:ml-20"&gt;
+          &lt;div id="application_details" className="mb-5 sm:mb-14"&gt;
+            &lt;p className="font-bold text-xl"&gt;{t.applicationDetails}&lt;/p&gt;
+            &lt;p className="font-normal text-base"&gt;
+              {props.benefit.statusDescription}
+            &lt;/p&gt;
           &lt;/div&gt;
-&nbsp;
-          &lt;div className="sm:flex my-1 sm:ml-4"&gt;
-            &lt;ActionButton id={props.btnId} href={props.featuredHref}&gt;
-              {props.buttonText}
-            &lt;/ActionButton&gt;
+          &lt;div id="application_description" className="mb-5 sm:mb-14"&gt;
+            &lt;p className="font-bold text-base"&gt;{t.applicationDescription}&lt;/p&gt;
+            &lt;p className="text-base"&gt;{props.benefit.applicationDescription}&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div id="additionalInformation"&gt;
+            &lt;p className="font-bold text-base"&gt;{t.additionalInformation}&lt;/p&gt;
+            &lt;p className="text-base"&gt;{props.benefit.additionalInformation}&lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
+      &lt;HorizontalRule width="w-auto sm:w-full" /&gt;
+    &lt;/section&gt;
   )
 }
 &nbsp;
-FeatureBlock.propTypes = {
-  // title text to be displayed
-  title: propTypes.string,
-&nbsp;
-  // body text to be displayed
-  body: propTypes.string,
-&nbsp;
-  // button text to be displayed
-  buttonText: propTypes.string,
-&nbsp;
-  // id of the button for for testing
-  featuredHref: propTypes.string,
-&nbsp;
-  // id of the button for for testing
-  btnId: propTypes.string,
-&nbsp;
-  // id of the element for testing
-  id: propTypes.string,
-&nbsp;
-  // Image src for right side of featured component
-  imgSrc: propTypes.string,
-&nbsp;
-  // Image alt text for right side of featured component
-  imgAlt: propTypes.string,
+PendingBenefitDetails.propTypes = {
+  benefit: PropTypes.shape({
+    benefitType: PropTypes.string,
+    benefitName: PropTypes.string,
+    status: PropTypes.oneOf(['Active', 'Pending']),
+    statusDesciption: PropTypes.string,
+    applicationType: PropTypes.string,
+    applicationDescription: PropTypes.string,
+    additionalInformation: PropTypes.string,
+  }),
 }
+&nbsp;
+export default PendingBenefitDetails
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
