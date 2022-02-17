@@ -198,4 +198,42 @@ export default {
     'https://www.canada.ca/en/transparency/privacy.html',
   reportAProblemSubmit: 'Submit',
   topTasks: 'Top Tasks',
+
+  //
+  // Dashboard
+  //
+
+  // Benefit Card
+  pendingBenefits: 'Pending benefits:',
+  activeBenefits: 'Active benefits:',
+  viewMore: 'View more +',
+  viewLess: 'View less +',
+
+  // Benefit Card Header
+  applicationSubmitted: 'Application submitted on:',
+  estimatedDateOfReviewCompletion: 'Estimated date of review completion',
+  paymentAmount: 'Payment amount',
+  daysUntilNextPayment: 'Days until next payment',
+  latestUpdate: 'Latest update',
+  documentReviewed: 'Document reviewed',
+  viewPaymentHistory: 'View my payments +',
+
+  // Benefit Card details
+  applicationDetails: 'Application details',
+  applicationDate: 'Application date',
+  applicationDescription: 'Application description',
+  additionalInformation: 'Additional information',
+  latestActivity: 'Latest activity',
+  viewMyStatusAndMessages: 'View my status and messages +',
+  pensionDetails: 'Pension details',
+  nextPayment: 'Next payment',
+  lastPayment: 'Last payment',
+  benefitStartDate: 'Benefit start date',
+  pensionStartDate: 'Pension start date',
+  payeeAddress: 'Address',
+  payeePhoneNumber: 'Phone number',
+  paymentDetails: 'Payment details',
+  addYourAddress: 'Add your address +',
+  addYourPhoneNumber: 'Add your phone number +',
+  addYourPaymentDetails: 'Add your payment details +',
 }
