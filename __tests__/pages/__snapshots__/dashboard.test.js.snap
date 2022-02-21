@@ -3,7 +3,7 @@
 exports[`Dashboard renders Dashboard 1`] = `
 <div>
   <div
-    class="layout-container"
+    class="layout-contain"
   >
     <div
       class="mt-12 rounded-lg shadow-tile"
@@ -1588,6 +1588,261 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         View more +
       </button>
+    </div>
+    <div
+      class="mt-12 rounded-lg shadow-tile"
+    >
+      <div
+        class="px-4 md:px-6 py-7"
+      >
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
+          <div
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="benefitName"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Old Age Security
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="col-span-3 sm:grid sm:grid-cols-2"
+          >
+            <div
+              class="ml-8 mt-10"
+            >
+              <p
+                class="text-3xl mb-5"
+              >
+                You might be eligible.
+              </p>
+              <a
+                class="text-xl"
+              >
+                Learn more about 
+              </a>
+              <a
+                class="text-xl underline hover:text-bright-blue-solid"
+                href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html"
+              >
+                Old Age Security
+              </a>
+            </div>
+            <div
+              class="grid grid-cols-2"
+            >
+              <div
+                class="sm:col-span-1"
+              >
+                <a
+                  class="font-normal float-right"
+                  href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html"
+                >
+                  <img
+                    alt=""
+                    src="/images/dashboard/oas-retirement-income-icon.svg"
+                  />
+                  <p
+                    class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"
+                  >
+                    Estimate retirement income
+                  </p>
+                </a>
+              </div>
+              <div
+                class="sm:col-span-1"
+              >
+                <a
+                  class="font-normal float-right"
+                  href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html"
+                >
+                  <img
+                    alt=""
+                    src="/images/dashboard/ei-insurance-report-icon.svg"
+                  />
+                  <p
+                    class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"
+                  >
+                    Apply for 
+                    Old Age Security
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-12 rounded-lg shadow-tile"
+    >
+      <div
+        class="px-4 md:px-6 py-7"
+      >
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
+          <div
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="benefitName"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Canada Pension Plan
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="col-span-3 sm:grid sm:grid-cols-2"
+          >
+            <div
+              class="ml-8 mt-10"
+            >
+              <p
+                class="text-3xl mb-5"
+              >
+                You might be eligible.
+              </p>
+              <a
+                class="text-xl"
+              >
+                Learn more about 
+              </a>
+              <a
+                class="text-xl underline hover:text-bright-blue-solid"
+                href="https://www.canada.ca/en/services/benefits/publicpensions/cpp.html"
+              >
+                Canada Pension Plan
+              </a>
+            </div>
+            <div
+              class="grid grid-cols-2"
+            >
+              <div
+                class="sm:col-span-1"
+              >
+                <a
+                  class="font-normal float-right"
+                  href=""
+                >
+                  <img
+                    alt=""
+                    src="/images/dashboard/oas-retirement-income-icon.svg"
+                  />
+                  <p
+                    class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"
+                  >
+                    Estimate retirement income
+                  </p>
+                </a>
+              </div>
+              <div
+                class="sm:col-span-1"
+              >
+                <a
+                  class="font-normal float-right"
+                  href=""
+                >
+                  <img
+                    alt=""
+                    src="/images/dashboard/ei-insurance-report-icon.svg"
+                  />
+                  <p
+                    class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"
+                  >
+                    Apply for 
+                    Canada Pension Plan
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-12 rounded-lg shadow-tile"
+    >
+      <div
+        class="px-4 md:px-6 py-7"
+      >
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
+          <div
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="benefitName"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Employment Insurance
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="col-span-3 sm:grid sm:grid-cols-2"
+          >
+            <div
+              class="ml-8 mt-10"
+            >
+              <p
+                class="text-3xl mb-5"
+              >
+                You might be eligible.
+              </p>
+              <a
+                class="text-xl"
+              >
+                Learn more about 
+              </a>
+              <a
+                class="text-xl underline hover:text-bright-blue-solid"
+                href="https://www.canada.ca/en/services/benefits/ei.html"
+              >
+                Employment Insurance
+              </a>
+            </div>
+            <div
+              class="grid grid-cols-2"
+            >
+              <div
+                class="hidden sm:flex"
+              />
+              <div
+                class="sm:col-span-1"
+              >
+                <a
+                  class="font-normal float-right"
+                  href=""
+                >
+                  <img
+                    alt=""
+                    src="/images/dashboard/ei-insurance-report-icon.svg"
+                  />
+                  <p
+                    class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"
+                  >
+                    Apply for 
+                    Employment Insurance
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
