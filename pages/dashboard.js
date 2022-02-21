@@ -46,6 +46,7 @@ export default function Dashboard() {
       />
       <BenefitCard locale="en" benefit={ACTIVE_EI} tasks={ACTIVE_EI_TASKS} />
 
+      <ApplicationCard locale="en" benefitApplication={APPLICATION_CARD_OAS} />
       <ApplicationCard locale="en" benefitApplication={APPLICATION_CARD_CPP} />
       <ApplicationCard locale="en" benefitApplication={APPLICATION_CARD_EI} />
     </div>
