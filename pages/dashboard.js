@@ -26,7 +26,7 @@ import {
 
 export default function Dashboard() {
   return (
-    <div className="layout-contain">
+    <div className="layout-container">
       <BenefitCard
         locale="en"
         benefit={SUBMITTED_CPP}

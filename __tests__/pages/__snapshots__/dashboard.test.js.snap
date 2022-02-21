@@ -3,7 +3,7 @@
 exports[`Dashboard renders Dashboard 1`] = `
 <div>
   <div
-    class="layout-contain"
+    class="layout-container"
   >
     <div
       class="mt-12 rounded-lg shadow-tile"
