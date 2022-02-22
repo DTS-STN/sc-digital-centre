@@ -10,15 +10,15 @@ export default function BenefitCardHeaderPending(props) {
       <div className="flex mr-12 justify-end">
         <h2
           className={
-            'font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-400'
+            'font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending'
           }
         >
           {props.benefit.applicationStatus}
         </h2>
       </div>
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
-        <div id="benefitName" className="col-span-1 py-4 sm:px-3">
-          <div className="font-bold font-display text-4xl mb-2 w-44">
+        <div id="benefitName" className="col-span-1 py-4 md:px-0 lg:px-3">
+          <div className="font-bold font-display text-4xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
             {props.benefit.benefitName}
           </div>
         </div>
@@ -33,11 +33,9 @@ export default function BenefitCardHeaderPending(props) {
           </div>
 
           <div id="paymentEndDate" className="py-4 sm:pl-10">
-            <p className="text-base w-44">
-              {t.estimatedDateOfReviewCompletion}
-            </p>
+            <p className="text-base w-44">{t.estimatedDateOfDecision}</p>
             <p className="font-bold text-lg">
-              {props.benefit.estimatedReviewCompletionDate}
+              {props.benefit.estimatedDateOfDecision}
             </p>
           </div>
 

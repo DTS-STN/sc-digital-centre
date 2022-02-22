@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import PendingBenefitDetails from '../../../components/molecules/PendingBenefitDetails'
+import PendingBenefitDetails from './PendingBenefitDetails'
 
 describe('PendingBenefitDetails Tests', () => {
   const testBenefitObject = {
@@ -30,7 +30,6 @@ describe('PendingBenefitDetails Tests', () => {
     paymentType: 'Direct Deposit',
     additionalInformation:
       'We will notify you as soon as we have process your application.',
-    applicationStatus: 'Active',
     pendingBenefits: 'Retirement pension',
     lastUpdates: [
       {

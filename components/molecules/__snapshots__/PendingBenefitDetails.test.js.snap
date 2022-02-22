@@ -113,10 +113,12 @@ Object {
                   />
                 </div>
                 <div
+                  class="mt-1 ml-6"
                   id="stepper-content"
                 >
-                  <button
-                    class="text-left ml-6 text-xs text-bright-blue-solid underline"
+                  <a
+                    class="text-xs text-left text-bright-blue-solid underline"
+                    href="./dashboard"
                   />
                 </div>
               </div>
@@ -281,10 +283,12 @@ Object {
                 />
               </div>
               <div
+                class="mt-1 ml-6"
                 id="stepper-content"
               >
-                <button
-                  class="text-left ml-6 text-xs text-bright-blue-solid underline"
+                <a
+                  class="text-xs text-left text-bright-blue-solid underline"
+                  href="./dashboard"
                 />
               </div>
             </div>

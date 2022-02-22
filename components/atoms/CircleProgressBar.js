@@ -7,7 +7,7 @@ export default function CircleProgressBar(props) {
   const fullConfig = resolveConfig(tailwindConfig)
 
   return (
-    <div className="absolute inset-x-6 top-4 h-16">
+    <div className="-ml-4 absolute top-4 sm:inset-x-6">
       <ProgressBar
         progress={props.progress}
         steps={props.steps}
