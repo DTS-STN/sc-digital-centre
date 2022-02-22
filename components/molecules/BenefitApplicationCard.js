@@ -56,7 +56,7 @@ const BenefitApplicationCard = (props) => {
                 >
                   <img src={props.benefitApplication.applyIcon} alt="" />
                   <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5">
-                    Apply for {props.benefitApplication.benefitName}
+                    {t.applyFor} {props.benefitApplication.benefitName}
                   </p>
                 </a>
               </div>

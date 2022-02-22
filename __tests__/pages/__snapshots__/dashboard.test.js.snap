@@ -1669,7 +1669,8 @@ exports[`Dashboard renders Dashboard 1`] = `
                   <p
                     class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"
                   >
-                    Apply for 
+                    Apply for
+                     
                     Old Age Security
                   </p>
                 </a>
@@ -1759,7 +1760,8 @@ exports[`Dashboard renders Dashboard 1`] = `
                   <p
                     class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"
                   >
-                    Apply for 
+                    Apply for
+                     
                     Canada Pension Plan
                   </p>
                 </a>
@@ -1834,7 +1836,8 @@ exports[`Dashboard renders Dashboard 1`] = `
                   <p
                     class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"
                   >
-                    Apply for 
+                    Apply for
+                     
                     Employment Insurance
                   </p>
                 </a>

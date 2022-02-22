@@ -273,4 +273,5 @@ export default {
   estimateRetirementIncome: 'Estimate retirement income',
   youMightBeEligible: 'You might be eligible.',
   learnMoreAbout: 'Learn more about ',
+  applyFor: 'Apply for',
 }
