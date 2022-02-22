@@ -3,8 +3,9 @@ import fr from '../../locales/fr'
 import PropTypes from 'prop-types'
 import HorizontalRule from '../atoms/HorizontalRule'
 import propTypes from 'prop-types'
+import BenefitCode from '../../constants/BenefitCode'
 
-const ApplicationCard = (props) => {
+const BenefitApplicationCard = (props) => {
   const t = props.locale === 'en' ? en : fr
 
   return (
@@ -29,8 +30,10 @@ const ApplicationCard = (props) => {
               </a>
             </div>
             <div className="grid grid-cols-2">
-              {props.benefitApplication.benefitType == 'CPP' ||
-              props.benefitApplication.benefitType == 'OAS' ? (
+              {props.benefitApplication.benefitType.toUpperCase() ===
+                BenefitCode.cpp ||
+              props.benefitApplication.benefitType.toUpperCase() ===
+                BenefitCode.oas ? (
                 <div className="sm:col-span-1">
                   <a
                     href={props.benefitApplication.estimateLink}
@@ -65,16 +68,15 @@ const ApplicationCard = (props) => {
   )
 }
 
-export default ApplicationCard
+export default BenefitApplicationCard
 
-ApplicationCard.propTypes = {
+BenefitApplicationCard.propTypes = {
   benefitApplication: PropTypes.shape({
-    benefitType: PropTypes.oneOf(['CPP', 'OAS', 'GIS', 'EI']),
-    benefitName: PropTypes.oneOf([
-      'Canada Pension Plan',
-      'Old Age Security',
-      'Guaranteed Income Supplement',
-      'Employment Insurance',
+    benefitType: PropTypes.oneOf([
+      BenefitCode.cpp,
+      BenefitCode.oas,
+      BenefitCode.gis,
+      BenefitCode.ei,
     ]),
     applyIcon: propTypes.string,
     learnMoreLink: propTypes.string,

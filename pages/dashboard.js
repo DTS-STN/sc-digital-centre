@@ -1,5 +1,5 @@
 import BenefitCard from '../components/molecules/BenefitCard'
-import ApplicationCard from '../components/molecules/ApplicationCard'
+import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import {
   ACTIVE_CPP,
   SUBMITTED_CPP,
@@ -46,9 +46,18 @@ export default function Dashboard() {
       />
       <BenefitCard locale="en" benefit={ACTIVE_EI} tasks={ACTIVE_EI_TASKS} />
 
-      <ApplicationCard locale="en" benefitApplication={APPLICATION_CARD_OAS} />
-      <ApplicationCard locale="en" benefitApplication={APPLICATION_CARD_CPP} />
-      <ApplicationCard locale="en" benefitApplication={APPLICATION_CARD_EI} />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_OAS}
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_CPP}
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_EI}
+      />
     </div>
   )
 }

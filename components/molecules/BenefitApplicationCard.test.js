@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import ApplicationCard from './ApplicationCard'
+import BenefitApplicationCard from './BenefitApplicationCard'
 
 const APPLICATION_CARD_OAS = {
   benefitType: 'OAS',
@@ -18,10 +18,10 @@ const APPLICATION_CARD_OAS = {
 
 expect.extend(toHaveNoViolations)
 
-describe('ApplicationCard', () => {
-  it('Renders ApplicationCard', () => {
+describe('BenefitApplicationCard', () => {
+  it('Renders BenefitApplicationCard', () => {
     render(
-      <ApplicationCard
+      <BenefitApplicationCard
         benefitApplication={APPLICATION_CARD_OAS}
         locale={'en'}
       />
@@ -37,7 +37,7 @@ describe('ApplicationCard', () => {
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <ApplicationCard
+      <BenefitApplicationCard
         benefitApplication={APPLICATION_CARD_OAS}
         locale={'en'}
       />
