@@ -52,7 +52,7 @@ const BenefitCard = (props) => {
   }
 
   return (
-    <div className="mt-12 rounded-lg shadow-tile" ref={topOfCardRef}>
+    <div className="benefit-card" ref={topOfCardRef}>
       {/* Benefit Card Header */}
       {props.benefit.status == 'Active' ? (
         <BenefitCardHeaderActive
