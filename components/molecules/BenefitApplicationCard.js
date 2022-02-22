@@ -8,6 +8,13 @@ import BenefitCode from '../../constants/BenefitCode'
 const BenefitApplicationCard = (props) => {
   const t = props.locale === 'en' ? en : fr
 
+  const isEstimateButtonRequired = () => {
+    return (
+      props.benefitApplication.benefitType.toUpperCase() === BenefitCode.cpp ||
+      props.benefitApplication.benefitType.toUpperCase() === BenefitCode.oas
+    )
+  }
+
   return (
     <div className="mt-12 rounded-lg shadow-tile">
       <div className="px-4 md:px-6 py-7">
@@ -30,16 +37,16 @@ const BenefitApplicationCard = (props) => {
               </a>
             </div>
             <div className="grid grid-cols-2">
-              {props.benefitApplication.benefitType.toUpperCase() ===
-                BenefitCode.cpp ||
-              props.benefitApplication.benefitType.toUpperCase() ===
-                BenefitCode.oas ? (
+              {isEstimateButtonRequired() ? (
                 <div className="sm:col-span-1">
                   <a
                     href={props.benefitApplication.estimateLink}
                     className="font-normal float-right"
                   >
-                    <img src={props.benefitApplication.estimateIcon} alt="" />
+                    <img
+                      src={props.benefitApplication.estimateIcon}
+                      alt={t.estimateRetirementIncome}
+                    />
                     <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5">
                       {t.estimateRetirementIncome}
                     </p>
@@ -54,7 +61,12 @@ const BenefitApplicationCard = (props) => {
                   href={props.benefitApplication.applicationLink}
                   className="font-normal float-right"
                 >
-                  <img src={props.benefitApplication.applyIcon} alt="" />
+                  <img
+                    src={props.benefitApplication.applyIcon}
+                    alt={
+                      t.applyFor + ' ' + props.benefitApplication.benefitName
+                    }
+                  />
                   <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5">
                     {t.applyFor} {props.benefitApplication.benefitName}
                   </p>
