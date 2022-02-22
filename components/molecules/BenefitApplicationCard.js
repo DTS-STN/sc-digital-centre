@@ -43,10 +43,7 @@ const BenefitApplicationCard = (props) => {
                     href={props.benefitApplication.estimateLink}
                     className="font-normal float-right"
                   >
-                    <img
-                      src={props.benefitApplication.estimateIcon}
-                      alt={t.estimateRetirementIncome}
-                    />
+                    <img src={props.benefitApplication.estimateIcon} alt="" />
                     <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5">
                       {t.estimateRetirementIncome}
                     </p>
@@ -61,12 +58,7 @@ const BenefitApplicationCard = (props) => {
                   href={props.benefitApplication.applicationLink}
                   className="font-normal float-right"
                 >
-                  <img
-                    src={props.benefitApplication.applyIcon}
-                    alt={
-                      t.applyFor + ' ' + props.benefitApplication.benefitName
-                    }
-                  />
+                  <img src={props.benefitApplication.applyIcon} alt="" />
                   <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5">
                     {t.applyFor} {props.benefitApplication.benefitName}
                   </p>
