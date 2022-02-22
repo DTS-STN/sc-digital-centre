@@ -144,9 +144,7 @@
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,8 +162,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -253,54 +249,52 @@ const BenefitApplicationCard = (props) =&gt; {
   }
 &nbsp;
   return (
-    &lt;div className="mt-12 rounded-lg shadow-tile"&gt;
-      &lt;div className="px-4 md:px-6 py-7"&gt;
-        &lt;div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"&gt;
-          &lt;div id="benefitName" className="col-span-1 py-4 md:px-0 lg:px-3"&gt;
-            &lt;div className="font-bold font-display text-4xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"&gt;
-              {props.benefitApplication.benefitName}
-            &lt;/div&gt;
+    &lt;div className="benefit-card px-4 md:px-6 py-7"&gt;
+      &lt;div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"&gt;
+        &lt;div id="benefitName" className="col-span-1 py-4 md:px-0 lg:px-3"&gt;
+          &lt;div className="font-bold font-display text-4xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"&gt;
+            {props.benefitApplication.benefitName}
           &lt;/div&gt;
-          &lt;HorizontalRule width="w-1/3" visibility="sm:hidden" /&gt;
-          &lt;div className="col-span-3 sm:grid sm:grid-cols-2"&gt;
-            &lt;div className="ml-8 mt-10"&gt;
-              &lt;p className="text-3xl mb-5"&gt;{t.youMightBeEligible}&lt;/p&gt;
-              &lt;a className="text-xl"&gt;{t.learnMoreAbout}&lt;/a&gt;
-              &lt;a
-                href={props.benefitApplication.learnMoreLink}
-                className="text-xl underline hover:text-bright-blue-solid"
-              &gt;
-                {props.benefitApplication.benefitName}
-              &lt;/a&gt;
-            &lt;/div&gt;
-            &lt;div className="grid grid-cols-2"&gt;
-              {isEstimateButtonRequired() ? (
-                &lt;div className="sm:col-span-1"&gt;
-                  &lt;a
-                    href={props.benefitApplication.estimateLink}
-                    className="font-normal float-right"
-                  &gt;
-                    &lt;img src={props.benefitApplication.estimateIcon} alt="" /&gt;
-                    &lt;p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"&gt;
-                      {t.estimateRetirementIncome}
-                    &lt;/p&gt;
-                  &lt;/a&gt;
-                &lt;/div&gt;
-              ) : (
-                &lt;div className="hidden sm:flex"&gt;&lt;/div&gt;
-              )}
-&nbsp;
+        &lt;/div&gt;
+        &lt;HorizontalRule width="w-1/3" visibility="sm:hidden" /&gt;
+        &lt;div className="col-span-3 sm:grid sm:grid-cols-2"&gt;
+          &lt;div className="ml-8 mt-10"&gt;
+            &lt;p className="text-3xl mb-5"&gt;{t.youMightBeEligible}&lt;/p&gt;
+            &lt;a className="text-xl"&gt;{t.learnMoreAbout}&lt;/a&gt;
+            &lt;a
+              href={props.benefitApplication.learnMoreLink}
+              className="text-xl underline hover:text-bright-blue-solid"
+            &gt;
+              {props.benefitApplication.benefitName}
+            &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div className="grid grid-cols-2"&gt;
+            {isEstimateButtonRequired() ? (
               &lt;div className="sm:col-span-1"&gt;
                 &lt;a
-                  href={props.benefitApplication.applicationLink}
+                  href={props.benefitApplication.estimateLink}
                   className="font-normal float-right"
                 &gt;
-                  &lt;img src={props.benefitApplication.applyIcon} alt="" /&gt;
+                  &lt;img src={props.benefitApplication.estimateIcon} alt="" /&gt;
                   &lt;p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"&gt;
-                    {t.applyFor} {props.benefitApplication.benefitName}
+                    {t.estimateRetirementIncome}
                   &lt;/p&gt;
                 &lt;/a&gt;
               &lt;/div&gt;
+            ) : (
+              &lt;div className="hidden sm:flex"&gt;&lt;/div&gt;
+            )}
+&nbsp;
+            &lt;div className="sm:col-span-1"&gt;
+              &lt;a
+                href={props.benefitApplication.applicationLink}
+                className="font-normal float-right"
+              &gt;
+                &lt;img src={props.benefitApplication.applyIcon} alt="" /&gt;
+                &lt;p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5"&gt;
+                  {t.applyFor} {props.benefitApplication.benefitName}
+                &lt;/p&gt;
+              &lt;/a&gt;
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -331,7 +325,7 @@ BenefitApplicationCard.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 22 2022 20:11:30 GMT+0000 (Coordinated Universal Time)
+                at Tue Feb 22 2022 20:51:46 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
