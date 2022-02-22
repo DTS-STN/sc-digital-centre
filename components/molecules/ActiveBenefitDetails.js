@@ -89,7 +89,7 @@ const ActiveBenefitDetails = (props) => {
             </div>
             <div
               id="payment_details"
-              className="w-44 mt-7 sm:mt-0 sm:ml-5 lg:ml-32"
+              className="w-44 mt-7 sm:mt-0 sm:ml-5 lg:ml-16 2xl:ml-32"
             >
               <span className="font-bold text-base">{t.paymentDetails}</span>
               {props.benefit.paymentType != '' ? (
