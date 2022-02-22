@@ -1,4 +1,5 @@
 import BenefitCard from '../components/molecules/BenefitCard'
+import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import {
   ACTIVE_CPP,
   SUBMITTED_CPP,
@@ -15,6 +16,14 @@ import {
   SUBMITTED_EI_TASKS,
   ACTIVE_EI_TASKS,
 } from '../contents/DashboardBenefitTasksConstants'
+import {
+  APPLICATION_CARD_OAS,
+  APPLICATION_CARD_GIS,
+  APPLICATION_CARD_CPPD,
+  APPLICATION_CARD_EI,
+  APPLICATION_CARD_CPP,
+} from '../contents/DashboardBenefitApplicationCards'
+
 export default function Dashboard() {
   return (
     <div className="layout-container">
@@ -36,6 +45,19 @@ export default function Dashboard() {
         tasks={SUBMITTED_EI_TASKS}
       />
       <BenefitCard locale="en" benefit={ACTIVE_EI} tasks={ACTIVE_EI_TASKS} />
+
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_OAS}
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_CPP}
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_EI}
+      />
     </div>
   )
 }

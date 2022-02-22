@@ -268,4 +268,10 @@ export default {
   taxSlipTaskLink: '/dashboard',
   reconsiderationLink: '/dashboard',
   taxSlipMailingLink: '/dashboard',
+
+  // Dashboard benefit application card
+  estimateRetirementIncome: 'Estimate retirement income',
+  youMightBeEligible: 'You might be eligible.',
+  learnMoreAbout: 'Learn more about ',
+  applyFor: 'Apply for',
 }
