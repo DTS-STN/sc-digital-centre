@@ -1,7 +1,7 @@
 import en from '../locales/en'
 const t = en
-const applyIcon = '/images/dashboard/ei-insurance-report-icon.svg'
-const estimateIcon = '/images/dashboard/oas-retirement-income-icon.svg'
+const applyIcon = '/images/dashboard/apply-for-benefit-icon.svg'
+const estimateIcon = '/images/dashboard/estimate-retirement-income-icon.svg'
 
 const APPLICATION_CARD_OAS = {
   benefitType: 'OAS',
