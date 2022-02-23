@@ -45,7 +45,7 @@ const BenefitApplicationCard = (props) => {
                   className="font-normal float-right"
                 >
                   <img src={props.benefitApplication.estimateIcon} alt="" />
-                  <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5">
+                  <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3">
                     {t.estimateRetirementIncome}
                   </p>
                 </a>
@@ -60,7 +60,7 @@ const BenefitApplicationCard = (props) => {
                 className="font-normal float-right"
               >
                 <img src={props.benefitApplication.applyIcon} alt="" />
-                <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5">
+                <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3">
                   {t.applyFor} {props.benefitApplication.benefitName}
                 </p>
               </a>
