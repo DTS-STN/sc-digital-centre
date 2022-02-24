@@ -20,7 +20,7 @@ Object {
         >
           <div
             class="col-span-1 py-4 md:px-0 lg:px-3"
-            id="benefitName"
+            id="undefined-pending"
           >
             <div
               class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -31,11 +31,11 @@ Object {
           />
           <div
             class="font-display col-span-3 sm:grid grid-cols-3"
-            id="paymentStartDate"
+            id="undefined-pending-paymentStartDate"
           >
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="undefined-pending-applicationDate"
             >
               <p
                 class="text-base"
@@ -46,7 +46,7 @@ Object {
             </div>
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="undefined-pending-estimatedDateOfDecision"
             >
               <p
                 class="text-base w-44"
@@ -57,7 +57,7 @@ Object {
             </div>
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="undefined-pending-progressbar"
             >
               <p
                 class="font-display font-bold text-lg"
@@ -96,7 +96,7 @@ Object {
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="benefitName"
+          id="undefined-pending"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -107,11 +107,11 @@ Object {
         />
         <div
           class="font-display col-span-3 sm:grid grid-cols-3"
-          id="paymentStartDate"
+          id="undefined-pending-paymentStartDate"
         >
           <div
             class="py-4 sm:pl-10"
-            id="paymentEndDate"
+            id="undefined-pending-applicationDate"
           >
             <p
               class="text-base"
@@ -122,7 +122,7 @@ Object {
           </div>
           <div
             class="py-4 sm:pl-10"
-            id="paymentEndDate"
+            id="undefined-pending-estimatedDateOfDecision"
           >
             <p
               class="text-base w-44"
@@ -133,7 +133,7 @@ Object {
           </div>
           <div
             class="py-4 sm:pl-10"
-            id="paymentEndDate"
+            id="undefined-pending-progressbar"
           >
             <p
               class="font-display font-bold text-lg"
