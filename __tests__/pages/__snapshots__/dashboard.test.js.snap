@@ -1771,6 +1771,78 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="CPPD-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Canada Pension Plan Disability
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html"
+            >
+              Canada Pension Plan Disability
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for
+                   
+                  Canada Pension Plan Disability
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
           id="GIS-app-card"
         >
           <div
@@ -1844,150 +1916,6 @@ exports[`Dashboard renders Dashboard 1`] = `
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
           id="EI-app-card"
-        >
-          <div
-            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
-          >
-            Canada Pension Plan Disability
-          </div>
-        </div>
-        <div
-          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
-        />
-        <div
-          class="col-span-3 sm:grid sm:grid-cols-2"
-        >
-          <div
-            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
-          >
-            <p
-              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
-            >
-              You might be eligible.
-            </p>
-            <a
-              class="text-xl"
-            >
-              Learn more about 
-            </a>
-            <a
-              class="text-xl underline hover:text-bright-blue-solid"
-              href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html"
-            >
-              Canada Pension Plan Disability
-            </a>
-          </div>
-          <div
-            class="grid grid-cols-2 mt-6 sm:mt-2"
-          >
-            <div
-              class="hidden sm:flex"
-            />
-            <div
-              class="sm:col-span-1"
-            >
-              <a
-                class="font-normal float-right"
-                href=""
-              >
-                <img
-                  alt=""
-                  src="/images/dashboard/apply-for-benefit-icon.svg"
-                />
-                <p
-                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
-                >
-                  Apply for
-                   
-                  Canada Pension Plan Disability
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="benefit-card px-4 md:px-6 py-7"
-    >
-      <div
-        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
-      >
-        <div
-          class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="benefitName"
-        >
-          <div
-            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
-          >
-            Guranteed Income Supplement
-          </div>
-        </div>
-        <div
-          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
-        />
-        <div
-          class="col-span-3 sm:grid sm:grid-cols-2"
-        >
-          <div
-            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
-          >
-            <p
-              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
-            >
-              You might be eligible.
-            </p>
-            <a
-              class="text-xl"
-            >
-              Learn more about 
-            </a>
-            <a
-              class="text-xl underline hover:text-bright-blue-solid"
-              href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement.html"
-            >
-              Guranteed Income Supplement
-            </a>
-          </div>
-          <div
-            class="grid grid-cols-2 mt-6 sm:mt-2"
-          >
-            <div
-              class="hidden sm:flex"
-            />
-            <div
-              class="sm:col-span-1"
-            >
-              <a
-                class="font-normal float-right"
-                href=""
-              >
-                <img
-                  alt=""
-                  src="/images/dashboard/apply-for-benefit-icon.svg"
-                />
-                <p
-                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
-                >
-                  Apply for
-                   
-                  Guranteed Income Supplement
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="benefit-card px-4 md:px-6 py-7"
-    >
-      <div
-        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
-      >
-        <div
-          class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="benefitName"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
