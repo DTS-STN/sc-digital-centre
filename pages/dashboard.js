@@ -56,6 +56,10 @@ export default function Dashboard() {
       />
       <BenefitApplicationCard
         locale="en"
+        benefitApplication={APPLICATION_CARD_CPPD}
+      />
+      <BenefitApplicationCard
+        locale="en"
         benefitApplication={APPLICATION_CARD_GIS}
       />
       <BenefitApplicationCard

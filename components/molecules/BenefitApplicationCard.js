@@ -84,6 +84,7 @@ BenefitApplicationCard.propTypes = {
       BenefitCode.oas,
       BenefitCode.gis,
       BenefitCode.ei,
+      BenefitCode.cppd,
     ]),
     applyIcon: propTypes.string,
     learnMoreLink: propTypes.string,
