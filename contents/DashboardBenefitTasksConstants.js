@@ -213,7 +213,8 @@ const SUBMITTED_EI_TASKS = [
   {
     task: t.completeInsuranceReportTask,
     taskIcon: '/images/dashboard/ei-insurance-report-icon.svg',
-    taskLink: '/dashboard',
+    taskLink:
+      'https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service',
   },
   {
     task: t.viewPaymentInfo,
@@ -266,7 +267,8 @@ const ACTIVE_EI_TASKS = [
   {
     task: t.completeInsuranceReportTask,
     taskIcon: '/images/dashboard/ei-insurance-report-icon.svg',
-    taskLink: '/dashboard',
+    taskLink:
+      'https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service',
   },
   {
     task: t.viewPaymentInfo,
