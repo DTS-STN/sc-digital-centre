@@ -1203,7 +1203,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service"
               >
                 <img
                   alt=""
@@ -1494,7 +1494,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service"
               >
                 <img
                   alt=""
