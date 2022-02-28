@@ -1,6 +1,7 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import PendingBenefitDetails from './PendingBenefitDetails'
+import { axe } from 'jest-axe'
 
 describe('PendingBenefitDetails Tests', () => {
   const testBenefitObject = {
@@ -11,7 +12,7 @@ describe('PendingBenefitDetails Tests', () => {
       'Your application is pending, we will notify you with decision',
     applicationDate: 'July 1, 2021',
     estimatedReviewCompletionDate: 'July 31, 2021',
-    applicationType: 'Canada Pension Plan (CPP)',
+    applicationType: 'Canada Pension Plan',
     applicationStatus: 'Application Submitted',
     applicationDescription: 'Online application received',
     nextPaymentAmount: 734.34,
@@ -48,9 +49,22 @@ describe('PendingBenefitDetails Tests', () => {
   }
 
   it('renders the details section of a Pending Benefit', () => {
-    const component = render(
+    render(<PendingBenefitDetails benefit={testBenefitObject} />)
+    const documentsReviewed = screen.getByText('Documents reviewed')
+    const reviewedOn = screen.getByText('September 8, 2021')
+    const documentsUploaded = screen.getByText('Documents uploaded')
+    const uploadedOn = screen.getByText('September 6, 2021')
+    expect(documentsReviewed).toBeInTheDocument()
+    expect(reviewedOn).toBeInTheDocument()
+    expect(documentsUploaded).toBeInTheDocument()
+    expect(uploadedOn).toBeInTheDocument()
+  })
+
+  it('has no a11y violations', async () => {
+    const { container } = render(
       <PendingBenefitDetails benefit={testBenefitObject} />
     )
-    expect(component).toMatchSnapshot()
+    const results = await axe(container)
+    expect(results).toHaveNoViolations
   })
 })
