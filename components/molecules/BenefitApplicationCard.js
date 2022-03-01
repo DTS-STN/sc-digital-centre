@@ -19,7 +19,7 @@ const BenefitApplicationCard = (props) => {
     <div className="benefit-card px-4 md:px-6 py-7">
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
         <div
-          id={props.benefitApplication.benefitType + '-app-card'}
+          id={`${props.benefitApplication.benefitType}-app-card`}
           className="col-span-1 py-4 md:px-0 lg:px-3"
         >
           <div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
