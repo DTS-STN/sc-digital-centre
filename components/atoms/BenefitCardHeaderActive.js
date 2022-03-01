@@ -18,17 +18,20 @@ export default function BenefitCardHeaderActive(props) {
         </h2>
       </div>
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
-        <div id="benefitName" className="col-span-1 py-4 md:px-0 lg:px-3">
+        <div
+          id={`${props.benefit.benefitType}-active`}
+          className="col-span-1 py-4 md:px-0 lg:px-3"
+        >
           <div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
             {props.benefit.benefitName}
           </div>
         </div>
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
         <div
-          id="paymentStartDate"
+          id={`${props.benefit.benefitType}-active-paymentStartDate`}
           className="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
         >
-          <div id="nextPaymentAmount">
+          <div id={`${props.benefit.benefitType}-active-nextPaymentAmount`}>
             <p className="text-base">{t.paymentAmount}</p>
             <p className="font-bold text-4xl mt-1">
               {props.benefit.nextPaymentAmount}
@@ -41,12 +44,18 @@ export default function BenefitCardHeaderActive(props) {
             </a>
           </div>
 
-          <div id="nextPaymentDueDate" className="relative mb-20 mt-7 sm:mt-0">
+          <div
+            id={`${props.benefit.benefitType}-active-nextPaymentDueDate`}
+            className="relative mb-20 mt-7 sm:mt-0"
+          >
             <p>{t.daysUntilNextPayment}</p>
             <CircleProgressBar progress={11} steps={22} />
           </div>
 
-          <div id="latestUpdates" className="pt-5 sm:pt-0">
+          <div
+            id={`${props.benefit.benefitType}-active-latestUpdates`}
+            className="pt-5 sm:pt-0"
+          >
             <p className="font-display">{t.latestUpdate}</p>
             <p className="font-bold text-lg mt-1">{t.documentReviewed}</p>
             <p className="font-bold text-lg">

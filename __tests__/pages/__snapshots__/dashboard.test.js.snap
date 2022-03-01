@@ -25,7 +25,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         >
           <div
             class="col-span-1 py-4 md:px-0 lg:px-3"
-            id="benefitName"
+            id="CPP-pending"
           >
             <div
               class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -38,11 +38,11 @@ exports[`Dashboard renders Dashboard 1`] = `
           />
           <div
             class="font-display col-span-3 sm:grid grid-cols-3"
-            id="paymentStartDate"
+            id="CPP-pending-paymentStartDate"
           >
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="CPP-pending-applicationDate"
             >
               <p
                 class="text-base"
@@ -57,7 +57,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="CPP-pending-estimatedDateOfDecision"
             >
               <p
                 class="text-base w-44"
@@ -72,7 +72,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="CPP-pending-progressbar"
             >
               <p
                 class="font-display font-bold text-lg"
@@ -262,7 +262,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         >
           <div
             class="col-span-1 py-4 md:px-0 lg:px-3"
-            id="benefitName"
+            id="CPP-active"
           >
             <div
               class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -275,10 +275,10 @@ exports[`Dashboard renders Dashboard 1`] = `
           />
           <div
             class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
-            id="paymentStartDate"
+            id="CPP-active-paymentStartDate"
           >
             <div
-              id="nextPaymentAmount"
+              id="CPP-active-nextPaymentAmount"
             >
               <p
                 class="text-base"
@@ -299,7 +299,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="relative mb-20 mt-7 sm:mt-0"
-              id="nextPaymentDueDate"
+              id="CPP-active-nextPaymentDueDate"
             >
               <p>
                 Days until next payment
@@ -357,7 +357,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="pt-5 sm:pt-0"
-              id="latestUpdates"
+              id="CPP-active-latestUpdates"
             >
               <p
                 class="font-display"
@@ -553,7 +553,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         >
           <div
             class="col-span-1 py-4 md:px-0 lg:px-3"
-            id="benefitName"
+            id="OAS-pending"
           >
             <div
               class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -566,11 +566,11 @@ exports[`Dashboard renders Dashboard 1`] = `
           />
           <div
             class="font-display col-span-3 sm:grid grid-cols-3"
-            id="paymentStartDate"
+            id="OAS-pending-paymentStartDate"
           >
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="OAS-pending-applicationDate"
             >
               <p
                 class="text-base"
@@ -585,7 +585,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="OAS-pending-estimatedDateOfDecision"
             >
               <p
                 class="text-base w-44"
@@ -600,7 +600,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="OAS-pending-progressbar"
             >
               <p
                 class="font-display font-bold text-lg"
@@ -790,7 +790,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         >
           <div
             class="col-span-1 py-4 md:px-0 lg:px-3"
-            id="benefitName"
+            id="OAS-active"
           >
             <div
               class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -803,10 +803,10 @@ exports[`Dashboard renders Dashboard 1`] = `
           />
           <div
             class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
-            id="paymentStartDate"
+            id="OAS-active-paymentStartDate"
           >
             <div
-              id="nextPaymentAmount"
+              id="OAS-active-nextPaymentAmount"
             >
               <p
                 class="text-base"
@@ -827,7 +827,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="relative mb-20 mt-7 sm:mt-0"
-              id="nextPaymentDueDate"
+              id="OAS-active-nextPaymentDueDate"
             >
               <p>
                 Days until next payment
@@ -885,7 +885,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="pt-5 sm:pt-0"
-              id="latestUpdates"
+              id="OAS-active-latestUpdates"
             >
               <p
                 class="font-display"
@@ -1081,7 +1081,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         >
           <div
             class="col-span-1 py-4 md:px-0 lg:px-3"
-            id="benefitName"
+            id="EI-pending"
           >
             <div
               class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -1094,11 +1094,11 @@ exports[`Dashboard renders Dashboard 1`] = `
           />
           <div
             class="font-display col-span-3 sm:grid grid-cols-3"
-            id="paymentStartDate"
+            id="EI-pending-paymentStartDate"
           >
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="EI-pending-applicationDate"
             >
               <p
                 class="text-base"
@@ -1113,7 +1113,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="EI-pending-estimatedDateOfDecision"
             >
               <p
                 class="text-base w-44"
@@ -1128,7 +1128,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="py-4 sm:pl-10"
-              id="paymentEndDate"
+              id="EI-pending-progressbar"
             >
               <p
                 class="font-display font-bold text-lg"
@@ -1318,7 +1318,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         >
           <div
             class="col-span-1 py-4 md:px-0 lg:px-3"
-            id="benefitName"
+            id="EI-active"
           >
             <div
               class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -1331,10 +1331,10 @@ exports[`Dashboard renders Dashboard 1`] = `
           />
           <div
             class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
-            id="paymentStartDate"
+            id="EI-active-paymentStartDate"
           >
             <div
-              id="nextPaymentAmount"
+              id="EI-active-nextPaymentAmount"
             >
               <p
                 class="text-base"
@@ -1355,7 +1355,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="relative mb-20 mt-7 sm:mt-0"
-              id="nextPaymentDueDate"
+              id="EI-active-nextPaymentDueDate"
             >
               <p>
                 Days until next payment
@@ -1413,7 +1413,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             </div>
             <div
               class="pt-5 sm:pt-0"
-              id="latestUpdates"
+              id="EI-active-latestUpdates"
             >
               <p
                 class="font-display"
@@ -1597,7 +1597,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="benefitName"
+          id="OAS-app-card"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -1684,7 +1684,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="benefitName"
+          id="CPP-app-card"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -1771,7 +1771,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="benefitName"
+          id="CPPD-app-card"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -1843,7 +1843,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="benefitName"
+          id="GIS-app-card"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
@@ -1915,7 +1915,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="benefitName"
+          id="EI-app-card"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
