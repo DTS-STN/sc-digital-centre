@@ -1,8 +1,10 @@
 import BenefitCard from '../components/molecules/BenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import {
-  ACTIVE_CPP,
   SUBMITTED_CPP,
+  ACTIVE_CPP,
+  SUBMITTED_CPPD,
+  ACTIVE_CPPD,
   SUBMITTED_OAS,
   ACTIVE_OAS,
   SUBMITTED_EI,
@@ -11,6 +13,8 @@ import {
 import {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
+  SUBMITTED_CPPD_TASKS,
+  ACTIVE_CPPD_TASKS,
   SUBMITTED_OAS_TASKS,
   ACTIVE_OAS_TASKS,
   SUBMITTED_EI_TASKS,
@@ -33,6 +37,11 @@ export default function Dashboard() {
         tasks={SUBMITTED_CPP_TASKS}
       />
       <BenefitCard locale="en" benefit={ACTIVE_CPP} tasks={ACTIVE_CPP_TASKS} />
+      <BenefitCard
+        locale="en"
+        benefit={ACTIVE_CPPD}
+        tasks={ACTIVE_CPPD_TASKS}
+      />
       <BenefitCard
         locale="en"
         benefit={SUBMITTED_OAS}

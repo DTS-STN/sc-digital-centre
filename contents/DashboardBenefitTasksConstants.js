@@ -98,6 +98,92 @@ const ACTIVE_CPP_TASKS = [
   },
 ]
 
+const SUBMITTED_CPPD_TASKS = [
+  {
+    task: t.allPaymentsTask,
+    taskIcon: '/images/dashboard/oas-payment-icon.svg',
+    taskLink: t.allPaymentsTaskLink,
+  },
+  {
+    task: t.statusUpdateTask,
+    taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
+    taskLink: t.statusUpdateTaskLink,
+  },
+  {
+    task: t.taxSlipTask,
+    taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
+    taskLink: t.taxSlipTaskLink,
+  },
+  {
+    task: t.reconsiderationTask,
+    taskIcon: '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
+    taskLink: t.reconsiderationLink,
+  },
+  {
+    task: t.cppContributionTask,
+    taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
+    taskLink: t.cppContributionTaskLink,
+  },
+  {
+    task: t.taxDeductionsTask,
+    taskIcon: '/images/dashboard/oas-federal-tax-deductions-icon.svg',
+    taskLink: t.taxDeductionsTaskLink,
+  },
+  {
+    task: t.giveConsentTask,
+    taskIcon: '/images/dashboard/oas-consent-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.uploadMyDocuments,
+    taskIcon: '/images/dashboard/ei-submit-documents-icon.svg',
+    taskLink: t.uploadMyDocumentsLink,
+  },
+]
+
+const ACTIVE_CPPD_TASKS = [
+  {
+    task: t.allPaymentsTask,
+    taskIcon: '/images/dashboard/oas-payment-icon.svg',
+    taskLink: t.allPaymentsTaskLink,
+  },
+  {
+    task: t.statusUpdateTask,
+    taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
+    taskLink: t.statusUpdateTaskLink,
+  },
+  {
+    task: t.taxSlipTask,
+    taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
+    taskLink: t.taxSlipTaskLink,
+  },
+  {
+    task: t.reconsiderationTask,
+    taskIcon: '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
+    taskLink: t.reconsiderationLink,
+  },
+  {
+    task: t.cppContributionTask,
+    taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
+    taskLink: t.cppContributionTaskLink,
+  },
+  {
+    task: t.taxDeductionsTask,
+    taskIcon: '/images/dashboard/oas-federal-tax-deductions-icon.svg',
+    taskLink: t.taxDeductionsTaskLink,
+  },
+  {
+    task: t.giveConsentTask,
+    taskIcon: '/images/dashboard/oas-consent-icon.svg',
+    taskLink: t.giveConsentTaskLink,
+  },
+  {
+    task: t.uploadMyDocuments,
+    taskIcon: '/images/dashboard/ei-submit-documents-icon.svg',
+    taskLink: t.uploadMyDocumentsLink,
+  },
+]
+
 const SUBMITTED_OAS_TASKS = [
   {
     task: t.allPaymentsTask,
@@ -320,6 +406,8 @@ const ACTIVE_EI_TASKS = [
 module.exports = {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
+  SUBMITTED_CPPD_TASKS,
+  ACTIVE_CPPD_TASKS,
   SUBMITTED_OAS_TASKS,
   ACTIVE_OAS_TASKS,
   SUBMITTED_EI_TASKS,

@@ -203,6 +203,13 @@ export default {
   // Dashboard
   //
 
+  // Benefit Names
+  cpp: 'Canada Pension Plan',
+  oas: 'Old Age Security',
+  gis: 'Guranteed Income Supplement',
+  ei: 'Employment Insurance',
+  cppd: 'Canada Pension Plan Disability',
+
   // Benefit Card
   pendingBenefits: 'Pending benefits:',
   activeBenefits: 'Active benefits:',
@@ -257,6 +264,7 @@ export default {
   registerForAlerts: 'Register for alert me',
   recordOfEmployment: 'View my Records of Employment',
   reportMistake: 'Report a mistake',
+  uploadMyDocuments: 'Upload my documents',
 
   allPaymentsTaskLink: '/dashboard',
   statusUpdateTaskLink: '/dashboard',
@@ -268,6 +276,7 @@ export default {
   taxSlipTaskLink: '/dashboard',
   reconsiderationLink: '/dashboard',
   taxSlipMailingLink: '/dashboard',
+  uploadMyDocumentsLink: '/dashboard',
 
   // Dashboard benefit application card
   estimateRetirementIncome: 'Estimate retirement income',
