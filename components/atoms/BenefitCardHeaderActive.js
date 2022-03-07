@@ -2,9 +2,17 @@ import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
 import CircleProgressBar from './CircleProgressBar'
+import BenefitCode from '../../constants/BenefitCode'
 
 export default function BenefitCardHeaderActive(props) {
   const t = props.locale === 'en' ? en : fr
+  const getBenefitCardTitle = () => {
+    if (props.benefit.benefitType === BenefitCode.cppd) {
+      return t[BenefitCode.cpp.toLowerCase()]
+    } else {
+      return t[props.benefit.benefitType.toLowerCase()]
+    }
+  }
 
   return (
     <div className="px-4 md:px-6">
@@ -23,7 +31,7 @@ export default function BenefitCardHeaderActive(props) {
           className="col-span-1 py-4 md:px-0 lg:px-3"
         >
           <div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
-            {props.benefit.benefitName}
+            {getBenefitCardTitle()}
           </div>
         </div>
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />

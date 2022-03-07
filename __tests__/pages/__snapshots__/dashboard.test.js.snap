@@ -537,6 +537,297 @@ exports[`Dashboard renders Dashboard 1`] = `
       class="benefit-card"
     >
       <div
+        class="px-4 md:px-6"
+      >
+        <div
+          class="flex mr-10 justify-end"
+        >
+          <h2
+            class="font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active"
+          >
+            Active
+          </h2>
+        </div>
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
+          <div
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="CPPD-active"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Canada Pension Plan
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+            id="CPPD-active-paymentStartDate"
+          >
+            <div
+              id="CPPD-active-nextPaymentAmount"
+            >
+              <p
+                class="text-base"
+              >
+                Payment amount
+              </p>
+              <p
+                class="font-bold text-4xl mt-1"
+              >
+                612.94
+              </p>
+              <a
+                class="text-sm mt-1 text-bright-blue-solid underline"
+                href="./dashboard"
+              >
+                View my payments +
+              </a>
+            </div>
+            <div
+              class="relative mb-20 mt-7 sm:mt-0"
+              id="CPPD-active-nextPaymentDueDate"
+            >
+              <p>
+                Days until next payment
+              </p>
+              <div
+                class="-ml-4 absolute top-4 sm:inset-x-6"
+              >
+                <div
+                  class="RCP "
+                  style="position: relative; width: 96px;"
+                >
+                  <svg
+                    height="96"
+                    style="transform: rotate(-90deg);"
+                    viewBox="0 0 96 96"
+                    width="96"
+                  >
+                    <circle
+                      class="RCP__track"
+                      cx="48"
+                      cy="48"
+                      fill="none"
+                      r="28"
+                      stroke="#e6e6e6"
+                      stroke-dasharray="175.92918860102841, 175.92918860102841"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                      style="transition: .3s ease;"
+                    />
+                    <circle
+                      class="RCP__progress"
+                      cx="48"
+                      cy="48"
+                      fill="none"
+                      r="28"
+                      stroke="#259F46"
+                      stroke-dasharray="175.92918860102841, 175.92918860102841"
+                      stroke-dashoffset="87.96459430051421"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                      style="transition: .3s ease;"
+                    />
+                  </svg>
+                  <div
+                    class="relative"
+                  >
+                    <p
+                      class="px-9 -py-20 absolute -top-24 h-24 grid content-center text-green-active font-bold font-display text-lg"
+                    >
+                      11
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="pt-5 sm:pt-0"
+              id="CPPD-active-latestUpdates"
+            >
+              <p
+                class="font-display"
+              >
+                Latest update
+              </p>
+              <p
+                class="font-bold text-lg mt-1"
+              >
+                Document reviewed
+              </p>
+              <p
+                class="font-bold text-lg"
+              >
+                September 8, 2021
+              </p>
+              <a
+                class="text-sm mt-1 text-bright-blue-solid underline"
+                href="./dashboard"
+              >
+                View my status and messages +
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div
+        class="font-display text-lg ml-4 py-5 sm:ml-8"
+      >
+        <span
+          class="font-bold"
+        >
+          Active benefits:
+        </span>
+        <span
+          class="ml-2"
+        >
+          Disability
+        </span>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
+          >
+            All CPPD Tasks
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-payment-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View all payments
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-updates-message-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my status and messages
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-tax-slip-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View tax slips
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-request-for-reconsideration-icon.svg "
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Request for reconsideration
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-cpp-contributions-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my Canada Pension Plan contributions
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-federal-tax-deductions-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Ask for tax deductions
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
+    </div>
+    <div
+      class="benefit-card"
+    >
+      <div
         class="layout-container"
       >
         <div
