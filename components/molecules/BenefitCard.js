@@ -104,12 +104,13 @@ export default BenefitCard
 
 BenefitCard.propTypes = {
   benefit: PropTypes.shape({
-    benefitType: PropTypes.oneOf(['CPP', 'OAS', 'GIS', 'EI']),
+    benefitType: PropTypes.oneOf(['CPP', 'OAS', 'GIS', 'EI', 'CPPD']),
     benefitName: PropTypes.oneOf([
       'Canada Pension Plan',
       'Old Age Security',
       'Guaranteed Income Supplement',
       'Employment Insurance',
+      'Canada Pension Plan Disability',
     ]),
     status: PropTypes.oneOf(['Active', 'Pending', 'Past']),
   }),
