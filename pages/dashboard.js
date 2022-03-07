@@ -39,11 +39,6 @@ export default function Dashboard() {
       <BenefitCard locale="en" benefit={ACTIVE_CPP} tasks={ACTIVE_CPP_TASKS} />
       <BenefitCard
         locale="en"
-        benefit={ACTIVE_CPPD}
-        tasks={ACTIVE_CPPD_TASKS}
-      />
-      <BenefitCard
-        locale="en"
         benefit={SUBMITTED_OAS}
         tasks={SUBMITTED_OAS_TASKS}
       />
@@ -54,6 +49,16 @@ export default function Dashboard() {
         tasks={SUBMITTED_EI_TASKS}
       />
       <BenefitCard locale="en" benefit={ACTIVE_EI} tasks={ACTIVE_EI_TASKS} />
+      <BenefitCard
+        locale="en"
+        benefit={SUBMITTED_CPPD}
+        tasks={SUBMITTED_CPPD_TASKS}
+      />
+      <BenefitCard
+        locale="en"
+        benefit={ACTIVE_CPPD}
+        tasks={ACTIVE_CPPD_TASKS}
+      />
 
       <BenefitApplicationCard
         locale="en"
