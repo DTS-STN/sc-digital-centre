@@ -2,1075 +2,2272 @@
 
 exports[`Dashboard renders Dashboard 1`] = `
 <div>
-  <div>
+  <div
+    class="layout-container"
+  >
     <div
-      class="layout-container py-8"
+      class="benefit-card"
     >
       <div
-        class="rounded-lg shadow-lg overflow-hidden"
+        class="layout-container"
       >
-        <section>
+        <div
+          class="flex mr-12 justify-end"
+        >
+          <h2
+            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+          >
+            Application Submitted
+          </h2>
+        </div>
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
           <div
-            class="layout-container"
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="CPP-pending"
           >
             <div
-              class="flex mr-12 justify-end"
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
             >
-              <h2
-                class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-400"
+              Canada Pension Plan
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="font-display col-span-3 sm:grid grid-cols-3"
+            id="CPP-pending-paymentStartDate"
+          >
+            <div
+              class="py-4 sm:pl-10"
+              id="CPP-pending-applicationDate"
+            >
+              <p
+                class="text-base"
               >
-                Application Submitted
-              </h2>
+                Application submitted on:
+              </p>
+              <p
+                class="font-bold text-lg"
+              >
+                July 1, 2021
+              </p>
             </div>
             <div
-              class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+              class="py-4 sm:pl-10"
+              id="CPP-pending-estimatedDateOfDecision"
             >
-              <div
-                class="col-span-1 py-4 sm:px-3"
-                id="benefitName"
+              <p
+                class="text-base w-44"
               >
-                <div
-                  class="font-bold font-display text-4xl mb-2 w-44"
-                >
-                  Canada Pension Plan
-                </div>
-              </div>
-              <div
-                class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
-              />
-              <div
-                class="font-display col-span-3 sm:grid grid-cols-3"
-                id="paymentStartDate"
+                Estimated date of decision
+              </p>
+              <p
+                class="font-bold text-lg"
               >
-                <div
-                  class="py-4 sm:pl-10"
-                  id="paymentEndDate"
-                >
-                  <p
-                    class="text-base"
-                  >
-                    Application submitted on:
-                  </p>
-                  <p
-                    class="font-bold text-lg"
-                  >
-                    July 1, 2021
-                  </p>
-                </div>
-                <div
-                  class="py-4 sm:pl-10"
-                  id="paymentEndDate"
-                >
-                  <p
-                    class="text-base w-44"
-                  >
-                    Estimated date of review completion
-                  </p>
-                  <p
-                    class="font-bold text-lg"
-                  >
-                    July 31, 2021
-                  </p>
-                </div>
-                <div
-                  class="py-4 sm:pl-10"
-                  id="paymentEndDate"
-                >
-                  <p
-                    class="font-display font-bold text-lg"
-                  >
-                    Progressbar
-                  </p>
-                  <p
-                    class="font-display text-base"
-                  >
-                    4 out of 6 review
-                  </p>
-                  <p
-                    class="font-display text-base"
-                  >
-                    steps complete
-                  </p>
-                </div>
-              </div>
+                July 31, 2021
+              </p>
+            </div>
+            <div
+              class="py-4 sm:pl-10"
+              id="CPP-pending-progressbar"
+            >
+              <p
+                class="font-display font-bold text-lg"
+              >
+                Progressbar
+              </p>
+              <p
+                class="font-display text-base"
+              >
+                4 out of 6 review
+              </p>
+              <p
+                class="font-display text-base"
+              >
+                steps complete
+              </p>
             </div>
           </div>
-        </section>
-        <section>
-          <div
-            class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
-          />
-          <div
-            class="font-display text-lg ml-4 py-5 sm:ml-8"
-          >
-            <span
-              class="font-bold"
-            >
-              Pending benefits:
-            </span>
-            <span
-              class="ml-2"
-            >
-              Retirement pension
-            </span>
-          </div>
-          <div
-            class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
-          />
-        </section>
-        <section>
-          <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
-          >
-            <h3
-              class="font-display font-bold text-xl"
-            >
-              All CPP Tasks
-            </h3>
-            <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
-            >
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 1
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 2
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 3
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 4
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 5
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 6
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section>
-          <button
-            class="pl-5 py-5 sm:pl-10"
-          >
-            View more +
-          </button>
-        </section>
+        </div>
       </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div
+        class="font-display text-lg ml-4 py-5 sm:ml-8"
+      >
+        <span
+          class="font-bold"
+        >
+          Pending benefits:
+        </span>
+        <span
+          class="ml-2"
+        >
+          Retirement pension
+        </span>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
+          >
+            All CPP Tasks
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-payment-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View all payments
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-updates-message-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my status and messages
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-retirement-income-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Estimate retirement income
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-tax-slip-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View tax slips
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-request-for-reconsideration-icon.svg "
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Request for reconsideration
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-delay-receiving-pension-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Delay receiving my OAS pension
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
     </div>
     <div
-      class="layout-container py-8"
+      class="benefit-card"
     >
       <div
-        class="rounded-lg shadow-lg overflow-hidden"
+        class="px-4 md:px-6"
       >
-        <section>
+        <div
+          class="flex mr-10 justify-end"
+        >
+          <h2
+            class="font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active"
+          >
+            Active
+          </h2>
+        </div>
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
           <div
-            class="layout-container"
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="CPP-active"
           >
             <div
-              class="flex mr-12 justify-end"
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
             >
-              <h2
-                class="font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active"
+              Canada Pension Plan
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+            id="CPP-active-paymentStartDate"
+          >
+            <div
+              id="CPP-active-nextPaymentAmount"
+            >
+              <p
+                class="text-base"
               >
-                Active
-              </h2>
+                Payment amount
+              </p>
+              <p
+                class="font-bold text-4xl mt-1"
+              >
+                734.34
+              </p>
+              <a
+                class="text-sm mt-1 text-bright-blue-solid underline"
+                href="./dashboard"
+              >
+                View my payments +
+              </a>
             </div>
             <div
-              class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+              class="relative mb-20 mt-7 sm:mt-0"
+              id="CPP-active-nextPaymentDueDate"
             >
+              <p>
+                Days until next payment
+              </p>
               <div
-                class="col-span-1 py-4 sm:px-3"
-                id="benefitName"
+                class="-ml-4 absolute top-4 sm:inset-x-6"
               >
                 <div
-                  class="font-bold font-display text-4xl mb-2 w-44"
+                  class="RCP "
+                  style="position: relative; width: 96px;"
                 >
-                  Canada Pension Plan
-                </div>
-              </div>
-              <div
-                class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
-              />
-              <div
-                class="font-display col-span-3 py-4 sm:grid grid-cols-3 sm:pl-10"
-                id="paymentStartDate"
-              >
-                <div
-                  id="nextPaymentAmount"
-                >
-                  <p
-                    class="text-base"
+                  <svg
+                    height="96"
+                    style="transform: rotate(-90deg);"
+                    viewBox="0 0 96 96"
+                    width="96"
                   >
-                    Payment amount
-                  </p>
-                  <p
-                    class="font-bold text-4xl mt-1"
-                  >
-                    734.34
-                  </p>
-                  <a
-                    class="text-sm mt-1 text-bright-blue-solid underline"
-                    href="./dashboard"
-                  >
-                    View my payments +
-                  </a>
-                </div>
-                <div
-                  class="relative mb-20"
-                  id="nextPaymentDueDate"
-                >
-                  <p>
-                    Days until next payment
-                  </p>
+                    <circle
+                      class="RCP__track"
+                      cx="48"
+                      cy="48"
+                      fill="none"
+                      r="28"
+                      stroke="#e6e6e6"
+                      stroke-dasharray="175.92918860102841, 175.92918860102841"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                      style="transition: .3s ease;"
+                    />
+                    <circle
+                      class="RCP__progress"
+                      cx="48"
+                      cy="48"
+                      fill="none"
+                      r="28"
+                      stroke="#259F46"
+                      stroke-dasharray="175.92918860102841, 175.92918860102841"
+                      stroke-dashoffset="87.96459430051421"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                      style="transition: .3s ease;"
+                    />
+                  </svg>
                   <div
-                    class="absolute inset-x-6 top-4 h-16"
+                    class="relative"
                   >
-                    <div
-                      class="RCP "
-                      style="position: relative; width: 96px;"
+                    <p
+                      class="px-9 -py-20 absolute -top-24 h-24 grid content-center text-green-active font-bold font-display text-lg"
                     >
-                      <svg
-                        height="96"
-                        style="transform: rotate(-90deg);"
-                        viewBox="0 0 96 96"
-                        width="96"
-                      >
-                        <circle
-                          class="RCP__track"
-                          cx="48"
-                          cy="48"
-                          fill="none"
-                          r="28"
-                          stroke="#e6e6e6"
-                          stroke-dasharray="175.92918860102841, 175.92918860102841"
-                          stroke-linecap="round"
-                          stroke-width="4"
-                          style="transition: .3s ease;"
-                        />
-                        <circle
-                          class="RCP__progress"
-                          cx="48"
-                          cy="48"
-                          fill="none"
-                          r="28"
-                          stroke="#0FA10F"
-                          stroke-dasharray="175.92918860102841, 175.92918860102841"
-                          stroke-dashoffset="87.96459430051421"
-                          stroke-linecap="round"
-                          stroke-width="4"
-                          style="transition: .3s ease;"
-                        />
-                      </svg>
-                      <div
-                        class="relative"
-                      >
-                        <p
-                          class="px-9 -py-20 absolute -top-24 h-24 grid content-center text-green-active font-bold font-display text-lg"
-                        >
-                          11
-                        </p>
-                      </div>
-                    </div>
+                      11
+                    </p>
                   </div>
                 </div>
-                <div
-                  id="lastUpdates"
-                >
-                  <p
-                    class="font-display"
-                  >
-                    Latest update
-                  </p>
-                  <p
-                    class="font-bold text-lg mt-1"
-                  >
-                    Document reviewed
-                  </p>
-                  <p
-                    class="font-bold text-lg"
-                  >
-                    September 8, 2021
-                  </p>
-                  <a
-                    class="text-sm mt-1 text-bright-blue-solid underline"
-                    href="./dashboard"
-                  >
-                    View my status and messages +
-                  </a>
-                </div>
               </div>
             </div>
+            <div
+              class="pt-5 sm:pt-0"
+              id="CPP-active-latestUpdates"
+            >
+              <p
+                class="font-display"
+              >
+                Latest update
+              </p>
+              <p
+                class="font-bold text-lg mt-1"
+              >
+                Document reviewed
+              </p>
+              <p
+                class="font-bold text-lg"
+              >
+                September 8, 2021
+              </p>
+              <a
+                class="text-sm mt-1 text-bright-blue-solid underline"
+                href="./dashboard"
+              >
+                View my status and messages +
+              </a>
+            </div>
           </div>
-        </section>
-        <section>
-          <div
-            class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
-          />
-          <div
-            class="font-display text-lg ml-4 py-5 sm:ml-8"
-          >
-            <span
-              class="font-bold"
-            >
-              Active benefits:
-            </span>
-            <span
-              class="ml-2"
-            >
-              Retirement pension
-            </span>
-          </div>
-          <div
-            class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
-          />
-        </section>
-        <section>
-          <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
-          >
-            <h3
-              class="font-display font-bold text-xl"
-            >
-              All CPP Tasks
-            </h3>
-            <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
-            >
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 1
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 2
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 3
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 4
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 5
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 6
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section>
-          <button
-            class="pl-5 py-5 sm:pl-10"
-          >
-            View more +
-          </button>
-        </section>
+        </div>
       </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div
+        class="font-display text-lg ml-4 py-5 sm:ml-8"
+      >
+        <span
+          class="font-bold"
+        >
+          Active benefits:
+        </span>
+        <span
+          class="ml-2"
+        >
+          Retirement pension
+        </span>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
+          >
+            All CPP Tasks
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-payment-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View all payments
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-updates-message-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my status and messages
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-retirement-income-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Estimate retirement income
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-tax-slip-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View tax slips
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-request-for-reconsideration-icon.svg "
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Request for reconsideration
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-delay-receiving-pension-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Delay receiving my OAS pension
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
     </div>
     <div
-      class="layout-container py-8"
+      class="benefit-card"
     >
       <div
-        class="rounded-lg shadow-lg overflow-hidden"
+        class="px-4 md:px-6"
       >
-        <section>
+        <div
+          class="flex mr-10 justify-end"
+        >
+          <h2
+            class="font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active"
+          >
+            Active
+          </h2>
+        </div>
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
           <div
-            class="layout-container"
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="CPPD-active"
           >
             <div
-              class="flex mr-12 justify-end"
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
             >
-              <h2
-                class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-400"
-              >
-                Application Submitted
-              </h2>
-            </div>
-            <div
-              class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
-            >
-              <div
-                class="col-span-1 py-4 sm:px-3"
-                id="benefitName"
-              >
-                <div
-                  class="font-bold font-display text-4xl mb-2 w-44"
-                >
-                  Old Age Security
-                </div>
-              </div>
-              <div
-                class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
-              />
-              <div
-                class="font-display col-span-3 sm:grid grid-cols-3"
-                id="paymentStartDate"
-              >
-                <div
-                  class="py-4 sm:pl-10"
-                  id="paymentEndDate"
-                >
-                  <p
-                    class="text-base"
-                  >
-                    Application submitted on:
-                  </p>
-                  <p
-                    class="font-bold text-lg"
-                  >
-                    July 1, 2021
-                  </p>
-                </div>
-                <div
-                  class="py-4 sm:pl-10"
-                  id="paymentEndDate"
-                >
-                  <p
-                    class="text-base w-44"
-                  >
-                    Estimated date of review completion
-                  </p>
-                  <p
-                    class="font-bold text-lg"
-                  >
-                    July 31, 2021
-                  </p>
-                </div>
-                <div
-                  class="py-4 sm:pl-10"
-                  id="paymentEndDate"
-                >
-                  <p
-                    class="font-display font-bold text-lg"
-                  >
-                    Progressbar
-                  </p>
-                  <p
-                    class="font-display text-base"
-                  >
-                    4 out of 6 review
-                  </p>
-                  <p
-                    class="font-display text-base"
-                  >
-                    steps complete
-                  </p>
-                </div>
-              </div>
+              Canada Pension Plan
             </div>
           </div>
-        </section>
-        <section>
           <div
-            class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
           />
           <div
-            class="font-display text-lg ml-4 py-5 sm:ml-8"
-          >
-            <span
-              class="font-bold"
-            >
-              Pending benefits:
-            </span>
-            <span
-              class="ml-2"
-            >
-              Old age security pension
-            </span>
-          </div>
-          <div
-            class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
-          />
-        </section>
-        <section>
-          <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
-          >
-            <h3
-              class="font-display font-bold text-xl"
-            >
-              All OAS Tasks
-            </h3>
-            <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
-            >
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 1
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 2
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 3
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 4
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 5
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 6
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section>
-          <button
-            class="pl-5 py-5 sm:pl-10"
-          >
-            View more +
-          </button>
-        </section>
-      </div>
-    </div>
-    <div
-      class="layout-container py-8"
-    >
-      <div
-        class="rounded-lg shadow-lg overflow-hidden"
-      >
-        <section>
-          <div
-            class="layout-container"
+            class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+            id="CPPD-active-paymentStartDate"
           >
             <div
-              class="flex mr-12 justify-end"
+              id="CPPD-active-nextPaymentAmount"
             >
-              <h2
-                class="font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active"
+              <p
+                class="text-base"
               >
-                Active
-              </h2>
+                Payment amount
+              </p>
+              <p
+                class="font-bold text-4xl mt-1"
+              >
+                612.94
+              </p>
+              <a
+                class="text-sm mt-1 text-bright-blue-solid underline"
+                href="./dashboard"
+              >
+                View my payments +
+              </a>
             </div>
             <div
-              class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+              class="relative mb-20 mt-7 sm:mt-0"
+              id="CPPD-active-nextPaymentDueDate"
             >
+              <p>
+                Days until next payment
+              </p>
               <div
-                class="col-span-1 py-4 sm:px-3"
-                id="benefitName"
+                class="-ml-4 absolute top-4 sm:inset-x-6"
               >
                 <div
-                  class="font-bold font-display text-4xl mb-2 w-44"
+                  class="RCP "
+                  style="position: relative; width: 96px;"
                 >
-                  Old Age Security
-                </div>
-              </div>
-              <div
-                class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
-              />
-              <div
-                class="font-display col-span-3 py-4 sm:grid grid-cols-3 sm:pl-10"
-                id="paymentStartDate"
-              >
-                <div
-                  id="nextPaymentAmount"
-                >
-                  <p
-                    class="text-base"
+                  <svg
+                    height="96"
+                    style="transform: rotate(-90deg);"
+                    viewBox="0 0 96 96"
+                    width="96"
                   >
-                    Payment amount
-                  </p>
-                  <p
-                    class="font-bold text-4xl mt-1"
-                  >
-                    691.45
-                  </p>
-                  <a
-                    class="text-sm mt-1 text-bright-blue-solid underline"
-                    href="./dashboard"
-                  >
-                    View my payments +
-                  </a>
-                </div>
-                <div
-                  class="relative mb-20"
-                  id="nextPaymentDueDate"
-                >
-                  <p>
-                    Days until next payment
-                  </p>
+                    <circle
+                      class="RCP__track"
+                      cx="48"
+                      cy="48"
+                      fill="none"
+                      r="28"
+                      stroke="#e6e6e6"
+                      stroke-dasharray="175.92918860102841, 175.92918860102841"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                      style="transition: .3s ease;"
+                    />
+                    <circle
+                      class="RCP__progress"
+                      cx="48"
+                      cy="48"
+                      fill="none"
+                      r="28"
+                      stroke="#259F46"
+                      stroke-dasharray="175.92918860102841, 175.92918860102841"
+                      stroke-dashoffset="87.96459430051421"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                      style="transition: .3s ease;"
+                    />
+                  </svg>
                   <div
-                    class="absolute inset-x-6 top-4 h-16"
+                    class="relative"
                   >
-                    <div
-                      class="RCP "
-                      style="position: relative; width: 96px;"
+                    <p
+                      class="px-9 -py-20 absolute -top-24 h-24 grid content-center text-green-active font-bold font-display text-lg"
                     >
-                      <svg
-                        height="96"
-                        style="transform: rotate(-90deg);"
-                        viewBox="0 0 96 96"
-                        width="96"
-                      >
-                        <circle
-                          class="RCP__track"
-                          cx="48"
-                          cy="48"
-                          fill="none"
-                          r="28"
-                          stroke="#e6e6e6"
-                          stroke-dasharray="175.92918860102841, 175.92918860102841"
-                          stroke-linecap="round"
-                          stroke-width="4"
-                          style="transition: .3s ease;"
-                        />
-                        <circle
-                          class="RCP__progress"
-                          cx="48"
-                          cy="48"
-                          fill="none"
-                          r="28"
-                          stroke="#0FA10F"
-                          stroke-dasharray="175.92918860102841, 175.92918860102841"
-                          stroke-dashoffset="87.96459430051421"
-                          stroke-linecap="round"
-                          stroke-width="4"
-                          style="transition: .3s ease;"
-                        />
-                      </svg>
-                      <div
-                        class="relative"
-                      >
-                        <p
-                          class="px-9 -py-20 absolute -top-24 h-24 grid content-center text-green-active font-bold font-display text-lg"
-                        >
-                          11
-                        </p>
-                      </div>
-                    </div>
+                      11
+                    </p>
                   </div>
                 </div>
-                <div
-                  id="lastUpdates"
+              </div>
+            </div>
+            <div
+              class="pt-5 sm:pt-0"
+              id="CPPD-active-latestUpdates"
+            >
+              <p
+                class="font-display"
+              >
+                Latest update
+              </p>
+              <p
+                class="font-bold text-lg mt-1"
+              >
+                Document reviewed
+              </p>
+              <p
+                class="font-bold text-lg"
+              >
+                September 8, 2021
+              </p>
+              <a
+                class="text-sm mt-1 text-bright-blue-solid underline"
+                href="./dashboard"
+              >
+                View my status and messages +
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div
+        class="font-display text-lg ml-4 py-5 sm:ml-8"
+      >
+        <span
+          class="font-bold"
+        >
+          Active benefits:
+        </span>
+        <span
+          class="ml-2"
+        >
+          Disability
+        </span>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
+          >
+            All CPPD Tasks
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-payment-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
                 >
-                  <p
-                    class="font-display"
+                  View all payments
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-updates-message-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my status and messages
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-tax-slip-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View tax slips
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-request-for-reconsideration-icon.svg "
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Request for reconsideration
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-cpp-contributions-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my Canada Pension Plan contributions
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-federal-tax-deductions-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Ask for tax deductions
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
+    </div>
+    <div
+      class="benefit-card"
+    >
+      <div
+        class="layout-container"
+      >
+        <div
+          class="flex mr-12 justify-end"
+        >
+          <h2
+            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+          >
+            Application Submitted
+          </h2>
+        </div>
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
+          <div
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="OAS-pending"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Old Age Security
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="font-display col-span-3 sm:grid grid-cols-3"
+            id="OAS-pending-paymentStartDate"
+          >
+            <div
+              class="py-4 sm:pl-10"
+              id="OAS-pending-applicationDate"
+            >
+              <p
+                class="text-base"
+              >
+                Application submitted on:
+              </p>
+              <p
+                class="font-bold text-lg"
+              >
+                July 1, 2021
+              </p>
+            </div>
+            <div
+              class="py-4 sm:pl-10"
+              id="OAS-pending-estimatedDateOfDecision"
+            >
+              <p
+                class="text-base w-44"
+              >
+                Estimated date of decision
+              </p>
+              <p
+                class="font-bold text-lg"
+              >
+                July 31, 2021
+              </p>
+            </div>
+            <div
+              class="py-4 sm:pl-10"
+              id="OAS-pending-progressbar"
+            >
+              <p
+                class="font-display font-bold text-lg"
+              >
+                Progressbar
+              </p>
+              <p
+                class="font-display text-base"
+              >
+                4 out of 6 review
+              </p>
+              <p
+                class="font-display text-base"
+              >
+                steps complete
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div
+        class="font-display text-lg ml-4 py-5 sm:ml-8"
+      >
+        <span
+          class="font-bold"
+        >
+          Pending benefits:
+        </span>
+        <span
+          class="ml-2"
+        >
+          Old age security pension
+        </span>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
+          >
+            All OAS Tasks
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-payment-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View all payments
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-updates-message-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my status and messages
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-retirement-income-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Estimate retirement income
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-cpp-contributions-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my Canada Pension Plan contributions
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-federal-tax-deductions-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Ask for tax deductions
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-delay-receiving-pension-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Delay receiving my OAS pension
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
+    </div>
+    <div
+      class="benefit-card"
+    >
+      <div
+        class="px-4 md:px-6"
+      >
+        <div
+          class="flex mr-10 justify-end"
+        >
+          <h2
+            class="font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active"
+          >
+            Active
+          </h2>
+        </div>
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
+          <div
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="OAS-active"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Old Age Security
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+            id="OAS-active-paymentStartDate"
+          >
+            <div
+              id="OAS-active-nextPaymentAmount"
+            >
+              <p
+                class="text-base"
+              >
+                Payment amount
+              </p>
+              <p
+                class="font-bold text-4xl mt-1"
+              >
+                691.45
+              </p>
+              <a
+                class="text-sm mt-1 text-bright-blue-solid underline"
+                href="./dashboard"
+              >
+                View my payments +
+              </a>
+            </div>
+            <div
+              class="relative mb-20 mt-7 sm:mt-0"
+              id="OAS-active-nextPaymentDueDate"
+            >
+              <p>
+                Days until next payment
+              </p>
+              <div
+                class="-ml-4 absolute top-4 sm:inset-x-6"
+              >
+                <div
+                  class="RCP "
+                  style="position: relative; width: 96px;"
+                >
+                  <svg
+                    height="96"
+                    style="transform: rotate(-90deg);"
+                    viewBox="0 0 96 96"
+                    width="96"
                   >
-                    Latest update
-                  </p>
-                  <p
-                    class="font-bold text-lg mt-1"
+                    <circle
+                      class="RCP__track"
+                      cx="48"
+                      cy="48"
+                      fill="none"
+                      r="28"
+                      stroke="#e6e6e6"
+                      stroke-dasharray="175.92918860102841, 175.92918860102841"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                      style="transition: .3s ease;"
+                    />
+                    <circle
+                      class="RCP__progress"
+                      cx="48"
+                      cy="48"
+                      fill="none"
+                      r="28"
+                      stroke="#259F46"
+                      stroke-dasharray="175.92918860102841, 175.92918860102841"
+                      stroke-dashoffset="87.96459430051421"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                      style="transition: .3s ease;"
+                    />
+                  </svg>
+                  <div
+                    class="relative"
                   >
-                    Document reviewed
-                  </p>
-                  <p
-                    class="font-bold text-lg"
-                  >
-                    September 8, 2021
-                  </p>
-                  <a
-                    class="text-sm mt-1 text-bright-blue-solid underline"
-                    href="./dashboard"
-                  >
-                    View my status and messages +
-                  </a>
+                    <p
+                      class="px-9 -py-20 absolute -top-24 h-24 grid content-center text-green-active font-bold font-display text-lg"
+                    >
+                      11
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+            <div
+              class="pt-5 sm:pt-0"
+              id="OAS-active-latestUpdates"
+            >
+              <p
+                class="font-display"
+              >
+                Latest update
+              </p>
+              <p
+                class="font-bold text-lg mt-1"
+              >
+                Document reviewed
+              </p>
+              <p
+                class="font-bold text-lg"
+              >
+                September 8, 2021
+              </p>
+              <a
+                class="text-sm mt-1 text-bright-blue-solid underline"
+                href="./dashboard"
+              >
+                View my status and messages +
+              </a>
+            </div>
           </div>
-        </section>
-        <section>
+        </div>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div
+        class="font-display text-lg ml-4 py-5 sm:ml-8"
+      >
+        <span
+          class="font-bold"
+        >
+          Active benefits:
+        </span>
+        <span
+          class="ml-2"
+        >
+          Old age security pension
+        </span>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
+          >
+            All OAS Tasks
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-payment-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View all payments
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-updates-message-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my status and messages
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-tax-slip-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View tax slips
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-tax-slip-mailing-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Tax slip mailing options
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-federal-tax-deductions-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Ask for tax deductions
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-delay-receiving-pension-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Delay receiving my OAS pension
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
+    </div>
+    <div
+      class="benefit-card"
+    >
+      <div
+        class="layout-container"
+      >
+        <div
+          class="flex mr-12 justify-end"
+        >
+          <h2
+            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+          >
+            Application Submitted
+          </h2>
+        </div>
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
           <div
-            class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="EI-pending"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Employment Insurance
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
           />
           <div
-            class="font-display text-lg ml-4 py-5 sm:ml-8"
+            class="font-display col-span-3 sm:grid grid-cols-3"
+            id="EI-pending-paymentStartDate"
           >
-            <span
-              class="font-bold"
+            <div
+              class="py-4 sm:pl-10"
+              id="EI-pending-applicationDate"
             >
-              Active benefits:
-            </span>
-            <span
-              class="ml-2"
+              <p
+                class="text-base"
+              >
+                Application submitted on:
+              </p>
+              <p
+                class="font-bold text-lg"
+              >
+                September 1, 2021
+              </p>
+            </div>
+            <div
+              class="py-4 sm:pl-10"
+              id="EI-pending-estimatedDateOfDecision"
             >
-              Old age security pension
-            </span>
+              <p
+                class="text-base w-44"
+              >
+                Estimated date of decision
+              </p>
+              <p
+                class="font-bold text-lg"
+              >
+                September 30, 2021
+              </p>
+            </div>
+            <div
+              class="py-4 sm:pl-10"
+              id="EI-pending-progressbar"
+            >
+              <p
+                class="font-display font-bold text-lg"
+              >
+                Progressbar
+              </p>
+              <p
+                class="font-display text-base"
+              >
+                4 out of 6 review
+              </p>
+              <p
+                class="font-display text-base"
+              >
+                steps complete
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div
+        class="font-display text-lg ml-4 py-5 sm:ml-8"
+      >
+        <span
+          class="font-bold"
+        >
+          Pending benefits:
+        </span>
+        <span
+          class="ml-2"
+        >
+          Regular benefits
+        </span>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
+          >
+            All EI Tasks
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-updates-message-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my status and messages
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-insurance-report-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Complete your Employment Insurance reports
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-view-payment-info-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my payment information
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-submit-documents-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Submit documents
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-view-documents-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View documents
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-past-claims-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my past claims
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
+    </div>
+    <div
+      class="benefit-card"
+    >
+      <div
+        class="px-4 md:px-6"
+      >
+        <div
+          class="flex mr-10 justify-end"
+        >
+          <h2
+            class="font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active"
+          >
+            Active
+          </h2>
+        </div>
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
+          <div
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="EI-active"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Employment Insurance
+            </div>
           </div>
           <div
-            class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
           />
-        </section>
-        <section>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+            id="EI-active-paymentStartDate"
           >
-            <h3
-              class="font-display font-bold text-xl"
+            <div
+              id="EI-active-nextPaymentAmount"
             >
-              All OAS Tasks
-            </h3>
-            <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              <p
+                class="text-base"
+              >
+                Payment amount
+              </p>
+              <p
+                class="font-bold text-4xl mt-1"
+              >
+                691.45
+              </p>
+              <a
+                class="text-sm mt-1 text-bright-blue-solid underline"
+                href="./dashboard"
+              >
+                View my payments +
+              </a>
+            </div>
+            <div
+              class="relative mb-20 mt-7 sm:mt-0"
+              id="EI-active-nextPaymentDueDate"
             >
-              <li
-                class="font-display font-bold text-center pb-6"
+              <p>
+                Days until next payment
+              </p>
+              <div
+                class="-ml-4 absolute top-4 sm:inset-x-6"
               >
-                <a
-                  href="/dashboard"
+                <div
+                  class="RCP "
+                  style="position: relative; width: 96px;"
                 >
                   <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
+                    height="96"
+                    style="transform: rotate(-90deg);"
+                    viewBox="0 0 96 96"
+                    width="96"
                   >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
+                    <circle
+                      class="RCP__track"
+                      cx="48"
+                      cy="48"
+                      fill="none"
+                      r="28"
+                      stroke="#e6e6e6"
+                      stroke-dasharray="175.92918860102841, 175.92918860102841"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                      style="transition: .3s ease;"
+                    />
+                    <circle
+                      class="RCP__progress"
+                      cx="48"
+                      cy="48"
+                      fill="none"
+                      r="28"
+                      stroke="#259F46"
+                      stroke-dasharray="175.92918860102841, 175.92918860102841"
+                      stroke-dashoffset="87.96459430051421"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                      style="transition: .3s ease;"
                     />
                   </svg>
-                  Task 1
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
+                  <div
+                    class="relative"
+                  >
+                    <p
+                      class="px-9 -py-20 absolute -top-24 h-24 grid content-center text-green-active font-bold font-display text-lg"
+                    >
+                      11
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="pt-5 sm:pt-0"
+              id="EI-active-latestUpdates"
+            >
+              <p
+                class="font-display"
               >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 2
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
+                Latest update
+              </p>
+              <p
+                class="font-bold text-lg mt-1"
               >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 3
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
+                Document reviewed
+              </p>
+              <p
+                class="font-bold text-lg"
               >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 4
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
+                September 9, 2021
+              </p>
+              <a
+                class="text-sm mt-1 text-bright-blue-solid underline"
+                href="./dashboard"
               >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 5
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-center pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <svg
-                    class="fill-current text-gray-solid w-24 md:w-16"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"
-                    />
-                  </svg>
-                  Task 6
-                </a>
-              </li>
-            </ul>
+                View my status and messages +
+              </a>
+            </div>
           </div>
-        </section>
-        <section>
-          <button
-            class="pl-5 py-5 sm:pl-10"
+        </div>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div
+        class="font-display text-lg ml-4 py-5 sm:ml-8"
+      >
+        <span
+          class="font-bold"
+        >
+          Active benefits:
+        </span>
+        <span
+          class="ml-2"
+        >
+          Regular benefits
+        </span>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
           >
-            View more +
-          </button>
-        </section>
+            All EI Tasks
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-updates-message-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my status and messages
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-insurance-report-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Complete your Employment Insurance reports
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-view-payment-info-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my payment information
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-past-claims-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my past claims
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-record-of-employment-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my Records of Employment
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-tax-slip-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View tax slips
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="OAS-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Old Age Security
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html"
+            >
+              Old Age Security
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html"
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/estimate-retirement-income-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Estimate retirement income
+                </p>
+              </a>
+            </div>
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html"
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for
+                   
+                  Old Age Security
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="CPP-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Canada Pension Plan
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href="https://www.canada.ca/en/services/benefits/publicpensions/cpp.html"
+            >
+              Canada Pension Plan
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/estimate-retirement-income-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Estimate retirement income
+                </p>
+              </a>
+            </div>
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for
+                   
+                  Canada Pension Plan
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="CPPD-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Canada Pension Plan Disability
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html"
+            >
+              Canada Pension Plan Disability
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for
+                   
+                  Canada Pension Plan Disability
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="GIS-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Guranteed Income Supplement
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement.html"
+            >
+              Guranteed Income Supplement
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for
+                   
+                  Guranteed Income Supplement
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="EI-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Employment Insurance
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href="https://www.canada.ca/en/services/benefits/ei.html"
+            >
+              Employment Insurance
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for
+                   
+                  Employment Insurance
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

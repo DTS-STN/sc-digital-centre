@@ -203,6 +203,13 @@ export default {
   // Dashboard
   //
 
+  // Benefit Names
+  cpp: 'Canada Pension Plan',
+  oas: 'Old Age Security',
+  gis: 'Guranteed Income Supplement',
+  ei: 'Employment Insurance',
+  cppd: 'Canada Pension Plan Disability',
+
   // Benefit Card
   pendingBenefits: 'Pending benefits:',
   activeBenefits: 'Active benefits:',
@@ -211,7 +218,7 @@ export default {
 
   // Benefit Card Header
   applicationSubmitted: 'Application submitted on:',
-  estimatedDateOfReviewCompletion: 'Estimated date of review completion',
+  estimatedDateOfDecision: 'Estimated date of decision',
   paymentAmount: 'Payment amount',
   daysUntilNextPayment: 'Days until next payment',
   latestUpdate: 'Latest update',
@@ -236,4 +243,44 @@ export default {
   addYourAddress: 'Add your address +',
   addYourPhoneNumber: 'Add your phone number +',
   addYourPaymentDetails: 'Add your payment details +',
+
+  // dashboard benefits tasks
+  allPaymentsTask: 'View all payments',
+  statusUpdateTask: 'View my status and messages',
+  retirementIncomeTask: 'Estimate retirement income',
+  cppContributionTask: 'View my Canada Pension Plan contributions',
+  taxDeductionsTask: 'Ask for tax deductions',
+  delayOasPensionTask: 'Delay receiving my OAS pension',
+  giveConsentTask: 'Give consent for someone to communicate on my behalf',
+  taxSlipTask: 'View tax slips',
+  reconsiderationTask: 'Request for reconsideration',
+  taxSlipMailingTask: 'Tax slip mailing options',
+  completeInsuranceReportTask: 'Complete your Employment Insurance reports',
+  viewPaymentInfo: 'View my payment information',
+  submitDocuments: 'Submit documents',
+  viewDocuments: 'View documents',
+  viewPastClaimsTask: 'View my past claims',
+  submitEformsTask: 'Submit eForms',
+  registerForAlerts: 'Register for alert me',
+  recordOfEmployment: 'View my Records of Employment',
+  reportMistake: 'Report a mistake',
+  uploadMyDocuments: 'Upload my documents',
+
+  allPaymentsTaskLink: '/dashboard',
+  statusUpdateTaskLink: '/dashboard',
+  retirementIncomeTaskLink: '/dashboard',
+  cppContributionTaskLink: '/dashboard',
+  taxDeductionsTaskLink: '/dashboard',
+  delayOasPensionTaskLink: '/dashboard',
+  giveConsentTaskLink: '/dashboard',
+  taxSlipTaskLink: '/dashboard',
+  reconsiderationLink: '/dashboard',
+  taxSlipMailingLink: '/dashboard',
+  uploadMyDocumentsLink: '/dashboard',
+
+  // Dashboard benefit application card
+  estimateRetirementIncome: 'Estimate retirement income',
+  youMightBeEligible: 'You might be eligible.',
+  learnMoreAbout: 'Learn more about ',
+  applyFor: 'Apply for',
 }

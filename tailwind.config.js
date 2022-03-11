@@ -54,7 +54,7 @@ module.exports = {
           light: '#F19E7A',
           solid: '#D96F41',
           dark: '#AC5028',
-          pending: '#FFA216',
+          pending: '#FFAE1B',
         },
         'yellow': {
           light: '#E6BF81',
@@ -65,7 +65,7 @@ module.exports = {
           light: '#81DEA8',
           solid: '#28AE60',
           dark: '#247E49',
-          active: '#0FA10F',
+          active: '#259F46',
         },
         'purple': {
           light: '#9E81CB',
@@ -84,6 +84,7 @@ module.exports = {
       }),
       boxShadow: {
         card: '0px 2px 8px rgba(0, 0, 0, 0.25)',
+        tile: '0px 0px 25px 5px rgba(0,0,0,0.1)',
       },
     },
   },

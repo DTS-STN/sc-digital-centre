@@ -28,3 +28,9 @@
     }
   }
 }
+
+@layer components {
+  .benefit-card {
+    @apply mt-12 rounded-lg shadow-tile
+  }
+}
