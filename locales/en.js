@@ -214,7 +214,7 @@ export default {
   retirement_pension: `Retirement Pension`,
   disability_pension: `Disability Pension`,
   child_benefit_aged_18_25: `Child's Benefit aged 18-25`,
-  survivors_pension_and_childrens_benefits: `Survivor's Pension and Child(ren)'s Benefits	`,
+  survivors_pension_and_childrens_benefits: `Survivor's Pension and Child(ren)'s Benefits`,
   allowance_or_allowance_for_survivor: `Allowance or Allowance for Survivor`,
   pension_sharing: `Pension Sharing`,
   credit_split: `Credit Split`,
