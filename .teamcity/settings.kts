@@ -83,8 +83,8 @@ object Build_Release: BuildType({
         param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
-        param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
-        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
+        param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/data/digitalCentre!/NEXT_CONTENT_API%")
+        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/data/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
         param("env.TARGET", "release")
         param("env.BRANCH", "release")
     }
@@ -146,8 +146,8 @@ object Build_Dashboard: BuildType({
         param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
-        param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
-        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
+        param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/data/digitalCentre!/NEXT_CONTENT_API%")
+        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/data/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
         param("env.TARGET", "dashboard")
         param("env.BRANCH", "dashboard")
     }
@@ -209,8 +209,8 @@ object Build_Dynamic: BuildType({
         param("env.K8S_CLUSTER_NAME", "ESdCDPSBDMK8SDev-K8S")
         param("env.RG_DEV", "ESdCDPSBDMK8SDev")
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
-        param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
-        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
+        param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/data/digitalCentre!/NEXT_CONTENT_API%")
+        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/data/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
         param("env.TARGET", "dev")
         param("env.BRANCH", "%teamcity.build.branch%")
     }
