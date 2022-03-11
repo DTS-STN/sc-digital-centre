@@ -10,7 +10,8 @@ const BenefitApplicationCard = (props) => {
 
   const isEstimateButtonRequired = () => {
     return (
-      props.benefitApplication.benefitType.toUpperCase() === BenefitCode.cpp ||
+      (props.benefitApplication.benefitType.toUpperCase() === BenefitCode.cpp &&
+        typeof props.benefitApplication.benefitSubType === 'undefined') ||
       props.benefitApplication.benefitType.toUpperCase() === BenefitCode.oas
     )
   }
@@ -19,11 +20,18 @@ const BenefitApplicationCard = (props) => {
     <div className="benefit-card px-4 md:px-6 py-7">
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
         <div
-          id={`${props.benefitApplication.benefitType}-app-card`}
+          id={`${
+            props.benefitApplication.benefitType +
+            '-' +
+            props.benefitApplication.benefitSubType
+          }-app-card`}
           className="col-span-1 py-4 md:px-0 lg:px-3"
         >
           <div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
             {props.benefitApplication.benefitName}
+          </div>
+          <div className="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44">
+            {t[props.benefitApplication.benefitSubType]}
           </div>
         </div>
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
@@ -37,7 +45,11 @@ const BenefitApplicationCard = (props) => {
               href={props.benefitApplication.learnMoreLink}
               className="text-xl underline hover:text-bright-blue-solid"
             >
-              {props.benefitApplication.benefitName}
+              {typeof props.benefitApplication.benefitSubType === 'undefined'
+                ? t.applyFor + ' ' + props.benefitApplication.benefitName
+                : props.benefitApplication.benefitType +
+                  ' ' +
+                  t[props.benefitApplication.benefitSubType]}
             </a>
           </div>
           <div className="grid grid-cols-2 mt-6 sm:mt-2">
@@ -64,7 +76,14 @@ const BenefitApplicationCard = (props) => {
               >
                 <img src={props.benefitApplication.applyIcon} alt="" />
                 <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3">
-                  {t.applyFor} {props.benefitApplication.benefitName}
+                  {typeof props.benefitApplication.benefitSubType ===
+                  'undefined'
+                    ? t.applyFor + ' ' + props.benefitApplication.benefitName
+                    : t.applyFor +
+                      ' ' +
+                      props.benefitApplication.benefitType +
+                      ' ' +
+                      t[props.benefitApplication.benefitSubType]}
                 </p>
               </a>
             </div>

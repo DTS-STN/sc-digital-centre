@@ -26,6 +26,13 @@ import {
   APPLICATION_CARD_CPPD,
   APPLICATION_CARD_EI,
   APPLICATION_CARD_CPP,
+  APPLICATION_CARD_CPP_CHILDS_BENEFIT_AGED_18_25,
+  APPLICATION_CARD_CPP_SURVIVOR_PENSION_AND_CHILD_BENEFITS,
+  APPLICATION_CARD_CPP_ALLOWANCE_OR_ALLOWANCE_FOR_SURVIVOR,
+  APPLICATION_CARD_CPP_PENSION_SHARING,
+  APPLICATION_CARD_CPP_CREADIT_SPLIT,
+  APPLICATION_CARD_CPP_CHILD_REARING_PROVISION,
+  APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
 
 export default function Dashboard() {
@@ -79,6 +86,38 @@ export default function Dashboard() {
       <BenefitApplicationCard
         locale="en"
         benefitApplication={APPLICATION_CARD_EI}
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_CPP_CHILDS_BENEFIT_AGED_18_25}
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={
+          APPLICATION_CARD_CPP_SURVIVOR_PENSION_AND_CHILD_BENEFITS
+        }
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={
+          APPLICATION_CARD_CPP_ALLOWANCE_OR_ALLOWANCE_FOR_SURVIVOR
+        }
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_CPP_PENSION_SHARING}
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_CPP_CREADIT_SPLIT}
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_CPP_CHILD_REARING_PROVISION}
+      />
+      <BenefitApplicationCard
+        locale="en"
+        benefitApplication={APPLICATION_CARD_CPP_DEATH_BENEFIT}
       />
     </div>
   )
