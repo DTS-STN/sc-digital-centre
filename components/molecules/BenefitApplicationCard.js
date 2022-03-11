@@ -16,6 +16,14 @@ const BenefitApplicationCard = (props) => {
     )
   }
 
+  const getBenefitNameString = () => {
+    return typeof props.benefitApplication.benefitSubType === 'undefined'
+      ? props.benefitApplication.benefitName
+      : props.benefitApplication.benefitType +
+          ' ' +
+          t[props.benefitApplication.benefitSubType]
+  }
+
   return (
     <div className="benefit-card px-4 md:px-6 py-7">
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
@@ -45,11 +53,7 @@ const BenefitApplicationCard = (props) => {
               href={props.benefitApplication.learnMoreLink}
               className="text-xl underline hover:text-bright-blue-solid"
             >
-              {typeof props.benefitApplication.benefitSubType === 'undefined'
-                ? t.applyFor + ' ' + props.benefitApplication.benefitName
-                : props.benefitApplication.benefitType +
-                  ' ' +
-                  t[props.benefitApplication.benefitSubType]}
+              {getBenefitNameString()}
             </a>
           </div>
           <div className="grid grid-cols-2 mt-6 sm:mt-2">
@@ -76,14 +80,7 @@ const BenefitApplicationCard = (props) => {
               >
                 <img src={props.benefitApplication.applyIcon} alt="" />
                 <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3">
-                  {typeof props.benefitApplication.benefitSubType ===
-                  'undefined'
-                    ? t.applyFor + ' ' + props.benefitApplication.benefitName
-                    : t.applyFor +
-                      ' ' +
-                      props.benefitApplication.benefitType +
-                      ' ' +
-                      t[props.benefitApplication.benefitSubType]}
+                  {t.applyFor + ' ' + getBenefitNameString()}
                 </p>
               </a>
             </div>
