@@ -7,39 +7,36 @@ import BenefitCode from '../../constants/BenefitCode'
 
 const BenefitApplicationCard = (props) => {
   const t = props.locale === 'en' ? en : fr
+  const benefitType = props.benefitApplication.benefitType
+  const benefitSubType = props.benefitApplication.benefitSubType
+  const benefitName = props.benefitApplication.benefitName
 
   const isEstimateButtonRequired = () => {
     return (
-      (props.benefitApplication.benefitType.toUpperCase() === BenefitCode.cpp &&
-        typeof props.benefitApplication.benefitSubType === 'undefined') ||
-      props.benefitApplication.benefitType.toUpperCase() === BenefitCode.oas
+      (benefitType.toUpperCase() === BenefitCode.cpp &&
+        typeof benefitSubType === 'undefined') ||
+      benefitType.toUpperCase() === BenefitCode.oas
     )
   }
 
   const getBenefitNameString = () => {
-    return typeof props.benefitApplication.benefitSubType === 'undefined'
-      ? props.benefitApplication.benefitName
-      : props.benefitApplication.benefitType +
-          ' ' +
-          t[props.benefitApplication.benefitSubType]
+    return typeof benefitSubType === 'undefined'
+      ? benefitName
+      : `${benefitType} ${t[benefitSubType]}`
   }
 
   return (
     <div className="benefit-card px-4 md:px-6 py-7">
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
         <div
-          id={`${
-            props.benefitApplication.benefitType +
-            '-' +
-            props.benefitApplication.benefitSubType
-          }-app-card`}
+          id={`${benefitType}-${benefitSubType}-app-card`}
           className="col-span-1 py-4 md:px-0 lg:px-3"
         >
           <div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
-            {props.benefitApplication.benefitName}
+            {benefitName}
           </div>
           <div className="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44">
-            {t[props.benefitApplication.benefitSubType]}
+            {t[benefitSubType]}
           </div>
         </div>
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
@@ -80,7 +77,7 @@ const BenefitApplicationCard = (props) => {
               >
                 <img src={props.benefitApplication.applyIcon} alt="" />
                 <p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3">
-                  {t.applyFor + ' ' + getBenefitNameString()}
+                  {`${t.applyFor} ${getBenefitNameString()}`}
                 </p>
               </a>
             </div>
