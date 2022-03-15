@@ -2125,13 +2125,16 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="OAS-app-card"
+          id="OAS-undefined-app-card"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
           >
             Old Age Security
           </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          />
         </div>
         <div
           class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
@@ -2194,9 +2197,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
                 >
-                  Apply for
-                   
-                  Old Age Security
+                  Apply for Old Age Security
                 </p>
               </a>
             </div>
@@ -2212,13 +2213,16 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="CPP-app-card"
+          id="CPP-undefined-app-card"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
           >
             Canada Pension Plan
           </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          />
         </div>
         <div
           class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
@@ -2281,9 +2285,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
                 >
-                  Apply for
-                   
-                  Canada Pension Plan
+                  Apply for Canada Pension Plan
                 </p>
               </a>
             </div>
@@ -2299,13 +2301,16 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="CPPD-app-card"
+          id="CPPD-undefined-app-card"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
           >
             Canada Pension Plan Disability
           </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          />
         </div>
         <div
           class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
@@ -2353,9 +2358,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
                 >
-                  Apply for
-                   
-                  Canada Pension Plan Disability
+                  Apply for Canada Pension Plan Disability
                 </p>
               </a>
             </div>
@@ -2371,13 +2374,16 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="GIS-app-card"
+          id="GIS-undefined-app-card"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
           >
             Guranteed Income Supplement
           </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          />
         </div>
         <div
           class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
@@ -2425,9 +2431,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
                 >
-                  Apply for
-                   
-                  Guranteed Income Supplement
+                  Apply for Guranteed Income Supplement
                 </p>
               </a>
             </div>
@@ -2443,13 +2447,16 @@ exports[`Dashboard renders Dashboard 1`] = `
       >
         <div
           class="col-span-1 py-4 md:px-0 lg:px-3"
-          id="EI-app-card"
+          id="EI-undefined-app-card"
         >
           <div
             class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
           >
             Employment Insurance
           </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          />
         </div>
         <div
           class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
@@ -2497,9 +2504,532 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
                 >
-                  Apply for
-                   
-                  Employment Insurance
+                  Apply for Employment Insurance
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="CPP-child_benefit_aged_18_25-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Canada Pension Plan
+          </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Child's Benefit aged 18-25
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href=""
+            >
+              CPP Child's Benefit aged 18-25
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for CPP Child's Benefit aged 18-25
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="CPP-survivors_pension_and_childrens_benefits-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Canada Pension Plan
+          </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Survivor's Pension and Child(ren)'s Benefits
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href=""
+            >
+              CPP Survivor's Pension and Child(ren)'s Benefits
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for CPP Survivor's Pension and Child(ren)'s Benefits
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="CPP-allowance_or_allowance_for_survivor-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Canada Pension Plan
+          </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Allowance or Allowance for Survivor
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href=""
+            >
+              CPP Allowance or Allowance for Survivor
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for CPP Allowance or Allowance for Survivor
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="CPP-pension_sharing-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Canada Pension Plan
+          </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Pension Sharing
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href=""
+            >
+              CPP Pension Sharing
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for CPP Pension Sharing
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="CPP-credit_split-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Canada Pension Plan
+          </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Credit Split
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href=""
+            >
+              CPP Credit Split
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for CPP Credit Split
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="CPP-child_rearing_provision-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Canada Pension Plan
+          </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Child-Rearing Provision
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href=""
+            >
+              CPP Child-Rearing Provision
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for CPP Child-Rearing Provision
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="benefit-card px-4 md:px-6 py-7"
+    >
+      <div
+        class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+      >
+        <div
+          class="col-span-1 py-4 md:px-0 lg:px-3"
+          id="CPP-death_benefit-app-card"
+        >
+          <div
+            class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Canada Pension Plan
+          </div>
+          <div
+            class="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"
+          >
+            Death Benefit
+          </div>
+        </div>
+        <div
+          class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+        />
+        <div
+          class="col-span-3 sm:grid sm:grid-cols-2"
+        >
+          <div
+            class="ml-2 sm:ml-8 mt-4 xl:mt-6"
+          >
+            <p
+              class="text-3xl sm:text-2xl lg:text-3xl mb-5"
+            >
+              You might be eligible.
+            </p>
+            <a
+              class="text-xl"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="text-xl underline hover:text-bright-blue-solid"
+              href=""
+            >
+              CPP Death Benefit
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 mt-6 sm:mt-2"
+          >
+            <div
+              class="hidden sm:flex"
+            />
+            <div
+              class="sm:col-span-1"
+            >
+              <a
+                class="font-normal float-right"
+                href=""
+              >
+                <img
+                  alt=""
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"
+                >
+                  Apply for CPP Death Benefit
                 </p>
               </a>
             </div>
