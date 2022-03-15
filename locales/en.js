@@ -266,17 +266,46 @@ export default {
   reportMistake: 'Report a mistake',
   uploadMyDocuments: 'Upload my documents',
 
-  allPaymentsTaskLink: '/dashboard',
-  statusUpdateTaskLink: '/dashboard',
-  retirementIncomeTaskLink: '/dashboard',
-  cppContributionTaskLink: '/dashboard',
-  taxDeductionsTaskLink: '/dashboard',
-  delayOasPensionTaskLink: '/dashboard',
-  giveConsentTaskLink: '/dashboard',
-  taxSlipTaskLink: '/dashboard',
-  reconsiderationLink: '/dashboard',
-  taxSlipMailingLink: '/dashboard',
+  allPaymentsTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action',
+  statusUpdateTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action',
+  retirementIncomeTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits',
+  cppContributionTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
+  taxDeductionsTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
+  delayOasPensionTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action',
+  giveConsentTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-consent-to-communicate.action',
+  taxSlipTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
+  reconsiderationLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/',
+  taxSlipMailingLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/mailing-option',
   uploadMyDocumentsLink: '/dashboard',
+
+  oasBenefitEditAddressLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-address.action',
+  oasBenefitEditPhoneNumberLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-telephone-number.action',
+  oasBenefitEditPaymentDetailsLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-destination.action',
+
+  eiBenefitEditAddressLink: '/dashboard',
+  eiBenefitEditPhoneNumberLink: '/dashboard',
+  eiBenefitEditPaymentDetailsLink: '/dashboard',
+
+  cppBenefitEditAddressLink: '/dashboard',
+  cppBenefitEditPhoneNumberLink: '/dashboard',
+  cppBenefitEditPaymentDetailsLink: '/dashboard',
+
+  cppdBenefitEditAddressLink: '/dashboard',
+  cppdBenefitEditPhoneNumberLink: '/dashboard',
+  cppdBenefitEditPaymentDetailsLink: '/dashboard',
 
   // Dashboard benefit application card
   estimateRetirementIncome: 'Estimate retirement income',

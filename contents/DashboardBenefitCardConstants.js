@@ -34,6 +34,9 @@ const SUBMITTED_OAS = {
       description: 'July 1, 2021',
     },
   ],
+  editAddressLink: t.oasBenefitEditAddressLink,
+  editPhoneNumberLink: t.oasBenefitEditPhoneNumberLink,
+  editPaymentDetailsLink: t.oasBenefitEditPaymentDetailsLink,
 }
 
 const ACTIVE_OAS = {
@@ -79,6 +82,9 @@ const ACTIVE_OAS = {
       description: 'July 1, 2021',
     },
   ],
+  editAddressLink: t.oasBenefitEditAddressLink,
+  editPhoneNumberLink: t.oasBenefitEditPhoneNumberLink,
+  editPaymentDetailsLink: t.oasBenefitEditPaymentDetailsLink,
 }
 
 const SUBMITTED_CPP = {
@@ -121,6 +127,9 @@ const SUBMITTED_CPP = {
       description: 'September 5, 2021',
     },
   ],
+  editAddressLink: t.cppBenefitEditAddressLink,
+  editPhoneNumberLink: t.cppBenefitEditPhoneNumberLink,
+  editPaymentDetailsLink: t.cppBenefitEditPaymentDetailsLink,
 }
 
 const ACTIVE_CPP = {
@@ -165,6 +174,9 @@ const ACTIVE_CPP = {
       description: 'September 5, 2021',
     },
   ],
+  editAddressLink: t.cppBenefitEditAddressLink,
+  editPhoneNumberLink: t.cppBenefitEditPhoneNumberLink,
+  editPaymentDetailsLink: t.cppBenefitEditPaymentDetailsLink,
 }
 
 const SUBMITTED_CPPD = {
@@ -207,6 +219,9 @@ const SUBMITTED_CPPD = {
       description: 'September 5, 2021',
     },
   ],
+  editAddressLink: t.cppdBenefitEditAddressLink,
+  editPhoneNumberLink: t.cppdBenefitEditPhoneNumberLink,
+  editPaymentDetailsLink: t.cppdBenefitEditPaymentDetailsLink,
 }
 
 const ACTIVE_CPPD = {
@@ -251,6 +266,9 @@ const ACTIVE_CPPD = {
       description: 'September 5, 2021',
     },
   ],
+  editAddressLink: t.cppdBenefitEditAddressLink,
+  editPhoneNumberLink: t.cppdBenefitEditPhoneNumberLink,
+  editPaymentDetailsLink: t.cppdBenefitEditPaymentDetailsLink,
 }
 
 const SUBMITTED_EI = {
@@ -295,6 +313,9 @@ const SUBMITTED_EI = {
       description: 'September 5, 2021',
     },
   ],
+  editAddressLink: t.eiBenefitEditAddressLink,
+  editPhoneNumberLink: t.eiBenefitEditPhoneNumberLink,
+  editPaymentDetailsLink: t.eiBenefitEditPaymentDetailsLink,
 }
 
 const ACTIVE_EI = {
@@ -339,6 +360,9 @@ const ACTIVE_EI = {
       description: 'September 5, 2021',
     },
   ],
+  editAddressLink: t.eiBenefitEditAddressLink,
+  editPhoneNumberLink: t.eiBenefitEditPhoneNumberLink,
+  editPaymentDetailsLink: t.eiBenefitEditPaymentDetailsLink,
 }
 
 module.exports = {

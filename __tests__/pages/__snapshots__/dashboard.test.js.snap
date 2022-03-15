@@ -129,7 +129,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action"
               >
                 <img
                   alt=""
@@ -147,7 +147,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action"
               >
                 <img
                   alt=""
@@ -165,7 +165,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits"
               >
                 <img
                   alt=""
@@ -183,7 +183,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip"
               >
                 <img
                   alt=""
@@ -201,7 +201,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/"
               >
                 <img
                   alt=""
@@ -219,7 +219,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action"
               >
                 <img
                   alt=""
@@ -420,7 +420,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action"
               >
                 <img
                   alt=""
@@ -438,7 +438,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action"
               >
                 <img
                   alt=""
@@ -456,7 +456,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits"
               >
                 <img
                   alt=""
@@ -474,7 +474,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip"
               >
                 <img
                   alt=""
@@ -492,7 +492,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/"
               >
                 <img
                   alt=""
@@ -510,7 +510,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action"
               >
                 <img
                   alt=""
@@ -657,7 +657,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action"
               >
                 <img
                   alt=""
@@ -675,7 +675,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action"
               >
                 <img
                   alt=""
@@ -693,7 +693,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits"
               >
                 <img
                   alt=""
@@ -711,7 +711,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions"
               >
                 <img
                   alt=""
@@ -729,7 +729,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action"
               >
                 <img
                   alt=""
@@ -747,7 +747,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action"
               >
                 <img
                   alt=""
@@ -948,7 +948,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action"
               >
                 <img
                   alt=""
@@ -966,7 +966,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action"
               >
                 <img
                   alt=""
@@ -984,7 +984,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip"
               >
                 <img
                   alt=""
@@ -1002,7 +1002,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/mailing-option"
               >
                 <img
                   alt=""
@@ -1020,7 +1020,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action"
               >
                 <img
                   alt=""
@@ -1038,7 +1038,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action"
               >
                 <img
                   alt=""
@@ -1713,7 +1713,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action"
               >
                 <img
                   alt=""
@@ -1731,7 +1731,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action"
               >
                 <img
                   alt=""
@@ -1749,7 +1749,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip"
               >
                 <img
                   alt=""
@@ -1767,7 +1767,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/"
               >
                 <img
                   alt=""
@@ -1785,7 +1785,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions"
               >
                 <img
                   alt=""
@@ -1803,7 +1803,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action"
               >
                 <img
                   alt=""
@@ -2004,7 +2004,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action"
               >
                 <img
                   alt=""
@@ -2022,7 +2022,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action"
               >
                 <img
                   alt=""
@@ -2040,7 +2040,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip"
               >
                 <img
                   alt=""
@@ -2058,7 +2058,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/"
               >
                 <img
                   alt=""
@@ -2076,7 +2076,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions"
               >
                 <img
                   alt=""
@@ -2094,7 +2094,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action"
               >
                 <img
                   alt=""

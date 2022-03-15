@@ -188,52 +188,52 @@ const SUBMITTED_OAS_TASKS = [
   {
     task: t.allPaymentsTask,
     taskIcon: '/images/dashboard/oas-payment-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.allPaymentsTaskLink,
   },
   {
     task: t.statusUpdateTask,
     taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.statusUpdateTaskLink,
   },
   {
     task: t.retirementIncomeTask,
     taskIcon: '/images/dashboard/oas-retirement-income-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.retirementIncomeTaskLink,
   },
   {
     task: t.cppContributionTask,
     taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.cppContributionTaskLink,
   },
   {
     task: t.taxDeductionsTask,
     taskIcon: '/images/dashboard/oas-federal-tax-deductions-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.taxDeductionsTaskLink,
   },
   {
     task: t.delayOasPensionTask,
     taskIcon: '/images/dashboard/oas-delay-receiving-pension-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.delayOasPensionTaskLink,
   },
   {
     task: t.giveConsentTask,
     taskIcon: '/images/dashboard/oas-consent-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.giveConsentTaskLink,
   },
   {
     task: t.taxSlipTask,
     taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.taxSlipTaskLink,
   },
   {
     task: t.taxSlipMailingTask,
     taskIcon: '/images/dashboard/oas-tax-slip-mailing-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.taxSlipMailingLink,
   },
   {
     task: t.reconsiderationTask,
     taskIcon: '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
-    taskLink: '/dashboard',
+    taskLink: t.reconsiderationLink,
   },
 ]
 
@@ -241,52 +241,52 @@ const ACTIVE_OAS_TASKS = [
   {
     task: t.allPaymentsTask,
     taskIcon: '/images/dashboard/oas-payment-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.allPaymentsTaskLink,
   },
   {
     task: t.statusUpdateTask,
     taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.statusUpdateTaskLink,
   },
   {
     task: t.taxSlipTask,
     taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.taxSlipTaskLink,
   },
   {
     task: t.taxSlipMailingTask,
     taskIcon: '/images/dashboard/oas-tax-slip-mailing-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.taxSlipMailingLink,
   },
   {
     task: t.taxDeductionsTask,
     taskIcon: '/images/dashboard/oas-federal-tax-deductions-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.taxDeductionsTaskLink,
   },
   {
     task: t.delayOasPensionTask,
     taskIcon: '/images/dashboard/oas-delay-receiving-pension-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.delayOasPensionTaskLink,
   },
   {
     task: t.giveConsentTask,
     taskIcon: '/images/dashboard/oas-consent-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.giveConsentTaskLink,
   },
   {
     task: t.cppContributionTask,
     taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.cppContributionTaskLink,
   },
   {
     task: t.retirementIncomeTask,
     taskIcon: '/images/dashboard/oas-retirement-income-icon.svg',
-    taskLink: '/dashboard',
+    taskLink: t.retirementIncomeTaskLink,
   },
   {
     task: t.reconsiderationTask,
     taskIcon: '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
-    taskLink: '/dashboard',
+    taskLink: t.reconsiderationLink,
   },
 ]
 

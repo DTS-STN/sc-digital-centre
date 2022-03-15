@@ -57,7 +57,7 @@ const ActiveBenefitDetails = (props) => {
                   <p className="text-base">{props.benefit.payeeAddress}</p>
                 ) : (
                   <a
-                    href={'./dashboard'}
+                    href={props.benefit.editAddressLink}
                     className="text-sm text-bright-blue-solid underline"
                   >
                     {t.addYourAddress}
@@ -79,7 +79,7 @@ const ActiveBenefitDetails = (props) => {
                   <p className="text-sm">{props.benefit.payeePhoneNumber}</p>
                 ) : (
                   <a
-                    href={'./dashboard'}
+                    href={props.benefit.editPhoneNumberLink}
                     className="text-sm text-bright-blue-solid underline"
                   >
                     {t.addYourPhoneNumber}
@@ -107,7 +107,7 @@ const ActiveBenefitDetails = (props) => {
                 </div>
               ) : (
                 <a
-                  href={'./dashboard'}
+                  href={props.benefit.editPaymentDetailsLink}
                   className="text-sm text-bright-blue-solid underline"
                 >
                   {t.addYourPaymentDetails}
