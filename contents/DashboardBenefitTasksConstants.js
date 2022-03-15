@@ -308,6 +308,11 @@ const SUBMITTED_EI_TASKS = [
     taskLink: '/dashboard',
   },
   {
+    task: t.accessCode,
+    taskIcon: '/images/dashboard/ei-access-code.svg',
+    taskLink: '/dashboard',
+  },
+  {
     task: t.submitDocuments,
     taskIcon: '/images/dashboard/ei-submit-documents-icon.svg',
     taskLink: '/dashboard',
@@ -359,6 +364,11 @@ const ACTIVE_EI_TASKS = [
   {
     task: t.viewPaymentInfo,
     taskIcon: '/images/dashboard/ei-view-payment-info-icon.svg',
+    taskLink: '/dashboard',
+  },
+  {
+    task: t.accessCode,
+    taskIcon: '/images/dashboard/ei-access-code.svg',
     taskLink: '/dashboard',
   },
   {

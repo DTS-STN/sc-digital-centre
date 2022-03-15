@@ -1244,6 +1244,24 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-access-code.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Access code
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
                   src="/images/dashboard/ei-submit-documents-icon.svg"
                 />
                 <p
@@ -1268,24 +1286,6 @@ exports[`Dashboard renders Dashboard 1`] = `
                   class="w-36 font-normal px-5 text-sm"
                 >
                   View documents
-                </p>
-              </a>
-            </li>
-            <li
-              class="font-display font-bold text-left pb-6"
-            >
-              <a
-                href="/dashboard"
-              >
-                <img
-                  alt=""
-                  class="font-normal pb-3 px-8"
-                  src="/images/dashboard/ei-past-claims-icon.svg"
-                />
-                <p
-                  class="w-36 font-normal px-5 text-sm"
-                >
-                  View my past claims
                 </p>
               </a>
             </li>
@@ -1535,6 +1535,24 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-access-code.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Access code
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="/dashboard"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
                   src="/images/dashboard/ei-past-claims-icon.svg"
                 />
                 <p
@@ -1559,24 +1577,6 @@ exports[`Dashboard renders Dashboard 1`] = `
                   class="w-36 font-normal px-5 text-sm"
                 >
                   View my Records of Employment
-                </p>
-              </a>
-            </li>
-            <li
-              class="font-display font-bold text-left pb-6"
-            >
-              <a
-                href="/dashboard"
-              >
-                <img
-                  alt=""
-                  class="font-normal pb-3 px-8"
-                  src="/images/dashboard/oas-tax-slip-icon.svg"
-                />
-                <p
-                  class="w-36 font-normal px-5 text-sm"
-                >
-                  View tax slips
                 </p>
               </a>
             </li>
