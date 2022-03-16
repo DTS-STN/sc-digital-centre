@@ -1185,7 +1185,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-correspondence"
               >
                 <img
                   alt=""
@@ -1221,7 +1221,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6"
               >
                 <img
                   alt=""
@@ -1257,7 +1257,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-doc-upload-instruction"
               >
                 <img
                   alt=""
@@ -1275,7 +1275,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/321"
               >
                 <img
                   alt=""
@@ -1476,7 +1476,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-correspondence"
               >
                 <img
                   alt=""
@@ -1512,7 +1512,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6"
               >
                 <img
                   alt=""
@@ -1548,7 +1548,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6"
               >
                 <img
                   alt=""
@@ -1566,7 +1566,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="/dashboard"
+                href="View my Records of Employment"
               >
                 <img
                   alt=""

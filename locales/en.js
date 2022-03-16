@@ -278,21 +278,43 @@ export default {
   uploadMyDocuments: 'Upload my documents',
   accessCode: 'Access code',
 
-  allPaymentsTaskLink: '/dashboard',
-  statusUpdateTaskLink: '/dashboard',
-  retirementIncomeTaskLink: '/dashboard',
-  cppContributionTaskLink: '/dashboard',
-  taxDeductionsTaskLink: '/dashboard',
-  delayOasPensionTaskLink: '/dashboard',
-  giveConsentTaskLink: '/dashboard',
-  taxSlipTaskLink: '/dashboard',
-  reconsiderationLink: '/dashboard',
-  taxSlipMailingLink: '/dashboard',
-  uploadMyDocumentsLink: '/dashboard',
-
   // Dashboard benefit application card
   estimateRetirementIncome: 'Estimate retirement income',
   youMightBeEligible: 'You might be eligible.',
   learnMoreAbout: 'Learn more about ',
   applyFor: 'Apply for',
+
+  //Dashboard task links
+  editAddress:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',
+  editPhoneNumber:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',
+  editPayment:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyDDPInfo.aspx?prov=6',
+  viewPaymentInfoLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
+  viewDocumentsLink:
+    'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/321',
+  viewPastClaimsLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6',
+  submitFormsLink:
+    'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/256',
+  taxSlipLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
+  taxSlipMailingLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/mailing-option',
+
+  //EI
+  eiStatusAndMessages:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-correspondence',
+  completeInsuranceReportLink:
+    'https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service',
+  eiUploadDocuments:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-doc-upload-instruction',
+  eiRegisterForAlerts:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/alert-me/confirm?action=confirm&return=ei-landing',
+  recordOfEmploymentLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyRoeList.aspx?prov=6',
+  eiReportMistake:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyMessages.aspx?mt=3&prov=6',
 }

@@ -4,6 +4,7 @@ import VerticalStepper from '../atoms/VerticalStepper'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from '../atoms/HorizontalRule'
+import Link from 'next/link'
 
 const ActiveBenefitDetails = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -45,74 +46,47 @@ const ActiveBenefitDetails = (props) => {
             </div>
             <div className="mt-7 sm:mt-0 sm:ml-5 lg:ml-32">
               <div id="payee_address">
-                <span className="font-bold text-base">{t.payeeAddress}</span>
-                {props.benefit.payeeAddress != '' ? (
-                  <button className="ml-5">
-                    <img src={'/edit.svg'} alt="Edit" className="w-5 h-4" />
-                  </button>
-                ) : (
-                  <br />
-                )}
-                {props.benefit.payeeAddress != '' ? (
-                  <p className="text-base">{props.benefit.payeeAddress}</p>
-                ) : (
-                  <a
-                    href={'./dashboard'}
-                    className="text-sm text-bright-blue-solid underline"
-                  >
-                    {t.addYourAddress}
-                  </a>
-                )}
+                <div className="flex items-center">
+                  <span className="font-bold text-base">{t.payeeAddress}</span>
+                  <Link href={t.editAddress}>
+                    <button className="ml-4">
+                      <img src={'/edit.svg'} alt="Edit" className="w-5 h-4" />
+                    </button>
+                  </Link>
+                </div>
+                <p className="text-sm">{props.benefit.payeeAddress}</p>
               </div>
               <div id="phone_number" className="mt-7 w-36">
-                <span className="font-bold text-base">
-                  {t.payeePhoneNumber}
-                </span>
-                {props.benefit.payeePhoneNumber != '' ? (
-                  <button className="ml-4">
-                    <img src={'/edit.svg'} alt="Edit" className="w-5 h-4" />
-                  </button>
-                ) : (
-                  <br />
-                )}
-                {props.benefit.payeePhoneNumber != '' ? (
-                  <p className="text-sm">{props.benefit.payeePhoneNumber}</p>
-                ) : (
-                  <a
-                    href={'./dashboard'}
-                    className="text-sm text-bright-blue-solid underline"
-                  >
-                    {t.addYourPhoneNumber}
-                  </a>
-                )}
+                <div className="flex items-center">
+                  <span className="font-bold text-base">
+                    {t.payeePhoneNumber}
+                  </span>
+                  <Link href={t.editPhoneNumber}>
+                    <button className="ml-4">
+                      <img src={'/edit.svg'} alt="Edit" className="w-5 h-4" />
+                    </button>
+                  </Link>
+                </div>
+                <p className="text-sm">{props.benefit.payeePhoneNumber}</p>
               </div>
             </div>
             <div
               id="payment_details"
               className="w-44 mt-7 sm:mt-0 sm:ml-5 lg:ml-16 2xl:ml-32"
             >
-              <span className="font-bold text-base">{t.paymentDetails}</span>
-              {props.benefit.paymentType != '' ? (
-                <button className="ml-4">
-                  <img src={'/edit.svg'} alt="Edit" className="w-5 h-4" />
-                </button>
-              ) : (
-                <br />
-              )}
-              {props.benefit.paymentType != '' ? (
-                <div>
-                  <p className="text-sm">{props.benefit.paymentType}</p>
-                  <p className="text-sm">{props.benefit.institutionName}</p>
-                  <p className="text-sm">{props.benefit.accountNumber}</p>
-                </div>
-              ) : (
-                <a
-                  href={'./dashboard'}
-                  className="text-sm text-bright-blue-solid underline"
-                >
-                  {t.addYourPaymentDetails}
-                </a>
-              )}
+              <div className="flex items-center">
+                <span className="font-bold text-base">{t.paymentDetails}</span>
+                <Link href={t.editPayment}>
+                  <button className="ml-4">
+                    <img src={'/edit.svg'} alt="Edit" className="w-5 h-4" />
+                  </button>
+                </Link>
+              </div>
+              <div>
+                <p className="text-sm">{props.benefit.paymentType}</p>
+                <p className="text-sm">{props.benefit.institutionName}</p>
+                <p className="text-sm">{props.benefit.accountNumber}</p>
+              </div>
             </div>
           </div>
         </div>
