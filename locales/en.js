@@ -276,6 +276,7 @@ export default {
   recordOfEmployment: 'View my Records of Employment',
   reportMistake: 'Report a mistake',
   uploadMyDocuments: 'Upload my documents',
+  accessCode: 'Access code',
 
   allPaymentsTaskLink: '/dashboard',
   statusUpdateTaskLink: '/dashboard',
