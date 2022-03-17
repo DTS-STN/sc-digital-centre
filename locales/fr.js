@@ -289,6 +289,8 @@ export default {
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6',
   submitFormsLink:
     'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/256',
+  taxSlipMailingLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/mailing-option',
   allPaymentsTaskLink:
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action',
   statusUpdateTaskLink:
