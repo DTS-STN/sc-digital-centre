@@ -278,25 +278,6 @@ export default {
   uploadMyDocuments: 'Upload my documents',
   accessCode: 'Access code',
 
-  oasBenefitEditAddressLink:
-    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-address.action',
-  oasBenefitEditPhoneNumberLink:
-    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-telephone-number.action',
-  oasBenefitEditPaymentDetailsLink:
-    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-destination.action',
-
-  eiBenefitEditAddressLink: '/dashboard',
-  eiBenefitEditPhoneNumberLink: '/dashboard',
-  eiBenefitEditPaymentDetailsLink: '/dashboard',
-
-  cppBenefitEditAddressLink: '/dashboard',
-  cppBenefitEditPhoneNumberLink: '/dashboard',
-  cppBenefitEditPaymentDetailsLink: '/dashboard',
-
-  cppdBenefitEditAddressLink: '/dashboard',
-  cppdBenefitEditPhoneNumberLink: '/dashboard',
-  cppdBenefitEditPaymentDetailsLink: '/dashboard',
-
   // Dashboard benefit application card
   estimateRetirementIncome: 'Estimate retirement income',
   youMightBeEligible: 'You might be eligible.',
