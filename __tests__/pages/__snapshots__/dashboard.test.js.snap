@@ -201,7 +201,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="font-display font-bold text-left pb-6"
             >
               <a
-                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/"
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits"
               >
                 <img
                   alt=""

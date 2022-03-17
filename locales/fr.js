@@ -289,10 +289,26 @@ export default {
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6',
   submitFormsLink:
     'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/256',
-  taxSlipLink:
+  allPaymentsTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action',
+  statusUpdateTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action',
+  retirementIncomeTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits',
+  cppContributionTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
+  taxDeductionsTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
+  delayOasPensionTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action',
+  giveConsentTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-consent-to-communicate.action',
+  taxSlipTaskLink:
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
-  taxSlipMailingLink:
-    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/mailing-option',
+  reconsiderationLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/',
+  uploadMyDocumentsLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/cppd-rpci/doc-upload',
 
   //EI
   eiStatusAndMessages:
