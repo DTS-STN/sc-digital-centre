@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/18</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
@@ -173,33 +173,8 @@
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
 <a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a>
-<a name='L118'></a><a href='#L118'>118</a>
-<a name='L119'></a><a href='#L119'>119</a>
-<a name='L120'></a><a href='#L120'>120</a>
-<a name='L121'></a><a href='#L121'>121</a>
-<a name='L122'></a><a href='#L122'>122</a>
-<a name='L123'></a><a href='#L123'>123</a>
-<a name='L124'></a><a href='#L124'>124</a>
-<a name='L125'></a><a href='#L125'>125</a>
-<a name='L126'></a><a href='#L126'>126</a>
-<a name='L127'></a><a href='#L127'>127</a>
-<a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a>
-<a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a>
-<a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a>
-<a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a>
-<a name='L138'></a><a href='#L138'>138</a>
-<a name='L139'></a><a href='#L139'>139</a>
-<a name='L140'></a><a href='#L140'>140</a>
-<a name='L141'></a><a href='#L141'>141</a>
-<a name='L142'></a><a href='#L142'>142</a>
-<a name='L143'></a><a href='#L143'>143</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,36 +182,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -347,6 +295,7 @@ import VerticalStepper from '../atoms/VerticalStepper'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from '../atoms/HorizontalRule'
+import Link from 'next/link'
 &nbsp;
 const ActiveBenefitDetails = (props) =&gt; {
   const t = props.locale === 'en' ? en : <span class="branch-1 cbranch-no" title="branch not covered" >fr</span>
@@ -388,74 +337,47 @@ const ActiveBenefitDetails = (props) =&gt; {
             &lt;/div&gt;
             &lt;div className="mt-7 sm:mt-0 sm:ml-5 lg:ml-32"&gt;
               &lt;div id="payee_address"&gt;
-                &lt;span className="font-bold text-base"&gt;{t.payeeAddress}&lt;/span&gt;
-                {props.benefit.payeeAddress != '' ? (
-<span class="branch-0 cbranch-no" title="branch not covered" >                  &lt;button className="ml-5"&gt;</span>
-                    &lt;img src={'/edit.svg'} alt="Edit" className="w-5 h-4" /&gt;
-                  &lt;/button&gt;
-                ) : (
-                  &lt;br /&gt;
-                )}
-                {props.benefit.payeeAddress != '' ? (
-<span class="branch-0 cbranch-no" title="branch not covered" >                  &lt;p className="text-base"&gt;{props.benefit.payeeAddress}&lt;/p&gt;</span>
-                ) : (
-                  &lt;a
-                    href={props.benefit.editAddressLink}
-                    className="text-sm text-bright-blue-solid underline"
-                  &gt;
-                    {t.addYourAddress}
-                  &lt;/a&gt;
-                )}
+                &lt;div className="flex items-center"&gt;
+                  &lt;span className="font-bold text-base"&gt;{t.payeeAddress}&lt;/span&gt;
+                  &lt;Link href={t.editAddress}&gt;
+                    &lt;button className="ml-4"&gt;
+                      &lt;img src={'/edit.svg'} alt="Edit" className="w-5 h-4" /&gt;
+                    &lt;/button&gt;
+                  &lt;/Link&gt;
+                &lt;/div&gt;
+                &lt;p className="text-sm"&gt;{props.benefit.payeeAddress}&lt;/p&gt;
               &lt;/div&gt;
               &lt;div id="phone_number" className="mt-7 w-36"&gt;
-                &lt;span className="font-bold text-base"&gt;
-                  {t.payeePhoneNumber}
-                &lt;/span&gt;
-                {props.benefit.payeePhoneNumber != '' ? (
-                  &lt;button className="ml-4"&gt;
-                    &lt;img src={'/edit.svg'} alt="Edit" className="w-5 h-4" /&gt;
-                  &lt;/button&gt;
-                ) : (
-<span class="branch-1 cbranch-no" title="branch not covered" >                  &lt;br /&gt;</span>
-                )}
-                {props.benefit.payeePhoneNumber != '' ? (
-                  &lt;p className="text-sm"&gt;{props.benefit.payeePhoneNumber}&lt;/p&gt;
-                ) : (
-<span class="branch-1 cbranch-no" title="branch not covered" >                  &lt;a</span>
-                    href={props.benefit.editPhoneNumberLink}
-                    className="text-sm text-bright-blue-solid underline"
-                  &gt;
-                    {t.addYourPhoneNumber}
-                  &lt;/a&gt;
-                )}
+                &lt;div className="flex items-center"&gt;
+                  &lt;span className="font-bold text-base"&gt;
+                    {t.payeePhoneNumber}
+                  &lt;/span&gt;
+                  &lt;Link href={t.editPhoneNumber}&gt;
+                    &lt;button className="ml-4"&gt;
+                      &lt;img src={'/edit.svg'} alt="Edit" className="w-5 h-4" /&gt;
+                    &lt;/button&gt;
+                  &lt;/Link&gt;
+                &lt;/div&gt;
+                &lt;p className="text-sm"&gt;{props.benefit.payeePhoneNumber}&lt;/p&gt;
               &lt;/div&gt;
             &lt;/div&gt;
             &lt;div
               id="payment_details"
               className="w-44 mt-7 sm:mt-0 sm:ml-5 lg:ml-16 2xl:ml-32"
             &gt;
-              &lt;span className="font-bold text-base"&gt;{t.paymentDetails}&lt;/span&gt;
-              {props.benefit.paymentType != '' ? (
-                &lt;button className="ml-4"&gt;
-                  &lt;img src={'/edit.svg'} alt="Edit" className="w-5 h-4" /&gt;
-                &lt;/button&gt;
-              ) : (
-<span class="branch-1 cbranch-no" title="branch not covered" >                &lt;br /&gt;</span>
-              )}
-              {props.benefit.paymentType != '' ? (
-                &lt;div&gt;
-                  &lt;p className="text-sm"&gt;{props.benefit.paymentType}&lt;/p&gt;
-                  &lt;p className="text-sm"&gt;{props.benefit.institutionName}&lt;/p&gt;
-                  &lt;p className="text-sm"&gt;{props.benefit.accountNumber}&lt;/p&gt;
-                &lt;/div&gt;
-              ) : (
-<span class="branch-1 cbranch-no" title="branch not covered" >                &lt;a</span>
-                  href={props.benefit.editPaymentDetailsLink}
-                  className="text-sm text-bright-blue-solid underline"
-                &gt;
-                  {t.addYourPaymentDetails}
-                &lt;/a&gt;
-              )}
+              &lt;div className="flex items-center"&gt;
+                &lt;span className="font-bold text-base"&gt;{t.paymentDetails}&lt;/span&gt;
+                &lt;Link href={t.editPayment}&gt;
+                  &lt;button className="ml-4"&gt;
+                    &lt;img src={'/edit.svg'} alt="Edit" className="w-5 h-4" /&gt;
+                  &lt;/button&gt;
+                &lt;/Link&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;p className="text-sm"&gt;{props.benefit.paymentType}&lt;/p&gt;
+                &lt;p className="text-sm"&gt;{props.benefit.institutionName}&lt;/p&gt;
+                &lt;p className="text-sm"&gt;{props.benefit.accountNumber}&lt;/p&gt;
+              &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -490,7 +412,7 @@ export default ActiveBenefitDetails
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Mar 15 2022 16:02:33 GMT+0000 (Coordinated Universal Time)
+                at Thu Mar 17 2022 15:55:59 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

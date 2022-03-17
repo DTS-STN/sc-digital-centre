@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647360153607" clover="3.2.0">
-  <project timestamp="1647360153607" name="All files">
-    <metrics statements="246" coveredstatements="179" conditionals="192" coveredconditionals="116" methods="88" coveredmethods="63" elements="526" coveredelements="358" complexity="0" loc="246" ncloc="246" packages="6" files="46" classes="46"/>
+<coverage generated="1647532559811" clover="3.2.0">
+  <project timestamp="1647532559811" name="All files">
+    <metrics statements="251" coveredstatements="184" conditionals="183" coveredconditionals="113" methods="89" coveredmethods="64" elements="523" coveredelements="361" complexity="0" loc="251" ncloc="251" packages="6" files="46" classes="46"/>
     <package name="components.atoms">
       <metrics statements="58" coveredstatements="52" conditionals="36" coveredconditionals="28" methods="21" coveredmethods="19"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -59,12 +59,12 @@
       </file>
       <file name="HorizontalRule.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/HorizontalRule.js">
         <metrics statements="7" coveredstatements="5" conditionals="8" coveredconditionals="5" methods="1" coveredmethods="1"/>
-        <line num="5" count="81" type="cond" truecount="2" falsecount="2"/>
+        <line num="5" count="96" type="cond" truecount="2" falsecount="2"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="11" count="81" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="96" type="cond" truecount="1" falsecount="1"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="17" count="81" type="cond" truecount="2" falsecount="0"/>
-        <line num="18" count="37" type="stmt"/>
+        <line num="17" count="96" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="52" type="stmt"/>
         <line num="24" count="44" type="stmt"/>
       </file>
       <file name="Meta.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/Meta.js">
@@ -103,22 +103,27 @@
       </file>
     </package>
     <package name="components.molecules">
-      <metrics statements="91" coveredstatements="77" conditionals="92" coveredconditionals="61" methods="35" coveredmethods="30"/>
+      <metrics statements="96" coveredstatements="82" conditionals="83" coveredconditionals="58" methods="36" coveredmethods="31"/>
       <file name="ActiveBenefitDetails.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/ActiveBenefitDetails.js">
-        <metrics statements="4" coveredstatements="4" conditionals="18" coveredconditionals="9" methods="1" coveredmethods="1"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="125" count="3" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="99" count="3" type="stmt"/>
       </file>
       <file name="BenefitApplicationCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitApplicationCard.js">
-        <metrics statements="6" coveredstatements="6" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <metrics statements="11" coveredstatements="11" conditionals="9" coveredconditionals="8" methods="3" coveredmethods="3"/>
         <line num="8" count="2" type="stmt"/>
-        <line num="9" count="12" type="cond" truecount="1" falsecount="1"/>
-        <line num="11" count="12" type="stmt"/>
-        <line num="12" count="12" type="stmt"/>
-        <line num="18" count="12" type="stmt"/>
-        <line num="80" count="2" type="stmt"/>
+        <line num="9" count="27" type="cond" truecount="1" falsecount="1"/>
+        <line num="10" count="27" type="stmt"/>
+        <line num="11" count="27" type="stmt"/>
+        <line num="12" count="27" type="stmt"/>
+        <line num="14" count="27" type="stmt"/>
+        <line num="15" count="27" type="stmt"/>
+        <line num="22" count="27" type="stmt"/>
+        <line num="23" count="54" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="27" type="stmt"/>
+        <line num="93" count="2" type="stmt"/>
       </file>
       <file name="BenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitCard.js">
         <metrics statements="21" coveredstatements="11" conditionals="19" coveredconditionals="6" methods="5" coveredmethods="1"/>
@@ -295,7 +300,7 @@
       </file>
       <file name="dashboard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/dashboard.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="32" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
       </file>
       <file name="home.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/home.js">
         <metrics statements="5" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
