@@ -61,9 +61,9 @@ export default function BenefitCardHeaderPending(props) {
             id={`${props.benefit.benefitType}-pending-progressbar`}
             className="py-4 sm:pl-10"
           >
-            <p className="font-display font-bold text-lg">{'Progressbar'}</p>
-            <p className="font-display text-base">4 out of 6 review</p>
-            <p className="font-display text-base">steps complete</p>
+            <p className="font-display font-bold text-lg">
+              {props.benefit.benefitStatusProgress}
+            </p>
           </div>
         </div>
       </div>

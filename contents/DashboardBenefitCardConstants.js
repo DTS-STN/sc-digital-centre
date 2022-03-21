@@ -20,6 +20,7 @@ const SUBMITTED_OAS = {
     'We will notify you as soon as your application withdrawel request is approved. Additionally, we may ask you if we need more information about your application withdrawn request.',
   activeBenefits: '',
   pendingBenefits: 'Old age security pension',
+  benefitStatusProgress: 'In Progress',
   lastUpdates: [
     {
       label: 'Documents reviewedrequested',
@@ -64,6 +65,7 @@ const ACTIVE_OAS = {
   additionalInformation:
     'We will notify you as soon as we have process your application.',
   pendingBenefits: 'Old age security pension',
+  benefitStatusProgress: 'Complete',
   // TODO: "pendingBenefits" is used for both Pending and Active benefits. We need to change the field name when mapping with API.
   lastUpdates: [
     {
@@ -107,6 +109,7 @@ const SUBMITTED_CPP = {
 
   applicationStatus: 'Application Submitted',
   pendingBenefits: 'Retirement pension',
+  benefitStatusProgress: 'In Progress',
   lastUpdates: [
     {
       label: 'Documents reviewed',
@@ -151,6 +154,7 @@ const ACTIVE_CPP = {
     'We will notify you as soon as we have process your application.',
   applicationStatus: 'Active',
   pendingBenefits: 'Retirement pension',
+  benefitStatusProgress: 'Complete',
   lastUpdates: [
     {
       label: 'Documents reviewed',
@@ -193,6 +197,7 @@ const SUBMITTED_CPPD = {
 
   applicationStatus: 'Application Submitted',
   pendingBenefits: 'Disability',
+  benefitStatusProgress: 'In Progress',
   lastUpdates: [
     {
       label: 'Documents reviewed',
@@ -237,6 +242,7 @@ const ACTIVE_CPPD = {
     'We will notify you as soon as we have process your application.',
   applicationStatus: 'Active',
   pendingBenefits: 'Disability',
+  benefitStatusProgress: 'Complete',
   lastUpdates: [
     {
       label: 'Documents reviewed',
@@ -281,6 +287,7 @@ const SUBMITTED_EI = {
   additionalInformation:
     'We will notify you as soon as we have process your application.',
   pendingBenefits: 'Regular benefits',
+  benefitStatusProgress: 'Questionnaire received -training',
   lastUpdates: [
     {
       label: 'Documents reviewed',
@@ -325,6 +332,7 @@ const ACTIVE_EI = {
   additionalInformation:
     'We will notify you as soon as we have process your application.',
   pendingBenefits: 'Regular benefits',
+  benefitStatusProgress: 'Training information added',
   lastUpdates: [
     {
       label: 'Report processed',

@@ -29,20 +29,7 @@ const pendingCPP = {
 
   applicationStatus: 'Application Submitted',
   pendingBenefits: 'Retirement pension',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
+  benefitStatusProgress: 'In Progress',
 }
 
 const pendingCPPD = {
@@ -71,31 +58,18 @@ const pendingCPPD = {
 
   applicationStatus: 'Application Submitted',
   pendingBenefits: 'Retirement pension',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
+  benefitStatusProgress: 'In Progress',
 }
 
 describe('BenefitCardHeaderPending Tests', () => {
   it('renders the Header of a Pending Benefit', () => {
     render(<BenefitCardHeaderPending benefit={pendingCPP} locale={'en'} />)
     const titleText = screen.getByText('Canada Pension Plan')
-    const submittedOn = screen.getByText('July 1, 2021')
+    const applicationStatusProgress = screen.getByText('In Progress')
     const applicationStatus = screen.getByText('Application Submitted')
     expect(titleText).toBeInTheDocument()
     expect(applicationStatus).toBeInTheDocument()
-    expect(submittedOn).toBeInTheDocument()
+    expect(applicationStatusProgress).toBeInTheDocument()
   })
 
   it('renders the Header of a CPPD', () => {

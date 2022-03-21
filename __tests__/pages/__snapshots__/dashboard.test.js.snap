@@ -77,17 +77,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-display font-bold text-lg"
               >
-                Progressbar
-              </p>
-              <p
-                class="font-display text-base"
-              >
-                4 out of 6 review
-              </p>
-              <p
-                class="font-display text-base"
-              >
-                steps complete
+                In Progress
               </p>
             </div>
           </div>
@@ -356,30 +346,14 @@ exports[`Dashboard renders Dashboard 1`] = `
               </div>
             </div>
             <div
-              class="pt-5 sm:pt-0"
+              class="py-4 sm:pl-10"
               id="CPP-active-latestUpdates"
             >
               <p
-                class="font-display"
+                class="font-display font-bold text-lg"
               >
-                Latest update
+                Complete
               </p>
-              <p
-                class="font-bold text-lg mt-1"
-              >
-                Document reviewed
-              </p>
-              <p
-                class="font-bold text-lg"
-              >
-                September 8, 2021
-              </p>
-              <a
-                class="text-sm mt-1 text-bright-blue-solid underline"
-                href="./dashboard"
-              >
-                View my status and messages +
-              </a>
             </div>
           </div>
         </div>
@@ -605,17 +579,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-display font-bold text-lg"
               >
-                Progressbar
-              </p>
-              <p
-                class="font-display text-base"
-              >
-                4 out of 6 review
-              </p>
-              <p
-                class="font-display text-base"
-              >
-                steps complete
+                In Progress
               </p>
             </div>
           </div>
@@ -884,30 +848,14 @@ exports[`Dashboard renders Dashboard 1`] = `
               </div>
             </div>
             <div
-              class="pt-5 sm:pt-0"
+              class="py-4 sm:pl-10"
               id="OAS-active-latestUpdates"
             >
               <p
-                class="font-display"
+                class="font-display font-bold text-lg"
               >
-                Latest update
+                Complete
               </p>
-              <p
-                class="font-bold text-lg mt-1"
-              >
-                Document reviewed
-              </p>
-              <p
-                class="font-bold text-lg"
-              >
-                September 8, 2021
-              </p>
-              <a
-                class="text-sm mt-1 text-bright-blue-solid underline"
-                href="./dashboard"
-              >
-                View my status and messages +
-              </a>
             </div>
           </div>
         </div>
@@ -1133,17 +1081,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-display font-bold text-lg"
               >
-                Progressbar
-              </p>
-              <p
-                class="font-display text-base"
-              >
-                4 out of 6 review
-              </p>
-              <p
-                class="font-display text-base"
-              >
-                steps complete
+                Questionnaire received -training
               </p>
             </div>
           </div>
@@ -1412,30 +1350,14 @@ exports[`Dashboard renders Dashboard 1`] = `
               </div>
             </div>
             <div
-              class="pt-5 sm:pt-0"
+              class="py-4 sm:pl-10"
               id="EI-active-latestUpdates"
             >
               <p
-                class="font-display"
+                class="font-display font-bold text-lg"
               >
-                Latest update
+                Training information added
               </p>
-              <p
-                class="font-bold text-lg mt-1"
-              >
-                Document reviewed
-              </p>
-              <p
-                class="font-bold text-lg"
-              >
-                September 9, 2021
-              </p>
-              <a
-                class="text-sm mt-1 text-bright-blue-solid underline"
-                href="./dashboard"
-              >
-                View my status and messages +
-              </a>
             </div>
           </div>
         </div>
@@ -1661,17 +1583,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-display font-bold text-lg"
               >
-                Progressbar
-              </p>
-              <p
-                class="font-display text-base"
-              >
-                4 out of 6 review
-              </p>
-              <p
-                class="font-display text-base"
-              >
-                steps complete
+                In Progress
               </p>
             </div>
           </div>
@@ -1940,30 +1852,14 @@ exports[`Dashboard renders Dashboard 1`] = `
               </div>
             </div>
             <div
-              class="pt-5 sm:pt-0"
+              class="py-4 sm:pl-10"
               id="CPPD-active-latestUpdates"
             >
               <p
-                class="font-display"
+                class="font-display font-bold text-lg"
               >
-                Latest update
+                Complete
               </p>
-              <p
-                class="font-bold text-lg mt-1"
-              >
-                Document reviewed
-              </p>
-              <p
-                class="font-bold text-lg"
-              >
-                September 8, 2021
-              </p>
-              <a
-                class="text-sm mt-1 text-bright-blue-solid underline"
-                href="./dashboard"
-              >
-                View my status and messages +
-              </a>
             </div>
           </div>
         </div>
