@@ -232,8 +232,6 @@ export default {
   estimatedDateOfDecision: 'Estimated date of decision',
   paymentAmount: 'Payment amount',
   daysUntilNextPayment: 'Days until next payment',
-  latestUpdate: 'Latest update',
-  documentReviewed: 'Document reviewed',
   viewPaymentHistory: 'View my payments +',
 
   // Benefit Card details

@@ -31,20 +31,7 @@ const activeCanadaPensionPlan = {
     'We will notify you as soon as we have process your application.',
   applicationStatus: 'Active',
   pendingBenefits: 'Retirement pension',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
+  benefitStatusProgress: 'Complete',
 }
 
 const activeCanadaPensionPlanCPPD = {
@@ -75,20 +62,7 @@ const activeCanadaPensionPlanCPPD = {
     'We will notify you as soon as we have process your application.',
   applicationStatus: 'Active',
   pendingBenefits: 'Retirement pension',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
+  benefitStatusProgress: 'Complete',
 }
 
 expect.extend(toHaveNoViolations)
@@ -103,11 +77,11 @@ describe('BenefitCardHeaderActive', () => {
     )
     const titleText = screen.getByText('Canada Pension Plan')
     const nextPaymentAmount = screen.getByText('734.34')
-    const lastUpdateDate = screen.getByText('September 8, 2021')
+    const benefitStatusProgress = screen.getByText('Complete')
 
     expect(titleText).toBeInTheDocument()
     expect(nextPaymentAmount).toBeInTheDocument()
-    expect(lastUpdateDate).toBeInTheDocument()
+    expect(benefitStatusProgress).toBeInTheDocument()
   })
 
   it('Renders BenefitCardHeaderActive CPPD', () => {
