@@ -1515,6 +1515,157 @@ exports[`Dashboard renders Dashboard 1`] = `
       class="benefit-card"
     >
       <div
+        class="px-4 md:px-6"
+      >
+        <div
+          class="flex mr-10 justify-end"
+        >
+          <h2
+            class="font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-gray-inactive"
+          >
+            Inactive
+          </h2>
+        </div>
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
+          <div
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="EI-inactive-title"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Employment Insurance
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="font-display py-4 sm:grid sm:pl-10"
+            id="EI-inactive-pastClaimOverview"
+          >
+            <p
+              class="font-bold text-lg mt-4"
+            >
+              Your past EI claim overview
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div
+        class="font-display text-lg ml-4 py-5 sm:ml-8"
+      >
+        <span
+          class="font-bold"
+        >
+          You have no active EI benefit
+        </span>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
+          >
+            All EI Tasks
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="View my Records of Employment"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-record-of-employment-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my Records of Employment
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-past-claims-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my past claims
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/ei-view-payment-info-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my payment information
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-tax-slip-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View tax slips, T4E
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
+    </div>
+    <div
+      class="benefit-card"
+    >
+      <div
         class="layout-container"
       >
         <div
@@ -2001,6 +2152,157 @@ exports[`Dashboard renders Dashboard 1`] = `
                   class="w-36 font-normal px-5 text-sm"
                 >
                   Ask for tax deductions
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
+    </div>
+    <div
+      class="benefit-card"
+    >
+      <div
+        class="px-4 md:px-6"
+      >
+        <div
+          class="flex mr-10 justify-end"
+        >
+          <h2
+            class="font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-gray-inactive"
+          >
+            Inactive
+          </h2>
+        </div>
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"
+        >
+          <div
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="CPPD-inactive-title"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Canada Pension Plan
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="font-display py-4 sm:grid sm:pl-10"
+            id="CPPD-inactive-pastClaimOverview"
+          >
+            <p
+              class="font-bold text-lg mt-4"
+            >
+              Your past CPPD claim overview
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div
+        class="font-display text-lg ml-4 py-5 sm:ml-8"
+      >
+        <span
+          class="font-bold"
+        >
+          You have no active CPPD benefit
+        </span>
+      </div>
+      <div
+        class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
+      />
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
+          >
+            All CPPD Tasks
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-request-for-reconsideration-icon.svg "
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Request for reconsideration
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-updates-message-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my status and messages
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-payment-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View all payments
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip"
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-tax-slip-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View tax slips, T4A and NR4
                 </p>
               </a>
             </li>

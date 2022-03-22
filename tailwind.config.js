@@ -23,6 +23,7 @@ module.exports = {
           light: '#DBDBDB',
           solid: '#B9B9B9',
           dark: '#7F8C8D',
+          inactive: '#8C9095',
         },
         'dark': {
           solid: '#262626',

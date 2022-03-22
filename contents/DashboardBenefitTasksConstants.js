@@ -98,6 +98,30 @@ const ACTIVE_CPP_TASKS = [
   },
 ]
 
+const INACTIVE_CPP_TASKS = [
+  {
+    task: t.reconsiderationTask,
+    taskIcon: '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
+    taskLink: t.reconsiderationLink,
+  },
+  {
+    task: t.statusUpdateTask,
+    taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
+    taskLink: t.statusUpdateTaskLink,
+  },
+
+  {
+    task: t.allPaymentsTask,
+    taskIcon: '/images/dashboard/oas-payment-icon.svg',
+    taskLink: t.allPaymentsTaskLink,
+  },
+  {
+    task: t.taxSlipT4aAndNr4Task,
+    taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
+    taskLink: t.taxSlipTaskLink,
+  },
+]
+
 const SUBMITTED_CPPD_TASKS = [
   {
     task: t.allPaymentsTask,
@@ -411,13 +435,38 @@ const ACTIVE_EI_TASKS = [
   },
 ]
 
+const INACTIVE_EI_TASKS = [
+  {
+    task: t.recordOfEmployment,
+    taskIcon: '/images/dashboard/ei-record-of-employment-icon.svg',
+    taskLink: t.recordOfEmployment,
+  },
+  {
+    task: t.viewPastClaimsTask,
+    taskIcon: '/images/dashboard/ei-past-claims-icon.svg',
+    taskLink: t.viewPastClaimsLink,
+  },
+  {
+    task: t.viewPaymentInfo,
+    taskIcon: '/images/dashboard/ei-view-payment-info-icon.svg',
+    taskLink: t.viewPaymentInfoLink,
+  },
+  {
+    task: t.taxSlipT4eTask,
+    taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
+    taskLink: t.taxSlipTaskLink,
+  },
+]
+
 module.exports = {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
+  INACTIVE_CPP_TASKS,
   SUBMITTED_CPPD_TASKS,
   ACTIVE_CPPD_TASKS,
   SUBMITTED_OAS_TASKS,
   ACTIVE_OAS_TASKS,
   SUBMITTED_EI_TASKS,
   ACTIVE_EI_TASKS,
+  INACTIVE_EI_TASKS,
 }
