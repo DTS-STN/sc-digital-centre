@@ -222,7 +222,8 @@ export default {
   applicationSubmitted: '(FR)Application submitted on:',
   estimatedDateOfDecision: '(FR)Estimated date of decision',
   paymentAmount: '(FR)Payment amount',
-  daysUntilNextPayment: '(FR)Days until next payment',
+  daysUntilNextPayment: '(FR)Next payment:',
+  nextReportDue: '(FR)Next report due:',
   viewPaymentHistory: '(FR)View my payments +',
 
   // Benefit Card details

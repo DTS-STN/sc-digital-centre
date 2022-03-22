@@ -1,7 +1,6 @@
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
-import CircleProgressBar from './CircleProgressBar'
 import BenefitCode from '../../constants/BenefitCode'
 
 export default function BenefitCardHeaderActive(props) {
@@ -56,8 +55,12 @@ export default function BenefitCardHeaderActive(props) {
             id={`${props.benefit.benefitType}-active-nextPaymentDueDate`}
             className="relative mb-20 mt-7 sm:mt-0"
           >
-            <p>{t.daysUntilNextPayment}</p>
-            <CircleProgressBar progress={11} steps={22} />
+            <p>
+              {props.benefit.benefitType != 'EI'
+                ? t.daysUntilNextPayment
+                : t.nextReportDue}
+            </p>
+            <p className="text-green-active">{props.benefit.nextPaymentDate}</p>
           </div>
 
           <div
