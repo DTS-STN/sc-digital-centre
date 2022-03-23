@@ -21,20 +21,6 @@ const SUBMITTED_OAS = {
   activeBenefits: '',
   pendingBenefits: 'Old age security pension',
   benefitStatusProgress: 'In Progress',
-  lastUpdates: [
-    {
-      label: 'Documents reviewedrequested',
-      description: 'July 5, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'July 2, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'July 1, 2021',
-    },
-  ],
 }
 
 const ACTIVE_OAS = {
@@ -67,20 +53,6 @@ const ACTIVE_OAS = {
   pendingBenefits: 'Old age security pension',
   benefitStatusProgress: 'Complete',
   // TODO: "pendingBenefits" is used for both Pending and Active benefits. We need to change the field name when mapping with API.
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'July 2, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'July 1, 2021',
-    },
-  ],
 }
 
 const SUBMITTED_CPP = {
@@ -110,20 +82,6 @@ const SUBMITTED_CPP = {
   applicationStatus: 'Application Submitted',
   pendingBenefits: 'Retirement pension',
   benefitStatusProgress: 'In Progress',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
 }
 
 const ACTIVE_CPP = {
@@ -155,20 +113,6 @@ const ACTIVE_CPP = {
   applicationStatus: 'Active',
   pendingBenefits: 'Retirement pension',
   benefitStatusProgress: 'Complete',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
 }
 
 const SUBMITTED_CPPD = {
@@ -198,20 +142,6 @@ const SUBMITTED_CPPD = {
   applicationStatus: 'Application Submitted',
   pendingBenefits: 'Disability',
   benefitStatusProgress: 'In Progress',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
 }
 
 const ACTIVE_CPPD = {
@@ -243,20 +173,6 @@ const ACTIVE_CPPD = {
   applicationStatus: 'Active',
   pendingBenefits: 'Disability',
   benefitStatusProgress: 'Complete',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
 }
 
 const INACTIVE_CPPD = {
@@ -332,20 +248,6 @@ const SUBMITTED_EI = {
     'We will notify you as soon as we have process your application.',
   pendingBenefits: 'Regular benefits',
   benefitStatusProgress: 'Questionnaire received -training',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
 }
 
 const ACTIVE_EI = {
@@ -377,20 +279,6 @@ const ACTIVE_EI = {
     'We will notify you as soon as we have process your application.',
   pendingBenefits: 'Regular benefits',
   benefitStatusProgress: 'Training information added',
-  lastUpdates: [
-    {
-      label: 'Report processed',
-      description: 'September 9, 2021',
-    },
-    {
-      label: 'Documents reviewed',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 5, 2021',
-    },
-  ],
 }
 
 const INACTIVE_EI = {
