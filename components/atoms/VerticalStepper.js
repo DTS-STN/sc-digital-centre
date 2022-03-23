@@ -6,7 +6,7 @@ import fr from '../../locales/fr'
 const VerticalLinearStepper = (props) => {
   const t = props.locale === 'en' ? en : fr
   const statusColor =
-    props.benefitStatus === 'Active' ? 'bg-green-active' : 'bg-orange-pending'
+    props.benefitStatus === 'Active' ? 'bg-green-active' : 'bg-gray-pending'
 
   function StepList() {
     return props.lastUpdates.map((step) => (
