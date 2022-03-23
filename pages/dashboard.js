@@ -5,20 +5,24 @@ import {
   ACTIVE_CPP,
   SUBMITTED_CPPD,
   ACTIVE_CPPD,
+  INACTIVE_CPPD,
   SUBMITTED_OAS,
   ACTIVE_OAS,
   SUBMITTED_EI,
   ACTIVE_EI,
+  INACTIVE_EI,
 } from '../contents/DashboardBenefitCardConstants'
 import {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
+  INACTIVE_CPP_TASKS,
   SUBMITTED_CPPD_TASKS,
   ACTIVE_CPPD_TASKS,
   SUBMITTED_OAS_TASKS,
   ACTIVE_OAS_TASKS,
   SUBMITTED_EI_TASKS,
   ACTIVE_EI_TASKS,
+  INACTIVE_EI_TASKS,
 } from '../contents/DashboardBenefitTasksConstants'
 import {
   APPLICATION_CARD_OAS,
@@ -58,6 +62,11 @@ export default function Dashboard() {
       <BenefitCard locale="en" benefit={ACTIVE_EI} tasks={ACTIVE_EI_TASKS} />
       <BenefitCard
         locale="en"
+        benefit={INACTIVE_EI}
+        tasks={INACTIVE_EI_TASKS}
+      />
+      <BenefitCard
+        locale="en"
         benefit={SUBMITTED_CPPD}
         tasks={SUBMITTED_CPPD_TASKS}
       />
@@ -66,7 +75,11 @@ export default function Dashboard() {
         benefit={ACTIVE_CPPD}
         tasks={ACTIVE_CPPD_TASKS}
       />
-
+      <BenefitCard
+        locale="en"
+        benefit={INACTIVE_CPPD}
+        tasks={INACTIVE_CPP_TASKS}
+      />
       <BenefitApplicationCard
         locale="en"
         benefitApplication={APPLICATION_CARD_OAS}

@@ -263,6 +263,8 @@ export default {
   delayOasPensionTask: 'Delay receiving my OAS pension',
   giveConsentTask: 'Give consent for someone to communicate on my behalf',
   taxSlipTask: 'View tax slips',
+  taxSlipT4eTask: 'View tax slips, T4E',
+  taxSlipT4aAndNr4Task: 'View tax slips, T4A and NR4',
   reconsiderationTask: 'Request for reconsideration',
   taxSlipMailingTask: 'Tax slip mailing options',
   completeInsuranceReportTask: 'Complete your Employment Insurance reports',

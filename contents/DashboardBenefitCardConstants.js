@@ -259,6 +259,50 @@ const ACTIVE_CPPD = {
   ],
 }
 
+const INACTIVE_CPPD = {
+  benefitType: 'CPPD',
+  benefitName: 'Canada Pension Plan Disability',
+  status: 'Inactive',
+  statusDescription:
+    'Your application is pending, we will notify you with decision',
+  applicationDate: 'July 1, 2021',
+  estimatedDateOfDecision: 'July 31, 2021',
+  applicationType: 'Canada Pension Plan (CPP)',
+  applicationDescription: 'Online application received',
+  nextPaymentAmount: 612.94,
+  nextPaymentDate: 'September 30, 2021',
+  lastPaymentDate: 'August 30, 2021',
+  pensionStartDate: 'August 1, 2021',
+  payeeFullName: 'John Smith Doe',
+  payeeAddress: '',
+  payeePhoneNumber: '1-613-555-5455',
+  accountNumber: 'XXXX-123',
+  institutionNumber: '002',
+  institutionName: 'Scotiabank',
+  payerName: 'Government of Canada',
+  paymentDepositDate: 'August 30, 2021',
+  paymentStatus: 'Issued',
+  paymentType: 'Direct Deposit',
+  additionalInformation:
+    'We will notify you as soon as we have process your application.',
+  applicationStatus: 'Inactive',
+  pendingBenefits: 'Disability',
+  lastUpdates: [
+    {
+      label: 'Documents reviewed',
+      description: 'September 8, 2021',
+    },
+    {
+      label: 'Documents uploaded',
+      description: 'September 6, 2021',
+    },
+    {
+      label: 'Documents requested',
+      description: 'September 5, 2021',
+    },
+  ],
+}
+
 const SUBMITTED_EI = {
   benefitType: 'EI',
   benefitName: 'Employment Insurance',
@@ -349,13 +393,59 @@ const ACTIVE_EI = {
   ],
 }
 
+const INACTIVE_EI = {
+  benefitType: 'EI',
+  benefitName: 'Employment Insurance',
+  status: 'Inactive',
+  statusDescription:
+    'Your application is pending, we will notify you with a decision',
+  applicationDate: 'September 1, 2021',
+  estimatedDateOfDecision: 'September 30, 2021',
+  applicationStatus: 'Inactive',
+  applicationDescription: 'Paper application received',
+  nextPaymentAmount: 691.45,
+  nextPaymentDate: 'September 30, 2021',
+  lastPaymentDate: 'August 30, 2021',
+  pensionStartDate: '',
+  benefitStartDate: 'August 1, 2021',
+  payeeFullName: '',
+  payeeAddress: '28 Clover St. Ottawa ON M4H1S3',
+  payeePhoneNumber: '1-819-654-5671',
+  accountNumber: '8510231',
+  institutionNumber: '',
+  institutionName: 'Scotiabank',
+  payerName: '',
+  paymentDepositDate: '',
+  paymentStatus: '',
+  paymentType: 'Direct Deposit',
+  additionalInformation:
+    'We will notify you as soon as we have process your application.',
+  pendingBenefits: 'Regular benefits',
+  lastUpdates: [
+    {
+      label: 'Report processed',
+      description: 'September 9, 2021',
+    },
+    {
+      label: 'Documents reviewed',
+      description: 'September 6, 2021',
+    },
+    {
+      label: 'Documents uploaded',
+      description: 'September 5, 2021',
+    },
+  ],
+}
+
 module.exports = {
   ACTIVE_CPP,
   SUBMITTED_CPP,
   ACTIVE_CPPD,
   SUBMITTED_CPPD,
+  INACTIVE_CPPD,
   SUBMITTED_OAS,
   ACTIVE_OAS,
   SUBMITTED_EI,
   ACTIVE_EI,
+  INACTIVE_EI,
 }

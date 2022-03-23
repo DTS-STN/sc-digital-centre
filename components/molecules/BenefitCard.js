@@ -1,11 +1,13 @@
 import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import BenefitCardHeaderActive from '../atoms/BenefitCardHeaderActive'
+import BenefitCardHeaderInactive from '../atoms/BenefitCardHeaderInactive'
 import BenefitCardHeaderPending from '../atoms/BenefitCardHeaderPending'
 import BenefitTasks from './BenefitTasks'
 import PendingBenefitDetails from './PendingBenefitDetails'
 import ActiveBenefitDetails from './ActiveBenefitDetails'
 import HorizontalRule from '../atoms/HorizontalRule'
+import BenefitStatus from '../../constants/BenefitStatus'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 
@@ -33,16 +35,71 @@ const BenefitCard = (props) => {
         })
   }
 
+  const renderBenefitHeader = () => {
+    switch (props.benefit.status.toUpperCase()) {
+      case BenefitStatus.active.toUpperCase():
+        return (
+          <BenefitCardHeaderActive
+            benefit={props.benefit}
+            locale={props.locale}
+          />
+        )
+      case BenefitStatus.pending.toUpperCase():
+        return (
+          <BenefitCardHeaderPending
+            benefit={props.benefit}
+            locale={props.locale}
+          />
+        )
+      case BenefitStatus.inactive.toUpperCase():
+        return (
+          <BenefitCardHeaderInactive
+            benefit={props.benefit}
+            locale={props.locale}
+          />
+        )
+      default:
+        return null
+    }
+  }
+
+  const renderBenefitStatus = () => {
+    switch (props.benefit.status.toUpperCase()) {
+      case BenefitStatus.active.toUpperCase():
+        return (
+          <>
+            <span className="font-bold">{t.activeBenefits}</span>
+            <span className="ml-2">{props.benefit.pendingBenefits}</span>
+          </>
+        )
+      case BenefitStatus.pending.toUpperCase():
+        return (
+          <>
+            <span className="font-bold">{t.pendingBenefits}</span>
+            <span className="ml-2">{props.benefit.pendingBenefits}</span>
+          </>
+        )
+      case BenefitStatus.inactive.toUpperCase():
+        return (
+          <span className="font-bold">
+            {`You have no active ${props.benefit.benefitType} benefit`}
+          </span>
+        )
+      default:
+        return null
+    }
+  }
+
   const renderBenefitDetails = () => {
-    switch (props.benefit.status) {
-      case 'Pending':
+    switch (props.benefit.status.toUpperCase()) {
+      case BenefitStatus.pending.toUpperCase():
         return (
           <PendingBenefitDetails
             benefit={props.benefit}
             locale={props.locale}
           />
         )
-      case 'Active':
+      case BenefitStatus.active.toUpperCase():
         return (
           <ActiveBenefitDetails benefit={props.benefit} locale={props.locale} />
         )
@@ -54,26 +111,12 @@ const BenefitCard = (props) => {
   return (
     <div className="benefit-card" ref={topOfCardRef}>
       {/* Benefit Card Header */}
-      {props.benefit.status == 'Active' ? (
-        <BenefitCardHeaderActive
-          benefit={props.benefit}
-          locale={props.locale}
-        />
-      ) : (
-        <BenefitCardHeaderPending
-          benefit={props.benefit}
-          locale={props.locale}
-        />
-      )}
+      {renderBenefitHeader()}
+
       {/* Pending benefits */}
       <HorizontalRule width="w-auto sm:w-full" />
       <div className="font-display text-lg ml-4 py-5 sm:ml-8">
-        <span className="font-bold">
-          {props.benefit.status == 'Active'
-            ? t.activeBenefits
-            : t.pendingBenefits}
-        </span>
-        <span className="ml-2">{props.benefit.pendingBenefits}</span>
+        {renderBenefitStatus()}
       </div>
       <HorizontalRule width="w-auto sm:w-full" />
 
@@ -112,6 +155,6 @@ BenefitCard.propTypes = {
       'Employment Insurance',
       'Canada Pension Plan Disability',
     ]),
-    status: PropTypes.oneOf(['Active', 'Pending', 'Past']),
+    status: PropTypes.oneOf(['Active', 'Pending', 'Inactive']),
   }),
 }
