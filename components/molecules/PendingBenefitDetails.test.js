@@ -50,14 +50,15 @@ describe('PendingBenefitDetails Tests', () => {
 
   it('renders the details section of a Pending Benefit', () => {
     render(<PendingBenefitDetails benefit={testBenefitObject} />)
-    const documentsReviewed = screen.getByText('Documents reviewed')
-    const reviewedOn = screen.getByText('September 8, 2021')
-    const documentsUploaded = screen.getByText('Documents uploaded')
-    const uploadedOn = screen.getByText('September 6, 2021')
-    expect(documentsReviewed).toBeInTheDocument()
-    expect(reviewedOn).toBeInTheDocument()
-    expect(documentsUploaded).toBeInTheDocument()
-    expect(uploadedOn).toBeInTheDocument()
+    const applicationDetails = screen.getByText(
+      'Your application is pending, we will notify you with decision'
+    )
+    const applicationDescription = screen.getByText(
+      'Online application received'
+    )
+
+    expect(applicationDetails).toBeInTheDocument()
+    expect(applicationDescription).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {

@@ -222,6 +222,7 @@ export default {
   applicationSubmitted: '(FR)Application submitted on:',
   estimatedDateOfDecision: '(FR)Estimated date of decision',
   paymentAmount: '(FR)Payment amount',
+  latestUpdate: '(FR)Latest update:',
   daysUntilNextPayment: '(FR)Next payment:',
   nextReportDue: '(FR)Next report due:',
   viewPaymentHistory: '(FR)View my payments +',
