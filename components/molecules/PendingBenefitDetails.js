@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import VerticalStepper from '../atoms/VerticalStepper'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from '../atoms/HorizontalRule'
@@ -11,14 +10,7 @@ const PendingBenefitDetails = (props) => {
   return (
     <section>
       <div className="flex-col ml-4 my-4 sm:m-8 sm:flex sm:flex-row">
-        <div className="lg:ml-7">
-          <VerticalStepper
-            benefitStatus={props.benefit.status}
-            lastUpdates={props.benefit.lastUpdates}
-            locale={props.locale}
-          />
-        </div>
-        <div id="details" className="mt-4 sm:mt-0 sm:ml-20">
+        <div id="details" className="mt-4 sm:mt-0 sm:ml-4">
           <div id="application_details" className="mb-5 sm:mb-14">
             <p className="font-bold text-xl">{t.applicationDetails}</p>
             <p className="font-normal text-base">

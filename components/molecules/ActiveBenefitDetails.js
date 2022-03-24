@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import VerticalStepper from '../atoms/VerticalStepper'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from '../atoms/HorizontalRule'
@@ -12,14 +11,7 @@ const ActiveBenefitDetails = (props) => {
   return (
     <section>
       <div className="flex-col ml-4 my-4 sm:m-6 sm:flex sm:flex-row">
-        <div className="lg:ml-7">
-          <VerticalStepper
-            benefitStatus={props.benefit.status}
-            lastUpdates={props.benefit.lastUpdates}
-            locale={props.locale}
-          />
-        </div>
-        <div className="flex-col mt-7 sm:mt-0 sm:ml-5 lg:ml-24">
+        <div className="flex-col mt-7 sm:mt-0 sm:ml-5">
           <p className="font-bold text-xl">{t.pensionDetails}</p>
           <div className="flex-col sm:mt-3 sm:flex sm:flex-row">
             <div>
@@ -44,7 +36,7 @@ const ActiveBenefitDetails = (props) => {
                 </p>
               </div>
             </div>
-            <div className="mt-7 sm:mt-0 sm:ml-5 lg:ml-32">
+            <div className="mt-7 sm:mt-0 sm:ml-5 lg:ml-16 2xl:ml-32">
               <div id="payee_address">
                 <div className="flex items-center">
                   <span className="font-bold text-base">{t.payeeAddress}</span>
