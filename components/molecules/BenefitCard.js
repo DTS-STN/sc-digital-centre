@@ -92,13 +92,13 @@ const BenefitCard = (props) => {
 
   const renderBenefitDetails = () => {
     switch (props.benefit.status.toUpperCase()) {
-      case BenefitStatus.pending.toUpperCase():
-        return (
-          <PendingBenefitDetails
-            benefit={props.benefit}
-            locale={props.locale}
-          />
-        )
+      //   case BenefitStatus.pending.toUpperCase():
+      //     return (
+      //       <PendingBenefitDetails
+      //         benefit={props.benefit}
+      //         locale={props.locale}
+      //       />
+      //     )
       case BenefitStatus.active.toUpperCase():
         return (
           <ActiveBenefitDetails benefit={props.benefit} locale={props.locale} />
