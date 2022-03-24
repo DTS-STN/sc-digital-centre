@@ -268,6 +268,19 @@ export default {
   recordOfEmployment: '(FR)View my Records of Employment',
   reportMistake: '(FR)Report a mistake',
   uploadMyDocuments: '(FR)Upload my documents',
+  accessCode: '(FR)Access code',
+
+  commonActions: '(FR)Common actions',
+  applyForCppDisabilityBenefits:
+    '(FR)Apply for Canada Pension Plan Disability Benefits',
+  applyForCppRetirementPensions:
+    '(FR)Apply for Canada Pension Plan Retirement Pensions',
+  estimateMyMonthlyCppBenefits: '(FR)Estimate my monthly CPP Benefits',
+  viewMyCppContributions: '(FR)View my CPP Contributions',
+  applyForCppDeathBenefits: '(FR)Apply for Canada Pension Plan Death Benefits',
+  applyForGuranteedIncomeSupplement:
+    '(FR)Apply For Guranteed Income Supplement',
+  applyForCppSurvivorsPensionAndChildrensBenefit: `(FR)Apply For Canada Pension Plan Survivor's Pension and Child(ren)'s Benefit`,
 
   // Dashboard benefit application card
   estimateRetirementIncome: '(FR)Estimate retirement income',

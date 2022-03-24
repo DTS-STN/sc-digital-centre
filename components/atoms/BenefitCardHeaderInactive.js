@@ -3,7 +3,7 @@ import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
 import BenefitCode from '../../constants/BenefitCode'
 
-export default function BenefitCardHeaderActive(props) {
+export default function BenefitCardHeaderInactive(props) {
   const t = props.locale === 'en' ? en : fr
   const getBenefitCardTitle = () => {
     if (props.benefit.benefitType === BenefitCode.cppd) {

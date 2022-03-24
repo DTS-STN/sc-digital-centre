@@ -1,4 +1,5 @@
 import BenefitCard from '../components/molecules/BenefitCard'
+import NoBenefitCard from '../components/molecules/NoBenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import {
   SUBMITTED_CPP,
@@ -12,6 +13,7 @@ import {
   ACTIVE_EI,
   INACTIVE_EI,
 } from '../contents/DashboardBenefitCardConstants'
+import { NO_BENEFIT_CPP } from '../contents/DashboardNoBenefitCardConstants'
 import {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
@@ -23,6 +25,7 @@ import {
   SUBMITTED_EI_TASKS,
   ACTIVE_EI_TASKS,
   INACTIVE_EI_TASKS,
+  NO_BENEFIT_CPP_TASKS,
 } from '../contents/DashboardBenefitTasksConstants'
 import {
   APPLICATION_CARD_OAS,
@@ -131,6 +134,11 @@ export default function Dashboard() {
       <BenefitApplicationCard
         locale="en"
         benefitApplication={APPLICATION_CARD_CPP_DEATH_BENEFIT}
+      />
+      <NoBenefitCard
+        locale="en"
+        benefit={NO_BENEFIT_CPP}
+        tasks={NO_BENEFIT_CPP_TASKS}
       />
     </div>
   )
