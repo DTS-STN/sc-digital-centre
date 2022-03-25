@@ -32,32 +32,14 @@ describe('PendingBenefitDetails Tests', () => {
     additionalInformation:
       'We will notify you as soon as we have process your application.',
     pendingBenefits: 'Retirement pension',
-    lastUpdates: [
-      {
-        label: 'Documents reviewed',
-        description: 'September 8, 2021',
-      },
-      {
-        label: 'Documents uploaded',
-        description: 'September 6, 2021',
-      },
-      {
-        label: 'Documents requested',
-        description: 'September 5, 2021',
-      },
-    ],
   }
 
   it('renders the details section of a Pending Benefit', () => {
     render(<PendingBenefitDetails benefit={testBenefitObject} />)
-    const documentsReviewed = screen.getByText('Documents reviewed')
-    const reviewedOn = screen.getByText('September 8, 2021')
-    const documentsUploaded = screen.getByText('Documents uploaded')
-    const uploadedOn = screen.getByText('September 6, 2021')
-    expect(documentsReviewed).toBeInTheDocument()
-    expect(reviewedOn).toBeInTheDocument()
-    expect(documentsUploaded).toBeInTheDocument()
-    expect(uploadedOn).toBeInTheDocument()
+    const applicationDescription = screen.getByText(
+      'Online application received'
+    )
+    expect(applicationDescription).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
