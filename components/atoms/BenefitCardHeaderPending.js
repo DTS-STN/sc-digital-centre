@@ -18,7 +18,7 @@ export default function BenefitCardHeaderPending(props) {
       <div className="flex mr-12 justify-end">
         <h2
           className={
-            'font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending'
+            'font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending'
           }
         >
           {props.benefit.applicationStatus}
@@ -61,6 +61,7 @@ export default function BenefitCardHeaderPending(props) {
             id={`${props.benefit.benefitType}-pending-progressbar`}
             className="py-4 sm:pl-10"
           >
+            <p className="font-display">{t.latestUpdate}</p>
             <p className="font-display font-bold text-lg">
               {props.benefit.benefitStatusProgress}
             </p>

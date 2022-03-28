@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types'
+import en from '../../locales/en'
+import fr from '../../locales/fr'
 
 export default function BenefitTasks(props) {
+  const t = props.locale === 'en' ? en : fr
   const displayedTasks = props.isExpanded
     ? props.tasks
     : props.tasks.slice(0, 6)
+  const noBenefit = props.noBenefit ? props.noBenefit : false
 
   return (
     <div className="bg-gray-lighter mt-6 px-8 py-6">
       <h3 className="font-display font-bold text-xl">
-        {`All ${props.benefitType} Tasks`}
+        {noBenefit ? t.commonActions : `All ${props.benefitType} Tasks`}
       </h3>
       <ul className="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6">
         {displayedTasks.map((value, index) => {

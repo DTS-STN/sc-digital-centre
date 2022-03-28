@@ -231,6 +231,7 @@ export default {
   applicationSubmitted: 'Application submitted on:',
   estimatedDateOfDecision: 'Estimated date of decision',
   paymentAmount: 'Payment amount',
+  latestUpdate: 'Latest update:',
   daysUntilNextPayment: 'Next payment:',
   nextReportDue: 'Next report due:',
   viewPaymentHistory: 'View my payments +',
@@ -275,6 +276,17 @@ export default {
   reportMistake: 'Report a mistake',
   uploadMyDocuments: 'Upload my documents',
   accessCode: 'Access code',
+
+  commonActions: 'Common actions',
+  applyForCppDisabilityBenefits:
+    'Apply for Canada Pension Plan Disability Benefits',
+  applyForCppRetirementPensions:
+    'Apply for Canada Pension Plan Retirement Pensions',
+  estimateMyMonthlyCppBenefits: 'Estimate my monthly CPP Benefits',
+  viewMyCppContributions: 'View my CPP Contributions',
+  applyForCppDeathBenefits: 'Apply for Canada Pension Plan Death Benefits',
+  applyForGuranteedIncomeSupplement: 'Apply For Guranteed Income Supplement',
+  applyForCppSurvivorsPensionAndChildrensBenefit: `Apply For Canada Pension Plan Survivor's Pension and Child(ren)'s Benefit`,
 
   // Dashboard benefit application card
   estimateRetirementIncome: 'Estimate retirement income',

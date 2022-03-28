@@ -458,6 +458,44 @@ const INACTIVE_EI_TASKS = [
   },
 ]
 
+const NO_BENEFIT_CPP_TASKS = [
+  {
+    task: t.applyForCppDisabilityBenefits,
+    taskIcon: '/images/dashboard/apply-for-benefit-icon.svg',
+    taskLink: '',
+  },
+  {
+    task: t.applyForCppRetirementPensions,
+    taskIcon: '/images/dashboard/apply-for-benefit-icon.svg',
+    taskLink: '',
+  },
+  {
+    task: t.estimateMyMonthlyCppBenefits,
+    taskIcon: '/images/dashboard/oas-retirement-income-icon.svg',
+    taskLink: '',
+  },
+  {
+    task: t.viewMyCppContributions,
+    taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
+    taskLink: '',
+  },
+  {
+    task: t.applyForCppDeathBenefits,
+    taskIcon: '/images/dashboard/apply-for-benefit-icon.svg',
+    taskLink: '',
+  },
+  {
+    task: t.applyForGuranteedIncomeSupplement,
+    taskIcon: '/images/dashboard/apply-for-benefit-icon.svg',
+    taskLink: '',
+  },
+  {
+    task: t.applyForCppSurvivorsPensionAndChildrensBenefit,
+    taskIcon: '/images/dashboard/apply-for-benefit-icon.svg',
+    taskLink: '',
+  },
+]
+
 module.exports = {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
@@ -469,4 +507,5 @@ module.exports = {
   SUBMITTED_EI_TASKS,
   ACTIVE_EI_TASKS,
   INACTIVE_EI_TASKS,
+  NO_BENEFIT_CPP_TASKS,
 }

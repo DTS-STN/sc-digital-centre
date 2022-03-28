@@ -15,7 +15,7 @@ exports[`Dashboard renders Dashboard 1`] = `
           class="flex mr-12 justify-end"
         >
           <h2
-            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+            class="font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending"
           >
             Application Submitted
           </h2>
@@ -74,6 +74,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="CPP-pending-progressbar"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -305,6 +310,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               id="CPP-active-latestUpdates"
             >
               <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
+              <p
                 class="font-display font-bold text-lg"
               >
                 Complete
@@ -472,7 +482,7 @@ exports[`Dashboard renders Dashboard 1`] = `
           class="flex mr-12 justify-end"
         >
           <h2
-            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+            class="font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending"
           >
             Application Submitted
           </h2>
@@ -531,6 +541,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="OAS-pending-progressbar"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -762,6 +777,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               id="OAS-active-latestUpdates"
             >
               <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
+              <p
                 class="font-display font-bold text-lg"
               >
                 Complete
@@ -929,7 +949,7 @@ exports[`Dashboard renders Dashboard 1`] = `
           class="flex mr-12 justify-end"
         >
           <h2
-            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+            class="font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending"
           >
             Application Submitted
           </h2>
@@ -988,6 +1008,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="EI-pending-progressbar"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -1218,6 +1243,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="EI-active-latestUpdates"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -1537,7 +1567,7 @@ exports[`Dashboard renders Dashboard 1`] = `
           class="flex mr-12 justify-end"
         >
           <h2
-            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+            class="font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending"
           >
             Application Submitted
           </h2>
@@ -1596,6 +1626,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="CPPD-pending-progressbar"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -1826,6 +1861,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="CPPD-active-latestUpdates"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -3054,6 +3094,175 @@ exports[`Dashboard renders Dashboard 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      class="benefit-card"
+    >
+      <div
+        class="px-4 md:px-6"
+      >
+        <div
+          class="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2 pt-6"
+        >
+          <div
+            class="col-span-1 py-4 md:px-0 lg:px-3"
+            id="CPP-nobenefit-title"
+          >
+            <div
+              class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
+            >
+              Canada Pension Plan
+            </div>
+          </div>
+          <div
+            class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
+          />
+          <div
+            class="col-span-2 font-display text-xl ml-2 sm:ml-8 mt-4 xl:mt-10"
+            id="CPP-nobenefit-learnmore"
+          >
+            <a
+              class="ml-8"
+            >
+              Learn more about 
+            </a>
+            <a
+              class="underline hover:text-bright-blue-solid"
+              href=""
+            >
+              Canada Pension Plan
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="bg-gray-lighter mt-6 px-8 py-6"
+        >
+          <h3
+            class="font-display font-bold text-xl"
+          >
+            Common actions
+          </h3>
+          <ul
+            class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+          >
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href=""
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Apply for Canada Pension Plan Disability Benefits
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href=""
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Apply for Canada Pension Plan Retirement Pensions
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href=""
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-retirement-income-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Estimate my monthly CPP Benefits
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href=""
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/oas-cpp-contributions-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  View my CPP Contributions
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href=""
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Apply for Canada Pension Plan Death Benefits
+                </p>
+              </a>
+            </li>
+            <li
+              class="font-display font-bold text-left pb-6"
+            >
+              <a
+                href=""
+              >
+                <img
+                  alt=""
+                  class="font-normal pb-3 px-8"
+                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                />
+                <p
+                  class="w-36 font-normal px-5 text-sm"
+                >
+                  Apply For Guranteed Income Supplement
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="pl-5 py-5 sm:pl-10"
+      >
+        View more +
+      </button>
     </div>
   </div>
 </div>
