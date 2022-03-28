@@ -15,7 +15,7 @@ exports[`Dashboard renders Dashboard 1`] = `
           class="flex mr-12 justify-end"
         >
           <h2
-            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+            class="font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending"
           >
             Application Submitted
           </h2>
@@ -482,7 +482,7 @@ exports[`Dashboard renders Dashboard 1`] = `
           class="flex mr-12 justify-end"
         >
           <h2
-            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+            class="font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending"
           >
             Application Submitted
           </h2>
@@ -949,7 +949,7 @@ exports[`Dashboard renders Dashboard 1`] = `
           class="flex mr-12 justify-end"
         >
           <h2
-            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+            class="font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending"
           >
             Application Submitted
           </h2>
@@ -1567,7 +1567,7 @@ exports[`Dashboard renders Dashboard 1`] = `
           class="flex mr-12 justify-end"
         >
           <h2
-            class="font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending"
+            class="font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending"
           >
             Application Submitted
           </h2>

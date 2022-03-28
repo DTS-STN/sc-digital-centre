@@ -32,29 +32,16 @@ describe('PendingBenefitDetails Tests', () => {
     additionalInformation:
       'We will notify you as soon as we have process your application.',
     pendingBenefits: 'Retirement pension',
-    lastUpdates: [
-      {
-        label: 'Documents reviewed',
-        description: 'September 8, 2021',
-      },
-      {
-        label: 'Documents uploaded',
-        description: 'September 6, 2021',
-      },
-      {
-        label: 'Documents requested',
-        description: 'September 5, 2021',
-      },
-    ],
   }
 
   it('renders the details section of a Pending Benefit', () => {
     render(<PendingBenefitDetails benefit={testBenefitObject} />)
-    const applicationDetails = screen.getByText(
-      'Your application is pending, we will notify you with decision'
-    )
     const applicationDescription = screen.getByText(
       'Online application received'
+    )
+    expect(applicationDescription).toBeInTheDocument()
+    const applicationDetails = screen.getByText(
+      'Your application is pending, we will notify you with decision'
     )
 
     expect(applicationDetails).toBeInTheDocument()
