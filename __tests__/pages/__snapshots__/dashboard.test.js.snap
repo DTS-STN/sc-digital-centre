@@ -597,7 +597,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-bold text-4xl mt-1"
               >
-                734.34
+                $ 734.34
               </p>
               <a
                 class="text-sm mt-1 text-bright-blue-solid underline"
@@ -1064,7 +1064,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-bold text-4xl mt-1"
               >
-                691.45
+                $ 691.45
               </p>
               <a
                 class="text-sm mt-1 text-bright-blue-solid underline"
@@ -1531,7 +1531,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-bold text-4xl mt-1"
               >
-                691.45
+                $ 691.45
               </p>
               <a
                 class="text-sm mt-1 text-bright-blue-solid underline"
@@ -2149,7 +2149,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-bold text-4xl mt-1"
               >
-                612.94
+                $ 612.94
               </p>
               <a
                 class="text-sm mt-1 text-bright-blue-solid underline"
