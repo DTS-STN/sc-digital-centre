@@ -1,0 +1,320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Design System footer tests renders DSHeader 1`] = `
+<div>
+  <div
+    class="ds-header"
+  >
+    <header>
+      <div
+        class="ds-px-4 sm:ds-container md:ds-flex-nowrap md:ds-flex-row ds-flex ds-flex-wrap ds-justify-between ds-items-center ds-mx-auto"
+      >
+        <a
+          class="ds-flex ds-w-20px ds-h-20px header-logo"
+          href="#"
+        >
+          <img
+            alt="Government of Canada"
+            class="undefined ds-undefined"
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDgxOSA3NS45NyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pbllNaW4gbWVldCI+Cgk8dGl0bGU+U3ltYm9sIG9mIHRoZSBHb3Zlcm5tZW50IG9mIENhbmFkYSAtIFN5bWJvbGUgZHUgR291dmVybmVtZW50IGR1IENhbmFkYTwvdGl0bGU+Cgk8c3R5bGU+LmZpcF90ZXh0IHtmaWxsOiMwMDA7fS5maXBfZmxhZyB7ZmlsbDojRjAwO308L3N0eWxlPgoJPHBhdGggZD0iTTAsMCAzNi44NCwwIDM2Ljg0LDc1LjAxIDAsNzUuMDF6IE0xMTguNTQsMCAxNTUuMzgsMCAxNTUuMzgsNzUuMDEgMTE4LjU0LDc1LjAxeiBNNzIuNTgsMTUuNjEsNzcuODQsNC45bDUuMjIsMTAuMzJjLjY1LDEuMDksMS4xOCwxLDIuMjIuNDhsNC40OS0yLjIyTDg2Ljg1LDI3Ljg5Yy0uNjEsMi44MywxLDMuNjYsMi43NSwxLjc0TDk2LDIyLjc5bDEuNywzLjg3Yy41NywxLjE3LDEuNDMsMSwyLjU3Ljc5bDYuNjEtMS4zOS0yLjIyLDguMzUsMCwuMThjLS4yNiwxLjA5LS43OCwyLC40NCwyLjUzbDIuMzUsMS4xN0w5My43Nyw0OS44MmMtMS4zOSwxLjQzLS45MSwxLjg3LS4zOSwzLjQ4bDEuMjYsMy44Ny0xMi43MS0yLjNjLTEuNTctLjM5LTIuNjYtLjM5LTIuNy44N2wuNTIsMTQuNThINzUuOTNsLjUyLTE0LjU0YzAtMS40My0xLjA5LTEuMzktMy42Ni0uODZMNjEsNTcuMThsMS41Mi0zLjg3Yy41Mi0xLjQ4LjY2LTIuNDgtLjUyLTMuNDhMNDguMTEsMzguNDZsMi41Ny0xLjU3Yy43NC0uNTcuNzgtMS4xNy4zOS0yLjQ0TDQ4LjQ2LDI2bDYuNywxLjQzYzEuODcuNDQsMi4zOSwwLDIuODctMWwxLjg3LTMuODNMNjYuNTIsMzBjMS4xNywxLjM5LDIuODMuNDgsMi4zMS0xLjUyTDY1LjY1LDEyLjg2bDQuOTIsMi44M2MuNzguNDgsMS42MS42MSwyLjA5LS4zIiBjbGFzcz0iZmlwX2ZsYWciLz4KCTxwYXRoIGQ9Ik0yOS40LDMxLjczaC0zLjQ2bC0uODItMy42M2MtMi45LDMuMjktNS41Myw0LjM3LTkuMyw0LjM3LTkuMjUsMC0xNC43OS03LjM1LTE0Ljc5LTE2LjE3UzYuNTcuMTIsMTUuODIuMTJjNi43NSwwLDEyLjQxLDMuNTksMTMuMjMsMTAuNTVoLTUuMjdjLS41Mi00LjA2LTQuMDYtNi4xNC04LTYuMTQtNi42MiwwLTkuMzgsNS44NC05LjM4LDExLjc2czIuNzcsMTEuNzYsOS4zOCwxMS43NmM1LjUzLjA4LDguNTYtMy4yNCw4LjY1LTguNDhoLTguMjFWMTUuNDdIMjkuNFpNNDQuODMsMjguNDRjLTQuNDEsMC02LjM2LTQtNi4zNi03LjkxczEuOTUtNy44Nyw2LjM2LTcuODcsNi4zNiw0LDYuMzYsNy44N1M0OS4yNCwyOC40NCw0NC44MywyOC40NFptMCwzLjg5YzcuMTgsMCwxMS4yOS00LjkzLDExLjI5LTExLjhTNTIsOC43Nyw0NC44Myw4Ljc3cy0xMS4yOSw0LjkzLTExLjI5LDExLjc2UzM3LjY1LDMyLjM0LDQ0LjgzLDMyLjM0Wk01OCw5LjM4aDUuMzZMNjksMjYuNTRoLjA5bDUuNDUtMTcuMTdoNS4xbC04LDIyLjM1aC01LjUzWk04Ni41MSwxOC41OGE1Ljg0LDUuODQsMCwwLDEsNS44OC01LjkyYzMuMzMsMCw1LjQ1LDIuODEsNS42Miw1LjkyWm0xNi40MywzLjI1Yy44Mi02LjctMy41LTEzLjA2LTEwLjU1LTEzLjA2LTYuNjYsMC0xMC44MSw1LjQ1LTEwLjgxLDExLjgsMCw2Ljg3LDMuOTQsMTEuNzYsMTAuOTQsMTEuNzYsNC44OSwwLDktMi43MiwxMC4xMi03LjYxSDk4Yy0uODcsMi40Ny0yLjU5LDMuNzItNS40NSwzLjcyLTQuMTEsMC02LTMuMTEtNi02LjYyWk0xMDYuNyw5LjM4aDQuNjNWMTMuN2guMDlhNy4yMSw3LjIxLDAsMCwxLDYuNTMtNC45MywxMS42OSwxMS42OSwwLDAsMSwxLjg2LjEzdjQuNzZhMTcuNiwxNy42LDAsMCwwLTIuMTItLjIyYy0zLjM3LDAtNi4wNSwyLjcyLTYuMDUsNy42NVYzMS43M0gxMDYuN1Y5LjM4Wk0xMjEuOTIsOS4zOGg0LjY3djMuMjlsLjA5LjA5YTgsOCwwLDAsMSw3LTRjNC44NCwwLDcuOTEsMi41OSw3LjkxLDcuNjFWMzEuNzNoLTQuOTNWMTcuNjhjLS4wOS0zLjUtMS40Ny01LTQuMzctNS0zLjI5LDAtNS40MSwyLjU5LTUuNDEsNS44OFYzMS43M2gtNC45M1Y5LjM4Wk0xNDYuNzQsOS4zOGg0LjY3djMuMTFoLjEzYTcuNDcsNy40NywwLDAsMSw2Ljg3LTMuNzJjMi43MiwwLDUuMjgsMS4xNyw2LjI3LDMuNzJhOC4wNyw4LjA3LDAsMCwxLDctMy43MmM0LjcxLDAsNy40OCwyLjA4LDcuNDgsNy41MlYzMS43M2gtNC45M1YxOC42N2MwLTMuNTUtLjIyLTYtNC4wNi02LTMuMzMsMC00Ljc2LDIuMjEtNC43Niw2djEzLjFoLTQuOTNWMTcuMzhjMC0zLjA3LTEtNC43MS0zLjkzLTQuNzEtMi41NSwwLTQuODksMi4wOC00Ljg5LDUuNzlWMzEuNzNoLTQuOTNWOS4zOFpNMTg4LjIxLDE4LjU4YTUuODQsNS44NCwwLDAsMSw1Ljg4LTUuOTJjMy4zMywwLDUuNDUsMi44MSw1LjYyLDUuOTJabTE2LjQzLDMuMjVjLjgyLTYuNy0zLjUtMTMuMDYtMTAuNTUtMTMuMDYtNi42NiwwLTEwLjgxLDUuNDUtMTAuODEsMTEuOCwwLDYuODcsMy45MywxMS43NiwxMC45NCwxMS43Niw0Ljg5LDAsOS0yLjcyLDEwLjEyLTcuNjFoLTQuNjdjLS44NiwyLjQ3LTIuNTksMy43Mi01LjQ1LDMuNzItNC4xMSwwLTYtMy4xMS02LTYuNjJaTTIwOC40LDkuMzhoNC42N3YzLjI5bC4wOS4wOWE4LDgsMCwwLDEsNy00YzQuODQsMCw3LjkxLDIuNTksNy45MSw3LjYxVjMxLjczSDIyMy4xVjE3LjY4Yy0uMDktMy41LTEuNDctNS00LjM3LTUtMy4yOSwwLTUuNDEsMi41OS01LjQxLDUuODhWMzEuNzNIMjA4LjRWOS4zOFpNMjMxLDkuMzhoMy43MVYyLjY3aDQuOTN2Ni43aDQuNDV2My42OGgtNC40NVYyNWMwLDIsLjE3LDMuMDcsMi4zOCwzLjA3YTguMjUsOC4yNSwwLDAsMCwyLjA4LS4xOHYzLjgxYy0xLjA4LjA4LTIuMTIuMjYtMy4yLjI2LTUuMTUsMC02LjEtMi02LjE5LTUuNzFWMTMuMDVIMjMxVjkuMzhaTTEyLDcxLjY4Yy00LjQxLDAtNi4zNi00LTYuMzYtNy45MVM3LjYsNTUuOSwxMiw1NS45czYuMzYsNCw2LjM2LDcuODdTMTYuNDMsNzEuNjgsMTIsNzEuNjhabTAsMy44OWM3LjE4LDAsMTEuMjgtNC45MywxMS4yOC0xMS44UzE5LjE5LDUyLDEyLDUycy0xMS4yOSw0LjkzLTExLjI5LDExLjc2UzQuODMsNzUuNTcsMTIsNzUuNTdaTTI1LjIsNTIuNjFoMy42N1Y1MC43NmMwLTUuNzEsMy02LjY2LDYuMTgtNi42NmExMy44OSwxMy44OSwwLDAsMSwzLjQ2LjN2My44NWE4LjMyLDguMzIsMCwwLDAtMi4yOS0uMjZjLTEuMzQsMC0yLjQyLjQ4LTIuNDIsMi4zM3YyLjI5SDM4djMuNjhIMzMuOFY3NWgtNC45M1Y1Ni4yOUgyNS4yWk03NC41OCw1My45MWMtLjkxLTMuNTUtMy4yLTYuMTQtNy43LTYuMTQtNi42MiwwLTkuMzgsNS44NC05LjM4LDExLjc2czIuNzcsMTEuNzYsOS4zOCwxMS43NmM0LjgsMCw3LjQ0LTMuNTksNy44Ny04LjA5SDgwYy0uNDMsNy4zOS01LjY2LDEyLjUtMTMuMTQsMTIuNS05LjI1LDAtMTQuNzktNy4zNS0xNC43OS0xNi4xN3M1LjU0LTE2LjE3LDE0Ljc5LTE2LjE3YzcsMCwxMi40NSwzLjg5LDEzLjEsMTAuNTVoLTUuNFpNOTguMDYsNjcuNDVjMCwzLjExLTMuMzcsNC4yNC01LjU0LDQuMjQtMS43MywwLTQuNTQtLjY1LTQuNTQtMi44NSwwLTIuNTksMS45LTMuMzcsNC0zLjcyczQuNTQtLjM1LDYuMDUtMS4zNFptNC45My05YzAtNC43MS00LjU4LTYuNDgtOS02LjQ4LTQuOTMsMC05LjgyLDEuNjktMTAuMTYsNy40NGg0LjkzQzg5LDU3LDkxLDU1LjksOTMuNzMsNTUuOWMyLDAsNC42My40OCw0LjYzLDMsMCwyLjktMy4xNiwyLjUxLTYuNywzLjE2LTQuMTUuNDctOC42LDEuMzgtOC42LDcsMCw0LjM3LDMuNjMsNi41Myw3LjY1LDYuNTNhMTEuNDcsMTEuNDcsMCwwLDAsNy43NC0yLjcyYy4zOSwyLDEuODIsMi43MiwzLjgsMi43MmExMi4zNiwxMi4zNiwwLDAsMCwzLjExLS41NlY3MS42YTcuMTgsNy4xOCwwLDAsMS0xLjIxLjA4Yy0uOTEsMC0xLjE3LS40Ny0xLjE3LTEuNjlaTTEwOC4zLDUyLjYxSDExM1Y1NS45bC4wOS4wOWE4LDgsMCwwLDEsNy00YzQuODQsMCw3LjkxLDIuNTksNy45MSw3LjYxVjc1SDEyM1Y2MC45MmMtLjA5LTMuNS0xLjQ3LTUtNC4zNy01LTMuMjksMC01LjQxLDIuNTktNS40MSw1Ljg4Vjc1SDEwOC4zVjUyLjYxWk0xNDYuOTEsNjcuNDVjMCwzLjExLTMuMzcsNC4yNC01LjUzLDQuMjQtMS43MywwLTQuNTQtLjY1LTQuNTQtMi44NSwwLTIuNTksMS45LTMuMzcsNC0zLjcyczQuNTQtLjM1LDYuMDUtMS4zNFptNC45My05YzAtNC43MS00LjU4LTYuNDgtOS02LjQ4LTQuOTMsMC05LjgxLDEuNjktMTAuMTYsNy40NGg0LjkzYy4yMi0yLjQyLDIuMTYtMy41NCw0LjkzLTMuNTQsMiwwLDQuNjMuNDgsNC42MywzLDAsMi45LTMuMTYsMi41MS02LjcsMy4xNi00LjE1LjQ3LTguNiwxLjM4LTguNiw3LDAsNC4zNywzLjYzLDYuNTMsNy42NSw2LjUzYTExLjQ3LDExLjQ3LDAsMCwwLDcuNzQtMi43MmMuMzksMiwxLjgyLDIuNzIsMy44LDIuNzJhMTIuMzYsMTIuMzYsMCwwLDAsMy4xMS0uNTZWNzEuNmE3LjE5LDcuMTksMCwwLDEtMS4yMS4wOGMtLjkxLDAtMS4xNy0uNDctMS4xNy0xLjY5Wk0xNjEsNjRjMC00LDEuNjQtOC4xMyw2LjI3LTguMTMsMy44LDAsNi4xOCwyLjk0LDYuMTgsNy44NywwLDMuODktMS44Niw3LjkxLTYuMjcsNy45MVMxNjEsNjcuODgsMTYxLDY0Wk0xNzguMjIsNDQuMWgtNC45M1Y1NS41MWgtLjA5Yy0xLjUxLTIuNDYtNC42My0zLjUtNy40NC0zLjUtNC44OSwwLTkuNjgsMy41NC05LjY4LDExLjYzLDAsNi43LDMuNDEsMTEuOTMsMTAuNDYsMTEuOTMsMi44MSwwLDUuNjItMS4wOCw2LjkyLTMuNjNoLjA5djNoNC42N1Y0NC4xWk0xOTcuMzcsNjcuNDVjMCwzLjExLTMuMzcsNC4yNC01LjU0LDQuMjQtMS43MywwLTQuNTQtLjY1LTQuNTQtMi44NSwwLTIuNTksMS45LTMuMzcsNC0zLjcyczQuNTQtLjM1LDYuMDUtMS4zNFptNC45My05YzAtNC43MS00LjU4LTYuNDgtOS02LjQ4LTQuOTMsMC05LjgyLDEuNjktMTAuMTYsNy40NGg0LjkzYy4yMi0yLjQyLDIuMTYtMy41NCw0LjkzLTMuNTQsMiwwLDQuNjMuNDgsNC42MywzLDAsMi45LTMuMTYsMi41MS02LjcsMy4xNi00LjE1LjQ3LTguNiwxLjM4LTguNiw3LDAsNC4zNywzLjYzLDYuNTMsNy42NSw2LjUzYTExLjQ2LDExLjQ2LDAsMCwwLDcuNzQtMi43MmMuMzksMiwxLjgyLDIuNzIsMy44LDIuNzJhMTIuMzUsMTIuMzUsMCwwLDAsMy4xMS0uNTZWNzEuNmE3LjE4LDcuMTgsMCwwLDEtMS4yMS4wOGMtLjkxLDAtMS4xNy0uNDctMS4xNy0xLjY5WiIgY2xhc3M9ImZpcF90ZXh0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTgsMCkiLz4KCTxwYXRoIGQ9Ik0yOS40NywzMkgyNmwtLjgyLTMuNjNjLTIuOSwzLjI5LTUuNTMsNC4zNy05LjMsNC4zNy05LjI1LDAtMTQuNzktNy4zNS0xNC43OS0xNi4xN1M2LjY0LjQsMTUuODkuNEMyMi42NC40LDI4LjMsNCwyOS4xMiwxMWgtNS4yN2MtLjUyLTQuMDYtNC4wNi02LjE0LTgtNi4xNC02LjYyLDAtOS4zOCw1Ljg0LTkuMzgsMTEuNzZzMi43NywxMS43Niw5LjM4LDExLjc2YzUuNTMuMDksOC41Ni0zLjI0LDguNjUtOC40N2gtOC4yMVYxNS43NWgxMy4xNFYzMlpNNDQuOSwyOC43MmMtNC40MSwwLTYuMzYtNC02LjM2LTcuOTFzMS45NS03Ljg3LDYuMzYtNy44Nyw2LjM2LDQsNi4zNiw3Ljg3UzQ5LjMxLDI4LjcyLDQ0LjksMjguNzJabTAsMy44OWM3LjE4LDAsMTEuMjktNC45MywxMS4yOS0xMS44UzUyLjA4LDksNDQuOSw5LDMzLjYyLDE0LDMzLjYyLDIwLjgxLDM3LjczLDMyLjYxLDQ0LjksMzIuNjFaTTc5LjkzLDMyaC00Ljg0VjI4LjlINzVhNy41MSw3LjUxLDAsMCwxLTYuMzYsMy43MmMtNS44NCwwLTguMzQtMi45NC04LjM0LTguNzhWOS42NWg0LjkzVjIzLjM2YzAsMy45NCwxLjYsNS4zNiw0LjI4LDUuMzYsNC4xMSwwLDUuNDktMi42Myw1LjQ5LTYuMXYtMTNoNC45M1YzMlpNODIuOTEsOS42NWg1LjM2bDUuNjYsMTcuMTdIOTRsNS40NS0xNy4xN2g1LjFsLTgsMjIuMzVIOTFaTTExMS40LDE4Ljg2YTUuODQsNS44NCwwLDAsMSw1Ljg4LTUuOTJjMy4zMywwLDUuNDUsMi44MSw1LjYyLDUuOTJabTE2LjQzLDMuMjRDMTI4LjY2LDE1LjQsMTI0LjMzLDksMTE3LjI4LDljLTYuNjYsMC0xMC44MSw1LjQ1LTEwLjgxLDExLjgsMCw2Ljg3LDMuOTMsMTEuNzYsMTAuOTQsMTEuNzYsNC44OCwwLDktMi43MiwxMC4xMi03LjYxaC00LjY3Yy0uODYsMi40Ny0yLjU5LDMuNzItNS40NSwzLjcyLTQuMTEsMC02LTMuMTEtNi02LjYyWk0xMzEuNiw5LjY1aDQuNjNWMTRoLjA4QTcuMjIsNy4yMiwwLDAsMSwxNDIuODQsOWExMS43NSwxMS43NSwwLDAsMSwxLjg2LjEzdjQuNzZhMTcuNSwxNy41LDAsMCwwLTIuMTItLjIyYy0zLjM3LDAtNi4wNSwyLjcyLTYuMDUsNy42NVYzMkgxMzEuNlY5LjY1Wk0xNDYuODEsOS42NWg0LjY3djMuMjlsLjA5LjA5YTgsOCwwLDAsMSw3LTRjNC44NSwwLDcuOTEsMi41OSw3LjkxLDcuNjFWMzJoLTQuOTNWMThjLS4wOC0zLjUtMS40Ny01LTQuMzctNS0zLjI5LDAtNS40LDIuNTktNS40LDUuODhWMzJoLTQuOTNaTTE3NS40OCwxOC44NmE1Ljg0LDUuODQsMCwwLDEsNS44OC01LjkyYzMuMzMsMCw1LjQ1LDIuODEsNS42Miw1LjkyWm0xNi40MywzLjI0QzE5Mi43MywxNS40LDE4OC40MSw5LDE4MS4zNiw5Yy02LjY2LDAtMTAuODEsNS40NS0xMC44MSwxMS44LDAsNi44NywzLjk0LDExLjc2LDEwLjk0LDExLjc2LDQuODksMCw5LTIuNzIsMTAuMTItNy42MWgtNC42N2MtLjg3LDIuNDctMi42LDMuNzItNS40NSwzLjcyLTQuMTEsMC02LTMuMTEtNi02LjYyWk0xOTUuNjcsOS42NWg0LjY3djMuMTFoLjEzQTcuNDcsNy40NywwLDAsMSwyMDcuMzQsOWMyLjczLDAsNS4yOCwxLjE3LDYuMjcsMy43MmE4LjA3LDguMDcsMCwwLDEsNy0zLjcyYzQuNzEsMCw3LjQ4LDIuMDgsNy40OCw3LjUyVjMyaC00LjkzVjE5YzAtMy41NS0uMjItNi00LjA2LTYtMy4zMywwLTQuNzYsMi4yMS00Ljc2LDZWMzJoLTQuOTNWMTcuNjVjMC0zLjA3LTEtNC43MS0zLjkzLTQuNzEtMi41NSwwLTQuODgsMi4wOC00Ljg4LDUuNzlWMzJoLTQuOTNWOS42NVpNMjM3LjE0LDE4Ljg2QTUuODQsNS44NCwwLDAsMSwyNDMsMTIuOTRjMy4zMywwLDUuNDUsMi44MSw1LjYyLDUuOTJabTE2LjQzLDMuMjRDMjU0LjM5LDE1LjQsMjUwLjA2LDksMjQzLDljLTYuNjYsMC0xMC44MSw1LjQ1LTEwLjgxLDExLjgsMCw2Ljg3LDMuOTMsMTEuNzYsMTAuOTQsMTEuNzYsNC44OCwwLDktMi43MiwxMC4xMi03LjYxaC00LjY3Yy0uODYsMi40Ny0yLjU5LDMuNzItNS40NSwzLjcyLTQuMTEsMC02LTMuMTEtNi02LjYyWk0yNTcuMzMsOS42NUgyNjJ2My4yOWwuMDkuMDlhOCw4LDAsMCwxLDctNGM0Ljg1LDAsNy45MSwyLjU5LDcuOTEsNy42MVYzMkgyNzJWMThjLS4wOC0zLjUtMS40Ny01LTQuMzctNS0zLjI5LDAtNS40MSwyLjU5LTUuNDEsNS44OFYzMmgtNC45M1pNMjc5LjksOS42NWgzLjcyVjNoNC45M3Y2LjdIMjkzdjMuNjhoLTQuNDVWMjUuMjdjMCwyLC4xNywzLjA3LDIuMzgsMy4wN2E4LjQzLDguNDMsMCwwLDAsMi4wOC0uMTdWMzJjLTEuMDguMDgtMi4xMi4yNi0zLjIuMjYtNS4xNCwwLTYuMDktMi02LjE4LTUuNzFWMTMuMzNoLTMuNzJWOS42NVpNNS42OSw2NC4zMWMwLTQsMS42NC04LjEzLDYuMjctOC4xMywzLjgsMCw2LjE4LDIuOTQsNi4xOCw3Ljg3LDAsMy44OS0xLjg2LDcuOTEtNi4yNyw3LjkxUzUuNjksNjguMTUsNS42OSw2NC4zMVpNMjIuOSw0NC4zN0gxOFY1NS43OWgtLjA5Yy0xLjUxLTIuNDYtNC42My0zLjUtNy40My0zLjUtNC44OSwwLTkuNjksMy41NC05LjY5LDExLjYzLDAsNi43LDMuNDIsMTEuOTMsMTAuNDYsMTEuOTMsMi44MSwwLDUuNjItMS4wOCw2LjkyLTMuNjNoLjA4djNoNC42N1Y0NC4zN1pNNDcuODksNzUuMjVINDNWNzIuMTNINDNhNy41MSw3LjUxLDAsMCwxLTYuMzYsMy43MmMtNS44NCwwLTguMzQtMi45NC04LjM0LTguNzhWNTIuODloNC45M1Y2Ni41OWMwLDMuOTQsMS42LDUuMzYsNC4yOCw1LjM2LDQuMTEsMCw1LjQ5LTIuNjMsNS40OS02LjF2LTEzaDQuOTNWNzUuMjVaTTg2LjYzLDU0LjE5Yy0uOTEtMy41NS0zLjItNi4xNC03LjctNi4xNC02LjYyLDAtOS4zOCw1Ljg0LTkuMzgsMTEuNzZzMi43NywxMS43Niw5LjM4LDExLjc2YzQuOCwwLDcuNDMtMy41OCw3Ljg3LTguMDhoNS4yOGMtLjQzLDcuMzktNS42NiwxMi41LTEzLjE0LDEyLjUtOS4yNSwwLTE0Ljc5LTcuMzUtMTQuNzktMTYuMTdzNS41My0xNi4xNywxNC43OS0xNi4xN2M3LDAsMTIuNDUsMy44OSwxMy4xLDEwLjU1aC01LjQxWk0xMTAuMTEsNjcuNzJjMCwzLjExLTMuMzcsNC4yNC01LjUzLDQuMjQtMS43MywwLTQuNTQtLjY1LTQuNTQtMi44NSwwLTIuNTksMS45LTMuMzcsNC0zLjcyczQuNTQtLjM1LDYuMDUtMS4zNHYzLjY4Wm00LjkzLTljMC00LjcxLTQuNTgtNi40OS05LTYuNDktNC45MywwLTkuODEsMS42OS0xMC4xNiw3LjQ0aDQuOTNjLjIyLTIuNDIsMi4xNy0zLjU1LDQuOTMtMy41NSwyLDAsNC42My40OCw0LjYzLDMsMCwyLjktMy4xNiwyLjUxLTYuNywzLjE2LTQuMTUuNDctOC42LDEuMzgtOC42LDcsMCw0LjM3LDMuNjMsNi41Myw3LjY1LDYuNTNhMTEuNDYsMTEuNDYsMCwwLDAsNy43NC0yLjcyYy4zOSwyLDEuODIsMi43MiwzLjgxLDIuNzJhMTIuMzcsMTIuMzcsMCwwLDAsMy4xMS0uNTZWNzEuODhhNy4yMSw3LjIxLDAsMCwxLTEuMjEuMDhjLS45MSwwLTEuMTctLjQ3LTEuMTctMS42OVY1OC43N1pNMTIwLjM1LDUyLjg5SDEyNXYzLjI5bC4wOS4wOWE4LDgsMCwwLDEsNy00YzQuODUsMCw3LjkxLDIuNTksNy45MSw3LjYxVjc1LjI1aC00LjkzVjYxLjE5Yy0uMDgtMy41LTEuNDctNS00LjM3LTUtMy4yOSwwLTUuNCwyLjU5LTUuNCw1Ljg4Vjc1LjI1aC00LjkzWk0xNTksNjcuNzJjMCwzLjExLTMuMzcsNC4yNC01LjU0LDQuMjQtMS43MywwLTQuNTQtLjY1LTQuNTQtMi44NSwwLTIuNTksMS45LTMuMzcsNC0zLjcyUzE1Ny40NSw2NSwxNTksNjR2My42OFptNC45My05YzAtNC43MS00LjU4LTYuNDktOC45NS02LjQ5LTQuOTMsMC05LjgyLDEuNjktMTAuMTYsNy40NGg0LjkzYy4yMi0yLjQyLDIuMTYtMy41NSw0LjkzLTMuNTUsMiwwLDQuNjIuNDgsNC42MiwzLDAsMi45LTMuMTYsMi41MS02LjcsMy4xNi00LjE1LjQ3LTguNjEsMS4zOC04LjYxLDcsMCw0LjM3LDMuNjQsNi41Myw3LjY1LDYuNTNhMTEuNDYsMTEuNDYsMCwwLDAsNy43NC0yLjcyYy4zOSwyLDEuODIsMi43MiwzLjgxLDIuNzJhMTIuMzMsMTIuMzMsMCwwLDAsMy4xMS0uNTZWNzEuODhhNy4xNyw3LjE3LDAsMCwxLTEuMjEuMDhjLS45MSwwLTEuMTctLjQ3LTEuMTctMS42OVY1OC43N1pNMTczLjA2LDY0LjMxYzAtNCwxLjY0LTguMTMsNi4yNy04LjEzLDMuOCwwLDYuMTgsMi45NCw2LjE4LDcuODcsMCwzLjg5LTEuODYsNy45MS02LjI3LDcuOTFTMTczLjA2LDY4LjE1LDE3My4wNiw2NC4zMVptMTcuMjEtMTkuOTNoLTQuOTNWNTUuNzloLS4wOWMtMS41MS0yLjQ2LTQuNjItMy41LTcuNDMtMy41LTQuODksMC05LjY4LDMuNTQtOS42OCwxMS42MywwLDYuNywzLjQyLDExLjkzLDEwLjQ2LDExLjkzLDIuODEsMCw1LjYyLTEuMDgsNi45Mi0zLjYzaC4wOXYzaDQuNjdWNDQuMzdaTTIwOS40Miw2Ny43MmMwLDMuMTEtMy4zNyw0LjI0LTUuNTMsNC4yNC0xLjczLDAtNC41NC0uNjUtNC41NC0yLjg1LDAtMi41OSwxLjktMy4zNyw0LTMuNzJzNC41NC0uMzUsNi4wNS0xLjM0djMuNjhabTQuOTMtOWMwLTQuNzEtNC41OC02LjQ5LTguOTUtNi40OS00LjkzLDAtOS44MiwxLjY5LTEwLjE2LDcuNDRoNC45M2MuMjItMi40MiwyLjE2LTMuNTUsNC45My0zLjU1LDIsMCw0LjYyLjQ4LDQuNjIsMywwLDIuOS0zLjE2LDIuNTEtNi43LDMuMTYtNC4xNS40Ny04LjYxLDEuMzgtOC42MSw3LDAsNC4zNywzLjY0LDYuNTMsNy42NSw2LjUzYTExLjQ3LDExLjQ3LDAsMCwwLDcuNzQtMi43MmMuMzksMiwxLjgyLDIuNzIsMy44LDIuNzJhMTIuMzQsMTIuMzQsMCwwLDAsMy4xMS0uNTZWNzEuODhhNy4xOCw3LjE4LDAsMCwxLTEuMjEuMDhjLS45MSwwLTEuMTctLjQ3LTEuMTctMS42OVY1OC43N1oiIGNsYXNzPSJmaXBfdGV4dCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTI2LDApIi8+Cjwvc3ZnPg=="
+          />
+        </a>
+        <section
+          class="ds-flex md:ds-hidden"
+        >
+          <h2
+            class="ds-sr-only"
+          >
+            Language Selection
+          </h2>
+          <a
+            class="ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-leading-33px hover:ds-text-multi-blue-blue50b"
+            data-cy="lang2"
+            href="./fr.html"
+            id="lang2"
+          >
+            <span
+              class="ds-language-toggle-text"
+            >
+              Français
+            </span>
+            <abbr
+              class="ds-language-toggle-abbr"
+              title="Français"
+            >
+              FR
+            </abbr>
+          </a>
+        </section>
+        <section
+          class="ds-w-full md:ds-flex md:ds-w-284px ds-py-2"
+        >
+          <form
+            class="search-form ds-w-full"
+            name="search-box"
+            role="search"
+          >
+            <label
+              class="ds-sr-only ds-search-label"
+              for="search-input"
+            >
+              Search Canada.ca
+            </label>
+            <input
+              class="ds-search-input"
+              id="search-input"
+              placeholder="Search Canada.ca"
+              type="search"
+            />
+            <div
+              class="ds-search-button"
+            >
+              <button
+                title="Search bar button"
+                type="submit"
+              >
+                <img
+                  alt="Search Service Canada"
+                  class="ds-search-icon ds-undefined"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxNyAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjE0NDIgMTAuODIyOUgxMS4zODcxTDExLjExODggMTAuNTY0MkMxMi4wNTggOS40NzE2NyAxMi42MjM0IDguMDUzMzMgMTIuNjIzNCA2LjUxMDQyQzEyLjYyMzQgMy4wNyA5LjgzNDYyIDAuMjgxMjUgNi4zOTQyMSAwLjI4MTI1QzIuOTUzNzkgMC4yODEyNSAwLjE2NTAzOSAzLjA3IDAuMTY1MDM5IDYuNTEwNDJDMC4xNjUwMzkgOS45NTA4MyAyLjk1Mzc5IDEyLjczOTYgNi4zOTQyMSAxMi43Mzk2QzcuOTM3MTIgMTIuNzM5NiA5LjM1NTQ2IDEyLjE3NDIgMTAuNDQ4IDExLjIzNUwxMC43MDY3IDExLjUwMzNWMTIuMjYwNEwxNS40OTg0IDE3LjA0MjVMMTYuOTI2MyAxNS42MTQ2TDEyLjE0NDIgMTAuODIyOVpNNi4zOTQyMSAxMC44MjI5QzQuMDA3OTYgMTAuODIyOSAyLjA4MTcxIDguODk2NjcgMi4wODE3MSA2LjUxMDQyQzIuMDgxNzEgNC4xMjQxNyA0LjAwNzk2IDIuMTk3OTIgNi4zOTQyMSAyLjE5NzkyQzguNzgwNDYgMi4xOTc5MiAxMC43MDY3IDQuMTI0MTcgMTAuNzA2NyA2LjUxMDQyQzEwLjcwNjcgOC44OTY2NyA4Ljc4MDQ2IDEwLjgyMjkgNi4zOTQyMSAxMC44MjI5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg=="
+                />
+              </button>
+            </div>
+          </form>
+        </section>
+        <section
+          class="ds-hidden md:ds-flex ds-pl-4 ds-pr-8"
+        >
+          <h2
+            class="ds-sr-only"
+          >
+            Language Selection
+          </h2>
+          <a
+            class="ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-leading-33px hover:ds-text-multi-blue-blue50b"
+            data-cy="lang1"
+            href="./fr.html"
+            id="lang1"
+          >
+            <span
+              class="ds-language-toggle-text"
+            >
+              Français
+            </span>
+            <abbr
+              class="ds-language-toggle-abbr"
+              title="Français"
+            >
+              FR
+            </abbr>
+          </a>
+        </section>
+      </div>
+      <div
+        class="ds-headerNav ds-bg-multi-blue-blue70"
+      >
+        <nav
+          class="md:ds-container ds-flex ds-items-center ds-justify-between ds-flex-wrap ds-w-full ds-relative"
+        >
+          <div
+            class="ds-flex ds-items-center ds-flex-shrink-0 ds-text-white"
+          >
+            <h3
+              class="md:ds-p-0 ds-container ds-menuHeader"
+              id="mainSiteNav"
+            >
+              Service Canada
+            </h3>
+          </div>
+          <div
+            class="ds-menuButtonParent ds-block md:ds-hidden ds-pr-4 focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
+            id="menuButtonParent"
+          >
+            <button
+              aria-controls="menuDropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="ds-text-h4 ds-text-canada-footer-font focus:ds-outline-none ds-py-4"
+              data-testid="menuButton"
+              id="menuButton"
+            >
+              <span
+                class="ds-inline-block ds-align-middle ds-pl-3 ds-font-body ds-font-bold ds-text-p ds-leading-none"
+              >
+                MENU
+              </span>
+              <svg
+                class="ds-ml-1 ds-w-4 ds-h-4 ds-inline-block"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="ds-w-full ds-block ds-flex-grow md:ds-flex md:ds-items-center md:ds-w-auto ds-bg-multi-blue-blue2 md:ds-bg-multi-blue-blue70"
+          >
+            <div
+              class="md:ds-flex-grow md:ds-text-center md:ds-flex ds-hidden"
+            >
+              <ul
+                class="false ds-menuDropdown ds-w-full"
+                id="menuDropdown"
+              >
+                <li
+                  class="ds-py-4 ds-px-4 ds-inline-block ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-leading-20px  ds-menuLink"
+                    href="/dashboard"
+                    title="Services"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li
+                  class="ds-py-4 ds-px-4 ds-inline-block ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-leading-20px  ds-menuLink"
+                    href="/dashboard"
+                    title="Life Events"
+                  >
+                    Life Events
+                  </a>
+                </li>
+                <li
+                  class="ds-py-4 ds-px-4 ds-inline-block ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-leading-20px  ds-menuLink"
+                    href="/dashboard"
+                    title="Contact us"
+                  >
+                    Contact us
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul
+                class="ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
+                id="menuDropdownSub"
+              >
+                <li
+                  class="ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-text-base ds-menuLink
+                        "
+                    href="/dashboard"
+                    title="Services"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li
+                  class="ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-text-base ds-menuLink
+                        "
+                    href="/dashboard"
+                    title="Life Events"
+                  >
+                    Life Events
+                  </a>
+                </li>
+                <li
+                  class="ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-text-base ds-menuLink
+                        "
+                    href="/dashboard"
+                    title="Contact us"
+                  >
+                    Contact us
+                  </a>
+                </li>
+                <li
+                  class="ds-py-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
+                  id="buttonNav"
+                >
+                  <button
+                    class="ds-flex ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 ds-pr-4 md:ds-pl-3 ds-w-full"
+                    data-dropdown-toggle="dropdownNavbar"
+                    id="dropdownNavbarLink"
+                  >
+                    My Service Canada Account
+                    <svg
+                      class="ds-ml-1 ds-w-4 ds-h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    class="ds-dropdown-menu ds-hidden md:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600"
+                  >
+                    <ul
+                      aria-labelledby="dropdownLargeButton"
+                      class="ds-py-0"
+                      id="dropdownNavbar"
+                    >
+                      <li>
+                        <a
+                          class="ds-block ds-py-18px ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
+                          href="/"
+                        >
+                          My Benefits and Services
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="ds-block ds-py-18px ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          href="/"
+                        >
+                          Account settings
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="ds-block ds-py-18px ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          href="/"
+                        >
+                          Switch to CRA My Account
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="ds-block ds-py-18px  ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          href="/"
+                        >
+                          Sign Out
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+</div>
+`;

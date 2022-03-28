@@ -3,7 +3,321 @@
 exports[`Dashboard renders Dashboard 1`] = `
 <div>
   <div
-    class="layout-container"
+    class="ds-header"
+  >
+    <header>
+      <div
+        class="ds-px-4 sm:ds-container md:ds-flex-nowrap md:ds-flex-row ds-flex ds-flex-wrap ds-justify-between ds-items-center ds-mx-auto"
+      >
+        <a
+          class="ds-flex ds-w-20px ds-h-20px header-logo"
+          href="#"
+        >
+          <img
+            alt="Government of Canada"
+            class="undefined ds-undefined"
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDgxOSA3NS45NyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pbllNaW4gbWVldCI+Cgk8dGl0bGU+U3ltYm9sIG9mIHRoZSBHb3Zlcm5tZW50IG9mIENhbmFkYSAtIFN5bWJvbGUgZHUgR291dmVybmVtZW50IGR1IENhbmFkYTwvdGl0bGU+Cgk8c3R5bGU+LmZpcF90ZXh0IHtmaWxsOiMwMDA7fS5maXBfZmxhZyB7ZmlsbDojRjAwO308L3N0eWxlPgoJPHBhdGggZD0iTTAsMCAzNi44NCwwIDM2Ljg0LDc1LjAxIDAsNzUuMDF6IE0xMTguNTQsMCAxNTUuMzgsMCAxNTUuMzgsNzUuMDEgMTE4LjU0LDc1LjAxeiBNNzIuNTgsMTUuNjEsNzcuODQsNC45bDUuMjIsMTAuMzJjLjY1LDEuMDksMS4xOCwxLDIuMjIuNDhsNC40OS0yLjIyTDg2Ljg1LDI3Ljg5Yy0uNjEsMi44MywxLDMuNjYsMi43NSwxLjc0TDk2LDIyLjc5bDEuNywzLjg3Yy41NywxLjE3LDEuNDMsMSwyLjU3Ljc5bDYuNjEtMS4zOS0yLjIyLDguMzUsMCwuMThjLS4yNiwxLjA5LS43OCwyLC40NCwyLjUzbDIuMzUsMS4xN0w5My43Nyw0OS44MmMtMS4zOSwxLjQzLS45MSwxLjg3LS4zOSwzLjQ4bDEuMjYsMy44Ny0xMi43MS0yLjNjLTEuNTctLjM5LTIuNjYtLjM5LTIuNy44N2wuNTIsMTQuNThINzUuOTNsLjUyLTE0LjU0YzAtMS40My0xLjA5LTEuMzktMy42Ni0uODZMNjEsNTcuMThsMS41Mi0zLjg3Yy41Mi0xLjQ4LjY2LTIuNDgtLjUyLTMuNDhMNDguMTEsMzguNDZsMi41Ny0xLjU3Yy43NC0uNTcuNzgtMS4xNy4zOS0yLjQ0TDQ4LjQ2LDI2bDYuNywxLjQzYzEuODcuNDQsMi4zOSwwLDIuODctMWwxLjg3LTMuODNMNjYuNTIsMzBjMS4xNywxLjM5LDIuODMuNDgsMi4zMS0xLjUyTDY1LjY1LDEyLjg2bDQuOTIsMi44M2MuNzguNDgsMS42MS42MSwyLjA5LS4zIiBjbGFzcz0iZmlwX2ZsYWciLz4KCTxwYXRoIGQ9Ik0yOS40LDMxLjczaC0zLjQ2bC0uODItMy42M2MtMi45LDMuMjktNS41Myw0LjM3LTkuMyw0LjM3LTkuMjUsMC0xNC43OS03LjM1LTE0Ljc5LTE2LjE3UzYuNTcuMTIsMTUuODIuMTJjNi43NSwwLDEyLjQxLDMuNTksMTMuMjMsMTAuNTVoLTUuMjdjLS41Mi00LjA2LTQuMDYtNi4xNC04LTYuMTQtNi42MiwwLTkuMzgsNS44NC05LjM4LDExLjc2czIuNzcsMTEuNzYsOS4zOCwxMS43NmM1LjUzLjA4LDguNTYtMy4yNCw4LjY1LTguNDhoLTguMjFWMTUuNDdIMjkuNFpNNDQuODMsMjguNDRjLTQuNDEsMC02LjM2LTQtNi4zNi03LjkxczEuOTUtNy44Nyw2LjM2LTcuODcsNi4zNiw0LDYuMzYsNy44N1M0OS4yNCwyOC40NCw0NC44MywyOC40NFptMCwzLjg5YzcuMTgsMCwxMS4yOS00LjkzLDExLjI5LTExLjhTNTIsOC43Nyw0NC44Myw4Ljc3cy0xMS4yOSw0LjkzLTExLjI5LDExLjc2UzM3LjY1LDMyLjM0LDQ0LjgzLDMyLjM0Wk01OCw5LjM4aDUuMzZMNjksMjYuNTRoLjA5bDUuNDUtMTcuMTdoNS4xbC04LDIyLjM1aC01LjUzWk04Ni41MSwxOC41OGE1Ljg0LDUuODQsMCwwLDEsNS44OC01LjkyYzMuMzMsMCw1LjQ1LDIuODEsNS42Miw1LjkyWm0xNi40MywzLjI1Yy44Mi02LjctMy41LTEzLjA2LTEwLjU1LTEzLjA2LTYuNjYsMC0xMC44MSw1LjQ1LTEwLjgxLDExLjgsMCw2Ljg3LDMuOTQsMTEuNzYsMTAuOTQsMTEuNzYsNC44OSwwLDktMi43MiwxMC4xMi03LjYxSDk4Yy0uODcsMi40Ny0yLjU5LDMuNzItNS40NSwzLjcyLTQuMTEsMC02LTMuMTEtNi02LjYyWk0xMDYuNyw5LjM4aDQuNjNWMTMuN2guMDlhNy4yMSw3LjIxLDAsMCwxLDYuNTMtNC45MywxMS42OSwxMS42OSwwLDAsMSwxLjg2LjEzdjQuNzZhMTcuNiwxNy42LDAsMCwwLTIuMTItLjIyYy0zLjM3LDAtNi4wNSwyLjcyLTYuMDUsNy42NVYzMS43M0gxMDYuN1Y5LjM4Wk0xMjEuOTIsOS4zOGg0LjY3djMuMjlsLjA5LjA5YTgsOCwwLDAsMSw3LTRjNC44NCwwLDcuOTEsMi41OSw3LjkxLDcuNjFWMzEuNzNoLTQuOTNWMTcuNjhjLS4wOS0zLjUtMS40Ny01LTQuMzctNS0zLjI5LDAtNS40MSwyLjU5LTUuNDEsNS44OFYzMS43M2gtNC45M1Y5LjM4Wk0xNDYuNzQsOS4zOGg0LjY3djMuMTFoLjEzYTcuNDcsNy40NywwLDAsMSw2Ljg3LTMuNzJjMi43MiwwLDUuMjgsMS4xNyw2LjI3LDMuNzJhOC4wNyw4LjA3LDAsMCwxLDctMy43MmM0LjcxLDAsNy40OCwyLjA4LDcuNDgsNy41MlYzMS43M2gtNC45M1YxOC42N2MwLTMuNTUtLjIyLTYtNC4wNi02LTMuMzMsMC00Ljc2LDIuMjEtNC43Niw2djEzLjFoLTQuOTNWMTcuMzhjMC0zLjA3LTEtNC43MS0zLjkzLTQuNzEtMi41NSwwLTQuODksMi4wOC00Ljg5LDUuNzlWMzEuNzNoLTQuOTNWOS4zOFpNMTg4LjIxLDE4LjU4YTUuODQsNS44NCwwLDAsMSw1Ljg4LTUuOTJjMy4zMywwLDUuNDUsMi44MSw1LjYyLDUuOTJabTE2LjQzLDMuMjVjLjgyLTYuNy0zLjUtMTMuMDYtMTAuNTUtMTMuMDYtNi42NiwwLTEwLjgxLDUuNDUtMTAuODEsMTEuOCwwLDYuODcsMy45MywxMS43NiwxMC45NCwxMS43Niw0Ljg5LDAsOS0yLjcyLDEwLjEyLTcuNjFoLTQuNjdjLS44NiwyLjQ3LTIuNTksMy43Mi01LjQ1LDMuNzItNC4xMSwwLTYtMy4xMS02LTYuNjJaTTIwOC40LDkuMzhoNC42N3YzLjI5bC4wOS4wOWE4LDgsMCwwLDEsNy00YzQuODQsMCw3LjkxLDIuNTksNy45MSw3LjYxVjMxLjczSDIyMy4xVjE3LjY4Yy0uMDktMy41LTEuNDctNS00LjM3LTUtMy4yOSwwLTUuNDEsMi41OS01LjQxLDUuODhWMzEuNzNIMjA4LjRWOS4zOFpNMjMxLDkuMzhoMy43MVYyLjY3aDQuOTN2Ni43aDQuNDV2My42OGgtNC40NVYyNWMwLDIsLjE3LDMuMDcsMi4zOCwzLjA3YTguMjUsOC4yNSwwLDAsMCwyLjA4LS4xOHYzLjgxYy0xLjA4LjA4LTIuMTIuMjYtMy4yLjI2LTUuMTUsMC02LjEtMi02LjE5LTUuNzFWMTMuMDVIMjMxVjkuMzhaTTEyLDcxLjY4Yy00LjQxLDAtNi4zNi00LTYuMzYtNy45MVM3LjYsNTUuOSwxMiw1NS45czYuMzYsNCw2LjM2LDcuODdTMTYuNDMsNzEuNjgsMTIsNzEuNjhabTAsMy44OWM3LjE4LDAsMTEuMjgtNC45MywxMS4yOC0xMS44UzE5LjE5LDUyLDEyLDUycy0xMS4yOSw0LjkzLTExLjI5LDExLjc2UzQuODMsNzUuNTcsMTIsNzUuNTdaTTI1LjIsNTIuNjFoMy42N1Y1MC43NmMwLTUuNzEsMy02LjY2LDYuMTgtNi42NmExMy44OSwxMy44OSwwLDAsMSwzLjQ2LjN2My44NWE4LjMyLDguMzIsMCwwLDAtMi4yOS0uMjZjLTEuMzQsMC0yLjQyLjQ4LTIuNDIsMi4zM3YyLjI5SDM4djMuNjhIMzMuOFY3NWgtNC45M1Y1Ni4yOUgyNS4yWk03NC41OCw1My45MWMtLjkxLTMuNTUtMy4yLTYuMTQtNy43LTYuMTQtNi42MiwwLTkuMzgsNS44NC05LjM4LDExLjc2czIuNzcsMTEuNzYsOS4zOCwxMS43NmM0LjgsMCw3LjQ0LTMuNTksNy44Ny04LjA5SDgwYy0uNDMsNy4zOS01LjY2LDEyLjUtMTMuMTQsMTIuNS05LjI1LDAtMTQuNzktNy4zNS0xNC43OS0xNi4xN3M1LjU0LTE2LjE3LDE0Ljc5LTE2LjE3YzcsMCwxMi40NSwzLjg5LDEzLjEsMTAuNTVoLTUuNFpNOTguMDYsNjcuNDVjMCwzLjExLTMuMzcsNC4yNC01LjU0LDQuMjQtMS43MywwLTQuNTQtLjY1LTQuNTQtMi44NSwwLTIuNTksMS45LTMuMzcsNC0zLjcyczQuNTQtLjM1LDYuMDUtMS4zNFptNC45My05YzAtNC43MS00LjU4LTYuNDgtOS02LjQ4LTQuOTMsMC05LjgyLDEuNjktMTAuMTYsNy40NGg0LjkzQzg5LDU3LDkxLDU1LjksOTMuNzMsNTUuOWMyLDAsNC42My40OCw0LjYzLDMsMCwyLjktMy4xNiwyLjUxLTYuNywzLjE2LTQuMTUuNDctOC42LDEuMzgtOC42LDcsMCw0LjM3LDMuNjMsNi41Myw3LjY1LDYuNTNhMTEuNDcsMTEuNDcsMCwwLDAsNy43NC0yLjcyYy4zOSwyLDEuODIsMi43MiwzLjgsMi43MmExMi4zNiwxMi4zNiwwLDAsMCwzLjExLS41NlY3MS42YTcuMTgsNy4xOCwwLDAsMS0xLjIxLjA4Yy0uOTEsMC0xLjE3LS40Ny0xLjE3LTEuNjlaTTEwOC4zLDUyLjYxSDExM1Y1NS45bC4wOS4wOWE4LDgsMCwwLDEsNy00YzQuODQsMCw3LjkxLDIuNTksNy45MSw3LjYxVjc1SDEyM1Y2MC45MmMtLjA5LTMuNS0xLjQ3LTUtNC4zNy01LTMuMjksMC01LjQxLDIuNTktNS40MSw1Ljg4Vjc1SDEwOC4zVjUyLjYxWk0xNDYuOTEsNjcuNDVjMCwzLjExLTMuMzcsNC4yNC01LjUzLDQuMjQtMS43MywwLTQuNTQtLjY1LTQuNTQtMi44NSwwLTIuNTksMS45LTMuMzcsNC0zLjcyczQuNTQtLjM1LDYuMDUtMS4zNFptNC45My05YzAtNC43MS00LjU4LTYuNDgtOS02LjQ4LTQuOTMsMC05LjgxLDEuNjktMTAuMTYsNy40NGg0LjkzYy4yMi0yLjQyLDIuMTYtMy41NCw0LjkzLTMuNTQsMiwwLDQuNjMuNDgsNC42MywzLDAsMi45LTMuMTYsMi41MS02LjcsMy4xNi00LjE1LjQ3LTguNiwxLjM4LTguNiw3LDAsNC4zNywzLjYzLDYuNTMsNy42NSw2LjUzYTExLjQ3LDExLjQ3LDAsMCwwLDcuNzQtMi43MmMuMzksMiwxLjgyLDIuNzIsMy44LDIuNzJhMTIuMzYsMTIuMzYsMCwwLDAsMy4xMS0uNTZWNzEuNmE3LjE5LDcuMTksMCwwLDEtMS4yMS4wOGMtLjkxLDAtMS4xNy0uNDctMS4xNy0xLjY5Wk0xNjEsNjRjMC00LDEuNjQtOC4xMyw2LjI3LTguMTMsMy44LDAsNi4xOCwyLjk0LDYuMTgsNy44NywwLDMuODktMS44Niw3LjkxLTYuMjcsNy45MVMxNjEsNjcuODgsMTYxLDY0Wk0xNzguMjIsNDQuMWgtNC45M1Y1NS41MWgtLjA5Yy0xLjUxLTIuNDYtNC42My0zLjUtNy40NC0zLjUtNC44OSwwLTkuNjgsMy41NC05LjY4LDExLjYzLDAsNi43LDMuNDEsMTEuOTMsMTAuNDYsMTEuOTMsMi44MSwwLDUuNjItMS4wOCw2LjkyLTMuNjNoLjA5djNoNC42N1Y0NC4xWk0xOTcuMzcsNjcuNDVjMCwzLjExLTMuMzcsNC4yNC01LjU0LDQuMjQtMS43MywwLTQuNTQtLjY1LTQuNTQtMi44NSwwLTIuNTksMS45LTMuMzcsNC0zLjcyczQuNTQtLjM1LDYuMDUtMS4zNFptNC45My05YzAtNC43MS00LjU4LTYuNDgtOS02LjQ4LTQuOTMsMC05LjgyLDEuNjktMTAuMTYsNy40NGg0LjkzYy4yMi0yLjQyLDIuMTYtMy41NCw0LjkzLTMuNTQsMiwwLDQuNjMuNDgsNC42MywzLDAsMi45LTMuMTYsMi41MS02LjcsMy4xNi00LjE1LjQ3LTguNiwxLjM4LTguNiw3LDAsNC4zNywzLjYzLDYuNTMsNy42NSw2LjUzYTExLjQ2LDExLjQ2LDAsMCwwLDcuNzQtMi43MmMuMzksMiwxLjgyLDIuNzIsMy44LDIuNzJhMTIuMzUsMTIuMzUsMCwwLDAsMy4xMS0uNTZWNzEuNmE3LjE4LDcuMTgsMCwwLDEtMS4yMS4wOGMtLjkxLDAtMS4xNy0uNDctMS4xNy0xLjY5WiIgY2xhc3M9ImZpcF90ZXh0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTgsMCkiLz4KCTxwYXRoIGQ9Ik0yOS40NywzMkgyNmwtLjgyLTMuNjNjLTIuOSwzLjI5LTUuNTMsNC4zNy05LjMsNC4zNy05LjI1LDAtMTQuNzktNy4zNS0xNC43OS0xNi4xN1M2LjY0LjQsMTUuODkuNEMyMi42NC40LDI4LjMsNCwyOS4xMiwxMWgtNS4yN2MtLjUyLTQuMDYtNC4wNi02LjE0LTgtNi4xNC02LjYyLDAtOS4zOCw1Ljg0LTkuMzgsMTEuNzZzMi43NywxMS43Niw5LjM4LDExLjc2YzUuNTMuMDksOC41Ni0zLjI0LDguNjUtOC40N2gtOC4yMVYxNS43NWgxMy4xNFYzMlpNNDQuOSwyOC43MmMtNC40MSwwLTYuMzYtNC02LjM2LTcuOTFzMS45NS03Ljg3LDYuMzYtNy44Nyw2LjM2LDQsNi4zNiw3Ljg3UzQ5LjMxLDI4LjcyLDQ0LjksMjguNzJabTAsMy44OWM3LjE4LDAsMTEuMjktNC45MywxMS4yOS0xMS44UzUyLjA4LDksNDQuOSw5LDMzLjYyLDE0LDMzLjYyLDIwLjgxLDM3LjczLDMyLjYxLDQ0LjksMzIuNjFaTTc5LjkzLDMyaC00Ljg0VjI4LjlINzVhNy41MSw3LjUxLDAsMCwxLTYuMzYsMy43MmMtNS44NCwwLTguMzQtMi45NC04LjM0LTguNzhWOS42NWg0LjkzVjIzLjM2YzAsMy45NCwxLjYsNS4zNiw0LjI4LDUuMzYsNC4xMSwwLDUuNDktMi42Myw1LjQ5LTYuMXYtMTNoNC45M1YzMlpNODIuOTEsOS42NWg1LjM2bDUuNjYsMTcuMTdIOTRsNS40NS0xNy4xN2g1LjFsLTgsMjIuMzVIOTFaTTExMS40LDE4Ljg2YTUuODQsNS44NCwwLDAsMSw1Ljg4LTUuOTJjMy4zMywwLDUuNDUsMi44MSw1LjYyLDUuOTJabTE2LjQzLDMuMjRDMTI4LjY2LDE1LjQsMTI0LjMzLDksMTE3LjI4LDljLTYuNjYsMC0xMC44MSw1LjQ1LTEwLjgxLDExLjgsMCw2Ljg3LDMuOTMsMTEuNzYsMTAuOTQsMTEuNzYsNC44OCwwLDktMi43MiwxMC4xMi03LjYxaC00LjY3Yy0uODYsMi40Ny0yLjU5LDMuNzItNS40NSwzLjcyLTQuMTEsMC02LTMuMTEtNi02LjYyWk0xMzEuNiw5LjY1aDQuNjNWMTRoLjA4QTcuMjIsNy4yMiwwLDAsMSwxNDIuODQsOWExMS43NSwxMS43NSwwLDAsMSwxLjg2LjEzdjQuNzZhMTcuNSwxNy41LDAsMCwwLTIuMTItLjIyYy0zLjM3LDAtNi4wNSwyLjcyLTYuMDUsNy42NVYzMkgxMzEuNlY5LjY1Wk0xNDYuODEsOS42NWg0LjY3djMuMjlsLjA5LjA5YTgsOCwwLDAsMSw3LTRjNC44NSwwLDcuOTEsMi41OSw3LjkxLDcuNjFWMzJoLTQuOTNWMThjLS4wOC0zLjUtMS40Ny01LTQuMzctNS0zLjI5LDAtNS40LDIuNTktNS40LDUuODhWMzJoLTQuOTNaTTE3NS40OCwxOC44NmE1Ljg0LDUuODQsMCwwLDEsNS44OC01LjkyYzMuMzMsMCw1LjQ1LDIuODEsNS42Miw1LjkyWm0xNi40MywzLjI0QzE5Mi43MywxNS40LDE4OC40MSw5LDE4MS4zNiw5Yy02LjY2LDAtMTAuODEsNS40NS0xMC44MSwxMS44LDAsNi44NywzLjk0LDExLjc2LDEwLjk0LDExLjc2LDQuODksMCw5LTIuNzIsMTAuMTItNy42MWgtNC42N2MtLjg3LDIuNDctMi42LDMuNzItNS40NSwzLjcyLTQuMTEsMC02LTMuMTEtNi02LjYyWk0xOTUuNjcsOS42NWg0LjY3djMuMTFoLjEzQTcuNDcsNy40NywwLDAsMSwyMDcuMzQsOWMyLjczLDAsNS4yOCwxLjE3LDYuMjcsMy43MmE4LjA3LDguMDcsMCwwLDEsNy0zLjcyYzQuNzEsMCw3LjQ4LDIuMDgsNy40OCw3LjUyVjMyaC00LjkzVjE5YzAtMy41NS0uMjItNi00LjA2LTYtMy4zMywwLTQuNzYsMi4yMS00Ljc2LDZWMzJoLTQuOTNWMTcuNjVjMC0zLjA3LTEtNC43MS0zLjkzLTQuNzEtMi41NSwwLTQuODgsMi4wOC00Ljg4LDUuNzlWMzJoLTQuOTNWOS42NVpNMjM3LjE0LDE4Ljg2QTUuODQsNS44NCwwLDAsMSwyNDMsMTIuOTRjMy4zMywwLDUuNDUsMi44MSw1LjYyLDUuOTJabTE2LjQzLDMuMjRDMjU0LjM5LDE1LjQsMjUwLjA2LDksMjQzLDljLTYuNjYsMC0xMC44MSw1LjQ1LTEwLjgxLDExLjgsMCw2Ljg3LDMuOTMsMTEuNzYsMTAuOTQsMTEuNzYsNC44OCwwLDktMi43MiwxMC4xMi03LjYxaC00LjY3Yy0uODYsMi40Ny0yLjU5LDMuNzItNS40NSwzLjcyLTQuMTEsMC02LTMuMTEtNi02LjYyWk0yNTcuMzMsOS42NUgyNjJ2My4yOWwuMDkuMDlhOCw4LDAsMCwxLDctNGM0Ljg1LDAsNy45MSwyLjU5LDcuOTEsNy42MVYzMkgyNzJWMThjLS4wOC0zLjUtMS40Ny01LTQuMzctNS0zLjI5LDAtNS40MSwyLjU5LTUuNDEsNS44OFYzMmgtNC45M1pNMjc5LjksOS42NWgzLjcyVjNoNC45M3Y2LjdIMjkzdjMuNjhoLTQuNDVWMjUuMjdjMCwyLC4xNywzLjA3LDIuMzgsMy4wN2E4LjQzLDguNDMsMCwwLDAsMi4wOC0uMTdWMzJjLTEuMDguMDgtMi4xMi4yNi0zLjIuMjYtNS4xNCwwLTYuMDktMi02LjE4LTUuNzFWMTMuMzNoLTMuNzJWOS42NVpNNS42OSw2NC4zMWMwLTQsMS42NC04LjEzLDYuMjctOC4xMywzLjgsMCw2LjE4LDIuOTQsNi4xOCw3Ljg3LDAsMy44OS0xLjg2LDcuOTEtNi4yNyw3LjkxUzUuNjksNjguMTUsNS42OSw2NC4zMVpNMjIuOSw0NC4zN0gxOFY1NS43OWgtLjA5Yy0xLjUxLTIuNDYtNC42My0zLjUtNy40My0zLjUtNC44OSwwLTkuNjksMy41NC05LjY5LDExLjYzLDAsNi43LDMuNDIsMTEuOTMsMTAuNDYsMTEuOTMsMi44MSwwLDUuNjItMS4wOCw2LjkyLTMuNjNoLjA4djNoNC42N1Y0NC4zN1pNNDcuODksNzUuMjVINDNWNzIuMTNINDNhNy41MSw3LjUxLDAsMCwxLTYuMzYsMy43MmMtNS44NCwwLTguMzQtMi45NC04LjM0LTguNzhWNTIuODloNC45M1Y2Ni41OWMwLDMuOTQsMS42LDUuMzYsNC4yOCw1LjM2LDQuMTEsMCw1LjQ5LTIuNjMsNS40OS02LjF2LTEzaDQuOTNWNzUuMjVaTTg2LjYzLDU0LjE5Yy0uOTEtMy41NS0zLjItNi4xNC03LjctNi4xNC02LjYyLDAtOS4zOCw1Ljg0LTkuMzgsMTEuNzZzMi43NywxMS43Niw5LjM4LDExLjc2YzQuOCwwLDcuNDMtMy41OCw3Ljg3LTguMDhoNS4yOGMtLjQzLDcuMzktNS42NiwxMi41LTEzLjE0LDEyLjUtOS4yNSwwLTE0Ljc5LTcuMzUtMTQuNzktMTYuMTdzNS41My0xNi4xNywxNC43OS0xNi4xN2M3LDAsMTIuNDUsMy44OSwxMy4xLDEwLjU1aC01LjQxWk0xMTAuMTEsNjcuNzJjMCwzLjExLTMuMzcsNC4yNC01LjUzLDQuMjQtMS43MywwLTQuNTQtLjY1LTQuNTQtMi44NSwwLTIuNTksMS45LTMuMzcsNC0zLjcyczQuNTQtLjM1LDYuMDUtMS4zNHYzLjY4Wm00LjkzLTljMC00LjcxLTQuNTgtNi40OS05LTYuNDktNC45MywwLTkuODEsMS42OS0xMC4xNiw3LjQ0aDQuOTNjLjIyLTIuNDIsMi4xNy0zLjU1LDQuOTMtMy41NSwyLDAsNC42My40OCw0LjYzLDMsMCwyLjktMy4xNiwyLjUxLTYuNywzLjE2LTQuMTUuNDctOC42LDEuMzgtOC42LDcsMCw0LjM3LDMuNjMsNi41Myw3LjY1LDYuNTNhMTEuNDYsMTEuNDYsMCwwLDAsNy43NC0yLjcyYy4zOSwyLDEuODIsMi43MiwzLjgxLDIuNzJhMTIuMzcsMTIuMzcsMCwwLDAsMy4xMS0uNTZWNzEuODhhNy4yMSw3LjIxLDAsMCwxLTEuMjEuMDhjLS45MSwwLTEuMTctLjQ3LTEuMTctMS42OVY1OC43N1pNMTIwLjM1LDUyLjg5SDEyNXYzLjI5bC4wOS4wOWE4LDgsMCwwLDEsNy00YzQuODUsMCw3LjkxLDIuNTksNy45MSw3LjYxVjc1LjI1aC00LjkzVjYxLjE5Yy0uMDgtMy41LTEuNDctNS00LjM3LTUtMy4yOSwwLTUuNCwyLjU5LTUuNCw1Ljg4Vjc1LjI1aC00LjkzWk0xNTksNjcuNzJjMCwzLjExLTMuMzcsNC4yNC01LjU0LDQuMjQtMS43MywwLTQuNTQtLjY1LTQuNTQtMi44NSwwLTIuNTksMS45LTMuMzcsNC0zLjcyUzE1Ny40NSw2NSwxNTksNjR2My42OFptNC45My05YzAtNC43MS00LjU4LTYuNDktOC45NS02LjQ5LTQuOTMsMC05LjgyLDEuNjktMTAuMTYsNy40NGg0LjkzYy4yMi0yLjQyLDIuMTYtMy41NSw0LjkzLTMuNTUsMiwwLDQuNjIuNDgsNC42MiwzLDAsMi45LTMuMTYsMi41MS02LjcsMy4xNi00LjE1LjQ3LTguNjEsMS4zOC04LjYxLDcsMCw0LjM3LDMuNjQsNi41Myw3LjY1LDYuNTNhMTEuNDYsMTEuNDYsMCwwLDAsNy43NC0yLjcyYy4zOSwyLDEuODIsMi43MiwzLjgxLDIuNzJhMTIuMzMsMTIuMzMsMCwwLDAsMy4xMS0uNTZWNzEuODhhNy4xNyw3LjE3LDAsMCwxLTEuMjEuMDhjLS45MSwwLTEuMTctLjQ3LTEuMTctMS42OVY1OC43N1pNMTczLjA2LDY0LjMxYzAtNCwxLjY0LTguMTMsNi4yNy04LjEzLDMuOCwwLDYuMTgsMi45NCw2LjE4LDcuODcsMCwzLjg5LTEuODYsNy45MS02LjI3LDcuOTFTMTczLjA2LDY4LjE1LDE3My4wNiw2NC4zMVptMTcuMjEtMTkuOTNoLTQuOTNWNTUuNzloLS4wOWMtMS41MS0yLjQ2LTQuNjItMy41LTcuNDMtMy41LTQuODksMC05LjY4LDMuNTQtOS42OCwxMS42MywwLDYuNywzLjQyLDExLjkzLDEwLjQ2LDExLjkzLDIuODEsMCw1LjYyLTEuMDgsNi45Mi0zLjYzaC4wOXYzaDQuNjdWNDQuMzdaTTIwOS40Miw2Ny43MmMwLDMuMTEtMy4zNyw0LjI0LTUuNTMsNC4yNC0xLjczLDAtNC41NC0uNjUtNC41NC0yLjg1LDAtMi41OSwxLjktMy4zNyw0LTMuNzJzNC41NC0uMzUsNi4wNS0xLjM0djMuNjhabTQuOTMtOWMwLTQuNzEtNC41OC02LjQ5LTguOTUtNi40OS00LjkzLDAtOS44MiwxLjY5LTEwLjE2LDcuNDRoNC45M2MuMjItMi40MiwyLjE2LTMuNTUsNC45My0zLjU1LDIsMCw0LjYyLjQ4LDQuNjIsMywwLDIuOS0zLjE2LDIuNTEtNi43LDMuMTYtNC4xNS40Ny04LjYxLDEuMzgtOC42MSw3LDAsNC4zNywzLjY0LDYuNTMsNy42NSw2LjUzYTExLjQ3LDExLjQ3LDAsMCwwLDcuNzQtMi43MmMuMzksMiwxLjgyLDIuNzIsMy44LDIuNzJhMTIuMzQsMTIuMzQsMCwwLDAsMy4xMS0uNTZWNzEuODhhNy4xOCw3LjE4LDAsMCwxLTEuMjEuMDhjLS45MSwwLTEuMTctLjQ3LTEuMTctMS42OVY1OC43N1oiIGNsYXNzPSJmaXBfdGV4dCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTI2LDApIi8+Cjwvc3ZnPg=="
+          />
+        </a>
+        <section
+          class="ds-flex md:ds-hidden"
+        >
+          <h2
+            class="ds-sr-only"
+          >
+            Language Selection
+          </h2>
+          <a
+            class="ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-leading-33px hover:ds-text-multi-blue-blue50b"
+            data-cy="lang2"
+            href="./fr.html"
+            id="lang2"
+          >
+            <span
+              class="ds-language-toggle-text"
+            >
+              Français
+            </span>
+            <abbr
+              class="ds-language-toggle-abbr"
+              title="Français"
+            >
+              FR
+            </abbr>
+          </a>
+        </section>
+        <section
+          class="ds-w-full md:ds-flex md:ds-w-284px ds-py-2"
+        >
+          <form
+            class="search-form ds-w-full"
+            name="search-box"
+            role="search"
+          >
+            <label
+              class="ds-sr-only ds-search-label"
+              for="search-input"
+            >
+              Search Canada.ca
+            </label>
+            <input
+              class="ds-search-input"
+              id="search-input"
+              placeholder="Search Canada.ca"
+              type="search"
+            />
+            <div
+              class="ds-search-button"
+            >
+              <button
+                title="Search bar button"
+                type="submit"
+              >
+                <img
+                  alt="Search Service Canada"
+                  class="ds-search-icon ds-undefined"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxNyAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjE0NDIgMTAuODIyOUgxMS4zODcxTDExLjExODggMTAuNTY0MkMxMi4wNTggOS40NzE2NyAxMi42MjM0IDguMDUzMzMgMTIuNjIzNCA2LjUxMDQyQzEyLjYyMzQgMy4wNyA5LjgzNDYyIDAuMjgxMjUgNi4zOTQyMSAwLjI4MTI1QzIuOTUzNzkgMC4yODEyNSAwLjE2NTAzOSAzLjA3IDAuMTY1MDM5IDYuNTEwNDJDMC4xNjUwMzkgOS45NTA4MyAyLjk1Mzc5IDEyLjczOTYgNi4zOTQyMSAxMi43Mzk2QzcuOTM3MTIgMTIuNzM5NiA5LjM1NTQ2IDEyLjE3NDIgMTAuNDQ4IDExLjIzNUwxMC43MDY3IDExLjUwMzNWMTIuMjYwNEwxNS40OTg0IDE3LjA0MjVMMTYuOTI2MyAxNS42MTQ2TDEyLjE0NDIgMTAuODIyOVpNNi4zOTQyMSAxMC44MjI5QzQuMDA3OTYgMTAuODIyOSAyLjA4MTcxIDguODk2NjcgMi4wODE3MSA2LjUxMDQyQzIuMDgxNzEgNC4xMjQxNyA0LjAwNzk2IDIuMTk3OTIgNi4zOTQyMSAyLjE5NzkyQzguNzgwNDYgMi4xOTc5MiAxMC43MDY3IDQuMTI0MTcgMTAuNzA2NyA2LjUxMDQyQzEwLjcwNjcgOC44OTY2NyA4Ljc4MDQ2IDEwLjgyMjkgNi4zOTQyMSAxMC44MjI5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg=="
+                />
+              </button>
+            </div>
+          </form>
+        </section>
+        <section
+          class="ds-hidden md:ds-flex ds-pl-4 ds-pr-8"
+        >
+          <h2
+            class="ds-sr-only"
+          >
+            Language Selection
+          </h2>
+          <a
+            class="ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-leading-33px hover:ds-text-multi-blue-blue50b"
+            data-cy="lang1"
+            href="./fr.html"
+            id="lang1"
+          >
+            <span
+              class="ds-language-toggle-text"
+            >
+              Français
+            </span>
+            <abbr
+              class="ds-language-toggle-abbr"
+              title="Français"
+            >
+              FR
+            </abbr>
+          </a>
+        </section>
+      </div>
+      <div
+        class="ds-headerNav ds-bg-multi-blue-blue70"
+      >
+        <nav
+          class="md:ds-container ds-flex ds-items-center ds-justify-between ds-flex-wrap ds-w-full ds-relative"
+        >
+          <div
+            class="ds-flex ds-items-center ds-flex-shrink-0 ds-text-white"
+          >
+            <h3
+              class="md:ds-p-0 ds-container ds-menuHeader"
+              id="mainSiteNav"
+            >
+              Service Canada
+            </h3>
+          </div>
+          <div
+            class="ds-menuButtonParent ds-block md:ds-hidden ds-pr-4 focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
+            id="menuButtonParent"
+          >
+            <button
+              aria-controls="menuDropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="ds-text-h4 ds-text-canada-footer-font focus:ds-outline-none ds-py-4"
+              data-testid="menuButton"
+              id="menuButton"
+            >
+              <span
+                class="ds-inline-block ds-align-middle ds-pl-3 ds-font-body ds-font-bold ds-text-p ds-leading-none"
+              >
+                MENU
+              </span>
+              <svg
+                class="ds-ml-1 ds-w-4 ds-h-4 ds-inline-block"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="ds-w-full ds-block ds-flex-grow md:ds-flex md:ds-items-center md:ds-w-auto ds-bg-multi-blue-blue2 md:ds-bg-multi-blue-blue70"
+          >
+            <div
+              class="md:ds-flex-grow md:ds-text-center md:ds-flex ds-hidden"
+            >
+              <ul
+                class="false ds-menuDropdown ds-w-full"
+                id="menuDropdown"
+              >
+                <li
+                  class="ds-py-4 ds-px-4 ds-inline-block ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-leading-20px  ds-menuLink"
+                    href="/dashboard"
+                    title="Services"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li
+                  class="ds-py-4 ds-px-4 ds-inline-block ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-leading-20px  ds-menuLink"
+                    href="/dashboard"
+                    title="Life Events"
+                  >
+                    Life Events
+                  </a>
+                </li>
+                <li
+                  class="ds-py-4 ds-px-4 ds-inline-block ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-leading-20px  ds-menuLink"
+                    href="/dashboard"
+                    title="Contact us"
+                  >
+                    Contact us
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul
+                class="ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
+                id="menuDropdownSub"
+              >
+                <li
+                  class="ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-text-base ds-menuLink
+                        "
+                    href="/dashboard"
+                    title="Services"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li
+                  class="ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-text-base ds-menuLink
+                        "
+                    href="/dashboard"
+                    title="Life Events"
+                  >
+                    Life Events
+                  </a>
+                </li>
+                <li
+                  class="ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 "
+                >
+                  <a
+                    class="ds-font-body ds-font-bold ds-text-base ds-menuLink
+                        "
+                    href="/dashboard"
+                    title="Contact us"
+                  >
+                    Contact us
+                  </a>
+                </li>
+                <li
+                  class="ds-py-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
+                  id="buttonNav"
+                >
+                  <button
+                    class="ds-flex ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 ds-pr-4 md:ds-pl-3 ds-w-full"
+                    data-dropdown-toggle="dropdownNavbar"
+                    id="dropdownNavbarLink"
+                  >
+                    My Service Canada Account
+                    <svg
+                      class="ds-ml-1 ds-w-4 ds-h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    class="ds-dropdown-menu ds-hidden md:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600"
+                  >
+                    <ul
+                      aria-labelledby="dropdownLargeButton"
+                      class="ds-py-0"
+                      id="dropdownNavbar"
+                    >
+                      <li>
+                        <a
+                          class="ds-block ds-py-18px ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
+                          href="/"
+                        >
+                          My Benefits and Services
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="ds-block ds-py-18px ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          href="/"
+                        >
+                          Account settings
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="ds-block ds-py-18px ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          href="/"
+                        >
+                          Switch to CRA My Account
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="ds-block ds-py-18px  ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          href="/"
+                        >
+                          Sign Out
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+  <div
+    class="layout-container mb-16"
   >
     <div
       class="benefit-card"
@@ -74,6 +388,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="CPP-pending-progressbar"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -278,7 +597,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-bold text-4xl mt-1"
               >
-                734.34
+                $ 734.34
               </p>
               <a
                 class="text-sm mt-1 text-bright-blue-solid underline"
@@ -304,6 +623,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="CPP-active-latestUpdates"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -532,6 +856,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               id="OAS-pending-progressbar"
             >
               <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
+              <p
                 class="font-display font-bold text-lg"
               >
                 In Progress
@@ -735,7 +1064,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-bold text-4xl mt-1"
               >
-                691.45
+                $ 691.45
               </p>
               <a
                 class="text-sm mt-1 text-bright-blue-solid underline"
@@ -761,6 +1090,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="OAS-active-latestUpdates"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -989,6 +1323,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               id="EI-pending-progressbar"
             >
               <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
+              <p
                 class="font-display font-bold text-lg"
               >
                 Questionnaire received -training
@@ -1192,7 +1531,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-bold text-4xl mt-1"
               >
-                691.45
+                $ 691.45
               </p>
               <a
                 class="text-sm mt-1 text-bright-blue-solid underline"
@@ -1218,6 +1557,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="EI-active-latestUpdates"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -1597,6 +1941,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               id="CPPD-pending-progressbar"
             >
               <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
+              <p
                 class="font-display font-bold text-lg"
               >
                 In Progress
@@ -1800,7 +2149,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               <p
                 class="font-bold text-4xl mt-1"
               >
-                612.94
+                $ 612.94
               </p>
               <a
                 class="text-sm mt-1 text-bright-blue-solid underline"
@@ -1826,6 +2175,11 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="py-4 sm:pl-10"
               id="CPPD-active-latestUpdates"
             >
+              <p
+                class="font-display"
+              >
+                Latest update:
+              </p>
               <p
                 class="font-display font-bold text-lg"
               >
@@ -3322,5 +3676,360 @@ exports[`Dashboard renders Dashboard 1`] = `
       </button>
     </div>
   </div>
+  <footer
+    class="ds-w-full"
+  >
+    <div
+      class="ds-bg-multi-blue-blue70 ds-landscape ds-bg-no-repeat bg-clip-border sm:ds-bg-right-bottom ds-bg-bottom"
+      style="background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjE2IiBoZWlnaHQ9IjE4OSIgdmlld0JveD0iMCAwIDYxNiAxODkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgo8cmVjdCB3aWR0aD0iNjE2IiBoZWlnaHQ9IjE4OSIgZmlsbD0idXJsKCNwYXR0ZXJuMCkiLz4KPGRlZnM+CjxwYXR0ZXJuIGlkPSJwYXR0ZXJuMCIgcGF0dGVybkNvbnRlbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPgo8dXNlIHhsaW5rOmhyZWY9IiNpbWFnZTBfNjIwXzM2NiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAwMTYyMzM4IDAuMDA1MjkxMDEpIi8+CjwvcGF0dGVybj4KPGltYWdlIGlkPSJpbWFnZTBfNjIwXzM2NiIgd2lkdGg9IjYxNiIgaGVpZ2h0PSIxODkiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBbWdBQUFDOUNBTUFBQUF3WFhIT0FBQUFlMUJNVkVVQUFBQVlKamdiS0RvZ0lEa2NPVGtnTURnb0tFTWRKemdkS0RjQUFBQWdLVGtmTGo0Z0tEZ2ZLamdlSmpnZUtqZ2NLRGdmSnpoQVFFQWZLemNlS0RnZEtEY2RLamNBVlZVaE4wTWVLRGNlS3pjQUFGVWRLamdjS3prZUxUd2FNek1kS2pjZktUWVpKakljS3prYUtEZ2NLRGdZS2pnYktUZ1lLRGpvOS9nd0FBQUFLWFJTVGxNQVNUa29DU0FUZS84QlVDSE5TV1hjdDFzRVUrRDluUU1YZUlvRDh6WWlDc04xUFNUL2JaSzIyMU9CamhRQUFBOHFTVVJCVkhnQjdOVlZBVU5SREFXd1ByNWpacDUvandNUi9VczBIQWdBQUFBQUFBQUFBQUFBQUFBQUFBQWdTMVUzVFJ0L1hkTkhFcWlHVXVyUmVCSXhMVU9RU05CbTg4Vnl0UmEwWklLMjJaYmQvaUJvMlZ6bjhYUytoS0NScURwZHI3ZTRQeUtlMTFja2dlcjlaZGMrYkdVTFlTQU1qMnVaTWFiL0JsL21Kb1dYTGl1dk5WOEhpSC9QWWdTR01JZG1GdmhqWmc3TkhKb1pFY1J0Wm1RRWJqT2o1TkRNb1psRE0zTm8xa3hJaWR2TVVsb3d1eTJsZ3RsdFM5cUUyV1VsVHdOMkg3ZkdUUU1rckJ0cVlHaEJXRE1oalJzN0tjS2FTV25jMkJrT3JaOGxTUnVqcEFMV01qUU9XMVBDbWlsOUY4UFd0TkNRYnpla0hMYW1ndlVTbWhkYTlEc0xXT3FIbXJhbWdIVU1iVStiYnhMV3lwTEdqWjNWN3dyYVNqL0ZzUG1tMEpDSFRpbUh6VGM3WUkyRTVvV1dqUmZrME5hMDBBS05XT3FYY21nWDJaTHVqNTBPelVvSGgvMTRFbTFZNU5hUmdTR3EyNkhUVW0vVXJCdWJUWmhEZThDaUFoZVpRMXVQdUJrMGh4YVBHS1BOb2JIWmNpejRQalNtdjJnWFdPbURUUThEZHVNYTRLT1lGRnFpQlFzZFZYdlEzbFRQWndKK3hMMUl4SnpiZE81M3c0MlJQVUpiUUFDc0tYc1R6VTZjRG0zcGJFZWMvZGw0ZnZuK3hHbU1aSVBRQ2o5RDQ1VFFsbzZFZ1ZuS0RqdXlmalEvS0xUU3NXQUFJN1BMWHllQ0kvNDY0ODBzY0U2Y1JBcytvK2xuN2x3RFFzdHoxbnd6RFNSNmNHaDdFWWlsSVYrMDFLdG9GSnBEazNiVmxvWjgwWlplSmNCRUV3N3RlUDdRaWtEcDFRSmkrYmwrRXAvTm9YSHJWUUZadnQ4SWgvYTV2ckozSjhpSkswRVFRQ3ZQa3BsVmRmOFQvckJGQjYxdllZU3RNV0NUTVlBMmI4MmoxUXRpMkE1clN1TUZMY0tNT3daVnZRR3RLaG5QR21wQUcwSGtheUlLOTRWbTVBWTB3NHhuRFZTUm1wTlJyNG1vUk53My9tMm5UcXRabWxQc0Y3UVh0S05qYmNXdlhpZGUwQTVOdnFCdGhESWZBRnE1eXRudjk4OE9yYlNWK3ZQUUtoNEFHb0xqSCt1NW9iRzFsV2JjUDY4YWpYRk9xbjlkRSszMS9rZi9ST3ZoQmUzVlNLc1h0Qjlvb3IwYWFVakplRUU3TG1odHB4Ri9PTjVUcVR2OGduWjdoZFpsemNuNHUyRzlvUDJUUG1kWEdrRXRzVjEvdTkrSlhaL21XZDB2YUh1VEduOFBzN1dFb3kzOFoyTVQxNnUwVXIyZzNkYnBCSnlsa2U3dVB6Mit3VUtBMTRiUzJHcStvTzBNdEowL0RRMUNJQ2o1V3RFNXZwb1h0SGIvZFdpNVFDTXlMb2VXbEl3YjhvSldUSTA0OG85RFk1RkVJR0IrN2t3eS95bTBtdEsvQUJyQ3RFN21ndjIzb1VFSU1CQ1FyNTRLL0hxYjBBM1FHQXlmQ3k3L01EUkdwRHlnWlFUdkNxME0xL3ZkbmFCaHZmSnRhREdnWVN6K1ZXaGt5ZUVJQkdIeXZ0QVFFWEJFc080RHpldVZZNkNOUmZ4bGFKS0lCVnFBS2R3VkdnZTB1Qk8wNUx6eWduWllxS0pqUUFzTHNSVkNPcm8zQUQ0Z3RNSjVtZlVOc0JlaE9mNWtvSXdGbWhubUpXalFpT09vMkk4SGplMFlDVGUvRHZZaXRQcXIwSXBGTnFJY0tmMXhhRkRPdnhJT2FBbmtxMGFiQlJtZFVSZkxBVkxhNmQ4T3pYT0ZrL0tyamZZUGhxOGEvUmswUkFSL083UlVjeXl6bFM5b3gwSnJkN3NxKzk3UUFNQUpBUGVCVmhNRVN2MkNkaUMwWm1aVWhTdnFYMExqdUYvQ0xueUE1cmVrZmFlWkFjNnZORWpOeDRCR2dQRjBzV09FQVNuRGlISWd3eEwrR1RTUCt5VXAxYVZUSnhab3hUdTBXSFAralhCRVorQUFhQkxqNlFMRUVocGh5WkdNZExBQ2xqZm4xaUZWWnRhM29QRXR1NkNsbHVBT0RZbWFoOEw4R05BczVSUFhhQlRZU2taRmxDT0trU3BDdk5EcnRPc2IwRnB2YWU2QVZscmlPMEJMVHRCeWE4NHVkZ1JIUW1OTHhYaTJaSzRLbzRLNVFMTkhrM3o3MUltSS9EWTA3WURHUHZxS0llKy9TZ2R6OHhVYkZuRmNHNDJ4STZ4ZUdoTHhYR0hWcWpBYzlnbGFqdXVoN2d2dEgxeHRtL3Q3blp3YVJyVkZzV0l6NE0zUWlKdUdPaGxQRmFpNUxveEV2Ti9ZRE8rcDBiaG9JL0dGU3gyNXZKQlJVdUVLdEdaOFArUTdOQjhBaldHcEhkeXNORytHQnQ4MDFJbDRxaXc5eTNQcmdXeVNDWklDS1VuNUNiUTBneDBSa2IyY1dqamN4aEw2dE03ekl5TFFvN2pZQ0w2djFTVm9SNVl0SENoR0hRRE5XWklxdDRBVWJtNmp1WDR6dEpTV2tvK2wwTElxejNmVmt2b1RhTktBVnBJU2dJMzNKTjVDdVBpZXpPV3hFSkVScVNVWmtJUGFCYzN4L2RqVmF0ZnVOdHJsY1RSZmJqdXlmVE8wYXV6RHY4UlBkMVY2QmV2Y3JiTGZsbjJxeXBGUzdZSG0xczUwTW9rZWF6eEQ2L2JuMFBLNFdiWTZZSGpEbDl1T1Z0MDZxYzdlWTRlZGxxUk1NNTRvWEo3cmlrQ0R6WWppZ0xid0l3dWZRYXRnQjdQMTlWVG1rUFE1dElydnAzWi91Z3ByT280dHFiZ0pyUm5nNVZuU3dVc2dVSHBQdm1VTnpiditQbVJ3K1RyaUNXZlJteXlIdmVoYW9DM21rT0hpSjlBYTdDb2RrMjFvUi9ZR3NIK3NCSm9rYkkzMHBFNUJKRGNucjBhODR3TGkycU1mVmNTcHlaSEpaL3dNM3lLTEVmWVoyZ0tQa2I0SWJlUm5vTWsyRC9xRGkvdWc1YXBPaWlrc25XSzJQdzcxZm5ZQmNiMUZrakRibEhlL1RpcHN4Qk5DYXkrZUVtZG95SWh3Qmh2M2h6YUNvejVMMXZ0cSs1b0x5bkZKano4VWEvTXl0STNPZ1BlMURXWm9UL2tHdEFvMlk3a2IwRmp2ZHd3WGZ3WmFmWHozUmg0S3pScFIzUVN0UHB4djJSZWdqVjNZRDIxSWJ2eDZhRmh3T2VNTUxaTExKcFovQ0ZxZVVyb1VIUFVSbjQzYm9Ybmp6TG1rL09FRTUwK2hjUVZ0c00xZkQ2MnJHUkdKR1pvZFN5V0hSa3pKNDZGdDVYaG9icDJUKzl0b201MkIxQngvOE14UG9lV0F0anFpK2N1aGpaSXF6dENRWTlvOWF5NjJmbFpvcVNuTlBkRDhCV2krWHFPNXNZS1dWLzg4Y2dXTnp3VU5HaWxPYitVb1R4TXBhSVBLR0dIcFNhR3h0MndjWDZOUmI4bTluNCtHU3RaMk5ldnlXTXgyZUs2Uzh6bWhlU0YxQWpiQTFmdTlpdTd5VkFzT2FPWE0wVjdQc2R5bmhYVFhlcjlHMUpuTHYvcEJhTllxeFgzUTNOMDkrdVo3b0dIVW1QdkcwV1k5N1ZWU2cxT1dIUDIwbitqdGRZVTJpcXRybm43RDIycU5QNWs5UWNzQWhsYU01UXB3NlREVWVqOVh6d3NqT0NaaTBFdlJXV04xUEM1dU0xM08ram8wQWhHMUgrME1EWE10NHZSV1owQmQ1N1FrTUx1NnE5N3UrbE5vMFR0R2ZFb3lXM1BxMldxMFpMVlhiK1BySEE2NTFOb01kR0ZaMFF3TjlrbUhQSmJydEdCVXJmZHZWQUJZbE5jWVkxbXFndFR5V0V0NUVoR0l3SmVob1ZTMzFXaFRyeE16cDFaWGRYVzNQZzBpdFNNZ3lkYmxsQWUwRDJrK1dZM0djTWRpaU9PU3BJaEpIb1NJSEtmWEdkck4yWVoyK2xZWlVXTjFQQzdRL0Mxb3JKSk1VcXM0OWtDRFN6ZG5RRHNnbmJ3QVRjOEhMVE5Jb2dUQWRxcjlGbGpKdDhnUkhMUEN6d2N0djlUY1MzMG5SdW1USk9xMjBjWGUyc0huZ29id3RUTkJWNVZHam9DV1BpVWxqVDVCWmZaWVBmL1FBcHlBQVI4S3JYazB0UDBwQmt2Znp2TkJVNlh0VWdJQXJTTGVZdGwydG1vTjhibUdOM2dCV3R3UG1pUEMra2E2K3FtZ1lmbXJmUnF1RmRhZm9rTmh0TjJJMUJURFFPbEgwdFhWTjBJRHBtWGRBVnF4cjFSRjBNV1lMVFd0T1kxcFBRUDlkTkJ3R1ZwalFJdndzWGhxdkN5dkpnTlJSZEI3b2RGbGcyUDVTR2lWV1ZsVldlZGZ2cXBXdDdkazlNYmV6NkUxT1hhWGxBSE5xZURzT09vWlQ1MERHdGZRWWd4N1hJWldyckhZNmV6VFF2V3kwL09HK1pBZ3U0S0xkQkNXaWdCTFRZQTVWc2RIV0ZmYzBCa1l3M0VrMHRJeDBFeGE4c2NaZWpQSTZaYVNUcU9yeWRVZVhvRVd1NkZwQnpROEhyUzhCZzJYcXZyaUFLajJmTjJjVzBwR2NON1FZMEY5R2hiR1ZPeTVQTDAxWC9hZjE2REJoWmpEalViWk1kQWkxdER5dkdPRVkvdUFGcXY4S0xUc1I0Tkd0QndSN1A0L3RNcmxxT0lsYU9mdE9iNmpWOWVxY1d6STg4SVpHcjhIalU2SjZ3Mmd0U2ZOR0NIU1Y2RlZWVWs5WmV4WVoxVG12YkhyTXJRVnBYUko1ZFNjY3Q0Q3phMEhuSUphb0tsakE5ckF3M0VDQVE2RE5tYWdBRXNGQUtVR2dCeXJ5NDlrRmttdm9ZMnFDNGtBVFNDUTJoL08zd1kvMnV2Y2JvcFVXbnRUMVZlZ1NmRXdRYzhUdEQ1RHF3R3Rsc1BXLzZjTTkwREx6NkdOZkd0NGcxcVNKN0JaWC9sV2Jra3dnalNKYTUyQlZtZTkzNlJ5alcybjI4aFlIaWpLZFJYYWtlTm96QWVDNXA2YlZ5ejUvMWNsdW4yU2xoSHVBZTM3TlpveU82dXpEb0ZtV3JjbjE3UGpSVXFTMTlETTFoS0FIajBueXdFdGEycEdqZTBhV2ZhcnlLNWxmMzRKV2xkZmgwWXNSVzF5SGs5NE9HZktwYnliQTlwWU9rKzNONWFpOTFzT3FORVlEanFna1hPdkV6QkxTcDc4Tk5CbUpsTVNHT2RZMzBsdVZvdUZOYlNvTTNGSURBakI5OXV5cGdxNkdSYURHc0d5bkJHWkVSWTlneUZXdjN5eUIrcW1OZEswS25MeW5xd0JlUnBIUXlwUDdWVmo2Wk80N3dtTnhMU1N2V29XVzhxUGw3K1dpaEhCdmpCclVuYmVDczFMRzgwUmEyZzUvYy9HT2RXZEZWRUlZemw0ZnRYV2hwNnNMMEtyVTRIY0JvMVNaYWtqTEh3Q2JiTUxPNExJNWFGV2Zjc01xc2Y3d21zY09KNnlBUzJ5SkpEUVc4b0V5NlU3UXFOVjJKcVg4ZWtFNG84WDlLZUVzeEpyTTkrQXh2OS9nN3dHVFVvemdzU1dNeUdzblNraklnaXRVN3dJalZ2UTNuSXp0TUs4alpIakljUGIwSEwxMTNWd1FNdldoY1I5Z3BSRWJqUjF4MVBxYzQyR2lKVU9TODMzZTl0dXpmbkpHbTFReTlSMlRHcDNFTnh3U2VLV1UrZW9ZU3dFOWtMVFJXaVRtK0puMExRVU1Fc1BCVzM4UXBVa1FkUm9CRWc5Um5VY0xPUDBMQzhaOVJ3azVUdTBaZXVxRjdZazhaYVVqTGZVYWNIbkRlZEQxRUFDeGczUURPdmdtT25TeHlRSE5KMFBTTnVTblVwYjZkU3lOdmJXcW1lWjlxbHBVVFdPbXRQY2hMWngzRFZvZWpSb1dqTFh6ZlcrWEVNU0FsS2FFN1Njb0JWVDZtRjJlaVVmbEs2cTZ2R2dlc3RwZTFmMU1XOEUyNWNCN1lleURXMWtFeG9ITkQ4dU5HakVZYWxCQmkzSjVvY3hKc21ycmtPVHFNMWU1NFBFQVgwN25vYzNOaDJYUzRjRk4wSWJJZUY2TkdqKzJDMHpGMGo4V0dyNDhLbGRwVG5maFZha3BTUlRCeWVEK25aeW80Mm1KdFFNSCtkNXhLN2JvWTA4QURRbXlMa3JzRDFOelBwa1hQUndhT3N1WEVBSHg1bi9DbHBBTlFvU3BJNE9YTmVnOFJHaHdXUFlpVUIvL3RhTGk5QnFRT3NuZ1haSTB0Nkcxb1R1a2FucWZ6aG80MWV6bmRyT2RXZ3NKZjhlTkttOGVlcDhxc1FQaExGdGFPL29KaGtSWENyRmRFVHdBalRBdnd6YS9rN3NDeG96c2FlQU1sSVgwbW1qUnM4cmdqbzAveDZhWG9sL0hMb091WUxpSEFkOU5EUlNBdUgvMnJ0WEk0dGlJQWFpZGl6U2ZQS1BjR3ZCcFE5WnJBK1pCTHFHeWtnNVllWFhwc2R2N2E0Umx2OW5TU0MwSzUyN2pnS2hhZHcxVGdDaDZidVNZMEJvZFd0dVNlMGNFTnI5eGx2Yk9TQTArVi9YSGNlQTBEUk9BNkhwdE5OQWFKb3FoNEhRMUU0Q29hbXFaOWM1SURUVnJNTkFhQnJIZ2REdU9nK0UxczREb1dtY0JrSlRyZE5BYUdybmdkRGFUNERROWpjL0FVTHpNOEFmMnFMOTh1NzF0MUVBQUFBQVNVVk9SSzVDWUlJPSIvPgo8L2RlZnM+Cjwvc3ZnPgo=);"
+    >
+      <section
+        class="ds-container"
+      >
+        <nav
+          aria-labelledby="accessibleSectionHeader1"
+          class="ds-pt-6 ds-pb-6"
+          role="navigation"
+        >
+          <h2
+            class="ds-sr-only"
+            id="accessibleSectionHeader1"
+          >
+            About Government
+          </h2>
+          <ul
+            class="sm:ds-grid sm:ds-grid-cols-3 ds-flex ds-flex-col ds-gap-1 ds-text-xs"
+          >
+             
+            <li
+              class="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
+            >
+              <a
+                class="ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
+                data-cy="[object Object]0"
+                href="/"
+                id="[object Object]0"
+              >
+                <span
+                  class=""
+                >
+                  Contact us
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Contact us"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
+            >
+              <a
+                class="ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
+                data-cy="[object Object]1"
+                href="/"
+                id="[object Object]1"
+              >
+                <span
+                  class=""
+                >
+                  News
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="News"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
+            >
+              <a
+                class="ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
+                data-cy="[object Object]2"
+                href="/"
+                id="[object Object]2"
+              >
+                <span
+                  class=""
+                >
+                  Prime Minister
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Prime Minister"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
+            >
+              <a
+                class="ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
+                data-cy="[object Object]3"
+                href="/"
+                id="[object Object]3"
+              >
+                <span
+                  class=""
+                >
+                  Departments and agencies
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Departments and agencies"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
+            >
+              <a
+                class="ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
+                data-cy="[object Object]4"
+                href="/"
+                id="[object Object]4"
+              >
+                <span
+                  class=""
+                >
+                  Treaties, laws and regulations
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Treaties, laws and regulations"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
+            >
+              <a
+                class="ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
+                data-cy="[object Object]5"
+                href="/"
+                id="[object Object]5"
+              >
+                <span
+                  class=""
+                >
+                  About government
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="About government"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
+            >
+              <a
+                class="ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
+                data-cy="[object Object]6"
+                href="/"
+                id="[object Object]6"
+              >
+                <span
+                  class=""
+                >
+                  Public service and military
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Public service and military"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
+            >
+              <a
+                class="ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
+                data-cy="[object Object]7"
+                href="/"
+                id="[object Object]7"
+              >
+                <span
+                  class=""
+                >
+                  Government-wide reporting
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Government-wide reporting"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
+            >
+              <a
+                class="ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
+                data-cy="[object Object]8"
+                href="/"
+                id="[object Object]8"
+              >
+                <span
+                  class=""
+                >
+                  Open government
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Open government"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+    <div
+      class="ds-h-full ds-pb-4 ds-bg-color-multi-neutrals-white "
+    >
+      <section
+        class="ds-container ds-h-auto ds-pt-5 ds-flex ds-flex-col md:ds-flex-row ds-justify-between"
+      >
+        <nav
+          aria-labelledby="accessibleSectionHeader2"
+          class="ds-mt-3.5 xl:ds-mt-5"
+          role="navigation"
+        >
+          <h2
+            class="ds-sr-only"
+            id="accessibleSectionHeader2"
+          >
+            About this site
+          </h2>
+          <ul
+            class="ds-flex ds-flex-col sm:ds-flex sm:ds-flex-row"
+          >
+            <li
+              class="ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-disc sm:ds-list-none ds-text-xxs"
+            >
+              <a
+                class="ds-underline ds-text-multi-blue-blue70b ds-font-body ds-leading-20px ds-text-browserh7 hover:ds-underline"
+                data-cy="0"
+                href="/"
+                id="0"
+              >
+                <span
+                  class=""
+                >
+                  Social media
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Social media"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-disc ds-text-xxs"
+            >
+              <a
+                class="ds-underline ds-text-multi-blue-blue70b ds-font-body ds-leading-20px ds-text-browserh7 hover:ds-underline"
+                data-cy="1"
+                href="/"
+                id="1"
+              >
+                <span
+                  class=""
+                >
+                  Mobile applications
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Mobile applications"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-disc ds-text-xxs"
+            >
+              <a
+                class="ds-underline ds-text-multi-blue-blue70b ds-font-body ds-leading-20px ds-text-browserh7 hover:ds-underline"
+                data-cy="2"
+                href="/"
+                id="2"
+              >
+                <span
+                  class=""
+                >
+                  About Canada.ca
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="About Canada.ca"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-disc ds-text-xxs"
+            >
+              <a
+                class="ds-underline ds-text-multi-blue-blue70b ds-font-body ds-leading-20px ds-text-browserh7 hover:ds-underline"
+                data-cy="3"
+                href="/"
+                id="3"
+              >
+                <span
+                  class=""
+                >
+                  Terms and conditions
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Terms and conditions"
+                />
+              </a>
+            </li>
+            <li
+              class="ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-disc ds-text-xxs"
+            >
+              <a
+                class="ds-underline ds-text-multi-blue-blue70b ds-font-body ds-leading-20px ds-text-browserh7 hover:ds-underline"
+                data-cy="4"
+                href="/"
+                id="4"
+              >
+                <span
+                  class=""
+                >
+                  Site Privacy
+                </span>
+                <abbr
+                  class="ds-language-toggle-abbr"
+                  title="Site Privacy"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          class=" "
+        >
+          <div
+            class="ds-mt-3 ds-float-left sm:ds-hidden"
+          >
+            <a
+              class="ds-flex ds-flex-row ds-btn-link focus:ds-ring focus:ds-ring-offset-4 undefined "
+              href="/"
+              id="top_btn"
+              role="button"
+            >
+              To the top
+            </a>
+          </div>
+          <img
+            alt="stuff"
+            class="sm:ds-h-40px ds-h-25px ds-mb-2.5 sm:ds-mt-6 md:ds-mt-3 ds-mt-5 ds-float-right ds-undefined"
+            src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg"
+          />
+        </div>
+      </section>
+    </div>
+  </footer>
 </div>
 `;

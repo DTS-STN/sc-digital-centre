@@ -231,15 +231,13 @@ export default {
   applicationSubmitted: 'Application submitted on:',
   estimatedDateOfDecision: 'Estimated date of decision',
   paymentAmount: 'Payment amount',
+  latestUpdate: 'Latest update:',
   daysUntilNextPayment: 'Next payment:',
   nextReportDue: 'Next report due:',
   viewPaymentHistory: 'View my payments +',
 
   // Benefit Card details
-  applicationDetails: 'Application details',
   applicationDate: 'Application date',
-  applicationDescription: 'Application description',
-  additionalInformation: 'Additional information',
   latestActivity: 'Latest activity',
   viewMyStatusAndMessages: 'View my status and messages +',
   pensionDetails: 'Pension details',

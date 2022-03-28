@@ -222,15 +222,13 @@ export default {
   applicationSubmitted: '(FR)Application submitted on:',
   estimatedDateOfDecision: '(FR)Estimated date of decision',
   paymentAmount: '(FR)Payment amount',
+  latestUpdate: '(FR)Latest update:',
   daysUntilNextPayment: '(FR)Next payment:',
   nextReportDue: '(FR)Next report due:',
   viewPaymentHistory: '(FR)View my payments +',
 
   // Benefit Card details
-  applicationDetails: '(FR)Application details',
   applicationDate: '(FR)Application date',
-  applicationDescription: '(FR)Application description',
-  additionalInformation: '(FR)Additional information',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages +',
   pensionDetails: '(FR)Pension details',

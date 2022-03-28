@@ -4,7 +4,6 @@ import BenefitCardHeaderActive from '../atoms/BenefitCardHeaderActive'
 import BenefitCardHeaderInactive from '../atoms/BenefitCardHeaderInactive'
 import BenefitCardHeaderPending from '../atoms/BenefitCardHeaderPending'
 import BenefitTasks from './BenefitTasks'
-import PendingBenefitDetails from './PendingBenefitDetails'
 import ActiveBenefitDetails from './ActiveBenefitDetails'
 import HorizontalRule from '../atoms/HorizontalRule'
 import BenefitStatus from '../../constants/BenefitStatus'
@@ -90,24 +89,6 @@ const BenefitCard = (props) => {
     }
   }
 
-  const renderBenefitDetails = () => {
-    switch (props.benefit.status.toUpperCase()) {
-      case BenefitStatus.pending.toUpperCase():
-        return (
-          <PendingBenefitDetails
-            benefit={props.benefit}
-            locale={props.locale}
-          />
-        )
-      case BenefitStatus.active.toUpperCase():
-        return (
-          <ActiveBenefitDetails benefit={props.benefit} locale={props.locale} />
-        )
-      default:
-        return null
-    }
-  }
-
   return (
     <div className="benefit-card" ref={topOfCardRef}>
       {/* Benefit Card Header */}
@@ -129,7 +110,13 @@ const BenefitCard = (props) => {
         />
       </div>
       {/* Benefit Card Details */}
-      {isOpen && renderBenefitDetails()}
+      {isOpen &&
+      props.benefit.status.toUpperCase() ===
+        BenefitStatus.active.toUpperCase() ? (
+        <ActiveBenefitDetails benefit={props.benefit} locale={props.locale} />
+      ) : (
+        <></>
+      )}
       <button
         onClick={() => {
           handleClick()
