@@ -40,6 +40,12 @@ describe('PendingBenefitDetails Tests', () => {
       'Online application received'
     )
     expect(applicationDescription).toBeInTheDocument()
+    const applicationDetails = screen.getByText(
+      'Your application is pending, we will notify you with decision'
+    )
+
+    expect(applicationDetails).toBeInTheDocument()
+    expect(applicationDescription).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {

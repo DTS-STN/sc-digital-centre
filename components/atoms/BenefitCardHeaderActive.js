@@ -67,6 +67,7 @@ export default function BenefitCardHeaderActive(props) {
             id={`${props.benefit.benefitType}-active-latestUpdates`}
             className="py-4 sm:pl-10"
           >
+            <p className="font-display">{t.latestUpdate}</p>
             <p className="font-display font-bold text-lg">
               {props.benefit.benefitStatusProgress}
             </p>
