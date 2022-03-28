@@ -13,7 +13,10 @@ import {
   ACTIVE_EI,
   INACTIVE_EI,
 } from '../contents/DashboardBenefitCardConstants'
-import { NO_BENEFIT_CPP } from '../contents/DashboardNoBenefitCardConstants'
+import {
+  NO_BENEFIT_CPP,
+  NO_BENEFIT_EI,
+} from '../contents/DashboardNoBenefitCardConstants'
 import {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
@@ -26,6 +29,7 @@ import {
   ACTIVE_EI_TASKS,
   INACTIVE_EI_TASKS,
   NO_BENEFIT_CPP_TASKS,
+  NO_BENEFIT_EI_TASKS,
 } from '../contents/DashboardBenefitTasksConstants'
 import {
   APPLICATION_CARD_OAS,
@@ -151,6 +155,11 @@ export default function Dashboard() {
           locale="en"
           benefit={NO_BENEFIT_CPP}
           tasks={NO_BENEFIT_CPP_TASKS}
+        />
+        <NoBenefitCard
+          locale="en"
+          benefit={NO_BENEFIT_EI}
+          tasks={NO_BENEFIT_EI_TASKS}
         />
       </div>
       <DSFooter />
