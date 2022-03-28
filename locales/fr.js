@@ -228,10 +228,7 @@ export default {
   viewPaymentHistory: '(FR)View my payments +',
 
   // Benefit Card details
-  applicationDetails: '(FR)Application details',
   applicationDate: '(FR)Application date',
-  applicationDescription: '(FR)Application description',
-  additionalInformation: '(FR)Additional information',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages +',
   pensionDetails: '(FR)Pension details',
