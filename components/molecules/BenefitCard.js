@@ -111,7 +111,7 @@ const BenefitCard = (props) => {
       </div>
       {/* Benefit Card Details */}
       {isOpen &&
-      props.benefit.status.toUpperCase() !==
+      props.benefit.status.toUpperCase() ===
         BenefitStatus.active.toUpperCase() ? (
         <ActiveBenefitDetails benefit={props.benefit} locale={props.locale} />
       ) : (
