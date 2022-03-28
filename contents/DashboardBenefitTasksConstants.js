@@ -496,6 +496,27 @@ const NO_BENEFIT_CPP_TASKS = [
   },
 ]
 
+const NO_BENEFIT_GIS_TASKS = [
+  {
+    task: t.applyForGuranteedIncomeSupplement,
+    taskIcon: '/images/dashboard/apply-for-benefit-icon.svg',
+    taskLink: '',
+  },
+]
+
+const NO_BENEFIT_OAS_TASKS = [
+  {
+    task: t.applyForOldAgeSecurity,
+    taskIcon: '/images/dashboard/apply-for-benefit-icon.svg',
+    taskLink: '',
+  },
+  {
+    task: t.applyForGuranteedIncomeSupplement,
+    taskIcon: '/images/dashboard/apply-for-benefit-icon.svg',
+    taskLink: '',
+  },
+]
+
 module.exports = {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
@@ -508,4 +529,6 @@ module.exports = {
   ACTIVE_EI_TASKS,
   INACTIVE_EI_TASKS,
   NO_BENEFIT_CPP_TASKS,
+  NO_BENEFIT_GIS_TASKS,
+  NO_BENEFIT_OAS_TASKS,
 }
