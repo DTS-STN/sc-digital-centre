@@ -41,7 +41,9 @@ export default function BenefitCardHeaderActive(props) {
           <div id={`${props.benefit.benefitType}-active-nextPaymentAmount`}>
             <p className="text-base">{t.paymentAmount}</p>
             <p className="font-bold text-4xl mt-1">
-              {props.benefit.nextPaymentAmount}
+              {props.locale === 'en'
+                ? `$ ${props.benefit.nextPaymentAmount}`
+                : `${props.benefit.nextPaymentAmount} $`}
             </p>
             <a
               href="./dashboard"

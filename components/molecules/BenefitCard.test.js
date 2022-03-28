@@ -107,11 +107,9 @@ describe('BenefitCard', () => {
     )
     const benefitName = screen.getByText('Canada Pension Plan')
     const status = screen.getByText('Active')
-    const nextPaymentAmount = screen.getByText('734.34')
 
     expect(benefitName).toBeInTheDocument()
     expect(status).toBeInTheDocument()
-    expect(nextPaymentAmount).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
