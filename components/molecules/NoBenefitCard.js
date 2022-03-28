@@ -30,7 +30,7 @@ const NoBenefitCard = (props) => {
   }
 
   return (
-    <div className="benefit-card" ref={topOfCardRef}>
+    <div className="no-benefit-card" ref={topOfCardRef}>
       {/* NoBenefit Card Header */}
       <NoBenefitCardHeader benefit={props.benefit} locale={props.locale} />
 
