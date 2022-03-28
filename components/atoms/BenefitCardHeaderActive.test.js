@@ -77,9 +77,11 @@ describe('BenefitCardHeaderActive', () => {
     )
     const titleText = screen.getByText('Canada Pension Plan')
     const benefitStatusProgress = screen.getByText('Complete')
+    const nextPaymentAmount = screen.getByText('$ 734.34')
 
     expect(titleText).toBeInTheDocument()
     expect(benefitStatusProgress).toBeInTheDocument()
+    expect(nextPaymentAmount).toBeInTheDocument()
   })
 
   it('Renders BenefitCardHeaderActive CPPD', () => {
