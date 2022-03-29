@@ -5,6 +5,11 @@ const NO_BENEFIT_CPP = {
   learnMoreLink: '',
 }
 
+const NO_BENEFIT_EI = {
+  benefitType: BenefitCode.ei,
+  learnMoreLink: '',
+}
+
 const NO_BENEFIT_GIS = {
   benefitType: BenefitCode.gis,
   learnMoreLink: '',
@@ -17,6 +22,7 @@ const NO_BENEFIT_OAS = {
 
 module.exports = {
   NO_BENEFIT_CPP,
+  NO_BENEFIT_EI,
   NO_BENEFIT_GIS,
   NO_BENEFIT_OAS,
 }

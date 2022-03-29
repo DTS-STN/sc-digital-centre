@@ -496,6 +496,19 @@ const NO_BENEFIT_CPP_TASKS = [
   },
 ]
 
+const NO_BENEFIT_EI_TASKS = [
+  {
+    task: t.viewPaymentInfo,
+    taskIcon: '/images/dashboard/apply-for-benefit-icon.svg',
+    taskLink: t.recordOfEmployment,
+  },
+  {
+    task: 'View my record of Employment',
+    taskIcon: '/images/dashboard/ei-record-of-employment-icon.svg',
+    taskLink: t.recordOfEmployment,
+  },
+]
+
 const NO_BENEFIT_GIS_TASKS = [
   {
     task: t.applyForGuranteedIncomeSupplement,
@@ -529,6 +542,7 @@ module.exports = {
   ACTIVE_EI_TASKS,
   INACTIVE_EI_TASKS,
   NO_BENEFIT_CPP_TASKS,
+  NO_BENEFIT_EI_TASKS,
   NO_BENEFIT_GIS_TASKS,
   NO_BENEFIT_OAS_TASKS,
 }
