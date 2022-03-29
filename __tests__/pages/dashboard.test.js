@@ -7,6 +7,7 @@ import Dashboard from '../../pages/dashboard'
 expect.extend(toHaveNoViolations)
 
 describe('Dashboard', () => {
+  jest.setTimeout(10)
   it('renders Dashboard', () => {
     const { container } = render(<Dashboard />)
     expect(container).toMatchSnapshot()
