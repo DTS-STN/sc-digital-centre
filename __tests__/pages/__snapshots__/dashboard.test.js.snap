@@ -3410,7 +3410,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       </div>
     </div>
     <div
-      class="no-benefit-card"
+      class="benefit-card"
     >
       <div
         class="px-4 md:px-6"
@@ -3579,7 +3579,7 @@ exports[`Dashboard renders Dashboard 1`] = `
       </button>
     </div>
     <div
-      class="no-benefit-card"
+      class="benefit-card"
     >
       <div
         class="px-4 md:px-6"
