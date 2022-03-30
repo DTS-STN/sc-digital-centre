@@ -286,6 +286,7 @@ export default {
   viewMyCppContributions: 'View my CPP Contributions',
   applyForCppDeathBenefits: 'Apply for Canada Pension Plan Death Benefits',
   applyForGuranteedIncomeSupplement: 'Apply For Guranteed Income Supplement',
+  applyForOldAgeSecurity: 'Apply For Old Age Security',
   applyForCppSurvivorsPensionAndChildrensBenefit: `Apply For Canada Pension Plan Survivor's Pension and Child(ren)'s Benefit`,
 
   // Dashboard benefit application card

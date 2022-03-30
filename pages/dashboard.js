@@ -15,6 +15,8 @@ import {
 } from '../contents/DashboardBenefitCardConstants'
 import {
   NO_BENEFIT_CPP,
+  NO_BENEFIT_GIS,
+  NO_BENEFIT_OAS,
   NO_BENEFIT_EI,
 } from '../contents/DashboardNoBenefitCardConstants'
 import {
@@ -29,6 +31,8 @@ import {
   ACTIVE_EI_TASKS,
   INACTIVE_EI_TASKS,
   NO_BENEFIT_CPP_TASKS,
+  NO_BENEFIT_GIS_TASKS,
+  NO_BENEFIT_OAS_TASKS,
   NO_BENEFIT_EI_TASKS,
 } from '../contents/DashboardBenefitTasksConstants'
 import {
@@ -160,6 +164,16 @@ export default function Dashboard() {
           locale="en"
           benefit={NO_BENEFIT_EI}
           tasks={NO_BENEFIT_EI_TASKS}
+        />
+        <NoBenefitCard
+          locale="en"
+          benefit={NO_BENEFIT_GIS}
+          tasks={NO_BENEFIT_GIS_TASKS}
+        />
+        <NoBenefitCard
+          locale="en"
+          benefit={NO_BENEFIT_OAS}
+          tasks={NO_BENEFIT_OAS_TASKS}
         />
       </div>
       <DSFooter />
