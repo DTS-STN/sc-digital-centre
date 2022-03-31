@@ -3470,7 +3470,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                  src="/images/dashboard/apply-white-bg-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
@@ -3488,7 +3488,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                  src="/images/dashboard/apply-white-bg-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
@@ -3542,7 +3542,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                  src="/images/dashboard/apply-white-bg-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
@@ -3560,7 +3560,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                  src="/images/dashboard/apply-white-bg-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
@@ -3639,7 +3639,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                  src="/images/dashboard/apply-white-bg-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
@@ -3736,7 +3736,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                  src="/images/dashboard/apply-white-bg-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
@@ -3815,7 +3815,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                  src="/images/dashboard/apply-white-bg-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
@@ -3833,7 +3833,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <img
                   alt=""
                   class="font-normal pb-3 px-8"
-                  src="/images/dashboard/apply-for-benefit-icon.svg"
+                  src="/images/dashboard/apply-white-bg-icon.svg"
                 />
                 <p
                   class="w-36 font-normal px-5 text-sm"
