@@ -461,12 +461,12 @@ const INACTIVE_EI_TASKS = [
 const NO_BENEFIT_CPP_TASKS = [
   {
     task: t.applyForCppDisabilityBenefits,
-    taskIcon: '/images/dashboard/apply-white-bg-icon.svg',
+    taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   {
     task: t.applyForCppRetirementPensions,
-    taskIcon: '/images/dashboard/apply-white-bg-icon.svg',
+    taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   {
@@ -481,17 +481,17 @@ const NO_BENEFIT_CPP_TASKS = [
   },
   {
     task: t.applyForCppDeathBenefits,
-    taskIcon: '/images/dashboard/apply-white-bg-icon.svg',
+    taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   {
     task: t.applyForGuranteedIncomeSupplement,
-    taskIcon: '/images/dashboard/apply-white-bg-icon.svg',
+    taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   {
     task: t.applyForCppSurvivorsPensionAndChildrensBenefit,
-    taskIcon: '/images/dashboard/apply-white-bg-icon.svg',
+    taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
 ]
@@ -499,7 +499,7 @@ const NO_BENEFIT_CPP_TASKS = [
 const NO_BENEFIT_EI_TASKS = [
   {
     task: t.viewPaymentInfo,
-    taskIcon: '/images/dashboard/apply-white-bg-icon.svg',
+    taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: t.recordOfEmployment,
   },
   {
@@ -512,7 +512,7 @@ const NO_BENEFIT_EI_TASKS = [
 const NO_BENEFIT_GIS_TASKS = [
   {
     task: t.applyForGuranteedIncomeSupplement,
-    taskIcon: '/images/dashboard/apply-white-bg-icon.svg',
+    taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
 ]
@@ -520,12 +520,12 @@ const NO_BENEFIT_GIS_TASKS = [
 const NO_BENEFIT_OAS_TASKS = [
   {
     task: t.applyForOldAgeSecurity,
-    taskIcon: '/images/dashboard/apply-white-bg-icon.svg',
+    taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   {
     task: t.applyForGuranteedIncomeSupplement,
-    taskIcon: '/images/dashboard/apply-white-bg-icon.svg',
+    taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
 ]
