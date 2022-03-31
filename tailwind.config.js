@@ -19,7 +19,7 @@ module.exports = {
     extend: {
       colors: {
         'gray': {
-          lighter: '#F6F6F6',
+          lighter: '#F3F3F3',
           light: '#DBDBDB',
           solid: '#B9B9B9',
           dark: '#7F8C8D',
@@ -86,7 +86,7 @@ module.exports = {
       }),
       boxShadow: {
         card: '0px 2px 8px rgba(0, 0, 0, 0.25)',
-        tile: '0px 0px 25px 5px rgba(0,0,0,0.1)',
+        tile: '0px 0px 25px 5px rgba(0,0,0,0.25)',
       },
     },
   },
