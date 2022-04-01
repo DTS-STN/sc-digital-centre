@@ -42,6 +42,10 @@ module.exports = {
           solid: '#173451',
           dark: '#21303F',
         },
+        'link-blue': {
+          default: '#2572B4',
+          hover: '#284162',
+        },
         'red': {
           light: '#B76565',
           solid: '#D94141',

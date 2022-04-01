@@ -546,9 +546,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -781,9 +788,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -1013,9 +1027,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -1248,9 +1269,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -1480,9 +1508,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -1715,9 +1750,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -1866,9 +1908,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -2098,9 +2147,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -2333,9 +2389,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -2484,9 +2547,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -3573,9 +3643,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -3670,9 +3747,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -3749,9 +3833,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
     <div
@@ -3846,9 +3937,16 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
       </div>
       <button
-        class="pl-5 py-5 sm:pl-10"
+        caption="View more"
+        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+        type="button"
       >
-        View more +
+        <img
+          alt=""
+          class="inline mr-2"
+          src="/images/dashboard/view-more-less-icon.svg"
+        />
+        View more
       </button>
     </div>
   </div>
