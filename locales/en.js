@@ -295,6 +295,9 @@ export default {
   learnMoreAbout: 'Learn more about ',
   applyFor: 'Apply for',
 
+  //Error pages
+  errorPage400ReturnToDashboard: 'Return to dashboard main page',
+
   //Dashboard task links
   editAddress:
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',

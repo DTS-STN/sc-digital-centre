@@ -287,6 +287,9 @@ export default {
   learnMoreAbout: '(FR)Learn more about ',
   applyFor: '(FR)Apply for',
 
+  //Error pages
+  errorPage400ReturnToDashboard: '(FR)Return to dashboard main page',
+
   //Dashboard task links
   editAddress:
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',
