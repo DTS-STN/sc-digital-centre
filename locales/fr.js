@@ -289,6 +289,8 @@ export default {
 
   //Error pages
   errorPage400ReturnToDashboard: '(FR)Return to dashboard main page',
+  errorPage400message: '(FR)400 Error - Bad request error occurred',
+  errorPage503message: '(FR)503 - Service unavailable error occurred',
 
   //Dashboard task links
   editAddress:

@@ -1,3 +1,5 @@
+import en from '../locales/en'
+const t = en
 export default function Error503() {
-  return <h1>503 - Service unavailable error occurred</h1>
+  return <h1>{t.errorPage503message}</h1>
 }
