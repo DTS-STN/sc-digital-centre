@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648821056168" clover="3.2.0">
-  <project timestamp="1648821056169" name="All files">
-    <metrics statements="278" coveredstatements="207" conditionals="206" coveredconditionals="126" methods="99" coveredmethods="70" elements="583" coveredelements="403" complexity="0" loc="278" ncloc="278" packages="6" files="50" classes="50"/>
+<coverage generated="1648829352027" clover="3.2.0">
+  <project timestamp="1648829352027" name="All files">
+    <metrics statements="279" coveredstatements="208" conditionals="206" coveredconditionals="126" methods="99" coveredmethods="70" elements="584" coveredelements="404" complexity="0" loc="279" ncloc="279" packages="6" files="50" classes="50"/>
     <package name="components.atoms">
       <metrics statements="59" coveredstatements="53" conditionals="42" coveredconditionals="32" methods="21" coveredmethods="19"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -310,10 +310,11 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="36" coveredstatements="21" conditionals="8" coveredconditionals="6" methods="17" coveredmethods="9"/>
+      <metrics statements="37" coveredstatements="22" conditionals="8" coveredconditionals="6" methods="17" coveredmethods="9"/>
       <file name="400.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/400.js">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="3" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
       </file>
       <file name="404.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/404.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
