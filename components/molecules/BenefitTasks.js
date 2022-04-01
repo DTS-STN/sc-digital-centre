@@ -21,7 +21,7 @@ export default function BenefitTasks(props) {
               <a href={value.taskLink}>
                 <img
                   src={value.taskIcon}
-                  className="font-normal pb-3 px-4"
+                  className="font-normal pb-3 px-5"
                   alt=""
                 />
                 <p className="w-36 font-normal px-5 text-sm">{value.task}</p>
