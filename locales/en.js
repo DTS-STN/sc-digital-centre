@@ -295,6 +295,10 @@ export default {
   learnMoreAbout: 'Learn more about ',
   applyFor: 'Apply for',
 
+  //Error pages
+  errorPage400ReturnToDashboard: 'Return to dashboard main page',
+  errorPage400message: '400 Error - Bad request error occurred',
+  errorPage503message: '503 - Service unavailable error occurred',
   //Dashboard task links
   editAddress:
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',
