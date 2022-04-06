@@ -4,6 +4,7 @@ import NoBenefitCardHeader from '../atoms/NoBenefitCardHeader'
 import BenefitTasks from './BenefitTasks'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 
 const NoBenefitCard = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -45,15 +46,14 @@ const NoBenefitCard = (props) => {
         />
       </div>
 
-      <button
+      <ViewMoreLessButton
         onClick={() => {
           handleClick()
           scrollTo()
         }}
-        className="pl-5 py-5 sm:pl-10"
-      >
-        {btnCaption}
-      </button>
+        plus={isOpen}
+        caption={btnCaption}
+      />
     </div>
   )
 }

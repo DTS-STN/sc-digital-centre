@@ -9,6 +9,7 @@ import HorizontalRule from '../atoms/HorizontalRule'
 import BenefitStatus from '../../constants/BenefitStatus'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 
 const BenefitCard = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -117,15 +118,14 @@ const BenefitCard = (props) => {
       ) : (
         <></>
       )}
-      <button
+      <ViewMoreLessButton
         onClick={() => {
           handleClick()
           scrollTo()
         }}
-        className="pl-5 py-5 sm:pl-10"
-      >
-        {btnCaption}
-      </button>
+        plus={isOpen}
+        caption={btnCaption}
+      />
     </div>
   )
 }

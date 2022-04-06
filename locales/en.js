@@ -224,8 +224,8 @@ export default {
   // Benefit Card
   pendingBenefits: 'Pending benefits:',
   activeBenefits: 'Active benefits:',
-  viewMore: 'View more +',
-  viewLess: 'View less +',
+  viewMore: 'View more',
+  viewLess: 'View less',
 
   // Benefit Card Header
   applicationSubmitted: 'Application submitted on:',
