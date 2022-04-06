@@ -1,5 +1,11 @@
-import en from '../locales/en'
-const t = en
+import { ErrorPage } from '@dts-stn/decd-design-system'
 export default function Error503() {
-  return <h1>{t.errorPage503message}</h1>
+  return (
+    <ErrorPage
+      errType="503"
+      lang="en"
+      accountPageLink="/dashboard"
+      isAuth={true}
+    />
+  )
 }
