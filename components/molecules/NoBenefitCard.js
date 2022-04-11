@@ -46,14 +46,16 @@ const NoBenefitCard = (props) => {
         />
       </div>
 
-      <ViewMoreLessButton
-        onClick={() => {
-          handleClick()
-          scrollTo()
-        }}
-        plus={isOpen}
-        caption={btnCaption}
-      />
+      {props.tasks.length > 6 && (
+        <ViewMoreLessButton
+          onClick={() => {
+            handleClick()
+            scrollTo()
+          }}
+          plus={isOpen}
+          caption={btnCaption}
+        />
+      )}
     </div>
   )
 }

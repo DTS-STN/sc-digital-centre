@@ -1907,18 +1907,6 @@ exports[`Dashboard renders Dashboard 1`] = `
           </ul>
         </div>
       </div>
-      <button
-        caption="View more"
-        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
-        type="button"
-      >
-        <img
-          alt=""
-          class="inline mr-2"
-          src="/images/dashboard/view-more-less-icon.svg"
-        />
-        View more
-      </button>
     </div>
     <div
       class="benefit-card"
@@ -2426,7 +2414,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             <div
               class="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"
             >
-              Canada Pension Plan
+              Canada Pension Plan Disability
             </div>
           </div>
           <div
@@ -2546,18 +2534,6 @@ exports[`Dashboard renders Dashboard 1`] = `
           </ul>
         </div>
       </div>
-      <button
-        caption="View more"
-        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
-        type="button"
-      >
-        <img
-          alt=""
-          class="inline mr-2"
-          src="/images/dashboard/view-more-less-icon.svg"
-        />
-        View more
-      </button>
     </div>
     <div
       class="benefit-card px-4 md:px-6 py-7"
@@ -3746,18 +3722,6 @@ exports[`Dashboard renders Dashboard 1`] = `
           </ul>
         </div>
       </div>
-      <button
-        caption="View more"
-        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
-        type="button"
-      >
-        <img
-          alt=""
-          class="inline mr-2"
-          src="/images/dashboard/view-more-less-icon.svg"
-        />
-        View more
-      </button>
     </div>
     <div
       class="benefit-card"
@@ -3832,18 +3796,6 @@ exports[`Dashboard renders Dashboard 1`] = `
           </ul>
         </div>
       </div>
-      <button
-        caption="View more"
-        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
-        type="button"
-      >
-        <img
-          alt=""
-          class="inline mr-2"
-          src="/images/dashboard/view-more-less-icon.svg"
-        />
-        View more
-      </button>
     </div>
     <div
       class="benefit-card"
@@ -3936,18 +3888,6 @@ exports[`Dashboard renders Dashboard 1`] = `
           </ul>
         </div>
       </div>
-      <button
-        caption="View more"
-        class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
-        type="button"
-      >
-        <img
-          alt=""
-          class="inline mr-2"
-          src="/images/dashboard/view-more-less-icon.svg"
-        />
-        View more
-      </button>
     </div>
   </div>
   <footer

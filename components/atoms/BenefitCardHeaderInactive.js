@@ -6,11 +6,7 @@ import BenefitCode from '../../constants/BenefitCode'
 export default function BenefitCardHeaderInactive(props) {
   const t = props.locale === 'en' ? en : fr
   const getBenefitCardTitle = () => {
-    if (props.benefit.benefitType === BenefitCode.cppd) {
-      return t[BenefitCode.cpp.toLowerCase()]
-    } else {
-      return t[props.benefit.benefitType.toLowerCase()]
-    }
+    return t[props.benefit.benefitType.toLowerCase()]
   }
 
   return (

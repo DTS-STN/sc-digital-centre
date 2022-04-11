@@ -44,12 +44,12 @@ describe('BenefitCardHeaderInactive', () => {
         locale={'en'}
       />
     )
-    const titleText = screen.getByText('Canada Pension Plan')
+    const titleText = screen.getByText('Your past CPPD claim overview')
     expect(titleText).toBeInTheDocument()
     const titleTextDisability = screen.queryByText(
       'Canada Pension Plan Disability'
     )
-    expect(titleTextDisability).toBeNull()
+    expect(titleTextDisability).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {

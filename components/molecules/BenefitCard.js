@@ -118,14 +118,19 @@ const BenefitCard = (props) => {
       ) : (
         <></>
       )}
-      <ViewMoreLessButton
-        onClick={() => {
-          handleClick()
-          scrollTo()
-        }}
-        plus={isOpen}
-        caption={btnCaption}
-      />
+      {!(
+        props.benefit.status.toUpperCase() ===
+          BenefitStatus.inactive.toUpperCase() && props.tasks.length < 6
+      ) && (
+        <ViewMoreLessButton
+          onClick={() => {
+            handleClick()
+            scrollTo()
+          }}
+          plus={isOpen}
+          caption={btnCaption}
+        />
+      )}
     </div>
   )
 }
