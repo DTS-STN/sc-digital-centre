@@ -231,7 +231,7 @@ export default {
   applicationDate: '(FR)Application date',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages +',
-  pensionDetails: '(FR)Pension details',
+  accountDetails: '(FR)Account details',
   nextPayment: '(FR)Next payment',
   lastPayment: '(FR)Last payment',
   benefitStartDate: '(FR)Benefit start date',

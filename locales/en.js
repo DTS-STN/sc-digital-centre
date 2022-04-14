@@ -240,7 +240,7 @@ export default {
   applicationDate: 'Application date',
   latestActivity: 'Latest activity',
   viewMyStatusAndMessages: 'View my status and messages +',
-  pensionDetails: 'Pension details',
+  accountDetails: 'Account details',
   nextPayment: 'Next payment',
   lastPayment: 'Last payment',
   benefitStartDate: 'Benefit start date',
