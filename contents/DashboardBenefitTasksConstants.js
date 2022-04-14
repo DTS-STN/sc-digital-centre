@@ -197,6 +197,26 @@ const ACTIVE_CPP_TASKS = [
   TASKS.GiveConsentTask,
 ]
 
+const ACTIVE_CPP_PAYMENT_TASKS = {
+  Header: 't.paymentTasks',
+  Tasks: [
+    TASKS.AllPaymentsTask,
+    TASKS.TaxSlipTask,
+    TASKS.CppContributionTask,
+    TASKS.TaxDeductionsTask,
+    TASKS.RetirementIncomeTask,
+  ],
+}
+
+const ACTIVE_CPP_CHANGE_TASKS = {
+  Header: 't.changeTasks',
+  Tasks: [
+    TASKS.ReconsiderationTask,
+    TASKS.DelayOasPensionTask,
+    TASKS.GiveConsentTask,
+  ],
+}
+
 const INACTIVE_CPP_TASKS = [
   TASKS.ReconsiderationTask,
   TASKS.StatusUpdateTask,
@@ -313,6 +333,8 @@ const NO_BENEFIT_OAS_TASKS = [
 module.exports = {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_TASKS,
+  ACTIVE_CPP_PAYMENT_TASKS,
+  ACTIVE_CPP_CHANGE_TASKS,
   INACTIVE_CPP_TASKS,
   SUBMITTED_CPPD_TASKS,
   ACTIVE_CPPD_TASKS,

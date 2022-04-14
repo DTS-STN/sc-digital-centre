@@ -9,8 +9,8 @@ const ActiveBenefitDetails = (props) => {
   const t = props.locale === 'en' ? en : fr
 
   return (
-    <section>
-      <div className="flex-col ml-4 my-4 sm:m-6 sm:flex sm:flex-row">
+    <section className="bg-gray-lighter">
+      <div className="flex-col p-4 sm:p-6 sm:flex sm:flex-row">
         <div className="flex-col mt-7 sm:mt-0 sm:ml-5">
           <p className="font-bold text-xl">{t.pensionDetails}</p>
           <div className="flex-col sm:mt-3 sm:flex sm:flex-row">
