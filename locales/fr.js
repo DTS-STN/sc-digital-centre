@@ -205,6 +205,11 @@ export default {
   // Dashboard
   //
 
+  // Greeting
+  greeting: '(FR)Good morning, ',
+  welcome: '(FR)Welcome to your My Service Canada Account.',
+  myBenefitsAndServices: '(FR)My benefits and services',
+
   // Benefit Names
   cpp: '(FR)Canada Pension Plan',
   oas: '(FR)Old Age Security',

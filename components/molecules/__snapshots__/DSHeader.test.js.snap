@@ -314,6 +314,55 @@ exports[`Design System footer tests renders DSHeader 1`] = `
           </div>
         </nav>
       </div>
+      <div
+        class="ds-container"
+      >
+        <nav
+          aria-label="breadcrumbs"
+          class="ds-pt-4 ds-pb-4"
+        >
+          <ul
+            class="ds-block ds-text-custom-blue-dark ds-leading-23px ds-font-body"
+          >
+            <li
+              class="ds-inline-block ds-w-100"
+            >
+              <a
+                class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
+                href="/"
+              >
+                Canada.ca
+              </a>
+              <span
+                class="ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2"
+              />
+            </li>
+            <li
+              class="ds-inline-block ds-w-100"
+            >
+              <a
+                class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
+                href="/"
+              >
+                Service Canada
+              </a>
+              <span
+                class="ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2"
+              />
+            </li>
+            <li
+              class="ds-inline-block ds-w-100"
+            >
+              <a
+                class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
+                href="/"
+              >
+                My Benefits and Services
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   </div>
 </div>

@@ -18,6 +18,23 @@ export default function DSHeader() {
   return (
     <Header
       menuItems={menuItems}
+      breadCrumbItems={{
+        id: 'breadcrumbID',
+        items: [
+          {
+            link: '/',
+            text: 'Canada.ca',
+          },
+          {
+            link: '/',
+            text: 'Service Canada',
+          },
+          {
+            link: '/',
+            text: 'My Benefits and Services',
+          },
+        ],
+      }}
       searchProps={{ onChange: () => {}, onSubmit: () => {} }}
     />
   )

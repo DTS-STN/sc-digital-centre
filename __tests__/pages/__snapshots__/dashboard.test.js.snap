@@ -314,6 +314,55 @@ exports[`Dashboard renders Dashboard 1`] = `
           </div>
         </nav>
       </div>
+      <div
+        class="ds-container"
+      >
+        <nav
+          aria-label="breadcrumbs"
+          class="ds-pt-4 ds-pb-4"
+        >
+          <ul
+            class="ds-block ds-text-custom-blue-dark ds-leading-23px ds-font-body"
+          >
+            <li
+              class="ds-inline-block ds-w-100"
+            >
+              <a
+                class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
+                href="/"
+              >
+                Canada.ca
+              </a>
+              <span
+                class="ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2"
+              />
+            </li>
+            <li
+              class="ds-inline-block ds-w-100"
+            >
+              <a
+                class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
+                href="/"
+              >
+                Service Canada
+              </a>
+              <span
+                class="ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2"
+              />
+            </li>
+            <li
+              class="ds-inline-block ds-w-100"
+            >
+              <a
+                class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
+                href="/"
+              >
+                My Benefits and Services
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   </div>
   <div
@@ -322,6 +371,27 @@ exports[`Dashboard renders Dashboard 1`] = `
     <div
       class="col-span-12"
     >
+      <div>
+        <div
+          class="grid grid-cols-1 divide-y divide-red-600 font-display"
+        >
+          <div
+            class="py-4 text-4xl font-bold"
+          >
+            Good morning,  Mary
+          </div>
+          <div
+            class="pt-4 text-xl"
+          >
+            Welcome to your My Service Canada Account.
+          </div>
+        </div>
+        <div
+          class="text-3xl font-bold mt-10"
+        >
+          My benefits and services
+        </div>
+      </div>
       <div
         class="benefit-card"
       >

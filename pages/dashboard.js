@@ -2,6 +2,7 @@ import BenefitCard from '../components/molecules/BenefitCard'
 import NoBenefitCard from '../components/molecules/NoBenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import { LayoutContainer } from '@dts-stn/decd-design-system'
+import Greeting from '../components/molecules/Greeting'
 import {
   SUBMITTED_CPP,
   ACTIVE_CPP,
@@ -59,6 +60,7 @@ export default function Dashboard() {
       <DSHeader />
       <LayoutContainer>
         <div className="col-span-12">
+          <Greeting locale="en" name="Mary" />
           <BenefitCard
             locale="en"
             benefit={SUBMITTED_CPP}
