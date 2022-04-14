@@ -326,7 +326,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         class="benefit-card"
       >
         <div
-          class="layout-container"
+          class="px-4 md:px-6"
         >
           <div
             class="flex mr-12 justify-end"
@@ -807,7 +807,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         class="benefit-card"
       >
         <div
-          class="layout-container"
+          class="px-4 md:px-6"
         >
           <div
             class="flex mr-12 justify-end"
@@ -1288,7 +1288,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         class="benefit-card"
       >
         <div
-          class="layout-container"
+          class="px-4 md:px-6"
         >
           <div
             class="flex mr-12 justify-end"
@@ -1915,7 +1915,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         class="benefit-card"
       >
         <div
-          class="layout-container"
+          class="px-4 md:px-6"
         >
           <div
             class="flex mr-12 justify-end"
