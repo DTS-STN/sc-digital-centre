@@ -18,7 +18,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@dts-stn/decd-design-system": "^1.24.0",
+    "@dts-stn/decd-design-system": "^1.26.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "focus-trap-react": "^8.9.1",
     "jest-axe": "^5.0.1",
