@@ -14,7 +14,7 @@ export default function BenefitCardHeaderPending(props) {
   }
 
   return (
-    <div className="layout-container">
+    <div className="px-4 md:px-6">
       <div className="flex mr-12 justify-end">
         <h2
           className={
