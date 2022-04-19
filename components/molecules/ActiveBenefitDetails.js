@@ -11,7 +11,7 @@ const ActiveBenefitDetails = (props) => {
     <div>
       <section className="bg-gray-lighter px-8 py-6">
         <h3 className="font-bold text-xl">{t.accountDetails}</h3>
-        <div className="grid grid-cols-3 gap-36 pt-4">
+        <div className="grid md:grid-cols-3 md:gap-36 gap-8 pt-4">
           <div id="payee_address">
             <h4 className="font-medium text-large inline">{t.payeeAddress}</h4>
             <a
