@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
-import propTypes from 'prop-types'
 
 const BenefitDetailPart = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -31,10 +30,10 @@ const BenefitDetailPart = (props) => {
 }
 
 BenefitDetailPart.PropTypes = {
-  id: propTypes.string.isRequired,
-  editLink: propTypes.string.isRequired,
-  content: propTypes.string,
-  children: propTypes.object,
+  id: PropTypes.string.isRequired,
+  editLink: PropTypes.string.isRequired,
+  content: PropTypes.string,
+  children: PropTypes.object,
 }
 
 export default BenefitDetailPart
