@@ -207,6 +207,9 @@ export default {
   greeting: 'Good morning, ',
   welcome: 'Welcome to your My Service Canada Account.',
   myBenefitsAndServices: 'My benefits and services',
+  canada_ca: 'Canada.ca',
+  serviceCanada: 'Service Canada',
+  myBenefitsAndServices: 'My Benefits and Services',
 
   // Benefit Names
   cpp: 'Canada Pension Plan',
@@ -299,6 +302,12 @@ export default {
   youMightBeEligible: 'You might be eligible.',
   learnMoreAbout: 'Learn more about ',
   applyFor: 'Apply for',
+
+  // Greeting URLs
+  url_canada_ca: 'https://www.canada.ca/home.html',
+  url_serviceCanada:
+    'https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html',
+  url_myBenefitsAndServices: '/dashboard',
 
   //Error pages
   errorPage400ReturnToDashboard: 'Return to dashboard main page',

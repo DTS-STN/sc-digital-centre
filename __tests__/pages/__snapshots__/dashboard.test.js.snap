@@ -329,7 +329,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             >
               <a
                 class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
-                href="/"
+                href="https://www.canada.ca/home.html"
               >
                 Canada.ca
               </a>
@@ -342,7 +342,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             >
               <a
                 class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
-                href="/"
+                href="https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html"
               >
                 Service Canada
               </a>
@@ -355,7 +355,7 @@ exports[`Dashboard renders Dashboard 1`] = `
             >
               <a
                 class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
-                href="/"
+                href="/dashboard"
               >
                 My Benefits and Services
               </a>
@@ -389,7 +389,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         <div
           class="text-3xl font-bold mt-10"
         >
-          My benefits and services
+          My Benefits and Services
         </div>
       </div>
       <div

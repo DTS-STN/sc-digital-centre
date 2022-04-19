@@ -57,7 +57,7 @@ import DSFooter from '../components/molecules/DSFooter'
 export default function Dashboard() {
   return (
     <>
-      <DSHeader />
+      <DSHeader locale="en" />
       <LayoutContainer>
         <div className="col-span-12">
           <Greeting locale="en" name="Mary" />
