@@ -134,6 +134,9 @@ export default {
   //
   //
 
+  // Words
+  edit: 'edit',
+
   //
   // Contact us Section
   //
@@ -203,6 +206,14 @@ export default {
   // Dashboard
   //
 
+  // Greeting
+  greeting: 'Good morning, ',
+  welcome: 'Welcome to your My Service Canada Account.',
+  myBenefitsAndServices: 'My benefits and services',
+  canada_ca: 'Canada.ca',
+  serviceCanada: 'Service Canada',
+  myBenefitsAndServices: 'My Benefits and Services',
+
   // Benefit Names
   cpp: 'Canada Pension Plan',
   oas: 'Old Age Security',
@@ -210,29 +221,37 @@ export default {
   ei: 'Employment Insurance',
   cppd: 'Canada Pension Plan Disability',
 
+  // SubBenefit Names
+  retirement_pension: `Retirement Pension`,
+  disability_pension: `Disability Pension`,
+  child_benefit_aged_18_25: `Child's Benefit aged 18-25`,
+  survivors_pension_and_childrens_benefits: `Survivor's Pension and Child(ren)'s Benefits`,
+  allowance_or_allowance_for_survivor: `Allowance or Allowance for Survivor`,
+  pension_sharing: `Pension Sharing`,
+  credit_split: `Credit Split`,
+  child_rearing_provision: 'Child-Rearing Provision',
+  death_benefit: `Death Benefit`,
+
   // Benefit Card
   pendingBenefits: 'Pending benefits:',
   activeBenefits: 'Active benefits:',
-  viewMore: 'View more +',
-  viewLess: 'View less +',
+  viewMore: 'View more',
+  viewLess: 'View less',
 
   // Benefit Card Header
   applicationSubmitted: 'Application submitted on:',
   estimatedDateOfDecision: 'Estimated date of decision',
   paymentAmount: 'Payment amount',
-  daysUntilNextPayment: 'Days until next payment',
-  latestUpdate: 'Latest update',
-  documentReviewed: 'Document reviewed',
+  latestUpdate: 'Latest update:',
+  daysUntilNextPayment: 'Next payment:',
+  nextReportDue: 'Next report due:',
   viewPaymentHistory: 'View my payments +',
 
   // Benefit Card details
-  applicationDetails: 'Application details',
   applicationDate: 'Application date',
-  applicationDescription: 'Application description',
-  additionalInformation: 'Additional information',
   latestActivity: 'Latest activity',
   viewMyStatusAndMessages: 'View my status and messages +',
-  pensionDetails: 'Pension details',
+  accountDetails: 'Account details',
   nextPayment: 'Next payment',
   lastPayment: 'Last payment',
   benefitStartDate: 'Benefit start date',
@@ -244,6 +263,10 @@ export default {
   addYourPhoneNumber: 'Add your phone number +',
   addYourPaymentDetails: 'Add your payment details +',
 
+  // dashboard benefit task headers
+  paymentTasks: 'Payment and tax details',
+  changeTasks: 'Make a Change',
+
   // dashboard benefits tasks
   allPaymentsTask: 'View all payments',
   statusUpdateTask: 'View my status and messages',
@@ -253,6 +276,8 @@ export default {
   delayOasPensionTask: 'Delay receiving my OAS pension',
   giveConsentTask: 'Give consent for someone to communicate on my behalf',
   taxSlipTask: 'View tax slips',
+  taxSlipT4eTask: 'View tax slips, T4E',
+  taxSlipT4aAndNr4Task: 'View tax slips, T4A and NR4',
   reconsiderationTask: 'Request for reconsideration',
   taxSlipMailingTask: 'Tax slip mailing options',
   completeInsuranceReportTask: 'Complete your Employment Insurance reports',
@@ -265,22 +290,85 @@ export default {
   recordOfEmployment: 'View my Records of Employment',
   reportMistake: 'Report a mistake',
   uploadMyDocuments: 'Upload my documents',
+  accessCode: 'Access code',
 
-  allPaymentsTaskLink: '/dashboard',
-  statusUpdateTaskLink: '/dashboard',
-  retirementIncomeTaskLink: '/dashboard',
-  cppContributionTaskLink: '/dashboard',
-  taxDeductionsTaskLink: '/dashboard',
-  delayOasPensionTaskLink: '/dashboard',
-  giveConsentTaskLink: '/dashboard',
-  taxSlipTaskLink: '/dashboard',
-  reconsiderationLink: '/dashboard',
-  taxSlipMailingLink: '/dashboard',
-  uploadMyDocumentsLink: '/dashboard',
+  commonActions: 'Common actions',
+  applyForCppDisabilityBenefits:
+    'Apply for Canada Pension Plan Disability Benefits',
+  applyForCppRetirementPensions:
+    'Apply for Canada Pension Plan Retirement Pensions',
+  estimateMyMonthlyCppBenefits: 'Estimate my monthly CPP Benefits',
+  viewMyCppContributions: 'View my CPP Contributions',
+  applyForCppDeathBenefits: 'Apply for Canada Pension Plan Death Benefits',
+  applyForGuranteedIncomeSupplement: 'Apply For Guranteed Income Supplement',
+  applyForOldAgeSecurity: 'Apply For Old Age Security',
+  applyForCppSurvivorsPensionAndChildrensBenefit: `Apply For Canada Pension Plan Survivor's Pension and Child(ren)'s Benefit`,
 
   // Dashboard benefit application card
   estimateRetirementIncome: 'Estimate retirement income',
   youMightBeEligible: 'You might be eligible.',
   learnMoreAbout: 'Learn more about ',
   applyFor: 'Apply for',
+
+  // Greeting URLs
+  url_canada_ca: 'https://www.canada.ca/home.html',
+  url_serviceCanada:
+    'https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html',
+  url_myBenefitsAndServices: '/dashboard',
+
+  //Error pages
+  errorPage400ReturnToDashboard: 'Return to dashboard main page',
+  errorPage400message: '400 Error - Bad request error occurred',
+  errorPage503message: '503 - Service unavailable error occurred',
+  //Dashboard task links
+  editAddress:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',
+  editPhoneNumber:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',
+  editPayment:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyDDPInfo.aspx?prov=6',
+  viewPaymentInfoLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
+  viewDocumentsLink:
+    'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/321',
+  viewPastClaimsLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6',
+  submitFormsLink:
+    'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/256',
+  taxSlipMailingLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/mailing-option',
+  allPaymentsTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action',
+  statusUpdateTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action',
+  retirementIncomeTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits',
+  cppContributionTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
+  taxDeductionsTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
+  delayOasPensionTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action',
+  giveConsentTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-consent-to-communicate.action',
+  taxSlipTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
+  reconsiderationLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/',
+  uploadMyDocumentsLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/cppd-rpci/doc-upload',
+
+  //EI
+  eiStatusAndMessages:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-correspondence',
+  completeInsuranceReportLink:
+    'https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service',
+  eiUploadDocuments:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-doc-upload-instruction',
+  eiRegisterForAlerts:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/alert-me/confirm?action=confirm&return=ei-landing',
+  recordOfEmploymentLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyRoeList.aspx?prov=6',
+  eiReportMistake:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyMessages.aspx?mt=3&prov=6',
 }

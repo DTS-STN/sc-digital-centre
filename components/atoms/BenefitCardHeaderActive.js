@@ -1,7 +1,6 @@
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
-import CircleProgressBar from './CircleProgressBar'
 import BenefitCode from '../../constants/BenefitCode'
 
 export default function BenefitCardHeaderActive(props) {
@@ -42,7 +41,9 @@ export default function BenefitCardHeaderActive(props) {
           <div id={`${props.benefit.benefitType}-active-nextPaymentAmount`}>
             <p className="text-base">{t.paymentAmount}</p>
             <p className="font-bold text-4xl mt-1">
-              {props.benefit.nextPaymentAmount}
+              {props.locale === 'en'
+                ? `$ ${props.benefit.nextPaymentAmount}`
+                : `${props.benefit.nextPaymentAmount} $`}
             </p>
             <a
               href="./dashboard"
@@ -56,25 +57,22 @@ export default function BenefitCardHeaderActive(props) {
             id={`${props.benefit.benefitType}-active-nextPaymentDueDate`}
             className="relative mb-20 mt-7 sm:mt-0"
           >
-            <p>{t.daysUntilNextPayment}</p>
-            <CircleProgressBar progress={11} steps={22} />
+            <p>
+              {props.benefit.benefitType != 'EI'
+                ? t.daysUntilNextPayment
+                : t.nextReportDue}
+            </p>
+            <p className="text-green-active">{props.benefit.nextPaymentDate}</p>
           </div>
 
           <div
             id={`${props.benefit.benefitType}-active-latestUpdates`}
-            className="pt-5 sm:pt-0"
+            className="py-4 sm:pl-10"
           >
             <p className="font-display">{t.latestUpdate}</p>
-            <p className="font-bold text-lg mt-1">{t.documentReviewed}</p>
-            <p className="font-bold text-lg">
-              {props.benefit.lastUpdates[0]?.description}
+            <p className="font-display font-bold text-lg">
+              {props.benefit.benefitStatusProgress}
             </p>
-            <a
-              href="./dashboard"
-              className="text-sm mt-1 text-bright-blue-solid underline"
-            >
-              {t.viewMyStatusAndMessages}
-            </a>
           </div>
         </div>
       </div>

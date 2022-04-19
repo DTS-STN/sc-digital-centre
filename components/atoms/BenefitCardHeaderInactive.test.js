@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import ActiveBenefitDetails from './ActiveBenefitDetails'
+import BenefitCardHeaderInactive from './BenefitCardHeaderInactive'
 
-const activeCanadaPensionPlan = {
-  benefitType: 'CPP',
-  benefitName: 'Canada Pension Plan',
-  status: 'Active',
+const inactiveCanadaPensionPlanCPPD = {
+  benefitType: 'CPPD',
+  benefitName: 'Canada Pension Plan Disability',
+  status: 'inactive',
   statusDescription:
     'Your application is pending, we will notify you with decision',
   applicationDate: 'July 1, 2021',
@@ -29,45 +29,35 @@ const activeCanadaPensionPlan = {
   paymentType: 'Direct Deposit',
   additionalInformation:
     'We will notify you as soon as we have process your application.',
-  applicationStatus: 'Active',
+  applicationStatus: 'inactive',
   pendingBenefits: 'Retirement pension',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
+  benefitStatusProgress: 'Complete',
 }
 
 expect.extend(toHaveNoViolations)
 
-describe('ActiveBenefitDetails', () => {
-  it('Renders ActiveBenefitDetails', () => {
+describe('BenefitCardHeaderInactive', () => {
+  it('Renders BenefitCardHeaderInactive CPPD', () => {
     render(
-      <ActiveBenefitDetails benefit={activeCanadaPensionPlan} locale={'en'} />
+      <BenefitCardHeaderInactive
+        benefit={inactiveCanadaPensionPlanCPPD}
+        locale={'en'}
+      />
     )
-    const titleText = screen.getByText('Account details')
-    const addressTitle = screen.getByText('Address')
-    const paymentDetailsTitle = screen.getByText('Payment details')
-    const payeePhoneNumber = screen.getByText('1-613-555-5455')
-
+    const titleText = screen.getByText('Your past CPPD claim overview')
     expect(titleText).toBeInTheDocument()
-    expect(addressTitle).toBeInTheDocument()
-    expect(paymentDetailsTitle).toBeInTheDocument()
-    expect(payeePhoneNumber).toBeInTheDocument()
+    const titleTextDisability = screen.queryByText(
+      'Canada Pension Plan Disability'
+    )
+    expect(titleTextDisability).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <ActiveBenefitDetails benefit={activeCanadaPensionPlan} locale={'en'} />
+      <BenefitCardHeaderInactive
+        benefit={inactiveCanadaPensionPlanCPPD}
+        locale={'en'}
+      />
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()

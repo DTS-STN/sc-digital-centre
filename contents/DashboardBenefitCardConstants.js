@@ -20,20 +20,7 @@ const SUBMITTED_OAS = {
     'We will notify you as soon as your application withdrawel request is approved. Additionally, we may ask you if we need more information about your application withdrawn request.',
   activeBenefits: '',
   pendingBenefits: 'Old age security pension',
-  lastUpdates: [
-    {
-      label: 'Documents reviewedrequested',
-      description: 'July 5, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'July 2, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'July 1, 2021',
-    },
-  ],
+  benefitStatusProgress: 'In Progress',
 }
 
 const ACTIVE_OAS = {
@@ -64,21 +51,8 @@ const ACTIVE_OAS = {
   additionalInformation:
     'We will notify you as soon as we have process your application.',
   pendingBenefits: 'Old age security pension',
+  benefitStatusProgress: 'Complete',
   // TODO: "pendingBenefits" is used for both Pending and Active benefits. We need to change the field name when mapping with API.
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'July 2, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'July 1, 2021',
-    },
-  ],
 }
 
 const SUBMITTED_CPP = {
@@ -107,20 +81,7 @@ const SUBMITTED_CPP = {
 
   applicationStatus: 'Application Submitted',
   pendingBenefits: 'Retirement pension',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
+  benefitStatusProgress: 'In Progress',
 }
 
 const ACTIVE_CPP = {
@@ -151,20 +112,7 @@ const ACTIVE_CPP = {
     'We will notify you as soon as we have process your application.',
   applicationStatus: 'Active',
   pendingBenefits: 'Retirement pension',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
+  benefitStatusProgress: 'Complete',
 }
 
 const SUBMITTED_CPPD = {
@@ -193,20 +141,7 @@ const SUBMITTED_CPPD = {
 
   applicationStatus: 'Application Submitted',
   pendingBenefits: 'Disability',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
+  benefitStatusProgress: 'In Progress',
 }
 
 const ACTIVE_CPPD = {
@@ -236,6 +171,37 @@ const ACTIVE_CPPD = {
   additionalInformation:
     'We will notify you as soon as we have process your application.',
   applicationStatus: 'Active',
+  pendingBenefits: 'Disability',
+  benefitStatusProgress: 'Complete',
+}
+
+const INACTIVE_CPPD = {
+  benefitType: 'CPPD',
+  benefitName: 'Canada Pension Plan Disability',
+  status: 'Inactive',
+  statusDescription:
+    'Your application is pending, we will notify you with decision',
+  applicationDate: 'July 1, 2021',
+  estimatedDateOfDecision: 'July 31, 2021',
+  applicationType: 'Canada Pension Plan (CPP)',
+  applicationDescription: 'Online application received',
+  nextPaymentAmount: 612.94,
+  nextPaymentDate: 'September 30, 2021',
+  lastPaymentDate: 'August 30, 2021',
+  pensionStartDate: 'August 1, 2021',
+  payeeFullName: 'John Smith Doe',
+  payeeAddress: '',
+  payeePhoneNumber: '1-613-555-5455',
+  accountNumber: 'XXXX-123',
+  institutionNumber: '002',
+  institutionName: 'Scotiabank',
+  payerName: 'Government of Canada',
+  paymentDepositDate: 'August 30, 2021',
+  paymentStatus: 'Issued',
+  paymentType: 'Direct Deposit',
+  additionalInformation:
+    'We will notify you as soon as we have process your application.',
+  applicationStatus: 'Inactive',
   pendingBenefits: 'Disability',
   lastUpdates: [
     {
@@ -281,20 +247,7 @@ const SUBMITTED_EI = {
   additionalInformation:
     'We will notify you as soon as we have process your application.',
   pendingBenefits: 'Regular benefits',
-  lastUpdates: [
-    {
-      label: 'Documents reviewed',
-      description: 'September 8, 2021',
-    },
-    {
-      label: 'Documents uploaded',
-      description: 'September 6, 2021',
-    },
-    {
-      label: 'Documents requested',
-      description: 'September 5, 2021',
-    },
-  ],
+  benefitStatusProgress: 'Questionnaire received -training',
 }
 
 const ACTIVE_EI = {
@@ -306,6 +259,37 @@ const ACTIVE_EI = {
   applicationDate: 'September 1, 2021',
   estimatedDateOfDecision: 'September 30, 2021',
   applicationStatus: 'Active',
+  applicationDescription: 'Paper application received',
+  nextPaymentAmount: 691.45,
+  nextPaymentDate: 'September 30, 2021',
+  lastPaymentDate: 'August 30, 2021',
+  pensionStartDate: '',
+  benefitStartDate: 'August 1, 2021',
+  payeeFullName: '',
+  payeeAddress: '28 Clover St. Ottawa ON M4H1S3',
+  payeePhoneNumber: '1-819-654-5671',
+  accountNumber: '8510231',
+  institutionNumber: '',
+  institutionName: 'Scotiabank',
+  payerName: '',
+  paymentDepositDate: '',
+  paymentStatus: '',
+  paymentType: 'Direct Deposit',
+  additionalInformation:
+    'We will notify you as soon as we have process your application.',
+  pendingBenefits: 'Regular benefits',
+  benefitStatusProgress: 'Training information added',
+}
+
+const INACTIVE_EI = {
+  benefitType: 'EI',
+  benefitName: 'Employment Insurance',
+  status: 'Inactive',
+  statusDescription:
+    'Your application is pending, we will notify you with a decision',
+  applicationDate: 'September 1, 2021',
+  estimatedDateOfDecision: 'September 30, 2021',
+  applicationStatus: 'Inactive',
   applicationDescription: 'Paper application received',
   nextPaymentAmount: 691.45,
   nextPaymentDate: 'September 30, 2021',
@@ -346,8 +330,10 @@ module.exports = {
   SUBMITTED_CPP,
   ACTIVE_CPPD,
   SUBMITTED_CPPD,
+  INACTIVE_CPPD,
   SUBMITTED_OAS,
   ACTIVE_OAS,
   SUBMITTED_EI,
   ACTIVE_EI,
+  INACTIVE_EI,
 }

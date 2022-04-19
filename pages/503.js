@@ -1,8 +1,8 @@
 import { ErrorPage } from '@dts-stn/decd-design-system'
-export default function Error500() {
+export default function Error503() {
   return (
     <ErrorPage
-      errType="500"
+      errType="503"
       lang="en"
       accountPageLink="/dashboard"
       isAuth={true}

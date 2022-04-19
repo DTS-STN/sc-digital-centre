@@ -1,16 +1,24 @@
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
+import BenefitCode from '../../constants/BenefitCode'
 
 export default function BenefitCardHeaderPending(props) {
   const t = props.locale === 'en' ? en : fr
+  const getBenefitCardTitle = () => {
+    if (props.benefit.benefitType === BenefitCode.cppd) {
+      return t[BenefitCode.cpp.toLowerCase()]
+    } else {
+      return t[props.benefit.benefitType.toLowerCase()]
+    }
+  }
 
   return (
-    <div className="layout-container">
+    <div className="px-4 md:px-6">
       <div className="flex mr-12 justify-end">
         <h2
           className={
-            'font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending'
+            'font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending'
           }
         >
           {props.benefit.applicationStatus}
@@ -22,7 +30,7 @@ export default function BenefitCardHeaderPending(props) {
           className="col-span-1 py-4 md:px-0 lg:px-3"
         >
           <div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
-            {props.benefit.benefitName}
+            {getBenefitCardTitle()}
           </div>
         </div>
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
@@ -53,9 +61,10 @@ export default function BenefitCardHeaderPending(props) {
             id={`${props.benefit.benefitType}-pending-progressbar`}
             className="py-4 sm:pl-10"
           >
-            <p className="font-display font-bold text-lg">{'Progressbar'}</p>
-            <p className="font-display text-base">4 out of 6 review</p>
-            <p className="font-display text-base">steps complete</p>
+            <p className="font-display">{t.latestUpdate}</p>
+            <p className="font-display font-bold text-lg">
+              {props.benefit.benefitStatusProgress}
+            </p>
           </div>
         </div>
       </div>

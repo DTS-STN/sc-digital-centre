@@ -1,13 +1,15 @@
 import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import BenefitCardHeaderActive from '../atoms/BenefitCardHeaderActive'
+import BenefitCardHeaderInactive from '../atoms/BenefitCardHeaderInactive'
 import BenefitCardHeaderPending from '../atoms/BenefitCardHeaderPending'
 import BenefitTasks from './BenefitTasks'
-import PendingBenefitDetails from './PendingBenefitDetails'
 import ActiveBenefitDetails from './ActiveBenefitDetails'
 import HorizontalRule from '../atoms/HorizontalRule'
+import BenefitStatus from '../../constants/BenefitStatus'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 
 const BenefitCard = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -33,18 +35,55 @@ const BenefitCard = (props) => {
         })
   }
 
-  const renderBenefitDetails = () => {
-    switch (props.benefit.status) {
-      case 'Pending':
+  const renderBenefitHeader = () => {
+    switch (props.benefit.status.toUpperCase()) {
+      case BenefitStatus.active.toUpperCase():
         return (
-          <PendingBenefitDetails
+          <BenefitCardHeaderActive
             benefit={props.benefit}
             locale={props.locale}
           />
         )
-      case 'Active':
+      case BenefitStatus.pending.toUpperCase():
         return (
-          <ActiveBenefitDetails benefit={props.benefit} locale={props.locale} />
+          <BenefitCardHeaderPending
+            benefit={props.benefit}
+            locale={props.locale}
+          />
+        )
+      case BenefitStatus.inactive.toUpperCase():
+        return (
+          <BenefitCardHeaderInactive
+            benefit={props.benefit}
+            locale={props.locale}
+          />
+        )
+      default:
+        return null
+    }
+  }
+
+  const renderBenefitStatus = () => {
+    switch (props.benefit.status.toUpperCase()) {
+      case BenefitStatus.active.toUpperCase():
+        return (
+          <>
+            <span className="font-bold">{t.activeBenefits}</span>
+            <span className="ml-2">{props.benefit.pendingBenefits}</span>
+          </>
+        )
+      case BenefitStatus.pending.toUpperCase():
+        return (
+          <>
+            <span className="font-bold">{t.pendingBenefits}</span>
+            <span className="ml-2">{props.benefit.pendingBenefits}</span>
+          </>
+        )
+      case BenefitStatus.inactive.toUpperCase():
+        return (
+          <span className="font-bold">
+            {`You have no active ${props.benefit.benefitType} benefit`}
+          </span>
         )
       default:
         return null
@@ -54,48 +93,60 @@ const BenefitCard = (props) => {
   return (
     <div className="benefit-card" ref={topOfCardRef}>
       {/* Benefit Card Header */}
-      {props.benefit.status == 'Active' ? (
-        <BenefitCardHeaderActive
-          benefit={props.benefit}
-          locale={props.locale}
-        />
-      ) : (
-        <BenefitCardHeaderPending
-          benefit={props.benefit}
-          locale={props.locale}
-        />
-      )}
+      {renderBenefitHeader()}
+
       {/* Pending benefits */}
       <HorizontalRule width="w-auto sm:w-full" />
       <div className="font-display text-lg ml-4 py-5 sm:ml-8">
-        <span className="font-bold">
-          {props.benefit.status == 'Active'
-            ? t.activeBenefits
-            : t.pendingBenefits}
-        </span>
-        <span className="ml-2">{props.benefit.pendingBenefits}</span>
+        {renderBenefitStatus()}
       </div>
       <HorizontalRule width="w-auto sm:w-full" />
 
       {/* Top tasks */}
       <div ref={topOfTaskRef}>
-        <BenefitTasks
-          benefitType={props.benefit.benefitType}
-          isExpanded={isOpen}
-          tasks={props.tasks}
-        />
+        {!props.taskGroups ? (
+          <BenefitTasks
+            benefitType={props.benefit.benefitType}
+            isExpanded={isOpen}
+            tasks={props.tasks}
+          />
+        ) : !isOpen ? null : (
+          props.tasks.map((value, index) => {
+            return (
+              <div key={index}>
+                <BenefitTasks
+                  benefitType={props.benefit.benefitType}
+                  isExpanded={true}
+                  header={value.Header}
+                  tasks={value.Tasks}
+                />
+                <HorizontalRule width="w-auto sm:w-full" />
+              </div>
+            )
+          })
+        )}
       </div>
       {/* Benefit Card Details */}
-      {isOpen && renderBenefitDetails()}
-      <button
-        onClick={() => {
-          handleClick()
-          scrollTo()
-        }}
-        className="pl-5 py-5 sm:pl-10"
-      >
-        {btnCaption}
-      </button>
+      {isOpen &&
+      props.benefit.status.toUpperCase() ===
+        BenefitStatus.active.toUpperCase() ? (
+        <ActiveBenefitDetails benefit={props.benefit} locale={props.locale} />
+      ) : (
+        <></>
+      )}
+      {!(
+        props.benefit.status.toUpperCase() ===
+          BenefitStatus.inactive.toUpperCase() && props.tasks.length < 6
+      ) && (
+        <ViewMoreLessButton
+          onClick={() => {
+            handleClick()
+            scrollTo()
+          }}
+          plus={isOpen}
+          caption={btnCaption}
+        />
+      )}
     </div>
   )
 }
@@ -112,6 +163,6 @@ BenefitCard.propTypes = {
       'Employment Insurance',
       'Canada Pension Plan Disability',
     ]),
-    status: PropTypes.oneOf(['Active', 'Pending', 'Past']),
+    status: PropTypes.oneOf(['Active', 'Pending', 'Inactive']),
   }),
 }
