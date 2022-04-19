@@ -62,7 +62,9 @@ export default function BenefitCardHeaderActive(props) {
                 ? t.daysUntilNextPayment
                 : t.nextReportDue}
             </p>
-            <p className="text-green-active">{props.benefit.nextPaymentDate}</p>
+            <p className="text-green-active font-bold">
+              {props.benefit.nextPaymentDate}
+            </p>
           </div>
 
           <div
