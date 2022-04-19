@@ -36,11 +36,14 @@ export default function BenefitCardHeaderActive(props) {
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
         <div
           id={`${props.benefit.benefitType}-active-paymentStartDate`}
-          className="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+          className="grid col-span-3 gap-y-2 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display bg-amber-300"
         >
-          <div id={`${props.benefit.benefitType}-active-nextPaymentAmount`}>
-            <p className="text-base">{t.paymentAmount}</p>
-            <p className="font-bold text-4xl mt-1">
+          <div
+            className="bg-blue-200"
+            id={`${props.benefit.benefitType}-active-nextPaymentAmount`}
+          >
+            <p className="text-base pb-2 ">{t.paymentAmount}</p>
+            <p className="font-bold text-4xl sm:text-3xl md:text-4xl whitespace-nowrap">
               {props.locale === 'en'
                 ? `$ ${props.benefit.nextPaymentAmount}`
                 : `${props.benefit.nextPaymentAmount} $`}
@@ -55,9 +58,9 @@ export default function BenefitCardHeaderActive(props) {
 
           <div
             id={`${props.benefit.benefitType}-active-nextPaymentDueDate`}
-            className="relative mb-20 mt-7 sm:mt-0"
+            className="  bg-lime-300"
           >
-            <p>
+            <p className="pb-2">
               {props.benefit.benefitType != 'EI'
                 ? t.daysUntilNextPayment
                 : t.nextReportDue}
@@ -69,9 +72,9 @@ export default function BenefitCardHeaderActive(props) {
 
           <div
             id={`${props.benefit.benefitType}-active-latestUpdates`}
-            className="py-4 sm:pl-10"
+            className="pb-2  bg-red-200"
           >
-            <p className="font-display">{t.latestUpdate}</p>
+            <p className="font-display pb-2">{t.latestUpdate}</p>
             <p className="font-display font-bold text-lg">
               {props.benefit.benefitStatusProgress}
             </p>

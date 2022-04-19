@@ -36,21 +36,21 @@ export default function BenefitCardHeaderPending(props) {
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
         <div
           id={`${props.benefit.benefitType}-pending-paymentStartDate`}
-          className="font-display col-span-3 sm:grid grid-cols-3"
+          className="grid col-span-3 gap-y-2 sm:grid-cols-3 font-display sm:pl-8 lg:pl-10 bg-amber-300"
         >
           <div
             id={`${props.benefit.benefitType}-pending-applicationDate`}
-            className="py-4 sm:pl-10"
+            className="bg-blue-200"
           >
-            <p className="text-base">{t.applicationSubmitted}</p>
+            <p className="text-base pb-2">{t.applicationSubmitted}</p>
             <p className="font-bold text-lg">{props.benefit.applicationDate}</p>
           </div>
 
           <div
             id={`${props.benefit.benefitType}-pending-estimatedDateOfDecision`}
-            className="py-4 sm:pl-10"
+            className=" bg-pink-200"
           >
-            <p className="text-base w-44">{t.estimatedDateOfDecision}</p>
+            <p className="text-base pb-2">{t.estimatedDateOfDecision}</p>
             <p className="font-bold text-lg">
               {props.benefit.estimatedDateOfDecision}
             </p>
@@ -59,9 +59,9 @@ export default function BenefitCardHeaderPending(props) {
           {/* Progressbar Placeholder */}
           <div
             id={`${props.benefit.benefitType}-pending-progressbar`}
-            className="py-4 sm:pl-10"
+            className=" bg-lime-200"
           >
-            <p className="font-display">{t.latestUpdate}</p>
+            <p className="font-display pb-2">{t.latestUpdate}</p>
             <p className="font-display font-bold text-lg">
               {props.benefit.benefitStatusProgress}
             </p>
