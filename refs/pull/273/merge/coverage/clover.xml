@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1650394082240" clover="3.2.0">
-  <project timestamp="1650394082240" name="All files">
+<coverage generated="1650396238401" clover="3.2.0">
+  <project timestamp="1650396238401" name="All files">
     <metrics statements="287" coveredstatements="215" conditionals="222" coveredconditionals="141" methods="103" coveredmethods="73" elements="612" coveredelements="429" complexity="0" loc="287" ncloc="287" packages="6" files="53" classes="53"/>
     <package name="components.atoms">
       <metrics statements="64" coveredstatements="58" conditionals="46" coveredconditionals="36" methods="23" coveredmethods="21"/>
@@ -38,10 +38,10 @@
       </file>
       <file name="BenefitDetailPart.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/BenefitDetailPart.js">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="33" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
       </file>
       <file name="Breadcrumb.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/Breadcrumb.js">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
