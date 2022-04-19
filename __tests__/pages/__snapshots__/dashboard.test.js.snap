@@ -497,7 +497,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         />
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -505,7 +505,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               All CPP Tasks
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -515,11 +515,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-payment-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View all payments
                   </p>
@@ -533,11 +533,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-updates-message-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my status and messages
                   </p>
@@ -551,11 +551,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-retirement-income-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Estimate retirement income
                   </p>
@@ -569,11 +569,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-tax-slip-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View tax slips
                   </p>
@@ -583,15 +583,15 @@ exports[`Dashboard renders Dashboard 1`] = `
                 class="font-display font-bold text-left pb-6"
               >
                 <a
-                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits"
+                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/"
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-request-for-reconsideration-icon.svg "
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Request for reconsideration
                   </p>
@@ -605,11 +605,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-delay-receiving-pension-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Delay receiving my OAS pension
                   </p>
@@ -737,129 +737,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         <div
           class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
         />
-        <div>
-          <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
-          >
-            <h3
-              class="font-display font-bold text-xl"
-            >
-              All CPP Tasks
-            </h3>
-            <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
-            >
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3 px-5"
-                    src="/images/dashboard/oas-payment-icon.svg"
-                  />
-                  <p
-                    class="w-36 font-normal px-5 text-sm"
-                  >
-                    View all payments
-                  </p>
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3 px-5"
-                    src="/images/dashboard/oas-updates-message-icon.svg"
-                  />
-                  <p
-                    class="w-36 font-normal px-5 text-sm"
-                  >
-                    View my status and messages
-                  </p>
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3 px-5"
-                    src="/images/dashboard/oas-retirement-income-icon.svg"
-                  />
-                  <p
-                    class="w-36 font-normal px-5 text-sm"
-                  >
-                    Estimate retirement income
-                  </p>
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3 px-5"
-                    src="/images/dashboard/oas-tax-slip-icon.svg"
-                  />
-                  <p
-                    class="w-36 font-normal px-5 text-sm"
-                  >
-                    View tax slips
-                  </p>
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3 px-5"
-                    src="/images/dashboard/oas-request-for-reconsideration-icon.svg "
-                  />
-                  <p
-                    class="w-36 font-normal px-5 text-sm"
-                  >
-                    Request for reconsideration
-                  </p>
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3 px-5"
-                    src="/images/dashboard/oas-delay-receiving-pension-icon.svg"
-                  />
-                  <p
-                    class="w-36 font-normal px-5 text-sm"
-                  >
-                    Delay receiving my OAS pension
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <div />
         <button
           caption="View more"
           class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
@@ -978,7 +856,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         />
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -986,7 +864,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               All OAS Tasks
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -996,11 +874,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-payment-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View all payments
                   </p>
@@ -1014,11 +892,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-updates-message-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my status and messages
                   </p>
@@ -1032,11 +910,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-retirement-income-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Estimate retirement income
                   </p>
@@ -1050,11 +928,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-cpp-contributions-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my Canada Pension Plan contributions
                   </p>
@@ -1068,11 +946,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-federal-tax-deductions-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Ask for tax deductions
                   </p>
@@ -1086,11 +964,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-delay-receiving-pension-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Delay receiving my OAS pension
                   </p>
@@ -1220,7 +1098,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         />
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -1228,7 +1106,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               All OAS Tasks
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -1238,11 +1116,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-payment-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View all payments
                   </p>
@@ -1256,11 +1134,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-updates-message-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my status and messages
                   </p>
@@ -1274,11 +1152,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-tax-slip-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View tax slips
                   </p>
@@ -1292,11 +1170,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-tax-slip-mailing-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Tax slip mailing options
                   </p>
@@ -1310,11 +1188,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-federal-tax-deductions-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Ask for tax deductions
                   </p>
@@ -1328,11 +1206,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-delay-receiving-pension-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Delay receiving my OAS pension
                   </p>
@@ -1459,7 +1337,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         />
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -1467,7 +1345,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               All EI Tasks
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -1477,11 +1355,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-updates-message-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my status and messages
                   </p>
@@ -1495,11 +1373,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-insurance-report-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Complete your Employment Insurance reports
                   </p>
@@ -1513,11 +1391,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-view-payment-info-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my payment information
                   </p>
@@ -1531,11 +1409,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-access-code.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Access code
                   </p>
@@ -1549,11 +1427,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-submit-documents-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Submit documents
                   </p>
@@ -1567,11 +1445,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-view-documents-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View documents
                   </p>
@@ -1701,7 +1579,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         />
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -1709,7 +1587,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               All EI Tasks
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -1719,11 +1597,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-updates-message-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my status and messages
                   </p>
@@ -1737,11 +1615,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-insurance-report-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Complete your Employment Insurance reports
                   </p>
@@ -1755,11 +1633,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-view-payment-info-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my payment information
                   </p>
@@ -1773,11 +1651,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-access-code.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Access code
                   </p>
@@ -1791,11 +1669,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-past-claims-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my past claims
                   </p>
@@ -1809,11 +1687,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-record-of-employment-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my Records of Employment
                   </p>
@@ -1895,7 +1773,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         />
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -1903,7 +1781,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               All EI Tasks
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -1913,11 +1791,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-record-of-employment-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my Records of Employment
                   </p>
@@ -1931,11 +1809,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-past-claims-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my past claims
                   </p>
@@ -1949,11 +1827,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-view-payment-info-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my payment information
                   </p>
@@ -1967,11 +1845,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-tax-slip-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View tax slips, T4E
                   </p>
@@ -2086,7 +1964,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         />
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -2094,7 +1972,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               All CPPD Tasks
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -2104,11 +1982,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-payment-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View all payments
                   </p>
@@ -2122,11 +2000,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-updates-message-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my status and messages
                   </p>
@@ -2140,11 +2018,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-tax-slip-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View tax slips
                   </p>
@@ -2158,11 +2036,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-request-for-reconsideration-icon.svg "
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Request for reconsideration
                   </p>
@@ -2176,11 +2054,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-cpp-contributions-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my Canada Pension Plan contributions
                   </p>
@@ -2194,11 +2072,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-federal-tax-deductions-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Ask for tax deductions
                   </p>
@@ -2328,7 +2206,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         />
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -2336,7 +2214,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               All CPPD Tasks
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -2346,11 +2224,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-payment-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View all payments
                   </p>
@@ -2364,11 +2242,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-updates-message-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my status and messages
                   </p>
@@ -2382,11 +2260,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-tax-slip-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View tax slips
                   </p>
@@ -2400,11 +2278,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-request-for-reconsideration-icon.svg "
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Request for reconsideration
                   </p>
@@ -2418,11 +2296,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-cpp-contributions-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my Canada Pension Plan contributions
                   </p>
@@ -2436,11 +2314,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-federal-tax-deductions-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Ask for tax deductions
                   </p>
@@ -2522,7 +2400,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         />
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -2530,7 +2408,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               All CPPD Tasks
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -2540,11 +2418,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-request-for-reconsideration-icon.svg "
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Request for reconsideration
                   </p>
@@ -2558,11 +2436,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-updates-message-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my status and messages
                   </p>
@@ -2576,11 +2454,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-payment-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View all payments
                   </p>
@@ -2594,11 +2472,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-tax-slip-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View tax slips, T4A and NR4
                   </p>
@@ -3570,7 +3448,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -3578,7 +3456,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               Common actions
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -3588,11 +3466,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/apply-for-benefit-icon-white.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Apply for Canada Pension Plan Disability Benefits
                   </p>
@@ -3606,11 +3484,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/apply-for-benefit-icon-white.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Apply for Canada Pension Plan Retirement Pensions
                   </p>
@@ -3624,11 +3502,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-retirement-income-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Estimate my monthly CPP Benefits
                   </p>
@@ -3642,11 +3520,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/oas-cpp-contributions-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my CPP Contributions
                   </p>
@@ -3660,11 +3538,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/apply-for-benefit-icon-white.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Apply for Canada Pension Plan Death Benefits
                   </p>
@@ -3678,11 +3556,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/apply-for-benefit-icon-white.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Apply For Guranteed Income Supplement
                   </p>
@@ -3746,7 +3624,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -3754,7 +3632,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               Common actions
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -3764,11 +3642,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/apply-for-benefit-icon-white.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     View my payment information
                   </p>
@@ -3782,13 +3660,13 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/ei-record-of-employment-icon.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
-                    View my record of Employment
+                    View my Records of Employment
                   </p>
                 </a>
               </li>
@@ -3838,7 +3716,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -3846,7 +3724,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               Common actions
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -3856,11 +3734,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/apply-for-benefit-icon-white.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Apply For Guranteed Income Supplement
                   </p>
@@ -3912,7 +3790,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         </div>
         <div>
           <div
-            class="bg-gray-lighter mt-6 px-8 py-6"
+            class="bg-gray-lighter px-8 py-6"
           >
             <h3
               class="font-display font-bold text-xl"
@@ -3920,7 +3798,7 @@ exports[`Dashboard renders Dashboard 1`] = `
               Common actions
             </h3>
             <ul
-              class="grid grid-cols-2 gap-x-14 justify-items-start w-full pt-6 md:grid-cols-6"
+              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
             >
               <li
                 class="font-display font-bold text-left pb-6"
@@ -3930,11 +3808,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/apply-for-benefit-icon-white.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Apply For Old Age Security
                   </p>
@@ -3948,11 +3826,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 >
                   <img
                     alt=""
-                    class="font-normal pb-3 px-5"
+                    class="font-normal pb-3"
                     src="/images/dashboard/apply-for-benefit-icon-white.svg"
                   />
                   <p
-                    class="w-36 font-normal px-5 text-sm"
+                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
                     Apply For Guranteed Income Supplement
                   </p>

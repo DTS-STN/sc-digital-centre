@@ -43,8 +43,8 @@ module.exports = {
           dark: '#21303F',
         },
         'link-blue': {
-          default: '#2572B4',
-          hover: '#284162',
+          default: '#2b4380',
+          hover: '#0535d2',
         },
         'red': {
           light: '#B76565',

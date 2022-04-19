@@ -134,6 +134,9 @@ export default {
   //
   //
 
+  // Words
+  edit: 'edit',
+
   //
   // Contact us Section
   //
@@ -248,7 +251,7 @@ export default {
   applicationDate: 'Application date',
   latestActivity: 'Latest activity',
   viewMyStatusAndMessages: 'View my status and messages +',
-  pensionDetails: 'Pension details',
+  accountDetails: 'Account details',
   nextPayment: 'Next payment',
   lastPayment: 'Last payment',
   benefitStartDate: 'Benefit start date',
@@ -259,6 +262,10 @@ export default {
   addYourAddress: 'Add your address +',
   addYourPhoneNumber: 'Add your phone number +',
   addYourPaymentDetails: 'Add your payment details +',
+
+  // dashboard benefit task headers
+  paymentTasks: 'Payment and tax details',
+  changeTasks: 'Make a Change',
 
   // dashboard benefits tasks
   allPaymentsTask: 'View all payments',

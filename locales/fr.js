@@ -134,6 +134,9 @@ export default {
   //
   //
 
+  // Words
+  edit: 'éditer',
+
   //
   // Contact us Section
   //
@@ -239,7 +242,7 @@ export default {
   applicationDate: '(FR)Application date',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages +',
-  pensionDetails: '(FR)Pension details',
+  accountDetails: '(FR)Account details',
   nextPayment: '(FR)Next payment',
   lastPayment: '(FR)Last payment',
   benefitStartDate: '(FR)Benefit start date',
@@ -250,6 +253,10 @@ export default {
   addYourAddress: '(FR)Add your address +',
   addYourPhoneNumber: '(FR)Add your phone number +',
   addYourPaymentDetails: '(FR)Add your payment details +',
+
+  // dashboard benefit task headers
+  paymentTasks: '(FR)Payment and tax details',
+  changeTasks: '(FR)Make a Change',
 
   // dashboard benefits tasks
   allPaymentsTask: '(FR)View all payments',

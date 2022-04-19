@@ -23,7 +23,8 @@ import {
 } from '../contents/DashboardNoBenefitCardConstants'
 import {
   SUBMITTED_CPP_TASKS,
-  ACTIVE_CPP_TASKS,
+  ACTIVE_CPP_PAYMENT_TASKS,
+  ACTIVE_CPP_CHANGE_TASKS,
   INACTIVE_CPP_TASKS,
   SUBMITTED_CPPD_TASKS,
   ACTIVE_CPPD_TASKS,
@@ -69,7 +70,8 @@ export default function Dashboard() {
           <BenefitCard
             locale="en"
             benefit={ACTIVE_CPP}
-            tasks={ACTIVE_CPP_TASKS}
+            tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
+            taskGroups={true}
           />
           <BenefitCard
             locale="en"
