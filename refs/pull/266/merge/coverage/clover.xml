@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1649966546196" clover="3.2.0">
-  <project timestamp="1649966546196" name="All files">
-    <metrics statements="281" coveredstatements="210" conditionals="214" coveredconditionals="133" methods="101" coveredmethods="72" elements="596" coveredelements="415" complexity="0" loc="281" ncloc="281" packages="6" files="52" classes="52"/>
+<coverage generated="1650375727990" clover="3.2.0">
+  <project timestamp="1650375727990" name="All files">
+    <metrics statements="282" coveredstatements="211" conditionals="216" coveredconditionals="135" methods="101" coveredmethods="72" elements="599" coveredelements="418" complexity="0" loc="282" ncloc="282" packages="6" files="52" classes="52"/>
     <package name="components.atoms">
       <metrics statements="60" coveredstatements="54" conditionals="42" coveredconditionals="32" methods="22" coveredmethods="20"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -108,7 +108,7 @@
       </file>
     </package>
     <package name="components.molecules">
-      <metrics statements="122" coveredstatements="104" conditionals="108" coveredconditionals="74" methods="45" coveredmethods="36"/>
+      <metrics statements="123" coveredstatements="105" conditionals="110" coveredconditionals="76" methods="45" coveredmethods="36"/>
       <file name="ActiveBenefitDetails.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/ActiveBenefitDetails.js">
         <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="8" count="3" type="stmt"/>
@@ -188,9 +188,10 @@
         <line num="4" count="6" type="stmt"/>
       </file>
       <file name="DSHeader.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/DSHeader.js">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="1"/>
+        <line num="6" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
       </file>
       <file name="FeatureBlock.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/FeatureBlock.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
