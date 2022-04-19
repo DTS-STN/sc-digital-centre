@@ -31,7 +31,9 @@ import {
   SUBMITTED_OAS_TASKS,
   ACTIVE_OAS_TASKS,
   SUBMITTED_EI_TASKS,
-  ACTIVE_EI_TASKS,
+  ACTIVE_EI_COMMON_TASKS,
+  ACTIVE_EI_PAYMENT_TASKS,
+  ACTIVE_EI_DOCS_TASKS,
   INACTIVE_EI_TASKS,
   NO_BENEFIT_CPP_TASKS,
   NO_BENEFIT_GIS_TASKS,
@@ -91,7 +93,12 @@ export default function Dashboard() {
           <BenefitCard
             locale="en"
             benefit={ACTIVE_EI}
-            tasks={ACTIVE_EI_TASKS}
+            tasks={[
+              ACTIVE_EI_COMMON_TASKS,
+              ACTIVE_EI_PAYMENT_TASKS,
+              ACTIVE_EI_DOCS_TASKS,
+            ]}
+            taskGroups={true}
           />
           <BenefitCard
             locale="en"

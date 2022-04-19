@@ -136,6 +136,11 @@ const TASKS = {
     taskIcon: '/images/dashboard/ei-view-documents-icon.svg',
     taskLink: t.viewDocumentsLink,
   },
+  ViewLatestClaimTask: {
+    task: t.viewLatestClaimTask,
+    taskIcon: '/images/dashboard/ei-latest-claim-icon.svg',
+    taskLink: t.viewLatestClaimLink,
+  },
   ViewPastClaimsTask: {
     task: t.viewPastClaimsTask,
     taskIcon: '/images/dashboard/ei-past-claims-icon.svg',
@@ -274,20 +279,32 @@ const SUBMITTED_EI_TASKS = [
   TASKS.RegisterForAlerts,
 ]
 
-const ACTIVE_EI_TASKS = [
-  TASKS.EiStatusUpdateTask,
-  TASKS.CompleteInsuranceReportTask,
-  TASKS.ViewPaymentInfo,
-  TASKS.AccessCode,
-  TASKS.ViewPastClaimsTask,
-  TASKS.RecordOfEmployment,
-  TASKS.TaxSlipTask,
-  TASKS.TaxSlipMailingTask,
-  TASKS.SubmitDocuments,
-  TASKS.ViewDocuments,
-  TASKS.SubmitEformsTask,
-  TASKS.ReportMistake,
-]
+const ACTIVE_EI_COMMON_TASKS = {
+  Header: t.commonActions,
+  Tasks: [TASKS.EiStatusUpdateTask, TASKS.AccessCode, TASKS.ReportMistake],
+}
+
+const ACTIVE_EI_PAYMENT_TASKS = {
+  Header: t.paymentClaimsTaxTasks,
+  Tasks: [
+    TASKS.ViewPaymentInfo,
+    TASKS.ViewLatestClaimTask,
+    TASKS.ViewPastClaimsTask,
+    TASKS.TaxSlipMailingTask,
+    TASKS.TaxSlipTask,
+  ],
+}
+
+const ACTIVE_EI_DOCS_TASKS = {
+  Header: t.documentsReportsTasks,
+  Tasks: [
+    TASKS.CompleteInsuranceReportTask,
+    TASKS.RecordOfEmployment,
+    TASKS.ViewDocuments,
+    TASKS.SubmitDocuments,
+    TASKS.SubmitEformsTask,
+  ],
+}
 
 const INACTIVE_EI_TASKS = [
   TASKS.RecordOfEmployment,
@@ -328,7 +345,9 @@ module.exports = {
   SUBMITTED_OAS_TASKS,
   ACTIVE_OAS_TASKS,
   SUBMITTED_EI_TASKS,
-  ACTIVE_EI_TASKS,
+  ACTIVE_EI_COMMON_TASKS,
+  ACTIVE_EI_PAYMENT_TASKS,
+  ACTIVE_EI_DOCS_TASKS,
   INACTIVE_EI_TASKS,
   NO_BENEFIT_CPP_TASKS,
   NO_BENEFIT_EI_TASKS,
