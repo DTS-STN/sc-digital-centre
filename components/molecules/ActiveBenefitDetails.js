@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from '../atoms/HorizontalRule'
-import Link from 'next/link'
 
 const ActiveBenefitDetails = (props) => {
   const t = props.locale === 'en' ? en : fr
