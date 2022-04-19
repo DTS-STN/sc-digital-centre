@@ -54,16 +54,14 @@ describe('ActiveBenefitDetails', () => {
     render(
       <ActiveBenefitDetails benefit={activeCanadaPensionPlan} locale={'en'} />
     )
-    const titleText = screen.getByText('Pension details')
-    const nextPaymentDate = screen.getByText('September 30, 2021')
-    const lastPaymentDate = screen.getByText('August 30, 2021')
-    const pensionStartDate = screen.getByText('August 1, 2021')
+    const titleText = screen.getByText('Account details')
+    const addressTitle = screen.getByText('Address')
+    const paymentDetailsTitle = screen.getByText('Payment details')
     const payeePhoneNumber = screen.getByText('1-613-555-5455')
 
     expect(titleText).toBeInTheDocument()
-    expect(nextPaymentDate).toBeInTheDocument()
-    expect(lastPaymentDate).toBeInTheDocument()
-    expect(pensionStartDate).toBeInTheDocument()
+    expect(addressTitle).toBeInTheDocument()
+    expect(paymentDetailsTitle).toBeInTheDocument()
     expect(payeePhoneNumber).toBeInTheDocument()
   })
 

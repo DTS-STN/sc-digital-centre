@@ -134,6 +134,9 @@ export default {
   //
   //
 
+  // Words
+  edit: 'edit',
+
   //
   // Contact us Section
   //
@@ -251,6 +254,10 @@ export default {
   addYourAddress: 'Add your address +',
   addYourPhoneNumber: 'Add your phone number +',
   addYourPaymentDetails: 'Add your payment details +',
+
+  // dashboard benefit task headers
+  paymentTasks: 'Payment and tax details',
+  changeTasks: 'Make a Change',
 
   // dashboard benefits tasks
   allPaymentsTask: 'View all payments',

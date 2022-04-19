@@ -14,47 +14,77 @@ const ActiveBenefitDetails = (props) => {
         <h3 className="font-bold text-xl">{t.accountDetails}</h3>
         <div className="grid grid-cols-3 gap-36 pt-4">
           <div id="payee_address">
-            <h4 className="font-bold text-base inline">{t.payeeAddress}</h4>
-            <a href={t.editAddress} className="float-right">
+            <h4 className="font-medium text-large inline">{t.payeeAddress}</h4>
+            <a
+              href={t.editAddress}
+              className="float-right font-medium text-sm underline text-link-blue-default hover:text-link-blue-hover"
+            >
               <img
                 src={'/edit.svg'}
-                alt="Edit"
+                alt=""
                 className="w-6 h-6 pb-1  pr-2 inline"
               />
-              t.edit
+              {t.edit}
             </a>
             <p>
-              {props.benefit.payeeAddress
-                ? props.benefit.payeeAddress
-                : 't.addAddress'}
+              <a
+                href={t.editAddress}
+                className="font-medium text-base underline text-link-blue-default hover:text-link-blue-hover"
+              >
+                {props.benefit.payeeAddress
+                  ? props.benefit.payeeAddress
+                  : t.addYourAddress}
+              </a>
             </p>
           </div>
           <div id="phone_number">
-            <h4 className="font-bold text-base inline">{t.payeePhoneNumber}</h4>
-            <a href={t.editPhoneNumber} className="float-right">
+            <h4 className="font-medium text-large inline">
+              {t.payeePhoneNumber}
+            </h4>
+            <a
+              href={t.editPhoneNumber}
+              className="float-right font-medium text-sm underline text-link-blue-default hover:text-link-blue-hover"
+            >
               <img
                 src={'/edit.svg'}
-                alt="Edit"
+                alt=""
                 className="w-6 h-6 pb-1 pr-2 inline"
               />
-              t.edit
+              {t.edit}
             </a>
-            <p>{props.benefit.payeePhoneNumber}</p>
+            <p>
+              <a
+                href={t.editPhoneNumber}
+                className="underline text-link-blue-default hover:text-link-blue-hover"
+              >
+                {props.benefit.payeePhoneNumber}
+              </a>
+            </p>
           </div>
 
           <div id="payment_details">
-            <h4 className="font-bold text-base inline">{t.paymentDetails}</h4>
-            <a href={t.editPayment} className="float-right">
+            <h4 className="font-medium text-large inline">
+              {t.paymentDetails}
+            </h4>
+            <a
+              href={t.editPayment}
+              className="float-right font-medium text-sm underline text-link-blue-default hover:text-link-blue-hover"
+            >
               <img
                 src={'/edit.svg'}
-                alt="Edit"
+                alt=""
                 className="w-6 h-6 pb-1 pr-2 inline"
               />
-              t.edit
+              {t.edit}
             </a>
             <p>
-              {props.benefit.paymentType} <br />
-              {props.benefit.institutionName} {props.benefit.accountNumber}
+              <a
+                href={t.editPayment}
+                className="underline text-link-blue-default hover:text-link-blue-hover"
+              >
+                {props.benefit.paymentType} <br />
+                {props.benefit.institutionName} {props.benefit.accountNumber}
+              </a>
             </p>
           </div>
         </div>
