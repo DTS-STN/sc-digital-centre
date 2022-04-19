@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -150,7 +150,20 @@
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
 <a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,16 +171,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -252,23 +278,36 @@ import BenefitCode from '../../constants/BenefitCode'
 &nbsp;
 const BenefitApplicationCard = (props) =&gt; {
   const t = props.locale === 'en' ? en : <span class="branch-1 cbranch-no" title="branch not covered" >fr</span>
+  const benefitType = props.benefitApplication.benefitType
+  const benefitSubType = props.benefitApplication.benefitSubType
+  const benefitName = props.benefitApplication.benefitName
 &nbsp;
   const isEstimateButtonRequired = () =&gt; {
     return (
-      props.benefitApplication.benefitType.toUpperCase() === BenefitCode.cpp ||
-      props.benefitApplication.benefitType.toUpperCase() === BenefitCode.oas
+      (benefitType.toUpperCase() === BenefitCode.cpp &amp;&amp;
+        typeof benefitSubType === 'undefined') ||
+      benefitType.toUpperCase() === BenefitCode.oas
     )
+  }
+&nbsp;
+  const getBenefitNameString = () =&gt; {
+    return typeof benefitSubType === 'undefined'
+      ? benefitName
+      : `${benefitType} ${t[benefitSubType]}`
   }
 &nbsp;
   return (
     &lt;div className="benefit-card px-4 md:px-6 py-7"&gt;
       &lt;div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"&gt;
         &lt;div
-          id={`${props.benefitApplication.benefitType}-app-card`}
+          id={`${benefitType}-${benefitSubType}-app-card`}
           className="col-span-1 py-4 md:px-0 lg:px-3"
         &gt;
           &lt;div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"&gt;
-            {props.benefitApplication.benefitName}
+            {benefitName}
+          &lt;/div&gt;
+          &lt;div className="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"&gt;
+            {t[benefitSubType]}
           &lt;/div&gt;
         &lt;/div&gt;
         &lt;HorizontalRule width="w-1/3" visibility="sm:hidden" /&gt;
@@ -282,7 +321,7 @@ const BenefitApplicationCard = (props) =&gt; {
               href={props.benefitApplication.learnMoreLink}
               className="text-xl underline hover:text-bright-blue-solid"
             &gt;
-              {props.benefitApplication.benefitName}
+              {getBenefitNameString()}
             &lt;/a&gt;
           &lt;/div&gt;
           &lt;div className="grid grid-cols-2 mt-6 sm:mt-2"&gt;
@@ -309,7 +348,7 @@ const BenefitApplicationCard = (props) =&gt; {
               &gt;
                 &lt;img src={props.benefitApplication.applyIcon} alt="" /&gt;
                 &lt;p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"&gt;
-                  {t.applyFor} {props.benefitApplication.benefitName}
+                  {`${t.applyFor} ${getBenefitNameString()}`}
                 &lt;/p&gt;
               &lt;/a&gt;
             &lt;/div&gt;
@@ -343,7 +382,7 @@ BenefitApplicationCard.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Apr 04 2022 14:15:38 GMT+0000 (Coordinated Universal Time)
+                at Tue Apr 19 2022 17:22:53 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

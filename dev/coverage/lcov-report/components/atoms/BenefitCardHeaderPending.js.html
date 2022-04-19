@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -121,14 +121,32 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -188,16 +206,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
+import BenefitCode from '../../constants/BenefitCode'
 &nbsp;
 export default function BenefitCardHeaderPending(props) {
   const t = props.locale === 'en' ? en : <span class="branch-1 cbranch-no" title="branch not covered" >fr</span>
+  const getBenefitCardTitle = () =&gt; {
+    if (props.benefit.benefitType === BenefitCode.cppd) {
+      return t[BenefitCode.cpp.toLowerCase()]
+    } else {
+      return t[props.benefit.benefitType.toLowerCase()]
+    }
+  }
 &nbsp;
   return (
-    &lt;div className="layout-container"&gt;
+    &lt;div className="px-4 md:px-6"&gt;
       &lt;div className="flex mr-12 justify-end"&gt;
         &lt;h2
           className={
-            'font-bold font-display text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-orange-pending'
+            'font-bold font-display text-white text-lg px-5 py-1 ml-8 mb-5 rounded-b-md bg-gray-pending'
           }
         &gt;
           {props.benefit.applicationStatus}
@@ -209,7 +235,7 @@ export default function BenefitCardHeaderPending(props) {
           className="col-span-1 py-4 md:px-0 lg:px-3"
         &gt;
           &lt;div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"&gt;
-            {props.benefit.benefitName}
+            {getBenefitCardTitle()}
           &lt;/div&gt;
         &lt;/div&gt;
         &lt;HorizontalRule width="w-1/3" visibility="sm:hidden" /&gt;
@@ -240,9 +266,10 @@ export default function BenefitCardHeaderPending(props) {
             id={`${props.benefit.benefitType}-pending-progressbar`}
             className="py-4 sm:pl-10"
           &gt;
-            &lt;p className="font-display font-bold text-lg"&gt;{'Progressbar'}&lt;/p&gt;
-            &lt;p className="font-display text-base"&gt;4 out of 6 review&lt;/p&gt;
-            &lt;p className="font-display text-base"&gt;steps complete&lt;/p&gt;
+            &lt;p className="font-display"&gt;{t.latestUpdate}&lt;/p&gt;
+            &lt;p className="font-display font-bold text-lg"&gt;
+              {props.benefit.benefitStatusProgress}
+            &lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -256,7 +283,7 @@ export default function BenefitCardHeaderPending(props) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Apr 04 2022 14:15:38 GMT+0000 (Coordinated Universal Time)
+                at Tue Apr 19 2022 17:22:53 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
