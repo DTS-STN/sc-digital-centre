@@ -205,6 +205,14 @@ export default {
   // Dashboard
   //
 
+  // Greeting
+  greeting: '(FR)Good morning, ',
+  welcome: '(FR)Welcome to your My Service Canada Account.',
+  myBenefitsAndServices: '(FR)My benefits and services',
+  canada_ca: '(FR)Canada.ca',
+  serviceCanada: '(FR)Service Canada',
+  myBenefitsAndServices: '(FR)My Benefits and Services',
+
   // Benefit Names
   cpp: '(FR)Canada Pension Plan',
   oas: '(FR)Old Age Security',
@@ -286,6 +294,12 @@ export default {
   youMightBeEligible: '(FR)You might be eligible.',
   learnMoreAbout: '(FR)Learn more about ',
   applyFor: '(FR)Apply for',
+
+  // Greeting URLs
+  url_canada_ca: 'https://www.canada.ca/home.html',
+  url_serviceCanada:
+    'https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html',
+  url_myBenefitsAndServices: '/dashboard',
 
   //Error pages
   errorPage400ReturnToDashboard: '(FR)Return to dashboard main page',
