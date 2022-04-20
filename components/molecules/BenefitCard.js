@@ -119,11 +119,27 @@ const BenefitCard = (props) => {
 
       {/* Top tasks */}
       <div ref={topOfTaskRef}>
-        <BenefitTasks
-          benefitType={props.benefit.benefitType}
-          isExpanded={isOpen}
-          tasks={props.tasks}
-        />
+        {!props.taskGroups ? (
+          <BenefitTasks
+            benefitType={props.benefit.benefitType}
+            isExpanded={isOpen}
+            tasks={props.tasks}
+          />
+        ) : !isOpen ? null : (
+          props.tasks.map((value, index) => {
+            return (
+              <div key={index}>
+                <BenefitTasks
+                  benefitType={props.benefit.benefitType}
+                  isExpanded={true}
+                  header={value.Header}
+                  tasks={value.Tasks}
+                />
+                <HorizontalRule width="w-auto sm:w-full" />
+              </div>
+            )
+          })
+        )}
       </div>
       {/* Benefit Card Details */}
       {isOpen &&

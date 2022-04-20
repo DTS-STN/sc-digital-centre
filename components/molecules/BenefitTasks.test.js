@@ -45,6 +45,28 @@ describe('BenefitTask', () => {
     expect(task2Text).toBeInTheDocument()
   })
 
+  it('renders custom provided header', () => {
+    render(
+      <BenefitTasks
+        tasks={[
+          {
+            task: 'Task 1',
+            taskIcon: '/images/dashboard/oas-payment-icon.svg',
+            taskLink: '/dashboard',
+          },
+          {
+            task: 'Task 2',
+            taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
+            taskLink: '/dashboard',
+          },
+        ]}
+        header="my custom header"
+      />
+    )
+    const header = screen.getByText('my custom header')
+    expect(header).toBeInTheDocument()
+  })
+
   it('has no a11y violations', async () => {
     const { container } = render(
       <BenefitTasks

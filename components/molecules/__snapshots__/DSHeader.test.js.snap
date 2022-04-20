@@ -10,7 +10,7 @@ exports[`Design System footer tests renders DSHeader 1`] = `
         class="ds-px-4 sm:ds-container md:ds-flex-nowrap md:ds-flex-row ds-flex ds-flex-wrap ds-justify-between ds-items-center ds-mx-auto"
       >
         <a
-          class="header-logo"
+          class="header-logo ds-mb-8px"
           href="#"
         >
           <img
@@ -312,6 +312,55 @@ exports[`Design System footer tests renders DSHeader 1`] = `
               </ul>
             </div>
           </div>
+        </nav>
+      </div>
+      <div
+        class="ds-container"
+      >
+        <nav
+          aria-label="breadcrumbs"
+          class="ds-pt-4 ds-pb-4"
+        >
+          <ul
+            class="ds-block ds-text-custom-blue-dark ds-leading-23px ds-font-body"
+          >
+            <li
+              class="ds-inline-block ds-w-100"
+            >
+              <a
+                class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
+                href="https://www.canada.ca/home.html"
+              >
+                (FR)Canada.ca
+              </a>
+              <span
+                class="ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2"
+              />
+            </li>
+            <li
+              class="ds-inline-block ds-w-100"
+            >
+              <a
+                class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
+                href="https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html"
+              >
+                (FR)Service Canada
+              </a>
+              <span
+                class="ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2"
+              />
+            </li>
+            <li
+              class="ds-inline-block ds-w-100"
+            >
+              <a
+                class="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
+                href="/dashboard"
+              >
+                (FR)My Benefits and Services
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>

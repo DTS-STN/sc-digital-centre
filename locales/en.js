@@ -134,6 +134,9 @@ export default {
   //
   //
 
+  // Words
+  edit: 'edit',
+
   //
   // Contact us Section
   //
@@ -203,6 +206,14 @@ export default {
   // Dashboard
   //
 
+  // Greeting
+  greeting: 'Good morning, ',
+  welcome: 'Welcome to your My Service Canada Account.',
+  myBenefitsAndServices: 'My benefits and services',
+  canada_ca: 'Canada.ca',
+  serviceCanada: 'Service Canada',
+  myBenefitsAndServices: 'My Benefits and Services',
+
   // Benefit Names
   cpp: 'Canada Pension Plan',
   oas: 'Old Age Security',
@@ -240,7 +251,7 @@ export default {
   applicationDate: 'Application date',
   latestActivity: 'Latest activity',
   viewMyStatusAndMessages: 'View my status and messages +',
-  pensionDetails: 'Pension details',
+  accountDetails: 'Account details',
   nextPayment: 'Next payment',
   lastPayment: 'Last payment',
   benefitStartDate: 'Benefit start date',
@@ -251,6 +262,10 @@ export default {
   addYourAddress: 'Add your address +',
   addYourPhoneNumber: 'Add your phone number +',
   addYourPaymentDetails: 'Add your payment details +',
+
+  // dashboard benefit task headers
+  paymentTasks: 'Payment and tax details',
+  changeTasks: 'Make a Change',
 
   // dashboard benefits tasks
   allPaymentsTask: 'View all payments',
@@ -294,6 +309,12 @@ export default {
   youMightBeEligible: 'You might be eligible.',
   learnMoreAbout: 'Learn more about ',
   applyFor: 'Apply for',
+
+  // Greeting URLs
+  url_canada_ca: 'https://www.canada.ca/home.html',
+  url_serviceCanada:
+    'https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html',
+  url_myBenefitsAndServices: '/dashboard',
 
   //Error pages
   errorPage400ReturnToDashboard: 'Return to dashboard main page',

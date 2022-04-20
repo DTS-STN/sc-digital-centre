@@ -1,6 +1,9 @@
 import { Header } from '@dts-stn/decd-design-system'
+import en from '../../locales/en'
+import fr from '../../locales/fr'
 
-export default function DSHeader() {
+export default function DSHeader(props) {
+  const t = props.locale === 'en' ? en : fr
   const menuItems = [
     {
       link: '/dashboard',
@@ -18,6 +21,23 @@ export default function DSHeader() {
   return (
     <Header
       menuItems={menuItems}
+      breadCrumbItems={{
+        id: 'breadcrumbID',
+        items: [
+          {
+            link: t.url_canada_ca,
+            text: t.canada_ca,
+          },
+          {
+            link: t.url_serviceCanada,
+            text: t.serviceCanada,
+          },
+          {
+            link: t.url_myBenefitsAndServices,
+            text: t.myBenefitsAndServices,
+          },
+        ],
+      }}
       searchProps={{ onChange: () => {}, onSubmit: () => {} }}
     />
   )

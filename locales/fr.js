@@ -134,6 +134,9 @@ export default {
   //
   //
 
+  // Words
+  edit: 'éditer',
+
   //
   // Contact us Section
   //
@@ -205,6 +208,14 @@ export default {
   // Dashboard
   //
 
+  // Greeting
+  greeting: '(FR)Good morning, ',
+  welcome: '(FR)Welcome to your My Service Canada Account.',
+  myBenefitsAndServices: '(FR)My benefits and services',
+  canada_ca: '(FR)Canada.ca',
+  serviceCanada: '(FR)Service Canada',
+  myBenefitsAndServices: '(FR)My Benefits and Services',
+
   // Benefit Names
   cpp: '(FR)Canada Pension Plan',
   oas: '(FR)Old Age Security',
@@ -231,7 +242,7 @@ export default {
   applicationDate: '(FR)Application date',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages +',
-  pensionDetails: '(FR)Pension details',
+  accountDetails: '(FR)Account details',
   nextPayment: '(FR)Next payment',
   lastPayment: '(FR)Last payment',
   benefitStartDate: '(FR)Benefit start date',
@@ -242,6 +253,10 @@ export default {
   addYourAddress: '(FR)Add your address +',
   addYourPhoneNumber: '(FR)Add your phone number +',
   addYourPaymentDetails: '(FR)Add your payment details +',
+
+  // dashboard benefit task headers
+  paymentTasks: '(FR)Payment and tax details',
+  changeTasks: '(FR)Make a Change',
 
   // dashboard benefits tasks
   allPaymentsTask: '(FR)View all payments',
@@ -286,6 +301,12 @@ export default {
   youMightBeEligible: '(FR)You might be eligible.',
   learnMoreAbout: '(FR)Learn more about ',
   applyFor: '(FR)Apply for',
+
+  // Greeting URLs
+  url_canada_ca: 'https://www.canada.ca/home.html',
+  url_serviceCanada:
+    'https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html',
+  url_myBenefitsAndServices: '/dashboard',
 
   //Error pages
   errorPage400ReturnToDashboard: '(FR)Return to dashboard main page',
