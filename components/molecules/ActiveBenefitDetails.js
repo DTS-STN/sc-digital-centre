@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from '../atoms/HorizontalRule'
+import BenefitDetailPart from '../atoms/BenefitDetailPart'
 
 const ActiveBenefitDetails = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -12,80 +13,33 @@ const ActiveBenefitDetails = (props) => {
       <section className="bg-gray-lighter px-8 py-6">
         <h3 className="font-bold text-xl">{t.accountDetails}</h3>
         <div className="grid md:grid-cols-3 md:gap-36 gap-8 pt-4">
-          <div id="payee_address">
-            <h4 className="font-medium text-large inline">{t.payeeAddress}</h4>
-            <a
-              href={t.editAddress}
-              className="float-right font-medium text-sm underline text-link-blue-default hover:text-link-blue-hover"
-            >
-              <img
-                src={'/edit.svg'}
-                alt=""
-                className="w-6 h-6 pb-1  pr-2 inline"
-              />
-              {t.edit}
-            </a>
-            <p>
-              <a
-                href={t.editAddress}
-                className="font-medium text-base underline text-link-blue-default hover:text-link-blue-hover"
-              >
-                {props.benefit.payeeAddress
-                  ? props.benefit.payeeAddress
-                  : t.addYourAddress}
-              </a>
-            </p>
-          </div>
-          <div id="phone_number">
-            <h4 className="font-medium text-large inline">
-              {t.payeePhoneNumber}
-            </h4>
-            <a
-              href={t.editPhoneNumber}
-              className="float-right font-medium text-sm underline text-link-blue-default hover:text-link-blue-hover"
-            >
-              <img
-                src={'/edit.svg'}
-                alt=""
-                className="w-6 h-6 pb-1 pr-2 inline"
-              />
-              {t.edit}
-            </a>
-            <p>
-              <a
-                href={t.editPhoneNumber}
-                className="underline text-link-blue-default hover:text-link-blue-hover"
-              >
-                {props.benefit.payeePhoneNumber}
-              </a>
-            </p>
-          </div>
-
-          <div id="payment_details">
-            <h4 className="font-medium text-large inline">
-              {t.paymentDetails}
-            </h4>
-            <a
-              href={t.editPayment}
-              className="float-right font-medium text-sm underline text-link-blue-default hover:text-link-blue-hover"
-            >
-              <img
-                src={'/edit.svg'}
-                alt=""
-                className="w-6 h-6 pb-1 pr-2 inline"
-              />
-              {t.edit}
-            </a>
-            <p>
-              <a
-                href={t.editPayment}
-                className="underline text-link-blue-default hover:text-link-blue-hover"
-              >
-                {props.benefit.paymentType} <br />
-                {props.benefit.institutionName} {props.benefit.accountNumber}
-              </a>
-            </p>
-          </div>
+          <BenefitDetailPart
+            locale={props.locale}
+            id="payee_address"
+            title={t.payeeAddress}
+            editLink={t.editAddress}
+            content={
+              props.benefit.payeeAddress
+                ? props.benefit.payeeAddress
+                : t.addYourAddress
+            }
+          />
+          <BenefitDetailPart
+            locale={props.locale}
+            id="phone_number"
+            title={t.payeePhoneNumber}
+            editLink={t.editPhoneNumber}
+            content={props.benefit.payeePhoneNumber}
+          />
+          <BenefitDetailPart
+            locale={props.locale}
+            id="payment_details"
+            title={t.paymentDetails}
+            editLink={t.editPayment}
+          >
+            {props.benefit.paymentType} <br />
+            {props.benefit.institutionName} {props.benefit.accountNumber}
+          </BenefitDetailPart>
         </div>
       </section>
       <HorizontalRule width="w-auto sm:w-full" />
