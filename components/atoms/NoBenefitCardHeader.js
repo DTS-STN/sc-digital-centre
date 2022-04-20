@@ -24,14 +24,13 @@ export default function BenefitCardHeaderActive(props) {
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
         <div
           id={`${benefitType}-nobenefit-learnmore`}
-          className="col-span-2 font-display text-xl ml-2 sm:ml-8 mt-4 xl:mt-10"
+          className="col-span-2 font-display text-xl my-4 xl:mt-10 pl-2 sm:pl-8 "
         >
-          <a className="ml-8">{t.learnMoreAbout}</a>
-          <a
-            href={props.benefit.learnMoreLink}
-            className="underline hover:text-bright-blue-solid"
-          >
-            {getBenefitCardTitle()}
+          <a className=" cursor-text " href={props.benefit.learnMoreLink}>
+            {t.learnMoreAbout}
+            <span className="underline hover:text-bright-blue-solid cursor-pointer whitespace-pre">
+              {getBenefitCardTitle()}
+            </span>
           </a>
         </div>
       </div>
