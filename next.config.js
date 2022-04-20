@@ -61,23 +61,6 @@ const config = {
   images: {
     domains: ['www.canada.ca'],
   },
-  //
-  async rewrites() {
-    return [
-      {
-        source: '/accueil',
-        destination: '/home',
-      },
-      {
-        source: '/prestations/:id',
-        destination: '/benefits/:id',
-      },
-      {
-        source: '/recherche',
-        destination: '/search',
-      },
-    ]
-  },
 }
 
 config.headers = async () => {

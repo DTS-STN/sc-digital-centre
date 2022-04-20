@@ -20,16 +20,16 @@ describe('Index page loads and', () => {
        
         cy.wait(1000)
       
-        cy.url().should("contains", "/home");
+        cy.url().should("contains", "/dashboard");
     })
 
 
 
 
-    it('French button click goes to fr/accueil page', () => {
+    it('French button click goes to fr/dashboard page', () => {
         cy.get('[data-cy=french-button]').click({ force: true })
         cy.wait(1000)
-        cy.url().should("contains", "/fr/accueil");
+        cy.url().should("contains", "/fr/dashboard");
     })
     
     it('Terms and condition links appear on the page', () => {
