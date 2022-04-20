@@ -69,7 +69,7 @@ export default function BenefitCardHeaderPending(props) {
               {props.benefit.latestStatusDate}
             </p>
             <a
-              href={t.url_ststusAndMessages}
+              href={t.url_statusAndMessages}
               className="text-sm mt-1 text-bright-blue-solid underline"
             >
               {t.viewMyStatusAndMessages}

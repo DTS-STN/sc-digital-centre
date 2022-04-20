@@ -76,7 +76,7 @@ export default function BenefitCardHeaderActive(props) {
               {props.benefit.benefitStatusProgress}
             </p>
             <a
-              href={t.url_ststusAndMessages}
+              href={t.url_statusAndMessages}
               className="text-sm mt-1 text-bright-blue-solid underline"
             >
               {t.viewMyStatusAndMessages}

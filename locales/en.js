@@ -320,7 +320,7 @@ export default {
   url_myBenefitsAndServices: '/dashboard',
 
   // Benefit card header URLs
-  url_ststusAndMessages: '/dashboard',
+  url_statusAndMessages: '/dashboard',
 
   //Error pages
   errorPage400ReturnToDashboard: 'Return to dashboard main page',
