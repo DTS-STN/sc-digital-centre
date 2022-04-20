@@ -37,8 +37,10 @@ const ActiveBenefitDetails = (props) => {
             title={t.paymentDetails}
             editLink={t.editPayment}
           >
-            {props.benefit.paymentType} <br />
-            {props.benefit.institutionName} {props.benefit.accountNumber}
+            <>
+              {props.benefit.paymentType} <br />
+              {props.benefit.institutionName} {props.benefit.accountNumber}
+            </>
           </BenefitDetailPart>
         </div>
       </section>
