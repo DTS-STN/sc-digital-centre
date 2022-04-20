@@ -464,13 +464,24 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="font-display"
                 >
-                  Latest update:
+                  Latest status:
                 </p>
                 <p
                   class="font-display font-bold text-lg"
                 >
                   In Progress
                 </p>
+                <p
+                  class="font-bold text-lg"
+                >
+                  July 15, 2021
+                </p>
+                <a
+                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  href="/dashboard"
+                >
+                  View my status and messages +
+                </a>
               </div>
             </div>
           </div>
@@ -706,13 +717,19 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="font-display"
                 >
-                  Latest update:
+                  Latest status:
                 </p>
                 <p
                   class="font-display font-bold text-lg"
                 >
                   Complete
                 </p>
+                <a
+                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  href="/dashboard"
+                >
+                  View my status and messages +
+                </a>
               </div>
             </div>
           </div>
@@ -823,13 +840,24 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="font-display"
                 >
-                  Latest update:
+                  Latest status:
                 </p>
                 <p
                   class="font-display font-bold text-lg"
                 >
                   In Progress
                 </p>
+                <p
+                  class="font-bold text-lg"
+                >
+                  July 15, 2021
+                </p>
+                <a
+                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  href="/dashboard"
+                >
+                  View my status and messages +
+                </a>
               </div>
             </div>
           </div>
@@ -1065,13 +1093,19 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="font-display"
                 >
-                  Latest update:
+                  Latest status:
                 </p>
                 <p
                   class="font-display font-bold text-lg"
                 >
                   Complete
                 </p>
+                <a
+                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  href="/dashboard"
+                >
+                  View my status and messages +
+                </a>
               </div>
             </div>
           </div>
@@ -1304,13 +1338,24 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="font-display"
                 >
-                  Latest update:
+                  Latest status:
                 </p>
                 <p
                   class="font-display font-bold text-lg"
                 >
                   Questionnaire received -training
                 </p>
+                <p
+                  class="font-bold text-lg"
+                >
+                  September 15, 2021
+                </p>
+                <a
+                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  href="/dashboard"
+                >
+                  View my status and messages +
+                </a>
               </div>
             </div>
           </div>
@@ -1546,13 +1591,19 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="font-display"
                 >
-                  Latest update:
+                  Latest status:
                 </p>
                 <p
                   class="font-display font-bold text-lg"
                 >
                   Training information added
                 </p>
+                <a
+                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  href="/dashboard"
+                >
+                  View my status and messages +
+                </a>
               </div>
             </div>
           </div>
@@ -1809,13 +1860,24 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="font-display"
                 >
-                  Latest update:
+                  Latest status:
                 </p>
                 <p
                   class="font-display font-bold text-lg"
                 >
                   In Progress
                 </p>
+                <p
+                  class="font-bold text-lg"
+                >
+                  July 15, 2021
+                </p>
+                <a
+                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  href="/dashboard"
+                >
+                  View my status and messages +
+                </a>
               </div>
             </div>
           </div>
@@ -2051,13 +2113,19 @@ exports[`Dashboard renders Dashboard 1`] = `
                 <p
                   class="font-display"
                 >
-                  Latest update:
+                  Latest status:
                 </p>
                 <p
                   class="font-display font-bold text-lg"
                 >
                   Complete
                 </p>
+                <a
+                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  href="/dashboard"
+                >
+                  View my status and messages +
+                </a>
               </div>
             </div>
           </div>

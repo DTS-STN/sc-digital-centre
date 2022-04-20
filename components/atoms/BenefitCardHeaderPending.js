@@ -61,10 +61,19 @@ export default function BenefitCardHeaderPending(props) {
             id={`${props.benefit.benefitType}-pending-progressbar`}
             className="py-4 sm:pl-10"
           >
-            <p className="font-display">{t.latestUpdate}</p>
+            <p className="font-display">{t.latestStatus}</p>
             <p className="font-display font-bold text-lg">
               {props.benefit.benefitStatusProgress}
             </p>
+            <p className="font-bold text-lg">
+              {props.benefit.latestStatusDate}
+            </p>
+            <a
+              href={t.url_ststusAndMessages}
+              className="text-sm mt-1 text-bright-blue-solid underline"
+            >
+              {t.viewMyStatusAndMessages}
+            </a>
           </div>
         </div>
       </div>

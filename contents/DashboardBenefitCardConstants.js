@@ -8,6 +8,7 @@ const SUBMITTED_OAS = {
   statusDescription:
     'Your application is pending, we will notify you with decision',
   applicationDate: 'July 1, 2021',
+  latestStatusDate: 'July 15, 2021',
   estimatedDateOfDecision: 'July 31, 2021',
   applicationType: 'Old Age Security Benefits (OAS)',
   applicationStatus: 'Application Submitted',
@@ -62,6 +63,7 @@ const SUBMITTED_CPP = {
   statusDescription:
     'Your application is pending, we will notify you with decision',
   applicationDate: 'July 1, 2021',
+  latestStatusDate: 'July 15, 2021',
   estimatedDateOfDecision: 'July 31, 2021',
   applicationType: 'Canada Pension Plan (CPP)',
   applicationDescription: 'Online application received',
@@ -122,6 +124,7 @@ const SUBMITTED_CPPD = {
   statusDescription:
     'Your application is pending, we will notify you with decision',
   applicationDate: 'July 1, 2021',
+  latestStatusDate: 'July 15, 2021',
   estimatedDateOfDecision: 'July 31, 2021',
   applicationType: 'Canada Pension Plan (CPP)',
   applicationDescription: 'Online application received',
@@ -226,6 +229,7 @@ const SUBMITTED_EI = {
   statusDescription:
     'Your application is pending, we will notify you with a decision',
   applicationDate: 'September 1, 2021',
+  latestStatusDate: 'September 15, 2021',
   estimatedDateOfDecision: 'September 30, 2021',
   applicationStatus: 'Application Submitted',
   applicationDescription: 'Paper application received',

@@ -242,7 +242,7 @@ export default {
   applicationSubmitted: 'Application submitted on:',
   estimatedDateOfDecision: 'Estimated date of decision',
   paymentAmount: 'Payment amount',
-  latestUpdate: 'Latest update:',
+  latestStatus: 'Latest status:',
   daysUntilNextPayment: 'Next payment:',
   nextReportDue: 'Next report due:',
   viewPaymentHistory: 'View my payments +',
@@ -318,6 +318,9 @@ export default {
   url_serviceCanada:
     'https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html',
   url_myBenefitsAndServices: '/dashboard',
+
+  // Benefit card header URLs
+  url_ststusAndMessages: '/dashboard',
 
   //Error pages
   errorPage400ReturnToDashboard: 'Return to dashboard main page',
