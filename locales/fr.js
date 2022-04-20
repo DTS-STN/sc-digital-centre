@@ -233,7 +233,7 @@ export default {
   applicationSubmitted: '(FR)Application submitted on:',
   estimatedDateOfDecision: '(FR)Estimated date of decision',
   paymentAmount: '(FR)Payment amount',
-  latestUpdate: '(FR)Latest update:',
+  latestStatus: '(FR)Latest status:',
   daysUntilNextPayment: '(FR)Next payment:',
   nextReportDue: '(FR)Next report due:',
   viewPaymentHistory: '(FR)View my payments +',
@@ -310,6 +310,9 @@ export default {
   url_serviceCanada:
     'https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html',
   url_myBenefitsAndServices: '/dashboard',
+
+  // Benefit card header URLs
+  url_statusAndMessages: '/dashboard',
 
   //Error pages
   errorPage400ReturnToDashboard: '(FR)Return to dashboard main page',

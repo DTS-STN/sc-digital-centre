@@ -47,7 +47,7 @@ export default function BenefitCardHeaderActive(props) {
             </p>
             <a
               href="./dashboard"
-              className="text-sm mt-1 text-bright-blue-solid underline"
+              className="mt-1 text-bright-blue-solid underline"
             >
               {t.viewPaymentHistory}
             </a>
@@ -68,10 +68,16 @@ export default function BenefitCardHeaderActive(props) {
             id={`${props.benefit.benefitType}-active-latestUpdates`}
             className="sm:pb-2"
           >
-            <p className="font-display sm:pb-2">{t.latestUpdate}</p>
+            <p className="font-display sm:pb-2">{t.latestStatus}</p>
             <p className="font-display font-bold text-lg">
               {props.benefit.benefitStatusProgress}
             </p>
+            <a
+              href={t.url_statusAndMessages}
+              className="mt-1 text-bright-blue-solid underline"
+            >
+              {t.viewMyStatusAndMessages}
+            </a>
           </div>
         </div>
       </div>
