@@ -1451,7 +1451,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   <p
                     class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
                   >
-                    View documents
+                    View my documents
                   </p>
                 </a>
               </li>
@@ -1577,129 +1577,7 @@ exports[`Dashboard renders Dashboard 1`] = `
         <div
           class="w-auto sm:w-full flex-grow border-t border-gray-light mx-4 sm:mx-0"
         />
-        <div>
-          <div
-            class="bg-gray-lighter px-8 py-6"
-          >
-            <h3
-              class="font-display font-bold text-xl"
-            >
-              All EI Tasks
-            </h3>
-            <ul
-              class="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6"
-            >
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-correspondence"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3"
-                    src="/images/dashboard/oas-updates-message-icon.svg"
-                  />
-                  <p
-                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
-                  >
-                    View my status and messages
-                  </p>
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3"
-                    src="/images/dashboard/ei-insurance-report-icon.svg"
-                  />
-                  <p
-                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
-                  >
-                    Complete your Employment Insurance reports
-                  </p>
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3"
-                    src="/images/dashboard/ei-view-payment-info-icon.svg"
-                  />
-                  <p
-                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
-                  >
-                    View my payment information
-                  </p>
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="/dashboard"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3"
-                    src="/images/dashboard/ei-access-code.svg"
-                  />
-                  <p
-                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
-                  >
-                    Access code
-                  </p>
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3"
-                    src="/images/dashboard/ei-past-claims-icon.svg"
-                  />
-                  <p
-                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
-                  >
-                    View my past claims
-                  </p>
-                </a>
-              </li>
-              <li
-                class="font-display font-bold text-left pb-6"
-              >
-                <a
-                  href="View my Records of Employment"
-                >
-                  <img
-                    alt=""
-                    class="font-normal pb-3"
-                    src="/images/dashboard/ei-record-of-employment-icon.svg"
-                  />
-                  <p
-                    class="font-normal underline text-link-blue-default hover:text-link-blue-hover"
-                  >
-                    View my Records of Employment
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <div />
         <button
           caption="View more"
           class="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
