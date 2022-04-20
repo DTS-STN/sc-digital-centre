@@ -694,7 +694,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   Next payment:
                 </p>
                 <p
-                  class="text-green-active font-bold"
+                  class="text-green-active font-bold text-lg"
                 >
                   September 30, 2021
                 </p>
@@ -1053,7 +1053,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   Next payment:
                 </p>
                 <p
-                  class="text-green-active font-bold"
+                  class="text-green-active font-bold text-lg"
                 >
                   September 30, 2021
                 </p>
@@ -1534,7 +1534,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   Next report due:
                 </p>
                 <p
-                  class="text-green-active font-bold"
+                  class="text-green-active font-bold text-lg"
                 >
                   September 30, 2021
                 </p>
@@ -2161,7 +2161,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   Next payment:
                 </p>
                 <p
-                  class="text-green-active font-bold"
+                  class="text-green-active font-bold text-lg"
                 >
                   September 30, 2021
                 </p>
