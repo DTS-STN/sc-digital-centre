@@ -10,7 +10,7 @@ exports[`Design System footer tests renders DSHeader 1`] = `
         class="ds-px-4 sm:ds-container md:ds-flex-nowrap md:ds-flex-row ds-flex ds-flex-wrap ds-justify-between ds-items-center ds-mx-auto"
       >
         <a
-          class="header-logo"
+          class="header-logo ds-mb-8px"
           href="#"
         >
           <img
