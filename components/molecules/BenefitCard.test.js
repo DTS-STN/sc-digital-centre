@@ -95,6 +95,15 @@ const activeCppTasks = [
   },
 ]
 
+const activeCppApi = {
+  programCode: '32294',
+  benefitCode: '30320',
+  benefitType: 'Beneficial',
+  benefitStatus: 'Active',
+  lastPaymentDate: '2021-02-21',
+  finalPaymentDate: '2024-02-13',
+}
+
 expect.extend(toHaveNoViolations)
 describe('BenefitCard', () => {
   it('renders BenefitCard', () => {
@@ -103,6 +112,7 @@ describe('BenefitCard', () => {
         locale="en"
         benefit={activeCanadaPensionPlan}
         tasks={activeCppTasks}
+        api={activeCppApi}
       />
     )
     const benefitName = screen.getByText('Canada Pension Plan')
@@ -118,6 +128,7 @@ describe('BenefitCard', () => {
         locale="en"
         benefit={activeCanadaPensionPlan}
         tasks={activeCppTasks}
+        api={activeCppApi}
       />
     )
     const results = await axe(container)

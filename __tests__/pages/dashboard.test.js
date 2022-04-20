@@ -5,7 +5,26 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 import Dashboard from '../../pages/dashboard'
 
 expect.extend(toHaveNoViolations)
-
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () =>
+      Promise.resolve({
+        programCode: '4543',
+        claimStatusCode: '3433',
+        enmBenefitType: '1',
+        messageData: 'Important message',
+        messageId: '32',
+        publishDate: '2021-02-21',
+        netAmount: '32.21',
+        nextRptDueDate: '2023-04-24',
+        benefitCode: '30320',
+        benefitType: 'Beneficial',
+        benefitStatus: 'Active',
+        lastPaymentDate: '2021-02-21',
+        finalPaymentDate: '2024-02-13',
+      }),
+  })
+)
 describe('Dashboard', () => {
   jest.setTimeout(50000)
   it('renders Dashboard', () => {

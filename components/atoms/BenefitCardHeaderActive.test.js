@@ -65,6 +65,15 @@ const activeCanadaPensionPlanCPPD = {
   benefitStatusProgress: 'Complete',
 }
 
+const activeCppApi = {
+  programCode: '32294',
+  benefitCode: '30320',
+  benefitType: 'Beneficial',
+  benefitStatus: 'Active',
+  lastPaymentDate: '2021-02-21',
+  finalPaymentDate: '2024-02-13',
+}
+
 expect.extend(toHaveNoViolations)
 
 describe('BenefitCardHeaderActive', () => {
@@ -72,12 +81,13 @@ describe('BenefitCardHeaderActive', () => {
     render(
       <BenefitCardHeaderActive
         benefit={activeCanadaPensionPlan}
+        api={activeCppApi}
         locale={'en'}
       />
     )
     const titleText = screen.getByText('Canada Pension Plan')
     const benefitStatusProgress = screen.getByText('Complete')
-    const nextPaymentAmount = screen.getByText('$ 734.34')
+    const nextPaymentAmount = screen.getByText('Payment amount')
 
     expect(titleText).toBeInTheDocument()
     expect(benefitStatusProgress).toBeInTheDocument()
@@ -103,6 +113,7 @@ describe('BenefitCardHeaderActive', () => {
     const { container } = render(
       <BenefitCardHeaderActive
         benefit={activeCanadaPensionPlan}
+        api={activeCppApi}
         locale={'en'}
       />
     )
