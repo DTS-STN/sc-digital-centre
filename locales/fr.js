@@ -257,6 +257,8 @@ export default {
   // dashboard benefit task headers
   paymentTasks: '(FR)Payment and tax details',
   changeTasks: '(FR)Make a Change',
+  paymentClaimsTaxTasks: '(FR)Payments, claims, and tax details',
+  documentsReportsTasks: '(FR)Documents and reports',
 
   // dashboard benefits tasks
   allPaymentsTask: '(FR)View all payments',
@@ -275,6 +277,7 @@ export default {
   viewPaymentInfo: '(FR)View my payment information',
   submitDocuments: '(FR)Submit documents',
   viewDocuments: '(FR)View documents',
+  viewLatestClaimTask: '(FR)View my latest claim',
   viewPastClaimsTask: '(FR)View my past claims',
   submitEformsTask: '(FR)Submit eForms',
   registerForAlerts: '(FR)Register for alert me',
@@ -324,6 +327,7 @@ export default {
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
   viewDocumentsLink:
     'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/321',
+  viewLatestClaimLink: '',
   viewPastClaimsLink:
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6',
   submitFormsLink:
