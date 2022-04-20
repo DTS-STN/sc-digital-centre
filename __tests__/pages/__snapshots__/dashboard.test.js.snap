@@ -474,7 +474,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   July 15, 2021
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="/dashboard"
                 >
                   View my status and messages +
@@ -688,7 +688,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   $ 734.34
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="./dashboard"
                 >
                   View my payments +
@@ -723,7 +723,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   Complete
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="/dashboard"
                 >
                   View my status and messages +
@@ -848,7 +848,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   July 15, 2021
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="/dashboard"
                 >
                   View my status and messages +
@@ -1062,7 +1062,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   $ 691.45
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="./dashboard"
                 >
                   View my payments +
@@ -1097,7 +1097,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   Complete
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="/dashboard"
                 >
                   View my status and messages +
@@ -1344,7 +1344,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   September 15, 2021
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="/dashboard"
                 >
                   View my status and messages +
@@ -1558,7 +1558,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   $ 691.45
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="./dashboard"
                 >
                   View my payments +
@@ -1593,7 +1593,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   Training information added
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="/dashboard"
                 >
                   View my status and messages +
@@ -1864,7 +1864,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   July 15, 2021
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="/dashboard"
                 >
                   View my status and messages +
@@ -2078,7 +2078,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   $ 612.94
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="./dashboard"
                 >
                   View my payments +
@@ -2113,7 +2113,7 @@ exports[`Dashboard renders Dashboard 1`] = `
                   Complete
                 </p>
                 <a
-                  class="text-sm mt-1 text-bright-blue-solid underline"
+                  class="mt-1 text-bright-blue-solid underline"
                   href="/dashboard"
                 >
                   View my status and messages +

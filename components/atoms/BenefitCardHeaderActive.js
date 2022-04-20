@@ -47,7 +47,7 @@ export default function BenefitCardHeaderActive(props) {
             </p>
             <a
               href="./dashboard"
-              className="text-sm mt-1 text-bright-blue-solid underline"
+              className="mt-1 text-bright-blue-solid underline"
             >
               {t.viewPaymentHistory}
             </a>
@@ -74,7 +74,7 @@ export default function BenefitCardHeaderActive(props) {
             </p>
             <a
               href={t.url_statusAndMessages}
-              className="text-sm mt-1 text-bright-blue-solid underline"
+              className="mt-1 text-bright-blue-solid underline"
             >
               {t.viewMyStatusAndMessages}
             </a>

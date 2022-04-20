@@ -52,8 +52,6 @@ export default function BenefitCardHeaderPending(props) {
             </p>
           </div>
 
-          {/* Progressbar Placeholder */}
-
           <div id={`${props.benefit.benefitType}-pending-progressbar`}>
             <p className="font-display sm:pb-2">{t.latestStatus}</p>
             <p className="font-display font-bold text-lg">
@@ -64,7 +62,7 @@ export default function BenefitCardHeaderPending(props) {
             </p>
             <a
               href={t.url_statusAndMessages}
-              className="text-sm mt-1 text-bright-blue-solid underline"
+              className="mt-1 text-bright-blue-solid underline"
             >
               {t.viewMyStatusAndMessages}
             </a>
