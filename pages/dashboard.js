@@ -51,8 +51,40 @@ import {
 } from '../contents/DashboardBenefitApplicationCards'
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
+import { useEffect, useState } from 'react'
 
 export default function Dashboard() {
+  const [cppData, setCppActiveData] = useState([])
+  const [eiData, setEiActiveData] = useState([])
+  const [isLoading, setLoading] = useState(false)
+  useEffect(async () => {
+    setLoading(true)
+    fetch('/cppactivebenefit', {
+      headers: new Headers({
+        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+      }),
+    })
+      .then(async (res) => res.json())
+      .then((cppData) => {
+        setCppActiveData(cppData)
+        setLoading(false)
+      })
+  }, [])
+
+  useEffect(async () => {
+    setLoading(true)
+    fetch('/eiactivebenefit', {
+      headers: new Headers({
+        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+      }),
+    })
+      .then(async (res) => res.json())
+      .then((eiData) => {
+        setEiActiveData(eiData)
+        setLoading(false)
+      })
+  }, [])
+
   return (
     <>
       <DSHeader />
@@ -66,6 +98,7 @@ export default function Dashboard() {
           locale="en"
           benefit={ACTIVE_CPP}
           tasks={ACTIVE_CPP_TASKS}
+          api={cppData}
         />
         <BenefitCard
           locale="en"
@@ -82,7 +115,12 @@ export default function Dashboard() {
           benefit={SUBMITTED_EI}
           tasks={SUBMITTED_EI_TASKS}
         />
-        <BenefitCard locale="en" benefit={ACTIVE_EI} tasks={ACTIVE_EI_TASKS} />
+        <BenefitCard
+          locale="en"
+          benefit={ACTIVE_EI}
+          tasks={ACTIVE_EI_TASKS}
+          api={eiData}
+        />
         <BenefitCard
           locale="en"
           benefit={INACTIVE_EI}

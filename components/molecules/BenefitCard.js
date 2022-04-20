@@ -10,6 +10,8 @@ import BenefitStatus from '../../constants/BenefitStatus'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
+import { getBenefitType } from '../organisms/DashboardUtils'
+import BenefitCode from '../../constants/BenefitCode'
 
 const BenefitCard = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -20,6 +22,18 @@ const BenefitCard = (props) => {
   const handleClick = () => {
     setBtnCaption(isOpen ? t.viewMore : t.viewLess)
     setIsOpen(!isOpen)
+  }
+
+  const getBenefitTypeName = () => {
+    let benefitType
+    if (props.benefit.benefitType === BenefitCode.cpp) {
+      benefitType = getBenefitType(props.api.benefitType)
+    } else if (props.benefit.benefitType === BenefitCode.ei) {
+      benefitType = getBenefitType(props.api.enmBenefitType)
+    } else {
+      return props.benefit.pendingBenefits
+    }
+    return benefitType.map((i) => i.nameEn).toString()
   }
 
   const scrollTo = () => {
@@ -41,6 +55,7 @@ const BenefitCard = (props) => {
         return (
           <BenefitCardHeaderActive
             benefit={props.benefit}
+            api={props.api}
             locale={props.locale}
           />
         )
@@ -69,7 +84,7 @@ const BenefitCard = (props) => {
         return (
           <>
             <span className="font-bold">{t.activeBenefits}</span>
-            <span className="ml-2">{props.benefit.pendingBenefits}</span>
+            <span className="ml-2">{getBenefitTypeName()}</span>
           </>
         )
       case BenefitStatus.pending.toUpperCase():
@@ -148,5 +163,18 @@ BenefitCard.propTypes = {
       'Canada Pension Plan Disability',
     ]),
     status: PropTypes.oneOf(['Active', 'Pending', 'Inactive']),
+  }),
+  api: PropTypes.shape({
+    programCode: String,
+    benefitCode: String,
+    benefitType: String,
+    benefitStatus: String,
+    lastPaymentDate: String,
+    finalPaymentDate: String,
+    netAmount: Number,
+    paymentProcessType: String,
+    claimStatusCode: String,
+    enmBenefitType: String,
+    nextRptDueDate: String,
   }),
 }
