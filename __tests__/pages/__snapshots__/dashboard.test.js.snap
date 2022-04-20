@@ -424,15 +424,14 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
             />
             <div
-              class="font-display col-span-3 sm:grid grid-cols-3"
+              class="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 font-display sm:pl-8 lg:pl-10"
               id="CPP-pending-paymentStartDate"
             >
               <div
-                class="py-4 sm:pl-10"
                 id="CPP-pending-applicationDate"
               >
                 <p
-                  class="text-base"
+                  class="text-base sm:pb-2"
                 >
                   Application submitted on:
                 </p>
@@ -443,11 +442,10 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
                 id="CPP-pending-estimatedDateOfDecision"
               >
                 <p
-                  class="text-base w-44"
+                  class="text-base sm:pb-2"
                 >
                   Estimated date of decision
                 </p>
@@ -458,11 +456,10 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
                 id="CPP-pending-progressbar"
               >
                 <p
-                  class="font-display"
+                  class="font-display sm:pb-2"
                 >
                   Latest update:
                 </p>
@@ -663,19 +660,19 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
             />
             <div
-              class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+              class="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"
               id="CPP-active-paymentStartDate"
             >
               <div
                 id="CPP-active-nextPaymentAmount"
               >
                 <p
-                  class="text-base"
+                  class="text-base sm:pb-2 "
                 >
                   Payment amount
                 </p>
                 <p
-                  class="font-bold text-4xl mt-1"
+                  class="font-bold text-4xl sm:text-3xl md:text-4xl whitespace-nowrap"
                 >
                   $ 734.34
                 </p>
@@ -687,10 +684,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </a>
               </div>
               <div
-                class="relative mb-20 mt-7 sm:mt-0"
                 id="CPP-active-nextPaymentDueDate"
               >
-                <p>
+                <p
+                  class="sm:pb-2"
+                >
                   Next payment:
                 </p>
                 <p
@@ -700,11 +698,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
+                class="sm:pb-2"
                 id="CPP-active-latestUpdates"
               >
                 <p
-                  class="font-display"
+                  class="font-display sm:pb-2"
                 >
                   Latest update:
                 </p>
@@ -783,15 +781,14 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
             />
             <div
-              class="font-display col-span-3 sm:grid grid-cols-3"
+              class="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 font-display sm:pl-8 lg:pl-10"
               id="OAS-pending-paymentStartDate"
             >
               <div
-                class="py-4 sm:pl-10"
                 id="OAS-pending-applicationDate"
               >
                 <p
-                  class="text-base"
+                  class="text-base sm:pb-2"
                 >
                   Application submitted on:
                 </p>
@@ -802,11 +799,10 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
                 id="OAS-pending-estimatedDateOfDecision"
               >
                 <p
-                  class="text-base w-44"
+                  class="text-base sm:pb-2"
                 >
                   Estimated date of decision
                 </p>
@@ -817,11 +813,10 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
                 id="OAS-pending-progressbar"
               >
                 <p
-                  class="font-display"
+                  class="font-display sm:pb-2"
                 >
                   Latest update:
                 </p>
@@ -1022,19 +1017,19 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
             />
             <div
-              class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+              class="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"
               id="OAS-active-paymentStartDate"
             >
               <div
                 id="OAS-active-nextPaymentAmount"
               >
                 <p
-                  class="text-base"
+                  class="text-base sm:pb-2 "
                 >
                   Payment amount
                 </p>
                 <p
-                  class="font-bold text-4xl mt-1"
+                  class="font-bold text-4xl sm:text-3xl md:text-4xl whitespace-nowrap"
                 >
                   $ 691.45
                 </p>
@@ -1046,10 +1041,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </a>
               </div>
               <div
-                class="relative mb-20 mt-7 sm:mt-0"
                 id="OAS-active-nextPaymentDueDate"
               >
-                <p>
+                <p
+                  class="sm:pb-2"
+                >
                   Next payment:
                 </p>
                 <p
@@ -1059,11 +1055,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
+                class="sm:pb-2"
                 id="OAS-active-latestUpdates"
               >
                 <p
-                  class="font-display"
+                  class="font-display sm:pb-2"
                 >
                   Latest update:
                 </p>
@@ -1264,15 +1260,14 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
             />
             <div
-              class="font-display col-span-3 sm:grid grid-cols-3"
+              class="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 font-display sm:pl-8 lg:pl-10"
               id="EI-pending-paymentStartDate"
             >
               <div
-                class="py-4 sm:pl-10"
                 id="EI-pending-applicationDate"
               >
                 <p
-                  class="text-base"
+                  class="text-base sm:pb-2"
                 >
                   Application submitted on:
                 </p>
@@ -1283,11 +1278,10 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
                 id="EI-pending-estimatedDateOfDecision"
               >
                 <p
-                  class="text-base w-44"
+                  class="text-base sm:pb-2"
                 >
                   Estimated date of decision
                 </p>
@@ -1298,11 +1292,10 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
                 id="EI-pending-progressbar"
               >
                 <p
-                  class="font-display"
+                  class="font-display sm:pb-2"
                 >
                   Latest update:
                 </p>
@@ -1503,19 +1496,19 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
             />
             <div
-              class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+              class="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"
               id="EI-active-paymentStartDate"
             >
               <div
                 id="EI-active-nextPaymentAmount"
               >
                 <p
-                  class="text-base"
+                  class="text-base sm:pb-2 "
                 >
                   Payment amount
                 </p>
                 <p
-                  class="font-bold text-4xl mt-1"
+                  class="font-bold text-4xl sm:text-3xl md:text-4xl whitespace-nowrap"
                 >
                   $ 691.45
                 </p>
@@ -1527,10 +1520,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </a>
               </div>
               <div
-                class="relative mb-20 mt-7 sm:mt-0"
                 id="EI-active-nextPaymentDueDate"
               >
-                <p>
+                <p
+                  class="sm:pb-2"
+                >
                   Next report due:
                 </p>
                 <p
@@ -1540,11 +1534,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
+                class="sm:pb-2"
                 id="EI-active-latestUpdates"
               >
                 <p
-                  class="font-display"
+                  class="font-display sm:pb-2"
                 >
                   Latest update:
                 </p>
@@ -1891,15 +1885,14 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
             />
             <div
-              class="font-display col-span-3 sm:grid grid-cols-3"
+              class="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 font-display sm:pl-8 lg:pl-10"
               id="CPPD-pending-paymentStartDate"
             >
               <div
-                class="py-4 sm:pl-10"
                 id="CPPD-pending-applicationDate"
               >
                 <p
-                  class="text-base"
+                  class="text-base sm:pb-2"
                 >
                   Application submitted on:
                 </p>
@@ -1910,11 +1903,10 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
                 id="CPPD-pending-estimatedDateOfDecision"
               >
                 <p
-                  class="text-base w-44"
+                  class="text-base sm:pb-2"
                 >
                   Estimated date of decision
                 </p>
@@ -1925,11 +1917,10 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
                 id="CPPD-pending-progressbar"
               >
                 <p
-                  class="font-display"
+                  class="font-display sm:pb-2"
                 >
                   Latest update:
                 </p>
@@ -2130,19 +2121,19 @@ exports[`Dashboard renders Dashboard 1`] = `
               class="sm:hidden w-1/3 flex-grow border-t border-gray-light"
             />
             <div
-              class="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+              class="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"
               id="CPPD-active-paymentStartDate"
             >
               <div
                 id="CPPD-active-nextPaymentAmount"
               >
                 <p
-                  class="text-base"
+                  class="text-base sm:pb-2 "
                 >
                   Payment amount
                 </p>
                 <p
-                  class="font-bold text-4xl mt-1"
+                  class="font-bold text-4xl sm:text-3xl md:text-4xl whitespace-nowrap"
                 >
                   $ 612.94
                 </p>
@@ -2154,10 +2145,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </a>
               </div>
               <div
-                class="relative mb-20 mt-7 sm:mt-0"
                 id="CPPD-active-nextPaymentDueDate"
               >
-                <p>
+                <p
+                  class="sm:pb-2"
+                >
                   Next payment:
                 </p>
                 <p
@@ -2167,11 +2159,11 @@ exports[`Dashboard renders Dashboard 1`] = `
                 </p>
               </div>
               <div
-                class="py-4 sm:pl-10"
+                class="sm:pb-2"
                 id="CPPD-active-latestUpdates"
               >
                 <p
-                  class="font-display"
+                  class="font-display sm:pb-2"
                 >
                   Latest update:
                 </p>
