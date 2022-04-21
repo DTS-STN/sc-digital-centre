@@ -6,7 +6,7 @@ export default function ViewMoreLessButton(props) {
     <ActionButton
       className="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
       onClick={props.onClick}
-      type="submit"
+      type="button"
       id={props.id}
       data-testid={props.dataTestid}
     >
