@@ -57,7 +57,7 @@ import {
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   return (
     <>
       <DSHeader locale="en" />
@@ -120,58 +120,14 @@ export default function Dashboard() {
             benefit={INACTIVE_CPPD}
             tasks={INACTIVE_CPP_TASKS}
           />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={APPLICATION_CARD_OAS}
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={APPLICATION_CARD_CPP}
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={APPLICATION_CARD_CPPD}
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={APPLICATION_CARD_GIS}
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={APPLICATION_CARD_EI}
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={APPLICATION_CARD_CPP_CHILDS_BENEFIT_AGED_18_25}
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={
-              APPLICATION_CARD_CPP_SURVIVOR_PENSION_AND_CHILD_BENEFITS
-            }
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={
-              APPLICATION_CARD_CPP_ALLOWANCE_OR_ALLOWANCE_FOR_SURVIVOR
-            }
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={APPLICATION_CARD_CPP_PENSION_SHARING}
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={APPLICATION_CARD_CPP_CREADIT_SPLIT}
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={APPLICATION_CARD_CPP_CHILD_REARING_PROVISION}
-          />
-          <BenefitApplicationCard
-            locale="en"
-            benefitApplication={APPLICATION_CARD_CPP_DEATH_BENEFIT}
-          />
+
+          {/* application or "advertising" cards */}
+          {props.advertisingCards.map((card) => {
+            return (
+              <BenefitApplicationCard locale="en" benefitApplication={card} />
+            )
+          })}
+
           <NoBenefitCard
             locale="en"
             benefit={NO_BENEFIT_CPP}
@@ -197,4 +153,98 @@ export default function Dashboard() {
       <DSFooter />
     </>
   )
+}
+
+export async function getStaticProps() {
+  const currentBenefits = [] // to be retrieved by API
+
+  //tests
+  currentBenefits.push({ program: 'oas', status: 'active' })
+  currentBenefits.push({ program: 'gis', status: 'active' })
+
+  return {
+    props: {
+      advertisingCards: BuildAdvertisingCards(currentBenefits),
+    },
+  }
+}
+
+function BuildAdvertisingCards(currentBenefits) {
+  // the order of these matters
+  // words to be replaced with codes
+  const advertisingCards = []
+  advertisingCards.push(APPLICATION_CARD_EI)
+  if (
+    CheckAllBenefitsForAdvertising(
+      currentBenefits,
+      ['pending', 'active'],
+      'cpp',
+      'retirement'
+    )
+  ) {
+    advertisingCards.push(APPLICATION_CARD_CPP)
+  }
+  if (
+    CheckAllBenefitsForAdvertising(
+      currentBenefits,
+      ['pending', 'active'],
+      'oas'
+    )
+  ) {
+    advertisingCards.push(APPLICATION_CARD_OAS)
+  }
+  if (
+    CheckAllBenefitsForAdvertising(
+      currentBenefits,
+      ['pending', 'active'],
+      'gis'
+    )
+  ) {
+    advertisingCards.push(APPLICATION_CARD_GIS)
+  }
+  if (
+    CheckAllBenefitsForAdvertising(
+      currentBenefits,
+      ['pending', 'active'],
+      'cpp',
+      'disability'
+    )
+  ) {
+    advertisingCards.push(APPLICATION_CARD_CPPD)
+  }
+  advertisingCards.push(APPLICATION_CARD_CPP_CHILDS_BENEFIT_AGED_18_25)
+  advertisingCards.push(
+    APPLICATION_CARD_CPP_SURVIVOR_PENSION_AND_CHILD_BENEFITS
+  )
+  advertisingCards.push(
+    APPLICATION_CARD_CPP_ALLOWANCE_OR_ALLOWANCE_FOR_SURVIVOR
+  )
+  advertisingCards.push(APPLICATION_CARD_CPP_PENSION_SHARING)
+  advertisingCards.push(APPLICATION_CARD_CPP_CREADIT_SPLIT)
+  advertisingCards.push(APPLICATION_CARD_CPP_CHILD_REARING_PROVISION)
+  advertisingCards.push(APPLICATION_CARD_CPP_DEATH_BENEFIT)
+
+  return advertisingCards
+}
+
+/// return: the benefit can be advertised
+/// benefit: the benefit to be checked
+/// program: the program to match to
+/// type: the type to match to
+/// status: status' that the advertising card can't be shown with
+function CheckAllBenefitsForAdvertising(benefits, status, program, type) {
+  var matchingBenefit
+  if (typeof type === 'undefined')
+    //overloaded function handling
+    matchingBenefit = benefits.find((b) => b.program == program)
+  else
+    matchingBenefit = benefits.find(
+      (b) => b.program == program && b.type == type
+    )
+
+  if (matchingBenefit == null) return true
+  //check if there is a status to evaluate
+  //if (typeof status === 'undefined' || status.length == 0) return false
+  //evaluate for a matching status
+  return !status.find((s) => s == matchingBenefit.status)
 }
