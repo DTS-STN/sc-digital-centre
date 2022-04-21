@@ -13,16 +13,19 @@ jest.mock('next/link', () => {
 })
 
 describe('BenefitDetailPart', () => {
+  const { container } = render(
+    <BenefitDetailPart
+      id="this_id"
+      title="detail title"
+      editLink="canada.ca/editlink"
+    />
+  )
   it('renders BenefitDetailPart', () => {
-    render(<BenefitDetailPart title="my_detail" />)
-    const element = screen.getByText('my_detail')
+    const element = screen.getByText('detail title')
     expect(element).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(
-      <BenefitDetailPart id="this_id" title="detail title" />
-    )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

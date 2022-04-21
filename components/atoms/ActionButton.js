@@ -63,7 +63,7 @@ ActionButton.propTypes = {
   /**
    * the type of the button
    */
-  type: PropTypes.oneOf(['submit', 'reset']),
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
 
   /**
    * Callback for a click event on the button

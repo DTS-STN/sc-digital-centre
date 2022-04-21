@@ -48,6 +48,7 @@ const NoBenefitCard = (props) => {
 
       {props.tasks.length > 6 && (
         <ViewMoreLessButton
+          id={props.benefit.benefitType + '-card-button'}
           onClick={() => {
             handleClick()
             scrollTo()

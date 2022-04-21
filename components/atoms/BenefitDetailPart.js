@@ -29,11 +29,12 @@ const BenefitDetailPart = (props) => {
   )
 }
 
-BenefitDetailPart.PropTypes = {
+BenefitDetailPart.propTypes = {
   id: PropTypes.string.isRequired,
   editLink: PropTypes.string.isRequired,
   content: PropTypes.string,
   children: PropTypes.object,
+  locale: PropTypes.string,
 }
 
 export default BenefitDetailPart
