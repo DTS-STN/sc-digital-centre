@@ -163,9 +163,15 @@ export default function Dashboard(props) {
 export async function getStaticProps() {
   const currentBenefits = [] // to be retrieved by API
 
-  //tests
-  currentBenefits.push({ program: 'oas', status: 'active' })
-  currentBenefits.push({ program: 'gis', status: 'active' })
+  // tests - uncomment to hide a card with conditions
+  // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'active' })
+  // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'pending' })
+  // currentBenefits.push({ program: 'cpp', type: 'disability', status: 'active' })
+  // currentBenefits.push({ program: 'cpp', type: 'disability', status: 'pending' })
+  // currentBenefits.push({ program: 'oas', status: 'active' })
+  // currentBenefits.push({ program: 'oas', status: 'pending' })
+  // currentBenefits.push({ program: 'gis', status: 'active' })
+  // currentBenefits.push({ program: 'gis', status: 'pending' })
 
   return {
     props: {
