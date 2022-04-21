@@ -85,9 +85,9 @@ object Build_Release: BuildType({
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
         param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
-        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/OCP_APIM_SUBSCRIPTION_KEY%")
-        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/CPP_ACTIVE_BENEFIT_URL%")
-        param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/EI_ACTIVE_BENEFIT_URL%")
+        param("env.OCP_APIM_SUBSCRIPTION_KEY", "%vault:dts-secrets-dev/digitalCentre!/OCP_APIM_SUBSCRIPTION_KEY%")
+        param("env.CPP_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/digitalCentre!/CPP_ACTIVE_BENEFIT_URL%")
+        param("env.EI_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/digitalCentre!/EI_ACTIVE_BENEFIT_URL%")
         param("env.TARGET", "release")
         param("env.BRANCH", "release")
     }
@@ -103,7 +103,7 @@ object Build_Release: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL%"
+                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL%"
             }
         }
         script {
@@ -151,6 +151,9 @@ object Build_Dashboard: BuildType({
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
         param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
+        param("env.OCP_APIM_SUBSCRIPTION_KEY", "%vault:dts-secrets-dev/digitalCentre!/OCP_APIM_SUBSCRIPTION_KEY%")
+        param("env.CPP_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/digitalCentre!/CPP_ACTIVE_BENEFIT_URL%")
+        param("env.EI_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/digitalCentre!/EI_ACTIVE_BENEFIT_URL%")
         param("env.TARGET", "dashboard")
         param("env.BRANCH", "dashboard")
     }
@@ -166,7 +169,7 @@ object Build_Dashboard: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL%"
+                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL%"
             }
         }
         script {
@@ -214,6 +217,9 @@ object Build_Dynamic: BuildType({
         param("env.NEXT_PUBLIC_FEEDBACK_API", "https://alphasite.dts-stn.com/api/feedback")
         param("env.NEXT_CONTENT_API", "%vault:dts-secrets-dev/digitalCentre!/NEXT_CONTENT_API%")
         param("env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL", "%vault:dts-secrets-dev/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%")
+        param("env.OCP_APIM_SUBSCRIPTION_KEY", "%vault:dts-secrets-dev/digitalCentre!/OCP_APIM_SUBSCRIPTION_KEY%")
+        param("env.CPP_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/digitalCentre!/CPP_ACTIVE_BENEFIT_URL%")
+        param("env.EI_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/digitalCentre!/EI_ACTIVE_BENEFIT_URL%")
         param("env.TARGET", "dev")
         param("env.BRANCH", "%teamcity.build.branch%")
     }
@@ -229,7 +235,7 @@ object Build_Dynamic: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL%"
+                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL%"
             }
         }
         script {
