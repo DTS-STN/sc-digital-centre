@@ -13,7 +13,6 @@ import Dashboard from '../../pages/dashboard'
 expect.extend(toHaveNoViolations)
 
 describe('Dashboard', () => {
-  jest.setTimeout(50000)
   const advertisingCards = [
     APPLICATION_CARD_OAS,
     APPLICATION_CARD_GIS,
