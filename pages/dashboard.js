@@ -122,9 +122,14 @@ export default function Dashboard(props) {
           />
 
           {/* application or "advertising" cards */}
-          {props.advertisingCards.map((card) => {
+          {props.advertisingCards.map((value, index) => {
             return (
-              <BenefitApplicationCard locale="en" benefitApplication={card} />
+              <div key={index}>
+                <BenefitApplicationCard
+                  locale="en"
+                  benefitApplication={value}
+                />
+              </div>
             )
           })}
 
