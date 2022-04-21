@@ -72,6 +72,9 @@ export default function BenefitCardHeaderActive(props) {
             <p className="font-display font-bold text-lg">
               {props.benefit.benefitStatusProgress}
             </p>
+            <p className="font-bold text-lg">
+              {props.benefit.latestStatusDate}
+            </p>
             <a
               href={t.url_statusAndMessages}
               className="mt-1 text-bright-blue-solid underline"
