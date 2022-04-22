@@ -14,6 +14,7 @@ import {
   SUBMITTED_EI,
   ACTIVE_EI,
   INACTIVE_EI,
+  ACTIVE_SEB,
 } from '../contents/DashboardBenefitCardConstants'
 import {
   NO_BENEFIT_CPP,
@@ -39,6 +40,7 @@ import {
   NO_BENEFIT_GIS_TASKS,
   NO_BENEFIT_OAS_TASKS,
   NO_BENEFIT_EI_TASKS,
+  ACTIVE_SEB_TASKS,
 } from '../contents/DashboardBenefitTasksConstants'
 import {
   APPLICATION_CARD_OAS,
@@ -119,6 +121,12 @@ export default function Dashboard() {
             locale="en"
             benefit={INACTIVE_CPPD}
             tasks={INACTIVE_CPP_TASKS}
+          />
+          <BenefitCard
+            locale="en"
+            benefit={ACTIVE_SEB}
+            tasks={[ACTIVE_SEB_TASKS]}
+            taskGroups={true}
           />
           <BenefitApplicationCard
             locale="en"

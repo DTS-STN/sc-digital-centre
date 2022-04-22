@@ -222,6 +222,7 @@ export default {
   gis: '(FR)Guranteed Income Supplement',
   ei: '(FR)Employment Insurance',
   cppd: '(FR)Canada Pension Plan Disability',
+  seb: '(FR)Self Employment Benefits',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
@@ -237,6 +238,8 @@ export default {
   daysUntilNextPayment: '(FR)Next payment:',
   nextReportDue: '(FR)Next report due:',
   viewPaymentHistory: '(FR)View my payments +',
+  transactionDate: '(FR)Transaction date:',
+  agreementStatus: '(FR)Agreement status:',
 
   // Benefit Card details
   applicationDate: '(FR)Application date',
@@ -285,6 +288,7 @@ export default {
   reportMistake: '(FR)Report a mistake',
   uploadMyDocuments: '(FR)Upload my documents',
   accessCode: '(FR)Access code',
+  viewAgreementStatus: '(FR)View my agreement status details',
 
   commonActions: '(FR)Common actions',
   applyForCppDisabilityBenefits:
