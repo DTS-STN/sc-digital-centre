@@ -37,8 +37,8 @@ project {
 }
 
 //VCS ROOTS
-object Dev_ScDigitalCentre_HttpsGithubComDtsStnScDigitalCentreDev : GitVcsRoot({
-    name = "https://github.com/DTS-STN/sc-digital-centre/tree/_dev"
+object Dev_ScDigitalCentre_HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
+    name = "https://github.com/DTS-STN/sc-digital-centre/tree/"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
     branchSpec = "+:refs/heads/dev"
