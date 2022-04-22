@@ -85,6 +85,7 @@ object Build_Release: BuildType({
         param("env.TARGET", "dev")
         param("env.BRANCH", "release")
     }
+    paused = true
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentreDev)
     }
