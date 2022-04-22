@@ -38,7 +38,7 @@ project {
 
 //VCS ROOTS
 object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
-    name = "https://github.com/DTS-STN/sc-digital-centre/tree/"
+    name = "https://github.com/DTS-STN/sc-digital-centre"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
     branchSpec = "+:refs/heads/dev"
