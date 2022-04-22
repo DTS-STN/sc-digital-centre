@@ -171,6 +171,7 @@ object Build_Dynamic : BuildType({
 object Build_Release : BuildType({
     name = "Build_Release"
     description = "Deploys Pull Request to release envrionment when releases are created."
+    paused = true
 
     params {
         param("env.BASE_DOMAIN", "bdm-dev.dts-stn.com")
