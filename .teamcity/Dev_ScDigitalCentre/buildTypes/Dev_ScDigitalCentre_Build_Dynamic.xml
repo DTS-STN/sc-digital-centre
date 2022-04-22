@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Build_Dynamic</name>
+  <description>Deploys branches with pond in the name</description>
+  <settings>
+    <parameters>
+      <param name="env.BASE_DOMAIN" value="bdm-dev.dts-stn.com" />
+      <param name="env.BRANCH" value="%teamcity.build.branch%" />
+      <param name="env.K8S_CLUSTER_NAME" value="ESdCDPSBDMK8SDev-K8S" />
+      <param name="env.NEXT_CONTENT_API" value="%vault:dts-secrets-dev/data/digitalCentre!/NEXT_CONTENT_API%" />
+      <param name="env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL" value="%vault:dts-secrets-dev/data/digitalCentre!/NEXT_PUBLIC_ADOBE_ANALYTICS_URL%" />
+      <param name="env.NEXT_PUBLIC_FEEDBACK_API" value="https://alphasite.dts-stn.com/api/feedback" />
+      <param name="env.PROJECT" value="sc-digital-centre" />
+      <param name="env.RG_DEV" value="ESdCDPSBDMK8SDev" />
+      <param name="env.SUBSCRIPTION" value="%vault:dts-sre/data/azure!/decd-dev-subscription-id%" />
+      <param name="env.TARGET" value="dev" />
+      <param name="teamcity.vcsTrigger.runBuildInNewEmptyBranch" value="true" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_1" name="Build &amp; Tag Docker Image" type="DockerCommand">
+        <parameters>
+          <param name="command.args" value="--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL%" />
+          <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.path" value="Dockerfile" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="Login to Azure and ACR" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[az login --service-principal -u %TEAMCITY_USER% -p %TEAMCITY_PASS% --tenant %env.TENANT-ID%
+az account set -s %env.SUBSCRIPTION%
+az acr login -n MTSContainers]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_3" name="Push Image to ACR" type="DockerCommand">
+        <parameters>
+          <param name="docker.command.type" value="push" />
+          <param name="docker.image.namesAndTags" value="%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_4" name="Deploy w/ Helmfile" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[cd ./helmfile
+az account set -s %env.SUBSCRIPTION%
+az aks get-credentials --admin --resource-group %env.RG_DEV% --name %env.K8S_CLUSTER_NAME%
+helmfile -e %env.TARGET% apply]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Dev_ScDigitalCentre_HttpsGithubComDtsStnScDigitalCentreDynamic" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_1" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <cleanup />
+  </settings>
+</build-type>
+
