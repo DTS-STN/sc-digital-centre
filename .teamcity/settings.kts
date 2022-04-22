@@ -216,6 +216,7 @@ object Build_Perf: BuildType({
         param("env.TARGET", "dev")
         param("env.BRANCH", "perf")
     }
+    paused = true
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentreDev)
     }
