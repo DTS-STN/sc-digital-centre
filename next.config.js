@@ -67,18 +67,6 @@ const config = {
   async rewrites() {
     return [
       {
-        source: '/accueil',
-        destination: '/home',
-      },
-      {
-        source: '/prestations/:id',
-        destination: '/benefits/:id',
-      },
-      {
-        source: '/recherche',
-        destination: '/search',
-      },
-      {
         source: '/cppactivebenefit',
         destination: process.env.CPP_ACTIVE_BENEFIT_URL,
       },

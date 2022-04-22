@@ -50,10 +50,10 @@ const activeCanadaPensionPlan = {
 expect.extend(toHaveNoViolations)
 
 describe('ActiveBenefitDetails', () => {
+  const { container } = render(
+    <ActiveBenefitDetails benefit={activeCanadaPensionPlan} locale="en" />
+  )
   it('Renders ActiveBenefitDetails', () => {
-    render(
-      <ActiveBenefitDetails benefit={activeCanadaPensionPlan} locale={'en'} />
-    )
     const titleText = screen.getByText('Account details')
     const addressTitle = screen.getByText('Address')
     const paymentDetailsTitle = screen.getByText('Payment details')
@@ -66,9 +66,6 @@ describe('ActiveBenefitDetails', () => {
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(
-      <ActiveBenefitDetails benefit={activeCanadaPensionPlan} locale={'en'} />
-    )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

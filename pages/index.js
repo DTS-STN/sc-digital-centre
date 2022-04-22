@@ -3,7 +3,6 @@ import Link from 'next/link'
 import ActionButton from '../components/atoms/ActionButton'
 import Image from 'next/image'
 import Layout from '../components/organisms/Layout'
-import { getIndexPageContent } from './../lib/pageContent'
 import PropTypes from 'prop-types'
 
 export default function Index(props) {
@@ -22,7 +21,11 @@ export default function Index(props) {
 }
 
 export async function getStaticProps() {
-  const { metadata } = await getIndexPageContent()
+  const metadata = {
+    title: 'Digital Centre (en) + Digital Centre (fr)',
+    keywords: 'en + fr keywords',
+    description: 'en + fr description',
+  }
 
   return {
     props: {

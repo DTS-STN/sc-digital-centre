@@ -86,43 +86,51 @@ export default function BenefitCardHeaderActive(props) {
         <HorizontalRule width="w-1/3" visibility="sm:hidden" />
         <div
           id={`${props.benefit.benefitType}-active-paymentStartDate`}
-          className="font-display grid-cols-3 col-span-3 py-4 sm:grid sm:pl-10"
+          className="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"
         >
           <div id={`${props.benefit.benefitType}-active-nextPaymentAmount`}>
-            <p className="text-base">{t.paymentAmount}</p>
-            <p className="font-bold text-4xl mt-1">
+            <p className="text-base sm:pb-2 ">{t.paymentAmount}</p>
+            <p className="font-bold text-4xl sm:text-3xl md:text-4xl whitespace-nowrap">
               {props.locale === 'en'
                 ? `$ ${getNetAmount()}`
                 : `${getNetAmount()} $`}
             </p>
             <a
               href="./dashboard"
-              className="text-sm mt-1 text-bright-blue-solid underline"
+              className="mt-1 text-bright-blue-solid underline"
             >
               {t.viewPaymentHistory}
             </a>
           </div>
 
-          <div
-            id={`${props.benefit.benefitType}-active-nextPaymentDueDate`}
-            className="relative mb-20 mt-7 sm:mt-0"
-          >
-            <p>
+          <div id={`${props.benefit.benefitType}-active-nextPaymentDueDate`}>
+            <p className="sm:pb-2">
               {props.benefit.benefitType != 'EI'
                 ? t.daysUntilNextPayment
                 : t.nextReportDue}
             </p>
-            <p className="text-green-active font-bold">{getPaymentDate()}</p>
+            <p className="text-green-active font-bold text-lg">
+              {getPaymentDate()}
+            </p>
           </div>
 
           <div
             id={`${props.benefit.benefitType}-active-latestUpdates`}
-            className="py-4 sm:pl-10"
+            className="sm:pb-2"
           >
-            <p className="font-display">{t.latestUpdate}</p>
+            <p className="font-display sm:pb-2">{t.latestStatus}</p>
             <p className="font-display font-bold text-lg">
               {props.benefit.benefitStatusProgress}
             </p>
+            <p className="font-bold text-lg">
+              {props.benefit.latestStatusDate}
+            </p>
+            <a
+              href={t.url_statusAndMessages}
+              className="mt-1 text-bright-blue-solid underline"
+            >
+              {t.viewMyStatusAndMessages}
+            </a>
           </div>
         </div>
       </div>

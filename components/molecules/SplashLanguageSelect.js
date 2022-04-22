@@ -22,7 +22,7 @@ export default function SplashLanguageSelect() {
           <div className="grid grid-cols-2 gap-2 xl:gap-6">
             <ActionButton
               lang="en"
-              href="/home"
+              href="/dashboard"
               id="english-button"
               data-cy="english-button"
               role="button"
@@ -32,7 +32,7 @@ export default function SplashLanguageSelect() {
             </ActionButton>
             <ActionButton
               lang="fr"
-              href="/fr/accueil"
+              href="/fr/dashboard"
               id="french-button"
               data-cy="french-button"
               role="button"
