@@ -313,6 +313,14 @@ export default {
   learnMoreAbout: 'Learn more about ',
   applyFor: 'Apply for',
 
+  // Header URLs
+  dashboardPath: '/dashboard',
+  craPath:
+    'https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html',
+  profilePath: '/',
+  securityPath: '/',
+  signOutPath: '/',
+
   // Greeting URLs
   url_canada_ca: 'https://www.canada.ca/home.html',
   url_serviceCanada:
