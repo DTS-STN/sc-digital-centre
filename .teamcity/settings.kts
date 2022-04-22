@@ -26,7 +26,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2021.2"
 
 project {
-    vcsRoot(HttpsGithubComDtsStnScDigitalCentre)
+    vcsRoot(Dev_ScDigitalCentre_HttpsGithubComDtsStnScDigitalCentre)
     vcsRoot(HttpsGithubComDtsStnScDigitalCentreDev)
     vcsRoot(HttpsGithubComDtsStnScDigitalCentreDynamic)
     buildType(Build_Release)
@@ -37,7 +37,7 @@ project {
 }
 
 //VCS ROOTS
-object HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
+object Dev_ScDigitalCentre_HttpsGithubComDtsStnScDigitalCentre : GitVcsRoot({
     name = "https://github.com/DTS-STN/sc-digital-centre"
     url = "git@github.com:DTS-STN/sc-digital-centre.git"
     branch = "refs/heads/dev"
