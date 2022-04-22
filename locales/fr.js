@@ -305,6 +305,13 @@ export default {
   learnMoreAbout: '(FR)Learn more about ',
   applyFor: '(FR)Apply for',
 
+  // Header URLs
+  dashboardPath: '/dashboard',
+  craPath: '/',
+  profilePath: '/',
+  securityPath: '/',
+  signOutPath: '/',
+
   // Greeting URLs
   url_canada_ca: 'https://www.canada.ca/home.html',
   url_serviceCanada:
