@@ -307,7 +307,8 @@ export default {
 
   // Header URLs
   dashboardPath: '/dashboard',
-  craPath: '/',
+  craPath:
+    'https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-electroniques-particuliers/dossier-particuliers.html',
   profilePath: '/',
   securityPath: '/',
   signOutPath: '/',

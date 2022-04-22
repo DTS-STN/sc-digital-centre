@@ -315,7 +315,8 @@ export default {
 
   // Header URLs
   dashboardPath: '/dashboard',
-  craPath: '/',
+  craPath:
+    'https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html',
   profilePath: '/',
   securityPath: '/',
   signOutPath: '/',
