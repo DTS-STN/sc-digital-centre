@@ -13,7 +13,10 @@ export default function BenefitCardHeaderActive(props) {
   const getBenefitCardTitle = () => {
     if (props.benefit.benefitType === BenefitCode.cppd) {
       return t[BenefitCode.cpp.toLowerCase()]
-    } else if (props.benefit.benefitType === BenefitCode.cpp) {
+    } else if (
+      props.benefit.benefitType === BenefitCode.cpp &&
+      props.api.programCode
+    ) {
       const programBenefit = getProgramBenefit(props.api.programCode)
       return programBenefit.map((i) => i.nameEn).toString()
     } else {
@@ -23,9 +26,15 @@ export default function BenefitCardHeaderActive(props) {
 
   const getBenefitCodeName = () => {
     let benefitCode
-    if (props.benefit.benefitType === BenefitCode.cpp) {
+    if (
+      props.benefit.benefitType === BenefitCode.cpp &&
+      props.api.benefitCode
+    ) {
       benefitCode = getBenefitCode(props.api.benefitCode)
-    } else if (props.benefit.benefitType === BenefitCode.ei) {
+    } else if (
+      props.benefit.benefitType === BenefitCode.ei &&
+      props.api.claimStatusCode
+    ) {
       benefitCode = getBenefitCode(props.api.claimStatusCode)
     } else {
       return props.benefit.applicationStatus

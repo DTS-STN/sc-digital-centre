@@ -3,7 +3,6 @@ import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
 import Dashboard from '../../pages/dashboard'
-
 expect.extend(toHaveNoViolations)
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -25,6 +24,11 @@ global.fetch = jest.fn(() =>
       }),
   })
 )
+
+beforeEach(() => {
+  fetch.mockClear()
+})
+
 describe('Dashboard', () => {
   jest.setTimeout(50000)
   it('renders Dashboard', () => {
