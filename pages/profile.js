@@ -1,14 +1,12 @@
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
-import { LayoutContainer } from '@dts-stn/decd-design-system'
+import ProfileInfo from '../components/molecules/ProfileInfo'
 
 export default function Profile(props) {
   return (
     <>
       <DSHeader locale="en" />
-      <LayoutContainer>
-        <div>Profile</div>
-      </LayoutContainer>
+      <ProfileInfo />
       <DSFooter />
     </>
   )
