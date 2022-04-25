@@ -176,6 +176,12 @@ const TASKS = {
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: t.recordOfEmployment,
   },
+  //Seb tasks
+  ViewAgreementStatusDetails: {
+    task: t.viewAgreementStatus,
+    taskIcon: '/images/dashboard/ei-view-documents-icon.svg',
+    taskLink: t.viewDocumentsLink,
+  },
 }
 
 const SUBMITTED_CPP_TASKS = [
@@ -335,6 +341,11 @@ const NO_BENEFIT_OAS_TASKS = [
   TASKS.ApplyForGuranteedIncomeSupplement,
 ]
 
+const ACTIVE_SEB_TASKS = {
+  Header: t.commonActions,
+  Tasks: [TASKS.ViewAgreementStatusDetails],
+}
+
 module.exports = {
   SUBMITTED_CPP_TASKS,
   ACTIVE_CPP_PAYMENT_TASKS,
@@ -353,4 +364,5 @@ module.exports = {
   NO_BENEFIT_EI_TASKS,
   NO_BENEFIT_GIS_TASKS,
   NO_BENEFIT_OAS_TASKS,
+  ACTIVE_SEB_TASKS,
 }
