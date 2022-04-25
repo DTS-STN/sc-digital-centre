@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1650662748915" clover="3.2.0">
-  <project timestamp="1650662748915" name="All files">
-    <metrics statements="193" coveredstatements="139" conditionals="168" coveredconditionals="108" methods="70" coveredmethods="49" elements="431" coveredelements="296" complexity="0" loc="193" ncloc="193" packages="5" files="35" classes="35"/>
+<coverage generated="1650894052098" clover="3.2.0">
+  <project timestamp="1650894052098" name="All files">
+    <metrics statements="195" coveredstatements="140" conditionals="168" coveredconditionals="108" methods="72" coveredmethods="50" elements="435" coveredelements="298" complexity="0" loc="195" ncloc="195" packages="5" files="36" classes="36"/>
     <package name="components.atoms">
       <metrics statements="52" coveredstatements="50" conditionals="42" coveredconditionals="34" methods="19" coveredmethods="19"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -162,12 +162,12 @@
       </file>
       <file name="DSFooter.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/DSFooter.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="4" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
       </file>
       <file name="DSHeader.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/DSHeader.js">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="1"/>
-        <line num="6" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="6" type="stmt"/>
+        <line num="6" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="7" type="stmt"/>
       </file>
       <file name="Footer.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/Footer.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
@@ -240,7 +240,7 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="40" coveredstatements="8" conditionals="14" coveredconditionals="0" methods="17" coveredmethods="7"/>
+      <metrics statements="42" coveredstatements="9" conditionals="14" coveredconditionals="0" methods="19" coveredmethods="8"/>
       <file name="400.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/400.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="2" type="stmt"/>
@@ -304,6 +304,11 @@
         <line num="24" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
+      </file>
+      <file name="profile.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/profile.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
       </file>
     </package>
     <package name="pages.api">
