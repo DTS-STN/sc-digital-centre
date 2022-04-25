@@ -1,4 +1,4 @@
-FROM node:current-alpine3.14 AS base
+FROM node:18.0.0-alpine3.15 AS base
 WORKDIR /base
 COPY package*.json ./
 RUN npm ci
@@ -20,13 +20,28 @@ WORKDIR /build
 COPY --from=base /base ./
 RUN npm run build
 
-FROM node:current-alpine3.14 AS production
+FROM node:18.0.0-alpine3.15 AS production
 ENV NODE_ENV=production
-WORKDIR /app
-COPY --from=build /build/next.config.js ./
-COPY --from=build /build/package*.json ./
-COPY --from=build /build/.next ./.next
-COPY --from=build /build/public ./public
+SHELL ["/bin/sh", "-c"]
+RUN apk add --no-cache bash
+ARG user=joker
+ARG home=/home/node
+ARG group=thejokers
+RUN addgroup -S $group
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home $home \
+    --ingroup $group \
+    $user
+
+ENV NODE_ENV=production
+WORKDIR $home
+COPY --from=build --chown=55:$group /build/next.config.js ./
+COPY --from=build --chown=55:$group /build/package*.json ./
+COPY --from=build --chown=55:$group /build/.next ./.next
+COPY --from=build --chown=55:$group /build/public ./public
 RUN npm install next
+USER $user
 
 CMD npm run start
