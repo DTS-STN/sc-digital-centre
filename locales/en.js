@@ -214,6 +214,19 @@ export default {
   serviceCanada: 'Service Canada',
   myBenefitsAndServices: 'My Benefits and Services',
 
+  // Info Message
+  alertIconAltText_success: 'success icon',
+  alertIconId_success: 'success icon',
+  alertIconAltText_warning: 'warning icon',
+  alertIconId_warning: 'warning icon',
+  alertIconAltText_info: 'info icon',
+  alertIconId_info: 'info icon',
+  alertIconAltText_danger: 'danger icon',
+  alertIconId_danger: 'danger icon',
+  messageHeading: 'COVID-19 New services and service changes',
+  messageBody:
+    'Find out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affectedFind out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affected',
+
   // Benefit Names
   cpp: 'Canada Pension Plan',
   oas: 'Old Age Security',
