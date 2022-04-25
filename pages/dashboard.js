@@ -204,6 +204,7 @@ async function getActiveCpp() {
     return data
   } catch (e) {
     console.log(e)
+    return []
   }
 }
 
@@ -218,6 +219,7 @@ async function getActiveEi() {
     return data
   } catch (e) {
     console.log(e)
+    return []
   }
 }
 
