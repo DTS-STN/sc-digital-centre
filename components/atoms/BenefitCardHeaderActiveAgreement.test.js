@@ -16,23 +16,18 @@ const ACTIVE_SEB = {
 expect.extend(toHaveNoViolations)
 
 describe('BenefitCardHeaderActiveAgreement', () => {
+  const { container } = render(
+    <BenefitCardHeaderActiveAgreement benefit={ACTIVE_SEB} locale={'en'} />
+  )
   it('Renders BenefitCardHeaderActiveAgreement', () => {
-    render(
-      <BenefitCardHeaderActiveAgreement benefit={ACTIVE_SEB} locale={'en'} />
-    )
     const titleText = screen.getByText('Self Employment Benefits')
     const benefitStatusProgress = screen.getByText('Started')
     const transactionDate = screen.getByText('September 31, 2021')
-
     expect(titleText).toBeInTheDocument()
     expect(benefitStatusProgress).toBeInTheDocument()
     expect(transactionDate).toBeInTheDocument()
   })
-
   it('has no a11y violations', async () => {
-    const { container } = render(
-      <BenefitCardHeaderActiveAgreement benefit={ACTIVE_SEB} locale={'en'} />
-    )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
