@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import BenefitCardHeaderActive from '../atoms/BenefitCardHeaderActive'
 import BenefitCardHeaderInactive from '../atoms/BenefitCardHeaderInactive'
 import BenefitCardHeaderPending from '../atoms/BenefitCardHeaderPending'
+import BenefitCardHeaderActiveAgreement from '../atoms/BenefitCardHeaderActiveAgreement'
 import BenefitTasks from './BenefitTasks'
 import ActiveBenefitDetails from './ActiveBenefitDetails'
 import HorizontalRule from '../atoms/HorizontalRule'
@@ -77,6 +78,13 @@ const BenefitCard = (props) => {
             locale={props.locale}
           />
         )
+      case BenefitStatus.activeAgreement.toUpperCase():
+        return (
+          <BenefitCardHeaderActiveAgreement
+            benefit={props.benefit}
+            locale={props.locale}
+          />
+        )
       default:
         return null
     }
@@ -116,10 +124,14 @@ const BenefitCard = (props) => {
 
       {/* Pending benefits */}
       <HorizontalRule width="w-auto sm:w-full" />
-      <div className="font-display text-lg ml-4 py-5 sm:ml-8">
-        {renderBenefitStatus()}
-      </div>
-      <HorizontalRule width="w-auto sm:w-full" />
+      {renderBenefitStatus() != null ? (
+        <>
+          <div className="font-display text-lg ml-4 py-5 sm:ml-8">
+            {renderBenefitStatus()}
+          </div>
+          <HorizontalRule width="w-auto sm:w-full" />
+        </>
+      ) : null}
 
       {/* Top tasks */}
       <div ref={topOfTaskRef}>
@@ -175,15 +187,21 @@ export default BenefitCard
 
 BenefitCard.propTypes = {
   benefit: PropTypes.shape({
-    benefitType: PropTypes.oneOf(['CPP', 'OAS', 'GIS', 'EI', 'CPPD']),
+    benefitType: PropTypes.oneOf(['CPP', 'OAS', 'GIS', 'EI', 'CPPD', 'SEB']),
     benefitName: PropTypes.oneOf([
       'Canada Pension Plan',
       'Old Age Security',
       'Guaranteed Income Supplement',
       'Employment Insurance',
       'Canada Pension Plan Disability',
+      'Self Employment Benefits',
     ]),
-    status: PropTypes.oneOf(['Active', 'Pending', 'Inactive']),
+    status: PropTypes.oneOf([
+      'Active',
+      'Pending',
+      'Inactive',
+      'ActiveAgreement',
+    ]),
   }),
   api: PropTypes.shape({
     programCode: String,

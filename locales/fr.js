@@ -222,6 +222,7 @@ export default {
   gis: '(FR)Guranteed Income Supplement',
   ei: '(FR)Employment Insurance',
   cppd: '(FR)Canada Pension Plan Disability',
+  seb: '(FR)Self Employment Benefits',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
@@ -237,6 +238,8 @@ export default {
   daysUntilNextPayment: '(FR)Next payment:',
   nextReportDue: '(FR)Next report due:',
   viewPaymentHistory: '(FR)View my payments +',
+  transactionDate: '(FR)Transaction date:',
+  agreementStatus: '(FR)Agreement status:',
   netAmount: '{0} $',
 
   // Benefit Card details
@@ -286,6 +289,7 @@ export default {
   reportMistake: '(FR)Report a mistake',
   uploadMyDocuments: '(FR)Upload my documents',
   accessCode: '(FR)Access code',
+  viewAgreementStatus: '(FR)View my agreement status details',
 
   commonActions: '(FR)Common actions',
   applyForCppDisabilityBenefits:
@@ -305,6 +309,14 @@ export default {
   youMightBeEligible: '(FR)You might be eligible.',
   learnMoreAbout: '(FR)Learn more about ',
   applyFor: '(FR)Apply for',
+
+  // Header URLs
+  dashboardPath: '/dashboard',
+  craPath:
+    'https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-electroniques-particuliers/dossier-particuliers.html',
+  profilePath: '/profile',
+  securityPath: '/',
+  signOutPath: '/',
 
   // Greeting URLs
   url_canada_ca: 'https://www.canada.ca/home.html',

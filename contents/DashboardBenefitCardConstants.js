@@ -333,6 +333,16 @@ const INACTIVE_EI = {
   ],
 }
 
+const ACTIVE_SEB = {
+  benefitType: 'SEB',
+  benefitName: 'Self Employment Benefits',
+  status: 'ActiveAgreement',
+  estimatedDateOfDecision: 'September 31, 2021',
+  applicationStatus: 'Agreement',
+  transactionDate: 'September 31, 2021',
+  benefitStatusProgress: 'Started',
+}
+
 module.exports = {
   ACTIVE_CPP,
   SUBMITTED_CPP,
@@ -344,4 +354,5 @@ module.exports = {
   SUBMITTED_EI,
   ACTIVE_EI,
   INACTIVE_EI,
+  ACTIVE_SEB,
 }

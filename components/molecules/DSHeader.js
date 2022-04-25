@@ -4,41 +4,37 @@ import fr from '../../locales/fr'
 
 export default function DSHeader(props) {
   const t = props.locale === 'en' ? en : fr
-  const menuItems = [
-    {
-      link: '/dashboard',
-      text: 'Services',
-    },
-    {
-      link: '/dashboard',
-      text: 'Life Events',
-    },
-    {
-      link: '/dashboard',
-      text: 'Contact us',
-    },
-  ]
   return (
     <Header
-      menuItems={menuItems}
-      breadCrumbItems={{
-        id: 'breadcrumbID',
-        items: [
-          {
-            link: t.url_canada_ca,
-            text: t.canada_ca,
-          },
-          {
-            link: t.url_serviceCanada,
-            text: t.serviceCanada,
-          },
-          {
-            link: t.url_myBenefitsAndServices,
-            text: t.myBenefitsAndServices,
-          },
-        ],
+      id="header"
+      lang={props.locale}
+      breadCrumbItems={[
+        {
+          link: t.url_canada_ca,
+          text: t.canada_ca,
+        },
+        {
+          link: t.url_serviceCanada,
+          text: t.serviceCanada,
+        },
+        {
+          link: t.url_myBenefitsAndServices,
+          text: t.myBenefitsAndServices,
+        },
+      ]}
+      menuProps={{
+        craPath: t.craPath,
+        dashboardPath: t.dashboardPath,
+        isAuthenticated: true,
+        onSignOut: function noRefCheck() {},
+        profilePath: t.profilePath,
+        securityPath: t.securityPath,
+        signOutPath: t.signOutPath,
       }}
-      searchProps={{ onChange: () => {}, onSubmit: () => {} }}
+      searchProps={{
+        onChange: function noRefCheck() {},
+        onSubmit: function noRefCheck() {},
+      }}
     />
   )
 }

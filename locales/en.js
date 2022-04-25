@@ -220,6 +220,7 @@ export default {
   gis: 'Guranteed Income Supplement',
   ei: 'Employment Insurance',
   cppd: 'Canada Pension Plan Disability',
+  seb: 'Self Employment Benefits',
 
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,
@@ -246,6 +247,8 @@ export default {
   daysUntilNextPayment: 'Next payment:',
   nextReportDue: 'Next report due:',
   viewPaymentHistory: 'View my payments +',
+  transactionDate: 'Transaction date:',
+  agreementStatus: 'Agreement status:',
   netAmount: '$ {0}',
 
   // Benefit Card details
@@ -295,6 +298,7 @@ export default {
   reportMistake: 'Report a mistake',
   uploadMyDocuments: 'Upload my documents',
   accessCode: 'Access code',
+  viewAgreementStatus: 'View my agreement status details',
 
   commonActions: 'Common actions',
   applyForCppDisabilityBenefits:
@@ -313,6 +317,14 @@ export default {
   youMightBeEligible: 'You might be eligible.',
   learnMoreAbout: 'Learn more about ',
   applyFor: 'Apply for',
+
+  // Header URLs
+  dashboardPath: '/dashboard',
+  craPath:
+    'https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html',
+  profilePath: '/profile',
+  securityPath: '/',
+  signOutPath: '/',
 
   // Greeting URLs
   url_canada_ca: 'https://www.canada.ca/home.html',
