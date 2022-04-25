@@ -98,7 +98,7 @@ object Build_Release: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL%"
+                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL%"
             }
         }
         script {
@@ -229,7 +229,7 @@ object Build_Perf: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL%"
+                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL%"
             }
         }
         script {
