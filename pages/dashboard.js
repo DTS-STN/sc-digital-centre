@@ -58,7 +58,6 @@ import {
 } from '../contents/DashboardBenefitApplicationCards'
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
-import { useEffect, useState } from 'react'
 
 export default function Dashboard(props) {
   return (
@@ -195,7 +194,7 @@ export async function getStaticProps() {
 }
 
 async function getActiveCpp() {
-  const res = await fetch(process.env.APP_URL + '/cppactivebenefit', {
+  const res = await fetch(process.env.APP_URL + '/api/cppactivebenefit', {
     headers: new Headers({
       'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
     }),
@@ -205,7 +204,7 @@ async function getActiveCpp() {
 }
 
 async function getActiveEi() {
-  const res = await fetch(process.env.APP_URL + '/eiactivebenefit', {
+  const res = await fetch(process.env.APP_URL + '/api/eiactivebenefit', {
     headers: new Headers({
       'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
     }),

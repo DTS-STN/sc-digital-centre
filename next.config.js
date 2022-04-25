@@ -69,11 +69,11 @@ const config = {
   async rewrites() {
     return [
       {
-        source: '/cppactivebenefit',
+        source: '/api/cppactivebenefit',
         destination: process.env.CPP_ACTIVE_BENEFIT_URL,
       },
       {
-        source: '/eiactivebenefit',
+        source: '/api/eiactivebenefit',
         destination: process.env.EI_ACTIVE_BENEFIT_URL,
       },
     ]
