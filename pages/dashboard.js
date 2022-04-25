@@ -59,37 +59,6 @@ import DSFooter from '../components/molecules/DSFooter'
 import { useEffect, useState } from 'react'
 
 export default function Dashboard(props) {
-  const [cppData, setCppActiveData] = useState([])
-  const [eiData, setEiActiveData] = useState([])
-  const [isLoading, setLoading] = useState(false)
-  useEffect(async () => {
-    setLoading(true)
-    fetch('/cppactivebenefit', {
-      headers: new Headers({
-        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
-      }),
-    })
-      .then(async (res) => res.json())
-      .then((cppData) => {
-        setCppActiveData(cppData)
-        setLoading(false)
-      })
-  }, [])
-
-  useEffect(async () => {
-    setLoading(true)
-    fetch('/eiactivebenefit', {
-      headers: new Headers({
-        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
-      }),
-    })
-      .then(async (res) => res.json())
-      .then((eiData) => {
-        setEiActiveData(eiData)
-        setLoading(false)
-      })
-  }, [])
-
   return (
     <>
       <DSHeader locale="en" />
@@ -106,7 +75,7 @@ export default function Dashboard(props) {
             benefit={ACTIVE_CPP}
             tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
             taskGroups={true}
-            api={cppData}
+            activeCppApi={props.activeCppProps}
           />
           <BenefitCard
             locale="en"
@@ -132,7 +101,7 @@ export default function Dashboard(props) {
               ACTIVE_EI_DOCS_TASKS,
             ]}
             taskGroups={true}
-            api={eiData}
+            activeEiApi={props.activeEiProps}
           />
           <BenefitCard
             locale="en"
@@ -206,12 +175,35 @@ export async function getStaticProps() {
   // currentBenefits.push({ program: 'oas', status: 'pending' })
   // currentBenefits.push({ program: 'gis', status: 'active' })
   // currentBenefits.push({ program: 'gis', status: 'pending' })
-
+  const activeCpp = await getActiveCpp()
+  const activeEi = await getActiveEi()
   return {
     props: {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
+      activeCppProps: activeCpp,
+      activeEiProps: activeEi,
     },
   }
+}
+
+async function getActiveCpp() {
+  const res = await fetch(process.env.APP_URL + '/cppactivebenefit', {
+    headers: new Headers({
+      'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+    }),
+  })
+  const data = await res.json()
+  return data
+}
+
+async function getActiveEi() {
+  const res = await fetch(process.env.APP_URL + '/eiactivebenefit', {
+    headers: new Headers({
+      'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+    }),
+  })
+  const data = await res.json()
+  return data
 }
 
 function BuildAdvertisingCards(currentBenefits) {

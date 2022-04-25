@@ -27,10 +27,13 @@ const BenefitCard = (props) => {
   const getBenefitTypeName = () => {
     let benefitType
     if (props.benefit.benefitType === BenefitCode.cpp) {
-      benefitType = getBenefitType(props.api.benefitType)
+      //benefit type is mapped benefitType to for active cpp
+      benefitType = getBenefitType(props.activeCppApi.benefitType)
     } else if (props.benefit.benefitType === BenefitCode.ei) {
-      benefitType = getBenefitType(props.api.enmBenefitType)
+      //benefit type is mapped enmBenefitType to for active ei
+      benefitType = getBenefitType(props.activeEiApi.enmBenefitType)
     } else {
+      //benefit type when is not coming from API, eventually this should be replaced with value from an API e.g active cppd, OAS, etc...
       return props.benefit.pendingBenefits
     }
     return benefitType.map((i) => i.nameEn).toString()
@@ -55,7 +58,8 @@ const BenefitCard = (props) => {
         return (
           <BenefitCardHeaderActive
             benefit={props.benefit}
-            api={props.api}
+            activeCppApi={props.activeCppApi}
+            activeEiApi={props.activeEiApi}
             locale={props.locale}
           />
         )

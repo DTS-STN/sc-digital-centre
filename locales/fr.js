@@ -237,6 +237,7 @@ export default {
   daysUntilNextPayment: '(FR)Next payment:',
   nextReportDue: '(FR)Next report due:',
   viewPaymentHistory: '(FR)View my payments +',
+  netAmount: '{0} $',
 
   // Benefit Card details
   applicationDate: '(FR)Application date',

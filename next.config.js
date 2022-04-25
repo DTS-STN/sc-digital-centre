@@ -12,6 +12,7 @@ const contentURL = process.env.NEXT_CONTENT_API
   ? process.env.NEXT_CONTENT_API
   : ''
 const subscriptionKey = process.env.OCP_APIM_SUBSCRIPTION_KEY
+const appURL = process.env.APP_URL
 
 //security headers that we want on all pages
 //more info here https://nextjs.org/docs/advanced-features/security-headers
@@ -47,6 +48,7 @@ const config = {
     NEXT_PUBLIC_BUILD_DATE: builddate,
     NEXT_CONTENT_API: contentURL,
     OCP_APIM_SUBSCRIPTION_KEY: subscriptionKey,
+    APP_URL: appURL,
   },
   reactStrictMode: true,
   //

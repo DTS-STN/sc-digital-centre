@@ -42,6 +42,7 @@ jobs:
           OCP_APIM_SUBSCRIPTION_KEY: ${{ secrets.OCP_APIM_SUBSCRIPTION_KEY }}
           CPP_ACTIVE_BENEFIT_URL: ${{ secrets.CPP_ACTIVE_BENEFIT_URL }}
           EI_ACTIVE_BENEFIT_URL: ${{ secrets.EI_ACTIVE_BENEFIT_URL }}
+          APP_URL: "https://sc-digital-centre-dashboard.bdm-dev.dts-stn.com"
           CI: true
 
       - name: Cypress end-to-end 🧪
