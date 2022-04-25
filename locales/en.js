@@ -246,14 +246,14 @@ export default {
   latestStatus: 'Latest status:',
   daysUntilNextPayment: 'Next payment:',
   nextReportDue: 'Next report due:',
-  viewPaymentHistory: 'View my payments +',
+  viewPaymentHistory: 'View my payments',
   transactionDate: 'Transaction date:',
   agreementStatus: 'Agreement status:',
 
   // Benefit Card details
   applicationDate: 'Application date',
   latestActivity: 'Latest activity',
-  viewMyStatusAndMessages: 'View my status and messages +',
+  viewMyStatusAndMessages: 'View my status and messages',
   accountDetails: 'Account details',
   nextPayment: 'Next payment',
   lastPayment: 'Last payment',
@@ -262,9 +262,9 @@ export default {
   payeeAddress: 'Address',
   payeePhoneNumber: 'Phone number',
   paymentDetails: 'Payment details',
-  addYourAddress: 'Add your address +',
-  addYourPhoneNumber: 'Add your phone number +',
-  addYourPaymentDetails: 'Add your payment details +',
+  addYourAddress: 'Add your address',
+  addYourPhoneNumber: 'Add your phone number',
+  addYourPaymentDetails: 'Add your payment details',
 
   // dashboard benefit task headers
   paymentTasks: 'Payment and tax details',
