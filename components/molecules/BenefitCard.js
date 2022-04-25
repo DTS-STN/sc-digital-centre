@@ -203,17 +203,4 @@ BenefitCard.propTypes = {
       'ActiveAgreement',
     ]),
   }),
-  api: PropTypes.shape({
-    programCode: String,
-    benefitCode: String,
-    benefitType: String,
-    benefitStatus: String,
-    lastPaymentDate: String,
-    finalPaymentDate: String,
-    netAmount: Number,
-    paymentProcessType: String,
-    claimStatusCode: String,
-    enmBenefitType: String,
-    nextRptDueDate: String,
-  }),
 }
