@@ -15,7 +15,7 @@ export default function BenefitCardHeaderActive(props) {
       return t[BenefitCode.cpp.toLowerCase()]
     } else if (
       props.benefit.benefitType === BenefitCode.cpp &&
-      props.activeCppApi.programCode
+      props.activeCppApi
     ) {
       const programBenefit = getProgramBenefit(props.activeCppApi.programCode)
       return programBenefit.map((i) => i.nameEn).toString()
@@ -26,14 +26,11 @@ export default function BenefitCardHeaderActive(props) {
 
   const getBenefitCodeName = () => {
     let benefitCode
-    if (
-      props.benefit.benefitType === BenefitCode.cpp &&
-      props.activeCppApi.benefitCode
-    ) {
+    if (props.benefit.benefitType === BenefitCode.cpp && props.activeCppApi) {
       benefitCode = getBenefitCode(props.activeCppApi.benefitCode)
     } else if (
       props.benefit.benefitType === BenefitCode.ei &&
-      props.activeEiApi.claimStatusCode
+      props.activeEiApi
     ) {
       benefitCode = getBenefitCode(props.activeEiApi.claimStatusCode)
     } else {
@@ -43,9 +40,12 @@ export default function BenefitCardHeaderActive(props) {
   }
 
   const getNetAmount = () => {
-    if (props.benefit.benefitType === BenefitCode.cpp) {
+    if (props.benefit.benefitType === BenefitCode.cpp && props.activeCppApi) {
       return props.activeCppApi.netAmount
-    } else if (props.benefit.benefitType === BenefitCode.ei) {
+    } else if (
+      props.benefit.benefitType === BenefitCode.ei &&
+      props.activeEiApi
+    ) {
       return props.activeEiApi.netAmount
     } else {
       return props.benefit.nextPaymentAmount
@@ -53,9 +53,12 @@ export default function BenefitCardHeaderActive(props) {
   }
 
   const getPaymentDate = () => {
-    if (props.benefit.benefitType === BenefitCode.cpp) {
+    if (props.benefit.benefitType === BenefitCode.cpp && props.activeCppApi) {
       return formatDate(props.activeCppApi.lastPaymentDate)
-    } else if (props.benefit.benefitType === BenefitCode.ei) {
+    } else if (
+      props.benefit.benefitType === BenefitCode.ei &&
+      props.activeEiApi
+    ) {
       return formatDate(props.activeEiApi.nextRptDueDate)
     } else {
       return props.benefit.nextPaymentDate

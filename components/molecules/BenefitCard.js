@@ -27,10 +27,13 @@ const BenefitCard = (props) => {
 
   const getBenefitTypeName = () => {
     let benefitType
-    if (props.benefit.benefitType === BenefitCode.cpp) {
+    if (props.benefit.benefitType === BenefitCode.cpp && props.activeCppApi) {
       //benefit type is mapped benefitType to for active cpp
       benefitType = getBenefitType(props.activeCppApi.benefitType)
-    } else if (props.benefit.benefitType === BenefitCode.ei) {
+    } else if (
+      props.benefit.benefitType === BenefitCode.ei &&
+      props.activeEiApi
+    ) {
       //benefit type is mapped enmBenefitType to for active ei
       benefitType = getBenefitType(props.activeEiApi.enmBenefitType)
     } else {
