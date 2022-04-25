@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>0/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>0/14</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,35 +101,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">48x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
   BENEFIT_CODES,
@@ -137,36 +137,36 @@
   PROGRAM_CODES,
 } from '../../contents/CodeTables'
 &nbsp;
-export function getProgramBenefit(programCode) {
-  let program = PROGRAM_CODES.filter(function (item) {
-    if (item.code == programCode) {
-      return item
+export function <span class="fstat-no" title="function not covered" >getProgramBenefit(</span>programCode) {
+  let program = <span class="cstat-no" title="statement not covered" >PROGRAM_CODES.filter(<span class="fstat-no" title="function not covered" >fu</span>nction (item) {</span>
+<span class="cstat-no" title="statement not covered" >    if (item.code == programCode) {</span>
+<span class="cstat-no" title="statement not covered" >      return item</span>
     }
   })
-  return program
+<span class="cstat-no" title="statement not covered" >  return program</span>
 }
 &nbsp;
-export function getBenefitCode(benefitCode) {
-  let benefit = BENEFIT_CODES.filter(function (item) {
-    if (item.code == benefitCode) {
-      return item
+export function <span class="fstat-no" title="function not covered" >getBenefitCode(</span>benefitCode) {
+  let benefit = <span class="cstat-no" title="statement not covered" >BENEFIT_CODES.filter(<span class="fstat-no" title="function not covered" >fu</span>nction (item) {</span>
+<span class="cstat-no" title="statement not covered" >    if (item.code == benefitCode) {</span>
+<span class="cstat-no" title="statement not covered" >      return item</span>
     }
   })
-  return benefit
+<span class="cstat-no" title="statement not covered" >  return benefit</span>
 }
 &nbsp;
-export function getBenefitType(benefitType) {
-  let type = BENEFIT_TYPES.filter(function (item) {
-    if (item.code == benefitType) {
-      return item
+export function <span class="fstat-no" title="function not covered" >getBenefitType(</span>benefitType) {
+  let type = <span class="cstat-no" title="statement not covered" >BENEFIT_TYPES.filter(<span class="fstat-no" title="function not covered" >fu</span>nction (item) {</span>
+<span class="cstat-no" title="statement not covered" >    if (item.code == benefitType) {</span>
+<span class="cstat-no" title="statement not covered" >      return item</span>
     }
   })
-  return type
+<span class="cstat-no" title="statement not covered" >  return type</span>
 }
 &nbsp;
-export function formatDate(string) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' }
-  return new Date(string).toLocaleDateString([], options)
+export function <span class="fstat-no" title="function not covered" >formatDate(</span>string) {
+  const options = <span class="cstat-no" title="statement not covered" >{ year: 'numeric', month: 'long', day: 'numeric' }</span>
+<span class="cstat-no" title="statement not covered" >  return new Date(string).toLocaleDateString([], options)</span>
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -175,7 +175,7 @@ export function formatDate(string) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Apr 25 2022 17:14:10 GMT+0000 (Coordinated Universal Time)
+                at Mon Apr 25 2022 21:58:33 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
