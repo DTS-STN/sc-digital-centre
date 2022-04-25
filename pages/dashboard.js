@@ -194,23 +194,31 @@ export async function getStaticProps() {
 }
 
 async function getActiveCpp() {
-  const res = await fetch(process.env.APP_URL + '/api/cppactivebenefit', {
-    headers: new Headers({
-      'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
-    }),
-  })
-  const data = await res.json()
-  return data
+  try {
+    const res = await fetch(process.env.APP_URL + '/api/cppactivebenefit', {
+      headers: new Headers({
+        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+      }),
+    })
+    const data = await res.json()
+    return data
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 async function getActiveEi() {
-  const res = await fetch(process.env.APP_URL + '/api/eiactivebenefit', {
-    headers: new Headers({
-      'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
-    }),
-  })
-  const data = await res.json()
-  return data
+  try {
+    const res = await fetch(process.env.APP_URL + '/api/eiactivebenefit', {
+      headers: new Headers({
+        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+      }),
+    })
+    const data = await res.json()
+    return data
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 function BuildAdvertisingCards(currentBenefits) {
