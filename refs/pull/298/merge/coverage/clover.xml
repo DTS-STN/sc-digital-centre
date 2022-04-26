@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1650980005527" clover="3.2.0">
-  <project timestamp="1650980005527" name="All files">
+<coverage generated="1650983498865" clover="3.2.0">
+  <project timestamp="1650983498865" name="All files">
     <metrics statements="211" coveredstatements="156" conditionals="175" coveredconditionals="114" methods="79" coveredmethods="57" elements="465" coveredelements="327" complexity="0" loc="211" ncloc="211" packages="5" files="39" classes="39"/>
     <package name="components.atoms">
       <metrics statements="62" coveredstatements="59" conditionals="46" coveredconditionals="36" methods="24" coveredmethods="24"/>
@@ -330,10 +330,10 @@
       </file>
       <file name="profile.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/profile.js">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
       </file>
     </package>
     <package name="pages.api">
