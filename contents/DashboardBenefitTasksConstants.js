@@ -184,17 +184,15 @@ const TASKS = {
   },
 }
 
-const SUBMITTED_CPP_TASKS = [
-  TASKS.AllPaymentsTask,
-  TASKS.StatusUpdateTask,
-  TASKS.RetirementIncomeTask,
-  TASKS.TaxSlipTask,
-  TASKS.ReconsiderationTask,
-  TASKS.DelayOasPensionTask,
-  TASKS.CppContributionTask,
-  TASKS.TaxDeductionsTask,
-  TASKS.GiveConsentTask,
-]
+const SUBMITTED_CPP_ESTIMATE_TASKS = {
+  Header: t.estimate,
+  Tasks: [TASKS.RetirementIncomeTask],
+}
+
+const SUBMITTED_CPP_CHANGE_TASKS = {
+  Header: t.changeTasks,
+  Tasks: [TASKS.DelayOasPensionTask, TASKS.GiveConsentTask],
+}
 
 const ACTIVE_CPP_PAYMENT_TASKS = {
   Header: t.paymentTasks,
@@ -347,7 +345,8 @@ const ACTIVE_SEB_TASKS = {
 }
 
 module.exports = {
-  SUBMITTED_CPP_TASKS,
+  SUBMITTED_CPP_ESTIMATE_TASKS,
+  SUBMITTED_CPP_CHANGE_TASKS,
   ACTIVE_CPP_PAYMENT_TASKS,
   ACTIVE_CPP_CHANGE_TASKS,
   INACTIVE_CPP_TASKS,

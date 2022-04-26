@@ -258,6 +258,7 @@ export default {
   addYourPaymentDetails: '(FR)Add your payment details',
 
   // dashboard benefit task headers
+  estimate: '(FR)Estimate',
   paymentTasks: '(FR)Payment and tax details',
   changeTasks: '(FR)Make a Change',
   paymentClaimsTaxTasks: '(FR)Payments, claims, and tax details',
@@ -269,7 +270,7 @@ export default {
   retirementIncomeTask: '(FR)Estimate retirement income',
   cppContributionTask: '(FR)View my Canada Pension Plan contributions',
   taxDeductionsTask: '(FR)Ask for tax deductions',
-  delayOasPensionTask: '(FR)Delay receiving my OAS pension',
+  delayOasPensionTask: '(FR)Delay receiving Old Age Security',
   giveConsentTask: '(FR)Give consent for someone to communicate on my behalf',
   taxSlipTask: '(FR)View tax slips',
   taxSlipT4eTask: '(FR)View tax slips, T4E',
