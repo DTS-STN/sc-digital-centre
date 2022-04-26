@@ -1,6 +1,7 @@
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
 import ProfileInfo from '../components/molecules/ProfileInfo'
+import { LayoutContainer } from '@dts-stn/decd-design-system'
 
 export default function Profile(props) {
   const fakeFields = {
@@ -43,7 +44,11 @@ export default function Profile(props) {
   return (
     <>
       <DSHeader locale="en" />
-      <ProfileInfo fields={[fakeFields, fakeFields2]} />
+      <LayoutContainer>
+        <div className="col-span-12">
+          <ProfileInfo fields={[fakeFields, fakeFields2]} />
+        </div>
+      </LayoutContainer>
       <DSFooter />
     </>
   )
