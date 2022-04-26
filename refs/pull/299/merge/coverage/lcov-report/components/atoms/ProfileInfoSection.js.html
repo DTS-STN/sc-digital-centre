@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/atoms/PhaseBanner.js</title>
+    <title>Code coverage report for components/atoms/ProfileInfoSection.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/atoms</a> PhaseBanner.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/atoms</a> ProfileInfoSection.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -94,18 +94,15 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -114,6 +111,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -123,11 +121,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -139,43 +133,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import propTypes from 'prop-types'
 &nbsp;
-/**
- * Displays the PhaseBanner on the page
- */
-&nbsp;
-export default function PhaseBanner(props) {
+export default function ProfileInfoSection(props) {
   return (
-    &lt;div className="bg-deep-blue-solid"&gt;
-      &lt;div className="block md:flex py-4 layout-container "&gt;
-        &lt;div className="flex justify-between lg:block lg:w-max ml-4 md:ml-0  my-auto"&gt;
-          &lt;span
-            className="font-body text-sm text-white border block w-max px-4 py-1 my-auto leading-6 uppercase"
-            role="alert"
-          &gt;
-            {props.phase}
-          &lt;/span&gt;
-        &lt;/div&gt;
-&nbsp;
-        &lt;p
-          role="alert"
-          className="ml-4 lg:ml-8 xl:ml-12 pt-2 md:pt-0 h-full font-body text-sm lg:text-md text-white my-auto flex content-center"
-        &gt;
-          {props.bannerText}
-        &lt;/p&gt;
+    &lt;&gt;
+      &lt;h3 className="border-b border-gray-300 font-bold"&gt;{props.title}&lt;/h3&gt;
+      &lt;div className="grid sm:grid-cols-2 gap-y-8 gap-x-40 py-8"&gt;
+        {props.info.map((item) =&gt; {
+          return (
+            &lt;div key={item.title}&gt;
+              &lt;span className="flex justify-between"&gt;
+                &lt;h2 className="font-bold"&gt;{item.title}&lt;/h2&gt;
+                &lt;button className="underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600"&gt;
+                  Edit
+                &lt;/button&gt;
+              &lt;/span&gt;
+              {item.fields?.map((field) =&gt; (
+                &lt;p key={field}&gt;{field}&lt;/p&gt;
+              ))}
+            &lt;/div&gt;
+          )
+        })}
       &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;/&gt;
   )
 }
 &nbsp;
-PhaseBanner.propTypes = {
-  /**
-   * Phase stage in the PhaseBanner
+ProfileInfoSection.propTypes = {
+  /*
+   *  Section Title
    */
-  phase: propTypes.string,
-  /**
-   * Phasebanner text
+  title: propTypes.string,
+  /*
+   *  Information
    */
-  bannerText: propTypes.string,
+  info: propTypes.array,
 }
 &nbsp;</pre></td></tr></table></pre>
 
