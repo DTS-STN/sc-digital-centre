@@ -9,7 +9,7 @@ export default function BackButton(props) {
 
   return (
     <button
-      className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-link-blue-button mb-2"
+      className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-link-blue-button my-10"
       onClick={props.onClick}
       type={props.type}
       lang={props.lang}
