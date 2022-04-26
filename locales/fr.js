@@ -216,6 +216,19 @@ export default {
   serviceCanada: '(FR)Service Canada',
   myBenefitsAndServices: '(FR)My Benefits and Services',
 
+  // Info Message
+  alertIconAltText_success: '(FR)success icon',
+  alertIconId_success: '(FR)success icon',
+  alertIconAltText_warning: '(FR)warning icon',
+  alertIconId_warning: '(FR)warning icon',
+  alertIconAltText_info: '(FR)info icon',
+  alertIconId_info: '(FR)info icon',
+  alertIconAltText_danger: '(FR)danger icon',
+  alertIconId_danger: '(FR)danger icon',
+  messageHeading: '(FR)COVID-19 New services and service changes',
+  messageBody:
+    '(FR)Find out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affectedFind out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affected',
+
   // Benefit Names
   cpp: '(FR)Canada Pension Plan',
   oas: '(FR)Old Age Security',
@@ -237,7 +250,7 @@ export default {
   latestStatus: '(FR)Latest status:',
   daysUntilNextPayment: '(FR)Next payment:',
   nextReportDue: '(FR)Next report due:',
-  viewPaymentHistory: '(FR)View my payments +',
+  viewPaymentHistory: '(FR)View my payments',
   transactionDate: '(FR)Transaction date:',
   agreementStatus: '(FR)Agreement status:',
   netAmount: '{0} $',
@@ -245,7 +258,7 @@ export default {
   // Benefit Card details
   applicationDate: '(FR)Application date',
   latestActivity: '(FR)Latest activity',
-  viewMyStatusAndMessages: '(FR)View my status and messages +',
+  viewMyStatusAndMessages: '(FR)View my status and messages',
   accountDetails: '(FR)Account details',
   nextPayment: '(FR)Next payment',
   lastPayment: '(FR)Last payment',
@@ -254,11 +267,12 @@ export default {
   payeeAddress: '(FR)Address',
   payeePhoneNumber: '(FR)Phone number',
   paymentDetails: '(FR)Payment details',
-  addYourAddress: '(FR)Add your address +',
-  addYourPhoneNumber: '(FR)Add your phone number +',
-  addYourPaymentDetails: '(FR)Add your payment details +',
+  addYourAddress: '(FR)Add your address',
+  addYourPhoneNumber: '(FR)Add your phone number',
+  addYourPaymentDetails: '(FR)Add your payment details',
 
   // dashboard benefit task headers
+  estimate: '(FR)Estimate',
   paymentTasks: '(FR)Payment and tax details',
   changeTasks: '(FR)Make a Change',
   paymentClaimsTaxTasks: '(FR)Payments, claims, and tax details',
@@ -270,7 +284,7 @@ export default {
   retirementIncomeTask: '(FR)Estimate retirement income',
   cppContributionTask: '(FR)View my Canada Pension Plan contributions',
   taxDeductionsTask: '(FR)Ask for tax deductions',
-  delayOasPensionTask: '(FR)Delay receiving my OAS pension',
+  delayOasPensionTask: '(FR)Delay receiving Old Age Security',
   giveConsentTask: '(FR)Give consent for someone to communicate on my behalf',
   taxSlipTask: '(FR)View tax slips',
   taxSlipT4eTask: '(FR)View tax slips, T4E',

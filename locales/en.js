@@ -214,6 +214,19 @@ export default {
   serviceCanada: 'Service Canada',
   myBenefitsAndServices: 'My Benefits and Services',
 
+  // Info Message
+  alertIconAltText_success: 'success icon',
+  alertIconId_success: 'success icon',
+  alertIconAltText_warning: 'warning icon',
+  alertIconId_warning: 'warning icon',
+  alertIconAltText_info: 'info icon',
+  alertIconId_info: 'info icon',
+  alertIconAltText_danger: 'danger icon',
+  alertIconId_danger: 'danger icon',
+  messageHeading: 'COVID-19 New services and service changes',
+  messageBody:
+    'Find out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affectedFind out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affected',
+
   // Benefit Names
   cpp: 'Canada Pension Plan',
   oas: 'Old Age Security',
@@ -246,7 +259,7 @@ export default {
   latestStatus: 'Latest status:',
   daysUntilNextPayment: 'Next payment:',
   nextReportDue: 'Next report due:',
-  viewPaymentHistory: 'View my payments +',
+  viewPaymentHistory: 'View my payments',
   transactionDate: 'Transaction date:',
   agreementStatus: 'Agreement status:',
   netAmount: '$ {0}',
@@ -254,7 +267,7 @@ export default {
   // Benefit Card details
   applicationDate: 'Application date',
   latestActivity: 'Latest activity',
-  viewMyStatusAndMessages: 'View my status and messages +',
+  viewMyStatusAndMessages: 'View my status and messages',
   accountDetails: 'Account details',
   nextPayment: 'Next payment',
   lastPayment: 'Last payment',
@@ -263,11 +276,12 @@ export default {
   payeeAddress: 'Address',
   payeePhoneNumber: 'Phone number',
   paymentDetails: 'Payment details',
-  addYourAddress: 'Add your address +',
-  addYourPhoneNumber: 'Add your phone number +',
-  addYourPaymentDetails: 'Add your payment details +',
+  addYourAddress: 'Add your address',
+  addYourPhoneNumber: 'Add your phone number',
+  addYourPaymentDetails: 'Add your payment details',
 
   // dashboard benefit task headers
+  estimate: 'Estimate',
   paymentTasks: 'Payment and tax details',
   changeTasks: 'Make a Change',
   paymentClaimsTaxTasks: 'Payments, claims, and tax details',
@@ -279,7 +293,7 @@ export default {
   retirementIncomeTask: 'Estimate retirement income',
   cppContributionTask: 'View my Canada Pension Plan contributions',
   taxDeductionsTask: 'Ask for tax deductions',
-  delayOasPensionTask: 'Delay receiving my OAS pension',
+  delayOasPensionTask: 'Delay receiving Old Age Security',
   giveConsentTask: 'Give consent for someone to communicate on my behalf',
   taxSlipTask: 'View tax slips',
   taxSlipT4eTask: 'View tax slips, T4E',
