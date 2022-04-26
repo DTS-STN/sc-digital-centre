@@ -1,9 +1,11 @@
-import DSHeader from '../components/molecules/DSHeader'
-import DSFooter from '../components/molecules/DSFooter'
-import ProfileInfo from '../components/molecules/ProfileInfo'
-import { LayoutContainer } from '@dts-stn/decd-design-system'
+import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
+import { axe, toHaveNoViolations } from 'jest-axe'
+import ProfileInfo from './ProfileInfo'
 
-export default function Profile(props) {
+expect.extend(toHaveNoViolations)
+
+describe('ProfileInfo', () => {
   const fakeFields = {
     title: 'Profile Information',
     info: [
@@ -41,21 +43,20 @@ export default function Profile(props) {
       },
     ],
   }
-  return (
-    <>
-      <DSHeader locale="en" />
-      <LayoutContainer>
-        <div className="col-span-12">
-          <ProfileInfo fields={[fakeFields, fakeFields2]} />
-        </div>
-      </LayoutContainer>
-      <DSFooter />
-    </>
-  )
-}
 
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}
+  it('renders ProfileInfo', () => {
+    render(<ProfileInfo fields={[fakeFields, fakeFields2]} />)
+    const text1 = screen.getByText('Profile Information')
+    const text2 = screen.getByText('Alert me')
+    expect(text1).toBeInTheDocument()
+    expect(text2).toBeInTheDocument()
+  })
+
+  it('has no a11y violations', async () => {
+    const { container } = render(
+      <ProfileInfo fields={[fakeFields, fakeFields2]} />
+    )
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
+})
