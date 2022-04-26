@@ -195,7 +195,7 @@ export async function getStaticProps() {
 
 async function getActiveCpp() {
   try {
-    const res = await fetch(process.env.APP_URL + '/api/cppactivebenefit', {
+    const res = await fetch(process.env.CPP_ACTIVE_BENEFIT_URL, {
       headers: new Headers({
         'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
       }),
@@ -210,7 +210,7 @@ async function getActiveCpp() {
 
 async function getActiveEi() {
   try {
-    const res = await fetch(process.env.APP_URL + '/api/eiactivebenefit', {
+    const res = await fetch(process.env.EI_ACTIVE_BENEFIT_URL, {
       headers: new Headers({
         'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
       }),
