@@ -1,4 +1,3 @@
-import InfoMessage from '../atoms/InfoMessage'
 import { Message } from '@dts-stn/decd-design-system'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
