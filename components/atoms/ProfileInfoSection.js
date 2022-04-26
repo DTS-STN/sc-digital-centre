@@ -8,17 +8,15 @@ export default function ProfileInfoSection(props) {
         {props.info.map((item) => {
           return (
             <div key={item.title}>
-              <span>
-                <span className="flex justify-between">
-                  <h3 className="font-bold">{item.title}</h3>
-                  <button className="underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600">
-                    Edit
-                  </button>
-                </span>
-                {item.fields?.map((field) => (
-                  <p key={field}>{field}</p>
-                ))}
+              <span className="flex justify-between">
+                <h2 className="font-bold">{item.title}</h2>
+                <button className="underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600">
+                  Edit
+                </button>
               </span>
+              {item.fields?.map((field) => (
+                <p key={field}>{field}</p>
+              ))}
             </div>
           )
         })}

@@ -6,14 +6,56 @@ import ProfileInfo from './ProfileInfo'
 expect.extend(toHaveNoViolations)
 
 describe('ProfileInfo', () => {
+  const fakeFields = {
+    title: 'Profile Information',
+    info: [
+      {
+        title: 'Address',
+        fields: ['123 Fake street', 'Ontario, Canada', '1A1-1A1'],
+      },
+      {
+        title: 'Province of residence',
+        fields: ['Ontario'],
+      },
+      {
+        title: 'Bank Details',
+        fields: ['Direct deposit', 'Scotiabank 8510231'],
+      },
+      {
+        title: 'Phone',
+        fields: ['XXX - XXX - 1234'],
+      },
+    ],
+  }
+  const fakeFields2 = {
+    title: 'Preferences',
+    info: [
+      {
+        title: 'Written Language',
+        fields: ['English'],
+      },
+      {
+        title: 'Alert me',
+        fields: [
+          'Sign up to get an email when important new is available',
+          'Registered',
+        ],
+      },
+    ],
+  }
+
   it('renders ProfileInfo', () => {
-    render(<ProfileInfo />)
-    const text = screen.getByText('Ontario')
-    expect(text).toBeInTheDocument()
+    render(<ProfileInfo fields={[fakeFields, fakeFields2]} />)
+    const text1 = screen.getByText('Profile Information')
+    const text2 = screen.getByText('Alert me')
+    expect(text1).toBeInTheDocument()
+    expect(text2).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(<ProfileInfo />)
+    const { container } = render(
+      <ProfileInfo fields={[fakeFields, fakeFields2]} />
+    )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
