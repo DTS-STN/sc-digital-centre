@@ -11,7 +11,6 @@ const builddate = process.env.NEXT_PUBLIC_BUILD_DATE
 const contentURL = process.env.NEXT_CONTENT_API
   ? process.env.NEXT_CONTENT_API
   : ''
-const subscriptionKey = process.env.OCP_APIM_SUBSCRIPTION_KEY
 
 //security headers that we want on all pages
 //more info here https://nextjs.org/docs/advanced-features/security-headers
@@ -46,7 +45,6 @@ const config = {
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
     NEXT_CONTENT_API: contentURL,
-    OCP_APIM_SUBSCRIPTION_KEY: subscriptionKey,
   },
   reactStrictMode: true,
   //
@@ -62,19 +60,6 @@ const config = {
   //
   images: {
     domains: ['www.canada.ca'],
-  },
-  //
-  async rewrites() {
-    return [
-      {
-        source: '/api/cppactivebenefit',
-        destination: process.env.CPP_ACTIVE_BENEFIT_URL,
-      },
-      {
-        source: '/api/eiactivebenefit',
-        destination: process.env.EI_ACTIVE_BENEFIT_URL,
-      },
-    ]
   },
 }
 
