@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651070552884" clover="3.2.0">
-  <project timestamp="1651070552885" name="All files">
+<coverage generated="1651081825963" clover="3.2.0">
+  <project timestamp="1651081825963" name="All files">
     <metrics statements="274" coveredstatements="179" conditionals="219" coveredconditionals="144" methods="96" coveredmethods="62" elements="589" coveredelements="385" complexity="0" loc="274" ncloc="274" packages="5" files="41" classes="41"/>
     <package name="components.atoms">
       <metrics statements="89" coveredstatements="77" conditionals="76" coveredconditionals="60" methods="30" coveredmethods="28"/>
@@ -124,9 +124,9 @@
       <file name="ProfileInfoSection.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ProfileInfoSection.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="4" count="8" type="stmt"/>
-        <line num="9" count="22" type="stmt"/>
-        <line num="18" count="36" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
+        <line num="12" count="22" type="stmt"/>
+        <line num="21" count="36" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
       </file>
       <file name="SettingsNavButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/SettingsNavButton.js">
         <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
