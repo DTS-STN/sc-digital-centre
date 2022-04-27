@@ -3,7 +3,7 @@ import DSFooter from '../components/molecules/DSFooter'
 import ProfileInfo from '../components/molecules/ProfileInfo'
 import { LayoutContainer } from '@dts-stn/decd-design-system'
 import SettingsNavButton from '../components/atoms/SettingsNavButton'
-import BackButton from '../components/atoms/BackButton'
+import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 
@@ -60,7 +60,11 @@ export default function Profile(props) {
             <SettingsNavButton text={t.oas}></SettingsNavButton>
           </div>
           <ProfileInfo fields={[fakeFields, fakeFields2]} />
-          <BackButton text={t.backToDashboard} />
+          <Link href="/dashboard">
+            <button className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-link-blue-button my-10">
+              {t.backToDashboard}
+            </button>
+          </Link>
         </div>
       </LayoutContainer>
       <DSFooter />

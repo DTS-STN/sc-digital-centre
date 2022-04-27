@@ -15,6 +15,18 @@ describe('SettingsNavButton', () => {
     expect(btn).toBeInTheDocument()
   })
 
+  it('renders ActionButtons with custom CSS', () => {
+    render(
+      <SettingsNavButton
+        id="testID"
+        data-testid="testId"
+        className="bg-red-400 text-white border"
+      />
+    )
+    const btn = screen.getByTestId('testId')
+    expect(btn).toHaveClass('bg-red-400 text-white border')
+  })
+
   it('has no a11y violations', async () => {
     const results = await axe(container)
     expect(results).toHaveNoViolations()

@@ -12,7 +12,13 @@ export default function SettingsNavButton(props) {
     'bg-bright-blue-lighthover font-normal text-black text-center font-display w-fit px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover'
   return (
     <button
-      className={`${!props.active ? defaultStyle : activeStyle}`}
+      className={`${
+        !props.className
+          ? !props.active
+            ? defaultStyle
+            : activeStyle
+          : props.className
+      }`}
       onClick={props.onClick}
       type={props.type}
       lang={props.lang}
