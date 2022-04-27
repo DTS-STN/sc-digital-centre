@@ -89,7 +89,7 @@ object Build_Release: BuildType({
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentreDev)
     }
-   
+
     steps {
         dockerCommand {
             name = "Build & Tag Docker Image"
@@ -154,7 +154,7 @@ object Build_Dev: BuildType({
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentreDev)
     }
-   
+
     steps {
         dockerCommand {
             name = "Build & Tag Docker Image"
@@ -220,7 +220,7 @@ object Build_Perf: BuildType({
     vcs {
         root(HttpsGithubComDtsStnScDigitalCentreDev)
     }
-   
+
     steps {
         dockerCommand {
             name = "Build & Tag Docker Image"
@@ -262,9 +262,6 @@ object Build_Perf: BuildType({
         }
     }
 })
-
-
-
 
 object Build_Dynamic: BuildType({
     name = "Build_Dynamic"
@@ -370,7 +367,7 @@ object CleanUpWeekly: BuildType({
                 hour = 15
                 minute = 15
                 timezone = "America/New_York"
-            }  
+            }
             branchFilter = "+:dev"
             triggerBuild = always()
             withPendingChangesOnly = false

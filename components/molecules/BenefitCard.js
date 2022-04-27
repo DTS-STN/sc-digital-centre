@@ -11,6 +11,8 @@ import BenefitStatus from '../../constants/BenefitStatus'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
+import { getBenefitType } from '../organisms/DashboardUtils'
+import BenefitCode from '../../constants/BenefitCode'
 
 const BenefitCard = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -21,6 +23,24 @@ const BenefitCard = (props) => {
   const handleClick = () => {
     setBtnCaption(isOpen ? t.viewMore : t.viewLess)
     setIsOpen(!isOpen)
+  }
+
+  const getBenefitTypeName = () => {
+    let benefitType
+    if (props.benefit.benefitType === BenefitCode.cpp && props.activeCppApi) {
+      //benefit type is mapped benefitType to for active cpp
+      benefitType = getBenefitType(props.activeCppApi.benefitType)
+    } else if (
+      props.benefit.benefitType === BenefitCode.ei &&
+      props.activeEiApi
+    ) {
+      //benefit type is mapped enmBenefitType to for active ei
+      benefitType = getBenefitType(props.activeEiApi.enmBenefitType)
+    } else {
+      //benefit type when is not coming from API, eventually this should be replaced with value from an API e.g active cppd, OAS, etc...
+      return props.benefit.pendingBenefits
+    }
+    return benefitType.map((i) => i.nameEn).toString()
   }
 
   const scrollTo = () => {
@@ -42,6 +62,8 @@ const BenefitCard = (props) => {
         return (
           <BenefitCardHeaderActive
             benefit={props.benefit}
+            activeCppApi={props.activeCppApi}
+            activeEiApi={props.activeEiApi}
             locale={props.locale}
           />
         )
@@ -77,7 +99,7 @@ const BenefitCard = (props) => {
         return (
           <>
             <span className="font-bold">{t.activeBenefits}</span>
-            <span className="ml-2">{props.benefit.pendingBenefits}</span>
+            <span className="ml-2">{getBenefitTypeName()}</span>
           </>
         )
       case BenefitStatus.pending.toUpperCase():

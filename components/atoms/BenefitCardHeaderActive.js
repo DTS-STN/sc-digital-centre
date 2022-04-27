@@ -2,14 +2,66 @@ import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
 import BenefitCode from '../../constants/BenefitCode'
+import {
+  formatDate,
+  getBenefitCode,
+  getProgramBenefit,
+} from '../organisms/DashboardUtils'
 
 export default function BenefitCardHeaderActive(props) {
   const t = props.locale === 'en' ? en : fr
   const getBenefitCardTitle = () => {
     if (props.benefit.benefitType === BenefitCode.cppd) {
       return t[BenefitCode.cpp.toLowerCase()]
+    } else if (
+      props.benefit.benefitType === BenefitCode.cpp &&
+      props.activeCppApi
+    ) {
+      const programBenefit = getProgramBenefit(props.activeCppApi.programCode)
+      return programBenefit.map((i) => i.nameEn).toString()
     } else {
       return t[props.benefit.benefitType.toLowerCase()]
+    }
+  }
+
+  const getBenefitCodeName = () => {
+    let benefitCode
+    if (props.benefit.benefitType === BenefitCode.cpp && props.activeCppApi) {
+      benefitCode = getBenefitCode(props.activeCppApi.benefitCode)
+    } else if (
+      props.benefit.benefitType === BenefitCode.ei &&
+      props.activeEiApi
+    ) {
+      benefitCode = getBenefitCode(props.activeEiApi.claimStatusCode)
+    } else {
+      return props.benefit.applicationStatus
+    }
+    return benefitCode.map((i) => i.nameEn).toString()
+  }
+
+  const getNetAmount = () => {
+    if (props.benefit.benefitType === BenefitCode.cpp && props.activeCppApi) {
+      return props.activeCppApi.netAmount
+    } else if (
+      props.benefit.benefitType === BenefitCode.ei &&
+      props.activeEiApi
+    ) {
+      return props.activeEiApi.netAmount
+    } else {
+      return props.benefit.nextPaymentAmount
+    }
+  }
+
+  const getPaymentDate = () => {
+    if (props.benefit.benefitType === BenefitCode.cpp && props.activeCppApi) {
+      return formatDate(props.activeCppApi.lastPaymentDate)
+    } else if (
+      props.benefit.benefitType === BenefitCode.ei &&
+      props.activeEiApi
+    ) {
+      return formatDate(props.activeEiApi.nextRptDueDate)
+    } else {
+      return props.benefit.nextPaymentDate
     }
   }
 
@@ -21,7 +73,7 @@ export default function BenefitCardHeaderActive(props) {
             'font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active'
           }
         >
-          {props.benefit.applicationStatus}
+          {getBenefitCodeName()}
         </h2>
       </div>
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
@@ -41,9 +93,7 @@ export default function BenefitCardHeaderActive(props) {
           <div id={`${props.benefit.benefitType}-active-nextPaymentAmount`}>
             <p className="text-base sm:pb-2 ">{t.paymentAmount}</p>
             <p className="font-bold text-4xl sm:text-3xl md:text-4xl whitespace-nowrap">
-              {props.locale === 'en'
-                ? `$ ${props.benefit.nextPaymentAmount}`
-                : `${props.benefit.nextPaymentAmount} $`}
+              {t.netAmount.replace('{0}', getNetAmount())}
             </p>
             <a
               href="./dashboard"
@@ -60,7 +110,7 @@ export default function BenefitCardHeaderActive(props) {
                 : t.nextReportDue}
             </p>
             <p className="text-green-active font-bold text-lg">
-              {props.benefit.nextPaymentDate}
+              {getPaymentDate()}
             </p>
           </div>
 

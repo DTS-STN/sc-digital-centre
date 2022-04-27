@@ -39,6 +39,9 @@ jobs:
         env:
           NEXT_CONTENT_API: ${{ secrets.NEXT_CONTENT_API }}
           NEXT_PUBLIC_ADOBE_ANALYTICS_URL: ${{ secrets.NEXT_PUBLIC_ADOBE_ANALYTICS_URL}}
+          OCP_APIM_SUBSCRIPTION_KEY: ${{ secrets.OCP_APIM_SUBSCRIPTION_KEY }}
+          CPP_ACTIVE_BENEFIT_URL: ${{ secrets.CPP_ACTIVE_BENEFIT_URL }}
+          EI_ACTIVE_BENEFIT_URL: ${{ secrets.EI_ACTIVE_BENEFIT_URL }}
           CI: true
 
       - name: Linting

@@ -78,6 +78,7 @@ export default function Dashboard(props) {
             benefit={ACTIVE_CPP}
             tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
             taskGroups={true}
+            activeCppApi={props.activeCppProps}
           />
           <BenefitCard
             locale="en"
@@ -103,6 +104,7 @@ export default function Dashboard(props) {
               ACTIVE_EI_DOCS_TASKS,
             ]}
             taskGroups={true}
+            activeEiApi={props.activeEiProps}
           />
           <BenefitCard
             locale="en"
@@ -182,11 +184,44 @@ export async function getStaticProps() {
   // currentBenefits.push({ program: 'oas', status: 'pending' })
   // currentBenefits.push({ program: 'gis', status: 'active' })
   // currentBenefits.push({ program: 'gis', status: 'pending' })
-
+  const activeCpp = await getActiveCpp()
+  const activeEi = await getActiveEi()
   return {
     props: {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
+      activeCppProps: activeCpp,
+      activeEiProps: activeEi,
     },
+  }
+}
+
+async function getActiveCpp() {
+  try {
+    const res = await fetch(process.env.CPP_ACTIVE_BENEFIT_URL, {
+      headers: new Headers({
+        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+      }),
+    })
+    const data = await res.json()
+    return data
+  } catch (e) {
+    console.log(e)
+    return []
+  }
+}
+
+async function getActiveEi() {
+  try {
+    const res = await fetch(process.env.EI_ACTIVE_BENEFIT_URL, {
+      headers: new Headers({
+        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+      }),
+    })
+    const data = await res.json()
+    return data
+  } catch (e) {
+    console.log(e)
+    return []
   }
 }
 
