@@ -62,6 +62,9 @@ import DSFooter from '../components/molecules/DSFooter'
 import {
   CreateUniversalBenefitWithCPPData,
   CreateUniversalBenefitWithEIData,
+  ProgramCodes,
+  StatusCodes,
+  TypeCodes,
 } from '../objects/UniversalBenefit'
 
 export default function Dashboard(props) {
@@ -181,14 +184,11 @@ export async function getStaticProps({ locale }) {
 
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
   // tests - uncomment to hide a card with conditions
-  // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'active' })
-  // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'pending' })
-  // currentBenefits.push({ program: 'cpp', type: 'disability', status: 'active' })
-  // currentBenefits.push({ program: 'cpp', type: 'disability', status: 'pending' })
-  // currentBenefits.push({ program: 'oas', status: 'active' })
-  // currentBenefits.push({ program: 'oas', status: 'pending' })
-  // currentBenefits.push({ program: 'gis', status: 'active' })
-  // currentBenefits.push({ program: 'gis', status: 'pending' })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPRetirement, statusCode: StatusCodes.Active })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPRetirement, statusCode: StatusCodes.Pending })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPDisability, statusCode: StatusCodes.Active })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPDisability, statusCode: StatusCodes.Pending })
+  //currentBenefits.push({ programCode: ProgramCodes.OAS, statusCode: StatusCodes.Active })
 
   const activeCpp = await getActiveCpp()
   const activeEi = await getActiveEi()
@@ -244,9 +244,9 @@ function BuildAdvertisingCards(currentBenefits) {
   if (
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'cpp',
-      'retirement'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.CPP,
+      TypeCodes.CPPRetirement
     )
   ) {
     advertisingCards.push(APPLICATION_CARD_CPP)
@@ -254,8 +254,8 @@ function BuildAdvertisingCards(currentBenefits) {
   if (
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'oas'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.OAS
     )
   ) {
     advertisingCards.push(APPLICATION_CARD_OAS)
@@ -263,8 +263,8 @@ function BuildAdvertisingCards(currentBenefits) {
   if (
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'gis'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.GIS
     )
   ) {
     advertisingCards.push(APPLICATION_CARD_GIS)
@@ -272,9 +272,9 @@ function BuildAdvertisingCards(currentBenefits) {
   if (
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'cpp',
-      'disability'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.CPP,
+      TypeCodes.CPPDisability
     )
   ) {
     advertisingCards.push(APPLICATION_CARD_CPPD)
@@ -303,15 +303,15 @@ function CheckAllBenefitsForAdvertising(benefits, status, program, type) {
   var matchingBenefit
   if (typeof type === 'undefined')
     //overloaded function handling
-    matchingBenefit = benefits.find((b) => b.program == program)
+    matchingBenefit = benefits.find((b) => b.programCode == program)
   else
     matchingBenefit = benefits.find(
-      (b) => b.program == program && b.type == type
+      (b) => b.programCode == program && b.typeCode == type
     )
 
   if (matchingBenefit == null) return true
   //check if there is a status to evaluate
   //if (typeof status === 'undefined' || status.length == 0) return false
   //evaluate for a matching status
-  return !status.find((s) => s == matchingBenefit.status)
+  return !status.find((s) => s == matchingBenefit.statusCode)
 }

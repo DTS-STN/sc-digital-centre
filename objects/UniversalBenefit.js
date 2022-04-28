@@ -9,6 +9,53 @@ export class UniversalBenefit {
   }
 }
 
+export const ProgramCodes = {
+  CPP: 'CPP',
+  EI: 'EI',
+  OAS: 'OAS',
+  GIS: 'GIS',
+}
+
+export const StatusCodes = {
+  Active: 'Active',
+  Pending: 'Pending',
+}
+
+export const CPPStatus = [
+  {
+    value: 32294,
+    status: StatusCodes.Active,
+  },
+]
+
+export const EIStatus = [
+  {
+    value: 3433,
+    status: StatusCodes.Active,
+  },
+]
+
+export const TypeCodes = {
+  CPPBeneficial: 'CPPBeneficial',
+  CPPRetirement: 'CPPRetirement',
+  CPPDisability: 'CPPDisability',
+  EIUnknown: 'EIUnknown',
+}
+
+export const CPPTypes = [
+  {
+    value: 'Beneficial',
+    type: TypeCodes.CPPBeneficial,
+  },
+]
+
+export const EITypes = [
+  {
+    value: 1,
+    type: TypeCodes.EIUnknown,
+  },
+]
+
 ///CPP map
 // {
 //     "programCode": 32294, //status
@@ -26,9 +73,9 @@ export function CreateUniversalBenefitWithCPPData(cppBenefitData) {
     nextPayment = new Date(nextPayment.setMonth(nextPayment.getMonth() + 1))
   }
   let benefit = new UniversalBenefit(
-    cppBenefitData.benefitCode,
-    cppBenefitData.programCode,
-    cppBenefitData.benefitType,
+    ProgramCodes.CPP,
+    CPPStatus.find((s) => s.value == cppBenefitData.programCode).status,
+    CPPTypes.find((s) => s.value == cppBenefitData.benefitType).type,
     [
       new BenefitSummaries(
         SummaryTypes.PaymentAmount,
@@ -54,9 +101,9 @@ export function CreateUniversalBenefitWithCPPData(cppBenefitData) {
 // }
 export function CreateUniversalBenefitWithEIData(eiBenefitData) {
   let benefit = new UniversalBenefit(
-    eiBenefitData.programCode,
-    eiBenefitData.claimStatusCode,
-    eiBenefitData.enmBenefitType,
+    ProgramCodes.EI,
+    EIStatus.find((s) => s.value == eiBenefitData.claimStatusCode).status,
+    EITypes.find((t) => t.value == eiBenefitData.enmBenefitType).type,
     [
       new BenefitSummaries(SummaryTypes.PaymentAmount, eiBenefitData.netAmount),
       new BenefitSummaries(
