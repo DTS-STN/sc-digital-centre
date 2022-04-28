@@ -59,8 +59,10 @@ import {
 } from '../contents/DashboardBenefitApplicationCards'
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
-import UniversalBenefit from '../objects/UniversalBenefit'
-import BenefitSummaries, { SummaryTypes } from '../objects/BenefitSummaries'
+import {
+  CreateUniversalBenefitWithCPPData,
+  CreateUniversalBenefitWithEIData,
+} from '../objects/UniversalBenefit'
 
 export default function Dashboard(props) {
   return (
@@ -189,8 +191,8 @@ export async function getStaticProps() {
 
   const activeCpp = await getActiveCpp()
   const activeEi = await getActiveEi()
-  currentBenefits.push(ConvertCPPBenefitToUniversal(activeCpp))
-  currentBenefits.push(ConvertEIBenefitToUniversal(activeEi))
+  currentBenefits.push(CreateUniversalBenefitWithCPPData(activeCpp))
+  currentBenefits.push(CreateUniversalBenefitWithEIData(activeEi))
 
   return {
     props: {
@@ -199,42 +201,6 @@ export async function getStaticProps() {
       activeEiProps: activeEi,
     },
   }
-}
-
-function ConvertCPPBenefitToUniversal(cppBenefit) {
-  let nextPayment = cppBenefit.lastPaymentDate
-  if (cppBenefit.PaymentProcessType == 'Monthly') {
-    nextPayment = new Date(nextPayment.setMonth(nextPayment.getMonth() + 1))
-  }
-  let benefit = new UniversalBenefit(
-    cppBenefit.benefitCode,
-    cppBenefit.programCode,
-    cppBenefit.benefitType,
-    [
-      new BenefitSummaries(SummaryTypes.PaymentAmount, cppBenefit.netAmount),
-      new BenefitSummaries(SummaryTypes.NextPayment, nextPayment),
-      new BenefitSummaries(SummaryTypes.LatestStatus, null, null),
-    ]
-  )
-  return benefit
-}
-
-function ConvertEIBenefitToUniversal(eiBenefit) {
-  let benefit = new UniversalBenefit(
-    eiBenefit.programCode,
-    eiBenefit.claimStatusCode,
-    eiBenefit.enmBenefitType,
-    [
-      new BenefitSummaries(SummaryTypes.PaymentAmount, eiBenefit.netAmount),
-      new BenefitSummaries(SummaryTypes.NextReport, eiBenefit.nextRptDueDate),
-      new BenefitSummaries(
-        SummaryTypes.LatestStatus,
-        eiBenefit.publishDate,
-        eiBenefit.messageData
-      ),
-    ]
-  )
-  return benefit
 }
 
 async function getActiveCpp() {
