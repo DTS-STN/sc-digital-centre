@@ -2,8 +2,13 @@ import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
 import ProfileInfo from '../components/molecules/ProfileInfo'
 import { LayoutContainer } from '@dts-stn/decd-design-system'
+import SettingsNavButton from '../components/atoms/SettingsNavButton'
+import Link from 'next/link'
+import en from '../locales/en'
+import fr from '../locales/fr'
 
 export default function Profile(props) {
+  const t = en
   const fakeFields = {
     title: 'Profile Information',
     info: [
@@ -46,7 +51,20 @@ export default function Profile(props) {
       <DSHeader locale="en" />
       <LayoutContainer>
         <div className="col-span-12">
+          <h1 className="py-4 text-4xl font-bold text-gray-darker">
+            {t.profileAndSecuritySettings}
+          </h1>
+          <div className="my-4 gap-4 flex flex-row sm:flex-row xs:flex-col">
+            <SettingsNavButton text={t.ei} active={true}></SettingsNavButton>
+            <SettingsNavButton text={t.cpp}></SettingsNavButton>
+            <SettingsNavButton text={t.oas}></SettingsNavButton>
+          </div>
           <ProfileInfo fields={[fakeFields, fakeFields2]} />
+          <Link href="/dashboard">
+            <button className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-link-blue-button my-10">
+              {t.backToDashboard}
+            </button>
+          </Link>
         </div>
       </LayoutContainer>
       <DSFooter />

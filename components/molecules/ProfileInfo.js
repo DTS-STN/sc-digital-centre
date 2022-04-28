@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 
 export default function ProfileInfo(props) {
   return (
-    <div className="max-w-lg px-8 py-4 bg-gray-100">
+    <div className="bg-gray-100 w-full px-8 py-4">
       {props.fields?.map((field) => (
         <ProfileInfoSection
           key={field.title}
