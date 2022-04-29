@@ -65,7 +65,7 @@ export default function Dashboard(props) {
     <>
       <DSHeader locale="en" />
       <LayoutContainer>
-        <div className="col-span-12">
+        <div className="col-span-12 mb-8">
           <Greeting locale="en" name="Mary" />
           <BenefitCard
             locale="en"
