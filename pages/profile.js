@@ -8,7 +8,7 @@ import en from '../locales/en'
 import fr from '../locales/fr'
 
 export default function Profile(props) {
-  const t = en
+  const t = props.locale === 'en' ? en : fr
   const fakeFields = {
     title: 'Profile Information',
     info: [
@@ -48,7 +48,7 @@ export default function Profile(props) {
   }
   return (
     <>
-      <DSHeader locale="en" />
+      <DSHeader locale={props.locale} langToggleLink={props.langToggleLink} />
       <LayoutContainer>
         <div className="col-span-12">
           <h1 className="py-4 text-4xl font-bold text-gray-darker">
@@ -72,8 +72,9 @@ export default function Profile(props) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
+  const langToggleLink = locale === 'en' ? '/fr/profile' : '/profile'
   return {
-    props: {},
+    props: { locale, langToggleLink },
   }
 }

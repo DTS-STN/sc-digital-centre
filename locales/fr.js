@@ -325,26 +325,30 @@ export default {
   applyFor: '(FR)Apply for',
 
   // Header URLs
-  dashboardPath: '/dashboard',
+  dashboardPath: '/fr/dashboard',
   craPath:
     'https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-electroniques-particuliers/dossier-particuliers.html',
-  profilePath: '/profile',
-  securityPath: '/',
-  signOutPath: '/',
+  profilePath: '/fr/profile',
+  securityPath: '/fr/',
+  signOutPath: '/fr/',
 
   // Greeting URLs
   url_canada_ca: 'https://www.canada.ca/home.html',
   url_serviceCanada:
     'https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html',
-  url_myBenefitsAndServices: '/dashboard',
+  url_myBenefitsAndServices: '/fr/dashboard',
 
   // Benefit card header URLs
-  url_statusAndMessages: '/dashboard',
+  url_statusAndMessages: '/fr/dashboard',
 
   //Error pages
   errorPage400ReturnToDashboard: '(FR)Return to dashboard main page',
   errorPage400message: '(FR)400 Error - Bad request error occurred',
   errorPage503message: '(FR)503 - Service unavailable error occurred',
+
+  //Profile page
+  profileAndSecuritySettings: '(FR)Profile and security settings',
+  backToDashboard: '(FR)Back to my dashboard',
 
   //Dashboard task links
   editAddress:
