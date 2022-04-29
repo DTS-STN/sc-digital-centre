@@ -1,6 +1,9 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   //
+  // Benefits
+  CPP: 'Canada Pension Plan',
+  //
   // Phase banner
   phaseBannerTag: 'Test Site',
   phaseBannerText:
