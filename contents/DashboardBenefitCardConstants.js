@@ -176,7 +176,7 @@ const ACTIVE_CPPD = {
   paymentType: 'Direct Deposit',
   additionalInformation:
     'We will notify you as soon as we have process your application.',
-  applicationStatus: 'In Payment',
+  applicationStatus: 'In payment',
   pendingBenefits: 'Disability',
   benefitStatusProgress: 'Complete',
 }
@@ -266,7 +266,7 @@ const ACTIVE_EI = {
   applicationDate: 'September 1, 2021',
   latestStatusDate: 'September 15, 2021',
   estimatedDateOfDecision: 'September 30, 2021',
-  applicationStatus: 'In Payment',
+  applicationStatus: 'In payment',
   applicationDescription: 'Paper application received',
   nextPaymentAmount: 691.45,
   nextPaymentDate: 'September 30, 2021',
