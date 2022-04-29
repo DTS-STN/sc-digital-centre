@@ -43,7 +43,7 @@ export default function Profile(props) {
   }
   return (
     <>
-      <DSHeader locale="en" />
+      <DSHeader locale={props.locale} langToggleLink={props.langToggleLink} />
       <LayoutContainer>
         <div className="col-span-12">
           <ProfileInfo fields={[fakeFields, fakeFields2]} />
@@ -54,8 +54,9 @@ export default function Profile(props) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
+  const langToggleLink = locale === 'en' ? '/fr/profile' : '/profile'
   return {
-    props: {},
+    props: { locale, langToggleLink },
   }
 }

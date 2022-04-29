@@ -63,40 +63,40 @@ import DSFooter from '../components/molecules/DSFooter'
 export default function Dashboard(props) {
   return (
     <>
-      <DSHeader locale="en" />
+      <DSHeader locale={props.locale} langToggleLink={props.langToggleLink} />
       <LayoutContainer>
         <div className="col-span-12">
-          <Greeting locale="en" name="Mary" />
+          <Greeting locale={props.locale} name="Mary" />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_CPP}
             tasks={[SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS]}
             taskGroups={true}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_CPP}
             tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
             taskGroups={true}
             activeCppApi={props.activeCppProps}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_OAS}
             tasks={SUBMITTED_OAS_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_OAS}
             tasks={ACTIVE_OAS_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_EI}
             tasks={SUBMITTED_EI_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_EI}
             tasks={[
               ACTIVE_EI_COMMON_TASKS,
@@ -107,27 +107,27 @@ export default function Dashboard(props) {
             activeEiApi={props.activeEiProps}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={INACTIVE_EI}
             tasks={INACTIVE_EI_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_CPPD}
             tasks={SUBMITTED_CPPD_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_CPPD}
             tasks={ACTIVE_CPPD_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={INACTIVE_CPPD}
             tasks={INACTIVE_CPP_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_SEB}
             tasks={[ACTIVE_SEB_TASKS]}
             taskGroups={true}
@@ -138,7 +138,7 @@ export default function Dashboard(props) {
             return (
               <div key={index}>
                 <BenefitApplicationCard
-                  locale="en"
+                  locale={props.locale}
                   benefitApplication={value}
                 />
               </div>
@@ -146,22 +146,22 @@ export default function Dashboard(props) {
           })}
 
           <NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_CPP}
             tasks={NO_BENEFIT_CPP_TASKS}
           />
           <NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_EI}
             tasks={NO_BENEFIT_EI_TASKS}
           />
           <NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_GIS}
             tasks={NO_BENEFIT_GIS_TASKS}
           />
           <NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_OAS}
             tasks={NO_BENEFIT_OAS_TASKS}
           />
@@ -172,9 +172,10 @@ export default function Dashboard(props) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const currentBenefits = [] // to be retrieved by API
 
+  const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
   // tests - uncomment to hide a card with conditions
   // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'active' })
   // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'pending' })
@@ -191,6 +192,8 @@ export async function getStaticProps() {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
+      locale,
+      langToggleLink,
     },
   }
 }

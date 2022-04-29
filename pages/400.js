@@ -1,16 +1,24 @@
 import { ErrorPage } from '@dts-stn/decd-design-system'
 import DSHeader from '../components/molecules/DSHeader'
 
-export default function Error400() {
+export default function Error400(props) {
+  const errorPageLink = props.locale === 'en' ? '/dashboard' : '/fr/dashboard'
   return (
     <>
-      <DSHeader locale="en" />
+      <DSHeader locale={props.locale} langToggleLink={props.langToggleLink} />
       <ErrorPage
         errType="400"
-        lang="en"
-        accountPageLink="/dashboard"
+        lang={props.locale}
+        accountPageLink={errorPageLink}
         isAuth={true}
       />
     </>
   )
+}
+
+export async function getStaticProps({ locale }) {
+  const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
+  return {
+    props: { locale, langToggleLink },
+  }
 }
