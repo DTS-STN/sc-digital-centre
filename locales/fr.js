@@ -1,6 +1,28 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   //
+  // Benefits
+  CPP: '(FR)Canada Pension Plan',
+  EI: '(FR)Employment Insurance',
+  //
+  // BenefitSummaries
+  PaymentAmount: {
+    title: '(FR)Payment amount',
+    link: '/',
+    linkText: '(FR)View my payments',
+  },
+  NextPayment: {
+    title: '(FR)Next Payment:',
+  },
+  LatestStatus: {
+    title: '(FR)Latest status:',
+    link: '/',
+    linkText: '(FR)View my status and messages',
+  },
+  NextReport: {
+    title: '(FR)Next report due:',
+  },
+  //
   // Phase banner
   phaseBannerTag: "Site d'essai",
   phaseBannerText:
