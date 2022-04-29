@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.44% </span>
+                <span class="strong">4.34% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/45</span>
+                <span class='fraction'>2/46</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>0/16</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.76% </span>
+                <span class="strong">4.65% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/42</span>
+                <span class='fraction'>2/43</span>
             </div>
         
             
@@ -363,7 +363,10 @@
 <a name='L304'></a><a href='#L304'>304</a>
 <a name='L305'></a><a href='#L305'>305</a>
 <a name='L306'></a><a href='#L306'>306</a>
-<a name='L307'></a><a href='#L307'>307</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -540,6 +543,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -552,6 +556,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -734,40 +740,40 @@ import DSFooter from '../components/molecules/DSFooter'
 export default function Dashboard(props) {
   return (
     &lt;&gt;
-      &lt;DSHeader locale="en" /&gt;
+      &lt;DSHeader locale={props.locale} langToggleLink={props.langToggleLink} /&gt;
       &lt;LayoutContainer&gt;
         &lt;div className="col-span-12 mb-8"&gt;
-          &lt;Greeting locale="en" name="Mary" /&gt;
+          &lt;Greeting locale={props.locale} name="Mary" /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_CPP}
             tasks={[SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS]}
             taskGroups={true}
           /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_CPP}
             tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
             taskGroups={true}
             activeCppApi={props.activeCppProps}
           /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_OAS}
             tasks={SUBMITTED_OAS_TASKS}
           /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_OAS}
             tasks={ACTIVE_OAS_TASKS}
           /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_EI}
             tasks={SUBMITTED_EI_TASKS}
           /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_EI}
             tasks={[
               ACTIVE_EI_COMMON_TASKS,
@@ -778,27 +784,27 @@ export default function Dashboard(props) {
             activeEiApi={props.activeEiProps}
           /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={INACTIVE_EI}
             tasks={INACTIVE_EI_TASKS}
           /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_CPPD}
             tasks={SUBMITTED_CPPD_TASKS}
           /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_CPPD}
             tasks={ACTIVE_CPPD_TASKS}
           /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={INACTIVE_CPPD}
             tasks={INACTIVE_CPP_TASKS}
           /&gt;
           &lt;BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_SEB}
             tasks={[ACTIVE_SEB_TASKS]}
             taskGroups={true}
@@ -809,7 +815,7 @@ export default function Dashboard(props) {
             return (
               &lt;div key={index}&gt;
                 &lt;BenefitApplicationCard
-                  locale="en"
+                  locale={props.locale}
                   benefitApplication={value}
                 /&gt;
               &lt;/div&gt;
@@ -817,22 +823,22 @@ export default function Dashboard(props) {
           })}
 &nbsp;
           &lt;NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_CPP}
             tasks={NO_BENEFIT_CPP_TASKS}
           /&gt;
           &lt;NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_EI}
             tasks={NO_BENEFIT_EI_TASKS}
           /&gt;
           &lt;NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_GIS}
             tasks={NO_BENEFIT_GIS_TASKS}
           /&gt;
           &lt;NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_OAS}
             tasks={NO_BENEFIT_OAS_TASKS}
           /&gt;
@@ -843,9 +849,10 @@ export default function Dashboard(props) {
   )
 }
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >getStaticProps(</span>) {
+export async function <span class="fstat-no" title="function not covered" >getStaticProps(</span>{ locale }) {
   const currentBenefits = <span class="cstat-no" title="statement not covered" >[] </span>// to be retrieved by API
 &nbsp;
+  const langToggleLink = <span class="cstat-no" title="statement not covered" >locale === 'en' ? '/fr/dashboard' : '/dashboard'</span>
   // tests - uncomment to hide a card with conditions
   // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'active' })
   // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'pending' })
@@ -862,6 +869,8 @@ export async function <span class="fstat-no" title="function not covered" >getSt
       advertisingCards: BuildAdvertisingCards(currentBenefits),
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
+      locale,
+      langToggleLink,
     },
   }
 }
@@ -982,7 +991,7 @@ function <span class="fstat-no" title="function not covered" >CheckAllBenefitsFo
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Apr 29 2022 15:06:00 GMT+0000 (Coordinated Universal Time)
+                at Fri Apr 29 2022 17:49:23 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
