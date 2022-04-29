@@ -122,9 +122,8 @@
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -188,13 +187,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
 import BenefitCode from '../../constants/BenefitCode'
+import StatusBadge from './StatusBadge'
 &nbsp;
 export default function BenefitCardHeaderActiveAgreement(props) {
   const t = props.locale === 'en' ? en : <span class="branch-1 cbranch-no" title="branch not covered" >fr</span>
@@ -207,51 +204,48 @@ export default function BenefitCardHeaderActiveAgreement(props) {
   }
 &nbsp;
   return (
-    &lt;div className="px-4 md:px-6 pb-4"&gt;
-      &lt;div className="flex mr-10 justify-end"&gt;
-        &lt;h2
-          className={
-            'font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active'
-          }
-        &gt;
-          {props.benefit.applicationStatus}
-        &lt;/h2&gt;
-      &lt;/div&gt;
-      &lt;div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"&gt;
-        &lt;div
-          id={`${props.benefit.benefitType}-active`}
-          className="col-span-1 py-4 md:px-0 lg:px-3"
-        &gt;
-          &lt;div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"&gt;
-            {getBenefitCardTitle()}
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;HorizontalRule width="w-1/3" visibility="sm:hidden" /&gt;
-        &lt;div
-          id={`${props.benefit.benefitType}-active-paymentStartDate`}
-          className="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"
-        &gt;
-          &lt;div id={`${props.benefit.benefitType}-active-nextPaymentDueDate`}&gt;
-            &lt;p className="sm:pb-2"&gt;{t.transactionDate}&lt;/p&gt;
-            &lt;p className="text-green-active font-bold text-lg"&gt;
-              {props.benefit.transactionDate}
-            &lt;/p&gt;
-          &lt;/div&gt;
-&nbsp;
+    &lt;div&gt;
+      &lt;StatusBadge
+        className="bg-green-active"
+        status={props.benefit.applicationStatus}
+      /&gt;
+      &lt;div className="px-4 md:px-6 pb-4"&gt;
+        &lt;div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"&gt;
           &lt;div
-            id={`${props.benefit.benefitType}-active-latestUpdates`}
-            className="sm:pb-2"
+            id={`${props.benefit.benefitType}-active`}
+            className="col-span-1 py-4 md:px-0 lg:px-3"
           &gt;
-            &lt;p className="font-display sm:pb-2"&gt;{t.agreementStatus}&lt;/p&gt;
-            &lt;p className="font-display font-bold text-lg"&gt;
-              {props.benefit.benefitStatusProgress}
-            &lt;/p&gt;
-            &lt;a
-              href={t.url_statusAndMessages}
-              className="mt-1 text-bright-blue-solid underline"
+            &lt;div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"&gt;
+              {getBenefitCardTitle()}
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;HorizontalRule width="w-1/3" visibility="sm:hidden" /&gt;
+          &lt;div
+            id={`${props.benefit.benefitType}-active-paymentStartDate`}
+            className="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"
+          &gt;
+            &lt;div id={`${props.benefit.benefitType}-active-nextPaymentDueDate`}&gt;
+              &lt;p className="sm:pb-2"&gt;{t.transactionDate}&lt;/p&gt;
+              &lt;p className="text-green-active font-bold text-lg"&gt;
+                {props.benefit.transactionDate}
+              &lt;/p&gt;
+            &lt;/div&gt;
+&nbsp;
+            &lt;div
+              id={`${props.benefit.benefitType}-active-latestUpdates`}
+              className="sm:pb-2"
             &gt;
-              {t.viewMyStatusAndMessages}
-            &lt;/a&gt;
+              &lt;p className="font-display sm:pb-2"&gt;{t.agreementStatus}&lt;/p&gt;
+              &lt;p className="font-display font-bold text-lg"&gt;
+                {props.benefit.benefitStatusProgress}
+              &lt;/p&gt;
+              &lt;a
+                href={t.url_statusAndMessages}
+                className="mt-1 text-bright-blue-solid underline"
+              &gt;
+                {t.viewMyStatusAndMessages}
+              &lt;/a&gt;
+            &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -265,7 +259,7 @@ export default function BenefitCardHeaderActiveAgreement(props) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 28 2022 15:30:56 GMT+0000 (Coordinated Universal Time)
+                at Fri Apr 29 2022 14:54:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

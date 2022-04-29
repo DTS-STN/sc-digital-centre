@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.33% </span>
+                <span class="strong">53.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/30</span>
+                <span class='fraction'>16/30</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.47% </span>
+                <span class="strong">58.82% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>26/34</span>
+                <span class='fraction'>20/34</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/7</span>
+                <span class='fraction'>4/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.85% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>19/28</span>
+                <span class='fraction'>16/28</span>
             </div>
         
             
@@ -194,9 +194,8 @@
 <a name='L135'></a><a href='#L135'>135</a>
 <a name='L136'></a><a href='#L136'>136</a>
 <a name='L137'></a><a href='#L137'>137</a>
-<a name='L138'></a><a href='#L138'>138</a>
-<a name='L139'></a><a href='#L139'>139</a>
-<a name='L140'></a><a href='#L140'>140</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L138'></a><a href='#L138'>138</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -224,30 +223,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
@@ -264,9 +250,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -339,6 +335,7 @@
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
 import BenefitCode from '../../constants/BenefitCode'
+import StatusBadge from './StatusBadge'
 import {
   formatDate,
   getBenefitCode,
@@ -361,17 +358,17 @@ export default function BenefitCardHeaderActive(props) {
     }
   }
 &nbsp;
-  const getBenefitCodeName = () =&gt; {
+  const getBenefitCodeName = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
     let benefitCode
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (props.benefit.benefitType === BenefitCode.cpp &amp;&amp; props.activeCppApi) {
+<span class="cstat-no" title="statement not covered" >    if (props.benefit.benefitType === BenefitCode.cpp &amp;&amp; props.activeCppApi) {</span>
 <span class="cstat-no" title="statement not covered" >      benefitCode = getBenefitCode(props.activeCppApi.benefitCode)</span>
-    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (
+    } else <span class="cstat-no" title="statement not covered" >if (</span>
       props.benefit.benefitType === BenefitCode.ei &amp;&amp;
       props.activeEiApi
     ) {
 <span class="cstat-no" title="statement not covered" >      benefitCode = getBenefitCode(props.activeEiApi.claimStatusCode)</span>
     } else {
-      return props.benefit.applicationStatus
+<span class="cstat-no" title="statement not covered" >      return props.benefit.applicationStatus</span>
     }
 <span class="cstat-no" title="statement not covered" >    return benefitCode.map(<span class="fstat-no" title="function not covered" >(i</span>) =&gt; <span class="cstat-no" title="statement not covered" >i.nameEn)</span>.toString()</span>
   }
@@ -403,71 +400,68 @@ export default function BenefitCardHeaderActive(props) {
   }
 &nbsp;
   return (
-    &lt;div className="px-4 md:px-6"&gt;
-      &lt;div className="flex mr-10 justify-end"&gt;
-        &lt;h2
-          className={
-            'font-bold font-display text-lg px-12 py-1 mb-5 rounded-b-md text-white bg-green-active'
-          }
-        &gt;
-          {getBenefitCodeName()}
-        &lt;/h2&gt;
-      &lt;/div&gt;
-      &lt;div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"&gt;
-        &lt;div
-          id={`${props.benefit.benefitType}-active`}
-          className="col-span-1 py-4 md:px-0 lg:px-3"
-        &gt;
-          &lt;div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"&gt;
-            {getBenefitCardTitle()}
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;HorizontalRule width="w-1/3" visibility="sm:hidden" /&gt;
-        &lt;div
-          id={`${props.benefit.benefitType}-active-paymentStartDate`}
-          className="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"
-        &gt;
-          &lt;div id={`${props.benefit.benefitType}-active-nextPaymentAmount`}&gt;
-            &lt;p className="text-base sm:pb-2 "&gt;{t.paymentAmount}&lt;/p&gt;
-            &lt;p className="font-bold text-4xl sm:text-3xl md:text-4xl whitespace-nowrap"&gt;
-              {t.netAmount.replace('{0}', getNetAmount())}
-            &lt;/p&gt;
-            &lt;a
-              href="./dashboard"
-              className="mt-1 text-bright-blue-solid underline"
-            &gt;
-              {t.viewPaymentHistory}
-            &lt;/a&gt;
-          &lt;/div&gt;
-&nbsp;
-          &lt;div id={`${props.benefit.benefitType}-active-nextPaymentDueDate`}&gt;
-            &lt;p className="sm:pb-2"&gt;
-              {props.benefit.benefitType != 'EI'
-                ? t.daysUntilNextPayment
-                : t.nextReportDue}
-            &lt;/p&gt;
-            &lt;p className="text-green-active font-bold text-lg"&gt;
-              {getPaymentDate()}
-            &lt;/p&gt;
-          &lt;/div&gt;
-&nbsp;
+    &lt;div&gt;
+      &lt;StatusBadge
+        className="bg-green-active"
+        status={props.benefit.applicationStatus}
+      /&gt;
+      &lt;div className="px-4 md:px-6"&gt;
+        &lt;div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"&gt;
           &lt;div
-            id={`${props.benefit.benefitType}-active-latestUpdates`}
-            className="sm:pb-2"
+            id={`${props.benefit.benefitType}-active`}
+            className="col-span-1 py-4 md:px-0 lg:px-3"
           &gt;
-            &lt;p className="font-display sm:pb-2"&gt;{t.latestStatus}&lt;/p&gt;
-            &lt;p className="font-display font-bold text-lg"&gt;
-              {props.benefit.benefitStatusProgress}
-            &lt;/p&gt;
-            &lt;p className="font-bold text-lg"&gt;
-              {props.benefit.latestStatusDate}
-            &lt;/p&gt;
-            &lt;a
-              href={t.url_statusAndMessages}
-              className="mt-1 text-bright-blue-solid underline"
+            &lt;div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"&gt;
+              {getBenefitCardTitle()}
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;HorizontalRule width="w-1/3" visibility="sm:hidden" /&gt;
+          &lt;div
+            id={`${props.benefit.benefitType}-active-paymentStartDate`}
+            className="grid col-span-3 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"
+          &gt;
+            &lt;div id={`${props.benefit.benefitType}-active-nextPaymentAmount`}&gt;
+              &lt;p className="text-base sm:pb-2 "&gt;{t.paymentAmount}&lt;/p&gt;
+              &lt;p className="font-bold text-4xl sm:text-3xl md:text-4xl whitespace-nowrap"&gt;
+                {t.netAmount.replace('{0}', getNetAmount())}
+              &lt;/p&gt;
+              &lt;a
+                href="./dashboard"
+                className="mt-1 text-bright-blue-solid underline"
+              &gt;
+                {t.viewPaymentHistory}
+              &lt;/a&gt;
+            &lt;/div&gt;
+&nbsp;
+            &lt;div id={`${props.benefit.benefitType}-active-nextPaymentDueDate`}&gt;
+              &lt;p className="sm:pb-2"&gt;
+                {props.benefit.benefitType != 'EI'
+                  ? t.daysUntilNextPayment
+                  : t.nextReportDue}
+              &lt;/p&gt;
+              &lt;p className="text-green-active font-bold text-lg"&gt;
+                {getPaymentDate()}
+              &lt;/p&gt;
+            &lt;/div&gt;
+&nbsp;
+            &lt;div
+              id={`${props.benefit.benefitType}-active-latestUpdates`}
+              className="sm:pb-2"
             &gt;
-              {t.viewMyStatusAndMessages}
-            &lt;/a&gt;
+              &lt;p className="font-display sm:pb-2"&gt;{t.latestStatus}&lt;/p&gt;
+              &lt;p className="font-display font-bold text-lg"&gt;
+                {props.benefit.benefitStatusProgress}
+              &lt;/p&gt;
+              &lt;p className="font-bold text-lg"&gt;
+                {props.benefit.latestStatusDate}
+              &lt;/p&gt;
+              &lt;a
+                href={t.url_statusAndMessages}
+                className="mt-1 text-bright-blue-solid underline"
+              &gt;
+                {t.viewMyStatusAndMessages}
+              &lt;/a&gt;
+            &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -481,7 +475,7 @@ export default function BenefitCardHeaderActive(props) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 28 2022 15:30:56 GMT+0000 (Coordinated Universal Time)
+                at Fri Apr 29 2022 14:54:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
