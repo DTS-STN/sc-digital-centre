@@ -12,10 +12,10 @@ export default function BenefitCardHeaderInactive(props) {
 
   return (
     <div>
-      {/* <StatusBadge
+      <StatusBadge
         className="bg-gray-inactive"
         status={props.benefit.applicationStatus}
-      /> */}
+      />
       <div className="px-4 md:px-6">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
           <div

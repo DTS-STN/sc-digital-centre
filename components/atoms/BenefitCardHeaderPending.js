@@ -17,7 +17,7 @@ export default function BenefitCardHeaderPending(props) {
   return (
     <div>
       <StatusBadge
-        className="bg-gray-pending"
+        className="bg-[#068293]"
         status={props.benefit.applicationStatus}
       />
 
