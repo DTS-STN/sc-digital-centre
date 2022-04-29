@@ -9,7 +9,7 @@ export default function Error404(props) {
       <ErrorPage
         errType="404"
         lang={props.locale}
-        accountPageLink="/dashboard"
+        accountPageLink={errorPageLink}
         isAuth={true}
       />
     </>
