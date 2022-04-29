@@ -346,6 +346,10 @@ export default {
   errorPage400message: '(FR)400 Error - Bad request error occurred',
   errorPage503message: '(FR)503 - Service unavailable error occurred',
 
+  //Profile page
+  profileAndSecuritySettings: '(FR)Profile and security settings',
+  backToDashboard: '(FR)Back to my dashboard',
+
   //Dashboard task links
   editAddress:
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',

@@ -23,6 +23,7 @@ module.exports = {
           light: '#DBDBDB',
           solid: '#B9B9B9',
           dark: '#7F8C8D',
+          darker: '#333333',
           inactive: '#8C9095',
           pending: '#8C9095',
         },
@@ -34,6 +35,7 @@ module.exports = {
         },
         'bright-blue': {
           light: '#78B9E4',
+          lighthover: '#93D0FF',
           solid: '#0069AD',
           dark: '#245C81',
         },
@@ -45,6 +47,7 @@ module.exports = {
         'link-blue': {
           default: '#2b4380',
           hover: '#0535d2',
+          button: '#335075',
         },
         'red': {
           light: '#B76565',
