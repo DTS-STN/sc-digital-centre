@@ -1,8 +1,10 @@
 import propTypes from 'prop-types'
 import { UniversalBenefit } from '../../objects/UniversalBenefit'
+import en from '../../locales/en'
+import fr from '../../locales/fr'
 
 export default function UniversalBenefitCard(props) {
-  const t = props.locale
+  const t = props.locale === 'en' ? en : fr
 
   return (
     <div className="benefit-card">

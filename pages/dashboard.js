@@ -66,14 +66,31 @@ import {
   StatusCodes,
   TypeCodes,
 } from '../objects/UniversalBenefit'
+import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 
 export default function Dashboard(props) {
+  let allBenefits = JSON.parse(props.allBenefits)
+
   return (
     <>
       <DSHeader locale={props.locale} langToggleLink={props.langToggleLink} />
       <LayoutContainer>
         <div className="col-span-12 mb-8">
           <Greeting locale={props.locale} name="Mary" />
+
+          {/* New Benefit Cards API driven */}
+          {allBenefits == null || allBenefits.length <= 0
+            ? null
+            : allBenefits.map((value, index) => {
+                return (
+                  <UniversalBenefitCard
+                    key={index}
+                    locale={props.locale}
+                    benefit={value}
+                  />
+                )
+              })}
+
           <BenefitCard
             locale={props.locale}
             benefit={SUBMITTED_CPP}
@@ -198,6 +215,7 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
+      allBenefits: JSON.stringify(currentBenefits),
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
       locale,

@@ -19,7 +19,7 @@ describe('UniversalBenefitCard', () => {
     TypeCodes.CPPRetirement
   )
   let { container } = render(
-    <UniversalBenefitCard locale={en} benefit={benefit} />
+    <UniversalBenefitCard locale="en" benefit={benefit} />
   )
 
   it('renders', () => {
