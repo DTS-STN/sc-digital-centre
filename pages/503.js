@@ -17,7 +17,7 @@ export default function Error503(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
+  const langToggleLink = locale === 'en' ? '/fr/503' : '/503'
   return {
     props: { locale, langToggleLink },
   }

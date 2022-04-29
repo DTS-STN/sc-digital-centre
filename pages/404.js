@@ -9,7 +9,7 @@ export default function Error404(props) {
       <ErrorPage
         errType="404"
         lang={props.locale}
-        accountPageLink={errorPageLink}
+        accountPageLink="/dashboard"
         isAuth={true}
       />
     </>
@@ -17,7 +17,7 @@ export default function Error404(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
+  const langToggleLink = locale === 'en' ? '/fr/404' : '/404'
   return {
     props: { locale, langToggleLink },
   }

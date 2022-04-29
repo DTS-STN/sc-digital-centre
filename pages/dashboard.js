@@ -65,7 +65,7 @@ export default function Dashboard(props) {
     <>
       <DSHeader locale={props.locale} langToggleLink={props.langToggleLink} />
       <LayoutContainer>
-        <div className="col-span-12">
+        <div className="col-span-12 mb-8">
           <Greeting locale={props.locale} name="Mary" />
           <BenefitCard
             locale={props.locale}
