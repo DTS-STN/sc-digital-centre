@@ -11,7 +11,7 @@ const SUBMITTED_OAS = {
   latestStatusDate: 'July 15, 2021',
   estimatedDateOfDecision: 'July 31, 2021',
   applicationType: 'Old Age Security Benefits (OAS)',
-  applicationStatus: 'Application Submitted',
+  applicationStatus: 'Application received',
   applicationDescription: 'Electronic application received',
   withdrawalRequest: 'Pending',
   withdrawalStatus: 'Not Approved',
@@ -34,7 +34,7 @@ const ACTIVE_OAS = {
   applicationDate: 'July 1, 2021',
   latestStatusDate: 'September 15, 2021',
   estimatedDateOfDecision: 'July 31, 2021',
-  applicationStatus: 'Active',
+  applicationStatus: 'In payment',
   applicationDescription: 'Online application received',
   nextPaymentAmount: 691.45,
   nextPaymentDate: 'September 30, 2021',
@@ -82,7 +82,7 @@ const SUBMITTED_CPP = {
   additionalInformation:
     'We will notify you as soon as we have process your application.',
 
-  applicationStatus: 'Application Submitted',
+  applicationStatus: 'Application received',
   pendingBenefits: 'Retirement pension',
   benefitStatusProgress: 'In Progress',
 }
@@ -114,7 +114,7 @@ const ACTIVE_CPP = {
   paymentType: 'Direct Deposit',
   additionalInformation:
     'We will notify you as soon as we have process your application.',
-  applicationStatus: 'Active',
+  applicationStatus: 'In payment',
   pendingBenefits: 'Retirement pension',
   benefitStatusProgress: 'Complete',
 }
@@ -144,7 +144,7 @@ const SUBMITTED_CPPD = {
   additionalInformation:
     'We will notify you as soon as we have process your application.',
 
-  applicationStatus: 'Application Submitted',
+  applicationStatus: 'Application received',
   pendingBenefits: 'Disability',
   benefitStatusProgress: 'In Progress',
 }
@@ -176,7 +176,7 @@ const ACTIVE_CPPD = {
   paymentType: 'Direct Deposit',
   additionalInformation:
     'We will notify you as soon as we have process your application.',
-  applicationStatus: 'Active',
+  applicationStatus: 'In Payment',
   pendingBenefits: 'Disability',
   benefitStatusProgress: 'Complete',
 }
@@ -234,7 +234,7 @@ const SUBMITTED_EI = {
   applicationDate: 'September 1, 2021',
   latestStatusDate: 'September 15, 2021',
   estimatedDateOfDecision: 'September 30, 2021',
-  applicationStatus: 'Application Submitted',
+  applicationStatus: 'Application received',
   applicationDescription: 'Paper application received',
   nextPaymentAmount: 0,
   nextPaymentDate: '',
@@ -266,7 +266,7 @@ const ACTIVE_EI = {
   applicationDate: 'September 1, 2021',
   latestStatusDate: 'September 15, 2021',
   estimatedDateOfDecision: 'September 30, 2021',
-  applicationStatus: 'Active',
+  applicationStatus: 'In Payment',
   applicationDescription: 'Paper application received',
   nextPaymentAmount: 691.45,
   nextPaymentDate: 'September 30, 2021',

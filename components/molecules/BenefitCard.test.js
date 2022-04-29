@@ -29,7 +29,7 @@ const activeCanadaPensionPlan = {
   paymentType: 'Direct Deposit',
   additionalInformation:
     'We will notify you as soon as we have process your application.',
-  applicationStatus: 'Active',
+  applicationStatus: 'In payment',
   pendingBenefits: 'Retirement pension',
   lastUpdates: [
     {
@@ -116,7 +116,7 @@ describe('BenefitCard', () => {
       />
     )
     const benefitName = screen.getByText('Canada Pension Plan')
-    const status = screen.getByText('Active')
+    const status = screen.getByText('In payment')
 
     expect(benefitName).toBeInTheDocument()
     expect(status).toBeInTheDocument()
