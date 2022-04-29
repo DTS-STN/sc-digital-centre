@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 export default function Index(props) {
   return (
     <Layout
-      locale="en"
+      locale={props.locale}
       displayHeader={false}
       displayFooter={false}
       metadata={props.metadata}
@@ -20,7 +20,7 @@ export default function Index(props) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
@@ -30,6 +30,7 @@ export async function getStaticProps() {
   return {
     props: {
       metadata,
+      locale,
     },
   }
 }
