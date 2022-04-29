@@ -13,8 +13,8 @@ export class BenefitSummaries {
 }
 
 export const SummaryTypes = {
-  PaymentAmount: 'PA',
-  NextReport: 'NR',
-  LatestStatus: 'LS',
-  NextPayment: 'NP',
+  PaymentAmount: 'PaymentAmount',
+  NextReport: 'NextReport',
+  LatestStatus: 'LatestStatus',
+  NextPayment: 'NextPayment',
 }

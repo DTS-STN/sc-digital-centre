@@ -69,7 +69,7 @@ import {
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 
 export default function Dashboard(props) {
-  let allBenefits = JSON.parse(props.allBenefits)
+  let usersBenefits = JSON.parse(props.usersBenefits)
 
   return (
     <>
@@ -79,9 +79,9 @@ export default function Dashboard(props) {
           <Greeting locale={props.locale} name="Mary" />
 
           {/* New Benefit Cards API driven */}
-          {allBenefits == null || allBenefits.length <= 0
+          {usersBenefits == null || usersBenefits.length <= 0
             ? null
-            : allBenefits.map((value, index) => {
+            : usersBenefits.map((value, index) => {
                 return (
                   <UniversalBenefitCard
                     key={index}
@@ -215,7 +215,7 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
-      allBenefits: JSON.stringify(currentBenefits),
+      usersBenefits: JSON.stringify(currentBenefits),
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
       locale,

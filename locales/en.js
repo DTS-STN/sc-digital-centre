@@ -3,6 +3,25 @@ export default {
   //
   // Benefits
   CPP: 'Canada Pension Plan',
+  EI: 'Employment Insurance',
+  //
+  // BenefitSummaries
+  PaymentAmount: {
+    title: 'Payment amount',
+    link: '/',
+    linkText: 'View my payments',
+  },
+  NextPayment: {
+    title: 'Next Payment:',
+  },
+  LatestStatus: {
+    title: 'Latest status:',
+    link: '/',
+    linkText: 'View my status and messages',
+  },
+  NextReport: {
+    title: 'Next report due:',
+  },
   //
   // Phase banner
   phaseBannerTag: 'Test Site',
