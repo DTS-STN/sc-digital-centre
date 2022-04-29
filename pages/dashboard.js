@@ -59,6 +59,10 @@ import {
 } from '../contents/DashboardBenefitApplicationCards'
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
+import {
+  CreateUniversalBenefitWithCPPData,
+  CreateUniversalBenefitWithEIData,
+} from '../objects/UniversalBenefit'
 
 export default function Dashboard(props) {
   return (
@@ -185,8 +189,12 @@ export async function getStaticProps({ locale }) {
   // currentBenefits.push({ program: 'oas', status: 'pending' })
   // currentBenefits.push({ program: 'gis', status: 'active' })
   // currentBenefits.push({ program: 'gis', status: 'pending' })
+
   const activeCpp = await getActiveCpp()
   const activeEi = await getActiveEi()
+  currentBenefits.push(CreateUniversalBenefitWithCPPData(activeCpp))
+  currentBenefits.push(CreateUniversalBenefitWithEIData(activeEi))
+
   return {
     props: {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
