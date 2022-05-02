@@ -1,5 +1,4 @@
 import propTypes from 'prop-types'
-import { UniversalBenefit } from '../../objects/UniversalBenefit'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
@@ -29,5 +28,5 @@ export default function UniversalBenefitCard(props) {
 
 UniversalBenefitCard.propTypes = {
   locale: propTypes.object.isRequired,
-  benefit: propTypes.objectOf(typeof UniversalBenefit).isRequired,
+  benefit: propTypes.object.isRequired,
 }

@@ -60,8 +60,8 @@ import {
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
 import {
-  CreateUniversalBenefitWithCPPData,
-  CreateUniversalBenefitWithEIData,
+  CreateBenefitObjWithCPPData,
+  CreateBenefitObjWithEIData,
   ProgramCodes,
   StatusCodes,
   TypeCodes,
@@ -69,8 +69,6 @@ import {
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 
 export default function Dashboard(props) {
-  let usersBenefits = JSON.parse(props.usersBenefits)
-
   return (
     <>
       <DSHeader locale={props.locale} langToggleLink={props.langToggleLink} />
@@ -79,9 +77,9 @@ export default function Dashboard(props) {
           <Greeting locale={props.locale} name="Mary" />
 
           {/* New Benefit Cards API driven */}
-          {usersBenefits == null || usersBenefits.length <= 0
+          {props.usersBenefits == null || props.usersBenefits.length <= 0
             ? null
-            : usersBenefits.map((value, index) => {
+            : props.usersBenefits.map((value, index) => {
                 return (
                   <UniversalBenefitCard
                     key={index}
@@ -209,13 +207,13 @@ export async function getStaticProps({ locale }) {
 
   const activeCpp = await getActiveCpp()
   const activeEi = await getActiveEi()
-  currentBenefits.push(CreateUniversalBenefitWithCPPData(activeCpp))
-  currentBenefits.push(CreateUniversalBenefitWithEIData(activeEi))
+  currentBenefits.push(CreateBenefitObjWithCPPData(activeCpp))
+  currentBenefits.push(CreateBenefitObjWithEIData(activeEi))
 
   return {
     props: {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
-      usersBenefits: JSON.stringify(currentBenefits),
+      usersBenefits: currentBenefits,
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
       locale,

@@ -1,5 +1,5 @@
 import propTypes from 'prop-types'
-import { BenefitSummaries, SummaryTypes } from '../../objects/BenefitSummaries'
+import { SummaryTypes } from '../../objects/UniversalBenefit'
 
 export default function BenefitCardHeaderSummary(props) {
   const t = props.locale
@@ -26,5 +26,5 @@ export default function BenefitCardHeaderSummary(props) {
 
 BenefitCardHeaderSummary.propTypes = {
   locale: propTypes.object.isRequired,
-  summary: propTypes.objectOf(typeof BenefitSummaries).isRequired,
+  summary: propTypes.object.isRequired,
 }

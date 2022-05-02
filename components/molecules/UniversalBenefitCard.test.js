@@ -4,16 +4,16 @@ import '@testing-library/jest-dom/extend-expect'
 import UniversalBenefitCard from './UniversalBenefitCard'
 import en from '../../locales/en'
 import {
+  CreateBenefitCardObj,
   ProgramCodes,
   StatusCodes,
   TypeCodes,
-  UniversalBenefit,
 } from '../../objects/UniversalBenefit'
 
 expect.extend(toHaveNoViolations)
 
 describe('UniversalBenefitCard', () => {
-  let benefit = new UniversalBenefit(
+  let benefit = CreateBenefitCardObj(
     ProgramCodes.CPP,
     StatusCodes.Active,
     TypeCodes.CPPRetirement

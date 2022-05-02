@@ -10,12 +10,13 @@ import {
 } from '../../contents/DashboardBenefitApplicationCards'
 import Dashboard from '../../pages/dashboard'
 import {
+  CreateBenefitSummary,
+  CreateBenefitCardObj,
   ProgramCodes,
   StatusCodes,
+  SummaryTypes,
   TypeCodes,
-  UniversalBenefit,
 } from '../../objects/UniversalBenefit'
-import { BenefitSummaries, SummaryTypes } from '../../objects/BenefitSummaries'
 expect.extend(toHaveNoViolations)
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -50,14 +51,14 @@ describe('Dashboard', () => {
     APPLICATION_CARD_EI,
     APPLICATION_CARD_CPP,
   ]
-  let usersBenefits = JSON.stringify([
-    new UniversalBenefit(
+  let usersBenefits = [
+    CreateBenefitCardObj(
       ProgramCodes.CPP,
       StatusCodes.Active,
       TypeCodes.CPPRetirement,
-      [new BenefitSummaries(SummaryTypes.PaymentAmount, 30)]
+      [CreateBenefitSummary(SummaryTypes.PaymentAmount, 30)]
     ),
-  ])
+  ]
   const { container } = render(
     <Dashboard
       advertisingCards={advertisingCards}

@@ -2,14 +2,17 @@ import { render, screen } from '@testing-library/react'
 import { toHaveNoViolations, axe } from 'jest-axe'
 import '@testing-library/jest-dom/extend-expect'
 import en from '../../locales/en'
-import { BenefitSummaries, SummaryTypes } from '../../objects/BenefitSummaries'
+import {
+  CreateBenefitSummary,
+  SummaryTypes,
+} from '../../objects/UniversalBenefit'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
 
 expect.extend(toHaveNoViolations)
 
 describe('BenefitCardHeaderSummary', () => {
   let netPay = 30
-  let summary = new BenefitSummaries(SummaryTypes.PaymentAmount, netPay)
+  let summary = CreateBenefitSummary(SummaryTypes.PaymentAmount, netPay)
 
   let { container } = render(
     <BenefitCardHeaderSummary locale={en} summary={summary} />

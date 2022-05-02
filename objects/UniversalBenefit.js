@@ -1,11 +1,14 @@
-import { BenefitSummaries, SummaryTypes } from './BenefitSummaries'
-
-export class UniversalBenefit {
-  constructor(programCode, statusCode, typeCode, summaries) {
-    this.programCode = programCode
-    this.statusCode = statusCode
-    this.typeCode = typeCode
-    this.summaries = summaries // an array of BenefitSummaries
+export function CreateBenefitCardObj(
+  programCode,
+  statusCode,
+  typeCode,
+  summaries
+) {
+  return {
+    programCode: programCode,
+    statusCode: statusCode,
+    typeCode: typeCode,
+    summaries: summaries, // an array of BenefitSummaries
   }
 }
 
@@ -21,6 +24,32 @@ export const StatusCodes = {
   Pending: 'Pending',
 }
 
+export const TypeCodes = {
+  CPPBeneficial: 'CPPBeneficial',
+  CPPRetirement: 'CPPRetirement',
+  CPPDisability: 'CPPDisability',
+  EIUnknown: 'EIUnknown',
+}
+
+export function CreateBenefitSummary(type, value, status) {
+  let benefitSummary = {
+    type: type, // will define what header text to go with it and any links if applicable
+    value: value, // a date or amount, defined by the type
+  }
+  //only add the status object if it exists
+  if (status != undefined) {
+    benefitSummary.status = status //status is additional text for display
+  }
+  return benefitSummary
+}
+
+export const SummaryTypes = {
+  PaymentAmount: 'PaymentAmount',
+  NextReport: 'NextReport',
+  LatestStatus: 'LatestStatus',
+  NextPayment: 'NextPayment',
+}
+
 export const CPPStatus = [
   {
     value: 32294,
@@ -34,13 +63,6 @@ export const EIStatus = [
     status: StatusCodes.Active,
   },
 ]
-
-export const TypeCodes = {
-  CPPBeneficial: 'CPPBeneficial',
-  CPPRetirement: 'CPPRetirement',
-  CPPDisability: 'CPPDisability',
-  EIUnknown: 'EIUnknown',
-}
 
 export const CPPTypes = [
   {
@@ -67,22 +89,22 @@ export const EITypes = [
 //     "netAmount": 30.32, // payment amount
 //     "paymentProcessType": "Monthly" //process type
 // }
-export function CreateUniversalBenefitWithCPPData(cppBenefitData) {
+export function CreateBenefitObjWithCPPData(cppBenefitData) {
   let nextPayment = cppBenefitData.lastPaymentDate
   if (cppBenefitData.PaymentProcessType == 'Monthly') {
     nextPayment = new Date(nextPayment.setMonth(nextPayment.getMonth() + 1))
   }
-  let benefit = new UniversalBenefit(
+  let benefit = CreateBenefitCardObj(
     ProgramCodes.CPP,
     CPPStatus.find((s) => s.value == cppBenefitData.programCode).status,
     CPPTypes.find((s) => s.value == cppBenefitData.benefitType).type,
     [
-      new BenefitSummaries(
+      CreateBenefitSummary(
         SummaryTypes.PaymentAmount,
         cppBenefitData.netAmount
       ),
-      new BenefitSummaries(SummaryTypes.NextPayment, nextPayment),
-      new BenefitSummaries(SummaryTypes.LatestStatus, null, null),
+      CreateBenefitSummary(SummaryTypes.NextPayment, nextPayment),
+      CreateBenefitSummary(SummaryTypes.LatestStatus, null, null),
     ]
   )
   return benefit
@@ -99,18 +121,18 @@ export function CreateUniversalBenefitWithCPPData(cppBenefitData) {
 //     "programCode": 4543, //program name
 //     "netAmount": 32.21 //payment amount
 // }
-export function CreateUniversalBenefitWithEIData(eiBenefitData) {
-  let benefit = new UniversalBenefit(
+export function CreateBenefitObjWithEIData(eiBenefitData) {
+  let benefit = CreateBenefitCardObj(
     ProgramCodes.EI,
     EIStatus.find((s) => s.value == eiBenefitData.claimStatusCode).status,
     EITypes.find((t) => t.value == eiBenefitData.enmBenefitType).type,
     [
-      new BenefitSummaries(SummaryTypes.PaymentAmount, eiBenefitData.netAmount),
-      new BenefitSummaries(
+      CreateBenefitSummary(SummaryTypes.PaymentAmount, eiBenefitData.netAmount),
+      CreateBenefitSummary(
         SummaryTypes.NextReport,
         eiBenefitData.nextRptDueDate
       ),
-      new BenefitSummaries(
+      CreateBenefitSummary(
         SummaryTypes.LatestStatus,
         eiBenefitData.publishDate,
         eiBenefitData.messageData
