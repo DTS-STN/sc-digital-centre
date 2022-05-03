@@ -7,11 +7,12 @@ import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
-import TabList from '../components/atoms/tabList'
+import TabList from '../components/atoms/TabList'
 
 export default function Profile(props) {
   const t = props.locale === 'en' ? en : fr
   const [tabSelected, setTabSelected] = useState(0)
+  const [profileTabSelected, setProfileTabSelected] = useState(0)
   const fakeFields = {
     title: 'Profile Information',
     info: [
@@ -61,14 +62,33 @@ export default function Profile(props) {
             titles={[t.profileAndPreferences, t.securitySettings]}
             onClick={(index) => setTabSelected(index)}
             tabSelected={tabSelected}
+            containerStyle={'flex flex-wrap border-b border-gray-200'}
+            selectedTabStyle={
+              'bg-gray-100 active border-b-2 border-b-bright-blue-lighthover'
+            }
+            unselectedTabStyle={
+              'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
+            }
+            genericTabStyle={'inline-block text-lg py-3 px-4 text-center'}
           />
           {tabSelected === 0 ? (
             <>
-              <div className="my-4 gap-4 flex flex-row sm:flex-row xs:flex-col">
+              <TabList
+                titles={[t.ei, t.cpp, t.oas]}
+                onClick={(index) => setProfileTabSelected(index)}
+                tabSelected={profileTabSelected}
+                containerStyle={'my-4 flex flex-wrap gap-4'}
+                selectedTabStyle={'bg-bright-blue-lighthover'}
+                unselectedTabStyle={''}
+                genericTabStyle={
+                  'bg-gray-lighter text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover '
+                }
+              ></TabList>
+              {/* <div className="my-4 gap-4 flex flex-row sm:flex-row xs:flex-col">
                 <SettingsNavButton text={t.ei} active></SettingsNavButton>
                 <SettingsNavButton text={t.cpp}></SettingsNavButton>
                 <SettingsNavButton text={t.oas}></SettingsNavButton>
-              </div>
+              </div> */}
               <ProfileInfo fields={[fakeFields, fakeFields2]} />{' '}
             </>
           ) : tabSelected === 1 ? (
