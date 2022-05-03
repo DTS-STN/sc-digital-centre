@@ -11,7 +11,7 @@ export default function TabList(props) {
         <button
           className={`inline-block  text-lg py-3 px-4 text-center ${
             props.tabSelected === index
-              ? 'bg-gray-100 active border-b-2 border-b-blue-400'
+              ? 'bg-gray-100 active border-b-2 border-b-bright-blue-lighthover'
               : 'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
           } `}
           onClick={() => props.onClick(index)}
