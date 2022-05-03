@@ -11,22 +11,22 @@ import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
 expect.extend(toHaveNoViolations)
 
 describe('BenefitCardHeaderSummary', () => {
-  let netPay = 30
-  let summary = CreateBenefitSummary(SummaryTypes.PaymentAmount, netPay)
+  const netPay = 30
+  const summary = CreateBenefitSummary(SummaryTypes.PaymentAmount, netPay)
 
-  let { container } = render(
+  const { container } = render(
     <BenefitCardHeaderSummary locale={en} summary={summary} />
   )
 
   it('renders', () => {
-    let title = screen.getByText(en[summary.type].title)
-    let value = screen.getByText(netPay)
+    const title = screen.getByText(en[summary.type].title)
+    const value = screen.getByText(netPay)
     expect(title).toBeInTheDocument()
     expect(value).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
-    let results = await axe(container)
+    const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
 })

@@ -37,7 +37,7 @@ export function CreateBenefitSummary(type, value, status) {
     value: value, // a date or amount, defined by the type
   }
   //only add the status object if it exists
-  if (status != undefined) {
+  if (status) {
     benefitSummary.status = status //status is additional text for display
   }
   return benefitSummary

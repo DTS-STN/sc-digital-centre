@@ -51,7 +51,7 @@ describe('Dashboard', () => {
     APPLICATION_CARD_EI,
     APPLICATION_CARD_CPP,
   ]
-  let usersBenefits = [
+  const usersBenefits = [
     CreateBenefitCardObj(
       ProgramCodes.CPP,
       StatusCodes.Active,

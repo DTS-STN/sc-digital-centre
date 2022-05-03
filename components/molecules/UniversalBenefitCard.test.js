@@ -13,22 +13,22 @@ import {
 expect.extend(toHaveNoViolations)
 
 describe('UniversalBenefitCard', () => {
-  let benefit = CreateBenefitCardObj(
+  const benefit = CreateBenefitCardObj(
     ProgramCodes.CPP,
     StatusCodes.Active,
     TypeCodes.CPPRetirement
   )
-  let { container } = render(
+  const { container } = render(
     <UniversalBenefitCard locale="en" benefit={benefit} />
   )
 
   it('renders', () => {
-    let title = screen.getByText(en[benefit.programCode])
+    const title = screen.getByText(en[benefit.programCode])
     expect(title).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
-    let results = await axe(container)
+    const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
 })
