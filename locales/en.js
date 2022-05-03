@@ -356,6 +356,8 @@ export default {
 
   //Profile page
   profileAndSecuritySettings: 'Profile and security settings',
+  profileAndPreferences: 'Profile and Preferences',
+  securitySettings: 'Security Settings',
   backToDashboard: 'Back to my dashboard',
 
   //Dashboard task links

@@ -7,10 +7,11 @@ import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
+import TabList from '../components/atoms/tabList'
 
 export default function Profile(props) {
   const t = props.locale === 'en' ? en : fr
-  const [tabSelected, setTabSelected] = useState(1)
+  const [tabSelected, setTabSelected] = useState(0)
   const fakeFields = {
     title: 'Profile Information',
     info: [
@@ -56,47 +57,22 @@ export default function Profile(props) {
           <h1 className="py-4 text-4xl font-bold text-gray-darker">
             {t.profileAndSecuritySettings}
           </h1>
-          <ul
-            className="flex flex-wrap border-b border-gray-200"
-            role="tablist"
-          >
-            <li className="mr-2" role="tab">
-              <button
-                className={`inline-block  text-lg py-3 px-4 text-center ${
-                  tabSelected === 1
-                    ? 'bg-gray-100 active border-b-2 border-b-blue-400'
-                    : 'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
-                } `}
-                onClick={() => setTabSelected(1)}
-              >
-                Profile and preferences
-              </button>
-            </li>
-            <li className="mr-2" role="tab">
-              <button
-                className={`inline-block  text-lg py-3 px-4 text-center ${
-                  tabSelected === 2
-                    ? 'bg-gray-100 active border-b-2 border-b-blue-400'
-                    : 'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
-                } `}
-                onClick={() => setTabSelected(2)}
-              >
-                Security settings
-              </button>
-            </li>
-          </ul>
-          {tabSelected === 1 ? (
+          <TabList
+            titles={[t.profileAndPreferences, t.securitySettings]}
+            onClick={(index) => setTabSelected(index)}
+            tabSelected={tabSelected}
+          />
+          {tabSelected === 0 ? (
             <>
               <div className="my-4 gap-4 flex flex-row sm:flex-row xs:flex-col">
-                <SettingsNavButton
-                  text={t.ei}
-                  active={true}
-                ></SettingsNavButton>
+                <SettingsNavButton text={t.ei} active></SettingsNavButton>
                 <SettingsNavButton text={t.cpp}></SettingsNavButton>
                 <SettingsNavButton text={t.oas}></SettingsNavButton>
               </div>
               <ProfileInfo fields={[fakeFields, fakeFields2]} />{' '}
             </>
+          ) : tabSelected === 1 ? (
+            <p>Security Settings</p>
           ) : null}
 
           <Link href="/dashboard" passHref>

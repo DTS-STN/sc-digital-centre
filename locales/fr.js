@@ -348,6 +348,8 @@ export default {
 
   //Profile page
   profileAndSecuritySettings: '(FR)Profile and security settings',
+  profileAndPreferences: 'Profil et Préférences',
+  securitySettings: 'Paramètres de sécurité',
   backToDashboard: '(FR)Back to my dashboard',
 
   //Dashboard task links
