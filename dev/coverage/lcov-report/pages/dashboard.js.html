@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.16% </span>
+                <span class="strong">6.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/48</span>
+                <span class='fraction'>3/49</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">15% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>3/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">27.27% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/10</span>
+                <span class='fraction'>3/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.44% </span>
+                <span class="strong">6.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/45</span>
+                <span class='fraction'>3/46</span>
             </div>
         
             
@@ -374,7 +374,24 @@
 <a name='L315'></a><a href='#L315'>315</a>
 <a name='L316'></a><a href='#L316'>316</a>
 <a name='L317'></a><a href='#L317'>317</a>
-<a name='L318'></a><a href='#L318'>318</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -445,6 +462,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -572,6 +603,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -753,12 +785,13 @@ import {
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
 import {
-  CreateUniversalBenefitWithCPPData,
-  CreateUniversalBenefitWithEIData,
+  CreateBenefitObjWithCPPData,
+  CreateBenefitObjWithEIData,
   ProgramCodes,
   StatusCodes,
   TypeCodes,
 } from '../objects/UniversalBenefit'
+import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 &nbsp;
 export default function Dashboard(props) {
   return (
@@ -767,6 +800,20 @@ export default function Dashboard(props) {
       &lt;LayoutContainer&gt;
         &lt;div className="col-span-12 mb-8"&gt;
           &lt;Greeting locale={props.locale} name="Mary" /&gt;
+&nbsp;
+          {/* New Benefit Cards API driven */}
+          {props.usersBenefits == null || props.usersBenefits.length &lt;= 0
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >null</span>
+            : props.usersBenefits.map((value, index) =&gt; {
+                return (
+                  &lt;UniversalBenefitCard
+                    key={index}
+                    locale={props.locale}
+                    benefit={value}
+                  /&gt;
+                )
+              })}
+&nbsp;
           &lt;BenefitCard
             locale={props.locale}
             benefit={SUBMITTED_CPP}
@@ -885,12 +932,13 @@ export async function <span class="fstat-no" title="function not covered" >getSt
 &nbsp;
   const activeCpp = <span class="cstat-no" title="statement not covered" >await getActiveCpp()</span>
   const activeEi = <span class="cstat-no" title="statement not covered" >await getActiveEi()</span>
-<span class="cstat-no" title="statement not covered" >  currentBenefits.push(CreateUniversalBenefitWithCPPData(activeCpp))</span>
-<span class="cstat-no" title="statement not covered" >  currentBenefits.push(CreateUniversalBenefitWithEIData(activeEi))</span>
+<span class="cstat-no" title="statement not covered" >  currentBenefits.push(CreateBenefitObjWithCPPData(activeCpp))</span>
+<span class="cstat-no" title="statement not covered" >  currentBenefits.push(CreateBenefitObjWithEIData(activeEi))</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return {</span>
     props: {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
+      usersBenefits: currentBenefits,
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
       locale,
@@ -1015,7 +1063,7 @@ function <span class="fstat-no" title="function not covered" >CheckAllBenefitsFo
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue May 03 2022 15:13:12 GMT+0000 (Coordinated Universal Time)
+                at Tue May 03 2022 19:41:20 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
