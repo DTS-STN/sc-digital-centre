@@ -70,6 +70,11 @@ SettingsNavButton.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
   ]),
   /**
+   * Boolean to determine if the button is selected
+   */
+  active: PropTypes.bool,
+
+  /**
    * ...rest
    *   Any other attribute not explicity coded, like: dataCy, dataCyButton, analyticsTracking, data-testid, aria stuff, etc.
    */
