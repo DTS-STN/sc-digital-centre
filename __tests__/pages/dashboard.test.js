@@ -9,6 +9,14 @@ import {
   APPLICATION_CARD_CPP,
 } from '../../contents/DashboardBenefitApplicationCards'
 import Dashboard from '../../pages/dashboard'
+import {
+  CreateBenefitSummary,
+  CreateBenefitCardObj,
+  ProgramCodes,
+  StatusCodes,
+  SummaryTypes,
+  TypeCodes,
+} from '../../objects/UniversalBenefit'
 expect.extend(toHaveNoViolations)
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -43,8 +51,19 @@ describe('Dashboard', () => {
     APPLICATION_CARD_EI,
     APPLICATION_CARD_CPP,
   ]
+  const usersBenefits = [
+    CreateBenefitCardObj(
+      ProgramCodes.CPP,
+      StatusCodes.Active,
+      TypeCodes.CPPRetirement,
+      [CreateBenefitSummary(SummaryTypes.PaymentAmount, 30)]
+    ),
+  ]
   const { container } = render(
-    <Dashboard advertisingCards={advertisingCards} />
+    <Dashboard
+      advertisingCards={advertisingCards}
+      usersBenefits={usersBenefits}
+    />
   )
   it('renders Dashboard', () => {
     expect(container).toBeTruthy()
