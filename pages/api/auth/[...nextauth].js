@@ -13,8 +13,8 @@ export default NextAuth({
     {
       id: 'customProvider',
       name: 'customProvider',
-      clientId: process.env.KEYCLOAK_CLIENT_ID,
-      clientSecret: process.env.KEYCLOAK_CLIENT_SECRET,
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
       type: 'oauth',
       wellKnown:
         'https://keycloak.dts-stn.com/auth/realms/dts-stn/.well-known/openid-configuration',
