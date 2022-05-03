@@ -25,6 +25,9 @@ export default function BenefitCardHeaderSummary(props) {
 }
 
 BenefitCardHeaderSummary.propTypes = {
-  locale: propTypes.object.isRequired,
-  summary: propTypes.object.isRequired,
+  locale: propTypes.string.isRequired,
+  summary: propTypes.shape({
+    type: propTypes.oneOf(SummaryTypes).isRequired,
+    value: propTypes.string.isRequired,
+  }),
 }

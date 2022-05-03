@@ -1,6 +1,7 @@
 import propTypes from 'prop-types'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import { ProgramCodes, StatusCodes } from '../../objects/UniversalBenefit'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
 
 export default function UniversalBenefitCard(props) {
@@ -27,6 +28,10 @@ export default function UniversalBenefitCard(props) {
 }
 
 UniversalBenefitCard.propTypes = {
-  locale: propTypes.object.isRequired,
-  benefit: propTypes.object.isRequired,
+  locale: propTypes.string.isRequired,
+  benefit: propTypes.shape({
+    programCode: propTypes.oneOf(ProgramCodes).isRequired,
+    statusCode: propTypes.oneOf(StatusCodes).isRequired,
+    summaries: propTypes.object.isRequired,
+  }),
 }
