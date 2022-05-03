@@ -59,11 +59,12 @@ import {
 } from '../contents/DashboardBenefitApplicationCards'
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
+import { getSession } from 'next-auth/react'
 
 export default function Dashboard(props) {
   return (
     <>
-      <DSHeader locale="en" />
+      <DSHeader locale="en" isAuth={props.isAuth} />
       <LayoutContainer>
         <div className="col-span-12">
           <Greeting locale="en" name="Mary" />
@@ -172,7 +173,10 @@ export default function Dashboard(props) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps({ req }) {
+  const session = await getSession({ req })
+  const isAuth = session ? true : false
+
   const currentBenefits = [] // to be retrieved by API
 
   // tests - uncomment to hide a card with conditions
@@ -186,11 +190,13 @@ export async function getStaticProps() {
   // currentBenefits.push({ program: 'gis', status: 'pending' })
   const activeCpp = await getActiveCpp()
   const activeEi = await getActiveEi()
+
   return {
     props: {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
+      isAuth: isAuth,
     },
   }
 }

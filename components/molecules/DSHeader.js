@@ -1,6 +1,7 @@
 import { Header } from '@dts-stn/decd-design-system'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import { signOut } from 'next-auth/react'
 
 export default function DSHeader(props) {
   const t = props.locale === 'en' ? en : fr
@@ -25,8 +26,8 @@ export default function DSHeader(props) {
       menuProps={{
         craPath: t.craPath,
         dashboardPath: t.dashboardPath,
-        isAuthenticated: true,
-        onSignOut: function noRefCheck() {},
+        isAuthenticated: props.isAuth,
+        onSignOut: () => signOut(),
         profilePath: t.profilePath,
         securityPath: t.securityPath,
         signOutPath: t.signOutPath,
