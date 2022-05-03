@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651584355869" clover="3.2.0">
-  <project timestamp="1651584355869" name="All files">
-    <metrics statements="292" coveredstatements="182" conditionals="241" coveredconditionals="150" methods="101" coveredmethods="62" elements="634" coveredelements="394" complexity="0" loc="292" ncloc="292" packages="5" files="42" classes="42"/>
+<coverage generated="1651590792570" clover="3.2.0">
+  <project timestamp="1651590792570" name="All files">
+    <metrics statements="300" coveredstatements="188" conditionals="247" coveredconditionals="153" methods="106" coveredmethods="65" elements="653" coveredelements="406" complexity="0" loc="300" ncloc="300" packages="5" files="43" classes="43"/>
     <package name="components.atoms">
-      <metrics statements="91" coveredstatements="76" conditionals="76" coveredconditionals="59" methods="31" coveredmethods="28"/>
+      <metrics statements="97" coveredstatements="81" conditionals="78" coveredconditionals="61" methods="35" coveredmethods="31"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
         <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="8" count="33" type="stmt"/>
@@ -145,6 +145,15 @@
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="5" count="15" type="stmt"/>
         <line num="25" count="4" type="stmt"/>
+      </file>
+      <file name="tabList.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/tabList.js">
+        <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="3"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.molecules">
@@ -322,7 +331,7 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="75" coveredstatements="16" conditionals="36" coveredconditionals="5" methods="25" coveredmethods="8"/>
+      <metrics statements="77" coveredstatements="17" conditionals="40" coveredconditionals="6" methods="26" coveredmethods="8"/>
       <file name="400.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/400.js">
         <metrics statements="4" coveredstatements="2" conditionals="4" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="5" count="2" type="cond" truecount="1" falsecount="1"/>
@@ -417,13 +426,15 @@
         <line num="38" count="1" type="stmt"/>
       </file>
       <file name="profile.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/profile.js">
-        <metrics statements="6" coveredstatements="4" conditionals="4" coveredconditionals="1" methods="2" coveredmethods="1"/>
-        <line num="11" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="76" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="77" count="0" type="stmt"/>
+        <metrics statements="8" coveredstatements="5" conditionals="8" coveredconditionals="2" methods="3" coveredmethods="1"/>
+        <line num="13" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="91" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="92" count="0" type="stmt"/>
       </file>
     </package>
     <package name="pages.api">

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/6</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>2/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/6</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
@@ -137,7 +137,24 @@
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,6 +166,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,6 +204,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -225,9 +255,12 @@ import SettingsNavButton from '../components/atoms/SettingsNavButton'
 import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
+import { useState } from 'react'
+import TabList from '../components/atoms/tabList'
 &nbsp;
 export default function Profile(props) {
   const t = props.locale === 'en' ? <span class="branch-0 cbranch-no" title="branch not covered" >en </span>: fr
+  const [tabSelected, setTabSelected] = useState(0)
   const fakeFields = {
     title: 'Profile Information',
     info: [
@@ -273,13 +306,25 @@ export default function Profile(props) {
           &lt;h1 className="py-4 text-4xl font-bold text-gray-darker"&gt;
             {t.profileAndSecuritySettings}
           &lt;/h1&gt;
-          &lt;div className="my-4 gap-4 flex flex-row sm:flex-row xs:flex-col"&gt;
-            &lt;SettingsNavButton text={t.ei} active={true}&gt;&lt;/SettingsNavButton&gt;
-            &lt;SettingsNavButton text={t.cpp}&gt;&lt;/SettingsNavButton&gt;
-            &lt;SettingsNavButton text={t.oas}&gt;&lt;/SettingsNavButton&gt;
-          &lt;/div&gt;
-          &lt;ProfileInfo fields={[fakeFields, fakeFields2]} /&gt;
-          &lt;Link href="/dashboard"&gt;
+          &lt;TabList
+            titles={[t.profileAndPreferences, t.securitySettings]}
+            onClick={<span class="fstat-no" title="function not covered" >(i</span>ndex) =&gt; <span class="cstat-no" title="statement not covered" >setTabSelected(index)}</span>
+            tabSelected={tabSelected}
+          /&gt;
+          {tabSelected === 0 ? (
+            &lt;&gt;
+              &lt;div className="my-4 gap-4 flex flex-row sm:flex-row xs:flex-col"&gt;
+                &lt;SettingsNavButton text={t.ei} active&gt;&lt;/SettingsNavButton&gt;
+                &lt;SettingsNavButton text={t.cpp}&gt;&lt;/SettingsNavButton&gt;
+                &lt;SettingsNavButton text={t.oas}&gt;&lt;/SettingsNavButton&gt;
+              &lt;/div&gt;
+              &lt;ProfileInfo fields={[fakeFields, fakeFields2]} /&gt;{' '}
+            &lt;/&gt;
+          ) : <span class="branch-1 cbranch-no" title="branch not covered" >tabSelected === 1 ? (</span>
+            &lt;p&gt;Security Settings&lt;/p&gt;
+          ) : null}
+&nbsp;
+          &lt;Link href="/dashboard" passHref&gt;
             &lt;button className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-link-blue-button my-10"&gt;
               {t.backToDashboard}
             &lt;/button&gt;
@@ -304,7 +349,7 @@ export async function <span class="fstat-no" title="function not covered" >getSt
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue May 03 2022 13:25:55 GMT+0000 (Coordinated Universal Time)
+                at Tue May 03 2022 15:13:12 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
