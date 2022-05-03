@@ -441,6 +441,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -556,9 +559,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -755,6 +755,9 @@ import DSFooter from '../components/molecules/DSFooter'
 import {
   CreateUniversalBenefitWithCPPData,
   CreateUniversalBenefitWithEIData,
+  ProgramCodes,
+  StatusCodes,
+  TypeCodes,
 } from '../objects/UniversalBenefit'
 &nbsp;
 export default function Dashboard(props) {
@@ -874,14 +877,11 @@ export async function <span class="fstat-no" title="function not covered" >getSt
 &nbsp;
   const langToggleLink = <span class="cstat-no" title="statement not covered" >locale === 'en' ? '/fr/dashboard' : '/dashboard'</span>
   // tests - uncomment to hide a card with conditions
-  // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'active' })
-  // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'pending' })
-  // currentBenefits.push({ program: 'cpp', type: 'disability', status: 'active' })
-  // currentBenefits.push({ program: 'cpp', type: 'disability', status: 'pending' })
-  // currentBenefits.push({ program: 'oas', status: 'active' })
-  // currentBenefits.push({ program: 'oas', status: 'pending' })
-  // currentBenefits.push({ program: 'gis', status: 'active' })
-  // currentBenefits.push({ program: 'gis', status: 'pending' })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPRetirement, statusCode: StatusCodes.Active })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPRetirement, statusCode: StatusCodes.Pending })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPDisability, statusCode: StatusCodes.Active })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPDisability, statusCode: StatusCodes.Pending })
+  //currentBenefits.push({ programCode: ProgramCodes.OAS, statusCode: StatusCodes.Active })
 &nbsp;
   const activeCpp = <span class="cstat-no" title="statement not covered" >await getActiveCpp()</span>
   const activeEi = <span class="cstat-no" title="statement not covered" >await getActiveEi()</span>
@@ -937,9 +937,9 @@ function <span class="fstat-no" title="function not covered" >BuildAdvertisingCa
 <span class="cstat-no" title="statement not covered" >  if (</span>
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'cpp',
-      'retirement'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.CPP,
+      TypeCodes.CPPRetirement
     )
   ) {
 <span class="cstat-no" title="statement not covered" >    advertisingCards.push(APPLICATION_CARD_CPP)</span>
@@ -947,8 +947,8 @@ function <span class="fstat-no" title="function not covered" >BuildAdvertisingCa
 <span class="cstat-no" title="statement not covered" >  if (</span>
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'oas'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.OAS
     )
   ) {
 <span class="cstat-no" title="statement not covered" >    advertisingCards.push(APPLICATION_CARD_OAS)</span>
@@ -956,8 +956,8 @@ function <span class="fstat-no" title="function not covered" >BuildAdvertisingCa
 <span class="cstat-no" title="statement not covered" >  if (</span>
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'gis'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.GIS
     )
   ) {
 <span class="cstat-no" title="statement not covered" >    advertisingCards.push(APPLICATION_CARD_GIS)</span>
@@ -965,9 +965,9 @@ function <span class="fstat-no" title="function not covered" >BuildAdvertisingCa
 <span class="cstat-no" title="statement not covered" >  if (</span>
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'cpp',
-      'disability'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.CPP,
+      TypeCodes.CPPDisability
     )
   ) {
 <span class="cstat-no" title="statement not covered" >    advertisingCards.push(APPLICATION_CARD_CPPD)</span>
@@ -996,17 +996,17 @@ function <span class="fstat-no" title="function not covered" >CheckAllBenefitsFo
   var matchingBenefit
 <span class="cstat-no" title="statement not covered" >  if (typeof type === 'undefined')</span>
     //overloaded function handling
-<span class="cstat-no" title="statement not covered" >    matchingBenefit = benefits.find(<span class="fstat-no" title="function not covered" >(b</span>) =&gt; <span class="cstat-no" title="statement not covered" >b.program == program)</span></span>
+<span class="cstat-no" title="statement not covered" >    matchingBenefit = benefits.find(<span class="fstat-no" title="function not covered" >(b</span>) =&gt; <span class="cstat-no" title="statement not covered" >b.programCode == program)</span></span>
   else
 <span class="cstat-no" title="statement not covered" >    matchingBenefit = benefits.find(</span>
-<span class="fstat-no" title="function not covered" >      (b</span>) =&gt; <span class="cstat-no" title="statement not covered" >b.program == program &amp;&amp; b.type == type</span>
+<span class="fstat-no" title="function not covered" >      (b</span>) =&gt; <span class="cstat-no" title="statement not covered" >b.programCode == program &amp;&amp; b.typeCode == type</span>
     )
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (matchingBenefit == null) <span class="cstat-no" title="statement not covered" >return true</span></span>
   //check if there is a status to evaluate
   //if (typeof status === 'undefined' || status.length == 0) return false
   //evaluate for a matching status
-<span class="cstat-no" title="statement not covered" >  return !status.find(<span class="fstat-no" title="function not covered" >(s</span>) =&gt; <span class="cstat-no" title="statement not covered" >s == matchingBenefit.status)</span></span>
+<span class="cstat-no" title="statement not covered" >  return !status.find(<span class="fstat-no" title="function not covered" >(s</span>) =&gt; <span class="cstat-no" title="statement not covered" >s == matchingBenefit.statusCode)</span></span>
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -1015,7 +1015,7 @@ function <span class="fstat-no" title="function not covered" >CheckAllBenefitsFo
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Apr 29 2022 19:26:27 GMT+0000 (Coordinated Universal Time)
+                at Tue May 03 2022 13:25:55 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

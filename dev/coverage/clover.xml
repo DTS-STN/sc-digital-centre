@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651260387539" clover="3.2.0">
-  <project timestamp="1651260387539" name="All files">
+<coverage generated="1651584355869" clover="3.2.0">
+  <project timestamp="1651584355869" name="All files">
     <metrics statements="292" coveredstatements="182" conditionals="241" coveredconditionals="150" methods="101" coveredmethods="62" elements="634" coveredelements="394" complexity="0" loc="292" ncloc="292" packages="5" files="42" classes="42"/>
     <package name="components.atoms">
       <metrics statements="91" coveredstatements="76" conditionals="76" coveredconditionals="59" methods="31" coveredmethods="28"/>
@@ -363,10 +363,10 @@
       </file>
       <file name="dashboard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/dashboard.js">
         <metrics statements="45" coveredstatements="2" conditionals="16" coveredconditionals="0" methods="10" coveredmethods="2"/>
-        <line num="68" count="2" type="stmt"/>
-        <line num="142" count="5" type="stmt"/>
-        <line num="180" count="0" type="stmt"/>
-        <line num="182" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="71" count="2" type="stmt"/>
+        <line num="145" count="5" type="stmt"/>
+        <line num="183" count="0" type="stmt"/>
+        <line num="185" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="193" count="0" type="stmt"/>
         <line num="194" count="0" type="stmt"/>
         <line num="195" count="0" type="stmt"/>
