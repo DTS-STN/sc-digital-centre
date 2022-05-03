@@ -8,7 +8,7 @@ export default function TabList(props) {
   const renderTabs = () => {
     return props.titles.map((title, index) => (
       <li className="mr-2" role="tab" key={index}>
-        <button
+        <a
           className={`inline-block  text-lg py-3 px-4 text-center ${
             props.tabSelected === index
               ? 'bg-gray-100 active border-b-2 border-b-bright-blue-lighthover'
@@ -17,7 +17,7 @@ export default function TabList(props) {
           onClick={() => props.onClick(index)}
         >
           {title}
-        </button>
+        </a>
       </li>
     ))
   }
