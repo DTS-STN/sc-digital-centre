@@ -1,3 +1,11 @@
+import {
+  ACTIVE_CPP_PAYMENT_TASKS,
+  ACTIVE_CPP_CHANGE_TASKS,
+  ACTIVE_EI_COMMON_TASKS,
+  ACTIVE_EI_PAYMENT_TASKS,
+  ACTIVE_EI_DOCS_TASKS,
+} from '../contents/DashboardBenefitTasksConstants'
+
 export function CreateBenefitCardObj(
   programCode,
   statusCode,
@@ -9,7 +17,15 @@ export function CreateBenefitCardObj(
     statusCode: statusCode,
     typeCode: typeCode,
     summaries: summaries, // an array of BenefitSummaries
+    taskGroups: MapBenefitToTaskGroups(programCode, statusCode),
   }
+}
+
+function MapBenefitToTaskGroups(programCode, statusCode) {
+  const group = TASK_GROUPS.find(
+    (tg) => tg.programCode === programCode && tg.statusCode === statusCode
+  )
+  return group ? group.tasksGroups : null
 }
 
 export const ProgramCodes = {
@@ -30,6 +46,23 @@ export const TypeCodes = {
   CPPDisability: 'CPPDisability',
   EIUnknown: 'EIUnknown',
 }
+
+const TASK_GROUPS = [
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.Active,
+    tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+  },
+  {
+    programCode: ProgramCodes.EI,
+    statusCode: StatusCodes.Active,
+    tasksGroups: [
+      ACTIVE_EI_COMMON_TASKS,
+      ACTIVE_EI_PAYMENT_TASKS,
+      ACTIVE_EI_DOCS_TASKS,
+    ],
+  },
+]
 
 export function CreateBenefitSummary(type, value, status) {
   let benefitSummary = {
