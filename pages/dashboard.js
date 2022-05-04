@@ -59,13 +59,14 @@ import {
 } from '../contents/DashboardBenefitApplicationCards'
 
 import {
-  CreateUniversalBenefitWithCPPData,
-  CreateUniversalBenefitWithEIData,
+  CreateBenefitObjWithCPPData,
+  CreateBenefitObjWithEIData,
   ProgramCodes,
   StatusCodes,
   TypeCodes,
 } from '../objects/UniversalBenefit'
 import Layout from '../components/organisms/Layout'
+import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 
 export default function Dashboard(props) {
   return (
@@ -81,6 +82,20 @@ export default function Dashboard(props) {
         <LayoutContainer>
           <div className="col-span-12 mb-8">
             <Greeting locale={props.locale} name="Mary" />
+
+            {/* New Benefit Cards API driven */}
+            {props.usersBenefits == null || props.usersBenefits.length <= 0
+              ? null
+              : props.usersBenefits.map((value, index) => {
+                  return (
+                    <UniversalBenefitCard
+                      key={index}
+                      locale={props.locale}
+                      benefit={value}
+                    />
+                  )
+                })}
+
             <BenefitCard
               locale={props.locale}
               benefit={SUBMITTED_CPP}
@@ -205,12 +220,13 @@ export async function getStaticProps({ locale }) {
 
   const activeCpp = await getActiveCpp()
   const activeEi = await getActiveEi()
-  currentBenefits.push(CreateUniversalBenefitWithCPPData(activeCpp))
-  currentBenefits.push(CreateUniversalBenefitWithEIData(activeEi))
+  currentBenefits.push(CreateBenefitObjWithCPPData(activeCpp))
+  currentBenefits.push(CreateBenefitObjWithEIData(activeEi))
 
   return {
     props: {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
+      usersBenefits: currentBenefits,
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
       locale,
