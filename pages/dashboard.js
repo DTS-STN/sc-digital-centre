@@ -57,8 +57,7 @@ import {
   APPLICATION_CARD_CPP_CHILD_REARING_PROVISION,
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
-import DSHeader from '../components/molecules/DSHeader'
-import DSFooter from '../components/molecules/DSFooter'
+
 import {
   CreateUniversalBenefitWithCPPData,
   CreateUniversalBenefitWithEIData,
@@ -73,11 +72,12 @@ export default function Dashboard(props) {
     <>
       <Layout
         locale={props.locale}
-        displayHeader={false}
-        displayFooter={false}
+        displayPhase={false}
+        displayHeader={true}
+        displayDSFooter={true}
         metadata={props.metadata}
+        langToggleLink={props.langToggleLink}
       >
-        <DSHeader locale={props.locale} langToggleLink={props.langToggleLink} />
         <LayoutContainer>
           <div className="col-span-12 mb-8">
             <Greeting locale={props.locale} name="Mary" />
@@ -181,7 +181,6 @@ export default function Dashboard(props) {
             />
           </div>
         </LayoutContainer>
-        <DSFooter />
       </Layout>
     </>
   )
@@ -196,6 +195,7 @@ export async function getStaticProps({ locale }) {
   const currentBenefits = [] // to be retrieved by API
 
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
+
   // tests - uncomment to hide a card with conditions
   //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPRetirement, statusCode: StatusCodes.Active })
   //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPRetirement, statusCode: StatusCodes.Pending })
