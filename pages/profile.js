@@ -84,11 +84,6 @@ export default function Profile(props) {
                   'bg-gray-lighter text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover '
                 }
               ></TabList>
-              {/* <div className="my-4 gap-4 flex flex-row sm:flex-row xs:flex-col">
-                <SettingsNavButton text={t.ei} active></SettingsNavButton>
-                <SettingsNavButton text={t.cpp}></SettingsNavButton>
-                <SettingsNavButton text={t.oas}></SettingsNavButton>
-              </div> */}
               <ProfileInfo fields={[fakeFields, fakeFields2]} />{' '}
             </>
           ) : tabSelected === 1 ? (
