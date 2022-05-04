@@ -50,7 +50,7 @@ COPY --from=build --chown=55:$group /build/next.config.js ./
 COPY --from=build --chown=55:$group /build/package*.json ./
 COPY --from=build --chown=55:$group /build/.next ./.next
 COPY --from=build --chown=55:$group /build/public ./public
-RUN npm install next
+RUN npm install next@12.1.5
 USER $user
 
 CMD npm run start
