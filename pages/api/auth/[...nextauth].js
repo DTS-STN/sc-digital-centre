@@ -16,8 +16,7 @@ export default NextAuth({
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
       type: 'oauth',
-      wellKnown:
-        'https://keycloak.dts-stn.com/auth/realms/dts-stn/.well-known/openid-configuration',
+      wellKnown: process.env.WELL_KNOWN,
       authorization: { params: { scope: 'openid email profile' } },
       idToken: true,
       checks: ['state'],
