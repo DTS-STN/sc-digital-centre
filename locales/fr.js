@@ -300,6 +300,11 @@ export default {
   paymentClaimsTaxTasks: '(FR)Payments, claims, and tax details',
   documentsReportsTasks: '(FR)Documents and reports',
 
+  //benefit task headings
+  paymentsTaxesAccount: 'Paiement, impôts et renseignement personnels ',
+  commonPaymentsTaxesAccount:
+    'Actions courantes, paiements, impôts, rapports et renseignements personnels',
+
   // dashboard benefits tasks
   allPaymentsTask: '(FR)View all payments',
   statusUpdateTask: '(FR)View my status and messages',

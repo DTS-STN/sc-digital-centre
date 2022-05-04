@@ -12,20 +12,25 @@ export function CreateBenefitCardObj(
   typeCode,
   summaries
 ) {
-  return {
+  const benefit = {
     programCode: programCode,
     statusCode: statusCode,
     typeCode: typeCode,
     summaries: summaries, // an array of BenefitSummaries
-    taskGroups: MapBenefitToTaskGroups(programCode, statusCode),
   }
+  const taskGroupMatch = MapBenefitToTaskGroups(programCode, statusCode)
+  if (taskGroupMatch) {
+    benefit.taskGroups = taskGroupMatch.tasksGroups
+    benefit.taskHeadingKey = taskGroupMatch.taskHeadingKey
+  }
+  return benefit
 }
 
 function MapBenefitToTaskGroups(programCode, statusCode) {
   const group = TASK_GROUPS.find(
     (tg) => tg.programCode === programCode && tg.statusCode === statusCode
   )
-  return group ? group.tasksGroups : null
+  return group
 }
 
 export const ProgramCodes = {
@@ -51,11 +56,13 @@ const TASK_GROUPS = [
   {
     programCode: ProgramCodes.CPP,
     statusCode: StatusCodes.Active,
+    taskHeadingKey: 'paymentsTaxesAccount',
     tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
   },
   {
     programCode: ProgramCodes.EI,
     statusCode: StatusCodes.Active,
+    taskHeadingKey: 'commonPaymentsTaxesAccount',
     tasksGroups: [
       ACTIVE_EI_COMMON_TASKS,
       ACTIVE_EI_PAYMENT_TASKS,
