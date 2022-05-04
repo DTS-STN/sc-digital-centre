@@ -302,6 +302,13 @@ export default {
   addYourPhoneNumber: 'Add your phone number',
   addYourPaymentDetails: 'Add your payment details',
 
+  // Benefit Card Status'
+  inactive: 'Inactive',
+  applicationReceived: 'Application received',
+  benefitUpdate: 'Benefit update',
+  inPayment: 'In payment',
+  exhausted: 'Benefit exahusted',
+
   // dashboard benefit task headers
   estimate: 'Estimate',
   paymentTasks: 'Payment and tax details',

@@ -3,13 +3,14 @@ import en from '../../locales/en'
 import fr from '../../locales/fr'
 import { ProgramCodes, StatusCodes } from '../../objects/UniversalBenefit'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
+import StatusBadge from '../atoms/StatusBadge'
 
 export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr
 
   return (
     <div className="benefit-card">
-      {/* Status Bar Component goes here */}
+      <StatusBadge status={t[props.benefit.statusCode]} />
       <h2>{t[props.benefit.programCode]}</h2>
       {props.benefit.summaries == null || props.benefit.summaries.length <= 0
         ? null

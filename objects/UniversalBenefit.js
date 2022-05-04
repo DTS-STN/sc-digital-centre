@@ -12,6 +12,8 @@ export function CreateBenefitCardObj(
   }
 }
 
+//Programs
+
 export const ProgramCodes = {
   CPP: 'CPP',
   EI: 'EI',
@@ -19,16 +21,13 @@ export const ProgramCodes = {
   GIS: 'GIS',
 }
 
-export const StatusCodes = {
-  Active: 'Active',
-  Pending: 'Pending',
-}
+//Summaries
 
-export const TypeCodes = {
-  CPPBeneficial: 'CPPBeneficial',
-  CPPRetirement: 'CPPRetirement',
-  CPPDisability: 'CPPDisability',
-  EIUnknown: 'EIUnknown',
+export const SummaryTypes = {
+  PaymentAmount: 'PaymentAmount',
+  NextReport: 'NextReport',
+  LatestStatus: 'LatestStatus',
+  NextPayment: 'NextPayment',
 }
 
 export function CreateBenefitSummary(type, value, status) {
@@ -43,26 +42,38 @@ export function CreateBenefitSummary(type, value, status) {
   return benefitSummary
 }
 
-export const SummaryTypes = {
-  PaymentAmount: 'PaymentAmount',
-  NextReport: 'NextReport',
-  LatestStatus: 'LatestStatus',
-  NextPayment: 'NextPayment',
+//Card Status
+
+export const StatusCodes = {
+  inPayment: 'inPayment',
+  benefitUpdate: 'benefitUpdate',
+  applicationReceived: 'applicationReceived',
+  inactive: 'inactive',
+  exahusted: 'exhausted',
 }
 
 export const CPPStatus = [
   {
     value: 32294,
-    status: StatusCodes.Active,
+    status: StatusCodes.inPayment,
   },
 ]
 
 export const EIStatus = [
   {
     value: 3433,
-    status: StatusCodes.Active,
+    status: StatusCodes.inPayment,
   },
 ]
+
+//Card Types
+
+export const TypeCodes = {
+  CPPBeneficial: 'CPPBeneficial',
+  CPPRetirement: 'CPPRetirement',
+  CPPDisability: 'CPPDisability',
+  EIUnknown: 'EIUnknown',
+}
 
 export const CPPTypes = [
   {
