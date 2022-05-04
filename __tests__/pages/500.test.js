@@ -4,7 +4,15 @@ import Error500 from '../../pages/500'
 import { axe } from 'jest-axe'
 
 describe('500', () => {
-  const { container } = render(<Error500 />)
+  const { container } = render(
+    <Error500
+      metadata={{
+        title: 'Digital Centre (en) + Digital Centre (fr)',
+        keywords: 'en + fr keywords',
+        description: 'en + fr description',
+      }}
+    />
+  )
   it('renders without crashing', () => {
     expect(screen.getByText('Error 500')).toBeInTheDocument()
   })
