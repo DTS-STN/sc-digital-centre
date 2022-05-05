@@ -1,5 +1,3 @@
-import DSHeader from '../components/molecules/DSHeader'
-import DSFooter from '../components/molecules/DSFooter'
 import ProfileInfo from '../components/molecules/ProfileInfo'
 import { LayoutContainer } from '@dts-stn/decd-design-system'
 import Link from 'next/link'

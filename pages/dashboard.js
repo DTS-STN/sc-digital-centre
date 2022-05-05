@@ -80,7 +80,7 @@ export default function Dashboard(props) {
         langToggleLink={props.langToggleLink}
       >
         <LayoutContainer>
-          <div className="col-span-12 mb-8">
+          <div className="mb-8">
             <Greeting locale={props.locale} name="Mary" />
 
             {/* New Benefit Cards API driven */}
