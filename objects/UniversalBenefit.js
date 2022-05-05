@@ -77,13 +77,13 @@ export const SummaryTypes = {
 const TASK_GROUPS = [
   {
     programCode: ProgramCodes.CPP,
-    statusCode: StatusCodes.Active,
+    statusCode: StatusCodes.inPayment,
     taskHeadingKey: 'paymentsTaxesAccount',
     tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
   },
   {
     programCode: ProgramCodes.EI,
-    statusCode: StatusCodes.Active,
+    statusCode: StatusCodes.inPayment,
     taskHeadingKey: 'commonPaymentsTaxesAccount',
     tasksGroups: [
       ACTIVE_EI_COMMON_TASKS,
