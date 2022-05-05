@@ -3,6 +3,7 @@ import en from '../../locales/en'
 import fr from '../../locales/fr'
 import { ProgramCodes, StatusCodes } from '../../objects/UniversalBenefit'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
+import StatusBadge from '../atoms/StatusBadge'
 import BenefitTasks from './BenefitTasks'
 import HorizontalRule from '../atoms/HorizontalRule'
 
@@ -11,7 +12,7 @@ export default function UniversalBenefitCard(props) {
 
   return (
     <div className="benefit-card">
-      {/* Status Bar Component goes here */}
+      <StatusBadge status={props.benefit.statusCode} locale={props.locale} />
       <h2>{t[props.benefit.programCode]}</h2>
       {props.benefit.summaries == null || props.benefit.summaries.length <= 0
         ? null
