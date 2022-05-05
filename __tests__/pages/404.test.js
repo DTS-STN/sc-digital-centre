@@ -7,7 +7,15 @@ import Error404 from '../../pages/404'
 import { axe } from 'jest-axe'
 
 describe('404', () => {
-  const { container } = render(<Error404 />)
+  const { container } = render(
+    <Error404
+      metadata={{
+        title: 'Digital Centre (en) + Digital Centre (fr)',
+        keywords: 'en + fr keywords',
+        description: 'en + fr description',
+      }}
+    />
+  )
   it('renders without crashing', () => {
     expect(
       screen.getByText('We couldn’t find that web page')

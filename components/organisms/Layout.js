@@ -2,7 +2,8 @@ import PropTypes from 'prop-types'
 import Script from 'next/script'
 import Meta from '../atoms/Meta'
 import PhaseBanner from '../atoms/PhaseBanner'
-import Header from '../molecules/Header'
+import DSHeader from '../molecules/DSHeader'
+import DSFooter from '../molecules/DSFooter'
 import Footer from '../molecules/Footer'
 import { useEffect } from 'react'
 
@@ -52,25 +53,35 @@ export default function Layout(props) {
       )}
       <Meta lang={props.locale} metadata={props.metadata} />
 
-      {props.displayHeader ? (
+      {props.displayPhase ? (
         <>
           <PhaseBanner
             phase={props.phase}
             bannerText={props.bannerText}
             lang={props.locale}
           ></PhaseBanner>
-          <Header
-            language={props.locale}
-            t={t}
-            toggleLangLink={props.metadata.toggleLangLink}
+        </>
+      ) : (
+        ''
+      )}
+
+      {props.displayHeader ? (
+        <>
+          <DSHeader
+            locale={props.locale}
+            langToggleLink={props.langToggleLink}
           />
         </>
       ) : (
         ''
       )}
+
       <main>
         <div>{props.children}</div>
       </main>
+
+      {props.displayDSFooter ? <DSFooter /> : ''}
+
       {props.displayFooter ? (
         <Footer
           footerLogoAltText="symbol2"
@@ -158,11 +169,19 @@ Layout.propTypes = {
   /*
    * Link of the page in opposite language
    */
-  toggleLangLink: PropTypes.string,
+  langToggleLink: PropTypes.string,
   /*
    * Toggle use of header
    */
   displayHeader: PropTypes.bool,
+  /*
+   * Toggle use of Phase
+   */
+  displayPhase: PropTypes.bool,
+  /*
+   * Toggle use of DS footer
+   */
+  displayDSFooter: PropTypes.bool,
   /*
    * Toggle use of footer
    */
@@ -171,5 +190,5 @@ Layout.propTypes = {
 
 Layout.defaultProps = {
   displayHeader: true,
-  displayFooter: true,
+  displayDSFooter: true,
 }

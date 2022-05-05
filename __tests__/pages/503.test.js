@@ -4,7 +4,15 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 import Error503 from '../../pages/503'
 
 describe('503', () => {
-  const { container } = render(<Error503 />)
+  const { container } = render(
+    <Error503
+      metadata={{
+        title: 'Digital Centre (en) + Digital Centre (fr)',
+        keywords: 'en + fr keywords',
+        description: 'en + fr description',
+      }}
+    />
+  )
   it('renders without crashing', () => {
     expect(screen.getByText('Error 503')).toBeInTheDocument()
   })

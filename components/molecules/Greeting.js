@@ -19,7 +19,7 @@ export default function Greeting(props) {
         message_heading={t.messageHeading}
         message_body={t.messageBody}
       />
-      <div className="text-3xl font-bold mt-10">{t.myBenefitsAndServices}</div>
+      <h1 className="text-3xl font-bold mt-10">{t.myBenefitsAndServices}</h1>
     </div>
   )
 }
