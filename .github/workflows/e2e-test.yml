@@ -54,6 +54,11 @@ jobs:
         env:
           CI: true
           NODE_ENV: production
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
+          WELL_KNOWN: ${{ secrets.WELL_KNOWN }}
         with:
           install: false
           start: npm run start
