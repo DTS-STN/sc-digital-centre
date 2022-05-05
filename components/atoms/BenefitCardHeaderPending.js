@@ -16,10 +16,7 @@ export default function BenefitCardHeaderPending(props) {
 
   return (
     <div>
-      <StatusBadge
-        className="bg-[#068293]"
-        status={props.benefit.applicationStatus}
-      />
+      <StatusBadge locale={props.locale} status="applicationReceived" />
 
       <div className="px-4 md:px-6">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">

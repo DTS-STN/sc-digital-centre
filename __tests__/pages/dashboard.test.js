@@ -63,6 +63,11 @@ describe('Dashboard', () => {
     <Dashboard
       advertisingCards={advertisingCards}
       usersBenefits={usersBenefits}
+      metadata={{
+        title: 'Digital Centre (en) + Digital Centre (fr)',
+        keywords: 'en + fr keywords',
+        description: 'en + fr description',
+      }}
     />
   )
   it('renders Dashboard', () => {

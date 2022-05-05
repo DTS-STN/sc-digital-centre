@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import TabList from './tabList'
+import TabList from './TabList'
 
 expect.extend(toHaveNoViolations)
 
