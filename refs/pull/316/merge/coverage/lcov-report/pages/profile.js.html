@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/8</span>
+                <span class='fraction'>6/10</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/8</span>
+                <span class='fraction'>6/10</span>
             </div>
         
             
@@ -152,8 +152,21 @@
 <a name='L93'></a><a href='#L93'>93</a>
 <a name='L94'></a><a href='#L94'>94</a>
 <a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,6 +178,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -215,6 +229,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -251,16 +279,16 @@
 import DSFooter from '../components/molecules/DSFooter'
 import ProfileInfo from '../components/molecules/ProfileInfo'
 import { LayoutContainer } from '@dts-stn/decd-design-system'
-import SettingsNavButton from '../components/atoms/SettingsNavButton'
 import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
-import TabList from '../components/atoms/tabList'
+import TabList from '../components/atoms/TabList'
 &nbsp;
 export default function Profile(props) {
   const t = props.locale === 'en' ? <span class="branch-0 cbranch-no" title="branch not covered" >en </span>: fr
   const [tabSelected, setTabSelected] = useState(0)
+  const [profileTabSelected, setProfileTabSelected] = useState(0)
   const fakeFields = {
     title: 'Profile Information',
     info: [
@@ -310,14 +338,28 @@ export default function Profile(props) {
             titles={[t.profileAndPreferences, t.securitySettings]}
             onClick={<span class="fstat-no" title="function not covered" >(i</span>ndex) =&gt; <span class="cstat-no" title="statement not covered" >setTabSelected(index)}</span>
             tabSelected={tabSelected}
+            containerStyle={'flex flex-wrap border-b border-gray-200'}
+            selectedTabStyle={
+              'bg-gray-100 active border-b-2 border-b-bright-blue-lighthover'
+            }
+            unselectedTabStyle={
+              'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
+            }
+            genericTabStyle={'inline-block text-lg py-3 px-4 text-center'}
           /&gt;
           {tabSelected === 0 ? (
             &lt;&gt;
-              &lt;div className="my-4 gap-4 flex flex-row sm:flex-row xs:flex-col"&gt;
-                &lt;SettingsNavButton text={t.ei} active&gt;&lt;/SettingsNavButton&gt;
-                &lt;SettingsNavButton text={t.cpp}&gt;&lt;/SettingsNavButton&gt;
-                &lt;SettingsNavButton text={t.oas}&gt;&lt;/SettingsNavButton&gt;
-              &lt;/div&gt;
+              &lt;TabList
+                titles={[t.ei, t.cpp, t.oas]}
+                onClick={<span class="fstat-no" title="function not covered" >(i</span>ndex) =&gt; <span class="cstat-no" title="statement not covered" >setProfileTabSelected(index)}</span>
+                tabSelected={profileTabSelected}
+                containerStyle={'my-4 flex flex-wrap gap-4'}
+                selectedTabStyle={'bg-bright-blue-lighthover'}
+                unselectedTabStyle={''}
+                genericTabStyle={
+                  'bg-gray-lighter text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover '
+                }
+              &gt;&lt;/TabList&gt;
               &lt;ProfileInfo fields={[fakeFields, fakeFields2]} /&gt;{' '}
             &lt;/&gt;
           ) : <span class="branch-1 cbranch-no" title="branch not covered" >tabSelected === 1 ? (</span>
@@ -349,7 +391,7 @@ export async function <span class="fstat-no" title="function not covered" >getSt
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed May 04 2022 16:24:17 GMT+0000 (Coordinated Universal Time)
+                at Thu May 05 2022 15:30:23 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
