@@ -27,7 +27,7 @@ const pendingCPP = {
   additionalInformation:
     'We will notify you as soon as we have process your application.',
 
-  applicationStatus: 'Application Submitted',
+  applicationStatus: 'Application received',
   pendingBenefits: 'Retirement pension',
   benefitStatusProgress: 'In Progress',
 }
@@ -56,7 +56,7 @@ const pendingCPPD = {
   additionalInformation:
     'We will notify you as soon as we have process your application.',
 
-  applicationStatus: 'Application Submitted',
+  applicationStatus: 'Application received',
   pendingBenefits: 'Retirement pension',
   benefitStatusProgress: 'In Progress',
 }
@@ -66,7 +66,7 @@ describe('BenefitCardHeaderPending Tests', () => {
     render(<BenefitCardHeaderPending benefit={pendingCPP} locale={'en'} />)
     const titleText = screen.getByText('Canada Pension Plan')
     const applicationStatusProgress = screen.getByText('In Progress')
-    const applicationStatus = screen.getByText('Application Submitted')
+    const applicationStatus = screen.getByText('Application received')
     expect(titleText).toBeInTheDocument()
     expect(applicationStatus).toBeInTheDocument()
     expect(applicationStatusProgress).toBeInTheDocument()

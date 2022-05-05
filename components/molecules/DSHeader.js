@@ -9,6 +9,7 @@ export default function DSHeader(props) {
     <Header
       id="header"
       lang={props.locale}
+      linkPath={props.langToggleLink}
       breadCrumbItems={[
         {
           link: t.url_canada_ca,

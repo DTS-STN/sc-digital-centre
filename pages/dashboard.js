@@ -60,44 +60,70 @@ import {
 import DSHeader from '../components/molecules/DSHeader'
 import DSFooter from '../components/molecules/DSFooter'
 import { getSession } from 'next-auth/react'
+import {
+  CreateBenefitObjWithCPPData,
+  CreateBenefitObjWithEIData,
+  ProgramCodes,
+  StatusCodes,
+  TypeCodes,
+} from '../objects/UniversalBenefit'
+import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 
 export default function Dashboard(props) {
   return (
     <>
-      <DSHeader locale="en" isAuth={props.isAuth} />
+      <DSHeader
+        locale={props.locale}
+        langToggleLink={props.langToggleLink}
+        isAuth={props.isAuth}
+      />
       <LayoutContainer>
-        <div className="col-span-12">
-          <Greeting locale="en" name="Mary" />
+        <div className="col-span-12 mb-8">
+          <Greeting locale={props.locale} name="Mary" />
+
+          {/* New Benefit Cards API driven */}
+          {props.usersBenefits == null || props.usersBenefits.length <= 0
+            ? null
+            : props.usersBenefits.map((value, index) => {
+                return (
+                  <UniversalBenefitCard
+                    key={index}
+                    locale={props.locale}
+                    benefit={value}
+                  />
+                )
+              })}
+
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_CPP}
             tasks={[SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS]}
             taskGroups={true}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_CPP}
             tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
             taskGroups={true}
             activeCppApi={props.activeCppProps}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_OAS}
             tasks={SUBMITTED_OAS_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_OAS}
             tasks={ACTIVE_OAS_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_EI}
             tasks={SUBMITTED_EI_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_EI}
             tasks={[
               ACTIVE_EI_COMMON_TASKS,
@@ -108,27 +134,27 @@ export default function Dashboard(props) {
             activeEiApi={props.activeEiProps}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={INACTIVE_EI}
             tasks={INACTIVE_EI_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={SUBMITTED_CPPD}
             tasks={SUBMITTED_CPPD_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_CPPD}
             tasks={ACTIVE_CPPD_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={INACTIVE_CPPD}
             tasks={INACTIVE_CPP_TASKS}
           />
           <BenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={ACTIVE_SEB}
             tasks={[ACTIVE_SEB_TASKS]}
             taskGroups={true}
@@ -139,7 +165,7 @@ export default function Dashboard(props) {
             return (
               <div key={index}>
                 <BenefitApplicationCard
-                  locale="en"
+                  locale={props.locale}
                   benefitApplication={value}
                 />
               </div>
@@ -147,22 +173,22 @@ export default function Dashboard(props) {
           })}
 
           <NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_CPP}
             tasks={NO_BENEFIT_CPP_TASKS}
           />
           <NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_EI}
             tasks={NO_BENEFIT_EI_TASKS}
           />
           <NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_GIS}
             tasks={NO_BENEFIT_GIS_TASKS}
           />
           <NoBenefitCard
-            locale="en"
+            locale={props.locale}
             benefit={NO_BENEFIT_OAS}
             tasks={NO_BENEFIT_OAS_TASKS}
           />
@@ -173,30 +199,35 @@ export default function Dashboard(props) {
   )
 }
 
-export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ req, locale }) {
   const session = await getSession({ req })
   const isAuth = session ? true : false
 
   const currentBenefits = [] // to be retrieved by API
 
+  const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
   // tests - uncomment to hide a card with conditions
-  // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'active' })
-  // currentBenefits.push({ program: 'cpp', type: 'retirement', status: 'pending' })
-  // currentBenefits.push({ program: 'cpp', type: 'disability', status: 'active' })
-  // currentBenefits.push({ program: 'cpp', type: 'disability', status: 'pending' })
-  // currentBenefits.push({ program: 'oas', status: 'active' })
-  // currentBenefits.push({ program: 'oas', status: 'pending' })
-  // currentBenefits.push({ program: 'gis', status: 'active' })
-  // currentBenefits.push({ program: 'gis', status: 'pending' })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPRetirement, statusCode: StatusCodes.Active })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPRetirement, statusCode: StatusCodes.Pending })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPDisability, statusCode: StatusCodes.Active })
+  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPDisability, statusCode: StatusCodes.Pending })
+  //currentBenefits.push({ programCode: ProgramCodes.OAS, statusCode: StatusCodes.Active })
+
   const activeCpp = await getActiveCpp()
   const activeEi = await getActiveEi()
+
+  currentBenefits.push(CreateBenefitObjWithCPPData(activeCpp))
+  currentBenefits.push(CreateBenefitObjWithEIData(activeEi))
 
   return {
     props: {
       advertisingCards: BuildAdvertisingCards(currentBenefits),
+      usersBenefits: currentBenefits,
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
       isAuth: isAuth,
+      locale,
+      langToggleLink,
     },
   }
 }
@@ -239,9 +270,9 @@ function BuildAdvertisingCards(currentBenefits) {
   if (
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'cpp',
-      'retirement'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.CPP,
+      TypeCodes.CPPRetirement
     )
   ) {
     advertisingCards.push(APPLICATION_CARD_CPP)
@@ -249,8 +280,8 @@ function BuildAdvertisingCards(currentBenefits) {
   if (
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'oas'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.OAS
     )
   ) {
     advertisingCards.push(APPLICATION_CARD_OAS)
@@ -258,8 +289,8 @@ function BuildAdvertisingCards(currentBenefits) {
   if (
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'gis'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.GIS
     )
   ) {
     advertisingCards.push(APPLICATION_CARD_GIS)
@@ -267,9 +298,9 @@ function BuildAdvertisingCards(currentBenefits) {
   if (
     CheckAllBenefitsForAdvertising(
       currentBenefits,
-      ['pending', 'active'],
-      'cpp',
-      'disability'
+      [StatusCodes.Active, StatusCodes.Pending],
+      ProgramCodes.CPP,
+      TypeCodes.CPPDisability
     )
   ) {
     advertisingCards.push(APPLICATION_CARD_CPPD)
@@ -298,15 +329,15 @@ function CheckAllBenefitsForAdvertising(benefits, status, program, type) {
   var matchingBenefit
   if (typeof type === 'undefined')
     //overloaded function handling
-    matchingBenefit = benefits.find((b) => b.program == program)
+    matchingBenefit = benefits.find((b) => b.programCode == program)
   else
     matchingBenefit = benefits.find(
-      (b) => b.program == program && b.type == type
+      (b) => b.programCode == program && b.typeCode == type
     )
 
   if (matchingBenefit == null) return true
   //check if there is a status to evaluate
   //if (typeof status === 'undefined' || status.length == 0) return false
   //evaluate for a matching status
-  return !status.find((s) => s == matchingBenefit.status)
+  return !status.find((s) => s == matchingBenefit.statusCode)
 }

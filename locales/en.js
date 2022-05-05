@@ -1,6 +1,28 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   //
+  // Benefits
+  CPP: 'Canada Pension Plan',
+  EI: 'Employment Insurance',
+  //
+  // BenefitSummaries
+  PaymentAmount: {
+    title: 'Payment amount',
+    link: '/',
+    linkText: 'View my payments',
+  },
+  NextPayment: {
+    title: 'Next Payment:',
+  },
+  LatestStatus: {
+    title: 'Latest status:',
+    link: '/',
+    linkText: 'View my status and messages',
+  },
+  NextReport: {
+    title: 'Next report due:',
+  },
+  //
   // Phase banner
   phaseBannerTag: 'Test Site',
   phaseBannerText:
@@ -356,6 +378,8 @@ export default {
 
   //Profile page
   profileAndSecuritySettings: 'Profile and security settings',
+  profileAndPreferences: 'Profile and Preferences',
+  securitySettings: 'Security Settings',
   backToDashboard: 'Back to my dashboard',
 
   //Dashboard task links

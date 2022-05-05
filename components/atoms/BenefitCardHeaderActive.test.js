@@ -29,7 +29,7 @@ const activeCanadaPensionPlan = {
   paymentType: 'Direct Deposit',
   additionalInformation:
     'We will notify you as soon as we have process your application.',
-  applicationStatus: 'Active',
+  applicationStatus: 'In payment',
   pendingBenefits: 'Retirement pension',
   benefitStatusProgress: 'Complete',
 }
@@ -60,7 +60,7 @@ const activeCanadaPensionPlanCPPD = {
   paymentType: 'Direct Deposit',
   additionalInformation:
     'We will notify you as soon as we have process your application.',
-  applicationStatus: 'Active',
+  applicationStatus: 'In payment',
   pendingBenefits: 'Retirement pension',
   benefitStatusProgress: 'Complete',
 }
