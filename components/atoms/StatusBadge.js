@@ -25,7 +25,7 @@ export default function StatusBadge(props) {
             : 'bg-status-inactive'
         }`}
       >
-        {t[props.status]}
+        {t[props.status] ? t[props.status] : 'No status found'}
       </h2>
     </div>
   )
