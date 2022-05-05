@@ -10,7 +10,7 @@ export default function UniversalBenefitCard(props) {
 
   return (
     <div className="benefit-card">
-      <StatusBadge status={t[props.benefit.statusCode]} />
+      <StatusBadge status={props.benefit.statusCode} locale={props.locale} />
       <h2>{t[props.benefit.programCode]}</h2>
       {props.benefit.summaries == null || props.benefit.summaries.length <= 0
         ? null
