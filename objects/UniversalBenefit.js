@@ -1,3 +1,11 @@
+import {
+  ACTIVE_CPP_PAYMENT_TASKS,
+  ACTIVE_CPP_CHANGE_TASKS,
+  ACTIVE_EI_COMMON_TASKS,
+  ACTIVE_EI_PAYMENT_TASKS,
+  ACTIVE_EI_DOCS_TASKS,
+} from '../contents/DashboardBenefitTasksConstants'
+
 export function CreateBenefitCardObj(
   programCode,
   statusCode,
@@ -9,37 +17,23 @@ export function CreateBenefitCardObj(
     statusCode: statusCode,
     typeCode: typeCode,
     summaries: summaries, // an array of BenefitSummaries
+    taskGroups: MapBenefitToTaskGroups(programCode, statusCode),
   }
 }
 
 //Programs
+function MapBenefitToTaskGroups(programCode, statusCode) {
+  const group = TASK_GROUPS.find(
+    (tg) => tg.programCode === programCode && tg.statusCode === statusCode
+  )
+  return group ? group.tasksGroups : null
+}
 
 export const ProgramCodes = {
   CPP: 'CPP',
   EI: 'EI',
   OAS: 'OAS',
   GIS: 'GIS',
-}
-
-//Summaries
-
-export const SummaryTypes = {
-  PaymentAmount: 'PaymentAmount',
-  NextReport: 'NextReport',
-  LatestStatus: 'LatestStatus',
-  NextPayment: 'NextPayment',
-}
-
-export function CreateBenefitSummary(type, value, status) {
-  let benefitSummary = {
-    type: type, // will define what header text to go with it and any links if applicable
-    value: value, // a date or amount, defined by the type
-  }
-  //only add the status object if it exists
-  if (status) {
-    benefitSummary.status = status //status is additional text for display
-  }
-  return benefitSummary
 }
 
 //Card Status
@@ -65,6 +59,44 @@ export const EIStatus = [
     status: StatusCodes.inPayment,
   },
 ]
+
+//Summaries
+
+export const SummaryTypes = {
+  PaymentAmount: 'PaymentAmount',
+  NextReport: 'NextReport',
+  LatestStatus: 'LatestStatus',
+  NextPayment: 'NextPayment',
+}
+
+const TASK_GROUPS = [
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.Active,
+    tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+  },
+  {
+    programCode: ProgramCodes.EI,
+    statusCode: StatusCodes.Active,
+    tasksGroups: [
+      ACTIVE_EI_COMMON_TASKS,
+      ACTIVE_EI_PAYMENT_TASKS,
+      ACTIVE_EI_DOCS_TASKS,
+    ],
+  },
+]
+
+export function CreateBenefitSummary(type, value, status) {
+  let benefitSummary = {
+    type: type, // will define what header text to go with it and any links if applicable
+    value: value, // a date or amount, defined by the type
+  }
+  //only add the status object if it exists
+  if (status) {
+    benefitSummary.status = status //status is additional text for display
+  }
+  return benefitSummary
+}
 
 //Card Types
 
