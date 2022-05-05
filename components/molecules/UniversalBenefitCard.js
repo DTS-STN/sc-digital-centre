@@ -5,30 +5,23 @@ import { ProgramCodes, StatusCodes } from '../../objects/UniversalBenefit'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
 import BenefitTasks from './BenefitTasks'
 import HorizontalRule from '../atoms/HorizontalRule'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 
 export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr
   const [isOpen, setIsOpen] = useState(false)
-  const topOfCardRef = useRef(null)
-  const topOfTaskRef = useRef(null)
-
-  const scrollTo = () => {
-    if (!topOfTaskRef.current || !topOfCardRef.current) return
-    isOpen
-      ? topOfCardRef.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        })
-      : topOfTaskRef.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        })
-  }
+  const benefitUniqueId =
+    props.benefit.programCode +
+    '-' +
+    props.benefit.typeCode +
+    '-' +
+    props.benefit.statusCode
+  const benefitCardId = 'benefit-card' + benefitUniqueId
+  const taskListId = 'task-list' + benefitUniqueId
 
   return (
-    <div className="benefit-card" ref={topOfCardRef}>
+    <div className="benefit-card" id={benefitCardId}>
       {/* Status Bar Component goes here */}
       <h2>{t[props.benefit.programCode]}</h2>
       {props.benefit.summaries == null || props.benefit.summaries.length <= 0
@@ -44,7 +37,7 @@ export default function UniversalBenefitCard(props) {
           })}
       {props.benefit.taskGroups == null ||
       props.benefit.taskGroups.length <= 0 ? null : (
-        <div ref={topOfTaskRef}>
+        <div id={taskListId}>
           {!isOpen
             ? null
             : props.benefit.taskGroups.map((taskList, index) => {
@@ -62,8 +55,12 @@ export default function UniversalBenefitCard(props) {
           <ViewMoreLessButton
             id={props.benefit.programCode + '-card-button'}
             onClick={() => {
+              const idToScrollTo = isOpen ? benefitCardId : taskListId
+              document.getElementById(idToScrollTo).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              })
               setIsOpen(!isOpen)
-              scrollTo()
             }}
             plus={isOpen}
             caption={t[props.benefit.taskHeadingKey]}
