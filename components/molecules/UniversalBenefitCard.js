@@ -17,8 +17,8 @@ export default function UniversalBenefitCard(props) {
     props.benefit.typeCode +
     '-' +
     props.benefit.statusCode
-  const benefitCardId = 'benefit-card' + benefitUniqueId
-  const taskListId = 'task-list' + benefitUniqueId
+  const benefitCardId = 'benefit-card-' + benefitUniqueId
+  const taskListId = 'task-list-' + benefitUniqueId
 
   return (
     <div className="benefit-card" id={benefitCardId}>
@@ -55,12 +55,13 @@ export default function UniversalBenefitCard(props) {
           <ViewMoreLessButton
             id={props.benefit.programCode + '-card-button'}
             onClick={() => {
-              const idToScrollTo = isOpen ? benefitCardId : taskListId
+              const newOpenState = !isOpen
+              const idToScrollTo = newOpenState ? taskListId : benefitCardId
               document.getElementById(idToScrollTo).scrollIntoView({
                 behavior: 'smooth',
                 block: 'start',
               })
-              setIsOpen(!isOpen)
+              setIsOpen(newOpenState)
             }}
             plus={isOpen}
             caption={t[props.benefit.taskHeadingKey]}
