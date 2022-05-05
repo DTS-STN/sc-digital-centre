@@ -2,11 +2,9 @@ import { render, screen } from '@testing-library/react'
 import { toHaveNoViolations, axe } from 'jest-axe'
 import '@testing-library/jest-dom/extend-expect'
 import en from '../../locales/en'
-import {
-  CreateBenefitSummary,
-  SummaryTypes,
-} from '../../objects/UniversalBenefit'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
+import { CreateBenefitSummary } from '../../pages/api/programData/_middleware'
+import { SummaryTypes } from '../../constants/SummaryTypes'
 
 expect.extend(toHaveNoViolations)
 

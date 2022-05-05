@@ -1,6 +1,6 @@
 import { Link } from '@dts-stn/decd-design-system'
 import propTypes from 'prop-types'
-import { SummaryTypes } from '../../objects/UniversalBenefit'
+import { SummaryTypes } from '../../constants/SummaryTypes'
 
 export default function BenefitCardHeaderSummary(props) {
   const t = props.locale

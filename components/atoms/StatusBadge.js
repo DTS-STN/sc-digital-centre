@@ -1,5 +1,5 @@
 import propTypes from 'prop-types'
-import { StatusCodes } from '../../objects/UniversalBenefit'
+import { StatusCodes } from '../../constants/StatusCodes'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 

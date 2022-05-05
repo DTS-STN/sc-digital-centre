@@ -11,12 +11,12 @@ import {
 import Dashboard from '../../pages/dashboard'
 import {
   CreateBenefitSummary,
-  CreateBenefitCardObj,
-  ProgramCodes,
-  StatusCodes,
-  SummaryTypes,
-  TypeCodes,
-} from '../../objects/UniversalBenefit'
+  CreateGenericBenefitObj,
+} from '../../pages/api/programData/_middleware'
+import { ProgramCodes } from '../../constants/ProgramCodes'
+import { StatusCodes } from '../../constants/StatusCodes'
+import { TypeCodes } from '../../constants/ProgramTypeCodes'
+import { SummaryTypes } from '../../constants/SummaryTypes'
 expect.extend(toHaveNoViolations)
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -52,7 +52,7 @@ describe('Dashboard', () => {
     APPLICATION_CARD_CPP,
   ]
   const usersBenefits = [
-    CreateBenefitCardObj(
+    CreateGenericBenefitObj(
       ProgramCodes.CPP,
       StatusCodes.Active,
       TypeCodes.CPPRetirement,
