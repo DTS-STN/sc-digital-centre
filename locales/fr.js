@@ -281,17 +281,10 @@ export default {
   applicationDate: '(FR)Application date',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages',
-  accountDetails: '(FR)Account details',
   nextPayment: '(FR)Next payment',
   lastPayment: '(FR)Last payment',
   benefitStartDate: '(FR)Benefit start date',
   pensionStartDate: '(FR)Pension start date',
-  payeeAddress: '(FR)Address',
-  payeePhoneNumber: '(FR)Phone number',
-  paymentDetails: '(FR)Payment details',
-  addYourAddress: '(FR)Add your address',
-  addYourPhoneNumber: '(FR)Add your phone number',
-  addYourPaymentDetails: '(FR)Add your payment details',
 
   // Benefit Card Status'
   inactive: '(FR)Inactive',
@@ -382,12 +375,6 @@ export default {
   backToDashboard: '(FR)Back to my dashboard',
 
   //Dashboard task links
-  editAddress:
-    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',
-  editPhoneNumber:
-    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',
-  editPayment:
-    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyDDPInfo.aspx?prov=6',
   viewPaymentInfoLink:
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
   viewDocumentsLink:
