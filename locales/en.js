@@ -310,6 +310,7 @@ export default {
   documentsReportsTasks: 'Documents and reports',
 
   // dashboard benefits tasks
+  updateAccountInfoTask: 'Update my account information',
   allPaymentsTask: 'View all payments',
   statusUpdateTask: 'View my status and messages',
   retirementIncomeTask: 'Estimate retirement income',
@@ -383,6 +384,7 @@ export default {
   backToDashboard: 'Back to my dashboard',
 
   //Dashboard task links
+  updateAccountInfoTaskLink: '/profile',
   viewPaymentInfoLink:
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
   viewDocumentsLink:
