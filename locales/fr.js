@@ -373,6 +373,8 @@ export default {
   profileAndPreferences: 'Profil et Préférences',
   securitySettings: 'Paramètres de sécurité',
   backToDashboard: '(FR)Back to my dashboard',
+  edit: 'Modifier',
+  moreInfo: "Plus d'information",
 
   //Dashboard task links
   editAddress:

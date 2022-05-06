@@ -381,6 +381,8 @@ export default {
   profileAndPreferences: 'Profile and Preferences',
   securitySettings: 'Security Settings',
   backToDashboard: 'Back to my dashboard',
+  edit: 'Edit',
+  moreInfo: 'More Information',
 
   //Dashboard task links
   editAddress:
