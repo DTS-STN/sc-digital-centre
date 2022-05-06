@@ -45,6 +45,9 @@ const config = {
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
     NEXT_CONTENT_API: contentURL,
+    OCP_APIM_SUBSCRIPTION_KEY: process.env.OCP_APIM_SUBSCRIPTION_KEY,
+    CPP_ACTIVE_BENEFIT_URL: process.env.CPP_ACTIVE_BENEFIT_URL,
+    EI_ACTIVE_BENEFIT_URL: process.env.EI_ACTIVE_BENEFIT_URL,
   },
   reactStrictMode: true,
   //
