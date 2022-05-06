@@ -316,6 +316,11 @@ export default {
   paymentClaimsTaxTasks: 'Payments, claims, and tax details',
   documentsReportsTasks: 'Documents and reports',
 
+  //benefit task headings
+  paymentsTaxesAccount: 'Payments, taxes and account information',
+  commonPaymentsTaxesAccount:
+    'Common actions, payments, taxes, reports, and account information',
+
   // dashboard benefits tasks
   allPaymentsTask: 'View all payments',
   statusUpdateTask: 'View my status and messages',
