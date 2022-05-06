@@ -293,6 +293,13 @@ export default {
   addYourPhoneNumber: '(FR)Add your phone number',
   addYourPaymentDetails: '(FR)Add your payment details',
 
+  // Benefit Card Status'
+  inactive: '(FR)Inactive',
+  applicationReceived: '(FR)Application received',
+  benefitUpdate: '(FR)Benefit update',
+  inPayment: '(FR)In payment',
+  exhausted: '(FR)Benefit exahusted',
+
   // dashboard benefit task headers
   estimate: '(FR)Estimate',
   paymentTasks: '(FR)Payment and tax details',

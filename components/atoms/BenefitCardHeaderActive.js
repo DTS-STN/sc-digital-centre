@@ -68,10 +68,7 @@ export default function BenefitCardHeaderActive(props) {
 
   return (
     <div>
-      <StatusBadge
-        className="bg-green-active"
-        status={props.benefit.applicationStatus}
-      />
+      <StatusBadge locale={props.locale} status="inPayment" />
       <div className="px-4 md:px-6">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
           <div

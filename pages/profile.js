@@ -1,11 +1,10 @@
-import DSHeader from '../components/molecules/DSHeader'
-import DSFooter from '../components/molecules/DSFooter'
 import ProfileInfo from '../components/molecules/ProfileInfo'
 import { LayoutContainer } from '@dts-stn/decd-design-system'
 import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
+import Layout from '../components/organisms/Layout'
 import TabList from '../components/atoms/TabList'
 
 export default function Profile(props) {
@@ -89,64 +88,79 @@ export default function Profile(props) {
   }
   return (
     <>
-      <DSHeader locale={props.locale} langToggleLink={props.langToggleLink} />
-      <LayoutContainer>
-        <div className="col-span-12">
-          <h1 className="py-4 text-4xl font-bold text-gray-darker">
-            {t.profileAndSecuritySettings}
-          </h1>
-          <TabList
-            titles={[t.profileAndPreferences, t.securitySettings]}
-            onClick={(index) => setTabSelected(index)}
-            tabSelected={tabSelected}
-            containerStyle={'flex flex-wrap border-b border-gray-200'}
-            selectedTabStyle={
-              'bg-gray-100 active border-b-2 border-b-bright-blue-lighthover'
-            }
-            unselectedTabStyle={
-              'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
-            }
-            genericTabStyle={'inline-block text-lg py-3 px-4 text-center'}
-            locale={props.locale}
-          />
-          {tabSelected === 0 ? (
-            <>
-              <TabList
-                titles={[t.ei, t.cpp, t.oas]}
-                onClick={(index) => setProfileTabSelected(index)}
-                tabSelected={profileTabSelected}
-                containerStyle={'my-4 flex flex-wrap gap-4'}
-                selectedTabStyle={'bg-bright-blue-lighthover'}
-                unselectedTabStyle={''}
-                genericTabStyle={
-                  'bg-gray-lighter text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover '
-                }
-                locale={props.locale}
-              ></TabList>
+      <Layout
+        locale={props.locale}
+        displayPhase={false}
+        displayHeader={true}
+        displayDSFooter={true}
+        metadata={props.metadata}
+        langToggleLink={props.langToggleLink}
+      >
+        <LayoutContainer>
+          <div className="col-span-12">
+            <h1 className="py-4 text-4xl font-bold text-gray-darker">
+              {t.profileAndSecuritySettings}
+            </h1>
+            <TabList
+              titles={[t.profileAndPreferences, t.securitySettings]}
+              onClick={(index) => setTabSelected(index)}
+              tabSelected={tabSelected}
+              containerStyle={'flex flex-wrap border-b border-gray-200'}
+              selectedTabStyle={
+                'bg-gray-100 active border-b-2 border-b-bright-blue-lighthover'
+              }
+              unselectedTabStyle={
+                'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
+              }
+              genericTabStyle={'inline-block text-lg py-3 px-4 text-center'}
+              locale={props.locale}
+            />
+            {tabSelected === 0 ? (
+              <>
+                <TabList
+                  titles={[t.ei, t.cpp, t.oas]}
+                  onClick={(index) => setProfileTabSelected(index)}
+                  tabSelected={profileTabSelected}
+                  containerStyle={'my-4 flex flex-wrap gap-4'}
+                  selectedTabStyle={'bg-bright-blue-lighthover'}
+                  unselectedTabStyle={''}
+                  genericTabStyle={
+                    'bg-gray-lighter text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover '
+                  }
+                  locale={props.locale}
+                ></TabList>
+                <ProfileInfo
+                  fields={[fakeFields, fakeFields2]}
+                  locale={props.locale}
+                />{' '}
+              </>
+            ) : tabSelected === 1 ? (
               <ProfileInfo
-                fields={[fakeFields, fakeFields2]}
+                fields={[fakeSecurityFields]}
                 locale={props.locale}
-              />{' '}
-            </>
-          ) : tabSelected === 1 ? (
-            <ProfileInfo fields={[fakeSecurityFields]} locale={props.locale} />
-          ) : null}
+              />
+            ) : null}
 
-          <Link href="/dashboard" passHref>
-            <button className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-link-blue-button my-10">
-              {t.backToDashboard}
-            </button>
-          </Link>
-        </div>
-      </LayoutContainer>
-      <DSFooter />
+            <Link href="/dashboard" passHref>
+              <button className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-link-blue-button my-10">
+                {t.backToDashboard}
+              </button>
+            </Link>
+          </div>
+        </LayoutContainer>
+      </Layout>
     </>
   )
 }
 
 export async function getStaticProps({ locale }) {
   const langToggleLink = locale === 'en' ? '/fr/profile' : '/profile'
+  const metadata = {
+    title: 'Digital Centre (en) + Digital Centre (fr)',
+    keywords: 'en + fr keywords',
+    description: 'en + fr description',
+  }
   return {
-    props: { locale, langToggleLink },
+    props: { locale, langToggleLink, metadata },
   }
 }

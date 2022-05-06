@@ -7,7 +7,15 @@ import Profile from '../../pages/profile'
 expect.extend(toHaveNoViolations)
 
 describe('Profile', () => {
-  const { container } = render(<Profile />)
+  const { container } = render(
+    <Profile
+      metadata={{
+        title: 'Digital Centre (en) + Digital Centre (fr)',
+        keywords: 'en + fr keywords',
+        description: 'en + fr description',
+      }}
+    />
+  )
   it('renders Profile', () => {
     expect(container).toBeTruthy()
   })
