@@ -4,7 +4,7 @@ import ActionButton from './ActionButton'
 export default function ViewMoreLessButton(props) {
   return (
     <ActionButton
-      className="text-xl leading-8 pl-5 py-5 sm:pl-10 underline text-link-blue-default hover:text-link-blue-hover"
+      className="text-xl leading-8 py-5 sm:px-2 lg:px-4 underline text-link-blue-default hover:text-link-blue-hover"
       onClick={props.onClick}
       type="button"
       id={props.id}
