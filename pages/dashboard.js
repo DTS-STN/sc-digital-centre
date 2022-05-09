@@ -78,6 +78,7 @@ export default function Dashboard(props) {
         displayDSFooter={true}
         metadata={props.metadata}
         langToggleLink={props.langToggleLink}
+        isAuth={props.isAuth}
       >
         <LayoutContainer>
           <div className="mb-8">
