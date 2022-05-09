@@ -1,8 +1,9 @@
 import { ProgramCodes } from '../../../constants/ProgramCodes'
-import { TypeCodes } from '../../../constants/ProgramTypeCodes'
-import { StatusCodes } from '../../../constants/StatusCodes'
 import { SummaryTypes } from '../../../constants/SummaryTypes'
-import { CreateBenefitSummary, CreateGenericBenefitObj } from './_middleware'
+import {
+  CreateBenefitSummary,
+  CreateGenericBenefitObj,
+} from '../../../lib/BenefitsMapping'
 
 export default async function GetEIProgramData(req, res) {
   try {
@@ -17,20 +18,6 @@ export default async function GetEIProgramData(req, res) {
     return null
   }
 }
-
-export const EIStatus = [
-  {
-    value: 3433,
-    status: StatusCodes.inPayment,
-  },
-]
-
-export const EITypes = [
-  {
-    value: 1,
-    type: TypeCodes.EIUnknown,
-  },
-]
 
 ///EI result object maping
 // {

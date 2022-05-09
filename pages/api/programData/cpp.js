@@ -1,8 +1,9 @@
 import { ProgramCodes } from '../../../constants/ProgramCodes'
-import { TypeCodes } from '../../../constants/ProgramTypeCodes'
-import { StatusCodes } from '../../../constants/StatusCodes'
 import { SummaryTypes } from '../../../constants/SummaryTypes'
-import { CreateBenefitSummary, CreateGenericBenefitObj } from './_middleware'
+import {
+  CreateBenefitSummary,
+  CreateGenericBenefitObj,
+} from '../../../lib/BenefitsMapping'
 
 export default async function GetCPPProgramData() {
   try {
@@ -17,20 +18,6 @@ export default async function GetCPPProgramData() {
     return null
   }
 }
-
-const CPPTypes = [
-  {
-    value: 'Beneficial',
-    type: TypeCodes.CPPBeneficial,
-  },
-]
-
-const CPPStatus = [
-  {
-    value: 32294,
-    status: StatusCodes.inPayment,
-  },
-]
 
 ///CPP result object maping
 // {
