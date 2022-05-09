@@ -30,10 +30,9 @@ export default function UniversalBenefitCard(props) {
             <h2 className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
               {t[props.benefit.programCode]}
             </h2>
-            {/* <HorizontalRule width="w-1/3" visibility="sm:hidden" /> */}
           </div>
 
-          <div className=" grid col-span-3">
+          <div className="grid col-span-3">
             <div className="grid col-span-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display">
               {props.benefit.summaries == null ||
               props.benefit.summaries.length <= 0
@@ -56,7 +55,7 @@ export default function UniversalBenefitCard(props) {
                   ? null
                   : props.benefit.taskGroups.map((taskList, index) => {
                       return (
-                        <div className=" p-2" key={index}>
+                        <div className="p-2" key={index}>
                           <BenefitTasks
                             isExpanded={true}
                             header={taskList.Header}
@@ -66,26 +65,27 @@ export default function UniversalBenefitCard(props) {
                         </div>
                       )
                     })}
-                <ViewMoreLessButton
-                  id={props.benefit.programCode + '-card-button'}
-                  onClick={() => {
-                    const newOpenState = !isOpen
-                    const idToScrollTo = newOpenState
-                      ? taskListId
-                      : benefitCardId
-                    document.getElementById(idToScrollTo).scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                    })
-                    setIsOpen(newOpenState)
-                  }}
-                  plus={isOpen}
-                  caption={t[props.benefit.taskHeadingKey]}
-                />
               </div>
             )}
           </div>
         </div>
+      </div>
+      <HorizontalRule width="w-auto sm:w-full" />
+      <div className="pl-4">
+        <ViewMoreLessButton
+          id={props.benefit.programCode + '-card-button'}
+          onClick={() => {
+            const newOpenState = !isOpen
+            const idToScrollTo = newOpenState ? taskListId : benefitCardId
+            document.getElementById(idToScrollTo).scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            })
+            setIsOpen(newOpenState)
+          }}
+          plus={isOpen}
+          caption={t[props.benefit.taskHeadingKey]}
+        />
       </div>
     </div>
   )

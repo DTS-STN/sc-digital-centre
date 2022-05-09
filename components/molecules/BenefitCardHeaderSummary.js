@@ -7,7 +7,7 @@ export default function BenefitCardHeaderSummary(props) {
   const typesWithLinks = [SummaryTypes.PaymentAmount, SummaryTypes.LatestStatus]
 
   return (
-    <div className=" w-full">
+    <div className="w-full">
       <p className="">{t[props.summary.type].title}</p>
       <p className="font-bold ">{props.summary.value}</p>
       <p className="font-bold ">{props.summary.status ?? null}</p>
