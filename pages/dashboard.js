@@ -63,10 +63,37 @@ import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { StatusCodes } from '../constants/StatusCodes'
 import { ProgramCodes } from '../constants/ProgramCodes'
 import { TypeCodes } from '../constants/ProgramTypeCodes'
-import GetCPPProgramData from './api/programData/cpp'
-import GetEIProgramData from './api/programData/ei'
+import { useEffect, useState } from 'react'
 
 export default function Dashboard(props) {
+  const [usersBenefits, setUsersBenefits] = useState([])
+  const [cppLoading, setCppLoading] = useState(false)
+  const [eiLoading, setEiLoading] = useState(false)
+
+  useEffect(() => {
+    setCppLoading(true)
+    fetch('api/programData/cpp')
+      .then((res) => res.json())
+      .then((cppData) => {
+        const currData = usersBenefits
+        currData.push(cppData)
+        setUsersBenefits(currData)
+        setCppLoading(false)
+      })
+  }, [usersBenefits])
+
+  useEffect(() => {
+    setEiLoading(true)
+    fetch('api/programData/ei')
+      .then((res) => res.json())
+      .then((eiData) => {
+        const currData = usersBenefits
+        currData.push(eiData)
+        setUsersBenefits(currData)
+        setEiLoading(false)
+      })
+  }, [usersBenefits])
+
   return (
     <>
       <Layout
@@ -83,9 +110,10 @@ export default function Dashboard(props) {
             <Greeting locale={props.locale} name="Mary" />
 
             {/* New Benefit Cards API driven */}
-            {props.usersBenefits == null || props.usersBenefits.length <= 0
+            {!cppLoading && !eiLoading ? null : 'Loading User Data...'}
+            {usersBenefits == null || usersBenefits.length <= 0
               ? null
-              : props.usersBenefits.map((value, index) => {
+              : usersBenefits.map((value, index) => {
                   return (
                     <UniversalBenefitCard
                       key={index}
@@ -202,7 +230,6 @@ export async function getServerSideProps({ req, locale }) {
   // const session = await getSession({ req })
   // const isAuth = session ? true : false
 
-
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
@@ -212,10 +239,10 @@ export async function getServerSideProps({ req, locale }) {
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
 
   const usersBenefts = [] // to be retrieved by API
-  const cppData = await GetCPPProgramData()
-  if (cppData) usersBenefts.push(cppData)
-  const eiData = await GetEIProgramData()
-  if (eiData) usersBenefts.push(eiData)
+  // const cppData = await GetCPPProgramData()
+  // if (cppData) usersBenefts.push(cppData)
+  // const eiData = await GetEIProgramData()
+  // if (eiData) usersBenefts.push(eiData)
 
   return {
     props: {
