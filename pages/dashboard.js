@@ -83,9 +83,9 @@ export default function Dashboard(props) {
           setUsersBenefits(currData)
           setLoading(false)
         })
-        .catch((cppError) => {
+        .catch((error) => {
           setLoading(false)
-          setError(cppError)
+          setError(error)
         })
     },
     [usersBenefits]
