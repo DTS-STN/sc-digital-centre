@@ -57,7 +57,7 @@ import {
   APPLICATION_CARD_CPP_CHILD_REARING_PROVISION,
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
-import { getSession } from 'next-auth/react'
+//import { getSession } from 'next-auth/react'
 import {
   CreateBenefitObjWithCPPData,
   CreateBenefitObjWithEIData,
@@ -202,8 +202,8 @@ export default function Dashboard(props) {
 }
 
 export async function getServerSideProps({ req, locale }) {
-  const session = await getSession({ req })
-  const isAuth = session ? true : false
+  // const session = await getSession({ req })
+  // const isAuth = session ? true : false
 
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
@@ -234,7 +234,7 @@ export async function getServerSideProps({ req, locale }) {
       usersBenefits: currentBenefits,
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
-      isAuth: isAuth,
+      isAuth: true,
       locale,
       langToggleLink,
       metadata,
