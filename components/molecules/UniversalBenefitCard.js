@@ -47,26 +47,6 @@ export default function UniversalBenefitCard(props) {
                     )
                   })}
             </div>
-
-            {props.benefit.taskGroups == null ||
-            props.benefit.taskGroups.length <= 0 ? null : (
-              <div id={taskListId}>
-                {!isOpen
-                  ? null
-                  : props.benefit.taskGroups.map((taskList, index) => {
-                      return (
-                        <div className="p-2" key={index}>
-                          <BenefitTasks
-                            isExpanded={true}
-                            header={taskList.Header}
-                            tasks={taskList.Tasks}
-                          />
-                          <HorizontalRule width="w-auto sm:w-full" />
-                        </div>
-                      )
-                    })}
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -87,6 +67,25 @@ export default function UniversalBenefitCard(props) {
           caption={t[props.benefit.taskHeadingKey]}
         />
       </div>
+      {props.benefit.taskGroups == null ||
+      props.benefit.taskGroups.length <= 0 ? null : (
+        <div id={taskListId}>
+          {!isOpen
+            ? null
+            : props.benefit.taskGroups.map((taskList, index) => {
+                return (
+                  <div className="p-2" key={index}>
+                    <BenefitTasks
+                      isExpanded={true}
+                      header={taskList.Header}
+                      tasks={taskList.Tasks}
+                    />
+                    <HorizontalRule width="w-auto sm:w-full" />
+                  </div>
+                )
+              })}
+        </div>
+      )}
     </div>
   )
 }
