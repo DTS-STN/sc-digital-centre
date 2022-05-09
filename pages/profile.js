@@ -123,9 +123,9 @@ export default function Profile(props) {
                   tabSelected={profileTabSelected}
                   containerStyle={'my-4 flex flex-wrap gap-4'}
                   selectedTabStyle={'bg-bright-blue-lighthover'}
-                  unselectedTabStyle={''}
+                  unselectedTabStyle={'bg-gray-lighter'}
                   genericTabStyle={
-                    'bg-gray-lighter text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover '
+                    'text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover '
                   }
                   locale={props.locale}
                 ></TabList>
