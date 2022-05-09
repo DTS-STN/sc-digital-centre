@@ -9,15 +9,17 @@ import {
   APPLICATION_CARD_CPP,
 } from '../../contents/DashboardBenefitApplicationCards'
 import Dashboard from '../../pages/dashboard'
-import {
-  CreateBenefitSummary,
-  CreateGenericBenefitObj,
-} from '../../pages/api/programData/_middleware'
 import { ProgramCodes } from '../../constants/ProgramCodes'
 import { StatusCodes } from '../../constants/StatusCodes'
 import { TypeCodes } from '../../constants/ProgramTypeCodes'
 import { SummaryTypes } from '../../constants/SummaryTypes'
+import {
+  CreateGenericBenefitJSONForUserDisplay,
+  CreateGenericBenefitSummaryForDisplay,
+} from '../../lib/BenefitsMapping'
+
 expect.extend(toHaveNoViolations)
+
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () =>
@@ -52,11 +54,11 @@ describe('Dashboard', () => {
     APPLICATION_CARD_CPP,
   ]
   const usersBenefits = [
-    CreateGenericBenefitObj(
+    CreateGenericBenefitJSONForUserDisplay(
       ProgramCodes.CPP,
       StatusCodes.Active,
       TypeCodes.CPPRetirement,
-      [CreateBenefitSummary(SummaryTypes.PaymentAmount, 30)]
+      [CreateGenericBenefitSummaryForDisplay(SummaryTypes.PaymentAmount, 30)]
     ),
   ]
   const { container } = render(
