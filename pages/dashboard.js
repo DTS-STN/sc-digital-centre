@@ -63,36 +63,41 @@ import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { StatusCodes } from '../constants/StatusCodes'
 import { ProgramCodes } from '../constants/ProgramCodes'
 import { TypeCodes } from '../constants/ProgramTypeCodes'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export default function Dashboard(props) {
   const [usersBenefits, setUsersBenefits] = useState([])
   const [cppLoading, setCppLoading] = useState(false)
   const [eiLoading, setEiLoading] = useState(false)
+  const [cppError, setCppError] = useState(false)
+  const [eiError, setEiError] = useState(false)
+
+  const fetchProgramData = useCallback(
+    (program, setLoading, setError) => {
+      setLoading(true)
+      fetch(`api/programData/${program}`)
+        .then((res) => res.json())
+        .then((data) => {
+          const currData = usersBenefits
+          currData.push(data)
+          setUsersBenefits(currData)
+          setLoading(false)
+        })
+        .catch((cppError) => {
+          setLoading(false)
+          setError(cppError)
+        })
+    },
+    [usersBenefits]
+  )
 
   useEffect(() => {
-    setCppLoading(true)
-    fetch('api/programData/cpp')
-      .then((res) => res.json())
-      .then((cppData) => {
-        const currData = usersBenefits
-        currData.push(cppData)
-        setUsersBenefits(currData)
-        setCppLoading(false)
-      })
-  }, [usersBenefits])
+    fetchProgramData('cpp', setCppLoading, setCppError)
+  }, [fetchProgramData])
 
   useEffect(() => {
-    setEiLoading(true)
-    fetch('api/programData/ei')
-      .then((res) => res.json())
-      .then((eiData) => {
-        const currData = usersBenefits
-        currData.push(eiData)
-        setUsersBenefits(currData)
-        setEiLoading(false)
-      })
-  }, [usersBenefits])
+    fetchProgramData('ei', setEiLoading, setEiError)
+  }, [fetchProgramData])
 
   return (
     <>
