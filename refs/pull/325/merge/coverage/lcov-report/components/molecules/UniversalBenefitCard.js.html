@@ -200,7 +200,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -231,19 +230,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -295,10 +295,9 @@ export default function UniversalBenefitCard(props) {
             &lt;h2 className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"&gt;
               {t[props.benefit.programCode]}
             &lt;/h2&gt;
-            {/* &lt;HorizontalRule width="w-1/3" visibility="sm:hidden" /&gt; */}
           &lt;/div&gt;
 &nbsp;
-          &lt;div className=" grid col-span-3"&gt;
+          &lt;div className="grid col-span-3"&gt;
             &lt;div className="grid col-span-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"&gt;
               {props.benefit.summaries == null ||
               props.benefit.summaries.length &lt;= 0
@@ -321,7 +320,7 @@ export default function UniversalBenefitCard(props) {
                   ? null
                   : props.benefit.taskGroups.map(<span class="fstat-no" title="function not covered" >(t</span>askList, index) =&gt; {
 <span class="cstat-no" title="statement not covered" >                      return (</span>
-                        &lt;div className=" p-2" key={index}&gt;
+                        &lt;div className="p-2" key={index}&gt;
                           &lt;BenefitTasks
                             isExpanded={true}
                             header={taskList.Header}
@@ -331,26 +330,27 @@ export default function UniversalBenefitCard(props) {
                         &lt;/div&gt;
                       )
                     })}
-                &lt;ViewMoreLessButton
-                  id={props.benefit.programCode + '-card-button'}
-                  onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
-                    const newOpenState = <span class="cstat-no" title="statement not covered" >!isOpen</span>
-                    const idToScrollTo = <span class="cstat-no" title="statement not covered" >newOpenState</span>
-                      ? taskListId
-                      : benefitCardId
-<span class="cstat-no" title="statement not covered" >                    document.getElementById(idToScrollTo).scrollIntoView({</span>
-                      behavior: 'smooth',
-                      block: 'start',
-                    })
-<span class="cstat-no" title="statement not covered" >                    setIsOpen(newOpenState)</span>
-                  }}
-                  plus={isOpen}
-                  caption={t[props.benefit.taskHeadingKey]}
-                /&gt;
               &lt;/div&gt;
             )}
           &lt;/div&gt;
         &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;HorizontalRule width="w-auto sm:w-full" /&gt;
+      &lt;div className="pl-4"&gt;
+        &lt;ViewMoreLessButton
+          id={props.benefit.programCode + '-card-button'}
+          onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+            const newOpenState = <span class="cstat-no" title="statement not covered" >!isOpen</span>
+            const idToScrollTo = <span class="cstat-no" title="statement not covered" >newOpenState ? taskListId : benefitCardId</span>
+<span class="cstat-no" title="statement not covered" >            document.getElementById(idToScrollTo).scrollIntoView({</span>
+              behavior: 'smooth',
+              block: 'start',
+            })
+<span class="cstat-no" title="statement not covered" >            setIsOpen(newOpenState)</span>
+          }}
+          plus={isOpen}
+          caption={t[props.benefit.taskHeadingKey]}
+        /&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   )
@@ -373,7 +373,7 @@ UniversalBenefitCard.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 09 2022 16:17:02 GMT+0000 (Coordinated Universal Time)
+                at Mon May 09 2022 19:03:10 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
