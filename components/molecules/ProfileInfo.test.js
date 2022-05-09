@@ -12,18 +12,22 @@ describe('ProfileInfo', () => {
       {
         title: 'Address',
         fields: ['123 Fake street', 'Ontario, Canada', '1A1-1A1'],
+        moreInfoURL: '',
       },
       {
         title: 'Province of residence',
         fields: ['Ontario'],
+        moreInfoURL: '',
       },
       {
         title: 'Bank Details',
         fields: ['Direct deposit', 'Scotiabank 8510231'],
+        moreInfoURL: '',
       },
       {
         title: 'Phone',
         fields: ['XXX - XXX - 1234'],
+        moreInfoURL: '',
       },
     ],
   }
@@ -33,6 +37,7 @@ describe('ProfileInfo', () => {
       {
         title: 'Written Language',
         fields: ['English'],
+        moreInfoURL: '',
       },
       {
         title: 'Alert me',
@@ -40,6 +45,7 @@ describe('ProfileInfo', () => {
           'Sign up to get an email when important new is available',
           'Registered',
         ],
+        moreInfoURL: '',
       },
     ],
   }

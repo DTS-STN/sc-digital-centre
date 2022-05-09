@@ -86,6 +86,12 @@ module.exports = {
           solid: '#DC2875',
           dark: '#9E4068',
         },
+        'status': {
+          inPayment: '#96D77F',
+          benefitUpdate: '#FFB84D',
+          applicationReceived: '#84D2DC',
+          inactive: '#C4C4C4',
+        },
       },
       backgroundImage: () => ({
         'footer-parliament-image': 'url(../public/landscape.png)',

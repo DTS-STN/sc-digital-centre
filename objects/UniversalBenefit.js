@@ -12,20 +12,26 @@ export function CreateBenefitCardObj(
   typeCode,
   summaries
 ) {
-  return {
+  const benefit = {
     programCode: programCode,
     statusCode: statusCode,
     typeCode: typeCode,
     summaries: summaries, // an array of BenefitSummaries
-    taskGroups: MapBenefitToTaskGroups(programCode, statusCode),
   }
+  const taskGroupMatch = MapBenefitToTaskGroups(programCode, statusCode)
+  if (taskGroupMatch) {
+    benefit.taskGroups = taskGroupMatch.tasksGroups
+    benefit.taskHeadingKey = taskGroupMatch.taskHeadingKey
+  }
+  return benefit
 }
 
+//Programs
 function MapBenefitToTaskGroups(programCode, statusCode) {
   const group = TASK_GROUPS.find(
     (tg) => tg.programCode === programCode && tg.statusCode === statusCode
   )
-  return group ? group.tasksGroups : null
+  return group
 }
 
 export const ProgramCodes = {
@@ -35,27 +41,50 @@ export const ProgramCodes = {
   GIS: 'GIS',
 }
 
+//Card Status
+
 export const StatusCodes = {
-  Active: 'Active',
-  Pending: 'Pending',
+  inPayment: 'inPayment',
+  benefitUpdate: 'benefitUpdate',
+  applicationReceived: 'applicationReceived',
+  inactive: 'inactive',
+  exahusted: 'exhausted',
 }
 
-export const TypeCodes = {
-  CPPBeneficial: 'CPPBeneficial',
-  CPPRetirement: 'CPPRetirement',
-  CPPDisability: 'CPPDisability',
-  EIUnknown: 'EIUnknown',
+export const CPPStatus = [
+  {
+    value: 32294,
+    status: StatusCodes.inPayment,
+  },
+]
+
+export const EIStatus = [
+  {
+    value: 3433,
+    status: StatusCodes.inPayment,
+  },
+]
+
+//Summaries
+
+export const SummaryTypes = {
+  PaymentAmount: 'PaymentAmount',
+  NextReport: 'NextReport',
+  LatestStatus: 'LatestStatus',
+  NextPayment: 'NextPayment',
 }
 
 const TASK_GROUPS = [
   {
     programCode: ProgramCodes.CPP,
-    statusCode: StatusCodes.Active,
+    statusCode: StatusCodes.inPayment,
+    taskHeadingKey: 'paymentsTaxesAccount',
     tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
   },
   {
     programCode: ProgramCodes.EI,
-    statusCode: StatusCodes.Active,
+    statusCode: StatusCodes.inPayment,
+    taskHeadingKey: 'commonPaymentsTaxesAccount',
     tasksGroups: [
       ACTIVE_EI_COMMON_TASKS,
       ACTIVE_EI_PAYMENT_TASKS,
@@ -76,26 +105,14 @@ export function CreateBenefitSummary(type, value, status) {
   return benefitSummary
 }
 
-export const SummaryTypes = {
-  PaymentAmount: 'PaymentAmount',
-  NextReport: 'NextReport',
-  LatestStatus: 'LatestStatus',
-  NextPayment: 'NextPayment',
+//Card Types
+
+export const TypeCodes = {
+  CPPBeneficial: 'CPPBeneficial',
+  CPPRetirement: 'CPPRetirement',
+  CPPDisability: 'CPPDisability',
+  EIUnknown: 'EIUnknown',
 }
-
-export const CPPStatus = [
-  {
-    value: 32294,
-    status: StatusCodes.Active,
-  },
-]
-
-export const EIStatus = [
-  {
-    value: 3433,
-    status: StatusCodes.Active,
-  },
-]
 
 export const CPPTypes = [
   {
