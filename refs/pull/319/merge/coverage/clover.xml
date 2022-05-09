@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652099163369" clover="3.2.0">
-  <project timestamp="1652099163370" name="All files">
-    <metrics statements="325" coveredstatements="193" conditionals="275" coveredconditionals="170" methods="114" coveredmethods="67" elements="714" coveredelements="430" complexity="0" loc="325" ncloc="325" packages="6" files="43" classes="43"/>
+<coverage generated="1652099799099" clover="3.2.0">
+  <project timestamp="1652099799099" name="All files">
+    <metrics statements="323" coveredstatements="193" conditionals="273" coveredconditionals="170" methods="114" coveredmethods="67" elements="710" coveredelements="430" complexity="0" loc="323" ncloc="323" packages="6" files="43" classes="43"/>
     <package name="components.atoms">
       <metrics statements="92" coveredstatements="74" conditionals="86" coveredconditionals="64" methods="34" coveredmethods="29"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -338,7 +338,7 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="89" coveredstatements="20" conditionals="46" coveredconditionals="9" methods="28" coveredmethods="9"/>
+      <metrics statements="87" coveredstatements="20" conditionals="44" coveredconditionals="9" methods="28" coveredmethods="9"/>
       <file name="400.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/400.js">
         <metrics statements="5" coveredstatements="2" conditionals="4" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="5" count="2" type="cond" truecount="1" falsecount="1"/>
@@ -382,12 +382,10 @@
         <line num="10" count="0" type="stmt"/>
       </file>
       <file name="dashboard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/dashboard.js">
-        <metrics statements="49" coveredstatements="3" conditionals="22" coveredconditionals="3" methods="11" coveredmethods="3"/>
+        <metrics statements="47" coveredstatements="3" conditionals="20" coveredconditionals="3" methods="11" coveredmethods="3"/>
         <line num="72" count="2" type="stmt"/>
         <line num="90" count="1" type="stmt"/>
         <line num="167" count="5" type="stmt"/>
-        <line num="205" count="0" type="stmt"/>
-        <line num="206" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="208" count="0" type="stmt"/>
         <line num="214" count="0" type="stmt"/>
         <line num="216" count="0" type="cond" truecount="0" falsecount="2"/>
