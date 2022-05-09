@@ -284,7 +284,7 @@ export default {
   viewPaymentHistory: 'View my payments',
   transactionDate: 'Transaction date:',
   agreementStatus: 'Agreement status:',
-  netAmount: '$ {0}',
+  netAmount: '${0}',
 
   // Benefit Card details
   applicationDate: 'Application date',

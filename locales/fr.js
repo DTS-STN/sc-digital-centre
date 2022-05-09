@@ -275,7 +275,7 @@ export default {
   viewPaymentHistory: '(FR)View my payments',
   transactionDate: '(FR)Transaction date:',
   agreementStatus: '(FR)Agreement status:',
-  netAmount: '{0} $',
+  netAmount: '{0}$',
 
   // Benefit Card details
   applicationDate: '(FR)Application date',

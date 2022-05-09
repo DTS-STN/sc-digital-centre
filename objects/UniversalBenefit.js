@@ -21,8 +21,6 @@ export function CreateBenefitCardObj(
   }
 }
 
-import { formatDate } from '../components/organisms/DashboardUtils'
-
 //Programs
 function MapBenefitToTaskGroups(programCode, statusCode) {
   const group = TASK_GROUPS.find(
@@ -146,9 +144,9 @@ export function CreateBenefitObjWithCPPData(cppBenefitData) {
     [
       CreateBenefitSummary(
         SummaryTypes.PaymentAmount,
-        '$' + cppBenefitData.netAmount
+        cppBenefitData.netAmount
       ),
-      CreateBenefitSummary(SummaryTypes.NextPayment, formatDate(nextPayment)),
+      CreateBenefitSummary(SummaryTypes.NextPayment, nextPayment),
       CreateBenefitSummary(SummaryTypes.LatestStatus, null, null),
     ]
   )
@@ -172,17 +170,14 @@ export function CreateBenefitObjWithEIData(eiBenefitData) {
     EIStatus.find((s) => s.value == eiBenefitData.claimStatusCode).status,
     EITypes.find((t) => t.value == eiBenefitData.enmBenefitType).type,
     [
-      CreateBenefitSummary(
-        SummaryTypes.PaymentAmount,
-        '$' + eiBenefitData.netAmount
-      ),
+      CreateBenefitSummary(SummaryTypes.PaymentAmount, eiBenefitData.netAmount),
       CreateBenefitSummary(
         SummaryTypes.NextReport,
-        formatDate(eiBenefitData.nextRptDueDate)
+        eiBenefitData.nextRptDueDate
       ),
       CreateBenefitSummary(
         SummaryTypes.LatestStatus,
-        formatDate(eiBenefitData.publishDate),
+        eiBenefitData.publishDate,
         eiBenefitData.messageData
       ),
     ]
