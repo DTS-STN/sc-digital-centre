@@ -74,7 +74,7 @@ export default function UniversalBenefitCard(props) {
             ? null
             : props.benefit.taskGroups.map((taskList, index) => {
                 return (
-                  <div className="p-2" key={index}>
+                  <div key={index}>
                     <BenefitTasks
                       isExpanded={true}
                       header={taskList.Header}
