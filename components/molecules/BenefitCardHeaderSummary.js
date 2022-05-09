@@ -30,7 +30,9 @@ export default function BenefitCardHeaderSummary(props) {
       <p>{t[props.summary.type].title}</p>
       <p
         className={
-          props.summary.type === SummaryTypes.PaymentAmount ? 'font-bold' : null
+          props.summary.type === SummaryTypes.PaymentAmount
+            ? 'font-bold text-3xl'
+            : 'text-lg'
         }
       >
         {getBenefitCardValue()}
