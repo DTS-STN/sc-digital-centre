@@ -202,7 +202,7 @@ export default function Dashboard(props) {
   )
 }
 
-export async function getServerSideProps({ req, locale }) {
+export async function getStaticProps({ req, locale }) {
   // const session = await getSession({ req })
   // const isAuth = session ? true : false
 
