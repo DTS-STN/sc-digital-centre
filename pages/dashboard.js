@@ -69,6 +69,7 @@ export default function Dashboard(props) {
   const [usersBenefits, setUsersBenefits] = useState([])
   const [cppLoading, setCppLoading] = useState(false)
   const [eiLoading, setEiLoading] = useState(false)
+  //no requirements to do anything with the errors yet
   const [cppError, setCppError] = useState(false)
   const [eiError, setEiError] = useState(false)
 
@@ -114,9 +115,9 @@ export default function Dashboard(props) {
           <div className="mb-8">
             <Greeting locale={props.locale} name="Mary" />
 
-            {/* New Benefit Cards API driven */}
-            {!cppLoading && !eiLoading ? null : 'Loading User Data...'}
-            {usersBenefits == null || usersBenefits.length <= 0
+            {/* todo, design to create loading */}
+            {!cppLoading && !eiLoading ? null : 'Loading User Benefit Data...'}
+            {!usersBenefits || !usersBenefits.length
               ? null
               : usersBenefits.map((value, index) => {
                   return (
@@ -128,6 +129,7 @@ export default function Dashboard(props) {
                   )
                 })}
 
+            {/* Old Benefit Cards, to be removed once mocks are generated with new cards */}
             <BenefitCard
               locale={props.locale}
               benefit={SUBMITTED_CPP}
