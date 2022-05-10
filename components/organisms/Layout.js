@@ -70,6 +70,7 @@ export default function Layout(props) {
           <DSHeader
             locale={props.locale}
             langToggleLink={props.langToggleLink}
+            isAuth={props.isAuth}
           />
         </>
       ) : (

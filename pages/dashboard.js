@@ -57,7 +57,7 @@ import {
   APPLICATION_CARD_CPP_CHILD_REARING_PROVISION,
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
-
+//import { getSession } from 'next-auth/react'
 import {
   CreateBenefitObjWithCPPData,
   CreateBenefitObjWithEIData,
@@ -78,6 +78,7 @@ export default function Dashboard(props) {
         displayDSFooter={true}
         metadata={props.metadata}
         langToggleLink={props.langToggleLink}
+        isAuth={props.isAuth}
       >
         <LayoutContainer>
           <div className="mb-8">
@@ -201,12 +202,16 @@ export default function Dashboard(props) {
   )
 }
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ req, locale }) {
+  // const session = await getSession({ req })
+  // const isAuth = session ? true : false
+
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
     description: 'en + fr description',
   }
+
   const currentBenefits = [] // to be retrieved by API
 
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
@@ -220,6 +225,7 @@ export async function getStaticProps({ locale }) {
 
   const activeCpp = await getActiveCpp()
   const activeEi = await getActiveEi()
+
   currentBenefits.push(CreateBenefitObjWithCPPData(activeCpp))
   currentBenefits.push(CreateBenefitObjWithEIData(activeEi))
 
@@ -229,6 +235,7 @@ export async function getStaticProps({ locale }) {
       usersBenefits: currentBenefits,
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
+      isAuth: true,
       locale,
       langToggleLink,
       metadata,
