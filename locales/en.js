@@ -290,17 +290,10 @@ export default {
   applicationDate: 'Application date',
   latestActivity: 'Latest activity',
   viewMyStatusAndMessages: 'View my status and messages',
-  accountDetails: 'Account details',
   nextPayment: 'Next payment',
   lastPayment: 'Last payment',
   benefitStartDate: 'Benefit start date',
   pensionStartDate: 'Pension start date',
-  payeeAddress: 'Address',
-  payeePhoneNumber: 'Phone number',
-  paymentDetails: 'Payment details',
-  addYourAddress: 'Add your address',
-  addYourPhoneNumber: 'Add your phone number',
-  addYourPaymentDetails: 'Add your payment details',
 
   // Benefit Card Status'
   inactive: 'Inactive',
@@ -322,6 +315,7 @@ export default {
     'Common actions, payments, taxes, reports, and account information',
 
   // dashboard benefits tasks
+  updateAccountInfoTask: 'Update my account information',
   allPaymentsTask: 'View all payments',
   statusUpdateTask: 'View my status and messages',
   retirementIncomeTask: 'Estimate retirement income',
@@ -393,14 +387,11 @@ export default {
   profileAndPreferences: 'Profile and Preferences',
   securitySettings: 'Security Settings',
   backToDashboard: 'Back to my dashboard',
+  edit: 'Edit',
+  moreInfo: 'More Information',
 
   //Dashboard task links
-  editAddress:
-    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',
-  editPhoneNumber:
-    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyContactInfo.aspx?prov=6',
-  editPayment:
-    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyDDPInfo.aspx?prov=6',
+  updateAccountInfoTaskLink: '/profile',
   viewPaymentInfoLink:
     'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
   viewDocumentsLink:

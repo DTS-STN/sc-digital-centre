@@ -10,10 +10,12 @@ describe('ProfileInfoSection', () => {
     {
       title: 'test1',
       fields: ['testing'],
+      moreInfoURL: '',
     },
     {
       title: 'test2',
       fields: ['yes', 'no'],
+      moreInfoURL: '',
     },
   ]
 

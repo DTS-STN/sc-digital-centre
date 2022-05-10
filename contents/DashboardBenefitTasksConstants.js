@@ -6,6 +6,11 @@ const t = en
 
 const TASKS = {
   // general tasks
+  UpdateAccountInfoTask: {
+    task: t.updateAccountInfoTask,
+    taskIcon: '/images/dashboard/account-info-icon.svg',
+    taskLink: t.updateAccountInfoTaskLink,
+  },
   TaxSlipTask: {
     task: t.taxSlipTask,
     taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
@@ -193,7 +198,11 @@ const SUBMITTED_CPP_ESTIMATE_TASKS = {
 
 const SUBMITTED_CPP_CHANGE_TASKS = {
   Header: t.changeTasks,
-  Tasks: [TASKS.DelayOasPensionTask, TASKS.GiveConsentTask],
+  Tasks: [
+    TASKS.DelayOasPensionTask,
+    TASKS.GiveConsentTask,
+    TASKS.UpdateAccountInfoTask,
+  ],
 }
 
 const ACTIVE_CPP_PAYMENT_TASKS = {
@@ -213,6 +222,7 @@ const ACTIVE_CPP_CHANGE_TASKS = {
     TASKS.ReconsiderationTask,
     TASKS.DelayOasPensionTask,
     TASKS.GiveConsentTask,
+    TASKS.UpdateAccountInfoTask,
   ],
 }
 
@@ -221,6 +231,7 @@ const INACTIVE_CPP_TASKS = [
   TASKS.StatusUpdateTask,
   TASKS.AllPaymentsTask,
   TASKS.TaxSlipT4aAndNr4Task,
+  TASKS.UpdateAccountInfoTask,
 ]
 
 const SUBMITTED_CPPD_TASKS = [
@@ -232,6 +243,7 @@ const SUBMITTED_CPPD_TASKS = [
   TASKS.TaxDeductionsTask,
   TASKS.GiveConsentTask,
   TASKS.UploadMyDocuments,
+  TASKS.UpdateAccountInfoTask,
 ]
 
 const ACTIVE_CPPD_TASKS = [
@@ -243,6 +255,7 @@ const ACTIVE_CPPD_TASKS = [
   TASKS.TaxDeductionsTask,
   TASKS.GiveConsentTask,
   TASKS.UploadMyDocuments,
+  TASKS.UpdateAccountInfoTask,
 ]
 
 const SUBMITTED_OAS_TASKS = [
@@ -256,6 +269,7 @@ const SUBMITTED_OAS_TASKS = [
   TASKS.TaxSlipTask,
   TASKS.TaxSlipMailingTask,
   TASKS.ReconsiderationTask,
+  TASKS.UpdateAccountInfoTask,
 ]
 
 const ACTIVE_OAS_TASKS = [
@@ -269,6 +283,7 @@ const ACTIVE_OAS_TASKS = [
   TASKS.CppContributionTask,
   TASKS.RetirementIncomeTask,
   TASKS.ReconsiderationTask,
+  TASKS.UpdateAccountInfoTask,
 ]
 
 const SUBMITTED_EI_TASKS = [
@@ -283,11 +298,17 @@ const SUBMITTED_EI_TASKS = [
   TASKS.TaxSlipTask,
   TASKS.TaxSlipMailingTask,
   TASKS.RegisterForAlerts,
+  TASKS.UpdateAccountInfoTask,
 ]
 
 const ACTIVE_EI_COMMON_TASKS = {
   Header: t.commonActions,
-  Tasks: [TASKS.EiStatusUpdateTask, TASKS.AccessCode, TASKS.ReportMistake],
+  Tasks: [
+    TASKS.EiStatusUpdateTask,
+    TASKS.AccessCode,
+    TASKS.ReportMistake,
+    TASKS.UpdateAccountInfoTask,
+  ],
 }
 
 const ACTIVE_EI_PAYMENT_TASKS = {
@@ -317,6 +338,7 @@ const INACTIVE_EI_TASKS = [
   TASKS.ViewPastClaimsTask,
   TASKS.ViewPaymentInfo,
   TASKS.TaxSlipT4eTask,
+  TASKS.UpdateAccountInfoTask,
 ]
 
 const NO_BENEFIT_CPP_TASKS = [

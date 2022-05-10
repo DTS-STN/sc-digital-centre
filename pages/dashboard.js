@@ -57,6 +57,7 @@ import {
   APPLICATION_CARD_CPP_CHILD_REARING_PROVISION,
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
+//import { getSession } from 'next-auth/react'
 import Layout from '../components/organisms/Layout'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { StatusCodes } from '../constants/StatusCodes'
@@ -75,6 +76,7 @@ export default function Dashboard(props) {
         displayDSFooter={true}
         metadata={props.metadata}
         langToggleLink={props.langToggleLink}
+        isAuth={props.isAuth}
       >
         <LayoutContainer>
           <div className="mb-8">
@@ -197,6 +199,10 @@ export default function Dashboard(props) {
 }
 
 export async function getServerSideProps({ req, locale }) {
+  // const session = await getSession({ req })
+  // const isAuth = session ? true : false
+
+
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
@@ -215,6 +221,7 @@ export async function getServerSideProps({ req, locale }) {
     props: {
       advertisingCards: BuildAdvertisingCards(usersBenefts),
       usersBenefits: usersBenefts,
+      isAuth: true,
       locale,
       langToggleLink,
       metadata,

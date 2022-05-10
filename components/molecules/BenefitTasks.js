@@ -10,7 +10,7 @@ export default function BenefitTasks(props) {
   const customHeader = props.header != null
 
   return (
-    <div className="bg-gray-lighter px-8 py-6 rounded-b-lg">
+    <div className="bg-gray-lighter px-8 py-6 group-last:rounded-b-lg">
       <h3 className="font-display font-bold text-xl">
         {customHeader
           ? props.header
