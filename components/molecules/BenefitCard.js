@@ -5,7 +5,6 @@ import BenefitCardHeaderInactive from '../atoms/BenefitCardHeaderInactive'
 import BenefitCardHeaderPending from '../atoms/BenefitCardHeaderPending'
 import BenefitCardHeaderActiveAgreement from '../atoms/BenefitCardHeaderActiveAgreement'
 import BenefitTasks from './BenefitTasks'
-import ActiveBenefitDetails from './ActiveBenefitDetails'
 import HorizontalRule from '../atoms/HorizontalRule'
 import BenefitStatus from '../../constants/BenefitStatus'
 import en from '../../locales/en'
@@ -160,14 +159,6 @@ const BenefitCard = (props) => {
           })
         )}
       </div>
-      {/* Benefit Card Details */}
-      {isOpen &&
-      props.benefit.status.toUpperCase() ===
-        BenefitStatus.active.toUpperCase() ? (
-        <ActiveBenefitDetails benefit={props.benefit} locale={props.locale} />
-      ) : (
-        <></>
-      )}
       {!(
         props.benefit.status.toUpperCase() ===
           BenefitStatus.inactive.toUpperCase() && props.tasks.length < 6

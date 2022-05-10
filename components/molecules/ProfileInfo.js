@@ -9,6 +9,7 @@ export default function ProfileInfo(props) {
           key={field.title}
           title={field.title}
           info={field.info}
+          locale={props.locale}
         />
       ))}
     </div>
@@ -20,4 +21,8 @@ ProfileInfo.propTypes = {
    *  fields in the profile sections
    */
   fields: propTypes.array,
+  /**
+   * page locale
+   */
+  locale: propTypes.string,
 }

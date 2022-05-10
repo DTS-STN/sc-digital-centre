@@ -26,7 +26,7 @@ export default function BenefitCardHeaderSummary(props) {
   }
 
   return (
-    <div>
+    <div className="w-full">
       <p>{t[props.summary.type].title}</p>
       <p
         className={
@@ -39,7 +39,7 @@ export default function BenefitCardHeaderSummary(props) {
       </p>
       <p className="font-bold">{props.summary.status ?? null}</p>
       {!typesWithLinks.find((t) => t === props.summary.type) ? null : (
-        <p>
+        <p className="font-body">
           <Link
             text={t[props.summary.type].linkText}
             href={t[props.summary.type].link}
