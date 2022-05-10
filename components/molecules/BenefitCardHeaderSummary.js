@@ -1,8 +1,5 @@
-import { Link } from '@dts-stn/decd-design-system'
 import propTypes from 'prop-types'
 import { SummaryTypes } from '../../objects/UniversalBenefit'
-import en from '../../locales/en'
-import fr from '../../locales/fr'
 import { formatDate } from '../organisms/DashboardUtils'
 
 export default function BenefitCardHeaderSummary(props) {
