@@ -50,7 +50,7 @@ COPY --from=build --chown=55:$group /build/next.config.js ./
 COPY --from=build --chown=55:$group /build/package*.json ./
 COPY --from=build --chown=55:$group /build/.next ./.next
 COPY --from=build --chown=55:$group /build/public ./public
-RUN npm install next
+RUN VERSION_NEXT=`node -p -e "require('./package.json').dependencies.next"`&& npm install --no-package-lock --no-save next@"$VERSION_NEXT"
 USER $user
 
 CMD npm run start
