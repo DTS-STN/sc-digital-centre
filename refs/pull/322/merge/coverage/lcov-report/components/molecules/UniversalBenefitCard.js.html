@@ -142,7 +142,24 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -172,6 +189,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,17 +213,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,6 +223,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -253,18 +287,49 @@ export default function UniversalBenefitCard(props) {
   return (
     &lt;div className="benefit-card" id={benefitCardId}&gt;
       &lt;StatusBadge status={props.benefit.statusCode} locale={props.locale} /&gt;
-      &lt;h2&gt;{t[props.benefit.programCode]}&lt;/h2&gt;
-      {props.benefit.summaries == null || props.benefit.summaries.length &lt;= 0
-        ? null
-        : props.benefit.summaries.map((summary, index) =&gt; {
-            return (
-              &lt;BenefitCardHeaderSummary
-                key={index}
-                locale={t}
-                summary={summary}
-              /&gt;
-            )
-          })}
+      &lt;div className="px-4 md:px-6"&gt;
+        &lt;div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"&gt;
+          &lt;div className="col-span-1 py-4 md:px-0 lg:px-2"&gt;
+            &lt;h2 className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44"&gt;
+              {t[props.benefit.programCode]}
+            &lt;/h2&gt;
+          &lt;/div&gt;
+&nbsp;
+          &lt;div className="grid col-span-3"&gt;
+            &lt;div className="grid col-span-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"&gt;
+              {props.benefit.summaries == null ||
+              props.benefit.summaries.length &lt;= 0
+                ? null
+                : props.benefit.summaries.map((summary, index) =&gt; {
+                    return (
+                      &lt;BenefitCardHeaderSummary
+                        key={index}
+                        locale={t}
+                        summary={summary}
+                      /&gt;
+                    )
+                  })}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;HorizontalRule width="w-auto sm:w-full" /&gt;
+      &lt;div className="pl-4"&gt;
+        &lt;ViewMoreLessButton
+          id={props.benefit.programCode + '-card-button'}
+          onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+            const newOpenState = <span class="cstat-no" title="statement not covered" >!isOpen</span>
+            const idToScrollTo = <span class="cstat-no" title="statement not covered" >newOpenState ? taskListId : benefitCardId</span>
+<span class="cstat-no" title="statement not covered" >            document.getElementById(idToScrollTo).scrollIntoView({</span>
+              behavior: 'smooth',
+              block: 'start',
+            })
+<span class="cstat-no" title="statement not covered" >            setIsOpen(newOpenState)</span>
+          }}
+          plus={isOpen}
+          caption={t[props.benefit.taskHeadingKey]}
+        /&gt;
+      &lt;/div&gt;
       {props.benefit.taskGroups == null ||
 <span class="branch-1 cbranch-no" title="branch not covered" >      props.benefit.taskGroups.length &lt;= 0 </span>? null : (
 <span class="branch-1 cbranch-no" title="branch not covered" >        &lt;div id={taskListId}&gt;</span>
@@ -272,7 +337,7 @@ export default function UniversalBenefitCard(props) {
             ? null
             : props.benefit.taskGroups.map(<span class="fstat-no" title="function not covered" >(t</span>askList, index) =&gt; {
 <span class="cstat-no" title="statement not covered" >                return (</span>
-                  &lt;div key={index}&gt;
+                  &lt;div className="group" key={index}&gt;
                     &lt;BenefitTasks
                       isExpanded={true}
                       header={taskList.Header}
@@ -282,20 +347,6 @@ export default function UniversalBenefitCard(props) {
                   &lt;/div&gt;
                 )
               })}
-          &lt;ViewMoreLessButton
-            id={props.benefit.programCode + '-card-button'}
-            onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
-              const newOpenState = <span class="cstat-no" title="statement not covered" >!isOpen</span>
-              const idToScrollTo = <span class="cstat-no" title="statement not covered" >newOpenState ? taskListId : benefitCardId</span>
-<span class="cstat-no" title="statement not covered" >              document.getElementById(idToScrollTo).scrollIntoView({</span>
-                behavior: 'smooth',
-                block: 'start',
-              })
-<span class="cstat-no" title="statement not covered" >              setIsOpen(newOpenState)</span>
-            }}
-            plus={isOpen}
-            caption={t[props.benefit.taskHeadingKey]}
-          /&gt;
         &lt;/div&gt;
       )}
     &lt;/div&gt;
@@ -319,7 +370,7 @@ UniversalBenefitCard.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 09 2022 15:23:58 GMT+0000 (Coordinated Universal Time)
+                at Tue May 10 2022 13:16:33 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
