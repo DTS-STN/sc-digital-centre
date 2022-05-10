@@ -12,12 +12,16 @@ export default function BenefitCardHeaderSummary(props) {
   const getBenefitCardValue = () => {
     switch (props.summary.type) {
       case SummaryTypes.PaymentAmount:
-        return t.netAmount.replace('{0}', props.summary.value)
+        return (
+          <p className="text-3xl">
+            {t.netAmount.replace('{0}', props.summary.value)}
+          </p>
+        )
         break
       case SummaryTypes.NextPayment:
       case SummaryTypes.NextReport:
       case SummaryTypes.LatestStatus:
-        return formatDate(props.summary.value)
+        return <p className="text-lg">{formatDate(props.summary.value)}</p>
         break
       default:
         return null
@@ -27,24 +31,16 @@ export default function BenefitCardHeaderSummary(props) {
 
   return (
     <div className="w-full">
-      <p>{t[props.summary.type].title}</p>
-      <p
-        className={
-          props.summary.type === SummaryTypes.PaymentAmount
-            ? 'font-bold text-3xl'
-            : 'text-lg'
-        }
-      >
-        {getBenefitCardValue()}
-      </p>
+      <p className="font-bold">{t[props.summary.type].title}</p>
+      {getBenefitCardValue()}
       <p className="font-bold">{props.summary.status ?? null}</p>
       {!typesWithLinks.find((t) => t === props.summary.type) ? null : (
-        <p className="font-body">
-          <Link
-            text={t[props.summary.type].linkText}
-            href={t[props.summary.type].link}
-          />
-        </p>
+        <a
+          href={t[props.summary.type].link}
+          className="mt-1 text-link-blue-default underline text-base hover:text-link-blue-hover"
+        >
+          {t[props.summary.type].linkText}
+        </a>
       )}
     </div>
   )
