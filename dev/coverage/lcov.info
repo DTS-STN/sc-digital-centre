@@ -1032,7 +1032,7 @@ SF:pages/dashboard.js
 FN:71,Dashboard
 FN:90,(anonymous_1)
 FN:167,(anonymous_2)
-FN:205,getStaticProps
+FN:205,getServerSideProps
 FN:246,getActiveCpp
 FN:261,getActiveEi
 FN:276,BuildAdvertisingCards
@@ -1045,7 +1045,7 @@ FNH:3
 FNDA:2,Dashboard
 FNDA:1,(anonymous_1)
 FNDA:5,(anonymous_2)
-FNDA:0,getStaticProps
+FNDA:0,getServerSideProps
 FNDA:0,getActiveCpp
 FNDA:0,getActiveEi
 FNDA:0,BuildAdvertisingCards
