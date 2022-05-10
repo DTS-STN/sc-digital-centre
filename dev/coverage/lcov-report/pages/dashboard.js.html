@@ -404,7 +404,14 @@
 <a name='L345'></a><a href='#L345'>345</a>
 <a name='L346'></a><a href='#L346'>346</a>
 <a name='L347'></a><a href='#L347'>347</a>
-<a name='L348'></a><a href='#L348'>348</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -476,6 +483,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -608,28 +616,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -810,7 +824,7 @@ import {
   APPLICATION_CARD_CPP_CHILD_REARING_PROVISION,
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
-&nbsp;
+//import { getSession } from 'next-auth/react'
 import {
   CreateBenefitObjWithCPPData,
   CreateBenefitObjWithEIData,
@@ -831,6 +845,7 @@ export default function Dashboard(props) {
         displayDSFooter={true}
         metadata={props.metadata}
         langToggleLink={props.langToggleLink}
+        isAuth={props.isAuth}
       &gt;
         &lt;LayoutContainer&gt;
           &lt;div className="mb-8"&gt;
@@ -954,12 +969,16 @@ export default function Dashboard(props) {
   )
 }
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >getStaticProps(</span>{ locale }) {
+export async function <span class="fstat-no" title="function not covered" >getServerSideProps(</span>{ req, locale }) {
+  // const session = await getSession({ req })
+  // const isAuth = session ? true : false
+&nbsp;
   const metadata = <span class="cstat-no" title="statement not covered" >{</span>
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
     description: 'en + fr description',
   }
+&nbsp;
   const currentBenefits = <span class="cstat-no" title="statement not covered" >[] </span>// to be retrieved by API
 &nbsp;
   const langToggleLink = <span class="cstat-no" title="statement not covered" >locale === 'en' ? '/fr/dashboard' : '/dashboard'</span>
@@ -973,6 +992,7 @@ export async function <span class="fstat-no" title="function not covered" >getSt
 &nbsp;
   const activeCpp = <span class="cstat-no" title="statement not covered" >await getActiveCpp()</span>
   const activeEi = <span class="cstat-no" title="statement not covered" >await getActiveEi()</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >  currentBenefits.push(CreateBenefitObjWithCPPData(activeCpp))</span>
 <span class="cstat-no" title="statement not covered" >  currentBenefits.push(CreateBenefitObjWithEIData(activeEi))</span>
 &nbsp;
@@ -982,6 +1002,7 @@ export async function <span class="fstat-no" title="function not covered" >getSt
       usersBenefits: currentBenefits,
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
+      isAuth: true,
       locale,
       langToggleLink,
       metadata,
@@ -1105,7 +1126,7 @@ function <span class="fstat-no" title="function not covered" >CheckAllBenefitsFo
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 09 2022 15:11:01 GMT+0000 (Coordinated Universal Time)
+                at Tue May 10 2022 12:34:29 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
