@@ -82,6 +82,11 @@ object Build_Release: BuildType({
         param("env.OCP_APIM_SUBSCRIPTION_KEY", "%vault:dts-secrets-dev/data/digitalCentre!/OCP_APIM_SUBSCRIPTION_KEY%")
         param("env.CPP_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/data/digitalCentre!/CPP_ACTIVE_BENEFIT_URL%")
         param("env.EI_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/data/digitalCentre!/EI_ACTIVE_BENEFIT_URL%")
+        param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
+        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
+        param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
+        param("env.NEXTAUTH_URL", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_URL%")
+        param("env.WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/WELL_KNOWN%")
         param("env.TARGET", "dev")
         param("env.BRANCH", "release")
     }

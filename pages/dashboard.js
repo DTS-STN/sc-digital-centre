@@ -203,8 +203,17 @@ export default function Dashboard(props) {
 }
 
 export async function getServerSideProps({ req, locale }) {
-  // const session = await getSession({ req })
-  // const isAuth = session ? true : false
+  const session = await getSession({ req })
+  const isAuth = session ? true : false
+
+  if (!isAuth) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/api/auth/signin',
+      },
+    }
+  }
 
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
@@ -235,7 +244,7 @@ export async function getServerSideProps({ req, locale }) {
       usersBenefits: currentBenefits,
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
-      isAuth: true,
+      isAuth: isAuth,
       locale,
       langToggleLink,
       metadata,
