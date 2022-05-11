@@ -205,7 +205,10 @@ export default function Dashboard(props) {
 export async function getServerSideProps({ req, locale }) {
   let isAuth = false
 
-  if (process.env.NODE_ENV === 'production') {
+  if (
+    !process.env.AUTH_DISABLED ||
+    process.env.AUTH_DISABLED.toLowerCase() === 'false'
+  ) {
     const session = await getSession({ req })
     isAuth = session ? true : false
 
