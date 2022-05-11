@@ -203,15 +203,19 @@ export default function Dashboard(props) {
 }
 
 export async function getServerSideProps({ req, locale }) {
-  const session = await getSession({ req })
-  const isAuth = session ? true : false
+  let isAuth = false
 
-  if (!isAuth) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/api/auth/signin',
-      },
+  if (process.env.NODE_ENV === 'production') {
+    const session = await getSession({ req })
+    isAuth = session ? true : false
+
+    if (!isAuth) {
+      return {
+        redirect: {
+          permanent: false,
+          destination: '/api/auth/signin',
+        },
+      }
     }
   }
 
