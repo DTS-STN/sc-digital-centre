@@ -16,7 +16,7 @@ describe('BenefitCardHeaderSummary', () => {
   )
 
   const { container } = render(
-    <BenefitCardHeaderSummary locale={en} summary={summary} />
+    <BenefitCardHeaderSummary locale="en" summary={summary} />
   )
 
   it('renders', () => {
