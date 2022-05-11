@@ -25,7 +25,7 @@ export default function UniversalBenefitCard(props) {
   return (
     <div className="benefit-card" id={benefitCardId}>
       <StatusBadge status={props.benefit.statusCode} locale={props.locale} />
-      <div className="px-4 md:px-6">
+      <div className="px-4 md:px-6 pb-6">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
           <div className="col-span-1 py-4 md:px-0 lg:px-2">
             <h2 className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">

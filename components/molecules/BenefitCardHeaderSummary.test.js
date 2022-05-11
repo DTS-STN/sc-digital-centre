@@ -21,7 +21,7 @@ describe('BenefitCardHeaderSummary', () => {
 
   it('renders', () => {
     const title = screen.getByText(en[summary.type].title)
-    const value = screen.getByText(netPay)
+    const value = screen.getByText('$' + netPay)
     expect(title).toBeInTheDocument()
     expect(value).toBeInTheDocument()
   })
