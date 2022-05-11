@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652274294372" clover="3.2.0">
-  <project timestamp="1652274294372" name="All files">
-    <metrics statements="337" coveredstatements="196" conditionals="284" coveredconditionals="171" methods="115" coveredmethods="68" elements="736" coveredelements="435" complexity="0" loc="337" ncloc="337" packages="6" files="43" classes="43"/>
+<coverage generated="1652275585878" clover="3.2.0">
+  <project timestamp="1652275585878" name="All files">
+    <metrics statements="337" coveredstatements="196" conditionals="286" coveredconditionals="171" methods="115" coveredmethods="68" elements="738" coveredelements="435" complexity="0" loc="337" ncloc="337" packages="6" files="43" classes="43"/>
     <package name="components.atoms">
       <metrics statements="92" coveredstatements="74" conditionals="86" coveredconditionals="64" methods="34" coveredmethods="29"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -346,7 +346,7 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="93" coveredstatements="20" conditionals="50" coveredconditionals="9" methods="28" coveredmethods="9"/>
+      <metrics statements="93" coveredstatements="20" conditionals="52" coveredconditionals="9" methods="28" coveredmethods="9"/>
       <file name="400.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/400.js">
         <metrics statements="5" coveredstatements="2" conditionals="4" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="5" count="2" type="cond" truecount="1" falsecount="1"/>
@@ -390,60 +390,60 @@
         <line num="10" count="0" type="stmt"/>
       </file>
       <file name="dashboard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/dashboard.js">
-        <metrics statements="53" coveredstatements="3" conditionals="26" coveredconditionals="3" methods="11" coveredmethods="3"/>
+        <metrics statements="53" coveredstatements="3" conditionals="28" coveredconditionals="3" methods="11" coveredmethods="3"/>
         <line num="72" count="2" type="stmt"/>
         <line num="91" count="1" type="stmt"/>
         <line num="168" count="5" type="stmt"/>
         <line num="206" count="0" type="stmt"/>
         <line num="208" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="209" count="0" type="stmt"/>
-        <line num="210" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="212" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="213" count="0" type="stmt"/>
-        <line num="222" count="0" type="stmt"/>
-        <line num="228" count="0" type="stmt"/>
-        <line num="230" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="239" count="0" type="stmt"/>
-        <line num="240" count="0" type="stmt"/>
+        <line num="212" count="0" type="stmt"/>
+        <line num="213" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="215" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="216" count="0" type="stmt"/>
+        <line num="225" count="0" type="stmt"/>
+        <line num="231" count="0" type="stmt"/>
+        <line num="233" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="242" count="0" type="stmt"/>
         <line num="243" count="0" type="stmt"/>
         <line num="245" count="0" type="stmt"/>
-        <line num="260" count="0" type="stmt"/>
-        <line num="261" count="0" type="stmt"/>
-        <line num="266" count="0" type="stmt"/>
-        <line num="267" count="0" type="stmt"/>
+        <line num="246" count="0" type="stmt"/>
+        <line num="248" count="0" type="stmt"/>
+        <line num="263" count="0" type="stmt"/>
+        <line num="264" count="0" type="stmt"/>
         <line num="269" count="0" type="stmt"/>
         <line num="270" count="0" type="stmt"/>
-        <line num="275" count="0" type="stmt"/>
-        <line num="276" count="0" type="stmt"/>
-        <line num="281" count="0" type="stmt"/>
-        <line num="282" count="0" type="stmt"/>
+        <line num="272" count="0" type="stmt"/>
+        <line num="273" count="0" type="stmt"/>
+        <line num="278" count="0" type="stmt"/>
+        <line num="279" count="0" type="stmt"/>
         <line num="284" count="0" type="stmt"/>
         <line num="285" count="0" type="stmt"/>
-        <line num="292" count="0" type="stmt"/>
-        <line num="293" count="0" type="stmt"/>
-        <line num="294" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="302" count="0" type="stmt"/>
-        <line num="304" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="311" count="0" type="stmt"/>
-        <line num="313" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="320" count="0" type="stmt"/>
-        <line num="322" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="330" count="0" type="stmt"/>
-        <line num="332" count="0" type="stmt"/>
+        <line num="287" count="0" type="stmt"/>
+        <line num="288" count="0" type="stmt"/>
+        <line num="295" count="0" type="stmt"/>
+        <line num="296" count="0" type="stmt"/>
+        <line num="297" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="305" count="0" type="stmt"/>
+        <line num="307" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="314" count="0" type="stmt"/>
+        <line num="316" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="323" count="0" type="stmt"/>
+        <line num="325" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="333" count="0" type="stmt"/>
+        <line num="335" count="0" type="stmt"/>
         <line num="336" count="0" type="stmt"/>
         <line num="339" count="0" type="stmt"/>
-        <line num="340" count="0" type="stmt"/>
-        <line num="341" count="0" type="stmt"/>
         <line num="342" count="0" type="stmt"/>
+        <line num="343" count="0" type="stmt"/>
         <line num="344" count="0" type="stmt"/>
-        <line num="354" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="356" count="0" type="stmt"/>
-        <line num="358" count="0" type="stmt"/>
-        <line num="359" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="345" count="0" type="stmt"/>
+        <line num="347" count="0" type="stmt"/>
+        <line num="357" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="359" count="0" type="stmt"/>
+        <line num="361" count="0" type="stmt"/>
         <line num="362" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="366" count="0" type="stmt"/>
+        <line num="365" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="369" count="0" type="stmt"/>
       </file>
       <file name="index.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/index.js">
         <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
