@@ -1,13 +1,14 @@
 import propTypes from 'prop-types'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
-import { ProgramCodes, StatusCodes } from '../../objects/UniversalBenefit'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
 import StatusBadge from '../atoms/StatusBadge'
 import BenefitTasks from './BenefitTasks'
 import HorizontalRule from '../atoms/HorizontalRule'
 import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
+import { ProgramCodes } from '../../constants/ProgramCodes'
+import { StatusCodes } from '../../constants/StatusCodes'
 
 export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr

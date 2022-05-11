@@ -3,17 +3,15 @@ import { toHaveNoViolations, axe } from 'jest-axe'
 import '@testing-library/jest-dom/extend-expect'
 import UniversalBenefitCard from './UniversalBenefitCard'
 import en from '../../locales/en'
-import {
-  CreateBenefitCardObj,
-  ProgramCodes,
-  StatusCodes,
-  TypeCodes,
-} from '../../objects/UniversalBenefit'
+import { ProgramCodes } from '../../constants/ProgramCodes'
+import { StatusCodes } from '../../constants/StatusCodes'
+import { TypeCodes } from '../../constants/ProgramTypeCodes'
+import { CreateGenericBenefitJSONForUserDisplay } from '../../lib/BenefitsMapping'
 
 expect.extend(toHaveNoViolations)
 
 describe('UniversalBenefitCard', () => {
-  const benefit = CreateBenefitCardObj(
+  const benefit = CreateGenericBenefitJSONForUserDisplay(
     ProgramCodes.CPP,
     StatusCodes.Active,
     TypeCodes.CPPRetirement

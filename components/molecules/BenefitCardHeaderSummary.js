@@ -1,5 +1,5 @@
 import propTypes from 'prop-types'
-import { SummaryTypes } from '../../objects/UniversalBenefit'
+import { SummaryTypes } from '../../constants/SummaryTypes'
 import { formatDate } from '../organisms/DashboardUtils'
 
 export default function BenefitCardHeaderSummary(props) {

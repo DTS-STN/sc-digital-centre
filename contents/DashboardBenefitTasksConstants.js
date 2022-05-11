@@ -1,3 +1,5 @@
+import { ProgramCodes } from '../constants/ProgramCodes'
+import { StatusCodes } from '../constants/StatusCodes'
 import en from '../locales/en'
 
 const t = en
@@ -366,7 +368,27 @@ const ACTIVE_SEB_TASKS = {
   Tasks: [TASKS.ViewAgreementStatusDetails],
 }
 
+const TASK_GROUPS = [
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.inPayment,
+    taskHeadingKey: 'paymentsTaxesAccount',
+    tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+  },
+  {
+    programCode: ProgramCodes.EI,
+    statusCode: StatusCodes.inPayment,
+    taskHeadingKey: 'commonPaymentsTaxesAccount',
+    tasksGroups: [
+      ACTIVE_EI_COMMON_TASKS,
+      ACTIVE_EI_PAYMENT_TASKS,
+      ACTIVE_EI_DOCS_TASKS,
+    ],
+  },
+]
+
 module.exports = {
+  TASK_GROUPS,
   SUBMITTED_CPP_ESTIMATE_TASKS,
   SUBMITTED_CPP_CHANGE_TASKS,
   ACTIVE_CPP_PAYMENT_TASKS,
