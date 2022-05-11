@@ -7,8 +7,6 @@ import BenefitTasks from './BenefitTasks'
 import HorizontalRule from '../atoms/HorizontalRule'
 import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
-import { ProgramCodes } from '../../constants/ProgramCodes'
-import { StatusCodes } from '../../constants/StatusCodes'
 
 export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -42,7 +40,7 @@ export default function UniversalBenefitCard(props) {
                     return (
                       <BenefitCardHeaderSummary
                         key={index}
-                        locale={t}
+                        locale={props.locale}
                         summary={summary}
                       />
                     )
@@ -94,9 +92,9 @@ export default function UniversalBenefitCard(props) {
 UniversalBenefitCard.propTypes = {
   locale: propTypes.string.isRequired,
   benefit: propTypes.shape({
-    programCode: propTypes.oneOf(ProgramCodes).isRequired,
-    statusCode: propTypes.oneOf(StatusCodes).isRequired,
-    summaries: propTypes.object.isRequired,
+    programCode: propTypes.string.isRequired,
+    statusCode: propTypes.string.isRequired,
+    summaries: propTypes.array.isRequired,
     taskGroups: propTypes.array.isRequired,
     taskHeadingKey: propTypes.string.isRequired,
   }),
