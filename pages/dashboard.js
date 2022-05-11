@@ -57,7 +57,7 @@ import {
   APPLICATION_CARD_CPP_CHILD_REARING_PROVISION,
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
-//import { getSession } from 'next-auth/react'
+import { getSession } from 'next-auth/react'
 import {
   CreateBenefitObjWithCPPData,
   CreateBenefitObjWithEIData,
