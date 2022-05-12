@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652301268618" clover="3.2.0">
-  <project timestamp="1652301268618" name="All files">
+<coverage generated="1652360550592" clover="3.2.0">
+  <project timestamp="1652360550592" name="All files">
     <metrics statements="329" coveredstatements="196" conditionals="284" coveredconditionals="173" methods="115" coveredmethods="68" elements="728" coveredelements="437" complexity="0" loc="329" ncloc="329" packages="7" files="45" classes="45"/>
     <package name="components.atoms">
       <metrics statements="92" coveredstatements="74" conditionals="86" coveredconditionals="64" methods="34" coveredmethods="29"/>
@@ -13,7 +13,7 @@
       </file>
       <file name="BenefitCardHeaderActive.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/BenefitCardHeaderActive.js">
         <metrics statements="28" coveredstatements="16" conditionals="34" coveredconditionals="21" methods="7" coveredmethods="4"/>
-        <line num="13" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="9" type="cond" truecount="2" falsecount="0"/>
         <line num="14" count="9" type="stmt"/>
         <line num="15" count="9" type="cond" truecount="2" falsecount="0"/>
         <line num="16" count="2" type="stmt"/>
@@ -53,14 +53,14 @@
       </file>
       <file name="BenefitCardHeaderInactive.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/BenefitCardHeaderInactive.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="8" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="9" count="4" type="stmt"/>
         <line num="10" count="4" type="stmt"/>
         <line num="13" count="4" type="stmt"/>
       </file>
       <file name="BenefitCardHeaderPending.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/BenefitCardHeaderPending.js">
         <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-        <line num="8" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="9" count="7" type="stmt"/>
         <line num="10" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="2" type="stmt"/>
@@ -124,7 +124,7 @@
       </file>
       <file name="StatusBadge.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/StatusBadge.js">
         <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
-        <line num="11" count="29" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="24" type="cond" truecount="2" falsecount="0"/>
         <line num="12" count="24" type="stmt"/>
         <line num="34" count="7" type="stmt"/>
       </file>
@@ -164,7 +164,7 @@
       <file name="BenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitCard.js">
         <metrics statements="37" coveredstatements="26" conditionals="37" coveredconditionals="25" methods="9" coveredmethods="4"/>
         <line num="16" count="2" type="stmt"/>
-        <line num="17" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="13" type="cond" truecount="2" falsecount="0"/>
         <line num="18" count="13" type="stmt"/>
         <line num="19" count="13" type="stmt"/>
         <line num="20" count="13" type="stmt"/>
@@ -203,7 +203,7 @@
       </file>
       <file name="BenefitCardHeaderSummary.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitCardHeaderSummary.js">
         <metrics statements="13" coveredstatements="8" conditionals="11" coveredconditionals="6" methods="3" coveredmethods="3"/>
-        <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="9" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="cond" truecount="1" falsecount="4"/>
