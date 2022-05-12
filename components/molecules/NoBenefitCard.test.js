@@ -4,6 +4,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 import NoBenefitCard from './NoBenefitCard'
 import { NO_BENEFIT_EI_TASKS } from '../../contents/DashboardBenefitTasksConstants'
 import BenefitCode from '../../constants/BenefitCode'
+import en from '../../locales/en'
 
 const NO_BENEFIT_EI = {
   benefitType: BenefitCode.ei,
@@ -21,7 +22,7 @@ describe('NoBenefitCard', () => {
       />
     )
     const noBenefitName = screen.getAllByText('Employment Insurance')
-    const commonActions = screen.getByText('Common actions')
+    const commonActions = screen.getByText(en.commonActions)
 
     expect(noBenefitName[0]).toBeInTheDocument()
     expect(commonActions).toBeInTheDocument()

@@ -1,4 +1,5 @@
 import { CreateGenefitBenefitJSONForUserDisplayWithCPPData } from '../../../lib/BenefitsMapping'
+import GenerateCPPMockData from '../../../lib/CPPMockData'
 
 export default async function GetCPPProgramData() {
   try {
@@ -7,9 +8,12 @@ export default async function GetCPPProgramData() {
         'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
       }),
     })
-    return CreateGenefitBenefitJSONForUserDisplayWithCPPData(
-      await cppData.json()
-    )
+    let jsonData = [
+      CreateGenefitBenefitJSONForUserDisplayWithCPPData(await cppData.json()),
+    ]
+    if (!process.env.NO_MOCK_DATA)
+      jsonData = jsonData.concat(GenerateCPPMockData())
+    return jsonData
   } catch (e) {
     console.log(e)
     return null

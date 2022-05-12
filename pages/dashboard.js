@@ -150,7 +150,8 @@ export default function Dashboard(props) {
             <BenefitCard
               locale={props.locale}
               benefit={INACTIVE_CPPD}
-              tasks={INACTIVE_CPP_TASKS}
+              tasks={[INACTIVE_CPP_TASKS]}
+              taskGroups={true}
             />
             <BenefitCard
               locale={props.locale}
@@ -202,7 +203,6 @@ export async function getServerSideProps({ req, locale }) {
   // const session = await getSession({ req })
   // const isAuth = session ? true : false
 
-
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
@@ -211,9 +211,9 @@ export async function getServerSideProps({ req, locale }) {
 
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
 
-  const usersBenefts = [] // to be retrieved by API
+  let usersBenefts = [] // to be retrieved by API
   const cppData = await GetCPPProgramData()
-  if (cppData) usersBenefts.push(cppData)
+  if (cppData) usersBenefts = usersBenefts.concat(cppData)
   const eiData = await GetEIProgramData()
   if (eiData) usersBenefts.push(eiData)
 

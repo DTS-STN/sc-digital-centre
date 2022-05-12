@@ -6,11 +6,17 @@ import { formatDate } from '../organisms/DashboardUtils'
 
 export default function BenefitCardHeaderSummary(props) {
   const t = props.locale === 'en' ? en : fr
-  const typesWithLinks = [SummaryTypes.PaymentAmount, SummaryTypes.LatestStatus]
+  const typesWithLinks = [
+    SummaryTypes.PaymentAmount,
+    SummaryTypes.LatestStatus,
+    SummaryTypes.PresentStatus,
+    SummaryTypes.LastPaymentDate,
+  ]
 
   const getBenefitCardValue = () => {
     switch (props.summary.type) {
       case SummaryTypes.PaymentAmount:
+      case SummaryTypes.LastPayment:
         return (
           <p className="text-3xl">
             {t.netAmount.replace('{0}', props.summary.value)}
@@ -20,8 +26,18 @@ export default function BenefitCardHeaderSummary(props) {
       case SummaryTypes.NextPayment:
       case SummaryTypes.NextReport:
       case SummaryTypes.LatestStatus:
+      case SummaryTypes.EstimatedDecisionDate:
+      case SummaryTypes.LastPaymentDate:
         return <p className="text-lg">{formatDate(props.summary.value)}</p>
         break
+      case SummaryTypes.RequestedBenefit:
+      case SummaryTypes.BenefitAffected:
+      case SummaryTypes.ActiveBenefit:
+        return <p className="text-lg">{t[props.summary.value]}</p>
+        break
+      case SummaryTypes.PresentStatus:
+      case SummaryTypes.NextPaymentDate:
+        return <p className="text-lg">{props.summary.value}</p>
       default:
         return null
         break
@@ -49,6 +65,6 @@ BenefitCardHeaderSummary.propTypes = {
   locale: propTypes.string.isRequired,
   summary: propTypes.shape({
     type: propTypes.string.isRequired,
-    value: propTypes.any.isRequired,
+    value: propTypes.any,
   }),
 }

@@ -6,6 +6,39 @@ export default {
   EI: 'Employment Insurance',
   //
   // BenefitSummaries
+  blank: {
+    title: '',
+  },
+  RequestedBenefit: {
+    title: 'Requested benefit:',
+  },
+  EstimatedDecisionDate: {
+    title: 'Estimated decision date:',
+  },
+  BenefitAffected: {
+    title: 'Benefit affected:',
+  },
+  PresentStatus: {
+    title: 'Present status:',
+    link: '/',
+    linkText: 'Call: 1-800-555-1234',
+  },
+  LastPaymentDate: {
+    title: 'Last payment date:',
+    link: '/',
+    linkText: 'View my payments',
+  },
+  LastPayment: {
+    title: 'Last net payment:',
+  },
+  NextPaymentDate: {
+    title: 'Next payment date:',
+    link: '/',
+    linkText: 'View my payments',
+  },
+  ActiveBenefit: {
+    title: 'Active benefit:',
+  },
   PaymentAmount: {
     title: 'Payment amount',
     link: '/',
@@ -257,6 +290,9 @@ export default {
   cppd: 'Canada Pension Plan Disability',
   seb: 'Self Employment Benefits',
 
+  // Benefit types
+  CPPRetirement: 'Retirement pension',
+
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,
   disability_pension: `Disability Pension`,
@@ -287,6 +323,7 @@ export default {
   netAmount: '${0}',
 
   // Benefit Card details
+  benefitDurationReached: 'Your current benefit duration has been reached.',
   applicationDate: 'Application date',
   latestActivity: 'Latest activity',
   viewMyStatusAndMessages: 'View my status and messages',
@@ -299,6 +336,8 @@ export default {
   inactive: 'Inactive',
   applicationReceived: 'Application received',
   benefitUpdate: 'Benefit update',
+  decisionSent: 'Decision letter sent',
+  paymentHold: 'Payment on hold',
   inPayment: 'In payment',
   exhausted: 'Benefit exahusted',
 
@@ -310,6 +349,7 @@ export default {
   documentsReportsTasks: 'Documents and reports',
 
   //benefit task headings
+  commonActions: 'Explore common actions',
   paymentsTaxesAccount: 'Payments, taxes and account information',
   commonPaymentsTaxesAccount:
     'Common actions, payments, taxes, reports, and account information',
@@ -342,7 +382,6 @@ export default {
   accessCode: 'Access code',
   viewAgreementStatus: 'View my agreement status details',
 
-  commonActions: 'Common actions',
   applyForCppDisabilityBenefits:
     'Apply for Canada Pension Plan Disability Benefits',
   applyForCppRetirementPensions:

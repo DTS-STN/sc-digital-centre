@@ -91,6 +91,7 @@ module.exports = {
           benefitUpdate: '#FFB84D',
           applicationReceived: '#84D2DC',
           inactive: '#C4C4C4',
+          hold: '#FFB84D',
         },
       },
       backgroundImage: () => ({
