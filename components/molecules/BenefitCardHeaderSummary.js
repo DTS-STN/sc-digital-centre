@@ -65,6 +65,6 @@ BenefitCardHeaderSummary.propTypes = {
   locale: propTypes.string.isRequired,
   summary: propTypes.shape({
     type: propTypes.string.isRequired,
-    value: propTypes.any,
+    value: propTypes.any.isRequired,
   }),
 }
