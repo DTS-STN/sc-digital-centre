@@ -1,9 +1,11 @@
 import propTypes from 'prop-types'
+import en from '../../locales/en'
+import fr from '../../locales/fr'
 import { SummaryTypes } from '../../constants/SummaryTypes'
 import { formatDate } from '../organisms/DashboardUtils'
 
 export default function BenefitCardHeaderSummary(props) {
-  const t = props.locale
+  const t = props.locale === 'en' ? en : fr
   const typesWithLinks = [SummaryTypes.PaymentAmount, SummaryTypes.LatestStatus]
 
   const getBenefitCardValue = () => {
@@ -46,7 +48,7 @@ export default function BenefitCardHeaderSummary(props) {
 BenefitCardHeaderSummary.propTypes = {
   locale: propTypes.string.isRequired,
   summary: propTypes.shape({
-    type: propTypes.oneOf(SummaryTypes).isRequired,
-    value: propTypes.string.isRequired,
+    type: propTypes.string.isRequired,
+    value: propTypes.any.isRequired,
   }),
 }

@@ -43,5 +43,5 @@ StatusBadge.propTypes = {
   /**
    *
    */
-  locale: propTypes.object,
+  locale: propTypes.string,
 }
