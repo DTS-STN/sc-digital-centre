@@ -3,6 +3,8 @@ import NoBenefitCard from '../components/molecules/NoBenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import { LayoutContainer } from '@dts-stn/decd-design-system'
 import Greeting from '../components/molecules/Greeting'
+import en from '../locales/en'
+import fr from '../locales/fr'
 import {
   SUBMITTED_CPP,
   ACTIVE_CPP,
@@ -77,6 +79,7 @@ export default function Dashboard(props) {
         metadata={props.metadata}
         langToggleLink={props.langToggleLink}
         isAuth={props.isAuth}
+        breadCrumbItems={props.breadCrumbItems}
       >
         <LayoutContainer>
           <div className="mb-8">
@@ -202,7 +205,6 @@ export async function getServerSideProps({ req, locale }) {
   // const session = await getSession({ req })
   // const isAuth = session ? true : false
 
-
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
@@ -210,12 +212,27 @@ export async function getServerSideProps({ req, locale }) {
   }
 
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
-
+  const t = locale === 'en' ? en : fr
   const usersBenefts = [] // to be retrieved by API
   const cppData = await GetCPPProgramData()
   if (cppData) usersBenefts.push(cppData)
   const eiData = await GetEIProgramData()
   if (eiData) usersBenefts.push(eiData)
+
+  const breadCrumbItems = [
+    {
+      link: t.url_canada_ca,
+      text: t.canada_ca,
+    },
+    {
+      link: t.url_serviceCanada,
+      text: t.serviceCanada,
+    },
+    {
+      link: t.url_myBenefitsAndServices,
+      text: t.myBenefitsAndServices,
+    },
+  ]
 
   return {
     props: {
@@ -225,6 +242,7 @@ export async function getServerSideProps({ req, locale }) {
       locale,
       langToggleLink,
       metadata,
+      breadCrumbItems,
     },
   }
 }

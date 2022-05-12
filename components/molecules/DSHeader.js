@@ -10,20 +10,7 @@ export default function DSHeader(props) {
       id="header"
       lang={props.locale}
       linkPath={props.langToggleLink}
-      breadCrumbItems={[
-        {
-          link: t.url_canada_ca,
-          text: t.canada_ca,
-        },
-        {
-          link: t.url_serviceCanada,
-          text: t.serviceCanada,
-        },
-        {
-          link: t.url_myBenefitsAndServices,
-          text: t.myBenefitsAndServices,
-        },
-      ]}
+      breadCrumbItems={props.breadCrumbItems}
       isAuthenticated={props.isAuth}
       menuProps={{
         craPath: t.craPath,
