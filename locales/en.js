@@ -6,9 +6,6 @@ export default {
   EI: 'Employment Insurance',
   //
   // BenefitSummaries
-  blank: {
-    title: '',
-  },
   RequestedBenefit: {
     title: 'Requested benefit:',
   },
@@ -33,8 +30,6 @@ export default {
   },
   NextPaymentDate: {
     title: 'Next payment date:',
-    link: '/',
-    linkText: 'View my payments',
   },
   ActiveBenefit: {
     title: 'Active benefit:',

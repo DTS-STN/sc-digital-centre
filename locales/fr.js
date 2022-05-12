@@ -6,6 +6,34 @@ export default {
   EI: '(FR)Employment Insurance',
   //
   // BenefitSummaries
+  RequestedBenefit: {
+    title: 'Prestation demandée :',
+  },
+  EstimatedDecisionDate: {
+    title: 'Décision prévue le : ',
+  },
+  BenefitAffected: {
+    title: 'Prestations concernées :',
+  },
+  PresentStatus: {
+    title: 'Statut actuel :',
+    link: '/',
+    linkText: 'Appelez : 1-800-555-1234',
+  },
+  LastPaymentDate: {
+    title: 'Date du dernier paiement :',
+    link: '/',
+    linkText: 'Voir mes paiements',
+  },
+  LastPayment: {
+    title: 'Montant net du dernier paiement : ',
+  },
+  NextPaymentDate: {
+    title: 'Date du prochain paiement :',
+  },
+  ActiveBenefit: {
+    title: 'Bénéfices actifs :',
+  },
   PaymentAmount: {
     title: '(FR)Payment amount',
     link: '/',
@@ -15,9 +43,9 @@ export default {
     title: '(FR)Next Payment:',
   },
   LatestStatus: {
-    title: '(FR)Latest status:',
+    title: 'Dernière mise à jour :',
     link: '/',
-    linkText: '(FR)View my status and messages',
+    linkText: "Consulter l'état de ma demande",
   },
   NextReport: {
     title: '(FR)Next report due:',
@@ -259,6 +287,9 @@ export default {
   cppd: '(FR)Canada Pension Plan Disability',
   seb: '(FR)Self Employment Benefits',
 
+  // Benefit types
+  CPPRetirement: 'Pension de retraite',
+
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
   activeBenefits: '(FR)Active benefits:',
@@ -278,6 +309,8 @@ export default {
   netAmount: '{0}$',
 
   // Benefit Card details
+  benefitDurationReached:
+    "Votre durée d'indemnisation actuelle a été atteinte.",
   applicationDate: '(FR)Application date',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages',
@@ -287,10 +320,12 @@ export default {
   pensionStartDate: '(FR)Pension start date',
 
   // Benefit Card Status'
-  inactive: '(FR)Inactive',
-  applicationReceived: '(FR)Application received',
+  inactive: 'Inactif',
+  applicationReceived: 'Demande reçue',
   benefitUpdate: '(FR)Benefit update',
-  inPayment: '(FR)In payment',
+  decisionSent: 'Lettre de décision envoyée',
+  paymentHold: 'Paiement suspendu',
+  inPayment: 'En paiement',
   exhausted: '(FR)Benefit exahusted',
 
   // dashboard benefit task headers
@@ -301,6 +336,7 @@ export default {
   documentsReportsTasks: '(FR)Documents and reports',
 
   //benefit task headings
+  commonActions: 'Explorer les actions courantes',
   paymentsTaxesAccount: 'Paiement, impôts et renseignement personnels ',
   commonPaymentsTaxesAccount:
     'Actions courantes, paiements, impôts, rapports et renseignements personnels',
@@ -333,7 +369,6 @@ export default {
   accessCode: '(FR)Access code',
   viewAgreementStatus: '(FR)View my agreement status details',
 
-  commonActions: '(FR)Common actions',
   applyForCppDisabilityBenefits:
     '(FR)Apply for Canada Pension Plan Disability Benefits',
   applyForCppRetirementPensions:
