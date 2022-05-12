@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import { LayoutContainer } from '@dts-stn/decd-design-system'
 
 /**
  * Component which defines the layout of the page for all screen sizes
@@ -78,7 +79,7 @@ export default function Layout(props) {
       )}
 
       <main>
-        <div>{props.children}</div>
+        <LayoutContainer>{props.children}</LayoutContainer>
       </main>
 
       {props.displayDSFooter ? <DSFooter /> : ''}
