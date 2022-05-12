@@ -1,5 +1,4 @@
 import ProfileInfo from '../components/molecules/ProfileInfo'
-import { LayoutContainer } from '@dts-stn/decd-design-system'
 import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
