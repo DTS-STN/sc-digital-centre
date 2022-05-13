@@ -71,6 +71,7 @@ export default function Layout(props) {
             locale={props.locale}
             langToggleLink={props.langToggleLink}
             isAuth={props.isAuth}
+            breadCrumbItems={props.breadCrumbItems}
           />
         </>
       ) : (
@@ -187,6 +188,8 @@ Layout.propTypes = {
    * Toggle use of footer
    */
   displayFooter: PropTypes.bool,
+
+  breadCrumbItems: PropTypes.array,
 }
 
 Layout.defaultProps = {

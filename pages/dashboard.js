@@ -77,6 +77,7 @@ export default function Dashboard(props) {
         metadata={props.metadata}
         langToggleLink={props.langToggleLink}
         isAuth={props.isAuth}
+        breadCrumbItems={props.breadCrumbItems}
       >
         <LayoutContainer>
           <div className="mb-8">
@@ -202,7 +203,6 @@ export async function getServerSideProps({ req, locale }) {
   // const session = await getSession({ req })
   // const isAuth = session ? true : false
 
-
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
@@ -210,7 +210,6 @@ export async function getServerSideProps({ req, locale }) {
   }
 
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
-
   const usersBenefts = [] // to be retrieved by API
   const cppData = await GetCPPProgramData()
   if (cppData) usersBenefts.push(cppData)

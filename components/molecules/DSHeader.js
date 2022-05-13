@@ -5,25 +5,26 @@ import { signOut } from 'next-auth/react'
 
 export default function DSHeader(props) {
   const t = props.locale === 'en' ? en : fr
+  const defaultBreadcrumbs = [
+    {
+      link: t.url_canada_ca,
+      text: t.canada_ca,
+    },
+    {
+      link: t.url_serviceCanada,
+      text: t.serviceCanada,
+    },
+  ]
   return (
     <Header
       id="header"
       lang={props.locale}
       linkPath={props.langToggleLink}
-      breadCrumbItems={[
-        {
-          link: t.url_canada_ca,
-          text: t.canada_ca,
-        },
-        {
-          link: t.url_serviceCanada,
-          text: t.serviceCanada,
-        },
-        {
-          link: t.url_myBenefitsAndServices,
-          text: t.myBenefitsAndServices,
-        },
-      ]}
+      breadCrumbItems={
+        props.breadCrumbItems
+          ? defaultBreadcrumbs.concat(props.breadCrumbItems)
+          : defaultBreadcrumbs
+      }
       isAuthenticated={props.isAuth}
       menuProps={{
         craPath: t.craPath,
