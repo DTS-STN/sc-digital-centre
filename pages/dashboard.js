@@ -163,6 +163,7 @@ export default function Dashboard(props) {
         metadata={props.metadata}
         langToggleLink={props.langToggleLink}
         isAuth={props.isAuth}
+        breadCrumbItems={props.breadCrumbItems}
       >
         <LayoutContainer>
           <div className="mb-8">
