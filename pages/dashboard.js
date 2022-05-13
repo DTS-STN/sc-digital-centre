@@ -1,7 +1,6 @@
 import BenefitCard from '../components/molecules/BenefitCard'
 import NoBenefitCard from '../components/molecules/NoBenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
-import { LayoutContainer } from '@dts-stn/decd-design-system'
 import Greeting from '../components/molecules/Greeting'
 import {
   SUBMITTED_CPP,
@@ -58,7 +57,6 @@ import {
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
 //import { getSession } from 'next-auth/react'
-import Layout from '../components/organisms/Layout'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { StatusCodes } from '../constants/StatusCodes'
 import { ProgramCodes } from '../constants/ProgramCodes'
@@ -69,132 +67,117 @@ import GetEIProgramData from './api/programData/ei'
 export default function Dashboard(props) {
   return (
     <>
-      <Layout
+      <Greeting locale={props.locale} name="Mary" />
+
+      {/* New Benefit Cards API driven */}
+      {props.usersBenefits == null || props.usersBenefits.length <= 0
+        ? null
+        : props.usersBenefits.map((value, index) => {
+            return (
+              <UniversalBenefitCard
+                key={index}
+                locale={props.locale}
+                benefit={value}
+              />
+            )
+          })}
+
+      <BenefitCard
         locale={props.locale}
-        displayPhase={false}
-        displayHeader={true}
-        displayDSFooter={true}
-        metadata={props.metadata}
-        langToggleLink={props.langToggleLink}
-        isAuth={props.isAuth}
-        breadCrumbItems={props.breadCrumbItems}
-      >
-        <LayoutContainer>
-          <div className="mb-8">
-            <Greeting locale={props.locale} name="Mary" />
+        benefit={SUBMITTED_CPP}
+        tasks={[SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS]}
+        taskGroups={true}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={ACTIVE_CPP}
+        tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
+        taskGroups={true}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={SUBMITTED_OAS}
+        tasks={SUBMITTED_OAS_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={ACTIVE_OAS}
+        tasks={ACTIVE_OAS_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={SUBMITTED_EI}
+        tasks={SUBMITTED_EI_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={ACTIVE_EI}
+        tasks={[
+          ACTIVE_EI_COMMON_TASKS,
+          ACTIVE_EI_PAYMENT_TASKS,
+          ACTIVE_EI_DOCS_TASKS,
+        ]}
+        taskGroups={true}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={INACTIVE_EI}
+        tasks={INACTIVE_EI_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={SUBMITTED_CPPD}
+        tasks={SUBMITTED_CPPD_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={ACTIVE_CPPD}
+        tasks={ACTIVE_CPPD_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={INACTIVE_CPPD}
+        tasks={INACTIVE_CPP_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={ACTIVE_SEB}
+        tasks={[ACTIVE_SEB_TASKS]}
+        taskGroups={true}
+      />
 
-            {/* New Benefit Cards API driven */}
-            {props.usersBenefits == null || props.usersBenefits.length <= 0
-              ? null
-              : props.usersBenefits.map((value, index) => {
-                  return (
-                    <UniversalBenefitCard
-                      key={index}
-                      locale={props.locale}
-                      benefit={value}
-                    />
-                  )
-                })}
-
-            <BenefitCard
+      {/* application or "advertising" cards */}
+      {props.advertisingCards.map((value, index) => {
+        return (
+          <div key={index}>
+            <BenefitApplicationCard
               locale={props.locale}
-              benefit={SUBMITTED_CPP}
-              tasks={[SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS]}
-              taskGroups={true}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={ACTIVE_CPP}
-              tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
-              taskGroups={true}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={SUBMITTED_OAS}
-              tasks={SUBMITTED_OAS_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={ACTIVE_OAS}
-              tasks={ACTIVE_OAS_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={SUBMITTED_EI}
-              tasks={SUBMITTED_EI_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={ACTIVE_EI}
-              tasks={[
-                ACTIVE_EI_COMMON_TASKS,
-                ACTIVE_EI_PAYMENT_TASKS,
-                ACTIVE_EI_DOCS_TASKS,
-              ]}
-              taskGroups={true}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={INACTIVE_EI}
-              tasks={INACTIVE_EI_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={SUBMITTED_CPPD}
-              tasks={SUBMITTED_CPPD_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={ACTIVE_CPPD}
-              tasks={ACTIVE_CPPD_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={INACTIVE_CPPD}
-              tasks={INACTIVE_CPP_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={ACTIVE_SEB}
-              tasks={[ACTIVE_SEB_TASKS]}
-              taskGroups={true}
-            />
-
-            {/* application or "advertising" cards */}
-            {props.advertisingCards.map((value, index) => {
-              return (
-                <div key={index}>
-                  <BenefitApplicationCard
-                    locale={props.locale}
-                    benefitApplication={value}
-                  />
-                </div>
-              )
-            })}
-
-            <NoBenefitCard
-              locale={props.locale}
-              benefit={NO_BENEFIT_CPP}
-              tasks={NO_BENEFIT_CPP_TASKS}
-            />
-            <NoBenefitCard
-              locale={props.locale}
-              benefit={NO_BENEFIT_EI}
-              tasks={NO_BENEFIT_EI_TASKS}
-            />
-            <NoBenefitCard
-              locale={props.locale}
-              benefit={NO_BENEFIT_GIS}
-              tasks={NO_BENEFIT_GIS_TASKS}
-            />
-            <NoBenefitCard
-              locale={props.locale}
-              benefit={NO_BENEFIT_OAS}
-              tasks={NO_BENEFIT_OAS_TASKS}
+              benefitApplication={value}
             />
           </div>
-        </LayoutContainer>
-      </Layout>
+        )
+      })}
+
+      <NoBenefitCard
+        locale={props.locale}
+        benefit={NO_BENEFIT_CPP}
+        tasks={NO_BENEFIT_CPP_TASKS}
+      />
+      <NoBenefitCard
+        locale={props.locale}
+        benefit={NO_BENEFIT_EI}
+        tasks={NO_BENEFIT_EI_TASKS}
+      />
+      <NoBenefitCard
+        locale={props.locale}
+        benefit={NO_BENEFIT_GIS}
+        tasks={NO_BENEFIT_GIS_TASKS}
+      />
+      <NoBenefitCard
+        locale={props.locale}
+        benefit={NO_BENEFIT_OAS}
+        tasks={NO_BENEFIT_OAS_TASKS}
+      />
     </>
   )
 }
