@@ -407,6 +407,7 @@ export default {
   url_serviceCanada:
     'https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html',
   url_myBenefitsAndServices: '/dashboard',
+  url_profileAndSecuritySettings: '/profile',
 
   // Benefit card header URLs
   url_statusAndMessages: '/dashboard',

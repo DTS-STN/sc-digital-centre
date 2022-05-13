@@ -77,6 +77,7 @@ export default function Dashboard(props) {
         metadata={props.metadata}
         langToggleLink={props.langToggleLink}
         isAuth={props.isAuth}
+        breadCrumbItems={props.breadCrumbItems}
       >
         <LayoutContainer>
           <div className="mb-8">
@@ -211,7 +212,7 @@ export async function getServerSideProps({ req, locale }) {
 
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
 
-  let usersBenefts = [] // to be retrieved by API
+  const usersBenefts = [] // to be retrieved by API
   const cppData = await GetCPPProgramData()
   if (cppData) usersBenefts = usersBenefts.concat(cppData)
   const eiData = await GetEIProgramData()

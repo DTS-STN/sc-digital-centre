@@ -95,6 +95,8 @@ export default function Profile(props) {
         displayDSFooter={true}
         metadata={props.metadata}
         langToggleLink={props.langToggleLink}
+        isAuth={props.isAuth}
+        breadCrumbItems={props.breadCrumbItems}
       >
         <LayoutContainer>
           <div className="col-span-12">
@@ -155,12 +157,28 @@ export default function Profile(props) {
 
 export async function getStaticProps({ locale }) {
   const langToggleLink = locale === 'en' ? '/fr/profile' : '/profile'
+  const t = locale === 'en' ? en : fr
+
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
     description: 'en + fr description',
   }
+
+  const breadCrumbItems = [
+    {
+      link: t.url_myBenefitsAndServices,
+      text: t.myBenefitsAndServices,
+    },
+  ]
+
   return {
-    props: { locale, langToggleLink, metadata },
+    props: {
+      locale,
+      langToggleLink,
+      metadata,
+      isAuth: true,
+      breadCrumbItems,
+    },
   }
 }
