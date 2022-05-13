@@ -67,6 +67,11 @@ import {
 } from '../objects/UniversalBenefit'
 import Layout from '../components/organisms/Layout'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
+import { StatusCodes } from '../constants/StatusCodes'
+import { ProgramCodes } from '../constants/ProgramCodes'
+import { TypeCodes } from '../constants/ProgramTypeCodes'
+import GetCPPProgramData from './api/programData/cpp'
+import GetEIProgramData from './api/programData/ei'
 
 export default function Dashboard(props) {
   return (
@@ -108,7 +113,6 @@ export default function Dashboard(props) {
               benefit={ACTIVE_CPP}
               tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
               taskGroups={true}
-              activeCppApi={props.activeCppProps}
             />
             <BenefitCard
               locale={props.locale}
@@ -134,7 +138,6 @@ export default function Dashboard(props) {
                 ACTIVE_EI_DOCS_TASKS,
               ]}
               taskGroups={true}
-              activeEiApi={props.activeEiProps}
             />
             <BenefitCard
               locale={props.locale}
@@ -222,33 +225,25 @@ export async function getServerSideProps({ req, locale }) {
     }
   }
 
+
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
     description: 'en + fr description',
   }
 
-  const currentBenefits = [] // to be retrieved by API
-
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
 
-  // tests - uncomment to hide a card with conditions
-  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPRetirement, statusCode: StatusCodes.Active })
-  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPRetirement, statusCode: StatusCodes.Pending })
-  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPDisability, statusCode: StatusCodes.Active })
-  //currentBenefits.push({ programCode: ProgramCodes.CPP, typeCode: TypeCodes.CPPDisability, statusCode: StatusCodes.Pending })
-  //currentBenefits.push({ programCode: ProgramCodes.OAS, statusCode: StatusCodes.Active })
-
-  const activeCpp = await getActiveCpp()
-  const activeEi = await getActiveEi()
-
-  currentBenefits.push(CreateBenefitObjWithCPPData(activeCpp))
-  currentBenefits.push(CreateBenefitObjWithEIData(activeEi))
+  const usersBenefts = [] // to be retrieved by API
+  const cppData = await GetCPPProgramData()
+  if (cppData) usersBenefts.push(cppData)
+  const eiData = await GetEIProgramData()
+  if (eiData) usersBenefts.push(eiData)
 
   return {
     props: {
-      advertisingCards: BuildAdvertisingCards(currentBenefits),
-      usersBenefits: currentBenefits,
+      advertisingCards: BuildAdvertisingCards(usersBenefts),
+      usersBenefits: usersBenefts,
       activeCppProps: activeCpp,
       activeEiProps: activeEi,
       isAuth: isAuth,
@@ -256,36 +251,6 @@ export async function getServerSideProps({ req, locale }) {
       langToggleLink,
       metadata,
     },
-  }
-}
-
-async function getActiveCpp() {
-  try {
-    const res = await fetch(process.env.CPP_ACTIVE_BENEFIT_URL, {
-      headers: new Headers({
-        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
-      }),
-    })
-    const data = await res.json()
-    return data
-  } catch (e) {
-    console.log(e)
-    return []
-  }
-}
-
-async function getActiveEi() {
-  try {
-    const res = await fetch(process.env.EI_ACTIVE_BENEFIT_URL, {
-      headers: new Headers({
-        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
-      }),
-    })
-    const data = await res.json()
-    return data
-  } catch (e) {
-    console.log(e)
-    return []
   }
 }
 

@@ -1,7 +1,6 @@
 import propTypes from 'prop-types'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
-import { ProgramCodes, StatusCodes } from '../../objects/UniversalBenefit'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
 import StatusBadge from '../atoms/StatusBadge'
 import BenefitTasks from './BenefitTasks'
@@ -24,7 +23,7 @@ export default function UniversalBenefitCard(props) {
   return (
     <div className="benefit-card" id={benefitCardId}>
       <StatusBadge status={props.benefit.statusCode} locale={props.locale} />
-      <div className="px-4 md:px-6">
+      <div className="px-4 md:px-6 pb-6">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
           <div className="col-span-1 py-4 md:px-0 lg:px-2">
             <h2 className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
@@ -41,7 +40,7 @@ export default function UniversalBenefitCard(props) {
                     return (
                       <BenefitCardHeaderSummary
                         key={index}
-                        locale={t}
+                        locale={props.locale}
                         summary={summary}
                       />
                     )
@@ -93,9 +92,9 @@ export default function UniversalBenefitCard(props) {
 UniversalBenefitCard.propTypes = {
   locale: propTypes.string.isRequired,
   benefit: propTypes.shape({
-    programCode: propTypes.oneOf(ProgramCodes).isRequired,
-    statusCode: propTypes.oneOf(StatusCodes).isRequired,
-    summaries: propTypes.object.isRequired,
+    programCode: propTypes.string.isRequired,
+    statusCode: propTypes.string.isRequired,
+    summaries: propTypes.array.isRequired,
     taskGroups: propTypes.array.isRequired,
     taskHeadingKey: propTypes.string.isRequired,
   }),

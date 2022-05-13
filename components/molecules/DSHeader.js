@@ -24,10 +24,10 @@ export default function DSHeader(props) {
           text: t.myBenefitsAndServices,
         },
       ]}
+      isAuthenticated={props.isAuth}
       menuProps={{
         craPath: t.craPath,
         dashboardPath: t.dashboardPath,
-        isAuthenticated: props.isAuth,
         onSignOut: () => signOut(),
         profilePath: t.profilePath,
         securityPath: t.securityPath,

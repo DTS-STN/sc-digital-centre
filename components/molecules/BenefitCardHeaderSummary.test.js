@@ -2,25 +2,26 @@ import { render, screen } from '@testing-library/react'
 import { toHaveNoViolations, axe } from 'jest-axe'
 import '@testing-library/jest-dom/extend-expect'
 import en from '../../locales/en'
-import {
-  CreateBenefitSummary,
-  SummaryTypes,
-} from '../../objects/UniversalBenefit'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
+import { SummaryTypes } from '../../constants/SummaryTypes'
+import { CreateGenericBenefitSummaryForDisplay } from '../../lib/BenefitsMapping'
 
 expect.extend(toHaveNoViolations)
 
 describe('BenefitCardHeaderSummary', () => {
   const netPay = 30
-  const summary = CreateBenefitSummary(SummaryTypes.PaymentAmount, netPay)
+  const summary = CreateGenericBenefitSummaryForDisplay(
+    SummaryTypes.PaymentAmount,
+    netPay
+  )
 
   const { container } = render(
-    <BenefitCardHeaderSummary locale={en} summary={summary} />
+    <BenefitCardHeaderSummary locale="en" summary={summary} />
   )
 
   it('renders', () => {
     const title = screen.getByText(en[summary.type].title)
-    const value = screen.getByText(netPay)
+    const value = screen.getByText('$' + netPay)
     expect(title).toBeInTheDocument()
     expect(value).toBeInTheDocument()
   })
