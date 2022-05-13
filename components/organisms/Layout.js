@@ -79,7 +79,11 @@ export default function Layout(props) {
       )}
 
       <main>
-        <LayoutContainer>{props.children}</LayoutContainer>
+        {props.fullscreen ? (
+          props.children
+        ) : (
+          <LayoutContainer>{props.children}</LayoutContainer>
+        )}
       </main>
 
       {props.displayDSFooter ? <DSFooter /> : ''}
@@ -188,6 +192,10 @@ Layout.propTypes = {
    * Toggle use of footer
    */
   displayFooter: PropTypes.bool,
+  /*
+   * Toggle the LayoutContainer from Design System (default on/true)
+   */
+  fullscreen: PropTypes.bool,
 }
 
 Layout.defaultProps = {

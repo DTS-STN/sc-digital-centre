@@ -11,6 +11,8 @@ export default function Index(props) {
       locale={props.locale}
       displayHeader={false}
       displayFooter={false}
+      displayDSFooter={false}
+      fullscreen={true}
       metadata={props.metadata}
     >
       <div className="flex h-screen bg-cover bg-center bg-splash-page">
