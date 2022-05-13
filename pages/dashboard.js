@@ -212,16 +212,16 @@ export async function getServerSideProps({ req, locale }) {
 
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
 
-  const usersBenefts = [] // to be retrieved by API
+  let usersBenefits = [] // to be retrieved by API
   const cppData = await GetCPPProgramData()
-  if (cppData) usersBenefts = usersBenefts.concat(cppData)
+  if (cppData) usersBenefits = usersBenefits.concat(cppData)
   const eiData = await GetEIProgramData()
-  if (eiData) usersBenefts.push(eiData)
+  if (eiData) usersBenefits.push(eiData)
 
   return {
     props: {
-      advertisingCards: BuildAdvertisingCards(usersBenefts),
-      usersBenefits: usersBenefts,
+      advertisingCards: BuildAdvertisingCards(usersBenefits),
+      usersBenefits: usersBenefits,
       isAuth: true,
       locale,
       langToggleLink,
