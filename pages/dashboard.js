@@ -70,15 +70,15 @@ export default function Dashboard(props) {
     props.advertisingCards
   )
   const [usersBenefits, setUsersBenefits] = useState([])
-  const [cppLoading, setCppLoading] = useState(false)
-  const [eiLoading, setEiLoading] = useState(false)
+  const [cppLoaded, setCppLoaded] = useState(false)
+  const [eiLoaded, setEiLoaded] = useState(false)
   //no requirements to do anything with the errors yet
   const [cppError, setCppError] = useState(false)
   const [eiError, setEiError] = useState(false)
 
   const FilterAdvertisingCards = useCallback(
     (benefits) => {
-      //determin which advertising cards to remove
+      //determine which advertising cards to remove
       const cardsToRemove = []
       if (benefits && benefits.length) {
         if (
@@ -131,33 +131,27 @@ export default function Dashboard(props) {
     [props.advertisingCards]
   )
 
-  const fetchProgramData = useCallback(
-    (program, setLoading, setError) => {
-      setLoading(true)
-      fetch(`api/programData/${program}`)
-        .then((res) => res.json())
-        .then((data) => {
-          const currData = usersBenefits
-          currData.push(data)
-          setUsersBenefits(currData)
-          setAdvertisingCards(FilterAdvertisingCards(currData))
-          setLoading(false)
-        })
-        .catch((error) => {
-          setLoading(false)
-          setError(error)
-        })
-    },
-    [usersBenefits, FilterAdvertisingCards]
-  )
-
   useEffect(() => {
-    fetchProgramData('cpp', setCppLoading, setCppError)
-  }, [fetchProgramData])
+    async function FetchProgramData(program, isLoaded, setLoading, setError) {
+      if (!isLoaded) {
+        fetch(`api/programData/${program}`)
+          .then((res) => res.json())
+          .then((data) => {
+            const currData = usersBenefits
+            currData.push(data)
+            setUsersBenefits(currData)
+            setAdvertisingCards(FilterAdvertisingCards(currData))
+          })
+          .catch((error) => {
+            setError(error)
+          })
+          .finally(() => setLoading(true))
+      }
+    }
 
-  useEffect(() => {
-    fetchProgramData('ei', setEiLoading, setEiError)
-  }, [fetchProgramData])
+    FetchProgramData('cpp', cppLoaded, setCppLoaded, setCppError)
+    FetchProgramData('ei', eiLoaded, setEiLoaded, setEiError)
+  }, [cppLoaded, eiLoaded, usersBenefits])
 
   return (
     <>
@@ -175,7 +169,7 @@ export default function Dashboard(props) {
             <Greeting locale={props.locale} name="Mary" />
 
             {/* todo, design to create loading */}
-            {!cppLoading && !eiLoading ? null : 'Loading User Benefit Data...'}
+            {cppLoaded && eiLoaded ? null : 'Loading User Benefit Data...'}
             {!usersBenefits || !usersBenefits.length
               ? null
               : usersBenefits.map((value, index) => {
