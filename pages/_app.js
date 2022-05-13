@@ -10,6 +10,7 @@ export default function MyApp({ Component, pageProps }) {
       metadata={pageProps.metadata}
       langToggleLink={pageProps.langToggleLink}
       display={pageProps.display}
+      isAuth={pageProps.isAuth}
     >
       <Component {...pageProps} />
     </Layout>
