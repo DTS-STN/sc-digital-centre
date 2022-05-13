@@ -57,7 +57,6 @@ import {
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
 //import { getSession } from 'next-auth/react'
-import Layout from '../components/organisms/Layout'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { StatusCodes } from '../constants/StatusCodes'
 import { ProgramCodes } from '../constants/ProgramCodes'
@@ -67,15 +66,7 @@ import GetEIProgramData from './api/programData/ei'
 
 export default function Dashboard(props) {
   return (
-    <Layout
-      locale={props.locale}
-      displayPhase={false}
-      displayHeader={true}
-      displayDSFooter={true}
-      metadata={props.metadata}
-      langToggleLink={props.langToggleLink}
-      isAuth={props.isAuth}
-    >
+    <>
       <Greeting locale={props.locale} name="Mary" />
 
       {/* New Benefit Cards API driven */}
@@ -187,7 +178,7 @@ export default function Dashboard(props) {
         benefit={NO_BENEFIT_OAS}
         tasks={NO_BENEFIT_OAS_TASKS}
       />
-    </Layout>
+    </>
   )
 }
 

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
-import Layout from '../components/organisms/Layout'
 import TabList from '../components/atoms/TabList'
 
 export default function Profile(props) {
@@ -86,14 +85,7 @@ export default function Profile(props) {
     ],
   }
   return (
-    <Layout
-      locale={props.locale}
-      displayPhase={false}
-      displayHeader={true}
-      displayDSFooter={true}
-      metadata={props.metadata}
-      langToggleLink={props.langToggleLink}
-    >
+    <>
       <h1 className="py-4 text-4xl font-bold text-gray-darker">
         {t.profileAndSecuritySettings}
       </h1>
@@ -139,7 +131,7 @@ export default function Profile(props) {
           {t.backToDashboard}
         </button>
       </Link>
-    </Layout>
+    </>
   )
 }
 

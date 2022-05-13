@@ -1,25 +1,14 @@
 import { ErrorPage } from '@dts-stn/decd-design-system'
-import Layout from '../components/organisms/Layout'
 
 export default function Error503(props) {
   const errorPageLink = props.locale === 'en' ? '/dashboard' : '/fr/dashboard'
   return (
-    <>
-      <Layout
-        locale={props.locale}
-        displayHeader={true}
-        displayDSFooter={false}
-        metadata={props.metadata}
-        langToggleLink={props.langToggleLink}
-      >
-        <ErrorPage
-          errType="503"
-          lang={props.locale}
-          accountPageLink={errorPageLink}
-          isAuth={true}
-        />
-      </Layout>
-    </>
+    <ErrorPage
+      errType="503"
+      lang={props.locale}
+      accountPageLink={errorPageLink}
+      isAuth={true}
+    />
   )
 }
 
@@ -30,7 +19,10 @@ export async function getStaticProps({ locale }) {
     keywords: 'en + fr keywords',
     description: 'en + fr description',
   }
+  const display = {
+    hideDSFooter: true,
+  }
   return {
-    props: { locale, langToggleLink, metadata },
+    props: { locale, langToggleLink, metadata, display },
   }
 }
