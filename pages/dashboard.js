@@ -212,7 +212,6 @@ export async function getServerSideProps({ req, locale }) {
   }
 
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
-  const t = locale === 'en' ? en : fr
   const usersBenefts = [] // to be retrieved by API
   const cppData = await GetCPPProgramData()
   if (cppData) usersBenefts.push(cppData)
