@@ -219,21 +219,6 @@ export async function getServerSideProps({ req, locale }) {
   const eiData = await GetEIProgramData()
   if (eiData) usersBenefts.push(eiData)
 
-  const breadCrumbItems = [
-    {
-      link: t.url_canada_ca,
-      text: t.canada_ca,
-    },
-    {
-      link: t.url_serviceCanada,
-      text: t.serviceCanada,
-    },
-    {
-      link: t.url_myBenefitsAndServices,
-      text: t.myBenefitsAndServices,
-    },
-  ]
-
   return {
     props: {
       advertisingCards: BuildAdvertisingCards(usersBenefts),
@@ -242,7 +227,6 @@ export async function getServerSideProps({ req, locale }) {
       locale,
       langToggleLink,
       metadata,
-      breadCrumbItems,
     },
   }
 }

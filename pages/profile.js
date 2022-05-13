@@ -167,20 +167,8 @@ export async function getStaticProps({ locale }) {
 
   const breadCrumbItems = [
     {
-      link: t.url_canada_ca,
-      text: t.canada_ca,
-    },
-    {
-      link: t.url_serviceCanada,
-      text: t.serviceCanada,
-    },
-    {
       link: t.url_myBenefitsAndServices,
       text: t.myBenefitsAndServices,
-    },
-    {
-      link: t.url_profileAndSecuritySettings,
-      text: t.profileAndSecuritySettings,
     },
   ]
 
