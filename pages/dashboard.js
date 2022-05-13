@@ -58,13 +58,6 @@ import {
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
 import { getSession } from 'next-auth/react'
-import {
-  CreateBenefitObjWithCPPData,
-  CreateBenefitObjWithEIData,
-  ProgramCodes,
-  StatusCodes,
-  TypeCodes,
-} from '../objects/UniversalBenefit'
 import Layout from '../components/organisms/Layout'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { StatusCodes } from '../constants/StatusCodes'
@@ -225,7 +218,6 @@ export async function getServerSideProps({ req, locale }) {
     }
   }
 
-
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
@@ -244,8 +236,6 @@ export async function getServerSideProps({ req, locale }) {
     props: {
       advertisingCards: BuildAdvertisingCards(usersBenefts),
       usersBenefits: usersBenefts,
-      activeCppProps: activeCpp,
-      activeEiProps: activeEi,
       isAuth: isAuth,
       locale,
       langToggleLink,
