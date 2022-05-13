@@ -365,6 +365,7 @@ export default {
   url_serviceCanada:
     'https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html',
   url_myBenefitsAndServices: '/fr/dashboard',
+  url_profileAndSecuritySettings: '/fr/profile',
 
   // Benefit card header URLs
   url_statusAndMessages: '/fr/dashboard',
