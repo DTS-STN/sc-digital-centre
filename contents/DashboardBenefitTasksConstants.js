@@ -1,8 +1,5 @@
 import { ProgramCodes } from '../constants/ProgramCodes'
 import { StatusCodes } from '../constants/StatusCodes'
-import en from '../locales/en'
-
-const t = en
 
 const TASKS = {
   // general tasks
