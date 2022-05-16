@@ -1,7 +1,6 @@
 import BenefitCard from '../components/molecules/BenefitCard'
 import NoBenefitCard from '../components/molecules/NoBenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
-import { LayoutContainer } from '@dts-stn/decd-design-system'
 import Greeting from '../components/molecules/Greeting'
 import {
   SUBMITTED_CPP,
@@ -63,137 +62,223 @@ import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { StatusCodes } from '../constants/StatusCodes'
 import { ProgramCodes } from '../constants/ProgramCodes'
 import { TypeCodes } from '../constants/ProgramTypeCodes'
-import GetCPPProgramData from './api/programData/cpp'
-import GetEIProgramData from './api/programData/ei'
+import { useCallback, useEffect, useState } from 'react'
 
 export default function Dashboard(props) {
+  const [advertisingCards, setAdvertisingCards] = useState(
+    props.advertisingCards
+  )
+  const [usersBenefits, setUsersBenefits] = useState([])
+  const [cppLoaded, setCppLoaded] = useState(false)
+  const [eiLoaded, setEiLoaded] = useState(false)
+  //no requirements to do anything with the errors yet
+  const [cppError, setCppError] = useState(false)
+  const [eiError, setEiError] = useState(false)
+
+  const FilterAdvertisingCards = useCallback(
+    (benefits) => {
+      //determine which advertising cards to remove
+      const cardsToRemove = []
+      if (benefits && benefits.length) {
+        if (
+          !CheckAllBenefitsForAdvertising(
+            benefits,
+            [StatusCodes.inPayment, StatusCodes.Pending],
+            ProgramCodes.CPP,
+            TypeCodes.CPPRetirement
+          )
+        ) {
+          cardsToRemove.push(APPLICATION_CARD_CPP)
+        }
+        if (
+          !CheckAllBenefitsForAdvertising(
+            benefits,
+            [StatusCodes.inPayment, StatusCodes.Pending],
+            ProgramCodes.OAS
+          )
+        ) {
+          cardsToRemove.push(APPLICATION_CARD_OAS)
+        }
+        if (
+          !CheckAllBenefitsForAdvertising(
+            benefits,
+            [StatusCodes.inPayment, StatusCodes.Pending],
+            ProgramCodes.GIS
+          )
+        ) {
+          cardsToRemove.push(APPLICATION_CARD_GIS)
+        }
+        if (
+          !CheckAllBenefitsForAdvertising(
+            benefits,
+            [StatusCodes.inPayment, StatusCodes.Pending],
+            ProgramCodes.CPP,
+            TypeCodes.CPPDisability
+          )
+        ) {
+          cardsToRemove.push(APPLICATION_CARD_CPPD)
+        }
+      }
+
+      //now remove them if they should be removed
+      return cardsToRemove.length
+        ? props.advertisingCards.filter((c) =>
+            cardsToRemove.find((r) => r.benefitType !== c.benefitType)
+          )
+        : props.advertisingCards
+    },
+    [props.advertisingCards]
+  )
+
+  useEffect(() => {
+    async function FetchProgramData(program, isLoaded, setLoading, setError) {
+      if (!isLoaded) {
+        fetch(`api/programData/${program}`)
+          .then((res) => res.json())
+          .then((data) => {
+            const currData = usersBenefits
+            currData.push(data)
+            setUsersBenefits(currData)
+            setAdvertisingCards(FilterAdvertisingCards(currData))
+          })
+          .catch((error) => {
+            setError(error)
+          })
+          .finally(() => setLoading(true))
+      }
+    }
+
+    FetchProgramData('cpp', cppLoaded, setCppLoaded, setCppError)
+    FetchProgramData('ei', eiLoaded, setEiLoaded, setEiError)
+  }, [cppLoaded, eiLoaded, usersBenefits])
+
   return (
     <>
-      <Layout
+      <Greeting locale={props.locale} name="Mary" />
+
+      {/* todo, design to create loading */}
+      {cppLoaded && eiLoaded ? null : 'Loading User Benefit Data...'}
+      {!usersBenefits || !usersBenefits.length
+        ? null
+        : usersBenefits.map((value, index) => {
+            return (
+              <UniversalBenefitCard
+                key={index}
+                locale={props.locale}
+                benefit={value}
+              />
+            )
+          })}
+
+      {/* Old Benefit Cards, to be removed once mocks are generated with new cards */}
+      <BenefitCard
         locale={props.locale}
-        displayPhase={false}
-        displayHeader={true}
-        displayDSFooter={true}
-        metadata={props.metadata}
-        langToggleLink={props.langToggleLink}
-        isAuth={props.isAuth}
-      >
-        <LayoutContainer>
-          <div className="mb-8">
-            <Greeting locale={props.locale} name="Mary" />
+        benefit={SUBMITTED_CPP}
+        tasks={[SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS]}
+        taskGroups={true}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={ACTIVE_CPP}
+        tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
+        taskGroups={true}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={SUBMITTED_OAS}
+        tasks={SUBMITTED_OAS_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={ACTIVE_OAS}
+        tasks={ACTIVE_OAS_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={SUBMITTED_EI}
+        tasks={SUBMITTED_EI_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={ACTIVE_EI}
+        tasks={[
+          ACTIVE_EI_COMMON_TASKS,
+          ACTIVE_EI_PAYMENT_TASKS,
+          ACTIVE_EI_DOCS_TASKS,
+        ]}
+        taskGroups={true}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={INACTIVE_EI}
+        tasks={INACTIVE_EI_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={SUBMITTED_CPPD}
+        tasks={SUBMITTED_CPPD_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={ACTIVE_CPPD}
+        tasks={ACTIVE_CPPD_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={INACTIVE_CPPD}
+        tasks={INACTIVE_CPP_TASKS}
+      />
+      <BenefitCard
+        locale={props.locale}
+        benefit={ACTIVE_SEB}
+        tasks={[ACTIVE_SEB_TASKS]}
+        taskGroups={true}
+      />
 
-            {/* New Benefit Cards API driven */}
-            {props.usersBenefits == null || props.usersBenefits.length <= 0
-              ? null
-              : props.usersBenefits.map((value, index) => {
-                  return (
-                    <UniversalBenefitCard
-                      key={index}
-                      locale={props.locale}
-                      benefit={value}
-                    />
-                  )
-                })}
-
-            <BenefitCard
+      {/* application or "advertising" cards */}
+      {advertisingCards.map((value, index) => {
+        return (
+          <div key={index}>
+            <BenefitApplicationCard
               locale={props.locale}
-              benefit={SUBMITTED_CPP}
-              tasks={[SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS]}
-              taskGroups={true}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={ACTIVE_CPP}
-              tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
-              taskGroups={true}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={SUBMITTED_OAS}
-              tasks={SUBMITTED_OAS_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={ACTIVE_OAS}
-              tasks={ACTIVE_OAS_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={SUBMITTED_EI}
-              tasks={SUBMITTED_EI_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={ACTIVE_EI}
-              tasks={[
-                ACTIVE_EI_COMMON_TASKS,
-                ACTIVE_EI_PAYMENT_TASKS,
-                ACTIVE_EI_DOCS_TASKS,
-              ]}
-              taskGroups={true}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={INACTIVE_EI}
-              tasks={INACTIVE_EI_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={SUBMITTED_CPPD}
-              tasks={SUBMITTED_CPPD_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={ACTIVE_CPPD}
-              tasks={ACTIVE_CPPD_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={INACTIVE_CPPD}
-              tasks={INACTIVE_CPP_TASKS}
-            />
-            <BenefitCard
-              locale={props.locale}
-              benefit={ACTIVE_SEB}
-              tasks={[ACTIVE_SEB_TASKS]}
-              taskGroups={true}
-            />
-
-            {/* application or "advertising" cards */}
-            {props.advertisingCards.map((value, index) => {
-              return (
-                <div key={index}>
-                  <BenefitApplicationCard
-                    locale={props.locale}
-                    benefitApplication={value}
-                  />
-                </div>
-              )
-            })}
-
-            <NoBenefitCard
-              locale={props.locale}
-              benefit={NO_BENEFIT_CPP}
-              tasks={NO_BENEFIT_CPP_TASKS}
-            />
-            <NoBenefitCard
-              locale={props.locale}
-              benefit={NO_BENEFIT_EI}
-              tasks={NO_BENEFIT_EI_TASKS}
-            />
-            <NoBenefitCard
-              locale={props.locale}
-              benefit={NO_BENEFIT_GIS}
-              tasks={NO_BENEFIT_GIS_TASKS}
-            />
-            <NoBenefitCard
-              locale={props.locale}
-              benefit={NO_BENEFIT_OAS}
-              tasks={NO_BENEFIT_OAS_TASKS}
+              benefitApplication={value}
             />
           </div>
-        </LayoutContainer>
-      </Layout>
+        )
+      })}
+
+      {/* application or "advertising" cards */}
+      {props.advertisingCards.map((value, index) => {
+        return (
+          <div key={index}>
+            <BenefitApplicationCard
+              locale={props.locale}
+              benefitApplication={value}
+            />
+          </div>
+        )
+      })}
+
+      <NoBenefitCard
+        locale={props.locale}
+        benefit={NO_BENEFIT_CPP}
+        tasks={NO_BENEFIT_CPP_TASKS}
+      />
+      <NoBenefitCard
+        locale={props.locale}
+        benefit={NO_BENEFIT_EI}
+        tasks={NO_BENEFIT_EI_TASKS}
+      />
+      <NoBenefitCard
+        locale={props.locale}
+        benefit={NO_BENEFIT_GIS}
+        tasks={NO_BENEFIT_GIS_TASKS}
+      />
+      <NoBenefitCard
+        locale={props.locale}
+        benefit={NO_BENEFIT_OAS}
+        tasks={NO_BENEFIT_OAS_TASKS}
+      />
     </>
   )
 }
@@ -226,17 +311,10 @@ export async function getServerSideProps({ req, locale }) {
 
   const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
 
-  const usersBenefts = [] // to be retrieved by API
-  const cppData = await GetCPPProgramData()
-  if (cppData) usersBenefts.push(cppData)
-  const eiData = await GetEIProgramData()
-  if (eiData) usersBenefts.push(eiData)
-
   return {
     props: {
-      advertisingCards: BuildAdvertisingCards(usersBenefts),
-      usersBenefits: usersBenefts,
-      isAuth: isAuth,
+      advertisingCards: BuildAdvertisingCards(),
+      isAuth: true,
       locale,
       langToggleLink,
       metadata,
@@ -244,49 +322,15 @@ export async function getServerSideProps({ req, locale }) {
   }
 }
 
-function BuildAdvertisingCards(currentBenefits) {
+function BuildAdvertisingCards() {
   // the order of these matters
-  // words to be replaced with codes
   const advertisingCards = []
+
   advertisingCards.push(APPLICATION_CARD_EI)
-  if (
-    CheckAllBenefitsForAdvertising(
-      currentBenefits,
-      [StatusCodes.Active, StatusCodes.Pending],
-      ProgramCodes.CPP,
-      TypeCodes.CPPRetirement
-    )
-  ) {
-    advertisingCards.push(APPLICATION_CARD_CPP)
-  }
-  if (
-    CheckAllBenefitsForAdvertising(
-      currentBenefits,
-      [StatusCodes.Active, StatusCodes.Pending],
-      ProgramCodes.OAS
-    )
-  ) {
-    advertisingCards.push(APPLICATION_CARD_OAS)
-  }
-  if (
-    CheckAllBenefitsForAdvertising(
-      currentBenefits,
-      [StatusCodes.Active, StatusCodes.Pending],
-      ProgramCodes.GIS
-    )
-  ) {
-    advertisingCards.push(APPLICATION_CARD_GIS)
-  }
-  if (
-    CheckAllBenefitsForAdvertising(
-      currentBenefits,
-      [StatusCodes.Active, StatusCodes.Pending],
-      ProgramCodes.CPP,
-      TypeCodes.CPPDisability
-    )
-  ) {
-    advertisingCards.push(APPLICATION_CARD_CPPD)
-  }
+  advertisingCards.push(APPLICATION_CARD_CPP)
+  advertisingCards.push(APPLICATION_CARD_OAS)
+  advertisingCards.push(APPLICATION_CARD_GIS)
+  advertisingCards.push(APPLICATION_CARD_CPPD)
   advertisingCards.push(APPLICATION_CARD_CPP_CHILDS_BENEFIT_AGED_18_25)
   advertisingCards.push(
     APPLICATION_CARD_CPP_SURVIVOR_PENSION_AND_CHILD_BENEFITS

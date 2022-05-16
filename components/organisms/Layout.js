@@ -9,12 +9,15 @@ import { useEffect } from 'react'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import { LayoutContainer } from '@dts-stn/decd-design-system'
 
 /**
  * Component which defines the layout of the page for all screen sizes
  */
 export default function Layout(props) {
   const t = props.locale === 'en' ? en : fr
+  //catch if display is null so page renders with defaults
+  const display = props.display ?? {}
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
@@ -53,7 +56,7 @@ export default function Layout(props) {
       )}
       <Meta lang={props.locale} metadata={props.metadata} />
 
-      {props.displayPhase ? (
+      {display.showPhase ? (
         <>
           <PhaseBanner
             phase={props.phase}
@@ -65,25 +68,28 @@ export default function Layout(props) {
         ''
       )}
 
-      {props.displayHeader ? (
-        <>
-          <DSHeader
-            locale={props.locale}
-            langToggleLink={props.langToggleLink}
-            isAuth={props.isAuth}
-          />
-        </>
-      ) : (
+      {display.hideHeader ? (
         ''
+      ) : (
+        <DSHeader
+          locale={props.locale}
+          langToggleLink={props.langToggleLink}
+          isAuth={props.isAuth}
+          breadCrumbItems={props.breadCrumbItems}
+        />
       )}
 
       <main>
-        <div>{props.children}</div>
+        {display.fullscreen ? (
+          props.children
+        ) : (
+          <LayoutContainer>{props.children}</LayoutContainer>
+        )}
       </main>
 
-      {props.displayDSFooter ? <DSFooter /> : ''}
+      {display.hideDSFooter ? '' : <DSFooter />}
 
-      {props.displayFooter ? (
+      {display.showFooter ? (
         <Footer
           footerLogoAltText="symbol2"
           footerLogoImage="/wmms-blk.svg"
@@ -171,22 +177,29 @@ Layout.propTypes = {
    * Link of the page in opposite language
    */
   langToggleLink: PropTypes.string,
-  /*
-   * Toggle use of header
-   */
-  displayHeader: PropTypes.bool,
-  /*
-   * Toggle use of Phase
-   */
-  displayPhase: PropTypes.bool,
-  /*
-   * Toggle use of DS footer
-   */
-  displayDSFooter: PropTypes.bool,
-  /*
-   * Toggle use of footer
-   */
-  displayFooter: PropTypes.bool,
+  display: PropTypes.shape({
+    /*
+     * Toggle use of header (default false)
+     */
+    hideHeader: PropTypes.bool,
+    /*
+     * Toggle use of Phase (default false)
+     */
+    showPhase: PropTypes.bool,
+    /*
+     * Toggle use of DS footer (default false)
+     */
+    hideDSFooter: PropTypes.bool,
+    /*
+     * Toggle use of footer (default false)
+     */
+    showFooter: PropTypes.bool,
+    /*
+     * Toggle the LayoutContainer from Design System (default on/true)
+     */
+    fullscreen: PropTypes.bool,
+  }),
+  breadCrumbItems: PropTypes.array,
 }
 
 Layout.defaultProps = {
