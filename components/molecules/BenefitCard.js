@@ -136,7 +136,10 @@ const BenefitCard = (props) => {
       ) : null}
 
       {/* Top tasks */}
-      <div ref={topOfTaskRef}>
+      <div
+        ref={topOfTaskRef}
+        className={` ${props.taskGroups ? 'grid sm:grid-cols-2' : ''}`}
+      >
         {!props.taskGroups ? (
           <BenefitTasks
             benefitType={props.benefit.benefitType}

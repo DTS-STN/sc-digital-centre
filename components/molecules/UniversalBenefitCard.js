@@ -68,7 +68,7 @@ export default function UniversalBenefitCard(props) {
       </div>
       {props.benefit.taskGroups == null ||
       props.benefit.taskGroups.length <= 0 ? null : (
-        <div id={taskListId}>
+        <div id={taskListId} className="grid sm:grid-cols-2">
           {!isOpen
             ? null
             : props.benefit.taskGroups.map((taskList, index) => {
