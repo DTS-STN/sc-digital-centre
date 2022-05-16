@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652706085131" clover="3.2.0">
-  <project timestamp="1652706085131" name="All files">
-    <metrics statements="369" coveredstatements="221" conditionals="304" coveredconditionals="180" methods="125" coveredmethods="75" elements="798" coveredelements="476" complexity="0" loc="369" ncloc="369" packages="7" files="45" classes="45"/>
+<coverage generated="1652714338588" clover="3.2.0">
+  <project timestamp="1652714338588" name="All files">
+    <metrics statements="369" coveredstatements="221" conditionals="306" coveredconditionals="182" methods="125" coveredmethods="75" elements="800" coveredelements="478" complexity="0" loc="369" ncloc="369" packages="7" files="45" classes="45"/>
     <package name="components.atoms">
       <metrics statements="92" coveredstatements="74" conditionals="86" coveredconditionals="63" methods="34" coveredmethods="29"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -146,7 +146,7 @@
       </file>
     </package>
     <package name="components.molecules">
-      <metrics statements="126" coveredstatements="96" conditionals="130" coveredconditionals="89" methods="41" coveredmethods="27"/>
+      <metrics statements="126" coveredstatements="96" conditionals="132" coveredconditionals="91" methods="41" coveredmethods="27"/>
       <file name="BenefitApplicationCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitApplicationCard.js">
         <metrics statements="11" coveredstatements="11" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
         <line num="8" count="2" type="stmt"/>
@@ -162,7 +162,7 @@
         <line num="93" count="2" type="stmt"/>
       </file>
       <file name="BenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitCard.js">
-        <metrics statements="37" coveredstatements="26" conditionals="37" coveredconditionals="25" methods="9" coveredmethods="4"/>
+        <metrics statements="37" coveredstatements="26" conditionals="39" coveredconditionals="27" methods="9" coveredmethods="4"/>
         <line num="16" count="2" type="stmt"/>
         <line num="17" count="35" type="cond" truecount="2" falsecount="0"/>
         <line num="18" count="35" type="stmt"/>
@@ -196,10 +196,10 @@
         <line num="112" count="12" type="stmt"/>
         <line num="118" count="3" type="stmt"/>
         <line num="122" count="35" type="stmt"/>
-        <line num="148" count="0" type="stmt"/>
-        <line num="169" count="0" type="stmt"/>
-        <line num="170" count="0" type="stmt"/>
-        <line num="182" count="2" type="stmt"/>
+        <line num="151" count="0" type="stmt"/>
+        <line num="172" count="0" type="stmt"/>
+        <line num="173" count="0" type="stmt"/>
+        <line num="185" count="2" type="stmt"/>
       </file>
       <file name="BenefitCardHeaderSummary.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitCardHeaderSummary.js">
         <metrics statements="13" coveredstatements="8" conditionals="11" coveredconditionals="5" methods="3" coveredmethods="3"/>
