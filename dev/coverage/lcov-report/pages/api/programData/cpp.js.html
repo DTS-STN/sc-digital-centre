@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
@@ -74,39 +74,57 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CreateGenefitBenefitJSONForUserDisplayWithCPPData } from '../../../lib/BenefitsMapping'
 &nbsp;
-export default async function <span class="fstat-no" title="function not covered" >GetCPPProgramData(</span>) {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const cppData = <span class="cstat-no" title="statement not covered" >await fetch(process.env.CPP_ACTIVE_BENEFIT_URL, {</span>
-      headers: new Headers({
-        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
-      }),
-    })
-<span class="cstat-no" title="statement not covered" >    return CreateGenefitBenefitJSONForUserDisplayWithCPPData(</span>
-      await cppData.json()
-    )
-  } catch (e) {
-<span class="cstat-no" title="statement not covered" >    console.log(e)</span>
-<span class="cstat-no" title="statement not covered" >    return null</span>
+export default async function <span class="fstat-no" title="function not covered" >handler(</span>req, res) {
+<span class="cstat-no" title="statement not covered" >  if (req.method === 'GET') {</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const cppData = <span class="cstat-no" title="statement not covered" >await fetch(process.env.CPP_ACTIVE_BENEFIT_URL, {</span>
+        headers: new Headers({
+          'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+        }),
+      })
+      const benefit = <span class="cstat-no" title="statement not covered" >CreateGenefitBenefitJSONForUserDisplayWithCPPData(</span>
+        await cppData.json()
+      )
+<span class="cstat-no" title="statement not covered" >      res.status(200).json(benefit)</span>
+    } catch (e) {
+<span class="cstat-no" title="statement not covered" >      console.log(e)</span>
+<span class="cstat-no" title="statement not covered" >      res.status(500)</span>
+    }
+  } else {
+<span class="cstat-no" title="statement not covered" >    res.status(405)</span>
   }
+<span class="cstat-no" title="statement not covered" >  return res</span>
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -115,7 +133,7 @@ export default async function <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri May 13 2022 19:38:16 GMT+0000 (Coordinated Universal Time)
+                at Mon May 16 2022 13:01:25 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
