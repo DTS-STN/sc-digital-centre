@@ -132,7 +132,7 @@ export default function Dashboard(props) {
   useEffect(() => {
     async function FetchProgramData(program, isLoaded, setLoading, setError) {
       if (!isLoaded) {
-        fetch(`api/programData/${program}`)
+        fetch(`/api/programData/${program}`)
           .then((res) => res.json())
           .then((data) => {
             const currData = usersBenefits
