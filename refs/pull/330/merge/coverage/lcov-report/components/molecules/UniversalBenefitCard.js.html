@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.53% </span>
+                <span class="strong">53.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/13</span>
+                <span class='fraction'>7/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.14% </span>
+                <span class="strong">42.85% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/14</span>
+                <span class='fraction'>6/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.53% </span>
+                <span class="strong">53.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/13</span>
+                <span class='fraction'>7/13</span>
             </div>
         
             
@@ -169,20 +169,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -197,7 +195,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -295,10 +295,10 @@ export default function UniversalBenefitCard(props) {
           &lt;div className="grid col-span-3"&gt;
             &lt;div className="grid col-span-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display"&gt;
               {props.benefit.summaries == null ||
-              props.benefit.summaries.length &lt;= 0
+<span class="branch-1 cbranch-no" title="branch not covered" >              props.benefit.summaries.length &lt;= 0</span>
                 ? null
-                : props.benefit.summaries.map((summary, index) =&gt; {
-                    return (
+                : <span class="branch-1 cbranch-no" title="branch not covered" >props.benefit.summaries.map(<span class="fstat-no" title="function not covered" >(s</span>ummary, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    return (</span>
                       &lt;BenefitCardHeaderSummary
                         key={index}
                         locale={props.locale}
@@ -329,7 +329,7 @@ export default function UniversalBenefitCard(props) {
       &lt;/div&gt;
       {props.benefit.taskGroups == null ||
 <span class="branch-1 cbranch-no" title="branch not covered" >      props.benefit.taskGroups.length &lt;= 0 </span>? null : (
-<span class="branch-1 cbranch-no" title="branch not covered" >        &lt;div id={taskListId}&gt;</span>
+<span class="branch-1 cbranch-no" title="branch not covered" >        &lt;div id={taskListId} className="grid sm:grid-cols-2"&gt;</span>
           {!isOpen
             ? null
             : props.benefit.taskGroups.map(<span class="fstat-no" title="function not covered" >(t</span>askList, index) =&gt; {
@@ -367,7 +367,7 @@ UniversalBenefitCard.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri May 13 2022 13:59:34 GMT+0000 (Coordinated Universal Time)
+                at Tue May 17 2022 11:58:37 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

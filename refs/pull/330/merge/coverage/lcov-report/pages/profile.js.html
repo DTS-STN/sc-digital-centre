@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.33% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/12</span>
+                <span class='fraction'>7/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/8</span>
+                <span class='fraction'>2/10</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.33% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/12</span>
+                <span class='fraction'>7/14</span>
             </div>
         
             
@@ -221,9 +221,7 @@
 <a name='L162'></a><a href='#L162'>162</a>
 <a name='L163'></a><a href='#L163'>163</a>
 <a name='L164'></a><a href='#L164'>164</a>
-<a name='L165'></a><a href='#L165'>165</a>
-<a name='L166'></a><a href='#L166'>166</a>
-<a name='L167'></a><a href='#L167'>167</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L165'></a><a href='#L165'>165</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -231,9 +229,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -312,16 +308,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -373,6 +359,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -380,22 +376,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import ProfileInfo from '../components/molecules/ProfileInfo'
-import { LayoutContainer } from '@dts-stn/decd-design-system'
 import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
-import Layout from '../components/organisms/Layout'
 import TabList from '../components/atoms/TabList'
 &nbsp;
 export default function Profile(props) {
@@ -479,80 +473,80 @@ export default function Profile(props) {
   }
   return (
     &lt;&gt;
-      &lt;Layout
+      &lt;h1 className="py-4 text-4xl font-bold text-gray-darker"&gt;
+        {t.profileAndSecuritySettings}
+      &lt;/h1&gt;
+      &lt;TabList
+        titles={[t.profileAndPreferences, t.securitySettings]}
+        onClick={<span class="fstat-no" title="function not covered" >(i</span>ndex) =&gt; <span class="cstat-no" title="statement not covered" >setTabSelected(index)}</span>
+        tabSelected={tabSelected}
+        containerStyle={'flex flex-wrap border-b border-gray-200'}
+        selectedTabStyle={
+          'bg-gray-100 active border-b-2 border-b-bright-blue-lighthover'
+        }
+        unselectedTabStyle={
+          'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
+        }
+        genericTabStyle={'inline-block text-lg py-3 px-4 text-center'}
         locale={props.locale}
-        displayPhase={false}
-        displayHeader={true}
-        displayDSFooter={true}
-        metadata={props.metadata}
-        langToggleLink={props.langToggleLink}
-      &gt;
-        &lt;LayoutContainer&gt;
-          &lt;div className="col-span-12"&gt;
-            &lt;h1 className="py-4 text-4xl font-bold text-gray-darker"&gt;
-              {t.profileAndSecuritySettings}
-            &lt;/h1&gt;
-            &lt;TabList
-              titles={[t.profileAndPreferences, t.securitySettings]}
-              onClick={<span class="fstat-no" title="function not covered" >(i</span>ndex) =&gt; <span class="cstat-no" title="statement not covered" >setTabSelected(index)}</span>
-              tabSelected={tabSelected}
-              containerStyle={'flex flex-wrap border-b border-gray-200'}
-              selectedTabStyle={
-                'bg-gray-100 active border-b-2 border-b-bright-blue-lighthover'
-              }
-              unselectedTabStyle={
-                'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
-              }
-              genericTabStyle={'inline-block text-lg py-3 px-4 text-center'}
-              locale={props.locale}
-            /&gt;
-            {tabSelected === 0 ? (
-              &lt;&gt;
-                &lt;TabList
-                  titles={[t.ei, t.cpp, t.oas]}
-                  onClick={<span class="fstat-no" title="function not covered" >(i</span>ndex) =&gt; <span class="cstat-no" title="statement not covered" >setProfileTabSelected(index)}</span>
-                  tabSelected={profileTabSelected}
-                  containerStyle={'my-4 flex flex-wrap gap-4'}
-                  selectedTabStyle={'bg-bright-blue-lighthover'}
-                  unselectedTabStyle={'bg-gray-lighter'}
-                  genericTabStyle={
-                    'text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover '
-                  }
-                  locale={props.locale}
-                &gt;&lt;/TabList&gt;
-                &lt;ProfileInfo
-                  fields={[fakeFields, fakeFields2]}
-                  locale={props.locale}
-                /&gt;{' '}
-              &lt;/&gt;
-            ) : <span class="branch-1 cbranch-no" title="branch not covered" >tabSelected === 1 ? (</span>
-              &lt;ProfileInfo
-                fields={[fakeSecurityFields]}
-                locale={props.locale}
-              /&gt;
-            ) : null}
+      /&gt;
+      {tabSelected === 0 ? (
+        &lt;&gt;
+          &lt;TabList
+            titles={[t.ei, t.cpp, t.oas]}
+            onClick={<span class="fstat-no" title="function not covered" >(i</span>ndex) =&gt; <span class="cstat-no" title="statement not covered" >setProfileTabSelected(index)}</span>
+            tabSelected={profileTabSelected}
+            containerStyle={'my-4 flex flex-wrap gap-4'}
+            selectedTabStyle={'bg-bright-blue-lighthover'}
+            unselectedTabStyle={'bg-gray-lighter'}
+            genericTabStyle={
+              'text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover '
+            }
+            locale={props.locale}
+          &gt;&lt;/TabList&gt;
+          &lt;ProfileInfo
+            fields={[fakeFields, fakeFields2]}
+            locale={props.locale}
+          /&gt;{' '}
+        &lt;/&gt;
+      ) : <span class="branch-1 cbranch-no" title="branch not covered" >tabSelected === 1 ? (</span>
+        &lt;ProfileInfo fields={[fakeSecurityFields]} locale={props.locale} /&gt;
+      ) : null}
 &nbsp;
-            &lt;Link href="/dashboard" passHref&gt;
-              &lt;button className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-link-blue-button my-10"&gt;
-                {t.backToDashboard}
-              &lt;/button&gt;
-            &lt;/Link&gt;
-          &lt;/div&gt;
-        &lt;/LayoutContainer&gt;
-      &lt;/Layout&gt;
+      &lt;Link href="/dashboard" passHref&gt;
+        &lt;button className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-link-blue-button my-10"&gt;
+          {t.backToDashboard}
+        &lt;/button&gt;
+      &lt;/Link&gt;
     &lt;/&gt;
   )
 }
 &nbsp;
 export async function <span class="fstat-no" title="function not covered" >getStaticProps(</span>{ locale }) {
   const langToggleLink = <span class="cstat-no" title="statement not covered" >locale === 'en' ? '/fr/profile' : '/profile'</span>
+  const t = <span class="cstat-no" title="statement not covered" >locale === 'en' ? en : fr</span>
+&nbsp;
   const metadata = <span class="cstat-no" title="statement not covered" >{</span>
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
     description: 'en + fr description',
   }
+&nbsp;
+  const breadCrumbItems = <span class="cstat-no" title="statement not covered" >[</span>
+    {
+      link: t.url_myBenefitsAndServices,
+      text: t.myBenefitsAndServices,
+    },
+  ]
+&nbsp;
 <span class="cstat-no" title="statement not covered" >  return {</span>
-    props: { locale, langToggleLink, metadata },
+    props: {
+      locale,
+      langToggleLink,
+      metadata,
+      isAuth: true,
+      breadCrumbItems,
+    },
   }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -562,7 +556,7 @@ export async function <span class="fstat-no" title="function not covered" >getSt
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri May 13 2022 13:59:34 GMT+0000 (Coordinated Universal Time)
+                at Tue May 17 2022 11:58:37 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
