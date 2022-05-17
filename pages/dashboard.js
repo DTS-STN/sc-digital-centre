@@ -56,7 +56,8 @@ import {
   APPLICATION_CARD_CPP_CHILD_REARING_PROVISION,
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
-//import { getSession } from 'next-auth/react'
+import { getSession } from 'next-auth/react'
+import Layout from '../components/organisms/Layout'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { StatusCodes } from '../constants/StatusCodes'
 import { ProgramCodes } from '../constants/ProgramCodes'
@@ -283,8 +284,24 @@ export default function Dashboard(props) {
 }
 
 export async function getServerSideProps({ req, locale }) {
-  // const session = await getSession({ req })
-  // const isAuth = session ? true : false
+  let isAuth = false
+
+  if (
+    !process.env.AUTH_DISABLED ||
+    process.env.AUTH_DISABLED.toLowerCase() !== 'true'
+  ) {
+    const session = await getSession({ req })
+    isAuth = session ? true : false
+
+    if (!isAuth) {
+      return {
+        redirect: {
+          permanent: false,
+          destination: '/api/auth/signin',
+        },
+      }
+    }
+  }
 
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
