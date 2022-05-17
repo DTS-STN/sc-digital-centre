@@ -1,5 +1,4 @@
 import { getSession } from 'next-auth/react'
-import { NextResponse } from 'next/server'
 
 export async function middleware(req, ev) {
   if (
