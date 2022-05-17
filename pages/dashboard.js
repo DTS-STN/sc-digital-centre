@@ -288,7 +288,7 @@ export async function getServerSideProps({ req, locale }) {
 
   if (
     !process.env.AUTH_DISABLED ||
-    process.env.AUTH_DISABLED.toLowerCase() === 'false'
+    process.env.AUTH_DISABLED.toLowerCase() !== 'true'
   ) {
     const session = await getSession({ req })
     isAuth = session ? true : false
