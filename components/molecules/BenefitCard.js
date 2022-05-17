@@ -153,8 +153,9 @@ const BenefitCard = (props) => {
                 <BenefitTasks
                   benefitType={props.benefit.benefitType}
                   isExpanded={true}
-                  header={value.Header}
+                  header={t[value.Header]}
                   tasks={value.Tasks}
+                  locale={props.locale}
                 />
                 <HorizontalRule width="w-auto sm:w-full" />
               </div>
