@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652793476704" clover="3.2.0">
-  <project timestamp="1652793476704" name="All files">
+<coverage generated="1652795380226" clover="3.2.0">
+  <project timestamp="1652795380226" name="All files">
     <metrics statements="379" coveredstatements="223" conditionals="320" coveredconditionals="182" methods="126" coveredmethods="75" elements="825" coveredelements="480" complexity="0" loc="379" ncloc="379" packages="7" files="46" classes="46"/>
     <package name="components.atoms">
       <metrics statements="92" coveredstatements="74" conditionals="86" coveredconditionals="63" methods="34" coveredmethods="29"/>
@@ -197,9 +197,9 @@
         <line num="118" count="3" type="stmt"/>
         <line num="122" count="35" type="stmt"/>
         <line num="151" count="0" type="stmt"/>
-        <line num="172" count="0" type="stmt"/>
         <line num="173" count="0" type="stmt"/>
-        <line num="185" count="2" type="stmt"/>
+        <line num="174" count="0" type="stmt"/>
+        <line num="186" count="2" type="stmt"/>
       </file>
       <file name="BenefitCardHeaderSummary.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitCardHeaderSummary.js">
         <metrics statements="13" coveredstatements="8" conditionals="11" coveredconditionals="5" methods="3" coveredmethods="3"/>
@@ -306,13 +306,13 @@
         <line num="15" count="5" type="stmt"/>
         <line num="20" count="5" type="stmt"/>
         <line num="21" count="5" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="58" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="75" count="0" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
         <line num="92" count="2" type="stmt"/>
       </file>
     </package>
