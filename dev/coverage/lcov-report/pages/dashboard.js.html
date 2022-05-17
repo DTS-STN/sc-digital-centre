@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.06% </span>
+                <span class="strong">52.94% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>36/62</span>
+                <span class='fraction'>36/68</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.75% </span>
+                <span class="strong">55% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>22/32</span>
+                <span class='fraction'>22/40</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.62% </span>
+                <span class="strong">53.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>34/58</span>
+                <span class='fraction'>34/64</span>
             </div>
         
             
@@ -409,7 +409,25 @@
 <a name='L350'></a><a href='#L350'>350</a>
 <a name='L351'></a><a href='#L351'>351</a>
 <a name='L352'></a><a href='#L352'>352</a>
-<a name='L353'></a><a href='#L353'>353</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -694,6 +712,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -819,7 +853,8 @@ import {
   APPLICATION_CARD_CPP_CHILD_REARING_PROVISION,
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
 } from '../contents/DashboardBenefitApplicationCards'
-//import { getSession } from 'next-auth/react'
+import { getSession } from 'next-auth/react'
+import Layout from '../components/organisms/Layout'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { StatusCodes } from '../constants/StatusCodes'
 import { ProgramCodes } from '../constants/ProgramCodes'
@@ -1046,8 +1081,24 @@ export default function Dashboard(props) {
 }
 &nbsp;
 export async function <span class="fstat-no" title="function not covered" >getServerSideProps(</span>{ req, locale }) {
-  // const session = await getSession({ req })
-  // const isAuth = session ? true : false
+  let isAuth = <span class="cstat-no" title="statement not covered" >false</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (</span>
+    !process.env.AUTH_DISABLED ||
+    process.env.AUTH_DISABLED.toLowerCase() !== 'true'
+  ) {
+    const session = <span class="cstat-no" title="statement not covered" >await getSession({ req })</span>
+<span class="cstat-no" title="statement not covered" >    isAuth = session ? true : false</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!isAuth) {</span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        redirect: {
+          permanent: false,
+          destination: '/api/auth/signin',
+        },
+      }
+    }
+  }
 &nbsp;
   const metadata = <span class="cstat-no" title="statement not covered" >{</span>
     title: 'Digital Centre (en) + Digital Centre (fr)',
@@ -1120,7 +1171,7 @@ function CheckAllBenefitsForAdvertising(benefits, status, program, type) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue May 17 2022 15:35:14 GMT+0000 (Coordinated Universal Time)
+                at Tue May 17 2022 17:08:12 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
