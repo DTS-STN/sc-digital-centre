@@ -11,6 +11,7 @@ export default function MyApp({ Component, pageProps }) {
       langToggleLink={pageProps.langToggleLink}
       display={pageProps.display}
       isAuth={pageProps.isAuth}
+      breadCrumbItems={pageProps.breadCrumbItems}
     >
       <Component {...pageProps} />
     </Layout>

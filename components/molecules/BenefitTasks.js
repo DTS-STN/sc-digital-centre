@@ -22,10 +22,10 @@ export default function BenefitTasks(props) {
         {displayedTasks.map((value, index) => {
           return (
             <li key={index} className="font-display font-bold text-left pb-7">
-              <a href={value.taskLink} className="flex">
+              <a href={t[value.taskLink]} className="flex">
                 <img src={value.taskIcon} className="h-10" alt="" />
                 <p className="font-normal relative top-2 ml-4 text-link-blue-default hover:text-link-blue-hover">
-                  {value.task}
+                  {t[value.task]}
                 </p>
               </a>
             </li>

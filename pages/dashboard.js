@@ -133,7 +133,7 @@ export default function Dashboard(props) {
   useEffect(() => {
     async function FetchProgramData(program, isLoaded, setLoading, setError) {
       if (!isLoaded) {
-        fetch(`api/programData/${program}`)
+        fetch(`/api/programData/${program}`)
           .then((res) => res.json())
           .then((data) => {
             const currData = usersBenefits
@@ -288,7 +288,7 @@ export async function getServerSideProps({ req, locale }) {
 
   if (
     !process.env.AUTH_DISABLED ||
-    process.env.AUTH_DISABLED.toLowerCase() === 'false'
+    process.env.AUTH_DISABLED.toLowerCase() !== 'true'
   ) {
     const session = await getSession({ req })
     isAuth = session ? true : false
