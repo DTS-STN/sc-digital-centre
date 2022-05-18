@@ -1,4 +1,21 @@
 import en from '../locales/en'
+import {
+  SUBMITTED_CPP_ESTIMATE_TASKS,
+  SUBMITTED_CPP_CHANGE_TASKS,
+  ACTIVE_CPP_PAYMENT_TASKS,
+  ACTIVE_CPP_CHANGE_TASKS,
+  INACTIVE_CPP_TASKS,
+  SUBMITTED_CPPD_TASKS,
+  ACTIVE_CPPD_TASKS,
+  SUBMITTED_OAS_TASKS,
+  ACTIVE_OAS_TASKS,
+  SUBMITTED_EI_TASKS,
+  ACTIVE_EI_COMMON_TASKS,
+  ACTIVE_EI_PAYMENT_TASKS,
+  ACTIVE_EI_DOCS_TASKS,
+  INACTIVE_EI_TASKS,
+  ACTIVE_SEB_TASKS,
+} from '../contents/DashboardBenefitTasksConstants'
 
 const t = en
 const SUBMITTED_OAS = {
@@ -22,6 +39,7 @@ const SUBMITTED_OAS = {
   activeBenefits: '',
   pendingBenefits: 'Old age security pension',
   benefitStatusProgress: 'In Progress',
+  tasks: SUBMITTED_OAS_TASKS,
 }
 
 const ACTIVE_OAS = {
@@ -55,6 +73,7 @@ const ACTIVE_OAS = {
   pendingBenefits: 'Old age security pension',
   benefitStatusProgress: 'Complete',
   // TODO: "pendingBenefits" is used for both Pending and Active benefits. We need to change the field name when mapping with API.
+  tasks: ACTIVE_OAS_TASKS,
 }
 
 const SUBMITTED_CPP = {
@@ -85,6 +104,8 @@ const SUBMITTED_CPP = {
   applicationStatus: 'Application received',
   pendingBenefits: 'Retirement pension',
   benefitStatusProgress: 'In Progress',
+  tasks: [SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS],
+  taskGroups: true,
 }
 
 const ACTIVE_CPP = {
@@ -117,6 +138,8 @@ const ACTIVE_CPP = {
   applicationStatus: 'In payment',
   pendingBenefits: 'Retirement pension',
   benefitStatusProgress: 'Complete',
+  tasks: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+  taskGroups: true,
 }
 
 const SUBMITTED_CPPD = {
@@ -147,6 +170,7 @@ const SUBMITTED_CPPD = {
   applicationStatus: 'Application received',
   pendingBenefits: 'Disability',
   benefitStatusProgress: 'In Progress',
+  tasks: SUBMITTED_CPPD_TASKS,
 }
 
 const ACTIVE_CPPD = {
@@ -179,6 +203,7 @@ const ACTIVE_CPPD = {
   applicationStatus: 'In payment',
   pendingBenefits: 'Disability',
   benefitStatusProgress: 'Complete',
+  tasks: ACTIVE_CPPD_TASKS,
 }
 
 const INACTIVE_CPPD = {
@@ -223,6 +248,7 @@ const INACTIVE_CPPD = {
       description: 'September 5, 2021',
     },
   ],
+  tasks: INACTIVE_CPP_TASKS,
 }
 
 const SUBMITTED_EI = {
@@ -255,6 +281,7 @@ const SUBMITTED_EI = {
     'We will notify you as soon as we have process your application.',
   pendingBenefits: 'Regular benefits',
   benefitStatusProgress: 'Questionnaire received -training',
+  tasks: SUBMITTED_EI_TASKS,
 }
 
 const ACTIVE_EI = {
@@ -287,6 +314,12 @@ const ACTIVE_EI = {
     'We will notify you as soon as we have process your application.',
   pendingBenefits: 'Regular benefits',
   benefitStatusProgress: 'Training information added',
+  tasks: [
+    ACTIVE_EI_COMMON_TASKS,
+    ACTIVE_EI_PAYMENT_TASKS,
+    ACTIVE_EI_DOCS_TASKS,
+  ],
+  taskGroups: true,
 }
 
 const INACTIVE_EI = {
@@ -331,6 +364,7 @@ const INACTIVE_EI = {
       description: 'September 5, 2021',
     },
   ],
+  tasks: INACTIVE_EI_TASKS,
 }
 
 const ACTIVE_SEB = {
@@ -341,6 +375,24 @@ const ACTIVE_SEB = {
   applicationStatus: 'Agreement',
   transactionDate: 'September 31, 2021',
   benefitStatusProgress: 'Started',
+  tasks: [ACTIVE_SEB_TASKS],
+  taskGroups: true,
+}
+
+function getBenefitCards() {
+  return [
+    SUBMITTED_CPP,
+    ACTIVE_CPP,
+    SUBMITTED_OAS,
+    ACTIVE_OAS,
+    SUBMITTED_EI,
+    ACTIVE_EI,
+    INACTIVE_EI,
+    SUBMITTED_CPPD,
+    ACTIVE_CPPD,
+    INACTIVE_CPPD,
+    ACTIVE_SEB,
+  ]
 }
 
 module.exports = {
@@ -355,4 +407,5 @@ module.exports = {
   ACTIVE_EI,
   INACTIVE_EI,
   ACTIVE_SEB,
+  getBenefitCards,
 }

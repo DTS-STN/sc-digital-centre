@@ -2,37 +2,8 @@ import BenefitCard from '../components/molecules/BenefitCard'
 import NoBenefitCard from '../components/molecules/NoBenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import Greeting from '../components/molecules/Greeting'
-import {
-  SUBMITTED_CPP,
-  ACTIVE_CPP,
-  SUBMITTED_CPPD,
-  ACTIVE_CPPD,
-  INACTIVE_CPPD,
-  SUBMITTED_OAS,
-  ACTIVE_OAS,
-  SUBMITTED_EI,
-  ACTIVE_EI,
-  INACTIVE_EI,
-  ACTIVE_SEB,
-} from '../contents/BenefitCards'
+import { getBenefitCards } from '../contents/BenefitCards'
 import { getNoBenefitCards } from '../contents/NoBenefitCards'
-import {
-  SUBMITTED_CPP_ESTIMATE_TASKS,
-  SUBMITTED_CPP_CHANGE_TASKS,
-  ACTIVE_CPP_PAYMENT_TASKS,
-  ACTIVE_CPP_CHANGE_TASKS,
-  INACTIVE_CPP_TASKS,
-  SUBMITTED_CPPD_TASKS,
-  ACTIVE_CPPD_TASKS,
-  SUBMITTED_OAS_TASKS,
-  ACTIVE_OAS_TASKS,
-  SUBMITTED_EI_TASKS,
-  ACTIVE_EI_COMMON_TASKS,
-  ACTIVE_EI_PAYMENT_TASKS,
-  ACTIVE_EI_DOCS_TASKS,
-  INACTIVE_EI_TASKS,
-  ACTIVE_SEB_TASKS,
-} from '../contents/DashboardBenefitTasksConstants'
 import {
   APPLICATION_CARD_OAS,
   APPLICATION_CARD_GIS,
@@ -48,6 +19,7 @@ import { TypeCodes } from '../constants/ProgramTypeCodes'
 import { useCallback, useEffect, useState } from 'react'
 
 export default function Dashboard(props) {
+  const [benefitCards, setBenefitCards] = useState(props.benefitCards)
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
   )
@@ -157,69 +129,9 @@ export default function Dashboard(props) {
           })}
 
       {/* Old Benefit Cards, to be removed once mocks are generated with new cards */}
-      <BenefitCard
-        locale={props.locale}
-        benefit={SUBMITTED_CPP}
-        tasks={[SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS]}
-        taskGroups={true}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={ACTIVE_CPP}
-        tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
-        taskGroups={true}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={SUBMITTED_OAS}
-        tasks={SUBMITTED_OAS_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={ACTIVE_OAS}
-        tasks={ACTIVE_OAS_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={SUBMITTED_EI}
-        tasks={SUBMITTED_EI_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={ACTIVE_EI}
-        tasks={[
-          ACTIVE_EI_COMMON_TASKS,
-          ACTIVE_EI_PAYMENT_TASKS,
-          ACTIVE_EI_DOCS_TASKS,
-        ]}
-        taskGroups={true}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={INACTIVE_EI}
-        tasks={INACTIVE_EI_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={SUBMITTED_CPPD}
-        tasks={SUBMITTED_CPPD_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={ACTIVE_CPPD}
-        tasks={ACTIVE_CPPD_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={INACTIVE_CPPD}
-        tasks={INACTIVE_CPP_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={ACTIVE_SEB}
-        tasks={[ACTIVE_SEB_TASKS]}
-        taskGroups={true}
-      />
+      {benefitCards.map((value, index) => {
+        return <BenefitCard locale={props.locale} benefit={value} />
+      })}
 
       {/* application or "advertising" cards */}
       {advertisingCards.map((value, index) => {
@@ -270,6 +182,7 @@ export async function getServerSideProps({ req, locale }) {
 
   return {
     props: {
+      benefitCards: getBenefitCards(),
       advertisingCards: getAdvertsingCards(),
       noBenefitCards: getNoBenefitCards(),
       isAuth: true,
