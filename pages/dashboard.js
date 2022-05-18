@@ -14,8 +14,8 @@ import {
   ACTIVE_EI,
   INACTIVE_EI,
   ACTIVE_SEB,
-} from '../contents/DashboardBenefitCardConstants'
-import { getNoBenefitCards } from '../contents/DashboardNoBenefitCards'
+} from '../contents/BenefitCards'
+import { getNoBenefitCards } from '../contents/NoBenefitCards'
 import {
   SUBMITTED_CPP_ESTIMATE_TASKS,
   SUBMITTED_CPP_CHANGE_TASKS,
@@ -39,9 +39,8 @@ import {
   APPLICATION_CARD_CPPD,
   APPLICATION_CARD_CPP,
   getAdvertsingCards,
-} from '../contents/DashboardBenefitAdvertisingCards'
+} from '../contents/BenefitAdvertisingCards'
 import { getSession } from 'next-auth/react'
-import Layout from '../components/organisms/Layout'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { StatusCodes } from '../constants/StatusCodes'
 import { ProgramCodes } from '../constants/ProgramCodes'
