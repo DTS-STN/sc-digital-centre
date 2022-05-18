@@ -69,7 +69,11 @@ export default function Dashboard(props) {
 
       {/* Old Benefit Cards, to be removed once mocks are generated with new cards */}
       {benefitCards.map((value, index) => {
-        return <BenefitCard locale={props.locale} benefit={value} />
+        return (
+          <div key={index}>
+            <BenefitCard locale={props.locale} benefit={value} />
+          </div>
+        )
       })}
 
       {/* application or "advertising" cards */}
@@ -90,7 +94,11 @@ export default function Dashboard(props) {
       })}
 
       {noBenefitCards.map((value, index) => {
-        return <NoBenefitCard locale={props.locale} benefit={value} />
+        return (
+          <div key={index}>
+            <NoBenefitCard locale={props.locale} benefit={value} />
+          </div>
+        )
       })}
     </>
   )
