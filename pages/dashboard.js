@@ -15,12 +15,7 @@ import {
   INACTIVE_EI,
   ACTIVE_SEB,
 } from '../contents/DashboardBenefitCardConstants'
-import {
-  NO_BENEFIT_CPP,
-  NO_BENEFIT_GIS,
-  NO_BENEFIT_OAS,
-  NO_BENEFIT_EI,
-} from '../contents/DashboardNoBenefitCardConstants'
+import { getNoBenefitCards } from '../contents/DashboardNoBenefitCards'
 import {
   SUBMITTED_CPP_ESTIMATE_TASKS,
   SUBMITTED_CPP_CHANGE_TASKS,
@@ -36,26 +31,15 @@ import {
   ACTIVE_EI_PAYMENT_TASKS,
   ACTIVE_EI_DOCS_TASKS,
   INACTIVE_EI_TASKS,
-  NO_BENEFIT_CPP_TASKS,
-  NO_BENEFIT_GIS_TASKS,
-  NO_BENEFIT_OAS_TASKS,
-  NO_BENEFIT_EI_TASKS,
   ACTIVE_SEB_TASKS,
 } from '../contents/DashboardBenefitTasksConstants'
 import {
   APPLICATION_CARD_OAS,
   APPLICATION_CARD_GIS,
   APPLICATION_CARD_CPPD,
-  APPLICATION_CARD_EI,
   APPLICATION_CARD_CPP,
-  APPLICATION_CARD_CPP_CHILDS_BENEFIT_AGED_18_25,
-  APPLICATION_CARD_CPP_SURVIVOR_PENSION_AND_CHILD_BENEFITS,
-  APPLICATION_CARD_CPP_ALLOWANCE_OR_ALLOWANCE_FOR_SURVIVOR,
-  APPLICATION_CARD_CPP_PENSION_SHARING,
-  APPLICATION_CARD_CPP_CREADIT_SPLIT,
-  APPLICATION_CARD_CPP_CHILD_REARING_PROVISION,
-  APPLICATION_CARD_CPP_DEATH_BENEFIT,
-} from '../contents/DashboardBenefitApplicationCards'
+  getAdvertsingCards,
+} from '../contents/DashboardBenefitAdvertisingCards'
 import { getSession } from 'next-auth/react'
 import Layout from '../components/organisms/Layout'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
@@ -68,6 +52,7 @@ export default function Dashboard(props) {
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
   )
+  const [noBenefitCards, setNoBenefitCards] = useState(props.noBenefitCards)
   const [usersBenefits, setUsersBenefits] = useState([])
   const [cppLoaded, setCppLoaded] = useState(false)
   const [eiLoaded, setEiLoaded] = useState(false)
@@ -131,26 +116,28 @@ export default function Dashboard(props) {
   )
 
   useEffect(() => {
-    async function FetchProgramData(program, isLoaded, setLoading, setError) {
-      if (!isLoaded) {
-        fetch(`/api/programData/${program}`)
-          .then((res) => res.json())
-          .then((data) => {
-            const currData = usersBenefits
-            currData.push(data)
-            setUsersBenefits(currData)
-            setAdvertisingCards(FilterAdvertisingCards(currData))
-          })
-          .catch((error) => {
-            setError(error)
-          })
-          .finally(() => setLoading(true))
-      }
-    }
+    fetch(`/api/programData/cpp`)
+      .then((res) => res.json())
+      .then((data) => {
+        usersBenefits.push(data)
+        setAdvertisingCards(FilterAdvertisingCards(usersBenefits))
+      })
+      .catch((error) => {
+        setCppError(error)
+      })
+      .finally(() => setCppLoaded(true))
 
-    FetchProgramData('cpp', cppLoaded, setCppLoaded, setCppError)
-    FetchProgramData('ei', eiLoaded, setEiLoaded, setEiError)
-  }, [cppLoaded, eiLoaded, usersBenefits])
+    fetch(`/api/programData/ei`)
+      .then((res) => res.json())
+      .then((data) => {
+        usersBenefits.push(data)
+        setAdvertisingCards(FilterAdvertisingCards(usersBenefits))
+      })
+      .catch((error) => {
+        setEiError(error)
+      })
+      .finally(() => setEiLoaded(true))
+  }, [])
 
   return (
     <>
@@ -247,38 +234,9 @@ export default function Dashboard(props) {
         )
       })}
 
-      {/* application or "advertising" cards */}
-      {props.advertisingCards.map((value, index) => {
-        return (
-          <div key={index}>
-            <BenefitApplicationCard
-              locale={props.locale}
-              benefitApplication={value}
-            />
-          </div>
-        )
+      {noBenefitCards.map((value, index) => {
+        return <NoBenefitCard locale={props.locale} benefit={value} />
       })}
-
-      <NoBenefitCard
-        locale={props.locale}
-        benefit={NO_BENEFIT_CPP}
-        tasks={NO_BENEFIT_CPP_TASKS}
-      />
-      <NoBenefitCard
-        locale={props.locale}
-        benefit={NO_BENEFIT_EI}
-        tasks={NO_BENEFIT_EI_TASKS}
-      />
-      <NoBenefitCard
-        locale={props.locale}
-        benefit={NO_BENEFIT_GIS}
-        tasks={NO_BENEFIT_GIS_TASKS}
-      />
-      <NoBenefitCard
-        locale={props.locale}
-        benefit={NO_BENEFIT_OAS}
-        tasks={NO_BENEFIT_OAS_TASKS}
-      />
     </>
   )
 }
@@ -313,37 +271,14 @@ export async function getServerSideProps({ req, locale }) {
 
   return {
     props: {
-      advertisingCards: BuildAdvertisingCards(),
+      advertisingCards: getAdvertsingCards(),
+      noBenefitCards: getNoBenefitCards(),
       isAuth: true,
       locale,
       langToggleLink,
       metadata,
     },
   }
-}
-
-function BuildAdvertisingCards() {
-  // the order of these matters
-  const advertisingCards = []
-
-  advertisingCards.push(APPLICATION_CARD_EI)
-  advertisingCards.push(APPLICATION_CARD_CPP)
-  advertisingCards.push(APPLICATION_CARD_OAS)
-  advertisingCards.push(APPLICATION_CARD_GIS)
-  advertisingCards.push(APPLICATION_CARD_CPPD)
-  advertisingCards.push(APPLICATION_CARD_CPP_CHILDS_BENEFIT_AGED_18_25)
-  advertisingCards.push(
-    APPLICATION_CARD_CPP_SURVIVOR_PENSION_AND_CHILD_BENEFITS
-  )
-  advertisingCards.push(
-    APPLICATION_CARD_CPP_ALLOWANCE_OR_ALLOWANCE_FOR_SURVIVOR
-  )
-  advertisingCards.push(APPLICATION_CARD_CPP_PENSION_SHARING)
-  advertisingCards.push(APPLICATION_CARD_CPP_CREADIT_SPLIT)
-  advertisingCards.push(APPLICATION_CARD_CPP_CHILD_REARING_PROVISION)
-  advertisingCards.push(APPLICATION_CARD_CPP_DEATH_BENEFIT)
-
-  return advertisingCards
 }
 
 /// return: the benefit can be advertised
