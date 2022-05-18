@@ -50,7 +50,7 @@ export default function UniversalBenefitCard(props) {
         </div>
       </div>
       <HorizontalRule width="w-auto sm:w-full" />
-      <div className="pl-4">
+      <div className="">
         <ViewMoreLessButton
           id={props.benefit.programCode + '-card-button'}
           onClick={() => {
@@ -79,7 +79,6 @@ export default function UniversalBenefitCard(props) {
                       header={taskList.Header}
                       tasks={taskList.Tasks}
                     />
-                    <HorizontalRule width="w-auto sm:w-full" />
                   </div>
                 )
               })}
