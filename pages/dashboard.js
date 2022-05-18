@@ -75,8 +75,6 @@ export default function Dashboard(props) {
       {/* application or "advertising" cards */}
       {advertisingCards.map((value, index) => {
         if (value.benefitType === 'CPP' && cppBenefit) {
-          console.log(value)
-          console.log(cppBenefit)
           return
         } else if (value.benefitType === 'EI' && eiBenefit) {
           return
