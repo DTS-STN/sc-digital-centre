@@ -21,7 +21,7 @@ export default function ViewMoreLessButton(props) {
           ) : (
             <img
               className="px-2 w-12 h-12"
-              src="images/dashboard/expand-icon.svg"
+              src="/images/dashboard/expand-icon.svg"
               alt=""
             />
           )}
