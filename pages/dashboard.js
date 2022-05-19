@@ -156,19 +156,6 @@ export default function Dashboard(props) {
     <>
       <Greeting locale={props.locale} name="Mary" />
       <div className="mb-8">
-        {/* New Benefit Cards API driven */}
-        {props.usersBenefits == null || props.usersBenefits.length <= 0
-          ? null
-          : props.usersBenefits.map((value, index) => {
-              return (
-                <UniversalBenefitCard
-                  key={index}
-                  locale={props.locale}
-                  benefit={value}
-                />
-              )
-            })}
-
         {/* todo, design to create loading */}
         {cppLoaded && eiLoaded ? null : 'Loading User Benefit Data...'}
         {!usersBenefits || !usersBenefits.length
@@ -178,7 +165,7 @@ export default function Dashboard(props) {
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
-                  benefitApplication={value}
+                  benefit={value}
                 />
               )
             })}
