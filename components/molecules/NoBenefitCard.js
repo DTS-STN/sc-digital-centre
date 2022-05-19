@@ -53,7 +53,7 @@ const NoBenefitCard = (props) => {
             handleClick()
             scrollTo()
           }}
-          plus={isOpen}
+          icon={isOpen}
           caption={btnCaption}
         />
       )}

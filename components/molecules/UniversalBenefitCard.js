@@ -49,7 +49,7 @@ export default function UniversalBenefitCard(props) {
         </div>
       </div>
       <HorizontalRule width="w-auto sm:w-full" />
-      <div className="pl-4">
+      <div className="">
         <ViewMoreLessButton
           id={props.benefit.programCode + '-card-button'}
           onClick={() => {
@@ -61,13 +61,13 @@ export default function UniversalBenefitCard(props) {
             })
             setIsOpen(newOpenState)
           }}
-          plus={isOpen}
+          icon={isOpen}
           caption={t[props.benefit.taskHeadingKey]}
         />
       </div>
       {props.benefit.taskGroups == null ||
       props.benefit.taskGroups.length <= 0 ? null : (
-        <div id={taskListId} className="grid sm:grid-cols-2">
+        <div id={taskListId} className="grid bg-gray-lighter sm:grid-cols-2">
           {!isOpen
             ? null
             : props.benefit.taskGroups.map((taskList, index) => {
@@ -79,7 +79,6 @@ export default function UniversalBenefitCard(props) {
                       tasks={taskList.Tasks}
                       locale={props.locale}
                     />
-                    <HorizontalRule width="w-auto sm:w-full" />
                   </div>
                 )
               })}

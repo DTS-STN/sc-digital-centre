@@ -48,58 +48,59 @@ export default function Dashboard(props) {
   return (
     <>
       <Greeting locale={props.locale} name="Mary" />
+      <div className="mb-8">
+        {cppLoaded ? null : 'Loading User Benefit Data...'}
+        {cppBenefit ? (
+          <UniversalBenefitCard
+            key={0}
+            locale={props.locale}
+            benefit={cppBenefit}
+          />
+        ) : null}
 
-      {cppLoaded ? null : 'Loading User Benefit Data...'}
-      {cppBenefit ? (
-        <UniversalBenefitCard
-          key={0}
-          locale={props.locale}
-          benefit={cppBenefit}
-        />
-      ) : null}
+        {eiLoaded ? null : 'Loading User Benefit Data...'}
+        {eiBenefit ? (
+          <UniversalBenefitCard
+            key={1}
+            locale={props.locale}
+            benefit={eiBenefit}
+          />
+        ) : null}
 
-      {eiLoaded ? null : 'Loading User Benefit Data...'}
-      {eiBenefit ? (
-        <UniversalBenefitCard
-          key={1}
-          locale={props.locale}
-          benefit={eiBenefit}
-        />
-      ) : null}
+        {/* Old Benefit Cards, to be removed once mocks are generated with new cards */}
+        {benefitCards.map((value, index) => {
+          return (
+            <div key={index}>
+              <BenefitCard locale={props.locale} benefit={value} />
+            </div>
+          )
+        })}
 
-      {/* Old Benefit Cards, to be removed once mocks are generated with new cards */}
-      {benefitCards.map((value, index) => {
-        return (
-          <div key={index}>
-            <BenefitCard locale={props.locale} benefit={value} />
-          </div>
-        )
-      })}
+        {/* application or "advertising" cards */}
+        {advertisingCards.map((value, index) => {
+          if (value.benefitType === 'CPP' && cppBenefit) {
+            return
+          } else if (value.benefitType === 'EI' && eiBenefit) {
+            return
+          }
+          return (
+            <div key={index}>
+              <BenefitApplicationCard
+                locale={props.locale}
+                benefitApplication={value}
+              />
+            </div>
+          )
+        })}
 
-      {/* application or "advertising" cards */}
-      {advertisingCards.map((value, index) => {
-        if (value.benefitType === 'CPP' && cppBenefit) {
-          return
-        } else if (value.benefitType === 'EI' && eiBenefit) {
-          return
-        }
-        return (
-          <div key={index}>
-            <BenefitApplicationCard
-              locale={props.locale}
-              benefitApplication={value}
-            />
-          </div>
-        )
-      })}
-
-      {noBenefitCards.map((value, index) => {
-        return (
-          <div key={index}>
-            <NoBenefitCard locale={props.locale} benefit={value} />
-          </div>
-        )
-      })}
+        {noBenefitCards.map((value, index) => {
+          return (
+            <div key={index}>
+              <NoBenefitCard locale={props.locale} benefit={value} />
+            </div>
+          )
+        })}
+      </div>
     </>
   )
 }
