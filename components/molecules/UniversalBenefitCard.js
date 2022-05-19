@@ -62,7 +62,7 @@ export default function UniversalBenefitCard(props) {
             })
             setIsOpen(newOpenState)
           }}
-          plus={isOpen}
+          icon={isOpen}
           caption={t[props.benefit.taskHeadingKey]}
         />
       </div>

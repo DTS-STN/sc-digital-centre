@@ -12,7 +12,7 @@ export default function ViewMoreLessButton(props) {
     >
       <>
         <div className="flex items-center ">
-          {props.plus ? (
+          {props.icon ? (
             <img
               className="px-2 w-12 h-12"
               src="/images/dashboard/collapse-icon.svg"
@@ -34,7 +34,7 @@ export default function ViewMoreLessButton(props) {
 
 ViewMoreLessButton.propTypes = {
   caption: propTypes.string.isRequired,
-  plus: propTypes.bool,
+  icon: propTypes.bool,
   onClick: propTypes.func.isRequired,
   id: propTypes.string.isRequired,
   dataTestid: propTypes.string,

@@ -11,7 +11,7 @@ describe('ViewMoreLessButton', () => {
       <ViewMoreLessButton
         id="vmlb"
         dataTestid="vmlb"
-        plus={false}
+        icon={false}
         caption="test button"
         onClick={() => {
           return true
@@ -27,22 +27,23 @@ describe('ViewMoreLessButton', () => {
       <ViewMoreLessButton
         id="vmlb"
         dataTestid="vmlb"
-        plus={true}
+        icon={true}
         caption="test button"
         onClick={() => {
           return true
         }}
       />
     )
+
     const img = screen.getByTestId('vmlb').children[0] //get the img for the icon
-    expect(img).toHaveClass('rotate-45')
+    expect(img).toBeTruthy()
   })
 
   it('has no a11y viollations', async () => {
     const { container } = render(
       <ViewMoreLessButton
         id="testid"
-        plus={false}
+        icon={false}
         caption="test button"
         onClick={() => {
           return true

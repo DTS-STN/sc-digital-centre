@@ -144,7 +144,7 @@ const BenefitCard = (props) => {
             handleClick()
             scrollTo()
           }}
-          plus={isOpen}
+          icon={isOpen}
           caption={btnCaption}
         />
       )}
