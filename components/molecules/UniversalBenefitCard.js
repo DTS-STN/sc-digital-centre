@@ -19,7 +19,6 @@ export default function UniversalBenefitCard(props) {
     props.benefit.statusCode
   const benefitCardId = 'benefit-card-' + benefitUniqueId
   const taskListId = 'task-list-' + benefitUniqueId
-
   return (
     <div className="benefit-card" id={benefitCardId}>
       <StatusBadge status={props.benefit.statusCode} locale={props.locale} />
@@ -68,7 +67,7 @@ export default function UniversalBenefitCard(props) {
       </div>
       {props.benefit.taskGroups == null ||
       props.benefit.taskGroups.length <= 0 ? null : (
-        <div id={taskListId}>
+        <div id={taskListId} className="grid bg-gray-lighter sm:grid-cols-2">
           {!isOpen
             ? null
             : props.benefit.taskGroups.map((taskList, index) => {
@@ -76,8 +75,9 @@ export default function UniversalBenefitCard(props) {
                   <div className="group" key={index}>
                     <BenefitTasks
                       isExpanded={true}
-                      header={taskList.Header}
+                      header={t[taskList.Header]}
                       tasks={taskList.Tasks}
+                      locale={props.locale}
                     />
                   </div>
                 )

@@ -10,7 +10,7 @@ export default function BenefitTasks(props) {
   const customHeader = props.header != null
 
   return (
-    <div className="bg-gray-lighter px-8 py-6 group-last:rounded-b-lg">
+    <div className="bg-gray-lighter px-8 py-6 group-last:rounded-b-lg h-full border">
       <h3 className="font-display font-bold text-xl">
         {customHeader
           ? props.header
@@ -18,14 +18,14 @@ export default function BenefitTasks(props) {
           ? t.commonActions
           : `All ${props.benefitType} Tasks`}
       </h3>
-      <ul className="grid grid-cols-2 gap-x-7 justify-items-start w-full pt-6 md:grid-cols-6">
+      <ul className="grid grid-cols-1 gap-x-7 justify-items-start w-full pt-6 ">
         {displayedTasks.map((value, index) => {
           return (
-            <li key={index} className="font-display font-bold text-left pb-6">
-              <a href={value.taskLink}>
-                <img src={value.taskIcon} className="font-normal pb-3" alt="" />
-                <p className="font-normal underline text-link-blue-default hover:text-link-blue-hover">
-                  {value.task}
+            <li key={index} className="font-display font-bold text-left pb-7">
+              <a href={t[value.taskLink]} className="flex">
+                <img src={value.taskIcon} className="h-10" alt="" />
+                <p className="font-normal relative top-2 ml-4 text-link-blue-default hover:text-link-blue-hover">
+                  {t[value.task]}
                 </p>
               </a>
             </li>

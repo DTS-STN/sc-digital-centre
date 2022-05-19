@@ -150,7 +150,10 @@ const BenefitCard = (props) => {
       )}
 
       {/* Top tasks */}
-      <div ref={topOfTaskRef}>
+      <div
+        ref={topOfTaskRef}
+        className={` ${props.taskGroups ? 'grid sm:grid-cols-2' : ''}`}
+      >
         {!props.taskGroups ? (
           <BenefitTasks
             benefitType={props.benefit.benefitType}
@@ -164,8 +167,9 @@ const BenefitCard = (props) => {
                 <BenefitTasks
                   benefitType={props.benefit.benefitType}
                   isExpanded={true}
-                  header={value.Header}
+                  header={t[value.Header]}
                   tasks={value.Tasks}
+                  locale={props.locale}
                 />
                 <HorizontalRule width="w-auto sm:w-full" />
               </div>

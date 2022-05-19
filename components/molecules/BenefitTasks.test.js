@@ -24,22 +24,23 @@ describe('BenefitTask', () => {
   it('renders BenefitTask', () => {
     render(
       <BenefitTasks
+        locale="en"
         tasks={[
           {
-            task: 'Task 1',
+            task: 'allPaymentsTask',
             taskIcon: '/images/dashboard/oas-payment-icon.svg',
             taskLink: '/dashboard',
           },
           {
-            task: 'Task 2',
+            task: 'statusUpdateTask',
             taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
             taskLink: '/dashboard',
           },
         ]}
       />
     )
-    const task1Text = screen.getByText('Task 1')
-    const task2Text = screen.getByText('Task 2')
+    const task1Text = screen.getByText('View all payments')
+    const task2Text = screen.getByText('View my status and messages')
 
     expect(task1Text).toBeInTheDocument()
     expect(task2Text).toBeInTheDocument()
@@ -50,16 +51,17 @@ describe('BenefitTask', () => {
       <BenefitTasks
         tasks={[
           {
-            task: 'Task 1',
+            task: 'allPaymentsTask',
             taskIcon: '/images/dashboard/oas-payment-icon.svg',
             taskLink: '/dashboard',
           },
           {
-            task: 'Task 2',
+            task: 'statusUpdateTask',
             taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
             taskLink: '/dashboard',
           },
         ]}
+        locale="en"
         header="my custom header"
       />
     )
@@ -70,14 +72,15 @@ describe('BenefitTask', () => {
   it('has no a11y violations', async () => {
     const { container } = render(
       <BenefitTasks
+        locale="en"
         tasks={[
           {
-            task: 'Task 1',
+            task: 'allPaymentsTask',
             taskIcon: '/images/dashboard/oas-payment-icon.svg',
             taskLink: '/dashboard',
           },
           {
-            task: 'Task 2',
+            task: 'statusUpdateTask',
             taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
             taskLink: '/dashboard',
           },
