@@ -134,9 +134,11 @@ const BenefitCard = (props) => {
           <HorizontalRule width="w-auto sm:w-full" />
         </>
       ) : null}
+
       {!(
         props.benefit.status.toUpperCase() ===
-          BenefitStatus.inactive.toUpperCase() && props.tasks.length < 6
+          BenefitStatus.inactive.toUpperCase() &&
+        props.benefit.tasks?.length < 6
       ) && (
         <ViewMoreLessButton
           id={props.benefit.benefitType + '-card-button'}
@@ -152,16 +154,16 @@ const BenefitCard = (props) => {
       {/* Top tasks */}
       <div
         ref={topOfTaskRef}
-        className={` ${props.taskGroups ? 'grid sm:grid-cols-2' : ''}`}
+        className={` ${props.benefit.taskGroups ? 'grid sm:grid-cols-2' : ''}`}
       >
-        {!props.taskGroups ? (
+        {!props.benefit.taskGroups ? (
           <BenefitTasks
             benefitType={props.benefit.benefitType}
             isExpanded={isOpen}
-            tasks={props.tasks}
+            tasks={props.benefit.tasks}
           />
         ) : !isOpen ? null : (
-          props.tasks.map((value, index) => {
+          props.benefit.tasks.map((value, index) => {
             return (
               <div key={index}>
                 <BenefitTasks

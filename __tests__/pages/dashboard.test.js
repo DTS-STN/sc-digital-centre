@@ -7,7 +7,8 @@ import {
   APPLICATION_CARD_CPPD,
   APPLICATION_CARD_EI,
   APPLICATION_CARD_CPP,
-} from '../../contents/DashboardBenefitApplicationCards'
+  getAdvertsingCards,
+} from '../../contents/BenefitAdvertisingCards'
 import Dashboard from '../../pages/dashboard'
 import { ProgramCodes } from '../../constants/ProgramCodes'
 import { StatusCodes } from '../../constants/StatusCodes'
@@ -17,6 +18,8 @@ import {
   CreateGenericBenefitJSONForUserDisplay,
   CreateGenericBenefitSummaryForDisplay,
 } from '../../lib/BenefitsMapping'
+import { getBenefitCards } from '../../contents/BenefitCards'
+import { getNoBenefitCards } from '../../contents/NoBenefitCards'
 
 expect.extend(toHaveNoViolations)
 
@@ -63,8 +66,9 @@ describe('Dashboard', () => {
   ]
   const { container } = render(
     <Dashboard
-      advertisingCards={advertisingCards}
-      usersBenefits={usersBenefits}
+      benefitCards={getBenefitCards()}
+      advertisingCards={getAdvertsingCards()}
+      noBenefitCards={getNoBenefitCards()}
       metadata={{
         title: 'Digital Centre (en) + Digital Centre (fr)',
         keywords: 'en + fr keywords',
