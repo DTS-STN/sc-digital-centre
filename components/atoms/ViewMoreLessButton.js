@@ -9,6 +9,7 @@ export default function ViewMoreLessButton(props) {
       type="button"
       id={props.id}
       data-testid={props.dataTestid}
+      ariaExpanded={props.ariaExpanded}
     >
       <>
         <div className="flex items-center ">
@@ -38,4 +39,5 @@ ViewMoreLessButton.propTypes = {
   onClick: propTypes.func.isRequired,
   id: propTypes.string.isRequired,
   dataTestid: propTypes.string,
+  ariaExpanded: propTypes.string,
 }

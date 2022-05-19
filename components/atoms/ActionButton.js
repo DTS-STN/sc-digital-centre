@@ -27,6 +27,7 @@ export default function ActionButton(props) {
     </Link>
   ) : (
     <button
+      aria-expanded={`${props.ariaExpanded ? props.ariaExpanded : undefined}`}
       className={`${!props.className ? defaultStyle : props.className}`}
       onClick={props.onClick}
       type={props.type}
@@ -87,4 +88,8 @@ ActionButton.propTypes = {
    * ...rest
    *   Any other attribute not explicity coded, like: dataCy, dataCyButton, analyticsTracking, data-testid, aria stuff, etc.
    */
+  /**
+   * Aria expanded state
+   */
+  ariaExpanded: PropTypes.string,
 }
