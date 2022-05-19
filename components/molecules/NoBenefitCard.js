@@ -46,7 +46,7 @@ const NoBenefitCard = (props) => {
         />
       </div>
 
-      {props.benefit.tasks.length > 6 && (
+      {props.benefit.tasks?.length > 6 && (
         <ViewMoreLessButton
           id={props.benefit.benefitType + '-card-button'}
           onClick={() => {

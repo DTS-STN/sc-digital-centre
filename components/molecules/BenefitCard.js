@@ -165,7 +165,8 @@ const BenefitCard = (props) => {
       </div>
       {!(
         props.benefit.status.toUpperCase() ===
-          BenefitStatus.inactive.toUpperCase() && props.benefit.tasks.length < 6
+          BenefitStatus.inactive.toUpperCase() &&
+        props.benefit.tasks?.length < 6
       ) && (
         <ViewMoreLessButton
           id={props.benefit.benefitType + '-card-button'}
