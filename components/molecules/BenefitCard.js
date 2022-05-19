@@ -134,6 +134,20 @@ const BenefitCard = (props) => {
           <HorizontalRule width="w-auto sm:w-full" />
         </>
       ) : null}
+      {!(
+        props.benefit.status.toUpperCase() ===
+          BenefitStatus.inactive.toUpperCase() && props.tasks.length < 6
+      ) && (
+        <ViewMoreLessButton
+          id={props.benefit.benefitType + '-card-button'}
+          onClick={() => {
+            handleClick()
+            scrollTo()
+          }}
+          icon={isOpen}
+          caption={btnCaption}
+        />
+      )}
 
       {/* Top tasks */}
       <div
@@ -163,20 +177,6 @@ const BenefitCard = (props) => {
           })
         )}
       </div>
-      {!(
-        props.benefit.status.toUpperCase() ===
-          BenefitStatus.inactive.toUpperCase() && props.tasks.length < 6
-      ) && (
-        <ViewMoreLessButton
-          id={props.benefit.benefitType + '-card-button'}
-          onClick={() => {
-            handleClick()
-            scrollTo()
-          }}
-          plus={isOpen}
-          caption={btnCaption}
-        />
-      )}
     </div>
   )
 }

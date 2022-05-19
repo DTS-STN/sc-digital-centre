@@ -155,130 +155,131 @@ export default function Dashboard(props) {
   return (
     <>
       <Greeting locale={props.locale} name="Mary" />
+      <div className="mb-8">
+        {/* todo, design to create loading */}
+        {cppLoaded && eiLoaded ? null : 'Loading User Benefit Data...'}
+        {!usersBenefits || !usersBenefits.length
+          ? null
+          : usersBenefits.map((value, index) => {
+              return (
+                <UniversalBenefitCard
+                  key={index}
+                  locale={props.locale}
+                  benefit={value}
+                />
+              )
+            })}
 
-      {/* todo, design to create loading */}
-      {cppLoaded && eiLoaded ? null : 'Loading User Benefit Data...'}
-      {!usersBenefits || !usersBenefits.length
-        ? null
-        : usersBenefits.map((value, index) => {
-            return (
-              <UniversalBenefitCard
-                key={index}
+        {/* Old Benefit Cards, to be removed once mocks are generated with new cards */}
+        <BenefitCard
+          locale={props.locale}
+          benefit={SUBMITTED_CPP}
+          tasks={[SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS]}
+          taskGroups={true}
+        />
+        <BenefitCard
+          locale={props.locale}
+          benefit={ACTIVE_CPP}
+          tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
+          taskGroups={true}
+        />
+        <BenefitCard
+          locale={props.locale}
+          benefit={SUBMITTED_OAS}
+          tasks={SUBMITTED_OAS_TASKS}
+        />
+        <BenefitCard
+          locale={props.locale}
+          benefit={ACTIVE_OAS}
+          tasks={ACTIVE_OAS_TASKS}
+        />
+        <BenefitCard
+          locale={props.locale}
+          benefit={SUBMITTED_EI}
+          tasks={SUBMITTED_EI_TASKS}
+        />
+        <BenefitCard
+          locale={props.locale}
+          benefit={ACTIVE_EI}
+          tasks={[
+            ACTIVE_EI_COMMON_TASKS,
+            ACTIVE_EI_PAYMENT_TASKS,
+            ACTIVE_EI_DOCS_TASKS,
+          ]}
+          taskGroups={true}
+        />
+        <BenefitCard
+          locale={props.locale}
+          benefit={INACTIVE_EI}
+          tasks={INACTIVE_EI_TASKS}
+        />
+        <BenefitCard
+          locale={props.locale}
+          benefit={SUBMITTED_CPPD}
+          tasks={SUBMITTED_CPPD_TASKS}
+        />
+        <BenefitCard
+          locale={props.locale}
+          benefit={ACTIVE_CPPD}
+          tasks={ACTIVE_CPPD_TASKS}
+        />
+        <BenefitCard
+          locale={props.locale}
+          benefit={INACTIVE_CPPD}
+          tasks={INACTIVE_CPP_TASKS}
+        />
+        <BenefitCard
+          locale={props.locale}
+          benefit={ACTIVE_SEB}
+          tasks={[ACTIVE_SEB_TASKS]}
+          taskGroups={true}
+        />
+
+        {/* application or "advertising" cards */}
+        {advertisingCards.map((value, index) => {
+          return (
+            <div key={index}>
+              <BenefitApplicationCard
                 locale={props.locale}
-                benefit={value}
+                benefitApplication={value}
               />
-            )
-          })}
+            </div>
+          )
+        })}
 
-      {/* Old Benefit Cards, to be removed once mocks are generated with new cards */}
-      <BenefitCard
-        locale={props.locale}
-        benefit={SUBMITTED_CPP}
-        tasks={[SUBMITTED_CPP_ESTIMATE_TASKS, SUBMITTED_CPP_CHANGE_TASKS]}
-        taskGroups={true}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={ACTIVE_CPP}
-        tasks={[ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS]}
-        taskGroups={true}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={SUBMITTED_OAS}
-        tasks={SUBMITTED_OAS_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={ACTIVE_OAS}
-        tasks={ACTIVE_OAS_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={SUBMITTED_EI}
-        tasks={SUBMITTED_EI_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={ACTIVE_EI}
-        tasks={[
-          ACTIVE_EI_COMMON_TASKS,
-          ACTIVE_EI_PAYMENT_TASKS,
-          ACTIVE_EI_DOCS_TASKS,
-        ]}
-        taskGroups={true}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={INACTIVE_EI}
-        tasks={INACTIVE_EI_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={SUBMITTED_CPPD}
-        tasks={SUBMITTED_CPPD_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={ACTIVE_CPPD}
-        tasks={ACTIVE_CPPD_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={INACTIVE_CPPD}
-        tasks={INACTIVE_CPP_TASKS}
-      />
-      <BenefitCard
-        locale={props.locale}
-        benefit={ACTIVE_SEB}
-        tasks={[ACTIVE_SEB_TASKS]}
-        taskGroups={true}
-      />
+        {/* application or "advertising" cards */}
+        {props.advertisingCards.map((value, index) => {
+          return (
+            <div key={index}>
+              <BenefitApplicationCard
+                locale={props.locale}
+                benefitApplication={value}
+              />
+            </div>
+          )
+        })}
 
-      {/* application or "advertising" cards */}
-      {advertisingCards.map((value, index) => {
-        return (
-          <div key={index}>
-            <BenefitApplicationCard
-              locale={props.locale}
-              benefitApplication={value}
-            />
-          </div>
-        )
-      })}
-
-      {/* application or "advertising" cards */}
-      {props.advertisingCards.map((value, index) => {
-        return (
-          <div key={index}>
-            <BenefitApplicationCard
-              locale={props.locale}
-              benefitApplication={value}
-            />
-          </div>
-        )
-      })}
-
-      <NoBenefitCard
-        locale={props.locale}
-        benefit={NO_BENEFIT_CPP}
-        tasks={NO_BENEFIT_CPP_TASKS}
-      />
-      <NoBenefitCard
-        locale={props.locale}
-        benefit={NO_BENEFIT_EI}
-        tasks={NO_BENEFIT_EI_TASKS}
-      />
-      <NoBenefitCard
-        locale={props.locale}
-        benefit={NO_BENEFIT_GIS}
-        tasks={NO_BENEFIT_GIS_TASKS}
-      />
-      <NoBenefitCard
-        locale={props.locale}
-        benefit={NO_BENEFIT_OAS}
-        tasks={NO_BENEFIT_OAS_TASKS}
-      />
+        <NoBenefitCard
+          locale={props.locale}
+          benefit={NO_BENEFIT_CPP}
+          tasks={NO_BENEFIT_CPP_TASKS}
+        />
+        <NoBenefitCard
+          locale={props.locale}
+          benefit={NO_BENEFIT_EI}
+          tasks={NO_BENEFIT_EI_TASKS}
+        />
+        <NoBenefitCard
+          locale={props.locale}
+          benefit={NO_BENEFIT_GIS}
+          tasks={NO_BENEFIT_GIS_TASKS}
+        />
+        <NoBenefitCard
+          locale={props.locale}
+          benefit={NO_BENEFIT_OAS}
+          tasks={NO_BENEFIT_OAS_TASKS}
+        />
+      </div>
     </>
   )
 }
