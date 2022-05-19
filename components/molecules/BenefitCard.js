@@ -135,6 +135,22 @@ const BenefitCard = (props) => {
         </>
       ) : null}
 
+      {!(
+        props.benefit.status.toUpperCase() ===
+          BenefitStatus.inactive.toUpperCase() &&
+        props.benefit.tasks?.length < 6
+      ) && (
+        <ViewMoreLessButton
+          id={props.benefit.benefitType + '-card-button'}
+          onClick={() => {
+            handleClick()
+            scrollTo()
+          }}
+          icon={isOpen}
+          caption={btnCaption}
+        />
+      )}
+
       {/* Top tasks */}
       <div
         ref={topOfTaskRef}
@@ -163,21 +179,6 @@ const BenefitCard = (props) => {
           })
         )}
       </div>
-      {!(
-        props.benefit.status.toUpperCase() ===
-          BenefitStatus.inactive.toUpperCase() &&
-        props.benefit.tasks?.length < 6
-      ) && (
-        <ViewMoreLessButton
-          id={props.benefit.benefitType + '-card-button'}
-          onClick={() => {
-            handleClick()
-            scrollTo()
-          }}
-          icon={isOpen}
-          caption={btnCaption}
-        />
-      )}
     </div>
   )
 }
