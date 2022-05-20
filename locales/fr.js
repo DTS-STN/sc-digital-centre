@@ -233,10 +233,9 @@ export default {
   // Greeting
   greeting: '(FR)Good morning, ',
   welcome: '(FR)Welcome to your My Service Canada Account.',
-  myBenefitsAndServices: '(FR)My benefits and services',
+  myBenefitsAndServices: 'Mes prestations et mes services',
   canada_ca: 'Canada.ca',
   serviceCanada: 'Service Canada',
-  myBenefitsAndServices: '(FR)My Benefits and Services',
 
   // Info Message
   alertIconAltText_success: '(FR)success icon',
