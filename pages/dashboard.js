@@ -28,6 +28,14 @@ export default function Dashboard(props) {
   const [eiLoaded, setEiLoaded] = useState(false)
   const [eiError, setEiError] = useState(false)
 
+  const [oasBenefit, setOasBenefit] = useState()
+  const [oasLoaded, setOasLoaded] = useState(false)
+  const [oasError, setOasError] = useState(false)
+
+  const [sebBenefit, setSebBenefit] = useState()
+  const [sebLoaded, setSebLoaded] = useState(false)
+  const [sebError, setSebError] = useState(false)
+
   useEffect(() => {
     fetch(`/api/programData/cpp`)
       .then((res) => res.json())
@@ -58,6 +66,26 @@ export default function Dashboard(props) {
         setEiError(error)
       })
       .finally(() => setEiLoaded(true))
+
+    fetch(`/api/programData/oas`)
+      .then((res) => res.json())
+      .then((data) => {
+        setOasBenefit(data)
+      })
+      .catch((error) => {
+        setOasError(error)
+      })
+      .finally(() => setOasLoaded(true))
+
+    fetch(`/api/programData/seb`)
+      .then((res) => res.json())
+      .then((data) => {
+        setSebBenefit(data)
+      })
+      .catch((error) => {
+        setSebError(error)
+      })
+      .finally(() => setSebLoaded(true))
   }, [])
 
   return (
@@ -76,7 +104,7 @@ export default function Dashboard(props) {
         {cppdLoaded ? null : 'Loading User Benefit Data...'}
         {cppdBenefit ? (
           <UniversalBenefitCard
-            key={0}
+            key={1}
             locale={props.locale}
             benefit={cppdBenefit}
           />
@@ -85,9 +113,27 @@ export default function Dashboard(props) {
         {eiLoaded ? null : 'Loading User Benefit Data...'}
         {eiBenefit ? (
           <UniversalBenefitCard
-            key={1}
+            key={2}
             locale={props.locale}
             benefit={eiBenefit}
+          />
+        ) : null}
+
+        {oasLoaded ? null : 'Loading User Benefit Data...'}
+        {oasBenefit ? (
+          <UniversalBenefitCard
+            key={3}
+            locale={props.locale}
+            benefit={oasBenefit}
+          />
+        ) : null}
+
+        {sebLoaded ? null : 'Loading User Benefit Data...'}
+        {sebBenefit ? (
+          <UniversalBenefitCard
+            key={4}
+            locale={props.locale}
+            benefit={sebBenefit}
           />
         ) : null}
 

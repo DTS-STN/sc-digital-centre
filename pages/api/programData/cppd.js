@@ -1,17 +1,17 @@
+import { ACTIVE_CPPD_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
+
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     res.status(200).json({
-      programCode: 'programCode',
-      statusCode: 'statusCode',
+      programCode: 'cppd',
+      statusCode: 'inPayment',
+      typeCode: 'CPPBeneficial',
       summaries: [
-        { type: 'PaymentAmount', value: 30.32 },
-        { type: 'NextPayment', value: 1616281200000 },
-        { type: 'LatestStatus', value: 'Data Not Provided' },
+        { type: 'PaymentAmount', value: 612.94 },
+        { type: 'NextPayment', value: new Date('2021-09-30T00:00:00') },
+        { type: 'LatestStatus', value: new Date('2021-07-15T00:00:00') },
       ],
-      taskGroups: [
-        { Header: 'paymentTasks', Tasks: [Array] },
-        { Header: 'changeTasks', Tasks: [Array] },
-      ],
+      taskGroups: [{ Header: 'paymentTasks', Tasks: ACTIVE_CPPD_TASKS }],
       taskHeadingKey: 'paymentsTaxesAccount',
     })
   } else {

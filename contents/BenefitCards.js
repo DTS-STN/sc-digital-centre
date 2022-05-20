@@ -382,30 +382,20 @@ const ACTIVE_SEB = {
 function getBenefitCards() {
   return [
     SUBMITTED_CPP,
-    ACTIVE_CPP,
     SUBMITTED_OAS,
-    ACTIVE_OAS,
     SUBMITTED_EI,
-    ACTIVE_EI,
     INACTIVE_EI,
     SUBMITTED_CPPD,
-    ACTIVE_CPPD,
     INACTIVE_CPPD,
-    ACTIVE_SEB,
   ]
 }
 
 module.exports = {
-  ACTIVE_CPP,
   SUBMITTED_CPP,
-  ACTIVE_CPPD,
   SUBMITTED_CPPD,
   INACTIVE_CPPD,
   SUBMITTED_OAS,
-  ACTIVE_OAS,
   SUBMITTED_EI,
-  ACTIVE_EI,
   INACTIVE_EI,
-  ACTIVE_SEB,
   getBenefitCards,
 }
