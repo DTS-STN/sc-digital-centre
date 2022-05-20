@@ -15,12 +15,17 @@ export default function Dashboard(props) {
     props.advertisingCards
   )
   const [noBenefitCards, setNoBenefitCards] = useState(props.noBenefitCards)
+
   const [cppBenefit, setCppBenefit] = useState()
-  const [eiBenefit, setEiBenefit] = useState()
   const [cppLoaded, setCppLoaded] = useState(false)
-  const [eiLoaded, setEiLoaded] = useState(false)
-  //no requirements to do anything with the errors yet
   const [cppError, setCppError] = useState(false)
+
+  const [cppdBenefit, setCppdBenefit] = useState()
+  const [cppdLoaded, setCppdLoaded] = useState(false)
+  const [cppdError, setCppdError] = useState(false)
+
+  const [eiBenefit, setEiBenefit] = useState()
+  const [eiLoaded, setEiLoaded] = useState(false)
   const [eiError, setEiError] = useState(false)
 
   useEffect(() => {
@@ -33,6 +38,16 @@ export default function Dashboard(props) {
         setCppError(error)
       })
       .finally(() => setCppLoaded(true))
+
+    fetch(`/api/programData/cppd`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCppdBenefit(data)
+      })
+      .catch((error) => {
+        setCppdError(error)
+      })
+      .finally(() => setCppdLoaded(true))
 
     fetch(`/api/programData/ei`)
       .then((res) => res.json())
@@ -55,6 +70,15 @@ export default function Dashboard(props) {
             key={0}
             locale={props.locale}
             benefit={cppBenefit}
+          />
+        ) : null}
+
+        {cppdLoaded ? null : 'Loading User Benefit Data...'}
+        {cppdBenefit ? (
+          <UniversalBenefitCard
+            key={0}
+            locale={props.locale}
+            benefit={cppdBenefit}
           />
         ) : null}
 
