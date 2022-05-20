@@ -11,7 +11,7 @@ expect.extend(toHaveNoViolations)
 describe('BenefitCardHeaderSummary', () => {
   const netPay = 30
   const summary = CreateGenericBenefitSummaryForDisplay(
-    SummaryTypes.PaymentAmount,
+    SummaryTypes.LastNetPayment,
     netPay
   )
 
