@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1653049386847" clover="3.2.0">
-  <project timestamp="1653049386847" name="All files">
-    <metrics statements="352" coveredstatements="213" conditionals="308" coveredconditionals="178" methods="121" coveredmethods="73" elements="781" coveredelements="464" complexity="0" loc="352" ncloc="352" packages="7" files="46" classes="46"/>
+<coverage generated="1653050261812" clover="3.2.0">
+  <project timestamp="1653050261812" name="All files">
+    <metrics statements="352" coveredstatements="213" conditionals="308" coveredconditionals="177" methods="121" coveredmethods="73" elements="781" coveredelements="463" complexity="0" loc="352" ncloc="352" packages="7" files="46" classes="46"/>
     <package name="components.atoms">
-      <metrics statements="92" coveredstatements="74" conditionals="88" coveredconditionals="65" methods="34" coveredmethods="29"/>
+      <metrics statements="92" coveredstatements="74" conditionals="88" coveredconditionals="64" methods="34" coveredmethods="29"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
-        <metrics statements="4" coveredstatements="4" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
-        <line num="8" count="85" type="stmt"/>
-        <line num="11" count="85" type="stmt"/>
-        <line num="13" count="85" type="cond" truecount="2" falsecount="0"/>
+        <metrics statements="4" coveredstatements="4" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="8" count="81" type="stmt"/>
+        <line num="11" count="81" type="stmt"/>
+        <line num="13" count="81" type="cond" truecount="2" falsecount="0"/>
         <line num="44" count="11" type="stmt"/>
       </file>
       <file name="BenefitCardHeaderActive.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/BenefitCardHeaderActive.js">
@@ -141,7 +141,7 @@
       </file>
       <file name="ViewMoreLessButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ViewMoreLessButton.js">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="5" count="69" type="stmt"/>
+        <line num="5" count="65" type="stmt"/>
         <line num="36" count="5" type="stmt"/>
       </file>
     </package>
@@ -164,7 +164,7 @@
       <file name="BenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitCard.js">
         <metrics statements="37" coveredstatements="26" conditionals="39" coveredconditionals="27" methods="9" coveredmethods="4"/>
         <line num="16" count="2" type="stmt"/>
-        <line num="17" count="59" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="57" type="cond" truecount="2" falsecount="0"/>
         <line num="18" count="57" type="stmt"/>
         <line num="19" count="57" type="stmt"/>
         <line num="20" count="57" type="stmt"/>
