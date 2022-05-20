@@ -9,7 +9,7 @@ export default function ViewMoreLessButton(props) {
       type="button"
       id={props.id}
       data-testid={props.dataTestid}
-      ariaExpanded={props.ariaExpanded}
+      aria-expanded={props.ariaExpanded}
     >
       <>
         <div className="flex items-center ">
