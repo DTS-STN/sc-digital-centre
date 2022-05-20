@@ -230,7 +230,7 @@ object Build_Perf: BuildType({
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-perf.bdm-dev.dts-stn.com")
         param("env.WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/WELL_KNOWN%")
-        param("env.AUTH_DISABLED", "false")
+        param("env.AUTH_DISABLED", "true")
         param("env.TARGET", "dev")
         param("env.BRANCH", "perf")
     }
@@ -302,7 +302,7 @@ object Build_Dynamic: BuildType({
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-dyna-%teamcity.build.branch%.bdm-dev.dts-stn.com")
         param("env.WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/WELL_KNOWN%")
-        param("env.AUTH_DISABLED", "false")
+        param("env.AUTH_DISABLED", "true")
         param("env.TARGET", "dev")
         param("env.BRANCH", "dyna-%teamcity.build.branch%")
     }
