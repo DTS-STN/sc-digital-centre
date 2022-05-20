@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import HorizontalRule from '../atoms/HorizontalRule'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 
@@ -10,7 +11,7 @@ export default function BenefitTasks(props) {
   const customHeader = props.header != null
 
   return (
-    <div className="bg-gray-lighter px-8 py-6 group-last:rounded-b-lg h-full border-r border-b">
+    <div className="bg-gray-lighter px-4 py-3 sm:px-8 sm:py-6 h-full border-b">
       <h3 className="font-display font-bold text-xl">
         {customHeader
           ? props.header
@@ -18,7 +19,7 @@ export default function BenefitTasks(props) {
           ? t.commonActions
           : `All ${props.benefitType} Tasks`}
       </h3>
-      <ul className="grid grid-cols-1 gap-x-7 justify-items-start w-full pt-6 ">
+      <ul className="grid sm:grid-cols-4 gap-x-7 justify-items-start w-full pt-6">
         {displayedTasks.map((value, index) => {
           return (
             <li key={index} className="font-display font-bold text-left pb-7">

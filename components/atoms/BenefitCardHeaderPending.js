@@ -22,9 +22,9 @@ export default function BenefitCardHeaderPending(props) {
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
           <div
             id={`${props.benefit.benefitType}-pending`}
-            className="col-span-1 py-4 md:px-0 lg:px-3"
+            className="col-span-1 py-4"
           >
-            <div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
+            <div className="font-bold font-display text-4xl sm:text-lg md:text-xl lg:text-3xl xl:text-4xl mb-4">
               {getBenefitCardTitle()}
             </div>
           </div>

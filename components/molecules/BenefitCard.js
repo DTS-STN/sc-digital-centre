@@ -155,7 +155,7 @@ const BenefitCard = (props) => {
       <div
         ref={topOfTaskRef}
         className={` ${
-          props.benefit.taskGroups ? 'grid sm:grid-cols-2 bg-gray-lighter' : ''
+          props.benefit.taskGroups ? 'grid sm:grid-cols-1 bg-gray-lighter' : ''
         }`}
       >
         {!props.benefit.taskGroups ? (
@@ -163,6 +163,7 @@ const BenefitCard = (props) => {
             benefitType={props.benefit.benefitType}
             isExpanded={isOpen}
             tasks={props.benefit.tasks}
+            locale={props.locale}
           />
         ) : !isOpen ? null : (
           props.benefit.tasks.map((value, index) => {
