@@ -47,6 +47,9 @@ export default {
     link: '/',
     linkText: 'View my status and messages',
   },
+  LastNetPayment: {
+    title: 'Last net payment',
+  },
   NextReport: {
     title: 'Next report due:',
   },

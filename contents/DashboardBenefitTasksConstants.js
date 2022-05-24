@@ -224,7 +224,7 @@ const ACTIVE_CPP_CHANGE_TASKS = {
 }
 
 const INACTIVE_CPP_TASKS = {
-  Header: t.commonActions,
+  Header: `commonActions`,
   Tasks: [
     TASKS.EstimateMyMonthlyCppBenefits,
     TASKS.DelayOasPensionTask,

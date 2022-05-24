@@ -17,6 +17,7 @@ export default function BenefitCardHeaderSummary(props) {
     switch (props.summary.type) {
       case SummaryTypes.PaymentAmount:
       case SummaryTypes.LastPayment:
+      case SummaryTypes.LastNetPayment:
         return (
           <p className="text-3xl">
             {t.netAmount.replace('{0}', props.summary.value)}

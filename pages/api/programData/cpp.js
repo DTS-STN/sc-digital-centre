@@ -9,11 +9,12 @@ export default async function handler(req, res) {
           'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
         }),
       })
-      let benefits = CreateGenefitBenefitJSONForUserDisplayWithCPPData(
-        await cppData.json()
-      )
-      if (!process.env.NO_MOCK_DATA)
+      let benefits = [
+        CreateGenefitBenefitJSONForUserDisplayWithCPPData(await cppData.json()),
+      ]
+      if (!process.env.NO_MOCK_DATA) {
         benefits = benefits.concat(GenerateCPPMockData())
+      }
       res.status(200).json(benefits)
     } catch (e) {
       console.log(e)
