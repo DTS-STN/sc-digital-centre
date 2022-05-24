@@ -1,5 +1,5 @@
 export const SummaryTypes = {
-  PaymentAmount: 'PaymentAmount',
+  LastNetPayment: 'LastNetPayment',
   NextReport: 'NextReport',
   LatestStatus: 'LatestStatus',
   NextPayment: 'NextPayment',

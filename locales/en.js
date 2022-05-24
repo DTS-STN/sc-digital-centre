@@ -40,10 +40,10 @@ export default {
     linkText: 'View my payments',
   },
   NextPayment: {
-    title: 'Next Payment:',
+    title: 'Next payment date:',
   },
   LatestStatus: {
-    title: 'Latest status:',
+    title: 'Latest status update:',
     link: '/',
     linkText: 'View my status and messages',
   },
@@ -338,10 +338,11 @@ export default {
 
   // dashboard benefit task headers
   estimate: 'Estimate',
-  paymentTasks: 'Payment and tax details',
+  paymentTasks: 'Payments and taxes',
   changeTasks: 'Make a Change',
-  paymentClaimsTaxTasks: 'Payments, claims, and tax details',
+  paymentClaimsTaxTasks: 'Payments and taxes:',
   documentsReportsTasks: 'Documents and reports',
+  commonActions: 'Common actions',
 
   //benefit task headings
   commonActions: 'Explore common actions',
@@ -353,18 +354,18 @@ export default {
   updateAccountInfoTask: 'Update my account information',
   allPaymentsTask: 'View all payments',
   statusUpdateTask: 'View my status and messages',
-  retirementIncomeTask: 'Estimate retirement income',
-  cppContributionTask: 'View my Canada Pension Plan contributions',
+  retirementIncomeTask: 'Estimate my retirement income',
+  cppContributionTask: 'View my contributions',
   taxDeductionsTask: 'Ask for tax deductions',
   delayOasPensionTask: 'Delay receiving Old Age Security',
   giveConsentTask: 'Give consent for someone to communicate on my behalf',
-  taxSlipTask: 'View tax slips',
+  taxSlipTask: 'View my tax slips',
   taxSlipT4eTask: 'View tax slips, T4E',
   taxSlipT4aAndNr4Task: 'View tax slips, T4A and NR4',
-  reconsiderationTask: 'Request for reconsideration',
-  taxSlipMailingTask: 'Tax slip mailing options',
-  completeInsuranceReportTask: 'Complete your Employment Insurance reports',
-  viewPaymentInfo: 'View my payment information',
+  reconsiderationTask: 'Reconsider my application',
+  taxSlipMailingTask: 'Update my tax slip delivery options',
+  completeInsuranceReportTask: 'Complete my report',
+  viewPaymentInfo: 'View my past payments',
   submitDocuments: 'Submit documents',
   viewDocuments: 'View my documents',
   viewLatestClaimTask: 'View my latest claim',
@@ -374,7 +375,7 @@ export default {
   recordOfEmployment: 'View my Records of Employment',
   reportMistake: 'Report a mistake',
   uploadMyDocuments: 'Upload my documents',
-  accessCode: 'Access code',
+  accessCode: 'Get my access code',
   viewAgreementStatus: 'View my agreement status details',
 
   applyForCppDisabilityBenefits:

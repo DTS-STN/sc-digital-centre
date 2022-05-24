@@ -19,14 +19,13 @@ export default function UniversalBenefitCard(props) {
     props.benefit.statusCode
   const benefitCardId = 'benefit-card-' + benefitUniqueId
   const taskListId = 'task-list-' + benefitUniqueId
-
   return (
-    <div className="benefit-card" id={benefitCardId}>
+    <div className="benefit-card pb-6" id={benefitCardId}>
       <StatusBadge status={props.benefit.statusCode} locale={props.locale} />
       <div className="px-4 md:px-6 pb-6">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
-          <div className="col-span-1 py-4 md:px-0 lg:px-2">
-            <h2 className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
+          <div className="col-span-1 py-4">
+            <h2 className="font-bold font-display text-4xl sm:text-lg md:text-xl lg:text-3xl xl:text-4xl mb-2">
               {t[props.benefit.programCode]}
             </h2>
           </div>
@@ -66,9 +65,10 @@ export default function UniversalBenefitCard(props) {
         </div>
       </div>
       <HorizontalRule width="w-auto sm:w-full" />
-      <div className="pl-4">
+      <div className="">
         <ViewMoreLessButton
           id={props.benefit.programCode + '-card-button'}
+          dataTestid={benefitUniqueId}
           onClick={() => {
             const newOpenState = !isOpen
             const idToScrollTo = newOpenState ? taskListId : benefitCardId
@@ -78,29 +78,32 @@ export default function UniversalBenefitCard(props) {
             })
             setIsOpen(newOpenState)
           }}
-          plus={isOpen}
+          ariaExpanded={isOpen.toString()}
+          icon={isOpen}
           caption={t[props.benefit.taskHeadingKey]}
         />
       </div>
-      {props.benefit.taskGroups == null ||
-      props.benefit.taskGroups.length <= 0 ? null : (
-        <div id={taskListId}>
-          {!isOpen
-            ? null
-            : props.benefit.taskGroups.map((taskList, index) => {
-                return (
-                  <div className="group" key={index}>
-                    <BenefitTasks
-                      isExpanded={true}
-                      header={taskList.Header}
-                      tasks={taskList.Tasks}
-                    />
-                    <HorizontalRule width="w-auto sm:w-full" />
-                  </div>
-                )
-              })}
-        </div>
-      )}
+      <div className="flex flex-col">
+        {props.benefit.taskGroups == null ||
+        props.benefit.taskGroups.length <= 0 ? null : (
+          <div id={taskListId} className="grid bg-gray-lighter sm:grid-cols-1 ">
+            {!isOpen
+              ? null
+              : props.benefit.taskGroups.map((taskList, index) => {
+                  return (
+                    <div key={index}>
+                      <BenefitTasks
+                        isExpanded={true}
+                        header={t[taskList.Header]}
+                        tasks={taskList.Tasks}
+                        locale={props.locale}
+                      />
+                    </div>
+                  )
+                })}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
