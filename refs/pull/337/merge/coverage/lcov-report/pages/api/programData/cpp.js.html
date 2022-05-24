@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/11</span>
             </div>
         
             
@@ -78,47 +78,65 @@
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CreateGenefitBenefitJSONForUserDisplayWithCPPData } from '../../../lib/BenefitsMapping'
 import GenerateCPPMockData from '../../../lib/CPPMockData'
 &nbsp;
-export default async function <span class="fstat-no" title="function not covered" >GetCPPProgramData(</span>) {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const cppData = <span class="cstat-no" title="statement not covered" >await fetch(process.env.CPP_ACTIVE_BENEFIT_URL, {</span>
-      headers: new Headers({
-        'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
-      }),
-    })
-    let jsonData = <span class="cstat-no" title="statement not covered" >[</span>
-      CreateGenefitBenefitJSONForUserDisplayWithCPPData(await cppData.json()),
-    ]
-<span class="cstat-no" title="statement not covered" >    if (!process.env.NO_MOCK_DATA)</span>
-<span class="cstat-no" title="statement not covered" >      jsonData = jsonData.concat(GenerateCPPMockData())</span>
-<span class="cstat-no" title="statement not covered" >    return jsonData</span>
-  } catch (e) {
-<span class="cstat-no" title="statement not covered" >    console.log(e)</span>
-<span class="cstat-no" title="statement not covered" >    return null</span>
+export default async function <span class="fstat-no" title="function not covered" >handler(</span>req, res) {
+<span class="cstat-no" title="statement not covered" >  if (req.method === 'GET') {</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const cppData = <span class="cstat-no" title="statement not covered" >await fetch(process.env.CPP_ACTIVE_BENEFIT_URL, {</span>
+        headers: new Headers({
+          'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+        }),
+      })
+      let benefits = <span class="cstat-no" title="statement not covered" >[</span>
+        CreateGenefitBenefitJSONForUserDisplayWithCPPData(await cppData.json()),
+      ]
+<span class="cstat-no" title="statement not covered" >      if (!process.env.NO_MOCK_DATA) {</span>
+<span class="cstat-no" title="statement not covered" >        benefits = benefits.concat(GenerateCPPMockData())</span>
+      }
+<span class="cstat-no" title="statement not covered" >      res.status(200).json(benefits)</span>
+    } catch (e) {
+<span class="cstat-no" title="statement not covered" >      console.log(e)</span>
+<span class="cstat-no" title="statement not covered" >      res.status(500)</span>
+    }
+  } else {
+<span class="cstat-no" title="statement not covered" >    res.status(405)</span>
   }
+<span class="cstat-no" title="statement not covered" >  return res</span>
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -127,7 +145,7 @@ export default async function <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri May 13 2022 15:51:58 GMT+0000 (Coordinated Universal Time)
+                at Tue May 24 2022 17:22:22 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
