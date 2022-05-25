@@ -300,12 +300,7 @@ const SUBMITTED_EI_TASKS = [
 
 const ACTIVE_EI_COMMON_TASKS = {
   Header: 'commonActions',
-  Tasks: [
-    TASKS.EiStatusUpdateTask,
-    TASKS.AccessCode,
-    TASKS.ReportMistake,
-    TASKS.UpdateAccountInfoTask,
-  ],
+  Tasks: [TASKS.AccessCode, TASKS.ReportMistake, TASKS.UpdateAccountInfoTask],
 }
 
 const ACTIVE_EI_PAYMENT_TASKS = {

@@ -9,6 +9,7 @@ export default function ViewMoreLessButton(props) {
       type="button"
       id={props.id}
       data-testid={props.dataTestid}
+      aria-expanded={props.ariaExpanded}
     >
       <>
         <div className="flex items-center ">
@@ -21,7 +22,7 @@ export default function ViewMoreLessButton(props) {
           ) : (
             <img
               className="px-2 w-12 h-12"
-              src="images/dashboard/expand-icon.svg"
+              src="/images/dashboard/expand-icon.svg"
               alt=""
             />
           )}
@@ -38,4 +39,5 @@ ViewMoreLessButton.propTypes = {
   onClick: propTypes.func.isRequired,
   id: propTypes.string.isRequired,
   dataTestid: propTypes.string,
+  ariaExpanded: propTypes.string,
 }
