@@ -49,6 +49,8 @@ export default {
   },
   LastNetPayment: {
     title: 'Last net payment',
+    link: '/',
+    linkText: 'View my payments',
   },
   NextReport: {
     title: 'Next report due:',

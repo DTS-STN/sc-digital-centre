@@ -11,6 +11,7 @@ export default function BenefitCardHeaderSummary(props) {
     SummaryTypes.LatestStatus,
     SummaryTypes.PresentStatus,
     SummaryTypes.LastPaymentDate,
+    SummaryTypes.LastNetPayment,
   ]
 
   const getBenefitCardValue = () => {

@@ -22,8 +22,6 @@ export default {
   },
   LastPaymentDate: {
     title: 'Date du dernier paiement :',
-    link: '/',
-    linkText: 'Voir mes paiements',
   },
   LastPayment: {
     title: 'Montant net du dernier paiement : ',
@@ -46,6 +44,11 @@ export default {
     title: 'Dernière mise à jour :',
     link: '/',
     linkText: "Consulter l'état de ma demande",
+  },
+  LastNetPayment: {
+    title: 'Montant net du dernier paiement : ',
+    link: '/',
+    linkText: 'Voir mes paiements',
   },
   NextReport: {
     title: 'Prochain rapport à remettre :',
