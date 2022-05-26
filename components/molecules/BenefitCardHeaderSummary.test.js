@@ -4,16 +4,13 @@ import '@testing-library/jest-dom/extend-expect'
 import en from '../../locales/en'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
 import { SummaryTypes } from '../../constants/SummaryTypes'
-import { CreateGenericBenefitSummaryForDisplay } from '../../lib/BenefitsMapping'
+import { FormatSummary } from '../../lib/BenefitsMapping'
 
 expect.extend(toHaveNoViolations)
 
 describe('BenefitCardHeaderSummary', () => {
   const netPay = 30
-  const summary = CreateGenericBenefitSummaryForDisplay(
-    SummaryTypes.LastNetPayment,
-    netPay
-  )
+  const summary = FormatSummary(SummaryTypes.LastNetPayment, netPay)
 
   const { container } = render(
     <BenefitCardHeaderSummary locale="en" summary={summary} />
