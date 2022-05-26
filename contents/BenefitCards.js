@@ -391,11 +391,16 @@ function getBenefitCards() {
 }
 
 module.exports = {
+  ACTIVE_CPP,
   SUBMITTED_CPP,
+  ACTIVE_CPPD,
   SUBMITTED_CPPD,
   INACTIVE_CPPD,
   SUBMITTED_OAS,
+  ACTIVE_OAS,
   SUBMITTED_EI,
+  ACTIVE_EI,
   INACTIVE_EI,
+  ACTIVE_SEB,
   getBenefitCards,
 }
