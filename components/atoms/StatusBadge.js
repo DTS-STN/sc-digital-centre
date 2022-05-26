@@ -28,6 +28,7 @@ export default function StatusBadge(props) {
             : 'bg-status-inactive'
         }`}
       >
+        <span className="sr-only">{t[props.programCode]} </span>
         {t[props.status] ?? 'No status found'}
       </h2>
     </div>
@@ -43,6 +44,7 @@ StatusBadge.propTypes = {
    *
    */
   status: propTypes.string,
+  programCode: propTypes.string,
   /**
    *
    */

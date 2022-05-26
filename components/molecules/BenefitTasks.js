@@ -12,13 +12,13 @@ export default function BenefitTasks(props) {
 
   return (
     <div className="bg-gray-lighter px-4 py-3 sm:px-8 sm:py-6 h-full border-b">
-      <h3 className="font-display font-bold text-xl">
+      <h5 className="font-display font-bold text-xl">
         {customHeader
           ? props.header
           : props.noBenefit
           ? t.commonActions
           : `All ${props.benefitType} Tasks`}
-      </h3>
+      </h5>
       <ul className="grid sm:grid-cols-4 gap-x-7 justify-items-start w-full pt-6">
         {displayedTasks.map((value, index) => {
           return (
