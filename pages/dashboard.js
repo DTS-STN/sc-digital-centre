@@ -8,6 +8,7 @@ import { getAdvertsingCards } from '../contents/BenefitAdvertisingCards'
 import { getSession } from 'next-auth/react'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
+import { setCookies } from 'cookies-next'
 
 export default function Dashboard(props) {
   const [benefitCards, setBenefitCards] = useState(props.benefitCards)
@@ -179,8 +180,11 @@ export default function Dashboard(props) {
   )
 }
 
-export async function getServerSideProps({ req, locale }) {
+export async function getServerSideProps({ req, res, locale, query }) {
   let isAuth = false
+
+  const { userid } = query
+  setCookies('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
 
   if (
     !process.env.AUTH_DISABLED ||
