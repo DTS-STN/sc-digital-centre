@@ -7,7 +7,7 @@ export default async function handler(req, res) {
       statusCode: 'inPayment',
       typeCode: 'CPPBeneficial',
       summaries: [
-        { type: 'PaymentAmount', value: '612.94' },
+        { type: 'LastNetPayment', value: '612.94' },
         { type: 'NextPayment', value: '2021-09-30T00:00:00.000Z' },
         { type: 'LatestStatus', value: '2021-07-15T00:00:00.000Z' },
       ],
