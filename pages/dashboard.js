@@ -15,24 +15,47 @@ export default function Dashboard(props) {
     props.advertisingCards
   )
   const [noBenefitCards, setNoBenefitCards] = useState(props.noBenefitCards)
-  const [cppBenefits, setCppBenefits] = useState()
-  const [eiBenefit, setEiBenefit] = useState()
+
+  const [cppBenefit, setCppBenefit] = useState()
   const [cppLoaded, setCppLoaded] = useState(false)
-  const [eiLoaded, setEiLoaded] = useState(false)
-  //no requirements to do anything with the errors yet
   const [cppError, setCppError] = useState(false)
+
+  const [cppdBenefit, setCppdBenefit] = useState()
+  const [cppdLoaded, setCppdLoaded] = useState(false)
+  const [cppdError, setCppdError] = useState(false)
+
+  const [eiBenefit, setEiBenefit] = useState()
+  const [eiLoaded, setEiLoaded] = useState(false)
   const [eiError, setEiError] = useState(false)
+
+  const [oasBenefit, setOasBenefit] = useState()
+  const [oasLoaded, setOasLoaded] = useState(false)
+  const [oasError, setOasError] = useState(false)
+
+  const [sebBenefit, setSebBenefit] = useState()
+  const [sebLoaded, setSebLoaded] = useState(false)
+  const [sebError, setSebError] = useState(false)
 
   useEffect(() => {
     fetch(`/api/programData/cpp`)
       .then((res) => res.json())
       .then((data) => {
-        setCppBenefits(data)
+        setCppBenefit(data)
       })
       .catch((error) => {
         setCppError(error)
       })
       .finally(() => setCppLoaded(true))
+
+    fetch(`/api/programData/cppd`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCppdBenefit(data)
+      })
+      .catch((error) => {
+        setCppdError(error)
+      })
+      .finally(() => setCppdLoaded(true))
 
     fetch(`/api/programData/ei`)
       .then((res) => res.json())
@@ -43,6 +66,26 @@ export default function Dashboard(props) {
         setEiError(error)
       })
       .finally(() => setEiLoaded(true))
+
+    fetch(`/api/programData/oas`)
+      .then((res) => res.json())
+      .then((data) => {
+        setOasBenefit(data)
+      })
+      .catch((error) => {
+        setOasError(error)
+      })
+      .finally(() => setOasLoaded(true))
+
+    fetch(`/api/programData/seb`)
+      .then((res) => res.json())
+      .then((data) => {
+        setSebBenefit(data)
+      })
+      .catch((error) => {
+        setSebError(error)
+      })
+      .finally(() => setSebLoaded(true))
   }, [])
 
   return (
@@ -50,8 +93,8 @@ export default function Dashboard(props) {
       <Greeting locale={props.locale} name="Mary" />
       <div className="mb-8">
         {cppLoaded ? null : 'Loading User Benefit Data...'}
-        {cppBenefits
-          ? cppBenefits.map((value, index) => {
+        {cppBenefit
+          ? cppBenefit.map((value, index) => {
               return (
                 <UniversalBenefitCard
                   key={index}
@@ -62,12 +105,39 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {eiLoaded ? null : 'Loading User Benefit Data...'}
-        {eiBenefit ? (
+        {cppdLoaded ? null : 'Loading User Benefit Data...'}
+        {cppdBenefit ? (
           <UniversalBenefitCard
             key={1}
             locale={props.locale}
+            benefit={cppdBenefit}
+          />
+        ) : null}
+
+        {eiLoaded ? null : 'Loading User Benefit Data...'}
+        {eiBenefit ? (
+          <UniversalBenefitCard
+            key={2}
+            locale={props.locale}
             benefit={eiBenefit}
+          />
+        ) : null}
+
+        {oasLoaded ? null : 'Loading User Benefit Data...'}
+        {oasBenefit ? (
+          <UniversalBenefitCard
+            key={3}
+            locale={props.locale}
+            benefit={oasBenefit}
+          />
+        ) : null}
+
+        {sebLoaded ? null : 'Loading User Benefit Data...'}
+        {sebBenefit ? (
+          <UniversalBenefitCard
+            key={4}
+            locale={props.locale}
+            benefit={sebBenefit}
           />
         ) : null}
 
@@ -82,7 +152,7 @@ export default function Dashboard(props) {
 
         {/* application or "advertising" cards */}
         {advertisingCards.map((value, index) => {
-          if (value.benefitType === 'CPP' && cppBenefits) {
+          if (value.benefitType === 'CPP' && cppBenefit) {
             return
           } else if (value.benefitType === 'EI' && eiBenefit) {
             return

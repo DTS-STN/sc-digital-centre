@@ -383,16 +383,11 @@ const ACTIVE_SEB = {
 function getBenefitCards() {
   return [
     SUBMITTED_CPP,
-    ACTIVE_CPP,
     SUBMITTED_OAS,
-    ACTIVE_OAS,
     SUBMITTED_EI,
-    ACTIVE_EI,
     INACTIVE_EI,
     SUBMITTED_CPPD,
-    ACTIVE_CPPD,
     INACTIVE_CPPD,
-    ACTIVE_SEB,
   ]
 }
 
