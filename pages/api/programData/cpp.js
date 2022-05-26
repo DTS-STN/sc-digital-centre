@@ -1,4 +1,4 @@
-import { CreateGenefitBenefitJSONForUserDisplayWithCPPData } from '../../../lib/BenefitsMapping'
+import { MapCPPCard } from '../../../lib/BenefitsMapping'
 import { mockData } from '../../../mockdata/MockData'
 import { getCookie } from 'cookies-next'
 
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
 
       const benefits = []
       userData.forEach((result) => {
-        benefits.push(CreateGenefitBenefitJSONForUserDisplayWithCPPData(result))
+        benefits.push(MapCPPCard(result))
       })
       res.status(200).json(benefits)
     } catch (e) {

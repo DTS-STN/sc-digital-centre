@@ -1,6 +1,6 @@
 import { ACTIVE_CPPD_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
 import { getCookie } from 'cookies-next'
-import { CreateGenefitBenefitJSONForUserDisplayWithCPPData } from '../../../lib/BenefitsMapping'
+import { MapCPPCard } from '../../../lib/BenefitsMapping'
 import { mockData } from '../../../mockdata/MockData'
 
 export default async function handler(req, res) {
@@ -9,8 +9,7 @@ export default async function handler(req, res) {
     if (userid) {
       //Mock userid response
       const userData = mockData[userid].CPPD
-      const benefits =
-        CreateGenefitBenefitJSONForUserDisplayWithCPPData(userData)
+      const benefits = MapCPPCard(userData)
       res.status(200).json(benefits)
     } else {
       //Mock interop response
