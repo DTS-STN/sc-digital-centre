@@ -1,4 +1,4 @@
-import { CreateGenefitBenefitJSONForUserDisplayWithEIData } from '../../../lib/BenefitsMapping'
+import { MapEICard } from '../../../lib/BenefitsMapping'
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
@@ -8,9 +8,7 @@ export default async function handler(req, res) {
           'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
         }),
       })
-      const benefit = CreateGenefitBenefitJSONForUserDisplayWithEIData(
-        await eiData.json()
-      )
+      const benefit = MapEICard(await eiData.json())
       res.status(200).json(benefit)
     } catch (e) {
       console.log(e)

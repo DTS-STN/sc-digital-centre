@@ -245,17 +245,20 @@ const SUBMITTED_CPPD_TASKS = [
   TASKS.UpdateAccountInfoTask,
 ]
 
-const ACTIVE_CPPD_TASKS = [
-  TASKS.AllPaymentsTask,
-  TASKS.StatusUpdateTask,
-  TASKS.TaxSlipTask,
-  TASKS.ReconsiderationTask,
-  TASKS.CppContributionTask,
-  TASKS.TaxDeductionsTask,
-  TASKS.GiveConsentTask,
-  TASKS.UploadMyDocuments,
-  TASKS.UpdateAccountInfoTask,
-]
+const ACTIVE_CPPD_TASKS = {
+  Header: 'paymentTasks',
+  Tasks: [
+    TASKS.AllPaymentsTask,
+    TASKS.StatusUpdateTask,
+    TASKS.TaxSlipTask,
+    TASKS.ReconsiderationTask,
+    TASKS.CppContributionTask,
+    TASKS.TaxDeductionsTask,
+    TASKS.GiveConsentTask,
+    TASKS.UploadMyDocuments,
+    TASKS.UpdateAccountInfoTask,
+  ],
+}
 
 const SUBMITTED_OAS_TASKS = [
   TASKS.AllPaymentsTask,
@@ -392,6 +395,12 @@ const TASK_GROUPS = [
     statusCode: StatusCodes.inPayment,
     taskHeadingKey: 'paymentsTaxesAccount',
     tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPPD,
+    statusCode: StatusCodes.inPayment,
+    taskHeadingKey: 'paymentTasks',
+    tasksGroups: [ACTIVE_CPPD_TASKS],
   },
   {
     programCode: ProgramCodes.EI,

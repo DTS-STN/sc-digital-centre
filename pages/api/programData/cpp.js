@@ -1,4 +1,4 @@
-import { CreateGenefitBenefitJSONForUserDisplayWithCPPData } from '../../../lib/BenefitsMapping'
+import { MapCPPCard } from '../../../lib/BenefitsMapping'
 import GenerateCPPMockData from '../../../lib/CPPMockData'
 
 export default async function handler(req, res) {
@@ -9,9 +9,7 @@ export default async function handler(req, res) {
           'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
         }),
       })
-      let benefits = [
-        CreateGenefitBenefitJSONForUserDisplayWithCPPData(await cppData.json()),
-      ]
+      let benefits = [MapCPPCard(await cppData.json())]
       if (!process.env.NO_MOCK_DATA) {
         benefits = benefits.concat(GenerateCPPMockData())
       }
