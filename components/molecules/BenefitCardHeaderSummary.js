@@ -47,7 +47,7 @@ export default function BenefitCardHeaderSummary(props) {
   }
 
   return (
-    <div className="w-full">
+    <li className="w-full">
       <p className="font-bold">{t[props.summary.type].title}</p>
       {getBenefitCardValue()}
       <p className="font-bold">{props.summary.status ?? null}</p>
@@ -59,7 +59,7 @@ export default function BenefitCardHeaderSummary(props) {
           {t[props.summary.type].linkText}
         </a>
       )}
-    </div>
+    </li>
   )
 }
 

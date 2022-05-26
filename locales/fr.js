@@ -299,6 +299,7 @@ export default {
   viewLess: '(FR)View less',
 
   // Benefit Card Header
+  summary: 'résumé de',
   applicationSubmitted: '(FR)Application submitted on:',
   estimatedDateOfDecision: '(FR)Estimated date of decision',
   paymentAmount: '(FR)Payment amount',
