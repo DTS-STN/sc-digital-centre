@@ -15,7 +15,7 @@ export default function Dashboard(props) {
     props.advertisingCards
   )
   const [noBenefitCards, setNoBenefitCards] = useState(props.noBenefitCards)
-  const [cppBenefit, setCppBenefit] = useState()
+  const [cppBenefits, setCppBenefits] = useState()
   const [eiBenefit, setEiBenefit] = useState()
   const [cppLoaded, setCppLoaded] = useState(false)
   const [eiLoaded, setEiLoaded] = useState(false)
@@ -27,7 +27,7 @@ export default function Dashboard(props) {
     fetch(`/api/programData/cpp`)
       .then((res) => res.json())
       .then((data) => {
-        setCppBenefit(data)
+        setCppBenefits(data)
       })
       .catch((error) => {
         setCppError(error)
@@ -50,13 +50,17 @@ export default function Dashboard(props) {
       <Greeting locale={props.locale} name="Mary" />
       <div className="mb-8">
         {cppLoaded ? null : 'Loading User Benefit Data...'}
-        {cppBenefit ? (
-          <UniversalBenefitCard
-            key={0}
-            locale={props.locale}
-            benefit={cppBenefit}
-          />
-        ) : null}
+        {cppBenefits
+          ? cppBenefits.map((value, index) => {
+              return (
+                <UniversalBenefitCard
+                  key={index}
+                  locale={props.locale}
+                  benefit={value}
+                />
+              )
+            })
+          : null}
 
         {eiLoaded ? null : 'Loading User Benefit Data...'}
         {eiBenefit ? (
@@ -78,7 +82,7 @@ export default function Dashboard(props) {
 
         {/* application or "advertising" cards */}
         {advertisingCards.map((value, index) => {
-          if (value.benefitType === 'CPP' && cppBenefit) {
+          if (value.benefitType === 'CPP' && cppBenefits) {
             return
           } else if (value.benefitType === 'EI' && eiBenefit) {
             return

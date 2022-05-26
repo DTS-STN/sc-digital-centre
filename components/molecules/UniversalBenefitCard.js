@@ -31,20 +31,36 @@ export default function UniversalBenefitCard(props) {
           </div>
 
           <div className="grid col-span-3">
-            <div className="grid col-span-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display">
-              {props.benefit.summaries == null ||
-              props.benefit.summaries.length <= 0
-                ? null
-                : props.benefit.summaries.map((summary, index) => {
-                    return (
-                      <BenefitCardHeaderSummary
-                        key={index}
-                        locale={props.locale}
-                        summary={summary}
-                      />
-                    )
-                  })}
-            </div>
+            {props.benefit.summaries == null ||
+            props.benefit.summaries.length <= 0 ? (
+              <div className="mx-8">
+                <p className="pb-5 text-lg">{t.benefitDurationReached}</p>
+                <a
+                  href=""
+                  className="underline text-link-blue-default hover:text-link-blue-hover"
+                >
+                  <img
+                    src="/images/dashboard/apply-for-benefit-icon.svg"
+                    alt=""
+                  />
+                  <p className="w-36 sm:w-24 lg:w-36 pr-5 pt-3">
+                    {`${t.applyFor} ${t[props.benefit.programCode]}`}
+                  </p>
+                </a>
+              </div>
+            ) : (
+              <div className="grid col-span-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display">
+                {props.benefit.summaries.map((summary, index) => {
+                  return (
+                    <BenefitCardHeaderSummary
+                      key={index}
+                      locale={props.locale}
+                      summary={summary}
+                    />
+                  )
+                })}
+              </div>
+            )}
           </div>
         </div>
       </div>

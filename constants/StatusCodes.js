@@ -4,4 +4,6 @@ export const StatusCodes = {
   applicationReceived: 'applicationReceived',
   inactive: 'inactive',
   exahusted: 'exhausted',
+  decisionSent: 'decisionSent',
+  paymentHold: 'paymentHold',
 }
