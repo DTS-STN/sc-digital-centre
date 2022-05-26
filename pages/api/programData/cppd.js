@@ -1,7 +1,7 @@
 import { ACTIVE_CPPD_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
 import { getCookie } from 'cookies-next'
 import { CreateGenefitBenefitJSONForUserDisplayWithCPPData } from '../../../lib/BenefitsMapping'
-import { mockData } from '../../../lib/MockData'
+import { mockData } from '../../../mockdata/MockData'
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {

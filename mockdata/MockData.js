@@ -1,7 +1,7 @@
-import CPPDUser1 from '../mockdata/user1/cppd.json'
-import CPPDUser2 from '../mockdata/user2/cppd.json'
-import EIUser1 from '../mockdata/user1/ei.json'
-import EIUser2 from '../mockdata/user2/ei.json'
+import CPPDUser1 from './user1/cppd.json'
+import CPPDUser2 from './user2/cppd.json'
+import EIUser1 from './user1/ei.json'
+import EIUser2 from './user2/ei.json'
 
 export const mockData = {
   1: {
