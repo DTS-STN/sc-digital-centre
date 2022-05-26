@@ -1,201 +1,200 @@
-import en from '../locales/en'
-
-const t = en
+import { ProgramCodes } from '../constants/ProgramCodes'
+import { StatusCodes } from '../constants/StatusCodes'
 
 const TASKS = {
   // general tasks
   UpdateAccountInfoTask: {
-    task: t.updateAccountInfoTask,
+    task: 'updateAccountInfoTask',
     taskIcon: '/images/dashboard/account-info-icon.svg',
-    taskLink: t.updateAccountInfoTaskLink,
+    taskLink: 'updateAccountInfoTaskLink',
   },
   TaxSlipTask: {
-    task: t.taxSlipTask,
+    task: 'taxSlipTask',
     taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
-    taskLink: t.taxSlipTaskLink,
+    taskLink: 'taxSlipTaskLink',
   },
   TaxSlipMailingTask: {
-    task: t.taxSlipMailingTask,
+    task: 'taxSlipMailingTask',
     taskIcon: '/images/dashboard/oas-tax-slip-mailing-icon.svg',
-    taskLink: t.taxSlipMailingLink,
+    taskLink: 'taxSlipMailingLink',
   },
   // oas cpp tasks
   AllPaymentsTask: {
-    task: t.allPaymentsTask,
+    task: 'allPaymentsTask',
     taskIcon: '/images/dashboard/oas-payment-icon.svg',
-    taskLink: t.allPaymentsTaskLink,
+    taskLink: 'allPaymentsTaskLink',
   },
   StatusUpdateTask: {
-    task: t.statusUpdateTask,
+    task: 'statusUpdateTask',
     taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
-    taskLink: t.statusUpdateTaskLink,
+    taskLink: 'statusUpdateTaskLink',
   },
   RetirementIncomeTask: {
-    task: t.retirementIncomeTask,
+    task: 'retirementIncomeTask',
     taskIcon: '/images/dashboard/oas-retirement-income-icon.svg',
-    taskLink: t.retirementIncomeTaskLink,
+    taskLink: 'retirementIncomeTaskLink',
   },
   ReconsiderationTask: {
-    task: t.reconsiderationTask,
+    task: 'reconsiderationTask',
     taskIcon: '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
-    taskLink: t.reconsiderationLink,
+    taskLink: 'reconsiderationLink',
   },
   DelayOasPensionTask: {
-    task: t.delayOasPensionTask,
+    task: 'delayOasPensionTask',
     taskIcon: '/images/dashboard/oas-delay-receiving-pension-icon.svg',
-    taskLink: t.delayOasPensionTaskLink,
+    taskLink: 'delayOasPensionTaskLink',
   },
   CppContributionTask: {
-    task: t.cppContributionTask,
+    task: 'cppContributionTask',
     taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
-    taskLink: t.cppContributionTaskLink,
+    taskLink: 'cppContributionTaskLink',
   },
   TaxDeductionsTask: {
-    task: t.taxDeductionsTask,
+    task: 'taxDeductionsTask',
     taskIcon: '/images/dashboard/oas-federal-tax-deductions-icon.svg',
-    taskLink: t.taxDeductionsTaskLink,
+    taskLink: 'taxDeductionsTaskLink',
   },
   GiveConsentTask: {
-    task: t.giveConsentTask,
+    task: 'giveConsentTask',
     taskIcon: '/images/dashboard/oas-consent-icon.svg',
-    taskLink: t.giveConsentTaskLink,
+    taskLink: 'giveConsentTaskLink',
   },
   TaxSlipT4aAndNr4Task: {
-    task: t.taxSlipT4aAndNr4Task,
+    task: 'taxSlipT4aAndNr4Task',
     taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
-    taskLink: t.taxSlipTaskLink,
+    taskLink: 'taxSlipTaskLink',
   },
   UploadMyDocuments: {
-    task: t.uploadMyDocuments,
+    task: 'uploadMyDocuments',
     taskIcon: '/images/dashboard/ei-submit-documents-icon.svg',
-    taskLink: t.uploadMyDocumentsLink,
+    taskLink: 'uploadMyDocumentsLink',
   },
   ApplyForCppDisabilityBenefits: {
-    task: t.applyForCppDisabilityBenefits,
+    task: 'applyForCppDisabilityBenefits',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   ApplyForCppRetirementPensions: {
-    task: t.applyForCppRetirementPensions,
+    task: 'applyForCppRetirementPensions',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   EstimateMyMonthlyCppBenefits: {
-    task: t.estimateMyMonthlyCppBenefits,
+    task: 'estimateMyMonthlyCppBenefits',
     taskIcon: '/images/dashboard/oas-retirement-income-icon.svg',
     taskLink: '',
   },
   ViewMyCppContributions: {
-    task: t.viewMyCppContributions,
+    task: 'viewMyCppContributions',
     taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
     taskLink: '',
   },
   ApplyForCppDeathBenefits: {
-    task: t.applyForCppDeathBenefits,
+    task: 'applyForCppDeathBenefits',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   ApplyForGuranteedIncomeSupplement: {
-    task: t.applyForGuranteedIncomeSupplement,
+    task: 'applyForGuranteedIncomeSupplement',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   ApplyForCppSurvivorsPensionAndChildrensBenefit: {
-    task: t.applyForCppSurvivorsPensionAndChildrensBenefit,
+    task: 'applyForCppSurvivorsPensionAndChildrensBenefit',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   ApplyForOldAgeSecurity: {
-    task: t.applyForOldAgeSecurity,
+    task: 'applyForOldAgeSecurity',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     taskLink: '',
   },
   // ei tasks
   EiStatusUpdateTask: {
-    task: t.statusUpdateTask,
+    task: 'statusUpdateTask',
     taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
-    taskLink: t.eiStatusAndMessages,
+    taskLink: 'eiStatusAndMessages',
   },
   CompleteInsuranceReportTask: {
-    task: t.completeInsuranceReportTask,
+    task: 'completeInsuranceReportTask',
     taskIcon: '/images/dashboard/ei-insurance-report-icon.svg',
-    taskLink: t.completeInsuranceReportLink,
+    taskLink: 'completeInsuranceReportLink',
   },
   ViewPaymentInfo: {
-    task: t.viewPaymentInfo,
+    task: 'viewPaymentInfo',
     taskIcon: '/images/dashboard/ei-view-payment-info-icon.svg',
-    taskLink: t.viewPaymentInfoLink,
+    taskLink: 'viewPaymentInfoLink',
   },
   AccessCode: {
-    task: t.accessCode,
+    task: 'accessCode',
     taskIcon: '/images/dashboard/ei-access-code.svg',
     taskLink: '/dashboard',
   },
   SubmitDocuments: {
-    task: t.submitDocuments,
+    task: 'submitDocuments',
     taskIcon: '/images/dashboard/ei-submit-documents-icon.svg',
-    taskLink: t.eiUploadDocuments,
+    taskLink: 'eiUploadDocuments',
   },
   ViewDocuments: {
-    task: t.viewDocuments,
+    task: 'viewDocuments',
     taskIcon: '/images/dashboard/ei-view-documents-icon.svg',
-    taskLink: t.viewDocumentsLink,
+    taskLink: 'viewDocumentsLink',
   },
   ViewLatestClaimTask: {
-    task: t.viewLatestClaimTask,
+    task: 'viewLatestClaimTask',
     taskIcon: '/images/dashboard/ei-latest-claim-icon.svg',
-    taskLink: t.viewLatestClaimLink,
+    taskLink: 'viewLatestClaimLink',
   },
   ViewPastClaimsTask: {
-    task: t.viewPastClaimsTask,
+    task: 'viewPastClaimsTask',
     taskIcon: '/images/dashboard/ei-past-claims-icon.svg',
-    taskLink: t.viewPastClaimsLink,
+    taskLink: 'viewPastClaimsLink',
   },
   SubmitEformsTask: {
-    task: t.submitEformsTask,
+    task: 'submitEformsTask',
     taskIcon: '/images/dashboard/ei-submit-eform-icon.svg',
-    taskLink: t.submitFormsLink,
+    taskLink: 'submitFormsLink',
   },
   RegisterForAlerts: {
-    task: t.registerForAlerts,
+    task: 'registerForAlerts',
     taskIcon: '/images/dashboard/ei-register-for-alert-icon.svg ',
-    taskLink: t.eiRegisterForAlerts,
+    taskLink: 'eiRegisterForAlerts',
   },
   RecordOfEmployment: {
-    task: t.recordOfEmployment,
+    task: 'recordOfEmployment',
     taskIcon: '/images/dashboard/ei-record-of-employment-icon.svg',
-    taskLink: t.recordOfEmployment,
+    taskLink: 'recordOfEmployment',
   },
   ReportMistake: {
-    task: t.reportMistake,
+    task: 'reportMistake',
     taskIcon: '/images/dashboard/ei-report-mistake-icon.svg ',
-    taskLink: t.eiReportMistake,
+    taskLink: 'eiReportMistake',
   },
   TaxSlipT4eTask: {
-    task: t.taxSlipT4eTask,
+    task: 'taxSlipT4eTask',
     taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
-    taskLink: t.taxSlipTaskLink,
+    taskLink: 'taxSlipTaskLink',
   },
   ViewPaymentInfoIconWhite: {
-    task: t.viewPaymentInfo,
+    task: 'viewPaymentInfo',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
-    taskLink: t.recordOfEmployment,
+    taskLink: 'recordOfEmployment',
   },
   //Seb tasks
   ViewAgreementStatusDetails: {
-    task: t.viewAgreementStatus,
+    task: 'viewAgreementStatus',
     taskIcon: '/images/dashboard/ei-view-documents-icon.svg',
-    taskLink: t.viewDocumentsLink,
+    taskLink: 'viewDocumentsLink',
   },
 }
 
 const SUBMITTED_CPP_ESTIMATE_TASKS = {
-  Header: t.estimate,
+  Header: 'estimate',
   Tasks: [TASKS.RetirementIncomeTask],
 }
 
 const SUBMITTED_CPP_CHANGE_TASKS = {
-  Header: t.changeTasks,
+  Header: 'changeTasks',
   Tasks: [
     TASKS.DelayOasPensionTask,
     TASKS.GiveConsentTask,
@@ -204,7 +203,7 @@ const SUBMITTED_CPP_CHANGE_TASKS = {
 }
 
 const ACTIVE_CPP_PAYMENT_TASKS = {
-  Header: t.paymentTasks,
+  Header: 'paymentTasks',
   Tasks: [
     TASKS.AllPaymentsTask,
     TASKS.TaxSlipTask,
@@ -215,7 +214,7 @@ const ACTIVE_CPP_PAYMENT_TASKS = {
 }
 
 const ACTIVE_CPP_CHANGE_TASKS = {
-  Header: t.changeTasks,
+  Header: 'changeTasks',
   Tasks: [
     TASKS.ReconsiderationTask,
     TASKS.DelayOasPensionTask,
@@ -224,13 +223,15 @@ const ACTIVE_CPP_CHANGE_TASKS = {
   ],
 }
 
-const INACTIVE_CPP_TASKS = [
-  TASKS.ReconsiderationTask,
-  TASKS.StatusUpdateTask,
-  TASKS.AllPaymentsTask,
-  TASKS.TaxSlipT4aAndNr4Task,
-  TASKS.UpdateAccountInfoTask,
-]
+const INACTIVE_CPP_TASKS = {
+  Header: `commonActions`,
+  Tasks: [
+    TASKS.EstimateMyMonthlyCppBenefits,
+    TASKS.DelayOasPensionTask,
+    TASKS.GiveConsentTask,
+    TASKS.UpdateAccountInfoTask,
+  ],
+}
 
 const SUBMITTED_CPPD_TASKS = [
   TASKS.AllPaymentsTask,
@@ -300,17 +301,12 @@ const SUBMITTED_EI_TASKS = [
 ]
 
 const ACTIVE_EI_COMMON_TASKS = {
-  Header: t.commonActions,
-  Tasks: [
-    TASKS.EiStatusUpdateTask,
-    TASKS.AccessCode,
-    TASKS.ReportMistake,
-    TASKS.UpdateAccountInfoTask,
-  ],
+  Header: 'commonActions',
+  Tasks: [TASKS.AccessCode, TASKS.ReportMistake, TASKS.UpdateAccountInfoTask],
 }
 
 const ACTIVE_EI_PAYMENT_TASKS = {
-  Header: t.paymentClaimsTaxTasks,
+  Header: 'paymentClaimsTaxTasks',
   Tasks: [
     TASKS.ViewPaymentInfo,
     TASKS.ViewLatestClaimTask,
@@ -321,7 +317,7 @@ const ACTIVE_EI_PAYMENT_TASKS = {
 }
 
 const ACTIVE_EI_DOCS_TASKS = {
-  Header: t.documentsReportsTasks,
+  Header: 'documentsReportsTasks',
   Tasks: [
     TASKS.CompleteInsuranceReportTask,
     TASKS.RecordOfEmployment,
@@ -362,11 +358,55 @@ const NO_BENEFIT_OAS_TASKS = [
 ]
 
 const ACTIVE_SEB_TASKS = {
-  Header: t.commonActions,
+  Header: 'commonActions',
   Tasks: [TASKS.ViewAgreementStatusDetails],
 }
 
+const TASK_GROUPS = [
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.inactive,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_CPP_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.applicationReceived,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_CPP_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.decisionSent,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_CPP_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.paymentHold,
+    taskHeadingKey: 'paymentsTaxesAccount',
+    tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.inPayment,
+    taskHeadingKey: 'paymentsTaxesAccount',
+    tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+  },
+  {
+    programCode: ProgramCodes.EI,
+    statusCode: StatusCodes.inPayment,
+    taskHeadingKey: 'commonPaymentsTaxesAccount',
+    tasksGroups: [
+      ACTIVE_EI_COMMON_TASKS,
+      ACTIVE_EI_PAYMENT_TASKS,
+      ACTIVE_EI_DOCS_TASKS,
+    ],
+  },
+]
+
 module.exports = {
+  TASK_GROUPS,
   SUBMITTED_CPP_ESTIMATE_TASKS,
   SUBMITTED_CPP_CHANGE_TASKS,
   ACTIVE_CPP_PAYMENT_TASKS,

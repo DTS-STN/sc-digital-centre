@@ -1,8 +1,19 @@
 import '../styles/globals.css'
 import '../styles/fonts.css'
+import Layout from '../components/organisms/Layout'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <Layout
+      locale={pageProps.locale}
+      title={pageProps.title}
+      metadata={pageProps.metadata}
+      langToggleLink={pageProps.langToggleLink}
+      display={pageProps.display}
+      isAuth={pageProps.isAuth}
+      breadCrumbItems={pageProps.breadCrumbItems}
+    >
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
-
-export default MyApp

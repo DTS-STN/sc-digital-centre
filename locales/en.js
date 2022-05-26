@@ -6,18 +6,51 @@ export default {
   EI: 'Employment Insurance',
   //
   // BenefitSummaries
+  RequestedBenefit: {
+    title: 'Requested benefit:',
+  },
+  EstimatedDecisionDate: {
+    title: 'Estimated decision date:',
+  },
+  BenefitAffected: {
+    title: 'Benefit affected:',
+  },
+  PresentStatus: {
+    title: 'Present status:',
+    link: '/',
+    linkText: 'Call: 1-800-555-1234',
+  },
+  LastPaymentDate: {
+    title: 'Last payment date:',
+    link: '/',
+    linkText: 'View my payments',
+  },
+  LastPayment: {
+    title: 'Last net payment:',
+  },
+  NextPaymentDate: {
+    title: 'Next payment date:',
+  },
+  ActiveBenefit: {
+    title: 'Active benefit:',
+  },
   PaymentAmount: {
     title: 'Payment amount',
     link: '/',
     linkText: 'View my payments',
   },
   NextPayment: {
-    title: 'Next Payment:',
+    title: 'Next payment date:',
   },
   LatestStatus: {
-    title: 'Latest status:',
+    title: 'Latest status update:',
     link: '/',
     linkText: 'View my status and messages',
+  },
+  LastNetPayment: {
+    title: 'Last net payment',
+    link: '/',
+    linkText: 'View my payments',
   },
   NextReport: {
     title: 'Next report due:',
@@ -257,6 +290,9 @@ export default {
   cppd: 'Canada Pension Plan Disability',
   seb: 'Self Employment Benefits',
 
+  // Benefit types
+  CPPRetirement: 'Retirement pension',
+
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,
   disability_pension: `Disability Pension`,
@@ -284,9 +320,10 @@ export default {
   viewPaymentHistory: 'View my payments',
   transactionDate: 'Transaction date:',
   agreementStatus: 'Agreement status:',
-  netAmount: '$ {0}',
+  netAmount: '${0}',
 
   // Benefit Card details
+  benefitDurationReached: 'Your current benefit duration has been reached.',
   applicationDate: 'Application date',
   latestActivity: 'Latest activity',
   viewMyStatusAndMessages: 'View my status and messages',
@@ -299,17 +336,21 @@ export default {
   inactive: 'Inactive',
   applicationReceived: 'Application received',
   benefitUpdate: 'Benefit update',
+  decisionSent: 'Decision letter sent',
+  paymentHold: 'Payment on hold',
   inPayment: 'In payment',
   exhausted: 'Benefit exahusted',
 
   // dashboard benefit task headers
   estimate: 'Estimate',
-  paymentTasks: 'Payment and tax details',
+  paymentTasks: 'Payments and taxes',
   changeTasks: 'Make a Change',
-  paymentClaimsTaxTasks: 'Payments, claims, and tax details',
+  paymentClaimsTaxTasks: 'Payments and taxes:',
   documentsReportsTasks: 'Documents and reports',
+  commonActions: 'Common actions',
 
   //benefit task headings
+  commonActions: 'Explore common actions',
   paymentsTaxesAccount: 'Payments, taxes and account information',
   commonPaymentsTaxesAccount:
     'Common actions, payments, taxes, reports, and account information',
@@ -318,18 +359,18 @@ export default {
   updateAccountInfoTask: 'Update my account information',
   allPaymentsTask: 'View all payments',
   statusUpdateTask: 'View my status and messages',
-  retirementIncomeTask: 'Estimate retirement income',
-  cppContributionTask: 'View my Canada Pension Plan contributions',
+  retirementIncomeTask: 'Estimate my retirement income',
+  cppContributionTask: 'View my contributions',
   taxDeductionsTask: 'Ask for tax deductions',
   delayOasPensionTask: 'Delay receiving Old Age Security',
   giveConsentTask: 'Give consent for someone to communicate on my behalf',
-  taxSlipTask: 'View tax slips',
+  taxSlipTask: 'View my tax slips',
   taxSlipT4eTask: 'View tax slips, T4E',
   taxSlipT4aAndNr4Task: 'View tax slips, T4A and NR4',
-  reconsiderationTask: 'Request for reconsideration',
-  taxSlipMailingTask: 'Tax slip mailing options',
-  completeInsuranceReportTask: 'Complete your Employment Insurance reports',
-  viewPaymentInfo: 'View my payment information',
+  reconsiderationTask: 'Reconsider my application',
+  taxSlipMailingTask: 'Update my tax slip delivery options',
+  completeInsuranceReportTask: 'Complete my report',
+  viewPaymentInfo: 'View my past payments',
   submitDocuments: 'Submit documents',
   viewDocuments: 'View my documents',
   viewLatestClaimTask: 'View my latest claim',
@@ -339,10 +380,9 @@ export default {
   recordOfEmployment: 'View my Records of Employment',
   reportMistake: 'Report a mistake',
   uploadMyDocuments: 'Upload my documents',
-  accessCode: 'Access code',
+  accessCode: 'Get my access code',
   viewAgreementStatus: 'View my agreement status details',
 
-  commonActions: 'Common actions',
   applyForCppDisabilityBenefits:
     'Apply for Canada Pension Plan Disability Benefits',
   applyForCppRetirementPensions:
@@ -373,6 +413,7 @@ export default {
   url_serviceCanada:
     'https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html',
   url_myBenefitsAndServices: '/dashboard',
+  url_profileAndSecuritySettings: '/profile',
 
   // Benefit card header URLs
   url_statusAndMessages: '/dashboard',

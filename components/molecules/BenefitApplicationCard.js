@@ -30,11 +30,11 @@ const BenefitApplicationCard = (props) => {
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
         <div
           id={`${benefitType}-${benefitSubType}-app-card`}
-          className="col-span-1 py-4 md:px-0 lg:px-3"
+          className="col-span-1 py-4"
         >
-          <div className="font-bold font-display text-4xl sm:text-2xl lg:text-4xl mb-2 w-44 sm:w-32 lg:w-44">
+          <h2 className="font-bold font-display text-4xl sm:text-lg md:text-xl lg:text-3xl xl:text-4xl">
             {benefitName}
-          </div>
+          </h2>
           <div className="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44">
             {t[benefitSubType]}
           </div>
@@ -45,10 +45,10 @@ const BenefitApplicationCard = (props) => {
             <p className="text-3xl sm:text-2xl lg:text-3xl mb-5">
               {t.youMightBeEligible}
             </p>
-            <a className="text-xl">{t.learnMoreAbout}</a>
+            <p className="text-xl whitespace-nowrap">{t.learnMoreAbout}</p>
             <a
               href={props.benefitApplication.learnMoreLink}
-              className="text-xl underline hover:text-bright-blue-solid whitespace-pre"
+              className="text-xl underline hover:text-bright-blue-solid whitespace-pre-wrap"
             >
               {getBenefitNameString()}
             </a>

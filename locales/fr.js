@@ -2,25 +2,56 @@
 export default {
   //
   // Benefits
-  CPP: '(FR)Canada Pension Plan',
-  EI: '(FR)Employment Insurance',
+  CPP: 'Régime de pensions du Canada',
+  EI: 'Assurance-emploi',
   //
   // BenefitSummaries
+  RequestedBenefit: {
+    title: 'Prestation demandée :',
+  },
+  EstimatedDecisionDate: {
+    title: 'Décision prévue le : ',
+  },
+  BenefitAffected: {
+    title: 'Prestations concernées :',
+  },
+  PresentStatus: {
+    title: 'Statut actuel :',
+    link: '/',
+    linkText: 'Appelez : 1-800-555-1234',
+  },
+  LastPaymentDate: {
+    title: 'Date du dernier paiement :',
+  },
+  LastPayment: {
+    title: 'Montant net du dernier paiement : ',
+  },
+  NextPaymentDate: {
+    title: 'Date du prochain paiement :',
+  },
+  ActiveBenefit: {
+    title: 'Bénéfices actifs :',
+  },
   PaymentAmount: {
     title: '(FR)Payment amount',
     link: '/',
-    linkText: '(FR)View my payments',
+    linkText: 'Voir mes paiements',
   },
   NextPayment: {
-    title: '(FR)Next Payment:',
+    title: 'Date du prochain paiement :',
   },
   LatestStatus: {
-    title: '(FR)Latest status:',
+    title: 'Dernière mise à jour :',
     link: '/',
-    linkText: '(FR)View my status and messages',
+    linkText: "Consulter l'état de ma demande",
+  },
+  LastNetPayment: {
+    title: 'Montant net du dernier paiement : ',
+    link: '/',
+    linkText: 'Voir mes paiements',
   },
   NextReport: {
-    title: '(FR)Next report due:',
+    title: 'Prochain rapport à remettre :',
   },
   //
   // Phase banner
@@ -233,10 +264,9 @@ export default {
   // Greeting
   greeting: '(FR)Good morning, ',
   welcome: '(FR)Welcome to your My Service Canada Account.',
-  myBenefitsAndServices: '(FR)My benefits and services',
-  canada_ca: '(FR)Canada.ca',
-  serviceCanada: '(FR)Service Canada',
-  myBenefitsAndServices: '(FR)My Benefits and Services',
+  myBenefitsAndServices: 'Mes prestations et mes services',
+  canada_ca: 'Canada.ca',
+  serviceCanada: 'Service Canada',
 
   // Info Message
   alertIconAltText_success: '(FR)success icon',
@@ -252,12 +282,15 @@ export default {
     '(FR)Find out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affectedFind out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affected',
 
   // Benefit Names
-  cpp: '(FR)Canada Pension Plan',
-  oas: '(FR)Old Age Security',
-  gis: '(FR)Guranteed Income Supplement',
-  ei: '(FR)Employment Insurance',
+  cpp: 'Régime de pensions du Canada',
+  oas: 'Sécurité de la vieillesse',
+  gis: 'Supplément de revenu garanti',
+  ei: 'Assurance-emploi',
   cppd: '(FR)Canada Pension Plan Disability',
   seb: '(FR)Self Employment Benefits',
+
+  // Benefit types
+  CPPRetirement: 'Pension de retraite',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
@@ -275,9 +308,11 @@ export default {
   viewPaymentHistory: '(FR)View my payments',
   transactionDate: '(FR)Transaction date:',
   agreementStatus: '(FR)Agreement status:',
-  netAmount: '{0} $',
+  netAmount: '{0}$',
 
   // Benefit Card details
+  benefitDurationReached:
+    "Votre durée d'indemnisation actuelle a été atteinte.",
   applicationDate: '(FR)Application date',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages',
@@ -287,53 +322,57 @@ export default {
   pensionStartDate: '(FR)Pension start date',
 
   // Benefit Card Status'
-  inactive: '(FR)Inactive',
-  applicationReceived: '(FR)Application received',
-  benefitUpdate: '(FR)Benefit update',
-  inPayment: '(FR)In payment',
-  exhausted: '(FR)Benefit exahusted',
+  inactive: 'Inactif',
+  applicationReceived: 'Demande reçue',
+  decisionSent: 'Lettre de décision envoyée',
+  paymentHold: 'Paiement suspendu',
+  benefitUpdate: 'Prestation mise à jour',
+  inPayment: 'En paiement',
+  exhausted: 'Prestations épuisées',
 
   // dashboard benefit task headers
   estimate: '(FR)Estimate',
-  paymentTasks: '(FR)Payment and tax details',
-  changeTasks: '(FR)Make a Change',
-  paymentClaimsTaxTasks: '(FR)Payments, claims, and tax details',
-  documentsReportsTasks: '(FR)Documents and reports',
+  paymentTasks: 'Paiements et impôts',
+  changeTasks: 'Faire un changement',
+  paymentClaimsTaxTasks: 'Paiements et impôts :',
+  documentsReportsTasks: 'Rapports et documents',
+  commonActions: 'Actions courantes',
 
   //benefit task headings
+  commonActions: 'Explorer les actions courantes',
   paymentsTaxesAccount: 'Paiement, impôts et renseignement personnels ',
   commonPaymentsTaxesAccount:
     'Actions courantes, paiements, impôts, rapports et renseignements personnels',
 
   // dashboard benefits tasks
   updateAccountInfoTask: 'Mettre à jour les informations de mon compte',
-  allPaymentsTask: '(FR)View all payments',
+  allPaymentsTask: 'Consulter mes paiements',
   statusUpdateTask: '(FR)View my status and messages',
-  retirementIncomeTask: '(FR)Estimate retirement income',
-  cppContributionTask: '(FR)View my Canada Pension Plan contributions',
-  taxDeductionsTask: '(FR)Ask for tax deductions',
-  delayOasPensionTask: '(FR)Delay receiving Old Age Security',
-  giveConsentTask: '(FR)Give consent for someone to communicate on my behalf',
-  taxSlipTask: '(FR)View tax slips',
+  retirementIncomeTask: 'Estimer mon revenue de retraite',
+  cppContributionTask: 'Consulter mes cotisations',
+  taxDeductionsTask: "Demander une retenue d'impôts",
+  delayOasPensionTask: 'Reporter le début de ma pension',
+  giveConsentTask: 'Autoriser une personne à communiquer en mon nom',
+  taxSlipTask: "Consulter mes feuillets d'impôts",
   taxSlipT4eTask: '(FR)View tax slips, T4E',
   taxSlipT4aAndNr4Task: '(FR)View tax slips, T4A and NR4',
-  reconsiderationTask: '(FR)Request for reconsideration',
-  taxSlipMailingTask: '(FR)Tax slip mailing options',
-  completeInsuranceReportTask: '(FR)Complete your Employment Insurance reports',
-  viewPaymentInfo: '(FR)View my payment information',
-  submitDocuments: '(FR)Submit documents',
-  viewDocuments: '(FR)View documents',
-  viewLatestClaimTask: '(FR)View my latest claim',
-  viewPastClaimsTask: '(FR)View my past claims',
-  submitEformsTask: '(FR)Submit eForms',
+  reconsiderationTask: 'Faire une demande de révision',
+  taxSlipMailingTask: "Options d’expédition des feuillets d'impôt",
+  completeInsuranceReportTask:
+    "Soumettre une déclarations de l'assurance-emploi",
+  viewPaymentInfo: 'Consulter mes paiements',
+  submitDocuments: 'Soumettre des documents',
+  viewDocuments: 'Consulter mes documents',
+  viewLatestClaimTask: 'Consulter ma dernière demande',
+  viewPastClaimsTask: 'Consulter mes demandes antérieures',
+  submitEformsTask: 'Soumettre des formulaires électroniques',
   registerForAlerts: '(FR)Register for alert me',
-  recordOfEmployment: '(FR)View my Records of Employment',
-  reportMistake: '(FR)Report a mistake',
+  recordOfEmployment: 'Consulter mes relevés d’emploi',
+  reportMistake: 'Communiquer une erreur',
   uploadMyDocuments: '(FR)Upload my documents',
-  accessCode: '(FR)Access code',
+  accessCode: "Consulter mon code d'accès",
   viewAgreementStatus: '(FR)View my agreement status details',
 
-  commonActions: '(FR)Common actions',
   applyForCppDisabilityBenefits:
     '(FR)Apply for Canada Pension Plan Disability Benefits',
   applyForCppRetirementPensions:
@@ -365,6 +404,7 @@ export default {
   url_serviceCanada:
     'https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html',
   url_myBenefitsAndServices: '/fr/dashboard',
+  url_profileAndSecuritySettings: '/fr/profile',
 
   // Benefit card header URLs
   url_statusAndMessages: '/fr/dashboard',

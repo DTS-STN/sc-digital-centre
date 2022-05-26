@@ -1,23 +1,63 @@
-import { Link } from '@dts-stn/decd-design-system'
 import propTypes from 'prop-types'
-import { SummaryTypes } from '../../objects/UniversalBenefit'
+import en from '../../locales/en'
+import fr from '../../locales/fr'
+import { SummaryTypes } from '../../constants/SummaryTypes'
+import { formatDate } from '../organisms/DashboardUtils'
 
 export default function BenefitCardHeaderSummary(props) {
-  const t = props.locale
-  const typesWithLinks = [SummaryTypes.PaymentAmount, SummaryTypes.LatestStatus]
+  const t = props.locale === 'en' ? en : fr
+  const typesWithLinks = [
+    SummaryTypes.PaymentAmount,
+    SummaryTypes.LatestStatus,
+    SummaryTypes.PresentStatus,
+    SummaryTypes.LastPaymentDate,
+    SummaryTypes.LastNetPayment,
+  ]
+
+  const getBenefitCardValue = () => {
+    switch (props.summary.type) {
+      case SummaryTypes.PaymentAmount:
+      case SummaryTypes.LastPayment:
+      case SummaryTypes.LastNetPayment:
+        return (
+          <p className="text-3xl">
+            {t.netAmount.replace('{0}', props.summary.value)}
+          </p>
+        )
+        break
+      case SummaryTypes.NextPayment:
+      case SummaryTypes.NextReport:
+      case SummaryTypes.LatestStatus:
+      case SummaryTypes.EstimatedDecisionDate:
+      case SummaryTypes.LastPaymentDate:
+        return <p className="text-lg">{formatDate(props.summary.value)}</p>
+        break
+      case SummaryTypes.RequestedBenefit:
+      case SummaryTypes.BenefitAffected:
+      case SummaryTypes.ActiveBenefit:
+        return <p className="text-lg">{t[props.summary.value]}</p>
+        break
+      case SummaryTypes.PresentStatus:
+      case SummaryTypes.NextPaymentDate:
+        return <p className="text-lg">{props.summary.value}</p>
+      default:
+        return null
+        break
+    }
+  }
 
   return (
     <div className="w-full">
-      <p>{t[props.summary.type].title}</p>
-      <p className="font-bold ">{props.summary.value}</p>
-      <p className="font-bold ">{props.summary.status ?? null}</p>
+      <p className="font-bold">{t[props.summary.type].title}</p>
+      {getBenefitCardValue()}
+      <p className="font-bold">{props.summary.status ?? null}</p>
       {!typesWithLinks.find((t) => t === props.summary.type) ? null : (
-        <p className="font-body">
-          <Link
-            text={t[props.summary.type].linkText}
-            href={t[props.summary.type].link}
-          />
-        </p>
+        <a
+          href={t[props.summary.type].link}
+          className="mt-1 text-link-blue-default underline text-base hover:text-link-blue-hover"
+        >
+          {t[props.summary.type].linkText}
+        </a>
       )}
     </div>
   )
@@ -26,7 +66,7 @@ export default function BenefitCardHeaderSummary(props) {
 BenefitCardHeaderSummary.propTypes = {
   locale: propTypes.string.isRequired,
   summary: propTypes.shape({
-    type: propTypes.oneOf(SummaryTypes).isRequired,
-    value: propTypes.string.isRequired,
+    type: propTypes.string.isRequired,
+    value: propTypes.any.isRequired,
   }),
 }

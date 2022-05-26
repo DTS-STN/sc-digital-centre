@@ -135,33 +135,10 @@ const BenefitCard = (props) => {
         </>
       ) : null}
 
-      {/* Top tasks */}
-      <div ref={topOfTaskRef}>
-        {!props.taskGroups ? (
-          <BenefitTasks
-            benefitType={props.benefit.benefitType}
-            isExpanded={isOpen}
-            tasks={props.tasks}
-          />
-        ) : !isOpen ? null : (
-          props.tasks.map((value, index) => {
-            return (
-              <div key={index}>
-                <BenefitTasks
-                  benefitType={props.benefit.benefitType}
-                  isExpanded={true}
-                  header={value.Header}
-                  tasks={value.Tasks}
-                />
-                <HorizontalRule width="w-auto sm:w-full" />
-              </div>
-            )
-          })
-        )}
-      </div>
       {!(
         props.benefit.status.toUpperCase() ===
-          BenefitStatus.inactive.toUpperCase() && props.tasks.length < 6
+          BenefitStatus.inactive.toUpperCase() &&
+        props.benefit.tasks?.length < 6
       ) && (
         <ViewMoreLessButton
           id={props.benefit.benefitType + '-card-button'}
@@ -169,10 +146,41 @@ const BenefitCard = (props) => {
             handleClick()
             scrollTo()
           }}
-          plus={isOpen}
+          icon={isOpen}
           caption={btnCaption}
         />
       )}
+
+      {/* Top tasks */}
+      <div
+        ref={topOfTaskRef}
+        className={` ${
+          props.benefit.taskGroups ? 'grid sm:grid-cols-1 bg-gray-lighter' : ''
+        }`}
+      >
+        {!props.benefit.taskGroups ? (
+          <BenefitTasks
+            benefitType={props.benefit.benefitType}
+            isExpanded={isOpen}
+            tasks={props.benefit.tasks}
+            locale={props.locale}
+          />
+        ) : !isOpen ? null : (
+          props.benefit.tasks.map((value, index) => {
+            return (
+              <div key={index}>
+                <BenefitTasks
+                  benefitType={props.benefit.benefitType}
+                  isExpanded={true}
+                  header={t[value.Header]}
+                  tasks={value.Tasks}
+                  locale={props.locale}
+                />
+              </div>
+            )
+          })
+        )}
+      </div>
     </div>
   )
 }

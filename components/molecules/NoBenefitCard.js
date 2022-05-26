@@ -40,20 +40,20 @@ const NoBenefitCard = (props) => {
         <BenefitTasks
           benefitType={props.benefit.benefitType}
           isExpanded={isOpen}
-          tasks={props.tasks}
+          tasks={props.benefit.tasks}
           locale={props.locale}
           noBenefit={true}
         />
       </div>
 
-      {props.tasks.length > 6 && (
+      {props.benefit.tasks?.length > 6 && (
         <ViewMoreLessButton
           id={props.benefit.benefitType + '-card-button'}
           onClick={() => {
             handleClick()
             scrollTo()
           }}
-          plus={isOpen}
+          icon={isOpen}
           caption={btnCaption}
         />
       )}

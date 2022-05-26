@@ -1,5 +1,5 @@
 import propTypes from 'prop-types'
-import { StatusCodes } from '../../objects/UniversalBenefit'
+import { StatusCodes } from '../../constants/StatusCodes'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 
@@ -20,8 +20,11 @@ export default function StatusBadge(props) {
             ? 'bg-status-inPayment'
             : props.status === StatusCodes.benefitUpdate
             ? 'bg-status-benefitUpdate'
-            : props.status === StatusCodes.applicationReceived
+            : props.status === StatusCodes.applicationReceived ||
+              props.status === StatusCodes.decisionSent
             ? 'bg-status-applicationReceived'
+            : props.status == StatusCodes.paymentHold
+            ? 'bg-status-hold'
             : 'bg-status-inactive'
         }`}
       >
@@ -43,5 +46,5 @@ StatusBadge.propTypes = {
   /**
    *
    */
-  locale: propTypes.object,
+  locale: propTypes.string,
 }

@@ -61,6 +61,7 @@ jobs:
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           WELL_KNOWN: ${{ secrets.WELL_KNOWN }}
+          AUTH_DISABLED: ${{ secrets.AUTH_DISABLED }}
         with:
           install: false
           start: npm run start
