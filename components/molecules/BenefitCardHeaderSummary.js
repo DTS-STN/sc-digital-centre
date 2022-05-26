@@ -7,12 +7,17 @@ import { formatDate } from '../organisms/DashboardUtils'
 export default function BenefitCardHeaderSummary(props) {
   const t = props.locale === 'en' ? en : fr
   const typesWithLinks = [
-    SummaryTypes.LastNetPayment,
+    SummaryTypes.PaymentAmount,
     SummaryTypes.LatestStatus,
+    SummaryTypes.PresentStatus,
+    SummaryTypes.LastPaymentDate,
+    SummaryTypes.LastNetPayment,
   ]
 
   const getBenefitCardValue = () => {
     switch (props.summary.type) {
+      case SummaryTypes.PaymentAmount:
+      case SummaryTypes.LastPayment:
       case SummaryTypes.LastNetPayment:
         return (
           <p className="text-3xl">
@@ -23,8 +28,18 @@ export default function BenefitCardHeaderSummary(props) {
       case SummaryTypes.NextPayment:
       case SummaryTypes.NextReport:
       case SummaryTypes.LatestStatus:
+      case SummaryTypes.EstimatedDecisionDate:
+      case SummaryTypes.LastPaymentDate:
         return <p className="text-lg">{formatDate(props.summary.value)}</p>
         break
+      case SummaryTypes.RequestedBenefit:
+      case SummaryTypes.BenefitAffected:
+      case SummaryTypes.ActiveBenefit:
+        return <p className="text-lg">{t[props.summary.value]}</p>
+        break
+      case SummaryTypes.PresentStatus:
+      case SummaryTypes.NextPaymentDate:
+        return <p className="text-lg">{props.summary.value}</p>
       default:
         return null
         break

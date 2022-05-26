@@ -4,7 +4,7 @@ import { StatusCodes } from './StatusCodes'
 export const CPPTypes = [
   {
     value: 'Beneficial',
-    type: TypeCodes.CPPBeneficial,
+    type: TypeCodes.CPPRetirement,
   },
 ]
 

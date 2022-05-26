@@ -223,13 +223,15 @@ const ACTIVE_CPP_CHANGE_TASKS = {
   ],
 }
 
-const INACTIVE_CPP_TASKS = [
-  TASKS.ReconsiderationTask,
-  TASKS.StatusUpdateTask,
-  TASKS.AllPaymentsTask,
-  TASKS.TaxSlipT4aAndNr4Task,
-  TASKS.UpdateAccountInfoTask,
-]
+const INACTIVE_CPP_TASKS = {
+  Header: `commonActions`,
+  Tasks: [
+    TASKS.EstimateMyMonthlyCppBenefits,
+    TASKS.DelayOasPensionTask,
+    TASKS.GiveConsentTask,
+    TASKS.UpdateAccountInfoTask,
+  ],
+}
 
 const SUBMITTED_CPPD_TASKS = [
   TASKS.AllPaymentsTask,
@@ -361,6 +363,30 @@ const ACTIVE_SEB_TASKS = {
 }
 
 const TASK_GROUPS = [
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.inactive,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_CPP_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.applicationReceived,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_CPP_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.decisionSent,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_CPP_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPP,
+    statusCode: StatusCodes.paymentHold,
+    taskHeadingKey: 'paymentsTaxesAccount',
+    tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+  },
   {
     programCode: ProgramCodes.CPP,
     statusCode: StatusCodes.inPayment,

@@ -20,8 +20,11 @@ export default function StatusBadge(props) {
             ? 'bg-status-inPayment'
             : props.status === StatusCodes.benefitUpdate
             ? 'bg-status-benefitUpdate'
-            : props.status === StatusCodes.applicationReceived
+            : props.status === StatusCodes.applicationReceived ||
+              props.status === StatusCodes.decisionSent
             ? 'bg-status-applicationReceived'
+            : props.status == StatusCodes.paymentHold
+            ? 'bg-status-hold'
             : 'bg-status-inactive'
         }`}
       >

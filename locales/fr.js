@@ -6,8 +6,34 @@ export default {
   EI: 'Assurance-emploi',
   //
   // BenefitSummaries
-  LastNetPayment: {
+  RequestedBenefit: {
+    title: 'Prestation demandée :',
+  },
+  EstimatedDecisionDate: {
+    title: 'Décision prévue le : ',
+  },
+  BenefitAffected: {
+    title: 'Prestations concernées :',
+  },
+  PresentStatus: {
+    title: 'Statut actuel :',
+    link: '/',
+    linkText: 'Appelez : 1-800-555-1234',
+  },
+  LastPaymentDate: {
+    title: 'Date du dernier paiement :',
+  },
+  LastPayment: {
     title: 'Montant net du dernier paiement : ',
+  },
+  NextPaymentDate: {
+    title: 'Date du prochain paiement :',
+  },
+  ActiveBenefit: {
+    title: 'Bénéfices actifs :',
+  },
+  PaymentAmount: {
+    title: '(FR)Payment amount',
     link: '/',
     linkText: 'Voir mes paiements',
   },
@@ -18,6 +44,11 @@ export default {
     title: 'Dernière mise à jour :',
     link: '/',
     linkText: "Consulter l'état de ma demande",
+  },
+  LastNetPayment: {
+    title: 'Montant net du dernier paiement : ',
+    link: '/',
+    linkText: 'Voir mes paiements',
   },
   NextReport: {
     title: 'Prochain rapport à remettre :',
@@ -258,6 +289,9 @@ export default {
   cppd: '(FR)Canada Pension Plan Disability',
   seb: '(FR)Self Employment Benefits',
 
+  // Benefit types
+  CPPRetirement: 'Pension de retraite',
+
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
   activeBenefits: '(FR)Active benefits:',
@@ -277,6 +311,8 @@ export default {
   netAmount: '{0}$',
 
   // Benefit Card details
+  benefitDurationReached:
+    "Votre durée d'indemnisation actuelle a été atteinte.",
   applicationDate: '(FR)Application date',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages',
@@ -288,6 +324,8 @@ export default {
   // Benefit Card Status'
   inactive: 'Inactif',
   applicationReceived: 'Demande reçue',
+  decisionSent: 'Lettre de décision envoyée',
+  paymentHold: 'Paiement suspendu',
   benefitUpdate: 'Prestation mise à jour',
   inPayment: 'En paiement',
   exhausted: 'Prestations épuisées',
@@ -301,6 +339,7 @@ export default {
   commonActions: 'Actions courantes',
 
   //benefit task headings
+  commonActions: 'Explorer les actions courantes',
   paymentsTaxesAccount: 'Paiement, impôts et renseignement personnels ',
   commonPaymentsTaxesAccount:
     'Actions courantes, paiements, impôts, rapports et renseignements personnels',

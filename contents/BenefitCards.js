@@ -248,7 +248,8 @@ const INACTIVE_CPPD = {
       description: 'September 5, 2021',
     },
   ],
-  tasks: INACTIVE_CPP_TASKS,
+  tasks: [INACTIVE_CPP_TASKS],
+  taskGroups: true,
 }
 
 const SUBMITTED_EI = {

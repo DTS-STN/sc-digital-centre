@@ -93,13 +93,17 @@ export default function Dashboard(props) {
       <Greeting locale={props.locale} name="Mary" />
       <div className="mb-8">
         {cppLoaded ? null : 'Loading User Benefit Data...'}
-        {cppBenefit ? (
-          <UniversalBenefitCard
-            key={0}
-            locale={props.locale}
-            benefit={cppBenefit}
-          />
-        ) : null}
+        {cppBenefit
+          ? cppBenefit.map((value, index) => {
+              return (
+                <UniversalBenefitCard
+                  key={index}
+                  locale={props.locale}
+                  benefit={value}
+                />
+              )
+            })
+          : null}
 
         {cppdLoaded ? null : 'Loading User Benefit Data...'}
         {cppdBenefit ? (
