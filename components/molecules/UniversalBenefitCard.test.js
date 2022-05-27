@@ -5,12 +5,12 @@ import UniversalBenefitCard from './UniversalBenefitCard'
 import { ProgramCodes } from '../../constants/ProgramCodes'
 import { StatusCodes } from '../../constants/StatusCodes'
 import { TypeCodes } from '../../constants/ProgramTypeCodes'
-import { CreateGenericBenefitJSONForUserDisplay } from '../../lib/BenefitsMapping'
+import { MapBenefit } from '../../lib/BenefitsMapping'
 
 expect.extend(toHaveNoViolations)
 
 describe('UniversalBenefitCard', () => {
-  const benefit = CreateGenericBenefitJSONForUserDisplay(
+  const benefit = MapBenefit(
     ProgramCodes.CPP,
     StatusCodes.Active,
     TypeCodes.CPPRetirement

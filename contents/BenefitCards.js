@@ -173,39 +173,6 @@ const SUBMITTED_CPPD = {
   tasks: SUBMITTED_CPPD_TASKS,
 }
 
-const ACTIVE_CPPD = {
-  benefitType: 'CPPD',
-  benefitName: 'Canada Pension Plan Disability',
-  status: 'Active',
-  statusDescription:
-    'Your application is pending, we will notify you with decision',
-  applicationDate: 'July 1, 2021',
-  latestStatusDate: 'July 15, 2021',
-  estimatedDateOfDecision: 'July 31, 2021',
-  applicationType: 'Canada Pension Plan (CPP)',
-  applicationDescription: 'Online application received',
-  nextPaymentAmount: 612.94,
-  nextPaymentDate: 'September 30, 2021',
-  lastPaymentDate: 'August 30, 2021',
-  pensionStartDate: 'August 1, 2021',
-  payeeFullName: 'John Smith Doe',
-  payeeAddress: '',
-  payeePhoneNumber: '1-613-555-5455',
-  accountNumber: 'XXXX-123',
-  institutionNumber: '002',
-  institutionName: 'Scotiabank',
-  payerName: 'Government of Canada',
-  paymentDepositDate: 'August 30, 2021',
-  paymentStatus: 'Issued',
-  paymentType: 'Direct Deposit',
-  additionalInformation:
-    'We will notify you as soon as we have process your application.',
-  applicationStatus: 'In payment',
-  pendingBenefits: 'Disability',
-  benefitStatusProgress: 'Complete',
-  tasks: ACTIVE_CPPD_TASKS,
-}
-
 const INACTIVE_CPPD = {
   benefitType: 'CPPD',
   benefitName: 'Canada Pension Plan Disability',
@@ -394,7 +361,6 @@ function getBenefitCards() {
 module.exports = {
   ACTIVE_CPP,
   SUBMITTED_CPP,
-  ACTIVE_CPPD,
   SUBMITTED_CPPD,
   INACTIVE_CPPD,
   SUBMITTED_OAS,
