@@ -35,62 +35,26 @@ export default function Dashboard(props) {
   const [sebError, setSebError] = useState(false)
 
   useEffect(() => {
-    fetch(`/api/programData/cpp`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCppBenefit(data)
-      })
-      .catch((error) => {
-        setCppError(error)
-      })
-      .finally(() => setCppLoaded(true))
+    function fetchProgramData(program, setData, setError, setLoaded) {
+      fetch(`/api/programData/${program}`)
+        .then((res) => res.json())
+        .then((data) => setData(data))
+        .catch((error) => setError(error))
+        .finally(() => setLoaded(true))
+    }
 
-    fetch(`/api/programData/cppd`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCppdBenefit(data)
-      })
-      .catch((error) => {
-        setCppdError(error)
-      })
-      .finally(() => setCppdLoaded(true))
-
-    fetch(`/api/programData/ei`)
-      .then((res) => res.json())
-      .then((data) => {
-        setEiBenefit(data)
-      })
-      .catch((error) => {
-        setEiError(error)
-      })
-      .finally(() => setEiLoaded(true))
-
-    fetch(`/api/programData/oas`)
-      .then((res) => res.json())
-      .then((data) => {
-        setOasBenefit(data)
-      })
-      .catch((error) => {
-        setOasError(error)
-      })
-      .finally(() => setOasLoaded(true))
-
-    fetch(`/api/programData/seb`)
-      .then((res) => res.json())
-      .then((data) => {
-        setSebBenefit(data)
-      })
-      .catch((error) => {
-        setSebError(error)
-      })
-      .finally(() => setSebLoaded(true))
+    fetchProgramData('cpp', setCppBenefit, setCppError, setCppLoaded)
+    fetchProgramData('cppd', setCppdBenefit, setCppdError, setCppdLoaded)
+    fetchProgramData('ei', setEiBenefit, setEiError, setEiLoaded)
+    fetchProgramData('oas', setOasBenefit, setOasError, setOasLoaded)
+    fetchProgramData('sed', setSebBenefit, setSebError, setSebLoaded)
   }, [])
 
   return (
     <>
       <Greeting locale={props.locale} name="Mary" />
       <div className="mb-8">
-        {cppLoaded ? null : 'Loading User Benefit Data...'}
+        {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
         {cppBenefit
           ? cppBenefit.map((value, index) => {
               return (
@@ -103,8 +67,9 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {cppdLoaded ? null : 'Loading User Benefit Data...'}
-        {cppdBenefit
+        {cppdLoaded ? null : 'Loading CPPD User Benefit Data...'}
+        {cppdError}
+        {cppdBenefit && !cppdError
           ? cppdBenefit.map((value, index) => {
               return (
                 <UniversalBenefitCard
@@ -116,7 +81,7 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {eiLoaded ? null : 'Loading User Benefit Data...'}
+        {eiLoaded ? null : 'Loading EI User Benefit Data...'}
         {eiBenefit
           ? eiBenefit.map((value, index) => {
               return (
@@ -142,7 +107,7 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {sebLoaded ? null : 'Loading User Benefit Data...'}
+        {sebLoaded ? null : 'Loading SEB User Benefit Data...'}
         {sebBenefit ? (
           <UniversalBenefitCard
             key={4}
