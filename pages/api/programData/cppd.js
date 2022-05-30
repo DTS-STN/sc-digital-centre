@@ -1,6 +1,6 @@
 import { ACTIVE_CPPD_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
 import { getCookie } from 'cookies-next'
-import { MapCPPCard } from '../../../lib/BenefitsMapping'
+import { MapCPPDCard } from '../../../lib/BenefitsMapping'
 import { mockData } from '../../../mockdata/MockData'
 
 export default async function handler(req, res) {
@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     if (userid) {
       //Mock userid response
       const userData = mockData[userid].CPPD
-      const benefits = MapCPPCard(userData)
+      const benefits = MapCPPDCard(userData)
       res.status(200).json(benefits)
     } else {
       //Mock interop response
@@ -22,19 +22,7 @@ export default async function handler(req, res) {
           { type: 'NextPayment', value: '2021-09-30T00:00:00.000Z' },
           { type: 'LatestStatus', value: '2021-07-15T00:00:00.000Z' },
         ],
-        taskGroups: [
-          {
-            Header: 'paymentTasks',
-            Tasks: [
-              {
-                task: 'allPaymentsTask',
-                taskIcon: '/images/dashboard/oas-payment-icon.svg',
-                taskLink: 'allPaymentsTaskLink',
-              },
-            ],
-          },
-        ],
-        taskGroups: [{ Header: 'paymentTasks', Tasks: ACTIVE_CPPD_TASKS }],
+        taskGroups: [ACTIVE_CPPD_TASKS],
         taskHeadingKey: 'paymentsTaxesAccount',
       })
     }

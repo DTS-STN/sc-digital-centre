@@ -4,6 +4,7 @@ export default {
   // Benefits
   CPP: 'Régime de pensions du Canada',
   EI: 'Assurance-emploi',
+  CPPD: '(FR)Canada Pension Plan Disability',
   //
   // BenefitSummaries
   RequestedBenefit: {

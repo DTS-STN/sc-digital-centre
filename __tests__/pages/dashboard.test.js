@@ -14,10 +14,7 @@ import { ProgramCodes } from '../../constants/ProgramCodes'
 import { StatusCodes } from '../../constants/StatusCodes'
 import { TypeCodes } from '../../constants/ProgramTypeCodes'
 import { SummaryTypes } from '../../constants/SummaryTypes'
-import {
-  CreateGenericBenefitJSONForUserDisplay,
-  CreateGenericBenefitSummaryForDisplay,
-} from '../../lib/BenefitsMapping'
+import { MapBenefit, FormatSummary } from '../../lib/BenefitsMapping'
 import { getBenefitCards } from '../../contents/BenefitCards'
 import { getNoBenefitCards } from '../../contents/NoBenefitCards'
 
@@ -57,12 +54,9 @@ describe('Dashboard', () => {
     APPLICATION_CARD_CPP,
   ]
   const usersBenefits = [
-    CreateGenericBenefitJSONForUserDisplay(
-      ProgramCodes.CPP,
-      StatusCodes.Active,
-      TypeCodes.CPPRetirement,
-      [CreateGenericBenefitSummaryForDisplay(SummaryTypes.PaymentAmount, 30)]
-    ),
+    MapBenefit(ProgramCodes.CPP, StatusCodes.Active, TypeCodes.CPPRetirement, [
+      FormatSummary(SummaryTypes.PaymentAmount, 30),
+    ]),
   ]
   const { container } = render(
     <Dashboard
