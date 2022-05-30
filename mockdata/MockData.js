@@ -3,10 +3,12 @@ import CPPDUser2 from './user2/cppd.json'
 import EIUser1 from './user1/ei.json'
 import EIUser2 from './user2/ei.json'
 import CPPDefaultUser from './userDefault/cpp.json'
+import EIDefaultUser from './userDefault/ei.json'
 
 export const mockData = {
   default: {
     CPP: CPPDefaultUser,
+    EI: EIDefaultUser,
   },
   1: {
     CPPD: CPPDUser1,
