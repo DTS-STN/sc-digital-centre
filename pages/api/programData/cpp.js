@@ -1,18 +1,28 @@
 import { MapCPPCard } from '../../../lib/BenefitsMapping'
-import GenerateCPPMockData from '../../../lib/CPPMockData'
+import { mockData } from '../../../mockdata/MockData'
+import { getCookie } from 'cookies-next'
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      const cppData = await fetch(process.env.CPP_ACTIVE_BENEFIT_URL, {
-        headers: new Headers({
-          'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
-        }),
-      })
-      let benefits = [MapCPPCard(await cppData.json())]
-      if (!process.env.NO_MOCK_DATA) {
-        benefits = benefits.concat(GenerateCPPMockData())
+      let userData
+      const userid = getCookie('userid', { req, res })
+      if (userid) {
+        //Mock userid response
+        userData = mockData[userid].CPP
+      } else {
+        const reposnseData = await fetch(process.env.CPP_ACTIVE_BENEFIT_URL, {
+          headers: new Headers({
+            'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+          }),
+        })
+        userData = [await reposnseData.json()]
       }
+
+      const benefits = []
+      userData.forEach((result) => {
+        benefits.push(MapCPPCard(result))
+      })
       res.status(200).json(benefits)
     } catch (e) {
       console.log(e)

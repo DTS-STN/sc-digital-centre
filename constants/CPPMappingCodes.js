@@ -10,7 +10,23 @@ export const CPPTypes = [
 
 export const CPPStatus = [
   {
-    value: 32294,
+    value: 'Active',
     status: StatusCodes.inPayment,
+  },
+  {
+    value: 'Inactive',
+    status: StatusCodes.inactive,
+  },
+  {
+    value: 'Recived',
+    status: StatusCodes.applicationReceived,
+  },
+  {
+    value: 'Decision',
+    status: StatusCodes.decisionSent,
+  },
+  {
+    value: 'Hold',
+    status: StatusCodes.paymentHold,
   },
 ]
