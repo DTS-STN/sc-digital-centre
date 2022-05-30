@@ -68,8 +68,7 @@ export default function Dashboard(props) {
           : null}
 
         {cppdLoaded ? null : 'Loading CPPD User Benefit Data...'}
-        {cppdError}
-        {cppdBenefit && !cppdError
+        {cppdBenefit
           ? cppdBenefit.map((value, index) => {
               return (
                 <UniversalBenefitCard
