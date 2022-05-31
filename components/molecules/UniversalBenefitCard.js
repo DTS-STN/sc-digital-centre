@@ -112,12 +112,7 @@ export default function UniversalBenefitCard(props) {
               : props.benefit.taskGroups.map((taskList, index) => {
                   return (
                     <div key={index}>
-                      <BenefitTasks
-                        isExpanded={true}
-                        header={t[taskList.Header]}
-                        tasks={taskList.Tasks}
-                        locale={props.locale}
-                      />
+                      <BenefitTasks taskList={taskList} locale={props.locale} />
                     </div>
                   )
                 })}

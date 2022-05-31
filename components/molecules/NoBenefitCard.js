@@ -37,13 +37,7 @@ const NoBenefitCard = (props) => {
 
       {/* Top tasks */}
       <div ref={topOfTaskRef}>
-        <BenefitTasks
-          benefitType={props.benefit.benefitType}
-          isExpanded={isOpen}
-          tasks={props.benefit.tasks}
-          locale={props.locale}
-          noBenefit={true}
-        />
+        <BenefitTasks taskList={props.benefit.taskList} locale={props.locale} />
       </div>
 
       {props.benefit.tasks?.length > 6 && (

@@ -5,22 +5,14 @@ import fr from '../../locales/fr'
 
 export default function BenefitTasks(props) {
   const t = props.locale === 'en' ? en : fr
-  const displayedTasks = props.isExpanded
-    ? props.tasks
-    : props.tasks.slice(0, 6)
-  const customHeader = props.header != null
 
   return (
     <div className="bg-gray-lighter px-4 py-3 sm:px-8 sm:py-6 h-full border-b">
       <h5 className="font-display font-bold text-xl">
-        {customHeader
-          ? props.header
-          : props.noBenefit
-          ? t.commonActions
-          : `All ${props.benefitType} Tasks`}
+        {t[props.taskList.header]}
       </h5>
       <ul className="grid sm:grid-cols-4 gap-x-7 justify-items-start w-full pt-6">
-        {displayedTasks.map((value, index) => {
+        {props.taskList.tasks.map((value, index) => {
           return (
             <li key={index} className="font-display font-bold text-left pb-7">
               <a href={t[value.taskLink]} className="flex">
@@ -38,11 +30,14 @@ export default function BenefitTasks(props) {
 }
 
 BenefitTasks.propTypes = {
-  tasks: PropTypes.arrayOf(
-    PropTypes.shape({
-      task: PropTypes.string.isRequired,
-      taskLink: PropTypes.string.isRequired,
-      taskIcon: PropTypes.string.isRequired,
-    })
-  ),
+  taskList: PropTypes.shape({
+    header: PropTypes.string.isRequired,
+    tasks: PropTypes.arrayOf(
+      PropTypes.shape({
+        task: PropTypes.string.isRequired,
+        taskLink: PropTypes.string.isRequired,
+        taskIcon: PropTypes.string.isRequired,
+      })
+    ),
+  }),
 }
