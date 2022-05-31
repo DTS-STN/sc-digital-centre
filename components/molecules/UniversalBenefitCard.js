@@ -12,7 +12,9 @@ export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr
   const [isOpen, setIsOpen] = useState(false)
   const [btnCaption, setBtnCaption] = useState(
-    props.benefit.taskHeadingKey ? t[props.benefit.taskHeadingKey] : t.viewMore
+    props.benefit.taskHeadingKey
+      ? t[props.benefit.taskHeadingKey]
+      : t.exploreCommonActions
   )
   const benefitUniqueId =
     props.benefit.programCode +
@@ -103,7 +105,7 @@ export default function UniversalBenefitCard(props) {
               isOpen
                 ? props.benefit.taskHeadingKey
                   ? t[props.benefit.taskHeadingKey]
-                  : t.viewMore
+                  : t.exploreCommonActions
                 : props.benefit.taskHeadingKey
                 ? t.viewLess
                 : t.hideCommonActions

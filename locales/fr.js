@@ -341,7 +341,7 @@ export default {
   commonActions: 'Actions courantes',
 
   //benefit task headings
-  viewMore: 'Explorer les actions courantes',
+  exploreCommonActions: 'Explorer les actions courantes',
   viewLess: 'Voir moins',
   hideCommonActions: 'Masquer les actions courantes',
   paymentsTaxesAccount: 'Paiements, impôts, et faire un changement',
