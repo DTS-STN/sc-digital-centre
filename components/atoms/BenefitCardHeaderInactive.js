@@ -2,7 +2,6 @@ import en from '../../locales/en'
 import fr from '../../locales/fr'
 import HorizontalRule from './HorizontalRule'
 import StatusBadge from './StatusBadge'
-import BenefitCode from '../../constants/BenefitCode'
 
 export default function BenefitCardHeaderInactive(props) {
   const t = props.locale === 'en' ? en : fr
@@ -29,9 +28,7 @@ export default function BenefitCardHeaderInactive(props) {
             id={`${props.benefit.benefitType}-inactive-pastClaimOverview`}
             className="font-display py-4 sm:grid sm:pl-10"
           >
-            <p className="font-bold text-lg mt-4">
-              {`Your past ${props.benefit.benefitType} claim overview`}
-            </p>
+            <p className="font-bold text-lg mt-4">{t.benefitDurationReached}</p>
           </div>
         </div>
       </div>

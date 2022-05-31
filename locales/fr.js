@@ -296,8 +296,6 @@ export default {
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
   activeBenefits: '(FR)Active benefits:',
-  viewMore: '(FR)View more',
-  viewLess: '(FR)View less',
 
   // Benefit Card Header
   summary: 'résumé de',
@@ -311,6 +309,8 @@ export default {
   transactionDate: '(FR)Transaction date:',
   agreementStatus: '(FR)Agreement status:',
   netAmount: '{0}$',
+  benefitDurationReached:
+    "Votre durée d'indemnisation actuelle a été atteinte.",
 
   // Benefit Card details
   benefitDurationReached:
@@ -341,8 +341,10 @@ export default {
   commonActions: 'Actions courantes',
 
   //benefit task headings
-  commonActions: 'Explorer les actions courantes',
-  paymentsTaxesAccount: 'Paiement, impôts et renseignement personnels ',
+  viewMore: 'Explorer les actions courantes',
+  viewLess: 'Voir moins',
+  hideCommonActions: 'Masquer les actions courantes',
+  paymentsTaxesAccount: 'Paiements, impôts, et faire un changement',
   commonPaymentsTaxesAccount:
     'Actions courantes, paiements, impôts, rapports et renseignements personnels',
 

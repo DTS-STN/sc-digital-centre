@@ -308,8 +308,6 @@ export default {
   // Benefit Card
   pendingBenefits: 'Pending benefits:',
   activeBenefits: 'Active benefits:',
-  viewMore: 'View more',
-  viewLess: 'View less',
 
   // Benefit Card Header
   summary: 'Summary',
@@ -323,6 +321,7 @@ export default {
   transactionDate: 'Transaction date:',
   agreementStatus: 'Agreement status:',
   netAmount: '${0}',
+  benefitDurationReached: 'Your current benefit duration has been reached.',
 
   // Benefit Card details
   benefitDurationReached: 'Your current benefit duration has been reached.',
@@ -352,8 +351,10 @@ export default {
   commonActions: 'Common actions',
 
   //benefit task headings
-  commonActions: 'Explore common actions',
-  paymentsTaxesAccount: 'Payments, taxes and account information',
+  viewMore: 'Explore common actions',
+  viewLess: 'View less',
+  hideCommonActions: 'Hide common actions',
+  paymentsTaxesAccount: 'Payments, taxes, and make a change',
   commonPaymentsTaxesAccount:
     'Common actions, payments, taxes, reports, and account information',
 
