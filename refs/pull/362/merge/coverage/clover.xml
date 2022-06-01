@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1654016522432" clover="3.2.0">
-  <project timestamp="1654016522432" name="All files">
-    <metrics statements="416" coveredstatements="234" conditionals="355" coveredconditionals="173" methods="141" coveredmethods="84" elements="912" coveredelements="491" complexity="0" loc="416" ncloc="416" packages="7" files="49" classes="49"/>
+<coverage generated="1654103337925" clover="3.2.0">
+  <project timestamp="1654103337925" name="All files">
+    <metrics statements="414" coveredstatements="233" conditionals="347" coveredconditionals="172" methods="141" coveredmethods="84" elements="902" coveredelements="489" complexity="0" loc="414" ncloc="414" packages="7" files="49" classes="49"/>
     <package name="components.atoms">
       <metrics statements="92" coveredstatements="74" conditionals="92" coveredconditionals="62" methods="34" coveredmethods="29"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -141,12 +141,12 @@
       </file>
       <file name="ViewMoreLessButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ViewMoreLessButton.js">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="5" count="11" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
         <line num="36" count="5" type="stmt"/>
       </file>
     </package>
     <package name="components.molecules">
-      <metrics statements="133" coveredstatements="97" conditionals="151" coveredconditionals="88" methods="42" coveredmethods="28"/>
+      <metrics statements="131" coveredstatements="96" conditionals="143" coveredconditionals="87" methods="42" coveredmethods="28"/>
       <file name="BenefitApplicationCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitApplicationCard.js">
         <metrics statements="11" coveredstatements="11" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
         <line num="8" count="2" type="stmt"/>
@@ -303,24 +303,22 @@
         <line num="6" count="3" type="stmt"/>
       </file>
       <file name="UniversalBenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/UniversalBenefitCard.js">
-        <metrics statements="17" coveredstatements="10" conditionals="24" coveredconditionals="7" methods="5" coveredmethods="2"/>
-        <line num="12" count="2" type="cond" truecount="1" falsecount="1"/>
+        <metrics statements="15" coveredstatements="9" conditionals="16" coveredconditionals="6" methods="5" coveredmethods="2"/>
+        <line num="12" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-        <line num="98" count="0" type="stmt"/>
-        <line num="99" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="100" count="0" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="94" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
         <line num="113" count="0" type="stmt"/>
-        <line num="127" count="0" type="stmt"/>
-        <line num="145" count="2" type="stmt"/>
+        <line num="131" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.organisms">
