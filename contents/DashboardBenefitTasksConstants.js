@@ -415,6 +415,42 @@ const TASK_GROUPS = [
       ACTIVE_EI_DOCS_TASKS,
     ],
   },
+  {
+    programCode: ProgramCodes.EI,
+    statusCode: StatusCodes.benefitUpdate,
+    taskHeadingKey: 'commonPaymentsTaxesAccount',
+    tasksGroups: [
+      ACTIVE_EI_COMMON_TASKS,
+      ACTIVE_EI_PAYMENT_TASKS,
+      ACTIVE_EI_DOCS_TASKS,
+    ],
+  },
+  {
+    programCode: ProgramCodes.EI,
+    statusCode: StatusCodes.applicationReceived,
+    taskHeadingKey: 'commonPaymentsTaxesAccount',
+    tasksGroups: [
+      ACTIVE_EI_COMMON_TASKS,
+      ACTIVE_EI_PAYMENT_TASKS,
+      ACTIVE_EI_DOCS_TASKS,
+    ],
+  },
+  {
+    programCode: ProgramCodes.EI,
+    statusCode: StatusCodes.exahusted,
+    taskHeadingKey: 'commonPaymentsTaxesAccount',
+    tasksGroups: [
+      ACTIVE_EI_COMMON_TASKS,
+      ACTIVE_EI_PAYMENT_TASKS,
+      ACTIVE_EI_DOCS_TASKS,
+    ],
+  },
+  {
+    programCode: ProgramCodes.EI,
+    statusCode: StatusCodes.inactive,
+    taskHeadingKey: 'commonPaymentsTaxesAccount',
+    tasksGroups: [ACTIVE_EI_COMMON_TASKS],
+  },
 ]
 
 module.exports = {
