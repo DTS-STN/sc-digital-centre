@@ -353,7 +353,6 @@ export default {
   //benefit task headings
   exploreCommonActions: 'Explore common actions',
   viewLess: 'View less',
-  hideCommonActions: 'Hide common actions',
   paymentsTaxesAccount: 'Payments, taxes, and make a change',
   commonPaymentsTaxesAccount:
     'Common actions, payments, taxes, reports, and account information',

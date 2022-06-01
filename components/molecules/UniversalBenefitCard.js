@@ -11,11 +11,6 @@ import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr
   const [isOpen, setIsOpen] = useState(false)
-  const [btnCaption, setBtnCaption] = useState(
-    props.benefit.taskHeadingKey
-      ? t[props.benefit.taskHeadingKey]
-      : t.exploreCommonActions
-  )
   const benefitUniqueId =
     props.benefit.programCode +
     '-' +
@@ -101,20 +96,11 @@ export default function UniversalBenefitCard(props) {
               behavior: 'smooth',
               block: 'start',
             })
-            setBtnCaption(
-              isOpen
-                ? props.benefit.taskHeadingKey
-                  ? t[props.benefit.taskHeadingKey]
-                  : t.exploreCommonActions
-                : props.benefit.taskHeadingKey
-                ? t.viewLess
-                : t.hideCommonActions
-            )
             setIsOpen(newOpenState)
           }}
           ariaExpanded={isOpen.toString()}
           icon={isOpen}
-          caption={btnCaption}
+          caption={t[props.benefit.taskHeadingKey]}
         />
       </h4>
       <div className="flex flex-col">
