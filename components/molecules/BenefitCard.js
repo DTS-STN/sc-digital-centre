@@ -16,11 +16,11 @@ import BenefitCode from '../../constants/BenefitCode'
 const BenefitCard = (props) => {
   const t = props.locale === 'en' ? en : fr
   const [isOpen, setIsOpen] = useState(false)
-  const [btnCaption, setBtnCaption] = useState(t.viewMore)
+  const [btnCaption, setBtnCaption] = useState(t.exploreCommonActions)
   const topOfCardRef = useRef(null)
   const topOfTaskRef = useRef(null)
   const handleClick = () => {
-    setBtnCaption(isOpen ? t.viewMore : t.viewLess)
+    setBtnCaption(isOpen ? t.exploreCommonActions : t.viewLess)
     setIsOpen(!isOpen)
   }
 

@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import BenefitCardHeaderInactive from './BenefitCardHeaderInactive'
+import en from '../../locales/en'
 
 const inactiveCanadaPensionPlanCPPD = {
   benefitType: 'CPPD',
@@ -44,7 +45,7 @@ describe('BenefitCardHeaderInactive', () => {
         locale={'en'}
       />
     )
-    const titleText = screen.getByText('Your past CPPD claim overview')
+    const titleText = screen.getByText(en.benefitDurationReached)
     expect(titleText).toBeInTheDocument()
     const titleTextDisability = screen.queryByText(
       'Canada Pension Plan Disability'
