@@ -1,6 +1,5 @@
-import { ACTIVE_CPPD_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
 import { getCookie } from 'cookies-next'
-import { MapCPPDCard } from '../../../lib/BenefitsMapping'
+import { MapCPPCard } from '../../../lib/BenefitsMapping'
 import { mockData } from '../../../mockdata/MockData'
 
 export default async function handler(req, res) {
@@ -21,7 +20,8 @@ export default async function handler(req, res) {
     const benefits = []
     if (userData) {
       userData.forEach((result) => {
-        benefits.push(MapCPPDCard(result))
+        //reuse CPP because they function the same
+        benefits.push(MapCPPCard(result))
       })
     }
     res.status(200).json(benefits)
