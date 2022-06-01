@@ -6,6 +6,10 @@ export const CPPTypes = [
     value: 'Beneficial',
     type: TypeCodes.CPPRetirement,
   },
+  {
+    value: 'Survivor',
+    type: TypeCodes.CPPSurvivor,
+  },
 ]
 
 export const CPPStatus = [

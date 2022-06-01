@@ -2,6 +2,7 @@ import CPPDUser1 from './user1/cppd.json'
 import CPPDUser2 from './user2/cppd.json'
 import EIUser1 from './user1/ei.json'
 import EIUser2 from './user2/ei.json'
+import CPPUser3 from './user3/cpp.json'
 import CPPDefaultUser from './userDefault/cpp.json'
 import EIDefaultUser from './userDefault/ei.json'
 
@@ -19,7 +20,7 @@ export const mockData = {
     EI: EIUser2,
   },
   3: {
-    CPPD: undefined,
+    CPP: CPPUser3,
     EI: undefined,
   },
   4: {
