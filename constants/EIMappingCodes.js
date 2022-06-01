@@ -6,6 +6,10 @@ export const EITypes = [
     value: 1,
     type: TypeCodes.EIUnknown,
   },
+  {
+    value: 2,
+    type: TypeCodes.EISickness,
+  },
 ]
 
 export const EIStatus = [
@@ -23,7 +27,7 @@ export const EIStatus = [
   },
   {
     value: 3436,
-    status: StatusCodes.exahusted,
+    status: StatusCodes.exhausted,
   },
   {
     value: 3437,
