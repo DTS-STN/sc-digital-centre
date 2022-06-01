@@ -72,42 +72,42 @@ const TASKS = {
   ApplyForCppDisabilityBenefits: {
     task: 'applyForCppDisabilityBenefits',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
-    taskLink: '',
+    taskLink: '/dashboard',
   },
   ApplyForCppRetirementPensions: {
     task: 'applyForCppRetirementPensions',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
-    taskLink: '',
+    taskLink: '/dashboard',
   },
   EstimateMyMonthlyCppBenefits: {
     task: 'estimateMyMonthlyCppBenefits',
     taskIcon: '/images/dashboard/oas-retirement-income-icon.svg',
-    taskLink: '',
+    taskLink: '/dashboard',
   },
   ViewMyCppContributions: {
     task: 'viewMyCppContributions',
     taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
-    taskLink: '',
+    taskLink: '/dashboard',
   },
   ApplyForCppDeathBenefits: {
     task: 'applyForCppDeathBenefits',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
-    taskLink: '',
+    taskLink: '/dashboard',
   },
   ApplyForGuranteedIncomeSupplement: {
     task: 'applyForGuranteedIncomeSupplement',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
-    taskLink: '',
+    taskLink: '/dashboard',
   },
   ApplyForCppSurvivorsPensionAndChildrensBenefit: {
     task: 'applyForCppSurvivorsPensionAndChildrensBenefit',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
-    taskLink: '',
+    taskLink: '/dashboard',
   },
   ApplyForOldAgeSecurity: {
     task: 'applyForOldAgeSecurity',
     taskIcon: '/images/dashboard/apply-for-benefit-icon-white.svg',
-    taskLink: '',
+    taskLink: '/dashboard',
   },
   // ei tasks
   EiStatusUpdateTask: {
@@ -233,6 +233,16 @@ const INACTIVE_CPP_TASKS = {
   ],
 }
 
+const INACTIVE_CPPD_TASKS = {
+  Header: `commonActions`,
+  Tasks: [
+    TASKS.EstimateMyMonthlyCppBenefits,
+    TASKS.DelayOasPensionTask,
+    TASKS.GiveConsentTask,
+    TASKS.UpdateAccountInfoTask,
+  ],
+}
+
 const SUBMITTED_CPPD_TASKS = [
   TASKS.AllPaymentsTask,
   TASKS.StatusUpdateTask,
@@ -245,18 +255,24 @@ const SUBMITTED_CPPD_TASKS = [
   TASKS.UpdateAccountInfoTask,
 ]
 
-const ACTIVE_CPPD_TASKS = {
+const ACTIVE_CPPD_PAYMENT_TASKS = {
   Header: 'paymentTasks',
   Tasks: [
     TASKS.AllPaymentsTask,
-    TASKS.StatusUpdateTask,
-    TASKS.TaxSlipTask,
-    TASKS.ReconsiderationTask,
     TASKS.CppContributionTask,
+    TASKS.EstimateMyMonthlyCppBenefits,
+    TASKS.TaxSlipTask,
+  ],
+}
+
+const ACTIVE_CPPD_CHANGE_TASKS = {
+  Header: 'changeTasks',
+  Tasks: [
+    TASKS.DelayOasPensionTask,
     TASKS.TaxDeductionsTask,
-    TASKS.GiveConsentTask,
-    TASKS.UploadMyDocuments,
     TASKS.UpdateAccountInfoTask,
+    TASKS.GiveConsentTask,
+    TASKS.ReconsiderationTask,
   ],
 }
 
@@ -400,7 +416,31 @@ const TASK_GROUPS = [
     programCode: ProgramCodes.CPPD,
     statusCode: StatusCodes.inPayment,
     taskHeadingKey: 'paymentTasks',
-    tasksGroups: [ACTIVE_CPPD_TASKS],
+    tasksGroups: [ACTIVE_CPPD_PAYMENT_TASKS, ACTIVE_CPPD_CHANGE_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPPD,
+    statusCode: StatusCodes.inactive,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_CPPD_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPPD,
+    statusCode: StatusCodes.applicationReceived,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_CPPD_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPPD,
+    statusCode: StatusCodes.decisionSent,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_CPPD_TASKS],
+  },
+  {
+    programCode: ProgramCodes.CPPD,
+    statusCode: StatusCodes.paymentHold,
+    taskHeadingKey: 'paymentTasks',
+    tasksGroups: [ACTIVE_CPPD_PAYMENT_TASKS, ACTIVE_CPPD_CHANGE_TASKS],
   },
   {
     programCode: ProgramCodes.EI,
@@ -458,7 +498,6 @@ module.exports = {
   ACTIVE_CPP_CHANGE_TASKS,
   INACTIVE_CPP_TASKS,
   SUBMITTED_CPPD_TASKS,
-  ACTIVE_CPPD_TASKS,
   SUBMITTED_OAS_TASKS,
   ACTIVE_OAS_TASKS,
   SUBMITTED_EI_TASKS,
