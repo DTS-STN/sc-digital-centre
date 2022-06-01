@@ -10,7 +10,7 @@ export const CPPDTypes = [
 
 export const CPPDStatus = [
   {
-    value: 32295,
+    value: 'Active',
     status: StatusCodes.inPayment,
   },
 ]

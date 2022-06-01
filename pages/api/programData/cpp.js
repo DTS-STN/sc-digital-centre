@@ -20,9 +20,11 @@ export default async function handler(req, res) {
       }
 
       const benefits = []
-      userData.forEach((result) => {
-        benefits.push(MapCPPCard(result))
-      })
+      if (userData) {
+        userData.forEach((result) => {
+          benefits.push(MapCPPCard(result))
+        })
+      }
       res.status(200).json(benefits)
     } catch (e) {
       console.log(e)
