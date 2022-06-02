@@ -3,7 +3,7 @@ export const StatusCodes = {
   benefitUpdate: 'benefitUpdate',
   applicationReceived: 'applicationReceived',
   inactive: 'inactive',
-  exahusted: 'exhausted',
+  exhausted: 'exhausted',
   decisionSent: 'decisionSent',
   paymentHold: 'paymentHold',
 }

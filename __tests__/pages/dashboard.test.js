@@ -1,21 +1,8 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import {
-  APPLICATION_CARD_OAS,
-  APPLICATION_CARD_GIS,
-  APPLICATION_CARD_CPPD,
-  APPLICATION_CARD_EI,
-  APPLICATION_CARD_CPP,
-  getAdvertsingCards,
-} from '../../contents/BenefitAdvertisingCards'
+import { getAdvertsingCards } from '../../contents/BenefitAdvertisingCards'
 import Dashboard from '../../pages/dashboard'
-import { ProgramCodes } from '../../constants/ProgramCodes'
-import { StatusCodes } from '../../constants/StatusCodes'
-import { TypeCodes } from '../../constants/ProgramTypeCodes'
-import { SummaryTypes } from '../../constants/SummaryTypes'
-import { MapBenefit, FormatSummary } from '../../lib/BenefitsMapping'
-import { getBenefitCards } from '../../contents/BenefitCards'
 import { getNoBenefitCards } from '../../contents/NoBenefitCards'
 
 expect.extend(toHaveNoViolations)
@@ -46,21 +33,8 @@ beforeEach(() => {
 })
 
 describe('Dashboard', () => {
-  const advertisingCards = [
-    APPLICATION_CARD_OAS,
-    APPLICATION_CARD_GIS,
-    APPLICATION_CARD_CPPD,
-    APPLICATION_CARD_EI,
-    APPLICATION_CARD_CPP,
-  ]
-  const usersBenefits = [
-    MapBenefit(ProgramCodes.CPP, StatusCodes.Active, TypeCodes.CPPRetirement, [
-      FormatSummary(SummaryTypes.PaymentAmount, 30),
-    ]),
-  ]
   const { container } = render(
     <Dashboard
-      benefitCards={getBenefitCards()}
       advertisingCards={getAdvertsingCards()}
       noBenefitCards={getNoBenefitCards()}
       metadata={{

@@ -1,4 +1,4 @@
-import BenefitCode from '../constants/BenefitCode'
+import { ProgramCodes } from '../constants/ProgramCodes'
 import {
   NO_BENEFIT_CPP_TASKS,
   NO_BENEFIT_GIS_TASKS,
@@ -7,27 +7,39 @@ import {
 } from './DashboardBenefitTasksConstants'
 
 const NO_BENEFIT_CPP = {
-  benefitType: BenefitCode.cpp,
+  benefitType: ProgramCodes.CPP,
   learnMoreLink: '',
-  tasks: NO_BENEFIT_CPP_TASKS,
+  taskList: {
+    header: 'commonActions',
+    tasks: NO_BENEFIT_CPP_TASKS,
+  },
 }
 
 const NO_BENEFIT_EI = {
-  benefitType: BenefitCode.ei,
+  benefitType: ProgramCodes.EI,
   learnMoreLink: '',
-  tasks: NO_BENEFIT_EI_TASKS,
+  taskList: {
+    header: 'commonActions',
+    tasks: NO_BENEFIT_EI_TASKS,
+  },
 }
 
 const NO_BENEFIT_GIS = {
-  benefitType: BenefitCode.gis,
+  benefitType: ProgramCodes.GIS,
   learnMoreLink: '',
-  tasks: NO_BENEFIT_GIS_TASKS,
+  taskList: {
+    header: 'commonActions',
+    tasks: NO_BENEFIT_GIS_TASKS,
+  },
 }
 
 const NO_BENEFIT_OAS = {
-  benefitType: BenefitCode.oas,
+  benefitType: ProgramCodes.OAS,
   learnMoreLink: '',
-  tasks: NO_BENEFIT_OAS_TASKS,
+  taskList: {
+    header: 'commonActions',
+    tasks: NO_BENEFIT_OAS_TASKS,
+  },
 }
 
 function getNoBenefitCards() {

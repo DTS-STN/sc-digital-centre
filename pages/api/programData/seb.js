@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         { type: 'LatestStatus', value: new Date('2021-09-15T00:00:00') },
       ],
       taskGroups: [ACTIVE_SEB_TASKS],
-      taskHeadingKey: 'taskHeadingKey',
+      taskHeadingKey: 'commonActions',
     })
   } else {
     res.status(405)
