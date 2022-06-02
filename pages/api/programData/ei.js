@@ -20,9 +20,12 @@ export default async function handler(req, res) {
       }
 
       const benefits = []
-      userData.forEach((result) => {
-        benefits.push(MapEICard(result))
-      })
+      //map if mock data is found
+      if (userData) {
+        userData.forEach((result) => {
+          benefits.push(MapEICard(result))
+        })
+      }
       res.status(200).json(benefits)
     } catch (e) {
       console.log(e)
