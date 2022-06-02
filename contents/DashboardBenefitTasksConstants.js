@@ -437,7 +437,7 @@ const TASK_GROUPS = [
   },
   {
     programCode: ProgramCodes.EI,
-    statusCode: StatusCodes.exahusted,
+    statusCode: StatusCodes.exhausted,
     taskHeadingKey: 'commonPaymentsTaxesAccount',
     tasksGroups: [
       ACTIVE_EI_COMMON_TASKS,
