@@ -9,11 +9,11 @@ import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 const NoBenefitCard = (props) => {
   const t = props.locale === 'en' ? en : fr
   const [isOpen, setIsOpen] = useState(false)
-  const [btnCaption, setBtnCaption] = useState(t.viewMore)
+  const [btnCaption, setBtnCaption] = useState(t.exploreCommonActions)
   const topOfCardRef = useRef(null)
   const topOfTaskRef = useRef(null)
   const handleClick = () => {
-    setBtnCaption(isOpen ? t.viewMore : t.viewLess)
+    setBtnCaption(isOpen ? t.exploreCommonActions : t.viewLess)
     setIsOpen(!isOpen)
   }
 
@@ -37,13 +37,7 @@ const NoBenefitCard = (props) => {
 
       {/* Top tasks */}
       <div ref={topOfTaskRef}>
-        <BenefitTasks
-          benefitType={props.benefit.benefitType}
-          isExpanded={isOpen}
-          tasks={props.benefit.tasks}
-          locale={props.locale}
-          noBenefit={true}
-        />
+        <BenefitTasks taskList={props.benefit.taskList} locale={props.locale} />
       </div>
 
       {props.benefit.tasks?.length > 6 && (

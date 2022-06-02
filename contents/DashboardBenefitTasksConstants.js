@@ -189,13 +189,13 @@ const TASKS = {
 }
 
 const SUBMITTED_CPP_ESTIMATE_TASKS = {
-  Header: 'estimate',
-  Tasks: [TASKS.RetirementIncomeTask],
+  header: 'estimate',
+  tasks: [TASKS.RetirementIncomeTask],
 }
 
 const SUBMITTED_CPP_CHANGE_TASKS = {
-  Header: 'changeTasks',
-  Tasks: [
+  header: 'changeTasks',
+  tasks: [
     TASKS.DelayOasPensionTask,
     TASKS.GiveConsentTask,
     TASKS.UpdateAccountInfoTask,
@@ -203,8 +203,8 @@ const SUBMITTED_CPP_CHANGE_TASKS = {
 }
 
 const ACTIVE_CPP_PAYMENT_TASKS = {
-  Header: 'paymentTasks',
-  Tasks: [
+  header: 'paymentTasks',
+  tasks: [
     TASKS.AllPaymentsTask,
     TASKS.TaxSlipTask,
     TASKS.CppContributionTask,
@@ -214,8 +214,8 @@ const ACTIVE_CPP_PAYMENT_TASKS = {
 }
 
 const ACTIVE_CPP_CHANGE_TASKS = {
-  Header: 'changeTasks',
-  Tasks: [
+  header: 'changeTasks',
+  tasks: [
     TASKS.ReconsiderationTask,
     TASKS.DelayOasPensionTask,
     TASKS.GiveConsentTask,
@@ -224,8 +224,8 @@ const ACTIVE_CPP_CHANGE_TASKS = {
 }
 
 const INACTIVE_CPP_TASKS = {
-  Header: `commonActions`,
-  Tasks: [
+  header: `commonActions`,
+  tasks: [
     TASKS.EstimateMyMonthlyCppBenefits,
     TASKS.DelayOasPensionTask,
     TASKS.GiveConsentTask,
@@ -256,8 +256,8 @@ const SUBMITTED_CPPD_TASKS = [
 ]
 
 const ACTIVE_CPPD_PAYMENT_TASKS = {
-  Header: 'paymentTasks',
-  Tasks: [
+  header: 'paymentTasks',
+  tasks: [
     TASKS.AllPaymentsTask,
     TASKS.CppContributionTask,
     TASKS.EstimateMyMonthlyCppBenefits,
@@ -290,19 +290,22 @@ const SUBMITTED_OAS_TASKS = [
   TASKS.UpdateAccountInfoTask,
 ]
 
-const ACTIVE_OAS_TASKS = [
-  TASKS.AllPaymentsTask,
-  TASKS.StatusUpdateTask,
-  TASKS.TaxSlipTask,
-  TASKS.TaxSlipMailingTask,
-  TASKS.TaxDeductionsTask,
-  TASKS.DelayOasPensionTask,
-  TASKS.GiveConsentTask,
-  TASKS.CppContributionTask,
-  TASKS.RetirementIncomeTask,
-  TASKS.ReconsiderationTask,
-  TASKS.UpdateAccountInfoTask,
-]
+const ACTIVE_OAS_TASKS = {
+  header: 'commonActions',
+  tasks: [
+    TASKS.AllPaymentsTask,
+    TASKS.StatusUpdateTask,
+    TASKS.TaxSlipTask,
+    TASKS.TaxSlipMailingTask,
+    TASKS.TaxDeductionsTask,
+    TASKS.DelayOasPensionTask,
+    TASKS.GiveConsentTask,
+    TASKS.CppContributionTask,
+    TASKS.RetirementIncomeTask,
+    TASKS.ReconsiderationTask,
+    TASKS.UpdateAccountInfoTask,
+  ],
+}
 
 const SUBMITTED_EI_TASKS = [
   TASKS.EiStatusUpdateTask,
@@ -320,13 +323,13 @@ const SUBMITTED_EI_TASKS = [
 ]
 
 const ACTIVE_EI_COMMON_TASKS = {
-  Header: 'commonActions',
-  Tasks: [TASKS.AccessCode, TASKS.ReportMistake, TASKS.UpdateAccountInfoTask],
+  header: 'commonActions',
+  tasks: [TASKS.AccessCode, TASKS.ReportMistake, TASKS.UpdateAccountInfoTask],
 }
 
 const ACTIVE_EI_PAYMENT_TASKS = {
-  Header: 'paymentClaimsTaxTasks',
-  Tasks: [
+  header: 'paymentClaimsTaxTasks',
+  tasks: [
     TASKS.ViewPaymentInfo,
     TASKS.ViewLatestClaimTask,
     TASKS.ViewPastClaimsTask,
@@ -336,8 +339,8 @@ const ACTIVE_EI_PAYMENT_TASKS = {
 }
 
 const ACTIVE_EI_DOCS_TASKS = {
-  Header: 'documentsReportsTasks',
-  Tasks: [
+  header: 'documentsReportsTasks',
+  tasks: [
     TASKS.CompleteInsuranceReportTask,
     TASKS.RecordOfEmployment,
     TASKS.ViewDocuments,
@@ -377,8 +380,8 @@ const NO_BENEFIT_OAS_TASKS = [
 ]
 
 const ACTIVE_SEB_TASKS = {
-  Header: 'commonActions',
-  Tasks: [TASKS.ViewAgreementStatusDetails],
+  header: 'commonActions',
+  tasks: [TASKS.ViewAgreementStatusDetails],
 }
 
 const TASK_GROUPS = [
@@ -474,7 +477,7 @@ const TASK_GROUPS = [
   },
   {
     programCode: ProgramCodes.EI,
-    statusCode: StatusCodes.exahusted,
+    statusCode: StatusCodes.exhausted,
     taskHeadingKey: 'commonPaymentsTaxesAccount',
     tasksGroups: [
       ACTIVE_EI_COMMON_TASKS,
