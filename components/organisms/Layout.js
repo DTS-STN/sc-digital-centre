@@ -87,7 +87,7 @@ export default function Layout(props) {
         )}
       </main>
 
-      {display.hideDSFooter ? '' : <DSFooter />}
+      {display.hideDSFooter ? '' : <DSFooter locale={props.locale} />}
 
       {display.showFooter ? (
         <Footer

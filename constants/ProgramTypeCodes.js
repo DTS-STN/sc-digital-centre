@@ -3,4 +3,5 @@ export const TypeCodes = {
   CPPDisability: 'CPPDisability',
   EIUnknown: 'EIUnknown',
   OASBeneficial: 'OASBeneficial',
+  EISickness: 'EISickness',
 }

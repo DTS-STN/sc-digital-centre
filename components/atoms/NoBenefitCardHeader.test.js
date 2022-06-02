@@ -2,10 +2,9 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import NoBenefitCardHeader from './NoBenefitCardHeader'
-import BenefitCode from '../../constants/BenefitCode'
 
 const NO_BENEFIT_EI = {
-  benefitType: BenefitCode.ei,
+  benefitType: 'EI',
   learnMoreLink: '',
 }
 

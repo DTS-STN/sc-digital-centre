@@ -2,7 +2,7 @@ import propTypes from 'prop-types'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import { SummaryTypes } from '../../constants/SummaryTypes'
-import { formatDate } from '../organisms/DashboardUtils'
+import { formatDate } from '../../lib/Utils'
 
 export default function BenefitCardHeaderSummary(props) {
   const t = props.locale === 'en' ? en : fr

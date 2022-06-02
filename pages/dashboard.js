@@ -1,8 +1,6 @@
-import BenefitCard from '../components/molecules/BenefitCard'
 import NoBenefitCard from '../components/molecules/NoBenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import Greeting from '../components/molecules/Greeting'
-import { getBenefitCards } from '../contents/BenefitCards'
 import { getNoBenefitCards } from '../contents/NoBenefitCards'
 import { getAdvertsingCards } from '../contents/BenefitAdvertisingCards'
 import { getSession } from 'next-auth/react'
@@ -11,7 +9,6 @@ import { useEffect, useState } from 'react'
 import { setCookies } from 'cookies-next'
 
 export default function Dashboard(props) {
-  const [benefitCards, setBenefitCards] = useState(props.benefitCards)
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
   )
@@ -116,13 +113,17 @@ export default function Dashboard(props) {
         ) : null}
 
         {eiLoaded ? null : 'Loading User Benefit Data...'}
-        {eiBenefit ? (
-          <UniversalBenefitCard
-            key={2}
-            locale={props.locale}
-            benefit={eiBenefit}
-          />
-        ) : null}
+        {eiBenefit
+          ? eiBenefit.map((value, index) => {
+              return (
+                <UniversalBenefitCard
+                  key={index}
+                  locale={props.locale}
+                  benefit={value}
+                />
+              )
+            })
+          : null}
 
         {oasLoaded ? null : 'Loading User Benefit Data...'}
         {oasBenefit
@@ -145,15 +146,6 @@ export default function Dashboard(props) {
             benefit={sebBenefit}
           />
         ) : null}
-
-        {/* Old Benefit Cards, to be removed once mocks are generated with new cards */}
-        {benefitCards.map((value, index) => {
-          return (
-            <div key={index}>
-              <BenefitCard locale={props.locale} benefit={value} />
-            </div>
-          )
-        })}
 
         {/* application or "advertising" cards */}
         {advertisingCards.map((value, index) => {
@@ -217,7 +209,6 @@ export async function getServerSideProps({ req, res, locale, query }) {
 
   return {
     props: {
-      benefitCards: getBenefitCards(),
       advertisingCards: getAdvertsingCards(),
       noBenefitCards: getNoBenefitCards(),
       isAuth: true,
