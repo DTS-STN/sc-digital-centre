@@ -1,4 +1,4 @@
-import { ACTIVE_OAS_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
+import { ACTIVE_OAS_GIS_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         { type: 'NextPayment', value: new Date('2021-09-30T00:00:00') },
         { type: 'LatestStatus', value: new Date('2021-09-15T00:00:00') },
       ],
-      taskGroups: [ACTIVE_OAS_TASKS],
+      taskGroups: [ACTIVE_OAS_GIS_TASKS],
       taskHeadingKey: 'paymentsTaxesAccount',
     })
   } else {

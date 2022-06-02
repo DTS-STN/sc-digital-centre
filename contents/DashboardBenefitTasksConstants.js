@@ -274,7 +274,7 @@ const SUBMITTED_OAS_TASKS = [
   TASKS.UpdateAccountInfoTask,
 ]
 
-const ACTIVE_OAS_TASKS = {
+const ACTIVE_OAS_GIS_TASKS = {
   header: 'commonActions',
   tasks: [
     TASKS.AllPaymentsTask,
@@ -287,6 +287,16 @@ const ACTIVE_OAS_TASKS = {
     TASKS.CppContributionTask,
     TASKS.RetirementIncomeTask,
     TASKS.ReconsiderationTask,
+    TASKS.UpdateAccountInfoTask,
+  ],
+}
+
+const RECEIVED_OAS_GIS_TASKS = {
+  header: 'commonActions',
+  tasks: [
+    TASKS.RetirementIncomeTask,
+    TASKS.DelayOasPensionTask,
+    TASKS.GiveConsentTask,
     TASKS.UpdateAccountInfoTask,
   ],
 }
@@ -463,7 +473,8 @@ module.exports = {
   SUBMITTED_CPPD_TASKS,
   ACTIVE_CPPD_TASKS,
   SUBMITTED_OAS_TASKS,
-  ACTIVE_OAS_TASKS,
+  ACTIVE_OAS_GIS_TASKS,
+  RECEIVED_OAS_GIS_TASKS,
   SUBMITTED_EI_TASKS,
   ACTIVE_EI_COMMON_TASKS,
   ACTIVE_EI_PAYMENT_TASKS,
