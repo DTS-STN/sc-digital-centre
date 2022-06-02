@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -100,35 +100,22 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,7 +131,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -160,22 +150,14 @@ import fr from '../../locales/fr'
 &nbsp;
 export default function BenefitTasks(props) {
   const t = props.locale === 'en' ? en : fr
-  const displayedTasks = props.isExpanded
-    ? <span class="branch-0 cbranch-no" title="branch not covered" >props.tasks</span>
-    : props.tasks.slice(0, 6)
-  const customHeader = props.header != null
 &nbsp;
   return (
     &lt;div className="bg-gray-lighter px-4 py-3 sm:px-8 sm:py-6 h-full border-b"&gt;
       &lt;h5 className="font-display font-bold text-xl"&gt;
-        {customHeader
-          ? props.header
-          : props.noBenefit
-          ? t.commonActions
-          : `All ${props.benefitType} Tasks`}
+        {t[props.taskList.header]}
       &lt;/h5&gt;
       &lt;ul className="grid sm:grid-cols-4 gap-x-7 justify-items-start w-full pt-6"&gt;
-        {displayedTasks.map((value, index) =&gt; {
+        {props.taskList.tasks.map((value, index) =&gt; {
           return (
             &lt;li key={index} className="font-display font-bold text-left pb-7"&gt;
               &lt;a href={t[value.taskLink]} className="flex"&gt;
@@ -193,13 +175,16 @@ export default function BenefitTasks(props) {
 }
 &nbsp;
 BenefitTasks.propTypes = {
-  tasks: PropTypes.arrayOf(
-    PropTypes.shape({
-      task: PropTypes.string.isRequired,
-      taskLink: PropTypes.string.isRequired,
-      taskIcon: PropTypes.string.isRequired,
-    })
-  ),
+  taskList: PropTypes.shape({
+    header: PropTypes.string.isRequired,
+    tasks: PropTypes.arrayOf(
+      PropTypes.shape({
+        task: PropTypes.string.isRequired,
+        taskLink: PropTypes.string.isRequired,
+        taskIcon: PropTypes.string.isRequired,
+      })
+    ),
+  }),
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -208,7 +193,7 @@ BenefitTasks.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 01 2022 15:12:12 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 02 2022 13:39:25 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
