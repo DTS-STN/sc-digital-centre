@@ -32,17 +32,20 @@ export async function GetProgramData(req, res, getPath, mockData, mapCard) {
           }),
         })
         userData = [await reposnseData.json()]
+      } else {
+        res.status(501).send('Introp API Not Implemented')
       }
 
       // process the data
-      const benefits = []
-
-      if (userData) {
+      if (userData && userData.length > 0) {
+        const benefits = []
         userData.forEach((result) => {
           benefits.push(mapCard(result))
         })
+        res.status(200).json(benefits)
+      } else {
+        res.status(204).end()
       }
-      res.status(200).json(benefits)
     } catch (e) {
       console.log(e)
       res.status(500)

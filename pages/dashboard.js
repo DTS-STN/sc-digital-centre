@@ -16,38 +16,50 @@ export default function Dashboard(props) {
 
   const [cppBenefit, setCppBenefit] = useState()
   const [cppLoaded, setCppLoaded] = useState(false)
-  const [cppError, setCppError] = useState(false)
+  const [cppError, setCppError] = useState()
 
   const [cppdBenefit, setCppdBenefit] = useState()
   const [cppdLoaded, setCppdLoaded] = useState(false)
-  const [cppdError, setCppdError] = useState(false)
+  const [cppdError, setCppdError] = useState()
 
   const [eiBenefit, setEiBenefit] = useState()
   const [eiLoaded, setEiLoaded] = useState(false)
-  const [eiError, setEiError] = useState(false)
+  const [eiError, setEiError] = useState()
 
   const [oasBenefit, setOasBenefit] = useState()
   const [oasLoaded, setOasLoaded] = useState(false)
-  const [oasError, setOasError] = useState(false)
+  const [oasError, setOasError] = useState()
 
   const [sebBenefit, setSebBenefit] = useState()
   const [sebLoaded, setSebLoaded] = useState(false)
-  const [sebError, setSebError] = useState(false)
+  const [sebError, setSebError] = useState()
 
   useEffect(() => {
-    function fetchProgramData(program, setData, setError, setLoaded) {
-      fetch(`/api/programData/${program}`)
-        .then((res) => res.json())
-        .then((data) => setData(data))
-        .catch((error) => setError(error))
-        .finally(() => setLoaded(true))
+    async function fetchProgramData(program, setData, setError, setLoaded) {
+      try {
+        const res = await fetch(`/api/programData/${program}`)
+        if (res.ok) {
+          if (res.status === 200) {
+            setData(await res.json())
+          }
+        } else {
+          setError(
+            `${res.status} - ${res.statusText}, fetching ${program} data.`
+          )
+        }
+      } catch (error) {
+        setError(`Something went wrong fetching ${program} data.`)
+        console.log(error)
+      } finally {
+        setLoaded(true)
+      }
     }
 
     fetchProgramData('cpp', setCppBenefit, setCppError, setCppLoaded)
     fetchProgramData('cppd', setCppdBenefit, setCppdError, setCppdLoaded)
     fetchProgramData('ei', setEiBenefit, setEiError, setEiLoaded)
     fetchProgramData('oas', setOasBenefit, setOasError, setOasLoaded)
-    fetchProgramData('sed', setSebBenefit, setSebError, setSebLoaded)
+    fetchProgramData('seb', setSebBenefit, setSebError, setSebLoaded)
   }, [])
 
   return (
@@ -55,6 +67,7 @@ export default function Dashboard(props) {
       <Greeting locale={props.locale} name="Mary" />
       <div className="mb-8">
         {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
+        {cppError ?? null}
         {cppBenefit
           ? cppBenefit.map((value, index) => {
               return (
@@ -68,6 +81,7 @@ export default function Dashboard(props) {
           : null}
 
         {cppdLoaded ? null : 'Loading CPPD User Benefit Data...'}
+        {cppdError ?? null}
         {cppdBenefit
           ? cppdBenefit.map((value, index) => {
               return (
@@ -81,6 +95,7 @@ export default function Dashboard(props) {
           : null}
 
         {eiLoaded ? null : 'Loading EI User Benefit Data...'}
+        {eiError ?? null}
         {eiBenefit
           ? eiBenefit.map((value, index) => {
               return (
@@ -93,7 +108,8 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {oasLoaded ? null : 'Loading User Benefit Data...'}
+        {oasLoaded ? null : 'Loading OAS User Benefit Data...'}
+        {oasError}
         {oasBenefit
           ? oasBenefit.map((value, index) => {
               return (
@@ -107,6 +123,7 @@ export default function Dashboard(props) {
           : null}
 
         {sebLoaded ? null : 'Loading SEB User Benefit Data...'}
+        {sebError ?? null}
         {sebBenefit ? (
           <UniversalBenefitCard
             key={4}
