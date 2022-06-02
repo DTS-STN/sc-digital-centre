@@ -46,6 +46,11 @@ export default {
     link: '/',
     linkText: "Consulter l'état de ma demande",
   },
+  LatestStatusMessage: {
+    title: 'Dernière mise à jour :',
+    link: '/',
+    linkText: "Consulter l'état de ma demande",
+  },
   LastNetPayment: {
     title: 'Montant net du dernier paiement : ',
     link: '/',

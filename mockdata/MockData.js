@@ -1,4 +1,3 @@
-import CPPDUser2 from './user2/cppd.json'
 import EIUser1 from './user1/ei.json'
 import EIUser2 from './user2/ei.json'
 import CPPUser3 from './user3/cpp.json'
