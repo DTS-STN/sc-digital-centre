@@ -125,13 +125,17 @@ export default function Dashboard(props) {
         ) : null}
 
         {oasLoaded ? null : 'Loading User Benefit Data...'}
-        {oasBenefit ? (
-          <UniversalBenefitCard
-            key={3}
-            locale={props.locale}
-            benefit={oasBenefit}
-          />
-        ) : null}
+        {oasBenefit
+          ? oasBenefit.map((value, index) => {
+              return (
+                <UniversalBenefitCard
+                  key={index + 3}
+                  locale={props.locale}
+                  benefit={value}
+                />
+              )
+            })
+          : null}
 
         {sebLoaded ? null : 'Loading User Benefit Data...'}
         {sebBenefit ? (

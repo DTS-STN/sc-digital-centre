@@ -3,6 +3,7 @@ export default {
   //
   // Benefits
   CPP: 'Régime de pensions du Canada',
+  OAS: 'Sécurité de la vieillesse',
   EI: 'Assurance-emploi',
   CPPD: '(FR)Canada Pension Plan Disability',
   //

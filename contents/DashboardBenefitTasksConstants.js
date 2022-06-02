@@ -274,19 +274,22 @@ const SUBMITTED_OAS_TASKS = [
   TASKS.UpdateAccountInfoTask,
 ]
 
-const ACTIVE_OAS_TASKS = [
-  TASKS.AllPaymentsTask,
-  TASKS.StatusUpdateTask,
-  TASKS.TaxSlipTask,
-  TASKS.TaxSlipMailingTask,
-  TASKS.TaxDeductionsTask,
-  TASKS.DelayOasPensionTask,
-  TASKS.GiveConsentTask,
-  TASKS.CppContributionTask,
-  TASKS.RetirementIncomeTask,
-  TASKS.ReconsiderationTask,
-  TASKS.UpdateAccountInfoTask,
-]
+const ACTIVE_OAS_TASKS = {
+  Header: 'paymentTasks',
+  Tasks: [
+    TASKS.AllPaymentsTask,
+    TASKS.StatusUpdateTask,
+    TASKS.TaxSlipTask,
+    TASKS.TaxSlipMailingTask,
+    TASKS.TaxDeductionsTask,
+    TASKS.DelayOasPensionTask,
+    TASKS.GiveConsentTask,
+    TASKS.CppContributionTask,
+    TASKS.RetirementIncomeTask,
+    TASKS.ReconsiderationTask,
+    TASKS.UpdateAccountInfoTask,
+  ],
+}
 
 const SUBMITTED_EI_TASKS = [
   TASKS.EiStatusUpdateTask,
@@ -365,6 +368,16 @@ const ACTIVE_SEB_TASKS = {
   Tasks: [TASKS.ViewAgreementStatusDetails],
 }
 
+const INACTIVE_OAS_TASKS = {
+  Header: `commonActions`,
+  Tasks: [
+    TASKS.RetirementIncomeTask,
+    TASKS.DelayOasPensionTask,
+    TASKS.GiveConsentTask,
+    TASKS.UpdateAccountInfoTask,
+  ],
+}
+
 const TASK_GROUPS = [
   {
     programCode: ProgramCodes.CPP,
@@ -412,6 +425,36 @@ const TASK_GROUPS = [
       ACTIVE_EI_DOCS_TASKS,
     ],
   },
+  {
+    programCode: ProgramCodes.OAS,
+    statusCode: StatusCodes.inactive,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_OAS_TASKS],
+  },
+  {
+    programCode: ProgramCodes.OAS,
+    statusCode: StatusCodes.applicationReceived,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_OAS_TASKS],
+  },
+  {
+    programCode: ProgramCodes.OAS,
+    statusCode: StatusCodes.decisionSent,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_OAS_TASKS],
+  },
+  {
+    programCode: ProgramCodes.OAS,
+    statusCode: StatusCodes.paymentHold,
+    taskHeadingKey: 'paymentsTaxesAccount',
+    tasksGroups: [ACTIVE_OAS_TASKS],
+  },
+  {
+    programCode: ProgramCodes.OAS,
+    statusCode: StatusCodes.inPayment,
+    taskHeadingKey: 'paymentsTaxesAccount',
+    tasksGroups: [ACTIVE_OAS_TASKS],
+  },
 ]
 
 module.exports = {
@@ -425,6 +468,7 @@ module.exports = {
   ACTIVE_CPPD_TASKS,
   SUBMITTED_OAS_TASKS,
   ACTIVE_OAS_TASKS,
+  INACTIVE_OAS_TASKS,
   SUBMITTED_EI_TASKS,
   ACTIVE_EI_COMMON_TASKS,
   ACTIVE_EI_PAYMENT_TASKS,

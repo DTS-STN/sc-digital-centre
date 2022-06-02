@@ -6,7 +6,8 @@ import { mockData } from '../../../mockdata/MockData'
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     const userid = getCookie('userid', { req, res })
-    if (userid) {
+    if (userid != 'default') {
+      //disabling default for now to suppress errors in console
       //Mock userid response
       const userData = mockData[userid].CPPD
       const benefits = MapCPPDCard(userData)
