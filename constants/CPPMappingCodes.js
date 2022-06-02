@@ -1,5 +1,17 @@
+import { ProgramCodes } from './ProgramCodes'
 import { TypeCodes } from './ProgramTypeCodes'
 import { StatusCodes } from './StatusCodes'
+
+export const CPPPrograms = [
+  {
+    value: 32294,
+    program: ProgramCodes.CPP,
+  },
+  {
+    value: 32295,
+    program: ProgramCodes.CPPD,
+  },
+]
 
 export const CPPTypes = [
   {
