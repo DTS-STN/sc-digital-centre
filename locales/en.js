@@ -48,6 +48,11 @@ export default {
     link: '/',
     linkText: 'View my status and messages',
   },
+  LatestStatusMessage: {
+    title: 'Latest status update:',
+    link: '/',
+    linkText: 'View my status and messages',
+  },
   LastNetPayment: {
     title: 'Last net payment',
     link: '/',
