@@ -294,6 +294,7 @@ export default {
   // Benefit types
   CPPRetirement: 'Pension de retraite',
   EISickness: 'Maladie',
+  OASBeneficial: 'Pension de retraite',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',

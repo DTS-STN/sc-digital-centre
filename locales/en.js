@@ -295,6 +295,7 @@ export default {
   // Benefit types
   CPPRetirement: 'Retirement pension',
   EISickness: 'Sickness',
+  OASBeneficial: 'Retirement pension',
 
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,

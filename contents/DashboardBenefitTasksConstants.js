@@ -454,6 +454,8 @@ const TASK_GROUPS = [
     statusCode: StatusCodes.inPayment,
     taskHeadingKey: 'paymentsTaxesAccount',
     tasksGroups: [ACTIVE_OAS_TASKS],
+  },
+  {
     programCode: ProgramCodes.EI,
     statusCode: StatusCodes.benefitUpdate,
     taskHeadingKey: 'commonPaymentsTaxesAccount',
