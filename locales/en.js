@@ -339,6 +339,9 @@ export default {
   lastPayment: 'Last payment',
   benefitStartDate: 'Benefit start date',
   pensionStartDate: 'Pension start date',
+  eiMessages: {
+    32: 'Under Review',
+  },
 
   // Benefit Card Status'
   inactive: 'Inactive',

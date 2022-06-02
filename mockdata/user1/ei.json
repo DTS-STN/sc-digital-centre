@@ -1,12 +1,12 @@
 [
   {
-    "claimStatusCode": 3433,
-    "enmBenefitType": 1,
+    "claimStatusCode": 3435,
+    "enmBenefitType": 2,
     "messageData": "Important message",
     "messageId": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
+    "publishDate": "2022-05-02",
+    "nextRptDueDate": "2022-06-30",
     "programCode": 4543,
-    "netAmount": 35.21
+    "netAmount": 32.21
   }
 ]
