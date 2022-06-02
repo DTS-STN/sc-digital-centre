@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>0/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>0/11</span>
             </div>
         
             
@@ -89,8 +89,20 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -101,56 +113,41 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ACTIVE_CPPD_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
-import { getCookie } from 'cookies-next'
-import { MapCPPDCard } from '../../../lib/BenefitsMapping'
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { getCookie } from 'cookies-next'
+import { MapCPPCard } from '../../../lib/BenefitsMapping'
 import { mockData } from '../../../mockdata/MockData'
 &nbsp;
 export default async function <span class="fstat-no" title="function not covered" >handler(</span>req, res) {
 <span class="cstat-no" title="statement not covered" >  if (req.method === 'GET') {</span>
+    //get data
+    let userData
     const userid = <span class="cstat-no" title="statement not covered" >getCookie('userid', { req, res })</span>
 <span class="cstat-no" title="statement not covered" >    if (userid) {</span>
       //Mock userid response
-      const userData = <span class="cstat-no" title="statement not covered" >mockData[userid].CPPD</span>
-      const benefits = <span class="cstat-no" title="statement not covered" >MapCPPDCard(userData)</span>
-<span class="cstat-no" title="statement not covered" >      res.status(200).json(benefits)</span>
+<span class="cstat-no" title="statement not covered" >      userData = mockData[userid].CPPD</span>
     } else {
       //Mock interop response
-<span class="cstat-no" title="statement not covered" >      res.status(200).json({</span>
-        programCode: 'cppd',
-        statusCode: 'inPayment',
-        typeCode: 'CPPBeneficial',
-        summaries: [
-          { type: 'LastNetPayment', value: '612.94' },
-          { type: 'NextPayment', value: '2021-09-30T00:00:00.000Z' },
-          { type: 'LatestStatus', value: '2021-07-15T00:00:00.000Z' },
-        ],
-        taskGroups: [ACTIVE_CPPD_TASKS],
-        taskHeadingKey: 'paymentsTaxesAccount',
+      //return res.status(501) //errors not properly handled in client
+    }
+&nbsp;
+    //format data
+&nbsp;
+    const benefits = <span class="cstat-no" title="statement not covered" >[]</span>
+<span class="cstat-no" title="statement not covered" >    if (userData) {</span>
+<span class="cstat-no" title="statement not covered" >      userData.forEach(<span class="fstat-no" title="function not covered" >(r</span>esult) =&gt; {</span>
+        //reuse CPP because they function the same
+<span class="cstat-no" title="statement not covered" >        benefits.push(MapCPPCard(result))</span>
       })
     }
+<span class="cstat-no" title="statement not covered" >    res.status(200).json(benefits)</span>
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(405)</span>
   }
@@ -163,7 +160,7 @@ export default async function <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 02 2022 13:39:25 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 02 2022 15:44:23 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
