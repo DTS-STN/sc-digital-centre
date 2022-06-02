@@ -104,13 +104,17 @@ export default function Dashboard(props) {
           : null}
 
         {cppdLoaded ? null : 'Loading User Benefit Data...'}
-        {cppdBenefit ? (
-          <UniversalBenefitCard
-            key={1}
-            locale={props.locale}
-            benefit={cppdBenefit}
-          />
-        ) : null}
+        {cppdBenefit
+          ? cppdBenefit.map((value, index) => {
+              return (
+                <UniversalBenefitCard
+                  key={index}
+                  locale={props.locale}
+                  benefit={value}
+                />
+              )
+            })
+          : null}
 
         {eiLoaded ? null : 'Loading User Benefit Data...'}
         {eiBenefit
