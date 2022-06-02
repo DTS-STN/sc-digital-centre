@@ -292,6 +292,7 @@ export default {
 
   // Benefit types
   CPPRetirement: 'Pension de retraite',
+  CPPSurvivor: "(FR)Survivor's pension",
   EISickness: 'Maladie',
 
   // Benefit Card

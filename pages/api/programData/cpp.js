@@ -20,6 +20,7 @@ export default async function handler(req, res) {
       }
 
       const benefits = []
+      //map if mock data is found
       if (userData) {
         userData.forEach((result) => {
           benefits.push(MapCPPCard(result))

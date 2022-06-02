@@ -293,6 +293,7 @@ export default {
 
   // Benefit types
   CPPRetirement: 'Retirement pension',
+  CPPSurvivor: "Survivor's pension",
   EISickness: 'Sickness',
 
   // SubBenefit Names
