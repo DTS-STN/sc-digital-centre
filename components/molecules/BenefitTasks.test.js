@@ -21,11 +21,12 @@ jest.mock(
 expect.extend(toHaveNoViolations)
 
 describe('BenefitTask', () => {
-  it('renders BenefitTask', () => {
-    render(
-      <BenefitTasks
-        locale="en"
-        tasks={[
+  const { container } = render(
+    <BenefitTasks
+      locale="en"
+      taskList={{
+        header: 'commonActions',
+        tasks: [
           {
             task: 'allPaymentsTask',
             taskIcon: '/images/dashboard/oas-payment-icon.svg',
@@ -36,9 +37,12 @@ describe('BenefitTask', () => {
             taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
             taskLink: '/dashboard',
           },
-        ]}
-      />
-    )
+        ],
+      }}
+    />
+  )
+
+  it('renders BenefitTask', () => {
     const task1Text = screen.getByText('View all payments')
     const task2Text = screen.getByText('View my status and messages')
 
@@ -46,47 +50,7 @@ describe('BenefitTask', () => {
     expect(task2Text).toBeInTheDocument()
   })
 
-  it('renders custom provided header', () => {
-    render(
-      <BenefitTasks
-        tasks={[
-          {
-            task: 'allPaymentsTask',
-            taskIcon: '/images/dashboard/oas-payment-icon.svg',
-            taskLink: '/dashboard',
-          },
-          {
-            task: 'statusUpdateTask',
-            taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
-            taskLink: '/dashboard',
-          },
-        ]}
-        locale="en"
-        header="my custom header"
-      />
-    )
-    const header = screen.getByText('my custom header')
-    expect(header).toBeInTheDocument()
-  })
-
   it('has no a11y violations', async () => {
-    const { container } = render(
-      <BenefitTasks
-        locale="en"
-        tasks={[
-          {
-            task: 'allPaymentsTask',
-            taskIcon: '/images/dashboard/oas-payment-icon.svg',
-            taskLink: '/dashboard',
-          },
-          {
-            task: 'statusUpdateTask',
-            taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
-            taskLink: '/dashboard',
-          },
-        ]}
-      />
-    )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

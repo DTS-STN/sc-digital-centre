@@ -3,7 +3,7 @@ import fr from '../../locales/fr'
 import PropTypes from 'prop-types'
 import HorizontalRule from '../atoms/HorizontalRule'
 import propTypes from 'prop-types'
-import BenefitCode from '../../constants/BenefitCode'
+import { ProgramCodes } from '../../constants/ProgramCodes'
 
 const BenefitApplicationCard = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -13,9 +13,9 @@ const BenefitApplicationCard = (props) => {
 
   const isEstimateButtonRequired = () => {
     return (
-      (benefitType.toUpperCase() === BenefitCode.cpp &&
+      (benefitType.toUpperCase() === ProgramCodes.CPP &&
         typeof benefitSubType === 'undefined') ||
-      benefitType.toUpperCase() === BenefitCode.oas
+      benefitType.toUpperCase() === ProgramCodes.OAS
     )
   }
 
@@ -92,13 +92,7 @@ export default BenefitApplicationCard
 
 BenefitApplicationCard.propTypes = {
   benefitApplication: PropTypes.shape({
-    benefitType: PropTypes.oneOf([
-      BenefitCode.cpp,
-      BenefitCode.oas,
-      BenefitCode.gis,
-      BenefitCode.ei,
-      BenefitCode.cppd,
-    ]),
+    benefitType: PropTypes.string.isRequired,
     applyIcon: propTypes.string,
     learnMoreLink: propTypes.string,
     applicationLink: propTypes.string,
