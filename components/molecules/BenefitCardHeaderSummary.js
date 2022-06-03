@@ -31,6 +31,7 @@ export default function BenefitCardHeaderSummary(props) {
       case SummaryTypes.LatestStatus:
       case SummaryTypes.EstimatedDecisionDate:
       case SummaryTypes.LastPaymentDate:
+      case SummaryTypes.LatestStatusMessage:
         return <p className="text-lg">{formatDate(props.summary.value)}</p>
         break
       case SummaryTypes.RequestedBenefit:
@@ -40,7 +41,6 @@ export default function BenefitCardHeaderSummary(props) {
         break
       case SummaryTypes.PresentStatus:
       case SummaryTypes.NextPaymentDate:
-      case SummaryTypes.LatestStatusMessage:
         return <p className="text-lg">{props.summary.value}</p>
       default:
         return null
@@ -50,9 +50,11 @@ export default function BenefitCardHeaderSummary(props) {
 
   const getBenefitCardStatus = () => {
     switch (props.summary.type) {
-      case SummaryTypes.LatestStatusMessage:
+      case SummaryTypes.LatestStatus:
         return (
-          <p className="text-lg">{formatDate(props.summary.status) ?? null}</p>
+          <p className="text-lg">
+            {t.eiMessages[props.summary.status] ?? null}
+          </p>
         )
       default:
         return <p className="font-bold">{props.summary.status ?? null}</p>
@@ -62,8 +64,9 @@ export default function BenefitCardHeaderSummary(props) {
   return (
     <li className="w-full">
       <p className="font-bold">{t[props.summary.type].title}</p>
-      {getBenefitCardValue()}
       {getBenefitCardStatus()}
+      {getBenefitCardValue()}
+
       {!typesWithLinks.find((t) => t === props.summary.type) ? null : (
         <a
           href={t[props.summary.type].link}

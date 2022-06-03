@@ -295,6 +295,7 @@ export default {
   CPPRetirement: 'Retirement pension',
   CPPSurvivor: "Survivor's pension",
   EISickness: 'Sickness',
+  OASBeneficial: 'Retirement pension',
 
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,
@@ -334,6 +335,9 @@ export default {
   lastPayment: 'Last payment',
   benefitStartDate: 'Benefit start date',
   pensionStartDate: 'Pension start date',
+  eiMessages: {
+    32: 'Under Review',
+  },
 
   // Benefit Card Status'
   inactive: 'Inactive',
