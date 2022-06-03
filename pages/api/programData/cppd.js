@@ -8,6 +8,7 @@ export default async function handler(req, res) {
     let userData
     const userid = getCookie('userid', { req, res })
     if (userid) {
+      //disabling default for now to suppress errors in console
       //Mock userid response
       userData = mockData[userid].CPPD
     } else {

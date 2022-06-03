@@ -3,6 +3,7 @@ export default {
   //
   // Benefits
   CPP: 'Régime de pensions du Canada',
+  OAS: 'Sécurité de la vieillesse',
   EI: 'Assurance-emploi',
   CPPD: '(FR)Canada Pension Plan Disability',
   //
@@ -299,6 +300,7 @@ export default {
   CPPRetirement: 'Pension de retraite',
   CPPSurvivor: "(FR)Survivor's pension",
   EISickness: 'Maladie',
+  OASBeneficial: 'Pension de retraite',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',

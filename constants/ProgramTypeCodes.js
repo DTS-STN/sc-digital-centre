@@ -3,5 +3,6 @@ export const TypeCodes = {
   CPPSurvivor: 'CPPSurvivor',
   CPPDisability: 'CPPDisability',
   EIUnknown: 'EIUnknown',
+  OASBeneficial: 'OASBeneficial',
   EISickness: 'EISickness',
 }
