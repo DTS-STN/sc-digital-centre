@@ -294,6 +294,7 @@ export default {
   CPPRetirement: 'Pension de retraite',
   CPPSurvivor: "(FR)Survivor's pension",
   EISickness: 'Maladie',
+  OASBeneficial: 'Pension de retraite',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
@@ -324,6 +325,9 @@ export default {
   lastPayment: '(FR)Last payment',
   benefitStartDate: '(FR)Benefit start date',
   pensionStartDate: '(FR)Pension start date',
+  eiMessages: {
+    32: 'Documents examinés',
+  },
 
   // Benefit Card Status'
   inactive: 'Inactif',
