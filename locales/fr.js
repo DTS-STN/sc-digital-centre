@@ -329,6 +329,9 @@ export default {
   lastPayment: '(FR)Last payment',
   benefitStartDate: '(FR)Benefit start date',
   pensionStartDate: '(FR)Pension start date',
+  eiMessages: {
+    32: 'Documents examinés',
+  },
 
   // Benefit Card Status'
   inactive: 'Inactif',
