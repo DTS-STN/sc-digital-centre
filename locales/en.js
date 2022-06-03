@@ -1,11 +1,6 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   //
-  // Benefits
-  CPP: 'Canada Pension Plan',
-  EI: 'Employment Insurance',
-  CPPD: 'Canada Pension Plan Disability',
-  //
   // BenefitSummaries
   RequestedBenefit: {
     title: 'Requested benefit:',
@@ -348,6 +343,7 @@ export default {
   paymentHold: 'Payment on hold',
   inPayment: 'In payment',
   exhausted: 'Benefit exahusted',
+  activeAgreement: 'Active Agreement',
 
   // dashboard benefit task headers
   estimate: 'Estimate',

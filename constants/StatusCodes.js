@@ -6,4 +6,5 @@ export const StatusCodes = {
   exhausted: 'exhausted',
   decisionSent: 'decisionSent',
   paymentHold: 'paymentHold',
+  activeAgreement: 'activeAgreement',
 }

@@ -491,6 +491,12 @@ const TASK_GROUPS = [
     taskHeadingKey: 'commonPaymentsTaxesAccount',
     tasksGroups: [ACTIVE_EI_COMMON_TASKS],
   },
+  {
+    programCode: ProgramCodes.SEB,
+    statusCode: StatusCodes.activeAgreement,
+    taskHeadingKey: 'exploreCommonActions',
+    tasksGroups: [ACTIVE_SEB_TASKS],
+  },
 ]
 
 module.exports = {
