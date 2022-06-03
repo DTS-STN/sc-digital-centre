@@ -3,6 +3,7 @@ export default {
   //
   // Benefits
   CPP: 'Régime de pensions du Canada',
+  OAS: 'Sécurité de la vieillesse',
   EI: 'Assurance-emploi',
   CPPD: '(FR)Canada Pension Plan Disability',
   //
@@ -42,6 +43,11 @@ export default {
     title: 'Date du prochain paiement :',
   },
   LatestStatus: {
+    title: 'Dernière mise à jour :',
+    link: '/',
+    linkText: "Consulter l'état de ma demande",
+  },
+  LatestStatusMessage: {
     title: 'Dernière mise à jour :',
     link: '/',
     linkText: "Consulter l'état de ma demande",
@@ -292,7 +298,9 @@ export default {
 
   // Benefit types
   CPPRetirement: 'Pension de retraite',
+  CPPSurvivor: "(FR)Survivor's pension",
   EISickness: 'Maladie',
+  OASBeneficial: 'Pension de retraite',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
@@ -323,6 +331,9 @@ export default {
   lastPayment: '(FR)Last payment',
   benefitStartDate: '(FR)Benefit start date',
   pensionStartDate: '(FR)Pension start date',
+  eiMessages: {
+    32: 'Documents examinés',
+  },
 
   // Benefit Card Status'
   inactive: 'Inactif',

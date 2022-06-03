@@ -1,30 +1,14 @@
-import { ProgramCodes } from './ProgramCodes'
 import { TypeCodes } from './ProgramTypeCodes'
 import { StatusCodes } from './StatusCodes'
 
-export const CPPPrograms = [
+export const OASTypes = [
   {
-    value: 32294,
-    program: ProgramCodes.CPP,
-  },
-  {
-    value: 32295,
-    program: ProgramCodes.CPPD,
+    value: 'OASBeneficial',
+    type: TypeCodes.OASBeneficial,
   },
 ]
 
-export const CPPTypes = [
-  {
-    value: 'Beneficial',
-    type: TypeCodes.CPPRetirement,
-  },
-  {
-    value: 'Survivor',
-    type: TypeCodes.CPPSurvivor,
-  },
-]
-
-export const CPPStatus = [
+export const OASStatus = [
   {
     value: 'Active',
     status: StatusCodes.inPayment,
@@ -34,7 +18,7 @@ export const CPPStatus = [
     status: StatusCodes.inactive,
   },
   {
-    value: 'Recived',
+    value: 'Received',
     status: StatusCodes.applicationReceived,
   },
   {
