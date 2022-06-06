@@ -3,6 +3,7 @@ import { mockData } from '../../../mockdata/MockData'
 import { getCookie } from 'cookies-next'
 
 export default async function handler(req, res) {
+  const accessToken = 'dummyAccessToken'
   if (req.method === 'GET') {
     try {
       let userData
@@ -14,6 +15,7 @@ export default async function handler(req, res) {
         const reposnseData = await fetch(process.env.CPP_ACTIVE_BENEFIT_URL, {
           headers: new Headers({
             'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
+            'Access-Token': accessToken,
           }),
         })
         userData = [await reposnseData.json()]
