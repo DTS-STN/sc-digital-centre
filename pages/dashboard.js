@@ -47,9 +47,8 @@ export default function Dashboard(props) {
             setData(await res.json())
           }
         } else {
-          setError(
-            `Error fetching ${program} data ${res.status} - ${res.statusText}.\n`
-          )
+          const text = await res.text()
+          setError(`Error fetching ${program} data ${res.status} - ${text}.\n`)
         }
       } catch (error) {
         setError(`Something went wrong fetching ${program} data.`)
