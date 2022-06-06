@@ -6,4 +6,5 @@ export const TypeCodes = {
   OASBeneficial: 'OASBeneficial',
   GISBeneficial: 'GISBeneficial',
   EISickness: 'EISickness',
+  SEB: 'SEB', //used as a placeholder only
 }

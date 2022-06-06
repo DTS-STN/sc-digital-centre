@@ -355,6 +355,7 @@ export default {
   paymentHold: 'Payment on hold',
   inPayment: 'In payment',
   exhausted: 'Benefit exahusted',
+  activeAgreement: 'Active Agreement',
 
   // dashboard benefit task headers
   estimate: 'Estimate',

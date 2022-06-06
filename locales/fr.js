@@ -345,6 +345,7 @@ export default {
   benefitUpdate: 'Prestation mise à jour',
   inPayment: 'En paiement',
   exhausted: 'Prestations épuisées',
+  activeAgreement: '(FR)Active Agreement',
 
   // dashboard benefit task headers
   estimate: '(FR)Estimate',

@@ -6,6 +6,7 @@ import OASDefaultUser from './userDefault/oas.json'
 import GISDefaultUser from './userDefault/gis.json'
 import CPPDDefaultUser from './userDefault/cppd.json'
 import EIDefaultUser from './userDefault/ei.json'
+import SEBDefaultUser from './userDefault/seb.json'
 
 export const mockData = {
   default: {
@@ -14,6 +15,7 @@ export const mockData = {
     GIS: GISDefaultUser,
     CPPD: CPPDDefaultUser,
     EI: EIDefaultUser,
+    SEB: SEBDefaultUser,
   },
   1: {
     CPPD: undefined,
