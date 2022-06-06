@@ -234,8 +234,8 @@ const INACTIVE_CPP_TASKS = {
 }
 
 const INACTIVE_CPPD_TASKS = {
-  Header: `commonActions`,
-  Tasks: [
+  header: `commonActions`,
+  tasks: [
     TASKS.EstimateMyMonthlyCppBenefits,
     TASKS.DelayOasPensionTask,
     TASKS.GiveConsentTask,
@@ -266,8 +266,8 @@ const ACTIVE_CPPD_PAYMENT_TASKS = {
 }
 
 const ACTIVE_CPPD_CHANGE_TASKS = {
-  Header: 'changeTasks',
-  Tasks: [
+  header: 'changeTasks',
+  tasks: [
     TASKS.DelayOasPensionTask,
     TASKS.TaxDeductionsTask,
     TASKS.UpdateAccountInfoTask,
