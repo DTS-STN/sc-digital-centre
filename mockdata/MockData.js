@@ -3,6 +3,7 @@ import EIUser2 from './user2/ei.json'
 import CPPUser3 from './user3/cpp.json'
 import CPPDefaultUser from './userDefault/cpp.json'
 import OASDefaultUser from './userDefault/oas.json'
+import GISDefaultUser from './userDefault/gis.json'
 import CPPDDefaultUser from './userDefault/cppd.json'
 import EIDefaultUser from './userDefault/ei.json'
 import SEBDefaultUser from './userDefault/seb.json'
@@ -11,6 +12,7 @@ export const mockData = {
   default: {
     CPP: CPPDefaultUser,
     OAS: OASDefaultUser,
+    GIS: GISDefaultUser,
     CPPD: CPPDDefaultUser,
     EI: EIDefaultUser,
     SEB: SEBDefaultUser,

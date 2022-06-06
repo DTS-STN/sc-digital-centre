@@ -1,5 +1,5 @@
 import { getCookie } from 'cookies-next'
-import { MapOASCard } from '../../../lib/BenefitsMapping'
+import { MapGISCard } from '../../../lib/BenefitsMapping'
 import { mockData } from '../../../mockdata/MockData'
 
 export default async function handler(req, res) {
@@ -7,13 +7,13 @@ export default async function handler(req, res) {
     const userid = getCookie('userid', { req, res })
     if (userid) {
       //Mock userid response
-      const userData = mockData[userid].OAS
+      const userData = mockData[userid].GIS
       let benefits = []
 
       if (userid === 'default') {
         //default userid sends an array of each type
         userData.forEach((result) => {
-          benefits.push(MapOASCard(result))
+          benefits.push(MapGISCard(result))
         })
       } else {
         //handle the other situations here

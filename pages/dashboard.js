@@ -30,6 +30,10 @@ export default function Dashboard(props) {
   const [oasLoaded, setOasLoaded] = useState(false)
   const [oasError, setOasError] = useState(false)
 
+  const [gisBenefit, setGisBenefit] = useState()
+  const [gisLoaded, setGisLoaded] = useState(false)
+  const [gisError, setGisError] = useState(false)
+
   const [sebBenefit, setSebBenefit] = useState()
   const [sebLoaded, setSebLoaded] = useState(false)
   const [sebError, setSebError] = useState(false)
@@ -74,6 +78,16 @@ export default function Dashboard(props) {
         setOasError(error)
       })
       .finally(() => setOasLoaded(true))
+
+    fetch(`/api/programData/gis`)
+      .then((res) => res.json())
+      .then((data) => {
+        setGisBenefit(data)
+      })
+      .catch((error) => {
+        setGisError(error)
+      })
+      .finally(() => setGisLoaded(true))
 
     fetch(`/api/programData/seb`)
       .then((res) => res.json())
@@ -142,13 +156,22 @@ export default function Dashboard(props) {
             })
           : null}
 
+        {gisLoaded ? null : 'Loading User Benefit Data...'}
+        {gisBenefit
+          ? gisBenefit.map((value, index) => {
+              return (
+                <UniversalBenefitCard
+                  key={index + 3}
+                  locale={props.locale}
+                  benefit={value}
+                />
+              )
+            })
+          : null}
+
         {sebLoaded ? null : 'Loading User Benefit Data...'}
         {sebBenefit ? (
-          <UniversalBenefitCard
-            key={4}
-            locale={props.locale}
-            benefit={sebBenefit}
-          />
+          <UniversalBenefitCard locale={props.locale} benefit={sebBenefit} />
         ) : null}
 
         {/* application or "advertising" cards */}
