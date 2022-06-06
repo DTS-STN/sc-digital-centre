@@ -1,5 +1,4 @@
-import { MapCPPDCard } from '../../../lib/BenefitsMapping'
-import { mockData } from '../../../mockdata/MockData'
+import { MapCPPCard } from '../../../lib/BenefitsMapping'
 import { GetProgramData } from './_middleware'
 
 export default async function handler(req, res) {
@@ -7,7 +6,7 @@ export default async function handler(req, res) {
     req,
     res,
     null,
-    (userId) => mockData[userId].CPPD,
-    (data) => MapCPPDCard(data)
+    (mockObj) => mockObj.CPPD,
+    (data) => MapCPPCard(data) //reuse CPP because they function the same
   )
 }

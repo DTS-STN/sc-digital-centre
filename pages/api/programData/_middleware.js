@@ -1,5 +1,6 @@
 import { getCookie } from 'cookies-next'
 import { getToken } from 'next-auth/jwt'
+import { mockData } from '../../../mockdata/MockData'
 
 export async function middleware(req, ev) {
   if (
@@ -17,21 +18,25 @@ export async function middleware(req, ev) {
   }
 }
 
-export async function GetProgramData(req, res, getPath, mockData, mapCard) {
+export async function GetProgramData(req, res, getPath, getMockObj, mapCard) {
   if (req.method === 'GET') {
     try {
       // get the data
       let userData
       const userid = getCookie('userid', { req, res })
       if (userid) {
-        userData = mockData(userid)
+        userData = getMockObj(mockData[userid])
       } else if (getPath) {
         const reposnseData = await fetch(getPath, {
           headers: new Headers({
             'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
           }),
         })
-        userData = [await reposnseData.json()]
+        if (reposnseData.ok) {
+          userData = [await reposnseData.json()]
+        } else {
+          throw `Interop Request to ${getPath} failed with ${reposnseData.status} - ${reposnseData.statusText}`
+        }
       } else {
         res.status(501).send('Introp API Not Implemented')
       }
@@ -48,10 +53,10 @@ export async function GetProgramData(req, res, getPath, mockData, mapCard) {
       }
     } catch (e) {
       console.log(e)
-      res.status(500)
+      res.status(500).end()
     }
   } else {
-    res.status(405)
+    res.status(405).end()
   }
   return res
 }
