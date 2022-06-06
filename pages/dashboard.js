@@ -48,7 +48,7 @@ export default function Dashboard(props) {
           }
         } else {
           setError(
-            `${res.status} - ${res.statusText}, fetching ${program} data.`
+            `Error fetching ${program} data ${res.status} - ${res.statusText}.\n`
           )
         }
       } catch (error) {
