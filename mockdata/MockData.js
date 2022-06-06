@@ -34,6 +34,8 @@ export const mockData = {
     EI: undefined,
     CPP: CPPUser4,
     OAS: OASUser4,
+    GIS: undefined,
+    OAS: OASDefaultUser,
   },
   5: {
     CPPD: undefined,
