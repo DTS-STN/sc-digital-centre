@@ -1,12 +1,12 @@
-import { MapOASCard } from '../../../lib/BenefitsMapping'
-import { GetProgramData } from './_middleware'
+import { MapOASCard } from '../../../lib/api/mapBenefits'
+import { FetchProgramData, MapArrayData } from '../../../lib/api/programData'
 
 export default async function handler(req, res) {
-  return GetProgramData(
+  return FetchProgramData(
     req,
     res,
     null,
-    (mockObj) => mockObj.OAS,
-    (data) => MapOASCard(data)
+    (data) => MapArrayData(data, (item) => MapOASCard(item)),
+    (mockObj) => mockObj.OAS
   )
 }

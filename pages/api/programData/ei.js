@@ -1,4 +1,4 @@
-import { MapEICard } from '../../../lib/BenefitsMapping'
+import { MapEICard } from '../../../lib/api/mapBenefits'
 import { GetProgramData } from './_middleware'
 
 export default async function handler(req, res) {
@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     req,
     res,
     process.env.EI_ACTIVE_BENEFIT_URL,
-    (mockObj) => mockObj.EI,
-    (data) => MapEICard(data)
+    (data) => MapArrayData(data, (item) => MapEICard(item)),
+    (mockObj) => mockObj.EI
   )
 }

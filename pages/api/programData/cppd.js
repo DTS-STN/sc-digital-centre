@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     req,
     res,
     null,
-    (mockObj) => mockObj.CPPD,
-    (data) => MapCPPCard(data) //reuse CPP because they function the same
+    (data) => MapArrayData(data, (item) => MapCPPCard(item)), //reuse CPP because they function the same
+    (mockObj) => mockObj.CPPD
   )
 }
