@@ -1,13 +1,5 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
-  //
-  // Benefits
-  CPP: 'Canada Pension Plan',
-  OAS: 'Old Age Security',
-  GIS: 'Guranteed Income Supplement',
-  EI: 'Employment Insurance',
-  CPPD: 'Canada Pension Plan Disability',
-  //
   // BenefitSummaries
   RequestedBenefit: {
     title: 'Requested benefit:',
