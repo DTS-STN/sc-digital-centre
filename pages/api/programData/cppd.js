@@ -1,8 +1,8 @@
-import { MapCPPCard } from '../../../lib/BenefitsMapping'
-import { GetProgramData } from './_middleware'
+import { MapCPPCard } from '../../../lib/api/mapBenefits'
+import { FetchProgramData, MapArrayData } from '../../../lib/api/programData'
 
 export default async function handler(req, res) {
-  return GetProgramData(
+  return FetchProgramData(
     req,
     res,
     null,

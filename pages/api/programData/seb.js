@@ -1,5 +1,5 @@
-import { MapSEBCard } from '../../../lib/BenefitsMapping'
-import { FetchProgramData } from './_middleware'
+import { MapSEBCard } from '../../../lib/api/mapBenefits'
+import { FetchProgramData } from '../../../lib/api/programData'
 
 export default async function handler(req, res) {
   return FetchProgramData(
