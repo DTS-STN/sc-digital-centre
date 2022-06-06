@@ -13,9 +13,9 @@ const BenefitApplicationCard = (props) => {
 
   const isEstimateButtonRequired = () => {
     return (
-      (benefitType.toUpperCase() === ProgramCodes.CPP &&
+      (benefitType.toLowerCase() === ProgramCodes.CPP &&
         typeof benefitSubType === 'undefined') ||
-      benefitType.toUpperCase() === ProgramCodes.OAS
+      benefitType.toLowerCase() === ProgramCodes.OAS
     )
   }
 

@@ -5,4 +5,5 @@ export const TypeCodes = {
   EIUnknown: 'EIUnknown',
   OASBeneficial: 'OASBeneficial',
   EISickness: 'EISickness',
+  SEB: 'SEB', //used as a placeholder only
 }
