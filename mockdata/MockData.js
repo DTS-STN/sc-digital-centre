@@ -5,6 +5,7 @@ import CPPDefaultUser from './userDefault/cpp.json'
 import OASDefaultUser from './userDefault/oas.json'
 import CPPDDefaultUser from './userDefault/cppd.json'
 import EIDefaultUser from './userDefault/ei.json'
+import SEBDefaultUser from './userDefault/seb.json'
 
 export const mockData = {
   default: {
@@ -12,6 +13,7 @@ export const mockData = {
     OAS: OASDefaultUser,
     CPPD: CPPDDefaultUser,
     EI: EIDefaultUser,
+    SEB: SEBDefaultUser,
   },
   1: {
     CPPD: undefined,

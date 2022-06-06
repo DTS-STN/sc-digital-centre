@@ -1,19 +1,27 @@
-import { ACTIVE_SEB_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
+import { getCookie } from 'cookies-next'
+import { MapSEBCard } from '../../../lib/BenefitsMapping'
+import { mockData } from '../../../mockdata/MockData'
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
-    res.status(200).json({
-      programCode: 'seb',
-      statusCode: 'inPayment',
-      typeCode: 'SEBBeneficial',
-      summaries: [
-        { type: 'LastNetPayment', value: 691.01 },
-        { type: 'NextPayment', value: new Date('2021-09-30T00:00:00') },
-        { type: 'LatestStatus', value: new Date('2021-09-15T00:00:00') },
-      ],
-      taskGroups: [ACTIVE_SEB_TASKS],
-      taskHeadingKey: 'commonActions',
-    })
+    //get data
+    let userData
+    const userid = getCookie('userid', { req, res })
+    if (userid) {
+      //Mock userid response
+      userData = mockData[userid].SEB
+    } else {
+      //Mock interop response
+      //return res.status(501) //errors not properly handled in client
+    }
+
+    //format data
+    if (userData) {
+      const benefits = MapSEBCard(userData)
+      res.status(200).json(benefits)
+    } else {
+      res.status(204).end()
+    }
   } else {
     res.status(405)
   }

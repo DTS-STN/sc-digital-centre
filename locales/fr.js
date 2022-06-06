@@ -1,12 +1,6 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   //
-  // Benefits
-  CPP: 'Régime de pensions du Canada',
-  OAS: 'Sécurité de la vieillesse',
-  EI: 'Assurance-emploi',
-  CPPD: '(FR)Canada Pension Plan Disability',
-  //
   // BenefitSummaries
   RequestedBenefit: {
     title: 'Prestation demandée :',
@@ -343,6 +337,7 @@ export default {
   benefitUpdate: 'Prestation mise à jour',
   inPayment: 'En paiement',
   exhausted: 'Prestations épuisées',
+  activeAgreement: '(FR)Active Agreement',
 
   // dashboard benefit task headers
   estimate: '(FR)Estimate',

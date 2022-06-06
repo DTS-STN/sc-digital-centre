@@ -1,7 +1,8 @@
 export const ProgramCodes = {
-  CPP: 'CPP',
-  CPPD: 'CPPD',
-  EI: 'EI',
-  OAS: 'OAS',
-  GIS: 'GIS',
+  CPP: 'cpp',
+  CPPD: 'cppd',
+  EI: 'ei',
+  OAS: 'oas',
+  GIS: 'gis',
+  SEB: 'seb',
 }
