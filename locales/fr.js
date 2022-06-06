@@ -4,6 +4,7 @@ export default {
   // Benefits
   CPP: 'Régime de pensions du Canada',
   OAS: 'Sécurité de la vieillesse',
+  GIS: 'Supplément de revenu garanti',
   EI: 'Assurance-emploi',
   CPPD: '(FR)Canada Pension Plan Disability',
   //
@@ -301,6 +302,7 @@ export default {
   CPPSurvivor: "(FR)Survivor's pension",
   EISickness: 'Maladie',
   OASBeneficial: 'Pension de retraite',
+  GISBeneficial: 'Pension de retraite',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',

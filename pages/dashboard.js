@@ -157,9 +157,17 @@ export default function Dashboard(props) {
           : null}
 
         {gisLoaded ? null : 'Loading User Benefit Data...'}
-        {gisBenefit ? (
-          <UniversalBenefitCard locale={props.locale} benefit={gisBenefit} />
-        ) : null}
+        {gisBenefit
+          ? gisBenefit.map((value, index) => {
+              return (
+                <UniversalBenefitCard
+                  key={index + 3}
+                  locale={props.locale}
+                  benefit={value}
+                />
+              )
+            })
+          : null}
 
         {sebLoaded ? null : 'Loading User Benefit Data...'}
         {sebBenefit ? (

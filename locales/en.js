@@ -4,6 +4,7 @@ export default {
   // Benefits
   CPP: 'Canada Pension Plan',
   OAS: 'Old Age Security',
+  GIS: 'Guranteed Income Supplement',
   EI: 'Employment Insurance',
   CPPD: 'Canada Pension Plan Disability',
   //
@@ -302,6 +303,7 @@ export default {
   CPPSurvivor: "Survivor's pension",
   EISickness: 'Sickness',
   OASBeneficial: 'Retirement pension',
+  GISBeneficial: 'Retirement pension',
 
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,

@@ -1,4 +1,3 @@
-import { ACTIVE_OAS_GIS_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
 import { getCookie } from 'cookies-next'
 import { MapOASCard } from '../../../lib/BenefitsMapping'
 import { mockData } from '../../../mockdata/MockData'

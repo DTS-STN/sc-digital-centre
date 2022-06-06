@@ -1,19 +1,27 @@
-import { RECEIVED_OAS_GIS_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
+import { getCookie } from 'cookies-next'
+import { MapGISCard } from '../../../lib/BenefitsMapping'
+import { mockData } from '../../../mockdata/MockData'
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
-    res.status(200).json({
-      programCode: 'gis',
-      statusCode: 'applicationReceived',
-      typeCode: 'GISBeneficial',
-      summaries: [
-        { type: 'LastNetPayment', value: 577.92 },
-        { type: 'NextPayment', value: new Date('2021-08-30T00:00:00') },
-        { type: 'LatestStatus', value: new Date('2021-08-15T00:00:00') },
-      ],
-      taskGroups: [RECEIVED_OAS_GIS_TASKS],
-      taskHeadingKey: 'commonActions',
-    })
+    const userid = getCookie('userid', { req, res })
+    if (userid) {
+      //Mock userid response
+      const userData = mockData[userid].GIS
+      let benefits = []
+
+      if (userid === 'default') {
+        //default userid sends an array of each type
+        userData.forEach((result) => {
+          benefits.push(MapGISCard(result))
+        })
+      } else {
+        //handle the other situations here
+      }
+      res.status(200).json(benefits)
+    } else {
+      //Interop response if/when added in the future
+    }
   } else {
     res.status(405)
   }
