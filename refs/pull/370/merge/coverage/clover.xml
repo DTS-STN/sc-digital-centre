@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1654520927097" clover="3.2.0">
-  <project timestamp="1654520927097" name="All files">
-    <metrics statements="300" coveredstatements="166" conditionals="269" coveredconditionals="131" methods="103" coveredmethods="55" elements="672" coveredelements="352" complexity="0" loc="300" ncloc="300" packages="7" files="43" classes="43"/>
+<coverage generated="1654526158167" clover="3.2.0">
+  <project timestamp="1654526158168" name="All files">
+    <metrics statements="306" coveredstatements="166" conditionals="271" coveredconditionals="129" methods="103" coveredmethods="55" elements="680" coveredelements="350" complexity="0" loc="306" ncloc="306" packages="7" files="43" classes="43"/>
     <package name="components.atoms">
       <metrics statements="48" coveredstatements="43" conditionals="48" coveredconditionals="34" methods="21" coveredmethods="19"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -182,7 +182,7 @@
       <file name="NoBenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/NoBenefitCard.js">
         <metrics statements="16" coveredstatements="10" conditionals="12" coveredconditionals="3" methods="4" coveredmethods="1"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="10" count="46" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="47" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="46" type="stmt"/>
         <line num="12" count="46" type="stmt"/>
         <line num="13" count="46" type="stmt"/>
@@ -242,7 +242,7 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="101" coveredstatements="50" conditionals="78" coveredconditionals="38" methods="27" coveredmethods="11"/>
+      <metrics statements="101" coveredstatements="50" conditionals="76" coveredconditionals="36" methods="27" coveredmethods="11"/>
       <file name="400.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/400.js">
         <metrics statements="6" coveredstatements="2" conditionals="4" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="4" count="2" type="cond" truecount="1" falsecount="1"/>
@@ -290,7 +290,7 @@
         <line num="10" count="0" type="stmt"/>
       </file>
       <file name="dashboard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/dashboard.js">
-        <metrics statements="54" coveredstatements="33" conditionals="52" coveredconditionals="32" methods="10" coveredmethods="5"/>
+        <metrics statements="54" coveredstatements="33" conditionals="50" coveredconditionals="30" methods="10" coveredmethods="5"/>
         <line num="12" count="12" type="stmt"/>
         <line num="15" count="11" type="stmt"/>
         <line num="17" count="11" type="stmt"/>
@@ -391,7 +391,7 @@
       </file>
     </package>
     <package name="pages.api.programData">
-      <metrics statements="41" coveredstatements="0" conditionals="20" coveredconditionals="0" methods="16" coveredmethods="0"/>
+      <metrics statements="47" coveredstatements="0" conditionals="24" coveredconditionals="0" methods="16" coveredmethods="0"/>
       <file name="_middleware.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/_middleware.js">
         <metrics statements="25" coveredstatements="0" conditionals="18" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -445,11 +445,17 @@
         <line num="10" count="0" type="stmt"/>
       </file>
       <file name="seb.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/seb.js">
-        <metrics statements="4" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
+        <metrics statements="10" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
       </file>
     </package>
   </project>
