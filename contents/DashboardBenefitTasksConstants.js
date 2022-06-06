@@ -234,8 +234,8 @@ const INACTIVE_CPP_TASKS = {
 }
 
 const INACTIVE_CPPD_TASKS = {
-  Header: `commonActions`,
-  Tasks: [
+  header: `commonActions`,
+  tasks: [
     TASKS.EstimateMyMonthlyCppBenefits,
     TASKS.DelayOasPensionTask,
     TASKS.GiveConsentTask,
@@ -266,8 +266,8 @@ const ACTIVE_CPPD_PAYMENT_TASKS = {
 }
 
 const ACTIVE_CPPD_CHANGE_TASKS = {
-  Header: 'changeTasks',
-  Tasks: [
+  header: 'changeTasks',
+  tasks: [
     TASKS.DelayOasPensionTask,
     TASKS.TaxDeductionsTask,
     TASKS.UpdateAccountInfoTask,
@@ -290,7 +290,7 @@ const SUBMITTED_OAS_TASKS = [
   TASKS.UpdateAccountInfoTask,
 ]
 
-const ACTIVE_OAS_TASKS = {
+const ACTIVE_OAS_GIS_TASKS = {
   header: 'commonActions',
   tasks: [
     TASKS.AllPaymentsTask,
@@ -303,6 +303,16 @@ const ACTIVE_OAS_TASKS = {
     TASKS.CppContributionTask,
     TASKS.RetirementIncomeTask,
     TASKS.ReconsiderationTask,
+    TASKS.UpdateAccountInfoTask,
+  ],
+}
+
+const RECEIVED_OAS_GIS_TASKS = {
+  header: 'commonActions',
+  tasks: [
+    TASKS.RetirementIncomeTask,
+    TASKS.DelayOasPensionTask,
+    TASKS.GiveConsentTask,
     TASKS.UpdateAccountInfoTask,
   ],
 }
@@ -384,7 +394,7 @@ const ACTIVE_SEB_TASKS = {
   tasks: [TASKS.ViewAgreementStatusDetails],
 }
 
-const INACTIVE_OAS_TASKS = {
+const INACTIVE_OAS_GIS_TASKS = {
   header: `commonActions`,
   tasks: [
     TASKS.RetirementIncomeTask,
@@ -469,31 +479,61 @@ const TASK_GROUPS = [
     programCode: ProgramCodes.OAS,
     statusCode: StatusCodes.inactive,
     taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_OAS_TASKS],
+    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
   },
   {
     programCode: ProgramCodes.OAS,
     statusCode: StatusCodes.applicationReceived,
     taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_OAS_TASKS],
+    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
   },
   {
     programCode: ProgramCodes.OAS,
     statusCode: StatusCodes.decisionSent,
     taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_OAS_TASKS],
+    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
   },
   {
     programCode: ProgramCodes.OAS,
     statusCode: StatusCodes.paymentHold,
     taskHeadingKey: 'paymentsTaxesAccount',
-    tasksGroups: [ACTIVE_OAS_TASKS],
+    tasksGroups: [ACTIVE_OAS_GIS_TASKS],
   },
   {
     programCode: ProgramCodes.OAS,
     statusCode: StatusCodes.inPayment,
     taskHeadingKey: 'paymentsTaxesAccount',
-    tasksGroups: [ACTIVE_OAS_TASKS],
+    tasksGroups: [ACTIVE_OAS_GIS_TASKS],
+  },
+  {
+    programCode: ProgramCodes.GIS,
+    statusCode: StatusCodes.inactive,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
+  },
+  {
+    programCode: ProgramCodes.GIS,
+    statusCode: StatusCodes.applicationReceived,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
+  },
+  {
+    programCode: ProgramCodes.GIS,
+    statusCode: StatusCodes.decisionSent,
+    taskHeadingKey: 'commonActions',
+    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
+  },
+  {
+    programCode: ProgramCodes.GIS,
+    statusCode: StatusCodes.paymentHold,
+    taskHeadingKey: 'paymentsTaxesAccount',
+    tasksGroups: [ACTIVE_OAS_GIS_TASKS],
+  },
+  {
+    programCode: ProgramCodes.GIS,
+    statusCode: StatusCodes.inPayment,
+    taskHeadingKey: 'paymentsTaxesAccount',
+    tasksGroups: [ACTIVE_OAS_GIS_TASKS],
   },
   {
     programCode: ProgramCodes.EI,
@@ -548,8 +588,9 @@ module.exports = {
   INACTIVE_CPP_TASKS,
   SUBMITTED_CPPD_TASKS,
   SUBMITTED_OAS_TASKS,
-  ACTIVE_OAS_TASKS,
-  INACTIVE_OAS_TASKS,
+  ACTIVE_OAS_GIS_TASKS,
+  RECEIVED_OAS_GIS_TASKS,
+  INACTIVE_OAS_GIS_TASKS,
   SUBMITTED_EI_TASKS,
   ACTIVE_EI_COMMON_TASKS,
   ACTIVE_EI_PAYMENT_TASKS,

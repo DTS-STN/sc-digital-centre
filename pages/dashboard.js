@@ -30,6 +30,10 @@ export default function Dashboard(props) {
   const [oasLoaded, setOasLoaded] = useState(false)
   const [oasError, setOasError] = useState()
 
+  const [gisBenefit, setGisBenefit] = useState()
+  const [gisLoaded, setGisLoaded] = useState(false)
+  const [gisError, setGisError] = useState(false)
+
   const [sebBenefit, setSebBenefit] = useState()
   const [sebLoaded, setSebLoaded] = useState(false)
   const [sebError, setSebError] = useState()
@@ -59,6 +63,7 @@ export default function Dashboard(props) {
     fetchProgramData('cppd', setCppdBenefit, setCppdError, setCppdLoaded)
     fetchProgramData('ei', setEiBenefit, setEiError, setEiLoaded)
     fetchProgramData('oas', setOasBenefit, setOasError, setOasLoaded)
+    fetchProgramData('gis', setGisBenefit, setGisError, setGisLoaded)
     fetchProgramData('seb', setSebBenefit, setSebError, setSebLoaded)
   }, [])
 
@@ -122,14 +127,24 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {sebLoaded ? null : 'Loading SEB User Benefit Data...'}
-        {sebError ?? null}
+        {gisLoaded ? null : 'Loading User Benefit Data...'}
+        {gisError}
+        {gisBenefit
+          ? gisBenefit.map((value, index) => {
+              return (
+                <UniversalBenefitCard
+                  key={index + 3}
+                  locale={props.locale}
+                  benefit={value}
+                />
+              )
+            })
+          : null}
+
+        {sebLoaded ? null : 'Loading User Benefit Data...'}
+        {sebError}
         {sebBenefit ? (
-          <UniversalBenefitCard
-            key={4}
-            locale={props.locale}
-            benefit={sebBenefit}
-          />
+          <UniversalBenefitCard locale={props.locale} benefit={sebBenefit} />
         ) : null}
 
         {/* application or "advertising" cards */}

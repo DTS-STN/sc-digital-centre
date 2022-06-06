@@ -1,6 +1,5 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
-  //
   // BenefitSummaries
   RequestedBenefit: {
     title: 'Requested benefit:',
@@ -296,6 +295,7 @@ export default {
   CPPSurvivor: "Survivor's pension",
   EISickness: 'Sickness',
   OASBeneficial: 'Retirement pension',
+  GISBeneficial: 'Retirement pension',
 
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,
