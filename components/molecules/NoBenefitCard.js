@@ -58,6 +58,6 @@ export default NoBenefitCard
 
 NoBenefitCard.propTypes = {
   benefit: PropTypes.shape({
-    benefitType: PropTypes.oneOf(['CPP', 'OAS', 'GIS', 'EI', 'CPPD']),
+    benefitType: PropTypes.oneOf(['cpp', 'oas', 'gis', 'ei', 'cppd']),
   }),
 }

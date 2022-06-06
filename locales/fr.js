@@ -1,6 +1,5 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
-  //
   // BenefitSummaries
   RequestedBenefit: {
     title: 'Prestation demandée :',
@@ -294,7 +293,9 @@ export default {
   CPPRetirement: 'Pension de retraite',
   CPPSurvivor: "(FR)Survivor's pension",
   EISickness: 'Maladie',
-  OASBeneficial: 'Sécurité de la vieillesse',
+  OASBeneficials: 'Sécurité de la vieillesse',
+  OASBeneficial: 'Pension de retraite',
+  GISBeneficial: 'Pension de retraite',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',

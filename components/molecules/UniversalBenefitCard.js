@@ -128,7 +128,7 @@ UniversalBenefitCard.propTypes = {
   benefit: propTypes.shape({
     programCode: propTypes.string.isRequired,
     statusCode: propTypes.string.isRequired,
-    summaries: propTypes.array.isRequired,
+    summaries: propTypes.array,
     taskGroups: propTypes.array.isRequired,
     taskHeadingKey: propTypes.string.isRequired,
   }),
