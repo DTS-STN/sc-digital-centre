@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1654262159198" clover="3.2.0">
-  <project timestamp="1654262159198" name="All files">
-    <metrics statements="332" coveredstatements="177" conditionals="267" coveredconditionals="116" methods="116" coveredmethods="70" elements="715" coveredelements="363" complexity="0" loc="332" ncloc="332" packages="7" files="43" classes="43"/>
+<coverage generated="1654522010880" clover="3.2.0">
+  <project timestamp="1654522010880" name="All files">
+    <metrics statements="338" coveredstatements="177" conditionals="271" coveredconditionals="116" methods="116" coveredmethods="70" elements="725" coveredelements="363" complexity="0" loc="338" ncloc="338" packages="7" files="43" classes="43"/>
     <package name="components.atoms">
       <metrics statements="48" coveredstatements="43" conditionals="48" coveredconditionals="34" methods="21" coveredmethods="19"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -182,7 +182,7 @@
       <file name="NoBenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/NoBenefitCard.js">
         <metrics statements="16" coveredstatements="10" conditionals="12" coveredconditionals="3" methods="4" coveredmethods="1"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="10" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="6" type="stmt"/>
         <line num="12" count="6" type="stmt"/>
         <line num="13" count="6" type="stmt"/>
@@ -402,7 +402,7 @@
       </file>
     </package>
     <package name="pages.api.programData">
-      <metrics statements="62" coveredstatements="0" conditionals="32" coveredconditionals="0" methods="10" coveredmethods="0"/>
+      <metrics statements="68" coveredstatements="0" conditionals="36" coveredconditionals="0" methods="10" coveredmethods="0"/>
       <file name="_middleware.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/_middleware.js">
         <metrics statements="4" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -477,11 +477,17 @@
         <line num="29" count="0" type="stmt"/>
       </file>
       <file name="seb.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/seb.js">
-        <metrics statements="4" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
+        <metrics statements="10" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
       </file>
     </package>
   </project>
