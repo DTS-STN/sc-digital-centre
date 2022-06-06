@@ -142,7 +142,10 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,14 +178,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -199,11 +202,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -260,16 +266,16 @@ export default function BenefitCardHeaderSummary(props) {
 <span class="branch-5 cbranch-no" title="branch not covered" >      case SummaryTypes.LatestStatus:</span>
 <span class="branch-6 cbranch-no" title="branch not covered" >      case SummaryTypes.EstimatedDecisionDate:</span>
 <span class="branch-7 cbranch-no" title="branch not covered" >      case SummaryTypes.LastPaymentDate:</span>
+<span class="branch-8 cbranch-no" title="branch not covered" >      case SummaryTypes.LatestStatusMessage:</span>
 <span class="cstat-no" title="statement not covered" >        return &lt;p className="text-lg"&gt;{formatDate(props.summary.value)}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >        break</span>
-<span class="branch-8 cbranch-no" title="branch not covered" >      case SummaryTypes.RequestedBenefit:</span>
-<span class="branch-9 cbranch-no" title="branch not covered" >      case SummaryTypes.BenefitAffected:</span>
-<span class="branch-10 cbranch-no" title="branch not covered" >      case SummaryTypes.ActiveBenefit:</span>
+<span class="branch-9 cbranch-no" title="branch not covered" >      case SummaryTypes.RequestedBenefit:</span>
+<span class="branch-10 cbranch-no" title="branch not covered" >      case SummaryTypes.BenefitAffected:</span>
+<span class="branch-11 cbranch-no" title="branch not covered" >      case SummaryTypes.ActiveBenefit:</span>
 <span class="cstat-no" title="statement not covered" >        return &lt;p className="text-lg"&gt;{t[props.summary.value]}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >        break</span>
-<span class="branch-11 cbranch-no" title="branch not covered" >      case SummaryTypes.PresentStatus:</span>
-<span class="branch-12 cbranch-no" title="branch not covered" >      case SummaryTypes.NextPaymentDate:</span>
-<span class="branch-13 cbranch-no" title="branch not covered" >      case SummaryTypes.LatestStatusMessage:</span>
+<span class="branch-12 cbranch-no" title="branch not covered" >      case SummaryTypes.PresentStatus:</span>
+<span class="branch-13 cbranch-no" title="branch not covered" >      case SummaryTypes.NextPaymentDate:</span>
 <span class="cstat-no" title="statement not covered" >        return &lt;p className="text-lg"&gt;{props.summary.value}&lt;/p&gt;</span>
 <span class="branch-14 cbranch-no" title="branch not covered" >      default:</span>
 <span class="cstat-no" title="statement not covered" >        return null</span>
@@ -279,9 +285,11 @@ export default function BenefitCardHeaderSummary(props) {
 &nbsp;
   const getBenefitCardStatus = () =&gt; {
     switch (props.summary.type) {
-<span class="branch-0 cbranch-no" title="branch not covered" >      case SummaryTypes.LatestStatusMessage:</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case SummaryTypes.LatestStatus:</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
-          &lt;p className="text-lg"&gt;{formatDate(props.summary.status) ?? null}&lt;/p&gt;
+          &lt;p className="text-lg"&gt;
+            {t.eiMessages[props.summary.status] ?? null}
+          &lt;/p&gt;
         )
       default:
         return &lt;p className="font-bold"&gt;{props.summary.status ?? null}&lt;/p&gt;
@@ -291,8 +299,9 @@ export default function BenefitCardHeaderSummary(props) {
   return (
     &lt;li className="w-full"&gt;
       &lt;p className="font-bold"&gt;{t[props.summary.type].title}&lt;/p&gt;
-      {getBenefitCardValue()}
       {getBenefitCardStatus()}
+      {getBenefitCardValue()}
+&nbsp;
       {!typesWithLinks.find((t) =&gt; t === props.summary.type) ? <span class="branch-0 cbranch-no" title="branch not covered" >null </span>: (
         &lt;a
           href={t[props.summary.type].link}
@@ -319,7 +328,7 @@ BenefitCardHeaderSummary.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 02 2022 16:52:18 GMT+0000 (Coordinated Universal Time)
+                at Mon Jun 06 2022 13:08:47 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

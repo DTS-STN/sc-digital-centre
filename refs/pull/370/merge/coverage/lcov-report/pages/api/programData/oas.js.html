@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
@@ -69,56 +69,29 @@
 <a name='L10'></a><a href='#L10'>10</a>
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
-<a name='L13'></a><a href='#L13'>13</a>
-<a name='L14'></a><a href='#L14'>14</a>
-<a name='L15'></a><a href='#L15'>15</a>
-<a name='L16'></a><a href='#L16'>16</a>
-<a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L13'></a><a href='#L13'>13</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ACTIVE_OAS_TASKS } from '../../../contents/DashboardBenefitTasksConstants'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { MapOASCard } from '../../../lib/BenefitsMapping'
+import { GetProgramData } from './_middleware'
 &nbsp;
 export default async function <span class="fstat-no" title="function not covered" >handler(</span>req, res) {
-<span class="cstat-no" title="statement not covered" >  if (req.method === 'GET') {</span>
-<span class="cstat-no" title="statement not covered" >    res.status(200).json({</span>
-      programCode: 'oas',
-      statusCode: 'inPayment',
-      typeCode: 'OASBeneficial',
-      summaries: [
-        { type: 'LastNetPayment', value: 691.45 },
-        { type: 'NextPayment', value: new Date('2021-09-30T00:00:00') },
-        { type: 'LatestStatus', value: new Date('2021-09-15T00:00:00') },
-      ],
-      taskGroups: [ACTIVE_OAS_TASKS],
-      taskHeadingKey: 'paymentsTaxesAccount',
-    })
-  } else {
-<span class="cstat-no" title="statement not covered" >    res.status(405)</span>
-  }
-<span class="cstat-no" title="statement not covered" >  return res</span>
+<span class="cstat-no" title="statement not covered" >  return GetProgramData(</span>
+    req,
+    res,
+    null,
+<span class="fstat-no" title="function not covered" >    (m</span>ockObj) =&gt; <span class="cstat-no" title="statement not covered" >mockObj.OAS,</span>
+<span class="fstat-no" title="function not covered" >    (d</span>ata) =&gt; <span class="cstat-no" title="statement not covered" >MapOASCard(data)</span>
+  )
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -127,7 +100,7 @@ export default async function <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 02 2022 16:52:18 GMT+0000 (Coordinated Universal Time)
+                at Mon Jun 06 2022 13:08:47 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

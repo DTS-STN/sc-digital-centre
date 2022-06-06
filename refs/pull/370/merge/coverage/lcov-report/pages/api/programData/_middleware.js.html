@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/23</span>
+                <span class='fraction'>0/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>0/18</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/23</span>
+                <span class='fraction'>0/25</span>
             </div>
         
             
@@ -114,40 +114,50 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -173,6 +183,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { getCookie } from 'cookies-next'
 import { getToken } from 'next-auth/jwt'
+import { mockData } from '../../../mockdata/MockData'
 &nbsp;
 export async function <span class="fstat-no" title="function not covered" >middleware(</span>req, ev) {
 <span class="cstat-no" title="statement not covered" >  if (</span>
@@ -190,21 +201,25 @@ export async function <span class="fstat-no" title="function not covered" >middl
   }
 }
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >GetProgramData(</span>req, res, getPath, mockData, mapCard) {
+export async function <span class="fstat-no" title="function not covered" >GetProgramData(</span>req, res, getPath, getMockObj, mapCard) {
 <span class="cstat-no" title="statement not covered" >  if (req.method === 'GET') {</span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
       // get the data
       let userData
       const userid = <span class="cstat-no" title="statement not covered" >getCookie('userid', { req, res })</span>
 <span class="cstat-no" title="statement not covered" >      if (userid) {</span>
-<span class="cstat-no" title="statement not covered" >        userData = mockData(userid)</span>
+<span class="cstat-no" title="statement not covered" >        userData = getMockObj(mockData[userid])</span>
       } else <span class="cstat-no" title="statement not covered" >if (getPath) {</span>
         const reposnseData = <span class="cstat-no" title="statement not covered" >await fetch(getPath, {</span>
           headers: new Headers({
             'Ocp-Apim-Subscription-Key': process.env.OCP_APIM_SUBSCRIPTION_KEY,
           }),
         })
-<span class="cstat-no" title="statement not covered" >        userData = [await reposnseData.json()]</span>
+<span class="cstat-no" title="statement not covered" >        if (reposnseData.ok) {</span>
+<span class="cstat-no" title="statement not covered" >          userData = [await reposnseData.json()]</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          throw `Interop Request to ${getPath} failed with ${reposnseData.status} - ${reposnseData.statusText}`</span>
+        }
       } else {
 <span class="cstat-no" title="statement not covered" >        res.status(501).send('Introp API Not Implemented')</span>
       }
@@ -221,10 +236,10 @@ export async function <span class="fstat-no" title="function not covered" >GetPr
       }
     } catch (e) {
 <span class="cstat-no" title="statement not covered" >      console.log(e)</span>
-<span class="cstat-no" title="statement not covered" >      res.status(500)</span>
+<span class="cstat-no" title="statement not covered" >      res.status(500).end()</span>
     }
   } else {
-<span class="cstat-no" title="statement not covered" >    res.status(405)</span>
+<span class="cstat-no" title="statement not covered" >    res.status(405).end()</span>
   }
 <span class="cstat-no" title="statement not covered" >  return res</span>
 }
@@ -235,7 +250,7 @@ export async function <span class="fstat-no" title="function not covered" >GetPr
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 02 2022 16:52:18 GMT+0000 (Coordinated Universal Time)
+                at Mon Jun 06 2022 13:08:47 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
