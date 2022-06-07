@@ -2,7 +2,7 @@ import propTypes from 'prop-types'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import { SummaryTypes } from '../../constants/SummaryTypes'
-import { formatDate } from '../../lib/Utils'
+import { formatDate, formatMoney } from '../../lib/Utils'
 
 export default function BenefitCardHeaderSummary(props) {
   const t = props.locale === 'en' ? en : fr
@@ -22,7 +22,7 @@ export default function BenefitCardHeaderSummary(props) {
       case SummaryTypes.LastNetPayment:
         return (
           <p className="text-3xl">
-            {t.netAmount.replace('{0}', props.summary.value)}
+            {formatMoney(props.summary.value, props.locale)}
           </p>
         )
         break
@@ -32,7 +32,11 @@ export default function BenefitCardHeaderSummary(props) {
       case SummaryTypes.EstimatedDecisionDate:
       case SummaryTypes.LastPaymentDate:
       case SummaryTypes.LatestStatusMessage:
-        return <p className="text-lg">{formatDate(props.summary.value)}</p>
+        return (
+          <p className="text-lg">
+            {formatDate(props.summary.value, props.locale)}
+          </p>
+        )
         break
       case SummaryTypes.RequestedBenefit:
       case SummaryTypes.BenefitAffected:
