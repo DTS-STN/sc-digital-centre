@@ -10,14 +10,10 @@ export default async function handler(req, res) {
       const userData = mockData[userid].OAS
       let benefits = []
 
-      if (userid === 'default') {
-        //default userid sends an array of each type
-        userData.forEach((result) => {
-          benefits.push(MapOASCard(result))
-        })
-      } else {
-        //handle the other situations here
-      }
+      userData.forEach((result) => {
+        benefits.push(MapOASCard(result))
+      })
+
       res.status(200).json(benefits)
     } else {
       //Interop response if/when added in the future

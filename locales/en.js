@@ -294,9 +294,8 @@ export default {
   CPPRetirement: 'Retirement pension',
   CPPSurvivor: "Survivor's pension",
   EISickness: 'Sickness',
-  OASBeneficials: 'Old Age Security',
-  OASBeneficial: 'Retirement pension',
-  GISBeneficial: 'Retirement pension',
+  OASBeneficial: 'Old Age Security',
+  GISBeneficial: 'Guaranteed Income Supplement',
 
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,

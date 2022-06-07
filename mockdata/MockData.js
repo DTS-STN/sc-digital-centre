@@ -3,6 +3,7 @@ import EIUser2 from './user2/ei.json'
 import CPPUser3 from './user3/cpp.json'
 import CPPUser4 from './user4/cpp.json'
 import OASUser4 from './user4/oas.json'
+import GISUser4 from './user4/gis.json'
 import CPPDefaultUser from './userDefault/cpp.json'
 import OASDefaultUser from './userDefault/oas.json'
 import GISDefaultUser from './userDefault/gis.json'
@@ -36,8 +37,7 @@ export const mockData = {
     EI: undefined,
     CPP: CPPUser4,
     OAS: OASUser4,
-    GIS: undefined,
-    OAS: OASDefaultUser,
+    GIS: GISUser4,
   },
   5: {
     CPPD: undefined,
