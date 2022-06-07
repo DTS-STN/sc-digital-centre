@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1654605116704" clover="3.2.0">
-  <project timestamp="1654605116705" name="All files">
-    <metrics statements="360" coveredstatements="184" conditionals="281" coveredconditionals="118" methods="123" coveredmethods="73" elements="764" coveredelements="375" complexity="0" loc="360" ncloc="360" packages="7" files="44" classes="44"/>
+<coverage generated="1654624837585" clover="3.2.0">
+  <project timestamp="1654624837585" name="All files">
+    <metrics statements="358" coveredstatements="184" conditionals="277" coveredconditionals="118" methods="123" coveredmethods="73" elements="758" coveredelements="375" complexity="0" loc="358" ncloc="358" packages="7" files="44" classes="44"/>
     <package name="components.atoms">
       <metrics statements="48" coveredstatements="43" conditionals="48" coveredconditionals="34" methods="21" coveredmethods="19"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -411,7 +411,7 @@
       </file>
     </package>
     <package name="pages.api.programData">
-      <metrics statements="81" coveredstatements="0" conditionals="42" coveredconditionals="0" methods="12" coveredmethods="0"/>
+      <metrics statements="79" coveredstatements="0" conditionals="38" coveredconditionals="0" methods="12" coveredmethods="0"/>
       <file name="_middleware.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/_middleware.js">
         <metrics statements="4" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -474,32 +474,30 @@
         <line num="39" count="0" type="stmt"/>
       </file>
       <file name="gis.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/gis.js">
-        <metrics statements="11" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <metrics statements="10" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
       </file>
       <file name="oas.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/oas.js">
-        <metrics statements="11" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <metrics statements="10" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
       </file>
       <file name="seb.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/seb.js">
         <metrics statements="10" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
