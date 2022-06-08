@@ -84,7 +84,7 @@ export default function BenefitCard(props) {
               : props.benefit.taskGroups.map((taskList, index) => {
                   return (
                     <div key={index}>
-                      <BenefitTasks taskList={taskList} locale={'en'} />
+                      <BenefitTasks taskList={taskList} />
                     </div>
                   )
                 })}

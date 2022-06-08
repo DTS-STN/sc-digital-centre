@@ -127,58 +127,58 @@ export default function Dashboard(props) {
     ],
     taskGroups: [
       {
-        header: 'paymentTasks',
+        header: t.paymentTasks,
         tasks: [
           {
-            task: 'allPaymentsTask',
+            task: t.allPaymentsTask,
             taskIcon: '/images/dashboard/oas-payment-icon.svg',
-            taskLink: 'allPaymentsTaskLink',
+            taskLink: t.allPaymentsTaskLink,
           },
           {
-            task: 'taxSlipTask',
+            task: t.taxSlipTask,
             taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
-            taskLink: 'taxSlipTaskLink',
+            taskLink: t.taxSlipTaskLink,
           },
           {
-            task: 'cppContributionTask',
+            task: t.cppContributionTask,
             taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
-            taskLink: 'cppContributionTaskLink',
+            taskLink: t.cppContributionTaskLink,
           },
           {
-            task: 'taxDeductionsTask',
+            task: t.taxDeductionsTask,
             taskIcon: '/images/dashboard/oas-federal-tax-deductions-icon.svg',
-            taskLink: 'taxDeductionsTaskLink',
+            taskLink: t.taxDeductionsTaskLink,
           },
           {
-            task: 'retirementIncomeTask',
+            task: t.retirementIncomeTask,
             taskIcon: '/images/dashboard/oas-retirement-income-icon.svg',
-            taskLink: 'retirementIncomeTaskLink',
+            taskLink: t.retirementIncomeTaskLink,
           },
         ],
       },
       {
-        header: 'changeTasks',
+        header: t.changeTasks,
         tasks: [
           {
-            task: 'reconsiderationTask',
+            task: t.reconsiderationTask,
             taskIcon:
               '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
-            taskLink: 'reconsiderationLink',
+            taskLink: t.reconsiderationLink,
           },
           {
-            task: 'delayOasPensionTask',
+            task: t.delayOasPensionTask,
             taskIcon: '/images/dashboard/oas-delay-receiving-pension-icon.svg',
-            taskLink: 'delayOasPensionTaskLink',
+            taskLink: t.delayOasPensionTaskLink,
           },
           {
-            task: 'giveConsentTask',
+            task: t.giveConsentTask,
             taskIcon: '/images/dashboard/oas-consent-icon.svg',
-            taskLink: 'giveConsentTaskLink',
+            taskLink: t.giveConsentTaskLink,
           },
           {
-            task: 'updateAccountInfoTask',
+            task: t.updateAccountInfoTask,
             taskIcon: '/images/dashboard/account-info-icon.svg',
-            taskLink: 'updateAccountInfoTaskLink',
+            taskLink: t.updateAccountInfoTaskLink,
           },
         ],
       },
@@ -197,7 +197,7 @@ export default function Dashboard(props) {
       />
 
       <div className="mb-8">
-        {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
+        {/* {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
         {cppError ?? null}
         {cppBenefit
           ? cppBenefit.map((value, index) => {
@@ -271,7 +271,7 @@ export default function Dashboard(props) {
         {sebError}
         {sebBenefit ? (
           <UniversalBenefitCard locale={props.locale} benefit={sebBenefit} />
-        ) : null}
+        ) : null} */}
 
         {/* application or "advertising" cards */}
         {advertisingCards.map((value, index) => {
