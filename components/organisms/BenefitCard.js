@@ -47,11 +47,7 @@ export default function BenefitCard(props) {
               <ul className="grid col-span-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display">
                 {props.benefit.summaries.map((summary, index) => {
                   return (
-                    <BenefitCardHeaderSummary
-                      key={index}
-                      locale={'en'}
-                      summary={summary}
-                    />
+                    <BenefitCardHeaderSummary key={index} summary={summary} />
                   )
                 })}
               </ul>

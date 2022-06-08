@@ -1,92 +1,41 @@
 import propTypes from 'prop-types'
-import en from '../../locales/en'
-import fr from '../../locales/fr'
-import { SummaryTypes } from '../../constants/SummaryTypes'
-import { formatDate, formatMoney } from '../../lib/Utils'
 
 export default function BenefitCardHeaderSummary(props) {
-  const t = props.locale === 'en' ? en : fr
-  const typesWithLinks = [
-    SummaryTypes.PaymentAmount,
-    SummaryTypes.LatestStatus,
-    SummaryTypes.PresentStatus,
-    SummaryTypes.LastPaymentDate,
-    SummaryTypes.LastNetPayment,
-    SummaryTypes.LatestStatusMessage,
-  ]
-
-  const getBenefitCardValue = () => {
-    switch (props.summary.type) {
-      case SummaryTypes.PaymentAmount:
-      case SummaryTypes.LastPayment:
-      case SummaryTypes.LastNetPayment:
-        return (
-          <p className="text-3xl">
-            {formatMoney(props.summary.value, props.locale)}
-          </p>
-        )
-        break
-      case SummaryTypes.NextPayment:
-      case SummaryTypes.NextReport:
-      case SummaryTypes.LatestStatus:
-      case SummaryTypes.EstimatedDecisionDate:
-      case SummaryTypes.LastPaymentDate:
-      case SummaryTypes.LatestStatusMessage:
-        return (
-          <p className="text-lg">
-            {formatDate(props.summary.value, props.locale)}
-          </p>
-        )
-        break
-      case SummaryTypes.RequestedBenefit:
-      case SummaryTypes.BenefitAffected:
-      case SummaryTypes.ActiveBenefit:
-        return <p className="text-lg">{t[props.summary.value]}</p>
-        break
-      case SummaryTypes.PresentStatus:
-      case SummaryTypes.NextPaymentDate:
-        return <p className="text-lg">{props.summary.value}</p>
-      default:
-        return null
-        break
-    }
-  }
-
-  const getBenefitCardStatus = () => {
-    switch (props.summary.type) {
-      case SummaryTypes.LatestStatus:
-        return (
-          <p className="text-lg">
-            {t.eiMessages[props.summary.status] ?? null}
-          </p>
-        )
-      default:
-        return <p className="font-bold">{props.summary.status ?? null}</p>
-    }
-  }
-
   return (
     <li className="w-full">
-      <p className="font-bold">{t[props.summary.type].title}</p>
-      {getBenefitCardStatus()}
-      {getBenefitCardValue()}
+      {/* Title */}
+      <p className="font-bold">{props.summary.title}</p>
 
-      {!typesWithLinks.find((t) => t === props.summary.type) ? null : (
+      {/* Optional Status */}
+      {props.summary.status ? (
+        <p className={props.summary.statusClassName}>{props.summary.status}</p>
+      ) : null}
+
+      {/* Summary */}
+      <p className={props.summary.valueClassName}>{props.summary.value}</p>
+
+      {/* Optional Link */}
+      {props.summary.link ? (
         <a
-          href={t[props.summary.type].link}
+          href={props.summary.link}
           className="mt-1 text-link-blue-default underline text-base hover:text-link-blue-hover"
         >
-          {t[props.summary.type].linkText}
+          {props.summary.linkText}
         </a>
-      )}
+      ) : null}
     </li>
   )
 }
 
 BenefitCardHeaderSummary.propTypes = {
-  locale: propTypes.string.isRequired,
   summary: propTypes.shape({
     type: propTypes.string.isRequired,
+    title: propTypes.string.isRequired,
+    status: propTypes.string,
+    statusClassName: propTypes.string,
     value: propTypes.any.isRequired,
+    valueClassName: propTypes.string,
+    link: propTypes.string,
+    linkText: propTypes.string,
   }),
 }

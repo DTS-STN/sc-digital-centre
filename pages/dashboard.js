@@ -10,6 +10,7 @@ import { setCookies } from 'cookies-next'
 import BenefitCard from '../components/organisms/BenefitCard'
 import en from '../locales/en'
 import fr from '../locales/fr'
+import { formatDate, formatMoney } from '../lib/Utils'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -99,19 +100,29 @@ export default function Dashboard(props) {
     summaries: [
       {
         type: 'ActiveBenefit',
+        title: t.ActiveBenefit.title,
         value: 'CPPRetirement',
+        valueClassName: 'text-lg',
       },
       {
         type: 'LastPaymentDate',
-        value: '2021-02-21',
+        title: t.LastPaymentDate.title,
+        value: formatDate('2021-02-21', props.locale),
+        valueClassName: 'text-lg',
+        link: '/',
+        linkText: 'View my payments',
       },
       {
         type: 'NextPayment',
-        value: 1616281200000,
+        title: t.NextPayment.title,
+        value: formatDate(1616281200000, props.locale),
+        valueClassName: 'text-lg',
       },
       {
         type: 'LastPayment',
-        value: 30.32,
+        title: t.LastPayment.title,
+        value: formatMoney(30.32, props.locale),
+        valueClassName: 'text-3xl',
       },
     ],
     taskGroups: [
