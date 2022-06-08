@@ -9,12 +9,12 @@ export default function Profile(props) {
   const t = props.locale === 'en' ? en : fr
   const [tabSelected, setTabSelected] = useState(0)
   const [profileTabSelected, setProfileTabSelected] = useState(0)
-  const fakeFields = {
+  const fakeFieldsEI = {
     title: 'Profile Information',
     info: [
       {
         title: 'Address',
-        fields: ['123 Fake street', 'Ontario, Canada', '1A1-1A1'],
+        fields: ['123 Main street', 'Montreal (Quebec)', 'A1A 1A1'],
         moreInfoURL: null,
       },
       {
@@ -23,8 +23,8 @@ export default function Profile(props) {
         moreInfoURL: null,
       },
       {
-        title: 'Bank Details',
-        fields: ['Direct deposit', 'Scotiabank 8510231'],
+        title: 'Deposit Details',
+        fields: ['Scotiabank', 'XXXXXXX-123'],
         moreInfoURL: null,
       },
       {
@@ -34,20 +34,70 @@ export default function Profile(props) {
       },
     ],
   }
-  const fakeFields2 = {
+  const fakeFieldsEI2 = {
     title: 'Preferences',
     info: [
       {
-        title: 'Written Language',
+        title: 'Language of correspondence',
         fields: ['English'],
         moreInfoURL: null,
       },
       {
         title: 'Alert me',
         fields: [
-          'Sign up to get an email when important new is available',
+          'Receive email notifications when new information about your claim is available',
           'Registered',
         ],
+        moreInfoURL: null,
+      },
+    ],
+  }
+  const fakeFieldsCPP = {
+    title: 'Profile Information',
+    info: [
+      {
+        title: 'Address',
+        fields: ['123 Main street', 'Montreal, Quebec', '1A1-1A1'],
+        moreInfoURL: null,
+      },
+      {
+        title: 'Deposit Details',
+        fields: ['Scotiabank', 'XXXXXXX-123'],
+        moreInfoURL: null,
+      },
+      {
+        title: 'Phone',
+        fields: ['XXX - XXX - 1234'],
+        moreInfoURL: null,
+      },
+      {
+        title: 'Preferences',
+        fields: ['Give consent to communicate on my behalf'],
+        moreInfoURL: null,
+      },
+    ],
+  }
+  const fakeFieldsOAS = {
+    title: 'Profile Information',
+    info: [
+      {
+        title: 'Address',
+        fields: ['123 Main street', 'Montreal, Quebec', '1A1-1A1'],
+        moreInfoURL: null,
+      },
+      {
+        title: 'Deposit Details',
+        fields: ['Scotiabank', 'XXXXXXX-123'],
+        moreInfoURL: null,
+      },
+      {
+        title: 'Phone',
+        fields: ['XXX - XXX - 1234'],
+        moreInfoURL: null,
+      },
+      {
+        title: 'Preferences',
+        fields: ['Give consent to communicate on my behalf'],
         moreInfoURL: null,
       },
     ],
@@ -117,10 +167,16 @@ export default function Profile(props) {
             }
             locale={props.locale}
           ></TabList>
-          <ProfileInfo
-            fields={[fakeFields, fakeFields2]}
-            locale={props.locale}
-          />{' '}
+          {profileTabSelected === 0 || !profileTabSelected ? (
+            <ProfileInfo
+              fields={[fakeFieldsEI, fakeFieldsEI2]}
+              locale={props.locale}
+            />
+          ) : profileTabSelected === 1 ? (
+            <ProfileInfo fields={[fakeFieldsCPP]} locale={props.locale} />
+          ) : profileTabSelected === 2 ? (
+            <ProfileInfo fields={[fakeFieldsOAS]} locale={props.locale} />
+          ) : null}
         </>
       ) : tabSelected === 1 ? (
         <ProfileInfo fields={[fakeSecurityFields]} locale={props.locale} />
