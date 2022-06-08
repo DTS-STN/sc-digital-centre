@@ -77,13 +77,13 @@ export default function Dashboard(props) {
     summary:
       props.locale === 'en' ? (
         <>
-          {t[props.benefit.programCode]}
+          {t.cpp}
           <span className="sr-only">{t.summary}</span>
         </>
       ) : (
         <>
           <span className="sr-only">{t.summary}</span>
-          {t[props.benefit.programCode]}
+          {t.cpp}
         </>
       ),
     statusCode: 'inPayment',
@@ -164,14 +164,18 @@ export default function Dashboard(props) {
         ],
       },
     ],
-    taskHeadingKey: 'paymentsTaxesAccount',
+    moreLessCaption: t['paymentsTaxesAccount'],
   }
 
   return (
     <>
       <Greeting locale={props.locale} name="Mary" />
 
-      <BenefitCard benefit={cppBenefitCard} />
+      <BenefitCard
+        benefit={cppBenefitCard}
+        benefitDurationReached={t.benefitDurationReached}
+        applyFor={t.applyFor}
+      />
 
       <div className="mb-8">
         {cppLoaded ? null : 'Loading CPP User Benefit Data...'}

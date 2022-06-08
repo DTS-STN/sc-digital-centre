@@ -1,6 +1,4 @@
 import propTypes from 'prop-types'
-import en from '../../locales/en'
-import fr from '../../locales/fr'
 import BenefitCardHeaderSummary from '../molecules/BenefitCardHeaderSummary'
 import StatusBadge from '../atoms/StatusBadge'
 import BenefitTasks from '../molecules/BenefitTasks'
@@ -9,7 +7,6 @@ import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 
 export default function BenefitCard(props) {
-  const t = en
   const [isOpen, setIsOpen] = useState(false)
   const benefitCardId = 'benefit-card-' + props.benefit.id
   const taskListId = 'task-list-' + props.benefit.id
@@ -18,7 +15,7 @@ export default function BenefitCard(props) {
     <div className="benefit-card pb-6" id={benefitCardId}>
       <StatusBadge
         status={props.benefit.statusCode}
-        programCode={props.benefit.programCode}
+        programCode={props.benefit.code}
         locale={'en'}
       />
       <div className="px-4 md:px-6 pb-6">
@@ -33,7 +30,7 @@ export default function BenefitCard(props) {
             {props.benefit.summaries == null ||
             props.benefit.summaries.length <= 0 ? (
               <div className="mx-8">
-                <p className="pb-5 text-lg">{t.benefitDurationReached}</p>
+                <p className="pb-5 text-lg">{props.benefitDurationReached}</p>
                 <a
                   href=""
                   className="underline text-link-blue-default hover:text-link-blue-hover"
@@ -43,7 +40,7 @@ export default function BenefitCard(props) {
                     alt=""
                   />
                   <p className="w-36 sm:w-24 lg:w-36 pr-5 pt-3">
-                    {`${t.applyFor} ${t[props.benefit.programCode]}`}
+                    {`${props.applyFor} ${props.benefit.name}`}
                   </p>
                 </a>
               </div>
@@ -67,7 +64,7 @@ export default function BenefitCard(props) {
       {/* Let the ViewMoreLessButton remain generic and set the heading level outside */}
       <h4>
         <ViewMoreLessButton
-          id={props.benefit.programCode + '-card-button'}
+          id={props.benefit.code + '-card-button'}
           dataTestid={props.benefit.id}
           onClick={() => {
             const newOpenState = !isOpen
@@ -80,7 +77,7 @@ export default function BenefitCard(props) {
           }}
           ariaExpanded={isOpen.toString()}
           icon={isOpen}
-          caption={t[props.benefit.taskHeadingKey]}
+          caption={props.benefit.moreLessCaption}
         />
       </h4>
       <div className="flex flex-col">
@@ -111,6 +108,8 @@ BenefitCard.propTypes = {
     statusCode: propTypes.string.isRequired,
     summaries: propTypes.array,
     taskGroups: propTypes.array.isRequired,
-    taskHeadingKey: propTypes.string.isRequired,
+    moreLessCaption: propTypes.string.isRequired,
   }),
+  benefitDurationReached: propTypes.string.isRequired,
+  applyFor: propTypes.string.isRequired,
 }
