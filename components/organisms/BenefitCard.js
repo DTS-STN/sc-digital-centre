@@ -15,7 +15,6 @@ export default function BenefitCard(props) {
     <div className="benefit-card pb-6" id={benefitCardId}>
       <StatusBadge
         status={props.benefit.status.text}
-        program={props.benefit.name}
         className={props.benefit.status.className}
       />
       <div className="px-4 md:px-6 pb-6">

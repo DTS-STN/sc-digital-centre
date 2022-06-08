@@ -11,8 +11,7 @@ export default function StatusBadge(props) {
       <h2
         className={`font-medium font-display text-black text-lg px-5 py-1 sm:mb-5 w-full sm:w-1/3 sm:mr-14 rounded-t-lg sm:rounded-t-none sm:rounded-b-lg  ${props.className} `}
       >
-        <span className="sr-only">{props.program} </span>
-        {props.status ?? 'No status found'}
+        {props.status}
       </h2>
     </div>
   )
@@ -20,16 +19,11 @@ export default function StatusBadge(props) {
 
 StatusBadge.propTypes = {
   /**
-   * className
+   * className to apply class such as color to badge
    */
   className: propTypes.string,
   /**
-   *
+   * The status text to be displayed
    */
   status: propTypes.string,
-  program: propTypes.string,
-  /**
-   *
-   */
-  locale: propTypes.string,
 }
