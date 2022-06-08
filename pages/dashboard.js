@@ -7,8 +7,12 @@ import { getSession } from 'next-auth/react'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { setCookies } from 'cookies-next'
+import BenefitCard from '../components/organisms/BenefitCard'
+import en from '../locales/en'
+import fr from '../locales/fr'
 
 export default function Dashboard(props) {
+  const t = props.locale === 'en' ? en : fr
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
   )
@@ -100,9 +104,109 @@ export default function Dashboard(props) {
       .finally(() => setSebLoaded(true))
   }, [])
 
+  let cppBenefitCard = {
+    id: 'cpp-CPPRetirement-inPayment',
+    code: 'cpp',
+    name: t.cpp,
+    summary:
+      props.locale === 'en' ? (
+        <>
+          {t[props.benefit.programCode]}
+          <span className="sr-only">{t.summary}</span>
+        </>
+      ) : (
+        <>
+          <span className="sr-only">{t.summary}</span>
+          {t[props.benefit.programCode]}
+        </>
+      ),
+    statusCode: 'inPayment',
+    typeCode: 'CPPRetirement',
+    summaries: [
+      {
+        type: 'ActiveBenefit',
+        value: 'CPPRetirement',
+      },
+      {
+        type: 'LastPaymentDate',
+        value: '2021-02-21',
+      },
+      {
+        type: 'NextPayment',
+        value: 1616281200000,
+      },
+      {
+        type: 'LastPayment',
+        value: 30.32,
+      },
+    ],
+    taskGroups: [
+      {
+        header: 'paymentTasks',
+        tasks: [
+          {
+            task: 'allPaymentsTask',
+            taskIcon: '/images/dashboard/oas-payment-icon.svg',
+            taskLink: 'allPaymentsTaskLink',
+          },
+          {
+            task: 'taxSlipTask',
+            taskIcon: '/images/dashboard/oas-tax-slip-icon.svg',
+            taskLink: 'taxSlipTaskLink',
+          },
+          {
+            task: 'cppContributionTask',
+            taskIcon: '/images/dashboard/oas-cpp-contributions-icon.svg',
+            taskLink: 'cppContributionTaskLink',
+          },
+          {
+            task: 'taxDeductionsTask',
+            taskIcon: '/images/dashboard/oas-federal-tax-deductions-icon.svg',
+            taskLink: 'taxDeductionsTaskLink',
+          },
+          {
+            task: 'retirementIncomeTask',
+            taskIcon: '/images/dashboard/oas-retirement-income-icon.svg',
+            taskLink: 'retirementIncomeTaskLink',
+          },
+        ],
+      },
+      {
+        header: 'changeTasks',
+        tasks: [
+          {
+            task: 'reconsiderationTask',
+            taskIcon:
+              '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
+            taskLink: 'reconsiderationLink',
+          },
+          {
+            task: 'delayOasPensionTask',
+            taskIcon: '/images/dashboard/oas-delay-receiving-pension-icon.svg',
+            taskLink: 'delayOasPensionTaskLink',
+          },
+          {
+            task: 'giveConsentTask',
+            taskIcon: '/images/dashboard/oas-consent-icon.svg',
+            taskLink: 'giveConsentTaskLink',
+          },
+          {
+            task: 'updateAccountInfoTask',
+            taskIcon: '/images/dashboard/account-info-icon.svg',
+            taskLink: 'updateAccountInfoTaskLink',
+          },
+        ],
+      },
+    ],
+    taskHeadingKey: 'paymentsTaxesAccount',
+  }
+
   return (
     <>
       <Greeting locale={props.locale} name="Mary" />
+
+      <BenefitCard benefit={cppBenefitCard} />
+
       <div className="mb-8">
         {cppLoaded ? null : 'Loading User Benefit Data...'}
         {cppBenefit
