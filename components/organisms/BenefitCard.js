@@ -14,9 +14,9 @@ export default function BenefitCard(props) {
   return (
     <div className="benefit-card pb-6" id={benefitCardId}>
       <StatusBadge
-        status={props.benefit.statusCode}
-        programCode={props.benefit.code}
-        locale={'en'}
+        status={props.benefit.status.text}
+        program={props.benefit.name}
+        className={props.benefit.status.className}
       />
       <div className="px-4 md:px-6 pb-6">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
@@ -105,7 +105,7 @@ BenefitCard.propTypes = {
     code: propTypes.string.isRequired,
     name: propTypes.string.isRequired,
     summary: propTypes.string.isRequired,
-    statusCode: propTypes.string.isRequired,
+    status: propTypes.string.isRequired,
     summaries: propTypes.array,
     taskGroups: propTypes.array.isRequired,
     moreLessCaption: propTypes.string.isRequired,

@@ -37,9 +37,8 @@ export default function UniversalBenefitCard(props) {
   return (
     <div className="benefit-card pb-6" id={benefitCardId}>
       <StatusBadge
-        status={props.benefit.statusCode}
-        programCode={props.benefit.programCode}
-        locale={props.locale}
+        status={t[props.benefit.statusCode]}
+        program={t[props.benefit.programCode]}
       />
       <div className="px-4 md:px-6 pb-6">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">

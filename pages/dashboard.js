@@ -86,7 +86,7 @@ export default function Dashboard(props) {
           {t.cpp}
         </>
       ),
-    statusCode: 'inPayment',
+    status: { text: t['inPayment'], className: 'bg-status-inPayment' },
     typeCode: 'CPPRetirement',
     summaries: [
       {
