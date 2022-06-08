@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect'
 import en from '../../locales/en'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
 import { SummaryTypes } from '../../constants/SummaryTypes'
-import { FormatSummary } from '../../lib/BenefitsMapping'
+import { FormatSummary } from '../../lib/api/mapBenefits'
 
 expect.extend(toHaveNoViolations)
 

@@ -5,14 +5,14 @@ import UniversalBenefitCard from './UniversalBenefitCard'
 import { ProgramCodes } from '../../constants/ProgramCodes'
 import { StatusCodes } from '../../constants/StatusCodes'
 import { TypeCodes } from '../../constants/ProgramTypeCodes'
-import { MapBenefit } from '../../lib/BenefitsMapping'
+import { MapBenefit } from '../../lib/api/mapBenefits'
 
 expect.extend(toHaveNoViolations)
 
 describe('UniversalBenefitCard', () => {
   const benefit = MapBenefit(
     ProgramCodes.CPP,
-    StatusCodes.Active,
+    StatusCodes.inPayment,
     TypeCodes.CPPRetirement
   )
   const { container } = render(

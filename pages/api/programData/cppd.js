@@ -1,33 +1,12 @@
-import { getCookie } from 'cookies-next'
-import { MapCPPCard } from '../../../lib/BenefitsMapping'
-import { mockData } from '../../../mockdata/MockData'
+import { MapCPPCard } from '../../../lib/api/mapBenefits'
+import { FetchProgramData, MapArrayData } from '../../../lib/api/programData'
 
 export default async function handler(req, res) {
-  if (req.method === 'GET') {
-    //get data
-    let userData
-    const userid = getCookie('userid', { req, res })
-    if (userid) {
-      //disabling default for now to suppress errors in console
-      //Mock userid response
-      userData = mockData[userid].CPPD
-    } else {
-      //Mock interop response
-      //return res.status(501) //errors not properly handled in client
-    }
-
-    //format data
-
-    const benefits = []
-    if (userData) {
-      userData.forEach((result) => {
-        //reuse CPP because they function the same
-        benefits.push(MapCPPCard(result))
-      })
-    }
-    res.status(200).json(benefits)
-  } else {
-    res.status(405)
-  }
-  return res
+  return FetchProgramData(
+    req,
+    res,
+    null,
+    (data) => MapArrayData(data, (item) => MapCPPCard(item)), //reuse CPP because they function the same
+    (mockObj) => mockObj.CPPD
+  )
 }

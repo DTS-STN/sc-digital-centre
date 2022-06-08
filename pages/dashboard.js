@@ -16,19 +16,19 @@ export default function Dashboard(props) {
 
   const [cppBenefit, setCppBenefit] = useState()
   const [cppLoaded, setCppLoaded] = useState(false)
-  const [cppError, setCppError] = useState(false)
+  const [cppError, setCppError] = useState()
 
   const [cppdBenefit, setCppdBenefit] = useState()
   const [cppdLoaded, setCppdLoaded] = useState(false)
-  const [cppdError, setCppdError] = useState(false)
+  const [cppdError, setCppdError] = useState()
 
   const [eiBenefit, setEiBenefit] = useState()
   const [eiLoaded, setEiLoaded] = useState(false)
-  const [eiError, setEiError] = useState(false)
+  const [eiError, setEiError] = useState()
 
   const [oasBenefit, setOasBenefit] = useState()
   const [oasLoaded, setOasLoaded] = useState(false)
-  const [oasError, setOasError] = useState(false)
+  const [oasError, setOasError] = useState()
 
   const [gisBenefit, setGisBenefit] = useState()
   const [gisLoaded, setGisLoaded] = useState(false)
@@ -36,75 +36,42 @@ export default function Dashboard(props) {
 
   const [sebBenefit, setSebBenefit] = useState()
   const [sebLoaded, setSebLoaded] = useState(false)
-  const [sebError, setSebError] = useState(false)
+  const [sebError, setSebError] = useState()
 
   useEffect(() => {
-    fetch(`/api/programData/cpp`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCppBenefit(data)
-      })
-      .catch((error) => {
-        setCppError(error)
-      })
-      .finally(() => setCppLoaded(true))
+    async function fetchProgramData(program, setData, setError, setLoaded) {
+      try {
+        const res = await fetch(`/api/programData/${program}`)
+        if (res.ok) {
+          if (res.status === 200) {
+            setData(await res.json())
+          }
+        } else {
+          const text = await res.text()
+          setError(`Error fetching ${program} data ${res.status} - ${text}.\n`)
+        }
+      } catch (error) {
+        setError(`Something went wrong fetching ${program} data.`)
+        console.log(error)
+      } finally {
+        setLoaded(true)
+      }
+    }
 
-    fetch(`/api/programData/cppd`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCppdBenefit(data)
-      })
-      .catch((error) => {
-        setCppdError(error)
-      })
-      .finally(() => setCppdLoaded(true))
-
-    fetch(`/api/programData/ei`)
-      .then((res) => res.json())
-      .then((data) => {
-        setEiBenefit(data)
-      })
-      .catch((error) => {
-        setEiError(error)
-      })
-      .finally(() => setEiLoaded(true))
-
-    fetch(`/api/programData/oas`)
-      .then((res) => res.json())
-      .then((data) => {
-        setOasBenefit(data)
-      })
-      .catch((error) => {
-        setOasError(error)
-      })
-      .finally(() => setOasLoaded(true))
-
-    fetch(`/api/programData/gis`)
-      .then((res) => res.json())
-      .then((data) => {
-        setGisBenefit(data)
-      })
-      .catch((error) => {
-        setGisError(error)
-      })
-      .finally(() => setGisLoaded(true))
-
-    fetch(`/api/programData/seb`)
-      .then((res) => res.json())
-      .then((data) => {
-        setSebBenefit(data)
-      })
-      .catch((error) => {
-        setSebError(error)
-      })
-      .finally(() => setSebLoaded(true))
+    fetchProgramData('cpp', setCppBenefit, setCppError, setCppLoaded)
+    fetchProgramData('cppd', setCppdBenefit, setCppdError, setCppdLoaded)
+    fetchProgramData('ei', setEiBenefit, setEiError, setEiLoaded)
+    fetchProgramData('oas', setOasBenefit, setOasError, setOasLoaded)
+    fetchProgramData('gis', setGisBenefit, setGisError, setGisLoaded)
+    fetchProgramData('seb', setSebBenefit, setSebError, setSebLoaded)
   }, [])
 
   return (
     <>
       <Greeting locale={props.locale} name="Mary" />
       <div className="mb-8">
-        {cppLoaded ? null : 'Loading User Benefit Data...'}
+        {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
+        {cppError ?? null}
         {cppBenefit
           ? cppBenefit.map((value, index) => {
               return (
@@ -117,7 +84,8 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {cppdLoaded ? null : 'Loading User Benefit Data...'}
+        {cppdLoaded ? null : 'Loading CPPD User Benefit Data...'}
+        {cppdError ?? null}
         {cppdBenefit
           ? cppdBenefit.map((value, index) => {
               return (
@@ -130,7 +98,8 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {eiLoaded ? null : 'Loading User Benefit Data...'}
+        {eiLoaded ? null : 'Loading EI User Benefit Data...'}
+        {eiError ?? null}
         {eiBenefit
           ? eiBenefit.map((value, index) => {
               return (
@@ -143,7 +112,8 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {oasLoaded ? null : 'Loading User Benefit Data...'}
+        {oasLoaded ? null : 'Loading OAS User Benefit Data...'}
+        {oasError}
         {oasBenefit
           ? oasBenefit.map((value, index) => {
               return (
@@ -157,6 +127,7 @@ export default function Dashboard(props) {
           : null}
 
         {gisLoaded ? null : 'Loading User Benefit Data...'}
+        {gisError}
         {gisBenefit
           ? gisBenefit.map((value, index) => {
               return (
@@ -170,6 +141,7 @@ export default function Dashboard(props) {
           : null}
 
         {sebLoaded ? null : 'Loading User Benefit Data...'}
+        {sebError}
         {sebBenefit ? (
           <UniversalBenefitCard locale={props.locale} benefit={sebBenefit} />
         ) : null}
