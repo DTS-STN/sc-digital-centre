@@ -355,6 +355,7 @@ export default {
   paymentClaimsTaxTasks: 'Payments and taxes:',
   documentsReportsTasks: 'Documents and reports',
   commonActions: 'Common actions',
+  accountInformation: 'Account information',
 
   //benefit task headings
   exploreCommonActions: 'Explore common actions',
@@ -365,7 +366,7 @@ export default {
 
   // dashboard benefits tasks
   updateAccountInfoTask: 'Update my account information',
-  allPaymentsTask: 'View all payments',
+  allPaymentsTask: 'View past payments',
   statusUpdateTask: 'View my status and messages',
   retirementIncomeTask: 'Estimate my retirement income',
   cppContributionTask: 'View my contributions',
