@@ -294,8 +294,8 @@ export default {
   CPPRetirement: 'Retirement pension',
   CPPSurvivor: "Survivor's pension",
   EISickness: 'Sickness',
-  OASBeneficial: 'Retirement pension',
-  GISBeneficial: 'Retirement pension',
+  OASBeneficial: 'Old Age Security',
+  GISBeneficial: 'Guaranteed Income Supplement',
 
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,
@@ -323,7 +323,6 @@ export default {
   viewPaymentHistory: 'View my payments',
   transactionDate: 'Transaction date:',
   agreementStatus: 'Agreement status:',
-  netAmount: '${0}',
   benefitDurationReached: 'Your current benefit duration has been reached.',
 
   // Benefit Card details

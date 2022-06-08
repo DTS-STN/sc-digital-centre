@@ -293,8 +293,8 @@ export default {
   CPPRetirement: 'Pension de retraite',
   CPPSurvivor: "(FR)Survivor's pension",
   EISickness: 'Maladie',
-  OASBeneficial: 'Pension de retraite',
-  GISBeneficial: 'Pension de retraite',
+  OASBeneficial: 'Sécurité de la vieillesse',
+  GISBeneficial: 'Supplément de revenu garanti',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
@@ -311,7 +311,6 @@ export default {
   viewPaymentHistory: '(FR)View my payments',
   transactionDate: '(FR)Transaction date:',
   agreementStatus: '(FR)Agreement status:',
-  netAmount: '{0}$',
   benefitDurationReached:
     "Votre durée d'indemnisation actuelle a été atteinte.",
 
