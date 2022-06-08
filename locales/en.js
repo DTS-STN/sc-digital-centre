@@ -323,7 +323,6 @@ export default {
   viewPaymentHistory: 'View my payments',
   transactionDate: 'Transaction date:',
   agreementStatus: 'Agreement status:',
-  netAmount: '${0}',
   benefitDurationReached: 'Your current benefit duration has been reached.',
 
   // Benefit Card details

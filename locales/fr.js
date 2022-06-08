@@ -311,7 +311,6 @@ export default {
   viewPaymentHistory: '(FR)View my payments',
   transactionDate: '(FR)Transaction date:',
   agreementStatus: '(FR)Agreement status:',
-  netAmount: '{0}$',
   benefitDurationReached:
     "Votre durée d'indemnisation actuelle a été atteinte.",
 
