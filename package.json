@@ -18,7 +18,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@dts-stn/decd-design-system": "^1.34.0",
+    "@dts-stn/decd-design-system": "^1.35.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "cookies-next": "^2.0.4",
     "jest-axe": "^5.0.1",

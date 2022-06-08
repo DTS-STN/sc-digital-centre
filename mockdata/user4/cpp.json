@@ -1,0 +1,12 @@
+[
+  {
+    "programCode": 32294,
+    "benefitCode": 30320,
+    "benefitType": "Beneficial",
+    "benefitStatus": "Active",
+    "lastPaymentDate": "2021-05-30",
+    "finalPaymentDate": "2024-06-29",
+    "netAmount": 441.75,
+    "paymentProcessType": "Monthly"
+  }
+]

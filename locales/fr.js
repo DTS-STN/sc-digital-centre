@@ -293,8 +293,8 @@ export default {
   CPPRetirement: 'Pension de retraite',
   CPPSurvivor: "(FR)Survivor's pension",
   EISickness: 'Maladie',
-  OASBeneficial: 'Pension de retraite',
-  GISBeneficial: 'Pension de retraite',
+  OASBeneficial: 'Sécurité de la vieillesse',
+  GISBeneficial: 'Supplément de revenu garanti',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
