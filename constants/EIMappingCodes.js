@@ -1,36 +1,15 @@
 import { TypeCodes } from './ProgramTypeCodes'
 import { StatusCodes } from './StatusCodes'
 
-export const EITypes = [
-  {
-    value: 1,
-    type: TypeCodes.EIUnknown,
-  },
-  {
-    value: 2,
-    type: TypeCodes.EISickness,
-  },
-]
+export const EITypes = {
+  1: TypeCodes.EIUnknown,
+  2: TypeCodes.EISickness,
+}
 
-export const EIStatus = [
-  {
-    value: 3433,
-    status: StatusCodes.inPayment,
-  },
-  {
-    value: 3434,
-    status: StatusCodes.benefitUpdate,
-  },
-  {
-    value: 3435,
-    status: StatusCodes.applicationReceived,
-  },
-  {
-    value: 3436,
-    status: StatusCodes.exhausted,
-  },
-  {
-    value: 3437,
-    status: StatusCodes.inactive,
-  },
-]
+export const EIStatus = {
+  3433: StatusCodes.inPayment,
+  3434: StatusCodes.benefitUpdate,
+  3435: StatusCodes.applicationReceived,
+  3436: StatusCodes.exhausted,
+  3437: StatusCodes.inactive,
+}
