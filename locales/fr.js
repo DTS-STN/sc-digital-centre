@@ -345,6 +345,7 @@ export default {
   paymentClaimsTaxTasks: 'Paiements et impôts :',
   documentsReportsTasks: 'Rapports et documents',
   commonActions: 'Actions courantes',
+  accountInformation: 'Renseignements personnels',
 
   //benefit task headings
   exploreCommonActions: 'Explorer les actions courantes',
@@ -375,7 +376,7 @@ export default {
   viewLatestClaimTask: 'Consulter ma dernière demande',
   viewPastClaimsTask: 'Consulter mes demandes antérieures',
   submitEformsTask: 'Soumettre des formulaires électroniques',
-  registerForAlerts: '(FR)Register for alert me',
+  registerForAlerts: "S'inscrire aux alertes",
   recordOfEmployment: 'Consulter mes relevés d’emploi',
   reportMistake: 'Communiquer une erreur',
   uploadMyDocuments: '(FR)Upload my documents',
@@ -396,7 +397,7 @@ export default {
 
   // Dashboard benefit application card
   estimateRetirementIncome: '(FR)Estimate retirement income',
-  youMightBeEligible: '(FR)You might be eligible.',
+  youMightBeEligible: 'Vous pourriez être admissible.',
   learnMoreAbout: '(FR)Learn more about ',
   applyFor: '(FR)Apply for',
 

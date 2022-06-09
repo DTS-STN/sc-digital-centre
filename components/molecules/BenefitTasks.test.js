@@ -43,7 +43,7 @@ describe('BenefitTask', () => {
   )
 
   it('renders BenefitTask', () => {
-    const task1Text = screen.getByText('View all payments')
+    const task1Text = screen.getByText('View past payments')
     const task2Text = screen.getByText('View my status and messages')
 
     expect(task1Text).toBeInTheDocument()
