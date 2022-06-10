@@ -56,7 +56,7 @@ export default function UniversalBenefitCard(props) {
                 <p className="pb-5 text-lg">{t.benefitDurationReached}</p>
                 <a
                   href=""
-                  className="underline text-link-blue-default hover:text-link-blue-hover"
+                  className="underline text-blue-default hover:text-blue-hover"
                 >
                   <img
                     src="/images/dashboard/apply-for-benefit-icon.svg"

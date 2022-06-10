@@ -74,7 +74,7 @@ export default function BenefitCardHeaderSummary(props) {
       {!typesWithLinks.find((t) => t === props.summary.type) ? null : (
         <a
           href={t[props.summary.type].link}
-          className="mt-1 text-link-blue-default underline text-base hover:text-link-blue-hover"
+          className="mt-1 text-blue-default underline text-base hover:text-blue-hover"
         >
           {t[props.summary.type].linkText}
         </a>

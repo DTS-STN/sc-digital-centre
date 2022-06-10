@@ -8,7 +8,7 @@ export default function ActionButton(props) {
   const { ...rest } = props
   //Styling for buttons and links
   const defaultStyle =
-    'font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-deep-blue-solid text-white text-center border border-deep-blue-solid active:bg-deep-blue-dark hover:bg-bright-blue-dark grid place-items-center'
+    'font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-blue-default text-white text-center border border-blue-default active:bg-blue-presses hover:bg-bright-blue-dark grid place-items-center'
 
   return props.href ? (
     <Link href={props.href}>

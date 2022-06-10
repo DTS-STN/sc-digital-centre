@@ -17,15 +17,15 @@ export default function StatusBadge(props) {
         }
         ${
           props.status === StatusCodes.inPayment
-            ? 'bg-status-inPayment'
+            ? 'bg-green-solid'
             : props.status === StatusCodes.benefitUpdate
-            ? 'bg-status-benefitUpdate'
+            ? 'bg-yellow-solid'
             : props.status === StatusCodes.applicationReceived ||
               props.status === StatusCodes.decisionSent
-            ? 'bg-status-applicationReceived'
+            ? 'bg-brighter-blue-solid'
             : props.status == StatusCodes.paymentHold
-            ? 'bg-status-hold'
-            : 'bg-status-inactive'
+            ? 'bg-yellow-solid'
+            : 'bg-gray-medium'
         }`}
       >
         <span className="sr-only">{t[props.programCode]} </span>

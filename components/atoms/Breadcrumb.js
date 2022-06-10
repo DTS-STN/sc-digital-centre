@@ -10,7 +10,7 @@ export default function Breadcrumb(props) {
       <ul className="block text-deep-blue-dark text-base font-body">
         <li className="inline-block min-w-0 max-w-full truncate px-2">
           <Link href="https://www.canada.ca/">
-            <a className="text-sm hover:text-bright-blue-solid visited:text-purple-solid underline">
+            <a className="text-sm hover:text-blue-hover visited:text-purple-solid underline">
               Canada.ca
             </a>
           </Link>
@@ -23,9 +23,9 @@ export default function Breadcrumb(props) {
                   key={key}
                   className="inline-block min-w-0 max-w-full truncate px-2"
                 >
-                  <span className="inline-block align-middle text-dark-solid icon-cheveron-right mx-4" />
+                  <span className="inline-block align-middle text-deep-blue-dark icon-cheveron-right mx-4" />
                   <Link href={item.link}>
-                    <a className="text-sm hover:text-bright-blue-solid text-bright-blue-dark visited:text-purple-solid underline">
+                    <a className="text-sm hover:text-blue-hover text-blue-default visited:text-purple-solid underline">
                       {item.text}
                     </a>
                   </Link>
