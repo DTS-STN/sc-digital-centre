@@ -1,5 +1,15 @@
 [
   {
+    "claimStatusCode": 3435,
+    "enmBenefitType": 2,
+    "messageData": "Important message",
+    "messageId": 32,
+    "publishDate": "2021-02-21",
+    "nextRptDueDate": "2023-04-24",
+    "programCode": 4543,
+    "netAmount": 32.21
+  },
+  {
     "claimStatusCode": 3433,
     "enmBenefitType": 1,
     "messageData": "Important message",
@@ -12,16 +22,6 @@
   {
     "claimStatusCode": 3434,
     "enmBenefitType": 1,
-    "messageData": "Important message",
-    "messageId": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
-    "programCode": 4543,
-    "netAmount": 32.21
-  },
-  {
-    "claimStatusCode": 3435,
-    "enmBenefitType": 2,
     "messageData": "Important message",
     "messageId": 32,
     "publishDate": "2021-02-21",
