@@ -55,6 +55,14 @@ export default {
   NextReport: {
     title: 'Next report due:',
   },
+  TransactionDate: {
+    title: 'Transaction date:',
+  },
+  AgreementStatus: {
+    title: 'Agreement status:',
+    link: '/',
+    linkText: 'View my status and messages +',
+  },
   //
   // Phase banner
   phaseBannerTag: 'Test Site',
@@ -321,7 +329,6 @@ export default {
   daysUntilNextPayment: 'Next payment:',
   nextReportDue: 'Next report due:',
   viewPaymentHistory: 'View my payments',
-  transactionDate: 'Transaction date:',
   agreementStatus: 'Agreement status:',
   benefitDurationReached: 'Your current benefit duration has been reached.',
 

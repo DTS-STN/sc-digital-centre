@@ -9,7 +9,7 @@ import fr from '../../locales/fr'
 
 export default function StatusBadge(props) {
   const t = props.locale === 'en' ? en : fr
-  return (
+  return props.status != StatusCodes.activeAgreement ? (
     <div className="flex justify-end rounded-t-lg ">
       <h2
         className={`font-medium font-display text-black text-lg px-5 py-1 sm:mb-5 w-full sm:w-1/3 sm:mr-14 rounded-t-lg sm:rounded-t-none sm:rounded-b-lg ${
@@ -32,7 +32,7 @@ export default function StatusBadge(props) {
         {t[props.status] ?? 'No status found'}
       </h2>
     </div>
-  )
+  ) : null
 }
 
 StatusBadge.propTypes = {

@@ -7,6 +7,7 @@ import BenefitTasks from './BenefitTasks'
 import HorizontalRule from '../atoms/HorizontalRule'
 import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
+import { StatusCodes } from '../../constants/StatusCodes'
 
 export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -35,7 +36,12 @@ export default function UniversalBenefitCard(props) {
   }
 
   return (
-    <div className="benefit-card pb-6" id={benefitCardId}>
+    <div
+      className={`benefit-card pb-6 ${
+        props.benefit.statusCode == StatusCodes.activeAgreement ? 'pt-8' : null
+      }`}
+      id={benefitCardId}
+    >
       <StatusBadge
         status={props.benefit.statusCode}
         programCode={props.benefit.programCode}
@@ -43,7 +49,7 @@ export default function UniversalBenefitCard(props) {
       />
       <div className="px-4 md:px-6 pb-6">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
-          <div className="col-span-1 py-4">
+          <div className="col-span-1 py-4 lg:px-1">
             <h3 className="font-bold font-display text-4xl sm:text-lg md:text-xl lg:text-3xl xl:text-4xl mb-2">
               {programSummaryHeader()}
             </h3>
