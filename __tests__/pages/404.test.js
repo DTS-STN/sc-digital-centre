@@ -14,6 +14,7 @@ describe('404', () => {
         keywords: 'en + fr keywords',
         description: 'en + fr description',
       }}
+      locale="en"
     />
   )
   it('renders without crashing', () => {

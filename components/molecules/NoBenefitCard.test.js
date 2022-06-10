@@ -6,7 +6,7 @@ import { NO_BENEFIT_EI_TASKS } from '../../contents/DashboardBenefitTasksConstan
 import en from '../../locales/en'
 
 const NO_BENEFIT_EI = {
-  benefitType: 'EI',
+  benefitType: 'ei',
   learnMoreLink: '',
   taskList: {
     header: 'commonActions',
