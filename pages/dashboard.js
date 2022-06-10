@@ -11,6 +11,14 @@ import BenefitCard from '../components/organisms/BenefitCard'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { formatDate, formatMoney } from '../lib/Utils'
+import {
+  MapCPPCard,
+  MapEICard,
+  MapGISCard,
+  MapOASCard,
+  MapSEBCard,
+} from '../lib/api/mapBenefits'
+import { MapArrayData } from '../lib/api/programData'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -44,12 +52,18 @@ export default function Dashboard(props) {
   const [sebError, setSebError] = useState()
 
   useEffect(() => {
-    async function fetchProgramData(program, setData, setError, setLoaded) {
+    async function fetchProgramData(
+      program,
+      setData,
+      setError,
+      setLoaded,
+      mapping
+    ) {
       try {
         const res = await fetch(`/api/programData/${program}`)
         if (res.ok) {
           if (res.status === 200) {
-            setData(await res.json())
+            setData(mapping(await res.json()))
           }
         } else {
           const text = await res.text()
@@ -63,12 +77,28 @@ export default function Dashboard(props) {
       }
     }
 
-    fetchProgramData('cpp', setCppBenefit, setCppError, setCppLoaded)
-    fetchProgramData('cppd', setCppdBenefit, setCppdError, setCppdLoaded)
-    fetchProgramData('ei', setEiBenefit, setEiError, setEiLoaded)
-    fetchProgramData('oas', setOasBenefit, setOasError, setOasLoaded)
-    fetchProgramData('gis', setGisBenefit, setGisError, setGisLoaded)
-    fetchProgramData('seb', setSebBenefit, setSebError, setSebLoaded)
+    fetchProgramData('cpp', setCppBenefit, setCppError, setCppLoaded, (data) =>
+      MapArrayData(data, (item) => MapCPPCard(item))
+    )
+    fetchProgramData(
+      'cppd',
+      setCppdBenefit,
+      setCppdError,
+      setCppdLoaded,
+      (data) => MapArrayData(data, (item) => MapCPPCard(item))
+    )
+    fetchProgramData('ei', setEiBenefit, setEiError, setEiLoaded, (data) =>
+      MapArrayData(data, (item) => MapEICard(item))
+    )
+    fetchProgramData('oas', setOasBenefit, setOasError, setOasLoaded, (data) =>
+      MapArrayData(data, (item) => MapOASCard(item))
+    )
+    fetchProgramData('gis', setGisBenefit, setGisError, setGisLoaded, (data) =>
+      MapArrayData(data, (item) => MapGISCard(item))
+    )
+    fetchProgramData('seb', setSebBenefit, setSebError, setSebLoaded, (data) =>
+      MapSEBCard(data)
+    )
   }, [])
 
   let cppBenefitCard = {
@@ -197,7 +227,7 @@ export default function Dashboard(props) {
       />
 
       <div className="mb-8">
-        {/* {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
+        {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
         {cppError ?? null}
         {cppBenefit
           ? cppBenefit.map((value, index) => {
@@ -271,7 +301,7 @@ export default function Dashboard(props) {
         {sebError}
         {sebBenefit ? (
           <UniversalBenefitCard locale={props.locale} benefit={sebBenefit} />
-        ) : null} */}
+        ) : null}
 
         {/* application or "advertising" cards */}
         {advertisingCards.map((value, index) => {
