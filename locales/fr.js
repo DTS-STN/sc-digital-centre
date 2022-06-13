@@ -53,6 +53,14 @@ export default {
   NextReport: {
     title: 'Prochain rapport à remettre :',
   },
+  TransactionDate: {
+    title: '(FR)Transaction date:',
+  },
+  AgreementStatus: {
+    title: '(FR)Agreement status:',
+    link: '/',
+    linkText: '(FR)View my status and messages',
+  },
   //
   // Phase banner
   phaseBannerTag: "Site d'essai",

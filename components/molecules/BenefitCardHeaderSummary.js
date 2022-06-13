@@ -13,6 +13,7 @@ export default function BenefitCardHeaderSummary(props) {
     SummaryTypes.LastPaymentDate,
     SummaryTypes.LastNetPayment,
     SummaryTypes.LatestStatusMessage,
+    SummaryTypes.AgreementStatus,
   ]
 
   const getBenefitCardValue = () => {
@@ -32,6 +33,7 @@ export default function BenefitCardHeaderSummary(props) {
       case SummaryTypes.EstimatedDecisionDate:
       case SummaryTypes.LastPaymentDate:
       case SummaryTypes.LatestStatusMessage:
+      case SummaryTypes.TransactionDate:
         return (
           <p className="text-lg">
             {formatDate(props.summary.value, props.locale)}
@@ -45,6 +47,7 @@ export default function BenefitCardHeaderSummary(props) {
         break
       case SummaryTypes.PresentStatus:
       case SummaryTypes.NextPaymentDate:
+      case SummaryTypes.AgreementStatus:
         return <p className="text-lg">{props.summary.value}</p>
       default:
         return null

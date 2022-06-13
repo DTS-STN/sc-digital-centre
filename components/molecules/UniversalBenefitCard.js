@@ -7,6 +7,7 @@ import BenefitTasks from './BenefitTasks'
 import HorizontalRule from '../atoms/HorizontalRule'
 import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
+import { StatusCodes } from '../../constants/StatusCodes'
 
 export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -35,15 +36,17 @@ export default function UniversalBenefitCard(props) {
   }
 
   return (
-    <div className="benefit-card pb-6" id={benefitCardId}>
-      <StatusBadge
-        status={props.benefit.statusCode}
-        programCode={props.benefit.programCode}
-        locale={props.locale}
-      />
-      <div className="px-4 md:px-6 pb-6">
+    <div className={`benefit-card`} id={benefitCardId}>
+      {props.benefit.statusCode != StatusCodes.activeAgreement ? (
+        <StatusBadge
+          status={props.benefit.statusCode}
+          programCode={props.benefit.programCode}
+          locale={props.locale}
+        />
+      ) : null}
+      <div className="px-6 pb-6 pt-8">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
-          <div className="col-span-1 py-4">
+          <div className="col-span-1 lg:px-1">
             <h3 className="font-bold font-display text-4xl sm:text-lg md:text-xl lg:text-3xl xl:text-4xl mb-2">
               {programSummaryHeader()}
             </h3>
@@ -106,16 +109,21 @@ export default function UniversalBenefitCard(props) {
       <div className="flex flex-col">
         {props.benefit.taskGroups == null ||
         props.benefit.taskGroups.length <= 0 ? null : (
-          <div id={taskListId} className="grid bg-gray-lighter sm:grid-cols-1 ">
-            {!isOpen
-              ? null
-              : props.benefit.taskGroups.map((taskList, index) => {
+          <div
+            id={taskListId}
+            className="grid bg-gray-lighter sm:grid-cols-1 rounded-lg"
+          >
+            {!isOpen ? null : (
+              <div className="bg-white pb-12 rounded-lg">
+                {props.benefit.taskGroups.map((taskList, index) => {
                   return (
                     <div key={index}>
                       <BenefitTasks taskList={taskList} locale={props.locale} />
                     </div>
                   )
                 })}
+              </div>
+            )}
           </div>
         )}
       </div>
