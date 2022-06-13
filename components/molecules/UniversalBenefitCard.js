@@ -36,17 +36,15 @@ export default function UniversalBenefitCard(props) {
   }
 
   return (
-    <div
-      className={`benefit-card pb-6 ${
-        props.benefit.statusCode == StatusCodes.activeAgreement ? 'pt-8' : null
-      }`}
-      id={benefitCardId}
-    >
-      <StatusBadge
-        status={props.benefit.statusCode}
-        programCode={props.benefit.programCode}
-        locale={props.locale}
-      />
+    <div className={`benefit-card pb-6 pt-8`} id={benefitCardId}>
+      {props.benefit.statusCode != StatusCodes.activeAgreement ? (
+        <StatusBadge
+          status={props.benefit.statusCode}
+          programCode={props.benefit.programCode}
+          locale={props.locale}
+        />
+      ) : null}
+
       <div className="px-4 md:px-6 pb-6">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
           <div className="col-span-1 py-4 lg:px-1">
