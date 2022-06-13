@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe } from 'jest-axe'
 import Error503 from '../../pages/503'
 
 describe('503', () => {
@@ -11,6 +11,7 @@ describe('503', () => {
         keywords: 'en + fr keywords',
         description: 'en + fr description',
       }}
+      locale="en"
     />
   )
   it('renders without crashing', () => {
