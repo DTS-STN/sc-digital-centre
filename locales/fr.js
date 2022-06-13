@@ -59,7 +59,7 @@ export default {
   AgreementStatus: {
     title: '(FR)Agreement status:',
     link: '/',
-    linkText: '(FR)View my status and messages +',
+    linkText: '(FR)View my status and messages',
   },
   //
   // Phase banner
