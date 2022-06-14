@@ -12,6 +12,7 @@ import EIDefaultUser from './userDefault/ei.json'
 import SEBDefaultUser from './userDefault/seb.json'
 import CPPTestResult from './tests/cpp.json'
 import CPPDTestResult from './tests/cppd.json'
+import EITestResult from './tests/ei.json'
 
 export const mockData = {
   default: {
@@ -48,5 +49,6 @@ export const mockData = {
   test: {
     CPP: CPPTestResult,
     CPPD: CPPDTestResult,
+    EI: EITestResult,
   },
 }
