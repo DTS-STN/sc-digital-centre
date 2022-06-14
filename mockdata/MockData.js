@@ -10,6 +10,8 @@ import GISDefaultUser from './userDefault/gis.json'
 import CPPDDefaultUser from './userDefault/cppd.json'
 import EIDefaultUser from './userDefault/ei.json'
 import SEBDefaultUser from './userDefault/seb.json'
+import CPPTestResult from './tests/cpp.json'
+import CPPDTestResult from './tests/cppd.json'
 
 export const mockData = {
   default: {
@@ -42,5 +44,9 @@ export const mockData = {
   5: {
     CPPD: undefined,
     EI: undefined,
+  },
+  test: {
+    CPP: CPPTestResult,
+    CPPD: CPPDTestResult,
   },
 }
