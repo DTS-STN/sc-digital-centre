@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1655213460851" clover="3.2.0">
-  <project timestamp="1655213460851" name="All files">
-    <metrics statements="289" coveredstatements="171" conditionals="267" coveredconditionals="122" methods="112" coveredmethods="58" elements="668" coveredelements="351" complexity="0" loc="289" ncloc="289" packages="7" files="44" classes="44"/>
+<coverage generated="1655215855917" clover="3.2.0">
+  <project timestamp="1655215855917" name="All files">
+    <metrics statements="289" coveredstatements="187" conditionals="267" coveredconditionals="122" methods="112" coveredmethods="78" elements="668" coveredelements="387" complexity="0" loc="289" ncloc="289" packages="7" files="44" classes="44"/>
     <package name="components.atoms">
       <metrics statements="48" coveredstatements="43" conditionals="48" coveredconditionals="28" methods="21" coveredmethods="19"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -399,7 +399,7 @@
       </file>
     </package>
     <package name="pages.api.programData">
-      <metrics statements="22" coveredstatements="2" conditionals="6" coveredconditionals="0" methods="24" coveredmethods="3"/>
+      <metrics statements="22" coveredstatements="18" conditionals="6" coveredconditionals="0" methods="24" coveredmethods="23"/>
       <file name="_middleware.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/_middleware.js">
         <metrics statements="4" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -408,40 +408,40 @@
         <line num="12" count="0" type="stmt"/>
       </file>
       <file name="cpp.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/cpp.js">
-        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-        <line num="5" count="1" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="5" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
       <file name="cppd.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/cppd.js">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
       <file name="ei.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/ei.js">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
       <file name="gis.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/gis.js">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
       <file name="oas.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/oas.js">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
       <file name="seb.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/programData/seb.js">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
     </package>
   </project>
