@@ -13,6 +13,7 @@ import SEBDefaultUser from './userDefault/seb.json'
 import CPPTestResult from './tests/cpp.json'
 import CPPDTestResult from './tests/cppd.json'
 import EITestResult from './tests/ei.json'
+import GISTestResult from './tests/gis.json'
 
 export const mockData = {
   default: {
@@ -50,5 +51,6 @@ export const mockData = {
     CPP: CPPTestResult,
     CPPD: CPPDTestResult,
     EI: EITestResult,
+    GIS: GISTestResult,
   },
 }
