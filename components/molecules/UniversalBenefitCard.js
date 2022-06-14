@@ -39,7 +39,12 @@ export default function UniversalBenefitCard(props) {
     <div className={`benefit-card`} id={benefitCardId}>
       {props.benefit.statusCode != StatusCodes.activeAgreement ? (
         <StatusBadge
-          status={t[props.benefit.statusCode]}
+          status={
+            <>
+              <span className="sr-only">{t[props.benefit.programCode]} </span>
+              t[props.benefit.statusCode]
+            </>
+          }
           color={
             props.benefit.statusCode === StatusCodes.inPayment
               ? 'bg-status-inPayment'
