@@ -40,6 +40,7 @@ module.exports = {
           hover: '#0535D2',
           default: '#2B4380',
           pressed: '#16446C',
+          primary: '#26374A',
         },
         'deep-blue': {
           light: '#5E8EBD',
