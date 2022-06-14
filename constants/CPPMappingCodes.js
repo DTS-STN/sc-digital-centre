@@ -34,7 +34,7 @@ export const CPPStatus = [
     status: StatusCodes.inactive,
   },
   {
-    value: 'Recived',
+    value: 'Received',
     status: StatusCodes.applicationReceived,
   },
   {
