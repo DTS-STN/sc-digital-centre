@@ -14,6 +14,7 @@ import CPPTestResult from './tests/cpp.json'
 import CPPDTestResult from './tests/cppd.json'
 import EITestResult from './tests/ei.json'
 import GISTestResult from './tests/gis.json'
+import OASTestResult from './tests/oas.json'
 
 export const mockData = {
   default: {
@@ -52,5 +53,6 @@ export const mockData = {
     CPPD: CPPDTestResult,
     EI: EITestResult,
     GIS: GISTestResult,
+    OAS: OASTestResult,
   },
 }
