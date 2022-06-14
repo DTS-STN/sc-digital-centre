@@ -42,7 +42,7 @@ export default function UniversalBenefitCard(props) {
           status={
             <>
               <span className="sr-only">{t[props.benefit.programCode]} </span>
-              t[props.benefit.statusCode]
+              {t[props.benefit.statusCode]}
             </>
           }
           color={
