@@ -39,9 +39,24 @@ export default function UniversalBenefitCard(props) {
     <div className={`benefit-card`} id={benefitCardId}>
       {props.benefit.statusCode != StatusCodes.activeAgreement ? (
         <StatusBadge
-          status={props.benefit.statusCode}
-          programCode={props.benefit.programCode}
-          locale={props.locale}
+          status={
+            <>
+              <span className="sr-only">{t[props.benefit.programCode]} </span>
+              {t[props.benefit.statusCode]}
+            </>
+          }
+          color={
+            props.benefit.statusCode === StatusCodes.inPayment
+              ? 'bg-green-medium'
+              : props.benefit.statusCode === StatusCodes.benefitUpdate
+              ? 'bg-yellow-medium'
+              : props.benefit.statusCode === StatusCodes.applicationReceived ||
+                props.benefit.statusCode === StatusCodes.decisionSent
+              ? 'bg-brighter-blue-medium'
+              : props.benefit.statusCode == StatusCodes.paymentHold
+              ? 'bg-yellow-medium'
+              : 'bg-gray-medium'
+          }
         />
       ) : null}
       <div className="px-6 pb-6 pt-8">
