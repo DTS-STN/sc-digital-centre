@@ -7,7 +7,7 @@ import DSHeader from './DSHeader'
 expect.extend(toHaveNoViolations)
 
 describe('Design System footer tests', () => {
-  const { container } = render(<DSHeader />)
+  const { container } = render(<DSHeader isAuth={false} />)
   it('renders DSHeader', () => {
     expect(container).toBeTruthy()
   })
