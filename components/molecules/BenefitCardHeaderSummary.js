@@ -59,12 +59,10 @@ export default function BenefitCardHeaderSummary(props) {
     switch (props.summary.type) {
       case SummaryTypes.LatestStatus:
         return (
-          <p className="text-lg">
-            {t.eiMessages[props.summary.status] ?? null}
-          </p>
+          <p className="text-lg">{t.eiMessages[props.summary.extra] ?? null}</p>
         )
       default:
-        return <p className="font-bold">{props.summary.status ?? null}</p>
+        return <p className="font-bold">{props.summary.extra ?? null}</p>
     }
   }
 
