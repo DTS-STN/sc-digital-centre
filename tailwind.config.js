@@ -28,12 +28,12 @@ module.exports = {
         'bright-blue': {
           light: '#78B9E4',
           lighter: '#93D0FF',
-          solid: '#0069AD',
+          medium: '#0069AD',
           dark: '#245C81',
         },
         'brighter-blue': {
           light: '#BDE9EF',
-          solid: '#84D2DC',
+          medium: '#84D2DC',
           dark: '#3BAFBE',
         },
         'blue': {
@@ -43,27 +43,27 @@ module.exports = {
         },
         'deep-blue': {
           light: '#5E8EBD',
-          solid: '#173451',
+          medium: '#173451',
           dark: '#21303F',
         },
         'red': {
           light: '#B76565',
-          solid: '#D94141',
+          medium: '#D94141',
           dark: '#881515',
         },
         'yellow': {
           light: '#FFCB7C',
-          solid: '#FFB84D',
+          medium: '#FFB84D',
           dark: '#E98F07',
         },
         'green': {
           light: '#B0DEA0',
-          solid: '#96D77F',
+          medium: '#96D77F',
           dark: '#61C53E',
         },
         'purple': {
           light: '#9E81CB',
-          solid: '#6D29D5',
+          medium: '#6D29D5',
           dark: '#40216E',
         },
       },

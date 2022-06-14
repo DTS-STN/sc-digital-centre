@@ -17,14 +17,14 @@ export default function StatusBadge(props) {
         }
         ${
           props.status === StatusCodes.inPayment
-            ? 'bg-green-solid'
+            ? 'bg-green-medium'
             : props.status === StatusCodes.benefitUpdate
-            ? 'bg-yellow-solid'
+            ? 'bg-yellow-medium'
             : props.status === StatusCodes.applicationReceived ||
               props.status === StatusCodes.decisionSent
-            ? 'bg-brighter-blue-solid'
+            ? 'bg-brighter-blue-medium'
             : props.status == StatusCodes.paymentHold
-            ? 'bg-yellow-solid'
+            ? 'bg-yellow-medium'
             : 'bg-gray-medium'
         }`}
       >

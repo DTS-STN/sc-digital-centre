@@ -25,7 +25,7 @@ export default function BenefitCardHeaderActive(props) {
         >
           <a className=" cursor-text " href={props.benefit.learnMoreLink}>
             {t.learnMoreAbout}
-            <span className="underline hover:text-bright-blue-solid cursor-pointer whitespace-pre">
+            <span className="underline hover:text-bright-blue-medium cursor-pointer whitespace-pre">
               {getBenefitCardTitle()}
             </span>
           </a>

@@ -14,7 +14,7 @@ export default function Footer(props) {
         <DateModified date={process.env.NEXT_PUBLIC_BUILD_DATE} />
       </div>
       <div className="w-full">
-        <div className="w-full h-auto bg-footer-parliament-image bg-no-repeat bg-right-bottom bg-deep-blue-solid">
+        <div className="w-full h-auto bg-footer-parliament-image bg-no-repeat bg-right-bottom bg-deep-blue-medium">
           <div
             className="py-7 layout-container"
             role="navigation"
