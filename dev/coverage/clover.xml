@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1655297131865" clover="3.2.0">
-  <project timestamp="1655297131865" name="All files">
+<coverage generated="1655300033064" clover="3.2.0">
+  <project timestamp="1655300033064" name="All files">
     <metrics statements="287" coveredstatements="159" conditionals="259" coveredconditionals="116" methods="109" coveredmethods="52" elements="655" coveredelements="327" complexity="0" loc="287" ncloc="287" packages="7" files="44" classes="44"/>
     <package name="components.atoms">
       <metrics statements="47" coveredstatements="42" conditionals="34" coveredconditionals="25" methods="21" coveredmethods="19"/>
@@ -68,7 +68,7 @@
       </file>
       <file name="StatusBadge.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/StatusBadge.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="8" count="4" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
         <line num="20" count="3" type="stmt"/>
       </file>
       <file name="TabList.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/TabList.js">
