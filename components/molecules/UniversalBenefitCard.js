@@ -113,6 +113,7 @@ export default function UniversalBenefitCard(props) {
                     case SummaryTypes.EstimatedDecisionDate:
                     case SummaryTypes.LastPaymentDate:
                     case SummaryTypes.LatestStatusMessage:
+                    case SummaryTypes.TransactionDate:
                       summaryValue = formatDate(summary.value, props.locale)
                       summaryValueClassName = 'text-lg'
                       break
@@ -124,6 +125,7 @@ export default function UniversalBenefitCard(props) {
                       break
                     case SummaryTypes.PresentStatus:
                     case SummaryTypes.NextPaymentDate:
+                    case SummaryTypes.AgreementStatus:
                       summaryValue = summary.value
                       summaryValueClassName = 'text-lg'
                     default:
