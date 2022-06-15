@@ -3,12 +3,6 @@
     "programCode": 32294,
     "benefitCode": 30320,
     "benefitType": "Beneficial",
-    "benefitStatus": "Inactive"
-  },
-  {
-    "programCode": 32294,
-    "benefitCode": 30320,
-    "benefitType": "Beneficial",
     "benefitStatus": "Recived",
     "lastStatusDate": "2022-04-04"
   },
@@ -18,6 +12,16 @@
     "benefitType": "Beneficial",
     "benefitStatus": "Decision",
     "lastStatusDate": "2022-04-04"
+  },
+  {
+    "programCode": 32294,
+    "benefitCode": 30320,
+    "benefitType": "Beneficial",
+    "benefitStatus": "Active",
+    "lastPaymentDate": "2021-02-21",
+    "finalPaymentDate": "2024-02-13",
+    "netAmount": 30.32,
+    "paymentProcessType": "Monthly"
   },
   {
     "programCode": 32294,
@@ -33,10 +37,6 @@
     "programCode": 32294,
     "benefitCode": 30320,
     "benefitType": "Beneficial",
-    "benefitStatus": "Active",
-    "lastPaymentDate": "2021-02-21",
-    "finalPaymentDate": "2024-02-13",
-    "netAmount": 30.32,
-    "paymentProcessType": "Monthly"
+    "benefitStatus": "Inactive"
   }
 ]
