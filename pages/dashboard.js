@@ -204,7 +204,14 @@ export async function getServerSideProps({ req, res, locale, query }) {
     description: 'en + fr description',
   }
 
-  const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
+  //attach query to langToggleLink
+  let langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
+  if (userid) {
+    langToggleLink =
+      locale === 'en'
+        ? '/fr/dashboard?userid=' + userid
+        : '/dashboard?userid=' + userid
+  }
 
   return {
     props: {
