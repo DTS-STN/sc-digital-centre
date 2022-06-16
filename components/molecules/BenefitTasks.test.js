@@ -25,15 +25,15 @@ describe('BenefitTask', () => {
     <BenefitTasks
       locale="en"
       taskList={{
-        header: 'commonActions',
+        header: 'Common actions',
         tasks: [
           {
-            task: 'allPaymentsTask',
+            task: 'View past payments',
             taskIcon: '/images/dashboard/oas-payment-icon.svg',
             taskLink: '/dashboard',
           },
           {
-            task: 'statusUpdateTask',
+            task: 'View my status and messages',
             taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
             taskLink: '/dashboard',
           },
