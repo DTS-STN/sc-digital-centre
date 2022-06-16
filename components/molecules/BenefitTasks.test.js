@@ -29,13 +29,13 @@ describe('BenefitTask', () => {
         tasks: [
           {
             task: 'View past payments',
-            taskIcon: '/images/dashboard/oas-payment-icon.svg',
-            taskLink: '/dashboard',
+            icon: '/images/dashboard/oas-payment-icon.svg',
+            link: '/dashboard',
           },
           {
             task: 'View my status and messages',
-            taskIcon: '/images/dashboard/oas-updates-message-icon.svg',
-            taskLink: '/dashboard',
+            icon: '/images/dashboard/oas-updates-message-icon.svg',
+            link: '/dashboard',
           },
         ],
       }}
