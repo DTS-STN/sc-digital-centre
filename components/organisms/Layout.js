@@ -76,7 +76,6 @@ export default function Layout(props) {
           langToggleLink={props.langToggleLink}
           isAuth={props.isAuth}
           breadCrumbItems={props.breadCrumbItems}
-          data-cy={props.menuProps}
         />
       )}
 

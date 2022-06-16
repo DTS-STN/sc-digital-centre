@@ -34,7 +34,6 @@ export default function DSHeader(props) {
         securityPath: t.securityPath,
         signOutPath: t.signOutPath,
       }}
-      data-cy={props.menuProps}
       searchProps={{
         onChange: function noRefCheck() {},
         onSubmit: function noRefCheck() {},
