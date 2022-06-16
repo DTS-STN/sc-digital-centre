@@ -48,7 +48,7 @@ const BenefitApplicationCard = (props) => {
             <p className="text-xl whitespace-nowrap">{t.learnMoreAbout}</p>
             <a
               href={props.benefitApplication.learnMoreLink}
-              className="text-xl underline hover:text-bright-blue-solid whitespace-pre-wrap"
+              className="text-xl underline hover:text-bright-blue-medium whitespace-pre-wrap"
             >
               {getBenefitNameString()}
             </a>

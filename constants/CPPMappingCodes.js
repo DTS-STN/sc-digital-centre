@@ -2,47 +2,20 @@ import { ProgramCodes } from './ProgramCodes'
 import { TypeCodes } from './ProgramTypeCodes'
 import { StatusCodes } from './StatusCodes'
 
-export const CPPPrograms = [
-  {
-    value: 32294,
-    program: ProgramCodes.CPP,
-  },
-  {
-    value: 32295,
-    program: ProgramCodes.CPPD,
-  },
-]
+export const CPPPrograms = {
+  32294: ProgramCodes.CPP,
+  32295: ProgramCodes.CPPD,
+}
 
-export const CPPTypes = [
-  {
-    value: 'Beneficial',
-    type: TypeCodes.CPPRetirement,
-  },
-  {
-    value: 'Survivor',
-    type: TypeCodes.CPPSurvivor,
-  },
-]
+export const CPPTypes = {
+  Beneficial: TypeCodes.CPPRetirement,
+  Survivor: TypeCodes.CPPSurvivor,
+}
 
-export const CPPStatus = [
-  {
-    value: 'Active',
-    status: StatusCodes.inPayment,
-  },
-  {
-    value: 'Inactive',
-    status: StatusCodes.inactive,
-  },
-  {
-    value: 'Received',
-    status: StatusCodes.applicationReceived,
-  },
-  {
-    value: 'Decision',
-    status: StatusCodes.decisionSent,
-  },
-  {
-    value: 'Hold',
-    status: StatusCodes.paymentHold,
-  },
-]
+export const CPPStatus = {
+  Active: StatusCodes.inPayment,
+  Inactive: StatusCodes.inactive,
+  Received: StatusCodes.applicationReceived,
+  Decision: StatusCodes.decisionSent,
+  Hold: StatusCodes.paymentHold,
+}

@@ -65,7 +65,7 @@ export default function Menu(props) {
           <ActionButton
             id="loginBtn"
             href="/"
-            className="border rounded font-body bg-deep-blue-solid text-white py-1 px-4 xs:px-6 h-10 flex items-center"
+            className="border rounded font-body bg-blue-default text-white py-1 px-4 xs:px-6 h-10 flex items-center"
           >
             {props.loginText}
           </ActionButton>

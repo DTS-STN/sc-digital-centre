@@ -145,7 +145,7 @@ export default function Profile(props) {
         tabSelected={tabSelected}
         containerStyle={'flex flex-wrap border-b border-gray-200'}
         selectedTabStyle={
-          'bg-gray-100 active border-b-2 border-b-bright-blue-lighthover'
+          'bg-gray-100 active border-b-2 border-b-bright-blue-light'
         }
         unselectedTabStyle={
           'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
@@ -160,10 +160,10 @@ export default function Profile(props) {
             onClick={(index) => setProfileTabSelected(index)}
             tabSelected={profileTabSelected}
             containerStyle={'my-4 flex flex-wrap gap-4'}
-            selectedTabStyle={'bg-bright-blue-lighthover'}
+            selectedTabStyle={'bg-bright-blue-lighter'}
             unselectedTabStyle={'bg-gray-lighter'}
             genericTabStyle={
-              'text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighthover '
+              'text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighter '
             }
             locale={props.locale}
           ></TabList>
@@ -183,7 +183,7 @@ export default function Profile(props) {
       ) : null}
 
       <Link href="/dashboard" passHref>
-        <button className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-link-blue-button my-10">
+        <button className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-blue-default my-10">
           {t.backToDashboard}
         </button>
       </Link>

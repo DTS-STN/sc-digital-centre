@@ -188,20 +188,6 @@ const TASKS = {
   },
 }
 
-const SUBMITTED_CPP_ESTIMATE_TASKS = {
-  header: 'estimate',
-  tasks: [TASKS.RetirementIncomeTask],
-}
-
-const SUBMITTED_CPP_CHANGE_TASKS = {
-  header: 'changeTasks',
-  tasks: [
-    TASKS.DelayOasPensionTask,
-    TASKS.GiveConsentTask,
-    TASKS.UpdateAccountInfoTask,
-  ],
-}
-
 const ACTIVE_CPP_PAYMENT_TASKS = {
   header: 'paymentTasks',
   tasks: [
@@ -243,18 +229,6 @@ const INACTIVE_CPPD_TASKS = {
   ],
 }
 
-const SUBMITTED_CPPD_TASKS = [
-  TASKS.AllPaymentsTask,
-  TASKS.StatusUpdateTask,
-  TASKS.TaxSlipTask,
-  TASKS.ReconsiderationTask,
-  TASKS.CppContributionTask,
-  TASKS.TaxDeductionsTask,
-  TASKS.GiveConsentTask,
-  TASKS.UploadMyDocuments,
-  TASKS.UpdateAccountInfoTask,
-]
-
 const ACTIVE_CPPD_PAYMENT_TASKS = {
   header: 'paymentTasks',
   tasks: [
@@ -277,20 +251,6 @@ const ACTIVE_CPPD_CHANGE_TASKS = {
   ],
 }
 
-const SUBMITTED_OAS_TASKS = [
-  TASKS.AllPaymentsTask,
-  TASKS.StatusUpdateTask,
-  TASKS.RetirementIncomeTask,
-  TASKS.CppContributionTask,
-  TASKS.TaxDeductionsTask,
-  TASKS.DelayOasPensionTask,
-  TASKS.GiveConsentTask,
-  TASKS.TaxSlipTask,
-  TASKS.TaxSlipMailingTask,
-  TASKS.ReconsiderationTask,
-  TASKS.UpdateAccountInfoTask,
-]
-
 const ACTIVE_OAS_GIS_PAYMENT_TASKS = {
   header: 'paymentTasks',
   tasks: [
@@ -311,31 +271,6 @@ const ACTIVE_OAS_GIS_CHANGE_TASKS = {
     TASKS.ReconsiderationTask,
   ],
 }
-
-const RECEIVED_OAS_GIS_TASKS = {
-  header: 'commonActions',
-  tasks: [
-    TASKS.RetirementIncomeTask,
-    TASKS.DelayOasPensionTask,
-    TASKS.GiveConsentTask,
-    TASKS.UpdateAccountInfoTask,
-  ],
-}
-
-const SUBMITTED_EI_TASKS = [
-  TASKS.EiStatusUpdateTask,
-  TASKS.CompleteInsuranceReportTask,
-  TASKS.ViewPaymentInfo,
-  TASKS.AccessCode,
-  TASKS.SubmitDocuments,
-  TASKS.ViewDocuments,
-  TASKS.ViewPastClaimsTask,
-  TASKS.SubmitEformsTask,
-  TASKS.TaxSlipTask,
-  TASKS.TaxSlipMailingTask,
-  TASKS.RegisterForAlerts,
-  TASKS.UpdateAccountInfoTask,
-]
 
 const ACTIVE_EI_COMMON_TASKS = {
   header: 'commonActions',
@@ -421,206 +356,149 @@ const ACCOUNT_INFORMATION = {
   tasks: [TASKS.UpdateAccountInfoTask, TASKS.RegisterForAlerts],
 }
 
-const TASK_GROUPS = [
-  {
-    programCode: ProgramCodes.CPP,
-    statusCode: StatusCodes.inactive,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_CPP_TASKS],
+const TASK_GROUPS = {
+  [ProgramCodes.CPP]: {
+    [StatusCodes.inactive]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_CPP_TASKS],
+    },
+    [StatusCodes.applicationReceived]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_CPP_TASKS],
+    },
+    [StatusCodes.decisionSent]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_CPP_TASKS],
+    },
+    [StatusCodes.paymentHold]: {
+      taskHeadingKey: 'paymentsTaxesAccount',
+      tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+    },
+    [StatusCodes.inPayment]: {
+      taskHeadingKey: 'paymentsTaxesAccount',
+      tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+    },
   },
-  {
-    programCode: ProgramCodes.CPP,
-    statusCode: StatusCodes.applicationReceived,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_CPP_TASKS],
+  [ProgramCodes.CPPD]: {
+    [StatusCodes.inPayment]: {
+      taskHeadingKey: 'paymentTasks',
+      tasksGroups: [ACTIVE_CPPD_PAYMENT_TASKS, ACTIVE_CPPD_CHANGE_TASKS],
+    },
+    [StatusCodes.inactive]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_CPPD_TASKS],
+    },
+    [StatusCodes.applicationReceived]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_CPPD_TASKS],
+    },
+    [StatusCodes.decisionSent]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_CPPD_TASKS],
+    },
+    [StatusCodes.paymentHold]: {
+      taskHeadingKey: 'paymentTasks',
+      tasksGroups: [ACTIVE_CPPD_PAYMENT_TASKS, ACTIVE_CPPD_CHANGE_TASKS],
+    },
   },
-  {
-    programCode: ProgramCodes.CPP,
-    statusCode: StatusCodes.decisionSent,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_CPP_TASKS],
+  [ProgramCodes.OAS]: {
+    [StatusCodes.inactive]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_OAS_GIS_TASKS],
+    },
+    [StatusCodes.applicationReceived]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_OAS_GIS_TASKS],
+    },
+    [StatusCodes.decisionSent]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_OAS_GIS_TASKS],
+    },
+    [StatusCodes.paymentHold]: {
+      taskHeadingKey: 'paymentsTaxesAccount',
+      tasksGroups: [ACTIVE_OAS_GIS_PAYMENT_TASKS, ACTIVE_OAS_GIS_CHANGE_TASKS],
+    },
+    [StatusCodes.inPayment]: {
+      taskHeadingKey: 'paymentsTaxesAccount',
+      tasksGroups: [ACTIVE_OAS_GIS_PAYMENT_TASKS, ACTIVE_OAS_GIS_CHANGE_TASKS],
+    },
   },
-  {
-    programCode: ProgramCodes.CPP,
-    statusCode: StatusCodes.paymentHold,
-    taskHeadingKey: 'paymentsTaxesAccount',
-    tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+  [ProgramCodes.GIS]: {
+    [StatusCodes.inactive]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_OAS_GIS_TASKS],
+    },
+    [StatusCodes.applicationReceived]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_OAS_GIS_TASKS],
+    },
+    [StatusCodes.decisionSent]: {
+      taskHeadingKey: 'commonActions',
+      tasksGroups: [INACTIVE_OAS_GIS_TASKS],
+    },
+    [StatusCodes.paymentHold]: {
+      taskHeadingKey: 'paymentsTaxesAccount',
+      tasksGroups: [ACTIVE_OAS_GIS_PAYMENT_TASKS, ACTIVE_OAS_GIS_CHANGE_TASKS],
+    },
+    [StatusCodes.inPayment]: {
+      taskHeadingKey: 'paymentsTaxesAccount',
+      tasksGroups: [ACTIVE_OAS_GIS_PAYMENT_TASKS, ACTIVE_OAS_GIS_CHANGE_TASKS],
+    },
   },
-  {
-    programCode: ProgramCodes.CPP,
-    statusCode: StatusCodes.inPayment,
-    taskHeadingKey: 'paymentsTaxesAccount',
-    tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
+  [ProgramCodes.EI]: {
+    [StatusCodes.inPayment]: {
+      taskHeadingKey: 'commonPaymentsTaxesAccount',
+      tasksGroups: [
+        ACTIVE_EI_COMMON_TASKS,
+        ACTIVE_EI_PAYMENT_TASKS,
+        ACTIVE_EI_DOCS_TASKS,
+        ACCOUNT_INFORMATION,
+      ],
+    },
+    [StatusCodes.benefitUpdate]: {
+      taskHeadingKey: 'commonPaymentsTaxesAccount',
+      tasksGroups: [
+        ACTIVE_EI_COMMON_TASKS,
+        ACTIVE_EI_PAYMENT_TASKS,
+        ACTIVE_EI_DOCS_TASKS,
+        ACCOUNT_INFORMATION,
+      ],
+    },
+    [StatusCodes.applicationReceived]: {
+      taskHeadingKey: 'commonPaymentsTaxesAccount',
+      tasksGroups: [
+        ACTIVE_EI_COMMON_TASKS,
+        ACTIVE_EI_PAYMENT_TASKS,
+        ACTIVE_EI_DOCS_TASKS,
+        ACCOUNT_INFORMATION,
+      ],
+    },
+    [StatusCodes.exhausted]: {
+      taskHeadingKey: 'commonPaymentsTaxesAccount',
+      tasksGroups: [
+        ACTIVE_EI_COMMON_TASKS,
+        ACTIVE_EI_PAYMENT_TASKS,
+        ACTIVE_EI_DOCS_TASKS,
+        ACCOUNT_INFORMATION,
+      ],
+    },
+    [StatusCodes.inactive]: {
+      taskHeadingKey: 'commonPaymentsTaxesAccount',
+      tasksGroups: [INACTIVE_EI_TASKS],
+    },
   },
-  {
-    programCode: ProgramCodes.CPPD,
-    statusCode: StatusCodes.inPayment,
-    taskHeadingKey: 'paymentTasks',
-    tasksGroups: [ACTIVE_CPPD_PAYMENT_TASKS, ACTIVE_CPPD_CHANGE_TASKS],
+  [ProgramCodes.SEB]: {
+    [StatusCodes.activeAgreement]: {
+      taskHeadingKey: 'exploreCommonActions',
+      tasksGroups: [ACTIVE_SEB_TASKS],
+    },
   },
-  {
-    programCode: ProgramCodes.CPPD,
-    statusCode: StatusCodes.inactive,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_CPPD_TASKS],
-  },
-  {
-    programCode: ProgramCodes.CPPD,
-    statusCode: StatusCodes.applicationReceived,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_CPPD_TASKS],
-  },
-  {
-    programCode: ProgramCodes.CPPD,
-    statusCode: StatusCodes.decisionSent,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_CPPD_TASKS],
-  },
-  {
-    programCode: ProgramCodes.CPPD,
-    statusCode: StatusCodes.paymentHold,
-    taskHeadingKey: 'paymentTasks',
-    tasksGroups: [ACTIVE_CPPD_PAYMENT_TASKS, ACTIVE_CPPD_CHANGE_TASKS],
-  },
-  {
-    programCode: ProgramCodes.OAS,
-    statusCode: StatusCodes.inactive,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
-  },
-  {
-    programCode: ProgramCodes.OAS,
-    statusCode: StatusCodes.applicationReceived,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
-  },
-  {
-    programCode: ProgramCodes.OAS,
-    statusCode: StatusCodes.decisionSent,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
-  },
-  {
-    programCode: ProgramCodes.OAS,
-    statusCode: StatusCodes.paymentHold,
-    taskHeadingKey: 'paymentsTaxesAccount',
-    tasksGroups: [ACTIVE_OAS_GIS_PAYMENT_TASKS, ACTIVE_OAS_GIS_CHANGE_TASKS],
-  },
-  {
-    programCode: ProgramCodes.OAS,
-    statusCode: StatusCodes.inPayment,
-    taskHeadingKey: 'paymentsTaxesAccount',
-    tasksGroups: [ACTIVE_OAS_GIS_PAYMENT_TASKS, ACTIVE_OAS_GIS_CHANGE_TASKS],
-  },
-  {
-    programCode: ProgramCodes.GIS,
-    statusCode: StatusCodes.inactive,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
-  },
-  {
-    programCode: ProgramCodes.GIS,
-    statusCode: StatusCodes.applicationReceived,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
-  },
-  {
-    programCode: ProgramCodes.GIS,
-    statusCode: StatusCodes.decisionSent,
-    taskHeadingKey: 'commonActions',
-    tasksGroups: [INACTIVE_OAS_GIS_TASKS],
-  },
-  {
-    programCode: ProgramCodes.GIS,
-    statusCode: StatusCodes.paymentHold,
-    taskHeadingKey: 'paymentsTaxesAccount',
-    tasksGroups: [ACTIVE_OAS_GIS_PAYMENT_TASKS, ACTIVE_OAS_GIS_CHANGE_TASKS],
-  },
-  {
-    programCode: ProgramCodes.GIS,
-    statusCode: StatusCodes.inPayment,
-    taskHeadingKey: 'paymentsTaxesAccount',
-    tasksGroups: [ACTIVE_OAS_GIS_PAYMENT_TASKS, ACTIVE_OAS_GIS_CHANGE_TASKS],
-  },
-  {
-    programCode: ProgramCodes.EI,
-    statusCode: StatusCodes.inPayment,
-    taskHeadingKey: 'commonPaymentsTaxesAccount',
-    tasksGroups: [
-      ACTIVE_EI_COMMON_TASKS,
-      ACTIVE_EI_PAYMENT_TASKS,
-      ACTIVE_EI_DOCS_TASKS,
-      ACCOUNT_INFORMATION,
-    ],
-  },
-  {
-    programCode: ProgramCodes.EI,
-    statusCode: StatusCodes.benefitUpdate,
-    taskHeadingKey: 'commonPaymentsTaxesAccount',
-    tasksGroups: [
-      ACTIVE_EI_COMMON_TASKS,
-      ACTIVE_EI_PAYMENT_TASKS,
-      ACTIVE_EI_DOCS_TASKS,
-      ACCOUNT_INFORMATION,
-    ],
-  },
-  {
-    programCode: ProgramCodes.EI,
-    statusCode: StatusCodes.applicationReceived,
-    taskHeadingKey: 'commonPaymentsTaxesAccount',
-    tasksGroups: [
-      ACTIVE_EI_COMMON_TASKS,
-      ACTIVE_EI_PAYMENT_TASKS,
-      ACTIVE_EI_DOCS_TASKS,
-      ACCOUNT_INFORMATION,
-    ],
-  },
-  {
-    programCode: ProgramCodes.EI,
-    statusCode: StatusCodes.exhausted,
-    taskHeadingKey: 'commonPaymentsTaxesAccount',
-    tasksGroups: [
-      ACTIVE_EI_COMMON_TASKS,
-      ACTIVE_EI_PAYMENT_TASKS,
-      ACTIVE_EI_DOCS_TASKS,
-      ACCOUNT_INFORMATION,
-    ],
-  },
-  {
-    programCode: ProgramCodes.EI,
-    statusCode: StatusCodes.inactive,
-    taskHeadingKey: 'commonPaymentsTaxesAccount',
-    tasksGroups: [INACTIVE_EI_TASKS],
-  },
-  {
-    programCode: ProgramCodes.SEB,
-    statusCode: StatusCodes.activeAgreement,
-    taskHeadingKey: 'exploreCommonActions',
-    tasksGroups: [ACTIVE_SEB_TASKS],
-  },
-]
+}
 
 module.exports = {
   TASK_GROUPS,
-  SUBMITTED_CPP_ESTIMATE_TASKS,
-  SUBMITTED_CPP_CHANGE_TASKS,
-  ACTIVE_CPP_PAYMENT_TASKS,
-  ACTIVE_CPP_CHANGE_TASKS,
-  INACTIVE_CPP_TASKS,
-  SUBMITTED_CPPD_TASKS,
-  SUBMITTED_OAS_TASKS,
-  ACTIVE_OAS_GIS_PAYMENT_TASKS,
-  ACTIVE_OAS_GIS_CHANGE_TASKS,
-  RECEIVED_OAS_GIS_TASKS,
-  INACTIVE_OAS_GIS_TASKS,
-  SUBMITTED_EI_TASKS,
-  ACTIVE_EI_COMMON_TASKS,
-  ACTIVE_EI_PAYMENT_TASKS,
-  ACTIVE_EI_DOCS_TASKS,
-  INACTIVE_EI_TASKS,
   NO_BENEFIT_CPP_TASKS,
   NO_BENEFIT_EI_TASKS,
   NO_BENEFIT_GIS_TASKS,
   NO_BENEFIT_OAS_TASKS,
-  ACTIVE_SEB_TASKS,
 }

@@ -8,6 +8,8 @@ import HorizontalRule from '../atoms/HorizontalRule'
 import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 import { StatusCodes } from '../../constants/StatusCodes'
+import { SummaryTypes } from '../../constants/SummaryTypes'
+import { formatMoney, formatDate } from '../../lib/Utils'
 
 export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -47,15 +49,15 @@ export default function UniversalBenefitCard(props) {
           }
           color={
             props.benefit.statusCode === StatusCodes.inPayment
-              ? 'bg-status-inPayment'
+              ? 'bg-green-medium'
               : props.benefit.statusCode === StatusCodes.benefitUpdate
-              ? 'bg-status-benefitUpdate'
+              ? 'bg-yellow-medium'
               : props.benefit.statusCode === StatusCodes.applicationReceived ||
                 props.benefit.statusCode === StatusCodes.decisionSent
-              ? 'bg-status-applicationReceived'
+              ? 'bg-brighter-blue-medium'
               : props.benefit.statusCode == StatusCodes.paymentHold
-              ? 'bg-status-hold'
-              : 'bg-status-inactive'
+              ? 'bg-yellow-medium'
+              : 'bg-gray-medium'
           }
         />
       ) : null}
@@ -74,7 +76,7 @@ export default function UniversalBenefitCard(props) {
                 <p className="pb-5 text-lg">{t.benefitDurationReached}</p>
                 <a
                   href=""
-                  className="underline text-link-blue-default hover:text-link-blue-hover"
+                  className="underline text-blue-default hover:text-blue-hover"
                 >
                   <img
                     src="/images/dashboard/apply-for-benefit-icon.svg"
@@ -88,11 +90,56 @@ export default function UniversalBenefitCard(props) {
             ) : (
               <ul className="grid col-span-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display">
                 {props.benefit.summaries.map((summary, index) => {
+                  const summaryStatus =
+                    summary.type === SummaryTypes.LatestStatus
+                      ? t.eiMessages[summary.status]
+                      : summary.status
+                  const summaryStatusClassName =
+                    summary.type === SummaryTypes.LatestStatus
+                      ? 'text-lg'
+                      : 'font-bold'
+                  let summaryValue = null
+                  let summaryValueClassName = null
+                  switch (summary.type) {
+                    case SummaryTypes.PaymentAmount:
+                    case SummaryTypes.LastPayment:
+                    case SummaryTypes.LastNetPayment:
+                      summaryValue = formatMoney(summary.value, props.locale)
+                      summaryValueClassName = 'text-3xl'
+                      break
+                    case SummaryTypes.NextPayment:
+                    case SummaryTypes.NextReport:
+                    case SummaryTypes.LatestStatus:
+                    case SummaryTypes.EstimatedDecisionDate:
+                    case SummaryTypes.LastPaymentDate:
+                    case SummaryTypes.LatestStatusMessage:
+                      summaryValue = formatDate(summary.value, props.locale)
+                      summaryValueClassName = 'text-lg'
+                      break
+                    case SummaryTypes.RequestedBenefit:
+                    case SummaryTypes.BenefitAffected:
+                    case SummaryTypes.ActiveBenefit:
+                      summaryValue = t[summary.value]
+                      summaryValueClassName = 'text-lg'
+                      break
+                    case SummaryTypes.PresentStatus:
+                    case SummaryTypes.NextPaymentDate:
+                      summaryValue = summary.value
+                      summaryValueClassName = 'text-lg'
+                    default:
+                      break
+                  }
+
                   return (
                     <BenefitCardHeaderSummary
                       key={index}
-                      locale={props.locale}
-                      summary={summary}
+                      title={t[summary.type].title}
+                      status={summaryStatus}
+                      statusClassName={summaryStatusClassName}
+                      value={summaryValue}
+                      valueClassName={summaryValueClassName}
+                      link={t[summary.type].link}
+                      linkText={t[summary.type].linkText}
                     />
                   )
                 })}
