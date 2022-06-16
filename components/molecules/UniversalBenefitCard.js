@@ -177,10 +177,10 @@ export default function UniversalBenefitCard(props) {
           >
             {!isOpen ? null : (
               <div className="bg-white pb-12 rounded-lg">
-                {props.benefit.taskGroups.map((taskList, index) => {
+                {props.taskGroups.map((taskList, index) => {
                   return (
                     <div key={index}>
-                      <BenefitTasks taskList={taskList} locale={props.locale} />
+                      <BenefitTasks taskList={taskList} />
                     </div>
                   )
                 })}
@@ -199,7 +199,7 @@ UniversalBenefitCard.propTypes = {
     programCode: propTypes.string.isRequired,
     statusCode: propTypes.string.isRequired,
     summaries: propTypes.array,
-    taskGroups: propTypes.array.isRequired,
     taskHeadingKey: propTypes.string.isRequired,
   }),
+  taskGroups: propTypes.array.isRequired,
 }

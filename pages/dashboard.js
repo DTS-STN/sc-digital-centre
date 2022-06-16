@@ -7,6 +7,7 @@ import { getSession } from 'next-auth/react'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { setCookies } from 'cookies-next'
+import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
 
 export default function Dashboard(props) {
   const [advertisingCards, setAdvertisingCards] = useState(
@@ -74,11 +75,15 @@ export default function Dashboard(props) {
         {cppError ?? null}
         {cppBenefit
           ? cppBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
+                  .tasksGroups
               return (
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
                   benefit={value}
+                  taskGroups={tasksGroups}
                 />
               )
             })
@@ -93,6 +98,7 @@ export default function Dashboard(props) {
                   key={index}
                   locale={props.locale}
                   benefit={value}
+                  taskGroups={value.taskGroups}
                 />
               )
             })
@@ -107,6 +113,7 @@ export default function Dashboard(props) {
                   key={index}
                   locale={props.locale}
                   benefit={value}
+                  taskGroups={value.taskGroups}
                 />
               )
             })
@@ -121,6 +128,7 @@ export default function Dashboard(props) {
                   key={index + 3}
                   locale={props.locale}
                   benefit={value}
+                  taskGroups={value.taskGroups}
                 />
               )
             })
@@ -135,6 +143,7 @@ export default function Dashboard(props) {
                   key={index + 3}
                   locale={props.locale}
                   benefit={value}
+                  taskGroups={value.taskGroups}
                 />
               )
             })
@@ -143,7 +152,11 @@ export default function Dashboard(props) {
         {sebLoaded ? null : 'Loading User Benefit Data...'}
         {sebError}
         {sebBenefit ? (
-          <UniversalBenefitCard locale={props.locale} benefit={sebBenefit} />
+          <UniversalBenefitCard
+            locale={props.locale}
+            benefit={sebBenefit}
+            taskGroups={value.taskGroups}
+          />
         ) : null}
 
         {/* application or "advertising" cards */}
