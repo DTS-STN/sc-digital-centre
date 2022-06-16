@@ -93,12 +93,15 @@ export default function Dashboard(props) {
         {cppdError ?? null}
         {cppdBenefit
           ? cppdBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
                   benefit={value}
-                  taskGroups={value.taskGroups}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
                 />
               )
             })
@@ -108,12 +111,15 @@ export default function Dashboard(props) {
         {eiError ?? null}
         {eiBenefit
           ? eiBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
                   benefit={value}
-                  taskGroups={value.taskGroups}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
                 />
               )
             })
@@ -123,12 +129,15 @@ export default function Dashboard(props) {
         {oasError}
         {oasBenefit
           ? oasBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index + 3}
                   locale={props.locale}
                   benefit={value}
-                  taskGroups={value.taskGroups}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
                 />
               )
             })
@@ -138,12 +147,15 @@ export default function Dashboard(props) {
         {gisError}
         {gisBenefit
           ? gisBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index + 3}
                   locale={props.locale}
                   benefit={value}
-                  taskGroups={value.taskGroups}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
                 />
               )
             })
@@ -155,7 +167,16 @@ export default function Dashboard(props) {
           <UniversalBenefitCard
             locale={props.locale}
             benefit={sebBenefit}
-            taskGroups={value.taskGroups}
+            taskHeading={
+              TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][
+                props.locale
+              ].taskHeadingKey
+            }
+            taskGroups={
+              TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][
+                props.locale
+              ].tasksGroups
+            }
           />
         ) : null}
 
