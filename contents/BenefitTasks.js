@@ -1,373 +1,393 @@
 export const BenefitTasks_EN = {
   // general tasks
   UpdateAccountInfoTask: {
-    task: 'updateAccountInfoTask',
+    task: 'Update my account information',
     icon: '/images/dashboard/account-info-icon.svg',
-    link: 'updateAccountInfoTaskLink',
+    link: '/profile',
   },
   TaxSlipTask: {
-    task: 'taxSlipTask',
+    task: 'View my tax slips',
     icon: '/images/dashboard/oas-tax-slip-icon.svg',
-    link: 'taxSlipTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
   },
   TaxSlipMailingTask: {
-    task: 'taxSlipMailingTask',
+    task: 'Update my tax slip delivery options',
     icon: '/images/dashboard/oas-tax-slip-mailing-icon.svg',
-    link: 'taxSlipMailingLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/mailing-option',
   },
   // oas cpp tasks
   AllPaymentsTask: {
-    task: 'allPaymentsTask',
+    task: 'View past payments',
     icon: '/images/dashboard/oas-payment-icon.svg',
-    link: 'allPaymentsTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action',
   },
   StatusUpdateTask: {
-    task: 'statusUpdateTask',
+    task: 'View my status and messages',
     icon: '/images/dashboard/oas-updates-message-icon.svg',
-    link: 'statusUpdateTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action',
   },
   RetirementIncomeTask: {
-    task: 'retirementIncomeTask',
+    task: 'Estimate my retirement income',
     icon: '/images/dashboard/oas-retirement-income-icon.svg',
-    link: 'retirementIncomeTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits',
   },
   ReconsiderationTask: {
-    task: 'reconsiderationTask',
+    task: 'Reconsider my application',
     icon: '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
-    link: 'reconsiderationLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/',
   },
   DelayOasPensionTask: {
-    task: 'delayOasPensionTask',
+    task: 'Delay receiving Old Age Security',
     icon: '/images/dashboard/oas-delay-receiving-pension-icon.svg',
-    link: 'delayOasPensionTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action',
   },
   CppContributionTask: {
-    task: 'cppContributionTask',
+    task: 'View my contributions',
     icon: '/images/dashboard/oas-cpp-contributions-icon.svg',
-    link: 'cppContributionTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
   },
   TaxDeductionsTask: {
-    task: 'taxDeductionsTask',
+    task: 'Ask for tax deductions',
     icon: '/images/dashboard/oas-federal-tax-deductions-icon.svg',
-    link: 'taxDeductionsTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
   },
   GiveConsentTask: {
-    task: 'giveConsentTask',
+    task: 'Give consent for someone to communicate on my behalf',
     icon: '/images/dashboard/oas-consent-icon.svg',
-    link: 'giveConsentTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-consent-to-communicate.action',
   },
   TaxSlipT4aAndNr4Task: {
-    task: 'taxSlipT4aAndNr4Task',
+    task: 'View tax slips, T4A and NR4',
     icon: '/images/dashboard/oas-tax-slip-icon.svg',
-    link: 'taxSlipTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
   },
   UploadMyDocuments: {
-    task: 'uploadMyDocuments',
+    task: 'Upload my documents',
     icon: '/images/dashboard/ei-submit-documents-icon.svg',
-    link: 'uploadMyDocumentsLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/cppd-rpci/doc-upload',
   },
   ApplyForCppDisabilityBenefits: {
-    task: 'applyForCppDisabilityBenefits',
+    task: 'Apply for Canada Pension Plan Disability Benefits',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   ApplyForCppRetirementPensions: {
-    task: 'applyForCppRetirementPensions',
+    task: 'Apply for Canada Pension Plan Retirement Pensions',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   EstimateMyMonthlyCppBenefits: {
-    task: 'estimateMyMonthlyCppBenefits',
+    task: 'Estimate my monthly CPP Benefits',
     icon: '/images/dashboard/oas-retirement-income-icon.svg',
     link: '/dashboard',
   },
   ViewMyCppContributions: {
-    task: 'viewMyCppContributions',
+    task: 'View my CPP Contributions',
     icon: '/images/dashboard/oas-cpp-contributions-icon.svg',
     link: '/dashboard',
   },
   ApplyForCppDeathBenefits: {
-    task: 'applyForCppDeathBenefits',
+    task: 'Apply for Canada Pension Plan Death Benefits',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   ApplyForGuranteedIncomeSupplement: {
-    task: 'applyForGuranteedIncomeSupplement',
+    task: 'Apply For Guranteed Income Supplement',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   ApplyForCppSurvivorsPensionAndChildrensBenefit: {
-    task: 'applyForCppSurvivorsPensionAndChildrensBenefit',
+    task: "Apply For Canada Pension Plan Survivor's Pension and Child(ren)'s Benefit",
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   ApplyForOldAgeSecurity: {
-    task: 'applyForOldAgeSecurity',
+    task: 'Apply For Old Age Security',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   // ei tasks
   EiStatusUpdateTask: {
-    task: 'statusUpdateTask',
+    task: 'View my status and messages',
     icon: '/images/dashboard/oas-updates-message-icon.svg',
-    taskLink: 'eiStatusAndMessages',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-correspondence',
   },
   CompleteInsuranceReportTask: {
-    task: 'completeInsuranceReportTask',
+    task: 'Complete my report',
     icon: '/images/dashboard/ei-insurance-report-icon.svg',
-    taskLink: 'completeInsuranceReportLink',
+    taskLink:
+      'https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service',
   },
   ViewPaymentInfo: {
-    task: 'viewPaymentInfo',
+    task: 'View my past payments',
     icon: '/images/dashboard/ei-view-payment-info-icon.svg',
-    taskLink: 'viewPaymentInfoLink',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
   },
   AccessCode: {
-    task: 'accessCode',
+    task: 'Get my access code',
     icon: '/images/dashboard/ei-access-code.svg',
     taskLink: '/dashboard',
   },
   SubmitDocuments: {
-    task: 'submitDocuments',
+    task: 'Submit documents',
     icon: '/images/dashboard/ei-submit-documents-icon.svg',
-    taskLink: 'eiUploadDocuments',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-doc-upload-instruction',
   },
   ViewDocuments: {
-    task: 'viewDocuments',
+    task: 'View my documents',
     icon: '/images/dashboard/ei-view-documents-icon.svg',
-    taskLink: 'viewDocumentsLink',
+    taskLink: 'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/321',
   },
   ViewLatestClaimTask: {
-    task: 'viewLatestClaimTask',
+    task: 'View my latest claim',
     icon: '/images/dashboard/ei-latest-claim-icon.svg',
-    taskLink: 'viewLatestClaimLink',
+    taskLink: '',
   },
   ViewPastClaimsTask: {
-    task: 'viewPastClaimsTask',
+    task: 'View my past claims',
     icon: '/images/dashboard/ei-past-claims-icon.svg',
-    taskLink: 'viewPastClaimsLink',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6',
   },
   SubmitEformsTask: {
-    task: 'submitEformsTask',
+    task: 'Submit eForms',
     icon: '/images/dashboard/ei-submit-eform-icon.svg',
-    taskLink: 'submitFormsLink',
+    taskLink: 'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/256',
   },
   RegisterForAlerts: {
-    task: 'registerForAlerts',
+    task: 'Register for alert me',
     icon: '/images/dashboard/ei-register-for-alert-icon.svg ',
-    taskLink: 'eiRegisterForAlerts',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/alert-me/confirm?action=confirm&return=ei-landing',
   },
   RecordOfEmployment: {
-    task: 'recordOfEmployment',
+    task: 'View my Records of Employment',
     icon: '/images/dashboard/ei-record-of-employment-icon.svg',
-    taskLink: 'recordOfEmployment',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyRoeList.aspx?prov=6',
   },
   ReportMistake: {
-    task: 'reportMistake',
+    task: 'Report a mistake',
     icon: '/images/dashboard/ei-report-mistake-icon.svg ',
-    taskLink: 'eiReportMistake',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyMessages.aspx?mt=3&prov=6',
   },
   TaxSlipT4eTask: {
-    task: 'taxSlipT4eTask',
+    task: 'View tax slips, T4E',
     icon: '/images/dashboard/oas-tax-slip-icon.svg',
-    taskLink: 'taxSlipTaskLink',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
   },
   ViewPaymentInfoIconWhite: {
-    task: 'viewPaymentInfo',
+    task: 'View my past payments',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
-    taskLink: 'recordOfEmployment',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
   },
   //Seb tasks
   ViewAgreementStatusDetails: {
-    task: 'viewAgreementStatus',
+    task: 'View my agreement status details',
     icon: '/images/dashboard/ei-view-documents-icon.svg',
-    taskLink: 'viewDocumentsLink',
+    taskLink: 'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/321',
   },
 }
 
 export const BenefitTasks_FR = {
   // general tasks
   UpdateAccountInfoTask: {
-    task: 'updateAccountInfoTask',
+    task: 'Mettre à jour les informations de mon compte',
     icon: '/images/dashboard/account-info-icon.svg',
-    link: 'updateAccountInfoTaskLink',
+    link: '/fr/profile',
   },
   TaxSlipTask: {
-    task: 'taxSlipTask',
+    task: "Consulter mes feuillets d'impôts",
     icon: '/images/dashboard/oas-tax-slip-icon.svg',
-    link: 'taxSlipTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
   },
   TaxSlipMailingTask: {
-    task: 'taxSlipMailingTask',
+    task: "Options d’expédition des feuillets d'impôt",
     icon: '/images/dashboard/oas-tax-slip-mailing-icon.svg',
-    link: 'taxSlipMailingLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/mailing-option',
   },
   // oas cpp tasks
   AllPaymentsTask: {
-    task: 'allPaymentsTask',
+    task: 'Consulter mes paiements',
     icon: '/images/dashboard/oas-payment-icon.svg',
-    link: 'allPaymentsTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action',
   },
   StatusUpdateTask: {
-    task: 'statusUpdateTask',
+    task: '(FR)View my status and messages',
     icon: '/images/dashboard/oas-updates-message-icon.svg',
-    link: 'statusUpdateTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action',
   },
   RetirementIncomeTask: {
-    task: 'retirementIncomeTask',
+    task: 'Estimer mon revenue de retraite',
     icon: '/images/dashboard/oas-retirement-income-icon.svg',
-    link: 'retirementIncomeTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits',
   },
   ReconsiderationTask: {
-    task: 'reconsiderationTask',
+    task: 'Faire une demande de révision',
     icon: '/images/dashboard/oas-request-for-reconsideration-icon.svg ',
-    link: 'reconsiderationLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/',
   },
   DelayOasPensionTask: {
-    task: 'delayOasPensionTask',
+    task: 'Reporter le début de ma pension',
     icon: '/images/dashboard/oas-delay-receiving-pension-icon.svg',
-    link: 'delayOasPensionTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action',
   },
   CppContributionTask: {
-    task: 'cppContributionTask',
+    task: 'Consulter mes cotisations',
     icon: '/images/dashboard/oas-cpp-contributions-icon.svg',
-    link: 'cppContributionTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
   },
   TaxDeductionsTask: {
-    task: 'taxDeductionsTask',
+    task: "Demander une retenue d'impôts",
     icon: '/images/dashboard/oas-federal-tax-deductions-icon.svg',
-    link: 'taxDeductionsTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
   },
   GiveConsentTask: {
-    task: 'giveConsentTask',
+    task: 'Autoriser une personne à communiquer en mon nom',
     icon: '/images/dashboard/oas-consent-icon.svg',
-    link: 'giveConsentTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-consent-to-communicate.action',
   },
   TaxSlipT4aAndNr4Task: {
-    task: 'taxSlipT4aAndNr4Task',
+    task: '(FR)View tax slips, T4A and NR4',
     icon: '/images/dashboard/oas-tax-slip-icon.svg',
-    link: 'taxSlipTaskLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
   },
   UploadMyDocuments: {
-    task: 'uploadMyDocuments',
+    task: '(FR)Upload my documents',
     icon: '/images/dashboard/ei-submit-documents-icon.svg',
-    link: 'uploadMyDocumentsLink',
+    link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/cppd-rpci/doc-upload',
   },
   ApplyForCppDisabilityBenefits: {
-    task: 'applyForCppDisabilityBenefits',
+    task: '(FR)Apply for Canada Pension Plan Disability Benefits',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   ApplyForCppRetirementPensions: {
-    task: 'applyForCppRetirementPensions',
+    task: '(FR)Apply for Canada Pension Plan Retirement Pensions',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   EstimateMyMonthlyCppBenefits: {
-    task: 'estimateMyMonthlyCppBenefits',
+    task: '(FR)Estimate my monthly CPP Benefits',
     icon: '/images/dashboard/oas-retirement-income-icon.svg',
     link: '/dashboard',
   },
   ViewMyCppContributions: {
-    task: 'viewMyCppContributions',
+    task: '(FR)View my CPP Contributions',
     icon: '/images/dashboard/oas-cpp-contributions-icon.svg',
     link: '/dashboard',
   },
   ApplyForCppDeathBenefits: {
-    task: 'applyForCppDeathBenefits',
+    task: '(FR)Apply for Canada Pension Plan Death Benefits',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   ApplyForGuranteedIncomeSupplement: {
-    task: 'applyForGuranteedIncomeSupplement',
+    task: '(FR)Apply For Guranteed Income Supplement',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   ApplyForCppSurvivorsPensionAndChildrensBenefit: {
-    task: 'applyForCppSurvivorsPensionAndChildrensBenefit',
+    task: "(FR)Apply For Canada Pension Plan Survivor's Pension and Child(ren)'s Benefit",
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   ApplyForOldAgeSecurity: {
-    task: 'applyForOldAgeSecurity',
+    task: '(FR)Apply For Old Age Security',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
     link: '/dashboard',
   },
   // ei tasks
   EiStatusUpdateTask: {
-    task: 'statusUpdateTask',
+    task: '(FR)View my status and messages',
     icon: '/images/dashboard/oas-updates-message-icon.svg',
-    taskLink: 'eiStatusAndMessages',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-correspondence',
   },
   CompleteInsuranceReportTask: {
-    task: 'completeInsuranceReportTask',
+    task: "Soumettre une déclarations de l'assurance-emploi",
     icon: '/images/dashboard/ei-insurance-report-icon.svg',
-    taskLink: 'completeInsuranceReportLink',
+    taskLink:
+      'https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service',
   },
   ViewPaymentInfo: {
-    task: 'viewPaymentInfo',
+    task: 'Consulter mes paiements',
     icon: '/images/dashboard/ei-view-payment-info-icon.svg',
-    taskLink: 'viewPaymentInfoLink',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
   },
   AccessCode: {
-    task: 'accessCode',
+    task: "Consulter mon code d'accès",
     icon: '/images/dashboard/ei-access-code.svg',
     taskLink: '/dashboard',
   },
   SubmitDocuments: {
-    task: 'submitDocuments',
+    task: 'Soumettre des documents',
     icon: '/images/dashboard/ei-submit-documents-icon.svg',
-    taskLink: 'eiUploadDocuments',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-doc-upload-instruction',
   },
   ViewDocuments: {
-    task: 'viewDocuments',
+    task: 'Consulter mes documents',
     icon: '/images/dashboard/ei-view-documents-icon.svg',
-    taskLink: 'viewDocumentsLink',
+    taskLink: 'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/321',
   },
   ViewLatestClaimTask: {
-    task: 'viewLatestClaimTask',
+    task: 'Consulter ma dernière demande',
     icon: '/images/dashboard/ei-latest-claim-icon.svg',
-    taskLink: 'viewLatestClaimLink',
+    taskLink: '',
   },
   ViewPastClaimsTask: {
-    task: 'viewPastClaimsTask',
+    task: 'Consulter mes demandes antérieures',
     icon: '/images/dashboard/ei-past-claims-icon.svg',
-    taskLink: 'viewPastClaimsLink',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6',
   },
   SubmitEformsTask: {
-    task: 'submitEformsTask',
+    task: 'Soumettre des formulaires électroniques',
     icon: '/images/dashboard/ei-submit-eform-icon.svg',
-    taskLink: 'submitFormsLink',
+    taskLink: 'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/256',
   },
   RegisterForAlerts: {
-    task: 'registerForAlerts',
+    task: "S'inscrire aux alertes",
     icon: '/images/dashboard/ei-register-for-alert-icon.svg ',
-    taskLink: 'eiRegisterForAlerts',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/alert-me/confirm?action=confirm&return=ei-landing',
   },
   RecordOfEmployment: {
-    task: 'recordOfEmployment',
+    task: 'Consulter mes relevés d’emploi',
     icon: '/images/dashboard/ei-record-of-employment-icon.svg',
-    taskLink: 'recordOfEmployment',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyRoeList.aspx?prov=6',
   },
   ReportMistake: {
-    task: 'reportMistake',
+    task: 'Communiquer une erreur',
     icon: '/images/dashboard/ei-report-mistake-icon.svg ',
-    taskLink: 'eiReportMistake',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyMessages.aspx?mt=3&prov=6',
   },
   TaxSlipT4eTask: {
-    task: 'taxSlipT4eTask',
+    task: '(FR)View tax slips, T4E',
     icon: '/images/dashboard/oas-tax-slip-icon.svg',
-    taskLink: 'taxSlipTaskLink',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
   },
   ViewPaymentInfoIconWhite: {
-    task: 'viewPaymentInfo',
+    task: 'Consulter mes paiements',
     icon: '/images/dashboard/apply-for-benefit-icon-white.svg',
-    taskLink: 'recordOfEmployment',
+    taskLink:
+      'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
   },
   //Seb tasks
   ViewAgreementStatusDetails: {
-    task: 'viewAgreementStatus',
+    task: '(FR)View my agreement status details',
     icon: '/images/dashboard/ei-view-documents-icon.svg',
-    taskLink: 'viewDocumentsLink',
+    taskLink: 'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/321',
   },
 }
