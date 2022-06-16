@@ -239,51 +239,51 @@ const TASK_GROUPS = {
   [ProgramCodes.CPP]: {
     [StatusCodes.inactive]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_CPP_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_CPP_TASKS],
       },
     },
     [StatusCodes.applicationReceived]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_CPP_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_CPP_TASKS],
       },
     },
     [StatusCodes.decisionSent]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_CPP_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_CPP_TASKS],
       },
     },
     [StatusCodes.paymentHold]: {
       en: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Payments, taxes, and make a change',
         tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
       },
       fr: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Paiements, impôts, et faire un changement',
         tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
       },
     },
     [StatusCodes.inPayment]: {
       en: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Payments, taxes, and make a change',
         tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
       },
       fr: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Paiements, impôts, et faire un changement',
         tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS, ACTIVE_CPP_CHANGE_TASKS],
       },
     },
@@ -291,51 +291,51 @@ const TASK_GROUPS = {
   [ProgramCodes.CPPD]: {
     [StatusCodes.inactive]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_CPPD_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_CPPD_TASKS],
       },
     },
     [StatusCodes.applicationReceived]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_CPPD_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_CPPD_TASKS],
       },
     },
     [StatusCodes.decisionSent]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_CPPD_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_CPPD_TASKS],
       },
     },
     [StatusCodes.paymentHold]: {
       en: {
-        taskHeadingKey: 'paymentTasks',
+        taskHeadingKey: 'Payments and taxes',
         tasksGroups: [ACTIVE_CPPD_PAYMENT_TASKS, ACTIVE_CPPD_CHANGE_TASKS],
       },
       fr: {
-        taskHeadingKey: 'paymentTasks',
+        taskHeadingKey: 'Paiements et impôts',
         tasksGroups: [ACTIVE_CPPD_PAYMENT_TASKS, ACTIVE_CPPD_CHANGE_TASKS],
       },
     },
     [StatusCodes.inPayment]: {
       en: {
-        taskHeadingKey: 'paymentTasks',
+        taskHeadingKey: 'Payments and taxes',
         tasksGroups: [ACTIVE_CPPD_PAYMENT_TASKS, ACTIVE_CPPD_CHANGE_TASKS],
       },
       fr: {
-        taskHeadingKey: 'paymentTasks',
+        taskHeadingKey: 'Paiements et impôts',
         tasksGroups: [ACTIVE_CPPD_PAYMENT_TASKS, ACTIVE_CPPD_CHANGE_TASKS],
       },
     },
@@ -343,44 +343,44 @@ const TASK_GROUPS = {
   [ProgramCodes.OAS]: {
     [StatusCodes.inactive]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
     },
     [StatusCodes.applicationReceived]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
     },
     [StatusCodes.decisionSent]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
     },
     [StatusCodes.paymentHold]: {
       en: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Payments, taxes, and make a change',
         tasksGroups: [
           ACTIVE_OAS_GIS_PAYMENT_TASKS,
           ACTIVE_OAS_GIS_CHANGE_TASKS,
         ],
       },
       fr: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Paiements, impôts, et faire un changement',
         tasksGroups: [
           ACTIVE_OAS_GIS_PAYMENT_TASKS,
           ACTIVE_OAS_GIS_CHANGE_TASKS,
@@ -389,14 +389,14 @@ const TASK_GROUPS = {
     },
     [StatusCodes.inPayment]: {
       en: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Payments, taxes, and make a change',
         tasksGroups: [
           ACTIVE_OAS_GIS_PAYMENT_TASKS,
           ACTIVE_OAS_GIS_CHANGE_TASKS,
         ],
       },
       fr: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Paiements, impôts, et faire un changement',
         tasksGroups: [
           ACTIVE_OAS_GIS_PAYMENT_TASKS,
           ACTIVE_OAS_GIS_CHANGE_TASKS,
@@ -407,44 +407,44 @@ const TASK_GROUPS = {
   [ProgramCodes.GIS]: {
     [StatusCodes.inactive]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
     },
     [StatusCodes.applicationReceived]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
     },
     [StatusCodes.decisionSent]: {
       en: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Common actions',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonActions',
+        taskHeadingKey: 'Actions courantes',
         tasksGroups: [INACTIVE_OAS_GIS_TASKS],
       },
     },
     [StatusCodes.paymentHold]: {
       en: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Payments, taxes, and make a change',
         tasksGroups: [
           ACTIVE_OAS_GIS_PAYMENT_TASKS,
           ACTIVE_OAS_GIS_CHANGE_TASKS,
         ],
       },
       fr: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Paiements, impôts, et faire un changement',
         tasksGroups: [
           ACTIVE_OAS_GIS_PAYMENT_TASKS,
           ACTIVE_OAS_GIS_CHANGE_TASKS,
@@ -453,14 +453,14 @@ const TASK_GROUPS = {
     },
     [StatusCodes.inPayment]: {
       en: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Payments, taxes, and make a change',
         tasksGroups: [
           ACTIVE_OAS_GIS_PAYMENT_TASKS,
           ACTIVE_OAS_GIS_CHANGE_TASKS,
         ],
       },
       fr: {
-        taskHeadingKey: 'paymentsTaxesAccount',
+        taskHeadingKey: 'Paiements, impôts, et faire un changement',
         tasksGroups: [
           ACTIVE_OAS_GIS_PAYMENT_TASKS,
           ACTIVE_OAS_GIS_CHANGE_TASKS,
@@ -471,7 +471,8 @@ const TASK_GROUPS = {
   [ProgramCodes.EI]: {
     [StatusCodes.inPayment]: {
       en: {
-        taskHeadingKey: 'commonPaymentsTaxesAccount',
+        taskHeadingKey:
+          'Common actions, payments, taxes, reports, and account information',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS,
           ACTIVE_EI_PAYMENT_TASKS,
@@ -480,7 +481,8 @@ const TASK_GROUPS = {
         ],
       },
       fr: {
-        taskHeadingKey: 'commonPaymentsTaxesAccount',
+        taskHeadingKey:
+          'Actions courantes, paiements, impôts, rapports et renseignements personnels',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS,
           ACTIVE_EI_PAYMENT_TASKS,
@@ -491,7 +493,8 @@ const TASK_GROUPS = {
     },
     [StatusCodes.benefitUpdate]: {
       en: {
-        taskHeadingKey: 'commonPaymentsTaxesAccount',
+        taskHeadingKey:
+          'Common actions, payments, taxes, reports, and account information',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS,
           ACTIVE_EI_PAYMENT_TASKS,
@@ -500,7 +503,8 @@ const TASK_GROUPS = {
         ],
       },
       fr: {
-        taskHeadingKey: 'commonPaymentsTaxesAccount',
+        taskHeadingKey:
+          'Actions courantes, paiements, impôts, rapports et renseignements personnels',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS,
           ACTIVE_EI_PAYMENT_TASKS,
@@ -511,7 +515,8 @@ const TASK_GROUPS = {
     },
     [StatusCodes.applicationReceived]: {
       en: {
-        taskHeadingKey: 'commonPaymentsTaxesAccount',
+        taskHeadingKey:
+          'Common actions, payments, taxes, reports, and account information',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS,
           ACTIVE_EI_PAYMENT_TASKS,
@@ -520,7 +525,8 @@ const TASK_GROUPS = {
         ],
       },
       fr: {
-        taskHeadingKey: 'commonPaymentsTaxesAccount',
+        taskHeadingKey:
+          'Actions courantes, paiements, impôts, rapports et renseignements personnels',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS,
           ACTIVE_EI_PAYMENT_TASKS,
@@ -531,7 +537,8 @@ const TASK_GROUPS = {
     },
     [StatusCodes.exhausted]: {
       en: {
-        taskHeadingKey: 'commonPaymentsTaxesAccount',
+        taskHeadingKey:
+          'Common actions, payments, taxes, reports, and account information',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS,
           ACTIVE_EI_PAYMENT_TASKS,
@@ -540,7 +547,8 @@ const TASK_GROUPS = {
         ],
       },
       fr: {
-        taskHeadingKey: 'commonPaymentsTaxesAccount',
+        taskHeadingKey:
+          'Actions courantes, paiements, impôts, rapports et renseignements personnels',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS,
           ACTIVE_EI_PAYMENT_TASKS,
@@ -551,11 +559,13 @@ const TASK_GROUPS = {
     },
     [StatusCodes.inactive]: {
       en: {
-        taskHeadingKey: 'commonPaymentsTaxesAccount',
+        taskHeadingKey:
+          'Common actions, payments, taxes, reports, and account information',
         tasksGroups: [INACTIVE_EI_TASKS],
       },
       fr: {
-        taskHeadingKey: 'commonPaymentsTaxesAccount',
+        taskHeadingKey:
+          'Actions courantes, paiements, impôts, rapports et renseignements personnels',
         tasksGroups: [INACTIVE_EI_TASKS],
       },
     },
@@ -563,11 +573,11 @@ const TASK_GROUPS = {
   [ProgramCodes.SEB]: {
     [StatusCodes.activeAgreement]: {
       en: {
-        taskHeadingKey: 'exploreCommonActions',
+        taskHeadingKey: 'Explore common actions',
         tasksGroups: [ACTIVE_SEB_TASKS],
       },
       fr: {
-        taskHeadingKey: 'exploreCommonActions',
+        taskHeadingKey: 'Explorer les actions courantes',
         tasksGroups: [ACTIVE_SEB_TASKS],
       },
     },
