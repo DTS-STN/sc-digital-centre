@@ -15,7 +15,7 @@ export const CPPTypes = {
 export const CPPStatus = {
   Active: StatusCodes.inPayment,
   Inactive: StatusCodes.inactive,
-  Recived: StatusCodes.applicationReceived,
+  Received: StatusCodes.applicationReceived,
   Decision: StatusCodes.decisionSent,
   Hold: StatusCodes.paymentHold,
 }

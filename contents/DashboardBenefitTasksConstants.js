@@ -452,7 +452,7 @@ const TASK_GROUPS = {
         ACTIVE_EI_COMMON_TASKS,
         ACTIVE_EI_PAYMENT_TASKS,
         ACTIVE_EI_DOCS_TASKS,
-        ACCOUNT_INFORMATION
+        ACCOUNT_INFORMATION,
       ],
     },
     [StatusCodes.benefitUpdate]: {
@@ -461,7 +461,7 @@ const TASK_GROUPS = {
         ACTIVE_EI_COMMON_TASKS,
         ACTIVE_EI_PAYMENT_TASKS,
         ACTIVE_EI_DOCS_TASKS,
-        ACCOUNT_INFORMATION
+        ACCOUNT_INFORMATION,
       ],
     },
     [StatusCodes.applicationReceived]: {
@@ -470,7 +470,7 @@ const TASK_GROUPS = {
         ACTIVE_EI_COMMON_TASKS,
         ACTIVE_EI_PAYMENT_TASKS,
         ACTIVE_EI_DOCS_TASKS,
-        ACCOUNT_INFORMATION
+        ACCOUNT_INFORMATION,
       ],
     },
     [StatusCodes.exhausted]: {
@@ -479,7 +479,7 @@ const TASK_GROUPS = {
         ACTIVE_EI_COMMON_TASKS,
         ACTIVE_EI_PAYMENT_TASKS,
         ACTIVE_EI_DOCS_TASKS,
-        ACCOUNT_INFORMATION
+        ACCOUNT_INFORMATION,
       ],
     },
     [StatusCodes.inactive]: {
