@@ -1,18 +1,37 @@
 /// <reference types="cypress" />
 
-describe('home page loads', () => {
+describe('A11y', () => {
+    it('dashboard page is accessible', () => {
+      cy.checkPageA11y('/dashboard')
+    })
+  });
+
+describe('The dashboard page loads', () => {
     beforeEach(() => {
       cy.visit('/dashboard')
-    //   cy.injectAxe();
+       cy.injectAxe();
     })
   
-    it('displays the home page', () => {
+    it('displays the dashboard page', () => {
         cy.url().should("contains", "/dashboard");
     })
 
- 
+    it("Menu appears on the dashboard page", () => {
+        cy.get('#dropdownNavbarLink').should("be.visible");
+        cy.get('#dropdownNavbarLink').click()
+        cy.checkA11y('#dropdownNavbarLink')
+      })
 
-    it.skip('Has no detectable a11y violations on load', () => {
-        cy.checkA11y()
-    })
+    //   it("Menu > Security links to the profile page", () => {
+    //     cy.get('#dropdownNavbarLink').click()
+    //     cy.get('#dropdownNavbar > :nth-child(2) > .ds-block').should('have.prop', 'href', 'http://localhost:3000/security')
+    //   })
+    
+      it("Menu > Manage Profile links to the profile page", () => {
+        cy.get('#dropdownNavbarLink').click()
+        cy.get('#dropdownNavbar > :nth-child(3) > .ds-block').click()
+        cy.url().should("include", "/profile");
+      })
+
   })
+
