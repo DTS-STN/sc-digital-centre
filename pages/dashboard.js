@@ -243,7 +243,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
   return {
     props: {
       advertisingCards: getAdvertsingCards(),
-      noBenefitCards: getNoBenefitCards(),
+      noBenefitCards: getNoBenefitCards(locale),
       isAuth: true,
       locale,
       langToggleLink,
