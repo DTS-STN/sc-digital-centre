@@ -165,7 +165,7 @@ export default function UniversalBenefitCard(props) {
           }}
           ariaExpanded={isOpen.toString()}
           icon={isOpen}
-          caption={t[props.benefit.taskHeadingKey]}
+          caption={props.taskHeading}
         />
       </h4>
       <div className="flex flex-col">
@@ -199,7 +199,7 @@ UniversalBenefitCard.propTypes = {
     programCode: propTypes.string.isRequired,
     statusCode: propTypes.string.isRequired,
     summaries: propTypes.array,
-    taskHeadingKey: propTypes.string.isRequired,
   }),
+  taskHeading: propTypes.string,
   taskGroups: propTypes.array.isRequired,
 }

@@ -4,7 +4,7 @@ import {
   NO_BENEFIT_GIS_TASKS,
   NO_BENEFIT_OAS_TASKS,
   NO_BENEFIT_EI_TASKS,
-} from './DashboardBenefitTasksConstants'
+} from './BenefitTasksGroups'
 
 const NO_BENEFIT_CPP = {
   benefitType: ProgramCodes.CPP,

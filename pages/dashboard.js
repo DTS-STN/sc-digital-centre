@@ -77,13 +77,13 @@ export default function Dashboard(props) {
           ? cppBenefit.map((value, index) => {
               const tasksGroups =
                 TASK_GROUPS[value.programCode][value.statusCode][props.locale]
-                  .tasksGroups
               return (
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
                   benefit={value}
-                  taskGroups={tasksGroups}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
                 />
               )
             })
