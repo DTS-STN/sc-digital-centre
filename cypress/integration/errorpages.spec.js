@@ -16,8 +16,7 @@ describe('Error page accessibility test', () => {
             {
               runOnly: {
                 type: 'tag',
-                values: ['wcag21a'],
-            values: ['wcag21aa'],
+            values: ['wcag21a','wcag21aa'],
               },
             },
            
