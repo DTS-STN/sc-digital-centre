@@ -49,15 +49,15 @@ export default function UniversalBenefitCard(props) {
           }
           color={
             props.benefit.statusCode === StatusCodes.inPayment
-              ? 'bg-status-inPayment'
+              ? 'bg-green-medium'
               : props.benefit.statusCode === StatusCodes.benefitUpdate
-              ? 'bg-status-benefitUpdate'
+              ? 'bg-yellow-medium'
               : props.benefit.statusCode === StatusCodes.applicationReceived ||
                 props.benefit.statusCode === StatusCodes.decisionSent
-              ? 'bg-status-applicationReceived'
+              ? 'bg-brighter-blue-medium'
               : props.benefit.statusCode == StatusCodes.paymentHold
-              ? 'bg-status-hold'
-              : 'bg-status-inactive'
+              ? 'bg-yellow-medium'
+              : 'bg-gray-medium'
           }
         />
       ) : null}
@@ -76,7 +76,7 @@ export default function UniversalBenefitCard(props) {
                 <p className="pb-5 text-lg">{t.benefitDurationReached}</p>
                 <a
                   href=""
-                  className="underline text-link-blue-default hover:text-link-blue-hover"
+                  className="underline text-blue-default hover:text-blue-hover"
                 >
                   <img
                     src="/images/dashboard/apply-for-benefit-icon.svg"

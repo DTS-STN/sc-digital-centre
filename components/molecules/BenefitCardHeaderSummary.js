@@ -18,7 +18,7 @@ export default function BenefitCardHeaderSummary(props) {
       {props.link ? (
         <a
           href={props.link}
-          className="mt-1 text-link-blue-default underline text-base hover:text-link-blue-hover"
+          className="mt-1 text-blue-default underline text-base hover:text-blue-hover"
         >
           {props.linkText}
         </a>

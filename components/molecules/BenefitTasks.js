@@ -12,7 +12,7 @@ export default function BenefitTasks(props) {
             <li key={index} className="font-display font-bold text-left pb-7">
               <a
                 href={task.link}
-                className="flex underline text-link-blue-default hover:text-link-blue-hover"
+                className="flex underline text-blue-default hover:text-blue-hover"
               >
                 <img src={task.icon} className="h-10" alt="" />
                 <p className="font-normal relative top-2 ml-4">{task.task}</p>
