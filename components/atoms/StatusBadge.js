@@ -31,5 +31,5 @@ StatusBadge.propTypes = {
   /**
    * The status text to be displayed
    */
-  status: propTypes.string,
+  status: propTypes.oneOfType([propTypes.string, propTypes.element]),
 }

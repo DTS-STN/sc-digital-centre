@@ -7,6 +7,7 @@ import { getSession } from 'next-auth/react'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { setCookies } from 'cookies-next'
+import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
 
 export default function Dashboard(props) {
   const [advertisingCards, setAdvertisingCards] = useState(
@@ -74,11 +75,15 @@ export default function Dashboard(props) {
         {cppError ?? null}
         {cppBenefit
           ? cppBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
                   benefit={value}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
                 />
               )
             })
@@ -88,11 +93,15 @@ export default function Dashboard(props) {
         {cppdError ?? null}
         {cppdBenefit
           ? cppdBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
                   benefit={value}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
                 />
               )
             })
@@ -102,11 +111,15 @@ export default function Dashboard(props) {
         {eiError ?? null}
         {eiBenefit
           ? eiBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
                   benefit={value}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
                 />
               )
             })
@@ -116,11 +129,15 @@ export default function Dashboard(props) {
         {oasError}
         {oasBenefit
           ? oasBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index + 3}
                   locale={props.locale}
                   benefit={value}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
                 />
               )
             })
@@ -130,11 +147,15 @@ export default function Dashboard(props) {
         {gisError}
         {gisBenefit
           ? gisBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index + 3}
                   locale={props.locale}
                   benefit={value}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
                 />
               )
             })
@@ -143,7 +164,20 @@ export default function Dashboard(props) {
         {sebLoaded ? null : 'Loading User Benefit Data...'}
         {sebError}
         {sebBenefit ? (
-          <UniversalBenefitCard locale={props.locale} benefit={sebBenefit} />
+          <UniversalBenefitCard
+            locale={props.locale}
+            benefit={sebBenefit}
+            taskHeading={
+              TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][
+                props.locale
+              ].taskHeadingKey
+            }
+            taskGroups={
+              TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][
+                props.locale
+              ].tasksGroups
+            }
+          />
         ) : null}
 
         {/* application or "advertising" cards */}
@@ -209,7 +243,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
   return {
     props: {
       advertisingCards: getAdvertsingCards(),
-      noBenefitCards: getNoBenefitCards(),
+      noBenefitCards: getNoBenefitCards(locale),
       isAuth: true,
       locale,
       langToggleLink,
