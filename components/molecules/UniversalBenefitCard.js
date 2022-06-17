@@ -157,7 +157,6 @@ export default function UniversalBenefitCard(props) {
           onClick={() => {
             const newOpenState = !isOpen
             const idToScrollTo = newOpenState ? taskListId : benefitCardId
-            console.log(idToScrollTo)
             document.getElementById(idToScrollTo).scrollIntoView({
               behavior: 'smooth',
               block: 'start',
