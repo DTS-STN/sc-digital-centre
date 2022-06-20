@@ -167,22 +167,21 @@ export default function UniversalBenefitCard(props) {
           }}
           ariaExpanded={isOpen.toString()}
           icon={isOpen}
-          caption={t[props.benefit.taskHeadingKey]}
+          caption={props.taskHeading}
         />
       </h4>
       <div className="flex flex-col">
-        {props.benefit.taskGroups == null ||
-        props.benefit.taskGroups.length <= 0 ? null : (
+        {props.taskGroups == null || props.taskGroups.length <= 0 ? null : (
           <div
             id={taskListId}
             className="grid bg-gray-lighter sm:grid-cols-1 rounded-lg"
           >
             {!isOpen ? null : (
               <div className="bg-white pb-12 rounded-lg">
-                {props.benefit.taskGroups.map((taskList, index) => {
+                {props.taskGroups.map((taskList, index) => {
                   return (
                     <div key={index}>
-                      <BenefitTasks taskList={taskList} locale={props.locale} />
+                      <BenefitTasks taskList={taskList} />
                     </div>
                   )
                 })}
@@ -201,7 +200,7 @@ UniversalBenefitCard.propTypes = {
     programCode: propTypes.string.isRequired,
     statusCode: propTypes.string.isRequired,
     summaries: propTypes.array,
-    taskGroups: propTypes.array.isRequired,
-    taskHeadingKey: propTypes.string.isRequired,
   }),
+  taskHeading: propTypes.string,
+  taskGroups: propTypes.array.isRequired,
 }

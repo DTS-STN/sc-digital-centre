@@ -11,7 +11,7 @@ describe('Dashboard', () => {
   const { container } = render(
     <Dashboard
       advertisingCards={getAdvertsingCards()}
-      noBenefitCards={getNoBenefitCards()}
+      noBenefitCards={getNoBenefitCards('en')}
       metadata={{
         title: 'Digital Centre (en) + Digital Centre (fr)',
         keywords: 'en + fr keywords',
