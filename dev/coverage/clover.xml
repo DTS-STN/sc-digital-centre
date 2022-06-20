@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1655473522232" clover="3.2.0">
-  <project timestamp="1655473522232" name="All files">
-    <metrics statements="291" coveredstatements="180" conditionals="257" coveredconditionals="118" methods="109" coveredmethods="76" elements="657" coveredelements="374" complexity="0" loc="291" ncloc="291" packages="7" files="44" classes="44"/>
+<coverage generated="1655733223764" clover="3.2.0">
+  <project timestamp="1655733223764" name="All files">
+    <metrics statements="291" coveredstatements="180" conditionals="259" coveredconditionals="118" methods="109" coveredmethods="76" elements="659" coveredelements="374" complexity="0" loc="291" ncloc="291" packages="7" files="44" classes="44"/>
     <package name="components.atoms">
       <metrics statements="47" coveredstatements="42" conditionals="34" coveredconditionals="25" methods="21" coveredmethods="19"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -89,7 +89,7 @@
       </file>
     </package>
     <package name="components.molecules">
-      <metrics statements="94" coveredstatements="63" conditionals="111" coveredconditionals="57" methods="31" coveredmethods="22"/>
+      <metrics statements="94" coveredstatements="63" conditionals="113" coveredconditionals="57" methods="31" coveredmethods="22"/>
       <file name="BenefitApplicationCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitApplicationCard.js">
         <metrics statements="11" coveredstatements="11" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
         <line num="8" count="2" type="stmt"/>
@@ -189,7 +189,7 @@
         <line num="6" count="3" type="stmt"/>
       </file>
       <file name="UniversalBenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/UniversalBenefitCard.js">
-        <metrics statements="32" coveredstatements="9" conditionals="47" coveredconditionals="10" methods="5" coveredmethods="2"/>
+        <metrics statements="32" coveredstatements="9" conditionals="49" coveredconditionals="10" methods="5" coveredmethods="2"/>
         <line num="15" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="16" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
@@ -202,26 +202,26 @@
         <line num="98" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="101" count="0" type="stmt"/>
         <line num="102" count="0" type="stmt"/>
-        <line num="103" count="0" type="cond" truecount="0" falsecount="15"/>
+        <line num="103" count="0" type="cond" truecount="0" falsecount="17"/>
         <line num="107" count="0" type="stmt"/>
         <line num="108" count="0" type="stmt"/>
         <line num="109" count="0" type="stmt"/>
-        <line num="116" count="0" type="stmt"/>
         <line num="117" count="0" type="stmt"/>
         <line num="118" count="0" type="stmt"/>
-        <line num="122" count="0" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
         <line num="123" count="0" type="stmt"/>
         <line num="124" count="0" type="stmt"/>
-        <line num="127" count="0" type="stmt"/>
-        <line num="128" count="0" type="stmt"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="129" count="0" type="stmt"/>
         <line num="130" count="0" type="stmt"/>
-        <line num="133" count="0" type="stmt"/>
-        <line num="158" count="0" type="stmt"/>
-        <line num="159" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="135" count="0" type="stmt"/>
         <line num="160" count="0" type="stmt"/>
-        <line num="164" count="0" type="stmt"/>
-        <line num="180" count="0" type="stmt"/>
-        <line num="195" count="2" type="stmt"/>
+        <line num="161" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="162" count="0" type="stmt"/>
+        <line num="166" count="0" type="stmt"/>
+        <line num="182" count="0" type="stmt"/>
+        <line num="197" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.organisms">
