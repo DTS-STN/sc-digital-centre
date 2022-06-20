@@ -1,9 +1,12 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import Profile, { getStaticProps } from '../../pages/profile'
+import Profile, { getServerSideProps } from '../../pages/profile'
+import { GetSession } from '../../lib/Auth'
 
 expect.extend(toHaveNoViolations)
+require('jest-fetch-mock')
+jest.mock('../../lib/Auth')
 
 describe('Profile', () => {
   const { container } = render(<Profile metadata={{}} />)
@@ -17,8 +20,10 @@ describe('Profile', () => {
     expect(results).toHaveNoViolations()
   })
 
-  it('returns static props', async () => {
-    const result = await getStaticProps({ locale: 'en' })
+  it('returns props', async () => {
+    GetSession.mockReturnValueOnce({ username: 'test' })
+
+    const result = await getServerSideProps({ req: {}, locale: 'en' })
     expect(result.props).toBeTruthy()
     expect(result.props.locale).toBe('en')
     expect(result.props.langToggleLink).toBe('/fr/profile')
@@ -26,8 +31,10 @@ describe('Profile', () => {
     expect(result.props.breadCrumbItems).toHaveLength(1)
   })
 
-  it('returns static french props', async () => {
-    const result = await getStaticProps({ locale: 'fr' })
+  it('returns french props', async () => {
+    GetSession.mockReturnValueOnce({ username: 'test' })
+
+    const result = await getServerSideProps({ locale: 'fr' })
     expect(result.props).toBeTruthy()
     expect(result.props.locale).toBe('fr')
     expect(result.props.langToggleLink).toBe('/profile')
