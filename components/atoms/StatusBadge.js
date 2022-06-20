@@ -11,6 +11,9 @@ export default function StatusBadge(props) {
         className={`font-medium font-display text-black text-lg px-5 py-1 w-full sm:w-1/3 sm:mr-14 rounded-t-lg sm:rounded-t-none sm:rounded-b-lg 
         ${props.color} `}
       >
+        {props.srDescription ? (
+          <span className="sr-only">{props.srDescription} </span>
+        ) : null}
         {props.status}
       </h2>
     </div>
@@ -22,14 +25,19 @@ StatusBadge.propTypes = {
    * color to apply class for color to badge
    */
   color: propTypes.oneOf([
-    'bg-status-inPayment',
-    'bg-status-benefitUpdate',
-    'bg-status-applicationReceived',
-    'bg-status-hold',
-    'bg-status-inactive',
+    'bg-green-medium',
+    'bg-yellow-medium',
+    'bg-brighter-blue-medium',
+    'bg-gray-medium',
   ]),
+
   /**
    * The status text to be displayed
    */
-  status: propTypes.oneOfType([propTypes.string, propTypes.element]),
+  status: propTypes.string.isRequired,
+
+  /**
+   * The screen reader description
+   */
+  srDescription: propTypes.string,
 }

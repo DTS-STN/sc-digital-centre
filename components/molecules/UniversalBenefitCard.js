@@ -15,37 +15,18 @@ import CardHeader from '../atoms/CardHeader'
 export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr
   const [isOpen, setIsOpen] = useState(false)
-  const benefitUniqueId =
-    props.benefit.programCode +
-    '-' +
-    props.benefit.typeCode +
-    '-' +
-    props.benefit.statusCode
-  const benefitCardId = 'benefit-card-' + benefitUniqueId
-  const taskListId = 'task-list-' + benefitUniqueId
+
+  const benefitUniqueId = `${props.benefit.programCode}-${props.benefit.typeCode}-${props.benefit.statusCode}`
+  const benefitCardId = `benefit-card-${benefitUniqueId}`
+  const taskListId = `task-list-${benefitUniqueId}`
 
   return (
     <div className={`benefit-card`} id={benefitCardId}>
       {props.benefit.statusCode != StatusCodes.activeAgreement ? (
         <StatusBadge
-          status={
-            <>
-              <span className="sr-only">{t[props.benefit.programCode]} </span>
-              {t[props.benefit.statusCode]}
-            </>
-          }
-          color={
-            props.benefit.statusCode === StatusCodes.inPayment
-              ? 'bg-green-medium'
-              : props.benefit.statusCode === StatusCodes.benefitUpdate
-              ? 'bg-yellow-medium'
-              : props.benefit.statusCode === StatusCodes.applicationReceived ||
-                props.benefit.statusCode === StatusCodes.decisionSent
-              ? 'bg-brighter-blue-medium'
-              : props.benefit.statusCode == StatusCodes.paymentHold
-              ? 'bg-yellow-medium'
-              : 'bg-gray-medium'
-          }
+          status={props.statusBadge.status}
+          srDescription={props.statusBadge.srDescription}
+          color={props.statusBadge.color}
         />
       ) : null}
       <div className="px-6 pb-6 pt-8">
@@ -185,6 +166,11 @@ UniversalBenefitCard.propTypes = {
   locale: propTypes.string.isRequired,
   program: propTypes.string.isRequired,
   summary: propTypes.string.isRequired,
+  statusBadge: propTypes.shape({
+    status: propTypes.string.isRequired,
+    srDescription: propTypes.string,
+    color: propTypes.string.isRequired,
+  }),
   benefit: propTypes.shape({
     programCode: propTypes.string.isRequired,
     statusCode: propTypes.string.isRequired,

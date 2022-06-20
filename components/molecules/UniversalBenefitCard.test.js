@@ -21,6 +21,9 @@ describe('UniversalBenefitCard', () => {
   const { container } = render(
     <UniversalBenefitCard
       locale="en"
+      program="CPP"
+      summary="summary"
+      statusBadge={{ status: 'In Payment', color: 'bg-green-medium' }}
       benefit={benefit}
       taskHeading={tasksGroups.taskHeadingKey}
       taskGroups={tasksGroups.tasksGroups}

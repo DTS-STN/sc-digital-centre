@@ -10,6 +10,7 @@ import { setCookies } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
 import en from '../locales/en'
 import fr from '../locales/fr'
+import { StatusColors } from '../constants/StatusCodes'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -87,6 +88,11 @@ export default function Dashboard(props) {
                   locale={props.locale}
                   program={t[value.programCode]}
                   summary={t.summary}
+                  statusBadge={{
+                    status: t[value.statusCode],
+                    srDescription: t[value.programCode],
+                    color: StatusColors[value.statusCode],
+                  }}
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
@@ -107,6 +113,11 @@ export default function Dashboard(props) {
                   locale={props.locale}
                   program={t[value.programCode]}
                   summary={t.summary}
+                  statusBadge={{
+                    status: t[value.statusCode],
+                    srDescription: t[value.programCode],
+                    color: StatusColors[value.statusCode],
+                  }}
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
@@ -127,6 +138,11 @@ export default function Dashboard(props) {
                   locale={props.locale}
                   program={t[value.programCode]}
                   summary={t.summary}
+                  statusBadge={{
+                    status: t[value.statusCode],
+                    srDescription: t[value.programCode],
+                    color: StatusColors[value.statusCode],
+                  }}
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
@@ -147,6 +163,11 @@ export default function Dashboard(props) {
                   locale={props.locale}
                   program={t[value.programCode]}
                   summary={t.summary}
+                  statusBadge={{
+                    status: t[value.statusCode],
+                    srDescription: t[value.programCode],
+                    color: StatusColors[value.statusCode],
+                  }}
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
@@ -167,6 +188,11 @@ export default function Dashboard(props) {
                   locale={props.locale}
                   program={t[value.programCode]}
                   summary={t.summary}
+                  statusBadge={{
+                    status: t[value.statusCode],
+                    srDescription: t[value.programCode],
+                    color: StatusColors[value.statusCode],
+                  }}
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
@@ -182,6 +208,11 @@ export default function Dashboard(props) {
             locale={props.locale}
             program={t[sebBenefit.programCode]}
             summary={t.summary}
+            statusBadge={{
+              status: t[sebBenefit.statusCode],
+              srDescription: t[sebBenefit.programCode],
+              color: StatusColors[sebBenefit.statusCode],
+            }}
             benefit={sebBenefit}
             taskHeading={
               TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][
