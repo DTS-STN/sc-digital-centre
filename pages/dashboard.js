@@ -3,11 +3,11 @@ import BenefitApplicationCard from '../components/molecules/BenefitApplicationCa
 import Greeting from '../components/molecules/Greeting'
 import { getNoBenefitCards } from '../contents/NoBenefitCards'
 import { getAdvertsingCards } from '../contents/BenefitAdvertisingCards'
-import { getSession } from 'next-auth/react'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { setCookies } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
+import { UnauthenticatedRedirect, GetSession } from '../lib/Auth'
 
 export default function Dashboard(props) {
   const [advertisingCards, setAdvertisingCards] = useState(
@@ -210,27 +210,11 @@ export default function Dashboard(props) {
 }
 
 export async function getServerSideProps({ req, res, locale, query }) {
-  let isAuth = false
+  const authSession = await GetSession(req)
+  if (!authSession) return UnauthenticatedRedirect()
 
   const { userid } = query
   setCookies('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
-
-  if (
-    !process.env.AUTH_DISABLED ||
-    process.env.AUTH_DISABLED.toLowerCase() !== 'true'
-  ) {
-    const session = await getSession({ req })
-    isAuth = session ? true : false
-
-    if (!isAuth) {
-      return {
-        redirect: {
-          permanent: false,
-          destination: '/api/auth/signin',
-        },
-      }
-    }
-  }
 
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',

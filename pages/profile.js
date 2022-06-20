@@ -192,6 +192,9 @@ export default function Profile(props) {
 }
 
 export async function getStaticProps({ locale }) {
+  const authSession = await GetSession(req)
+  if (!authSession) return UnauthenticatedRedirect()
+
   const langToggleLink = locale === 'en' ? '/fr/profile' : '/profile'
   const t = locale === 'en' ? en : fr
 
