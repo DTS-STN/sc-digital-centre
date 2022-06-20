@@ -4,12 +4,10 @@ import Layout from '../components/organisms/Layout'
 import { useRouter } from 'next/router'
 
 export default function MyApp({ Component, pageProps }) {
-  const router = useRouter()
+  let router = useRouter()
+  router ??= {}
   let langToggleLink =
-    pageProps.locale === 'en' ? '/fr' + router.pathname : router.pathname
-  if (router.query.userid) {
-    langToggleLink += '?userid=' + router.query.userid
-  }
+    pageProps.locale === 'en' ? '/fr' + router.asPath : router.asPath
   return (
     <Layout
       locale={pageProps.locale}
