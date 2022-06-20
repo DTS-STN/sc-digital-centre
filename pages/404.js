@@ -13,7 +13,6 @@ export default function Error404(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  const langToggleLink = locale === 'en' ? '/fr/404' : '/404'
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
@@ -23,6 +22,6 @@ export async function getStaticProps({ locale }) {
     hideDSFooter: true,
   }
   return {
-    props: { locale, langToggleLink, metadata, display },
+    props: { locale, metadata, display },
   }
 }

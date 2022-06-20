@@ -27,12 +27,10 @@ describe('503', () => {
     expect(returned.props).toBeTruthy()
     const props = returned.props
     expect(props.locale).toBe('en')
-    expect(props.langToggleLink).toBe('/fr/503')
     expect(props.metadata.title).toBeTruthy()
   })
   it('generates static Props for French', async () => {
     const returned = await getStaticProps({ locale: 'fr' })
     expect(returned.props.locale).toBe('fr')
-    expect(returned.props.langToggleLink).toBe('/503')
   })
 })

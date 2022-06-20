@@ -192,7 +192,6 @@ export default function Profile(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  const langToggleLink = locale === 'en' ? '/fr/profile' : '/profile'
   const t = locale === 'en' ? en : fr
 
   const metadata = {
@@ -211,7 +210,6 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       locale,
-      langToggleLink,
       metadata,
       isAuth: true,
       breadCrumbItems,

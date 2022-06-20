@@ -310,15 +310,12 @@ export async function getServerSideProps({ req, res, locale, query }) {
     description: 'en + fr description',
   }
 
-  const langToggleLink = locale === 'en' ? '/fr/dashboard' : '/dashboard'
-
   return {
     props: {
       advertisingCards: getAdvertsingCards(),
       noBenefitCards: getNoBenefitCards(locale),
       isAuth: true,
       locale,
-      langToggleLink,
       metadata,
     },
   }
