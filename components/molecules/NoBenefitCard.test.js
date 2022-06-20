@@ -2,15 +2,15 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import NoBenefitCard from './NoBenefitCard'
-import { NO_BENEFIT_EI_TASKS } from '../../contents/DashboardBenefitTasksConstants'
+import { NO_BENEFIT_EI_TASKS_EN } from '../../contents/BenefitTasksGroups'
 import en from '../../locales/en'
 
 const NO_BENEFIT_EI = {
   benefitType: 'ei',
   learnMoreLink: '',
   taskList: {
-    header: 'commonActions',
-    tasks: NO_BENEFIT_EI_TASKS,
+    header: 'Common actions',
+    tasks: NO_BENEFIT_EI_TASKS_EN,
   },
 }
 

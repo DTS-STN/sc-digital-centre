@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { axe } from 'jest-axe'
-import Error400 from '../../pages/400'
+import Error400, { getStaticProps } from '../../pages/400'
 
 describe('400', () => {
   const { container } = render(
@@ -20,5 +20,19 @@ describe('400', () => {
   it('has no a11y violations', async () => {
     const results = await axe(container)
     expect(results).toHaveNoViolations
+  })
+
+  it('generates static Props in english', async () => {
+    const returned = await getStaticProps({ locale: 'en' })
+    expect(returned.props).toBeTruthy()
+    const props = returned.props
+    expect(props.locale).toBe('en')
+    expect(props.langToggleLink).toBe('/fr/400')
+    expect(props.metadata.title).toBeTruthy()
+  })
+  it('generates static Props for French', async () => {
+    const returned = await getStaticProps({ locale: 'fr' })
+    expect(returned.props.locale).toBe('fr')
+    expect(returned.props.langToggleLink).toBe('/400')
   })
 })

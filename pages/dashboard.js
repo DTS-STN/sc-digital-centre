@@ -7,8 +7,15 @@ import { getSession } from 'next-auth/react'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { setCookies } from 'cookies-next'
+import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
+import en from '../locales/en'
+import fr from '../locales/fr'
+import { StatusColors, StatusCodes } from '../constants/StatusCodes'
+import { MapSummary } from '../lib/mapSummaries'
 
 export default function Dashboard(props) {
+  const t = props.locale === 'en' ? en : fr
+
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
   )
@@ -74,11 +81,26 @@ export default function Dashboard(props) {
         {cppError ?? null}
         {cppBenefit
           ? cppBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
-                  benefit={value}
+                  program={t[value.programCode]}
+                  summary={t.summary}
+                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
+                  statusBadge={{
+                    status: t[value.statusCode],
+                    srDescription: t[value.programCode],
+                    color: StatusColors[value.statusCode],
+                    hidden: value.statusCode === StatusCodes.activeAgreement,
+                  }}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
+                  benefitDurationReached={t.benefitDurationReached}
+                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
+                  summaries={MapSummary(value.summaries, t, props.locale)}
                 />
               )
             })
@@ -88,11 +110,26 @@ export default function Dashboard(props) {
         {cppdError ?? null}
         {cppdBenefit
           ? cppdBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
-                  benefit={value}
+                  program={t[value.programCode]}
+                  summary={t.summary}
+                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
+                  statusBadge={{
+                    status: t[value.statusCode],
+                    srDescription: t[value.programCode],
+                    color: StatusColors[value.statusCode],
+                    hidden: value.statusCode === StatusCodes.activeAgreement,
+                  }}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
+                  benefitDurationReached={t.benefitDurationReached}
+                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
+                  summaries={MapSummary(value.summaries, t, props.locale)}
                 />
               )
             })
@@ -102,11 +139,26 @@ export default function Dashboard(props) {
         {eiError ?? null}
         {eiBenefit
           ? eiBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
-                  benefit={value}
+                  program={t[value.programCode]}
+                  summary={t.summary}
+                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
+                  statusBadge={{
+                    status: t[value.statusCode],
+                    srDescription: t[value.programCode],
+                    color: StatusColors[value.statusCode],
+                    hidden: value.statusCode === StatusCodes.activeAgreement,
+                  }}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
+                  benefitDurationReached={t.benefitDurationReached}
+                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
+                  summaries={MapSummary(value.summaries, t, props.locale)}
                 />
               )
             })
@@ -116,11 +168,26 @@ export default function Dashboard(props) {
         {oasError}
         {oasBenefit
           ? oasBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index + 3}
                   locale={props.locale}
-                  benefit={value}
+                  program={t[value.programCode]}
+                  summary={t.summary}
+                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
+                  statusBadge={{
+                    status: t[value.statusCode],
+                    srDescription: t[value.programCode],
+                    color: StatusColors[value.statusCode],
+                    hidden: value.statusCode === StatusCodes.activeAgreement,
+                  }}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
+                  benefitDurationReached={t.benefitDurationReached}
+                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
+                  summaries={MapSummary(value.summaries, t, props.locale)}
                 />
               )
             })
@@ -130,11 +197,26 @@ export default function Dashboard(props) {
         {gisError}
         {gisBenefit
           ? gisBenefit.map((value, index) => {
+              const tasksGroups =
+                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
               return (
                 <UniversalBenefitCard
                   key={index + 3}
                   locale={props.locale}
-                  benefit={value}
+                  program={t[value.programCode]}
+                  summary={t.summary}
+                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
+                  statusBadge={{
+                    status: t[value.statusCode],
+                    srDescription: t[value.programCode],
+                    color: StatusColors[value.statusCode],
+                    hidden: value.statusCode === StatusCodes.activeAgreement,
+                  }}
+                  taskHeading={tasksGroups.taskHeadingKey}
+                  taskGroups={tasksGroups.tasksGroups}
+                  benefitDurationReached={t.benefitDurationReached}
+                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
+                  summaries={MapSummary(value.summaries, t, props.locale)}
                 />
               )
             })
@@ -143,7 +225,31 @@ export default function Dashboard(props) {
         {sebLoaded ? null : 'Loading User Benefit Data...'}
         {sebError}
         {sebBenefit ? (
-          <UniversalBenefitCard locale={props.locale} benefit={sebBenefit} />
+          <UniversalBenefitCard
+            locale={props.locale}
+            program={t[sebBenefit.programCode]}
+            summary={t.summary}
+            benefitUniqueId={`${sebBenefit.programCode}-${sebBenefit.typeCode}-${sebBenefit.statusCode}`}
+            statusBadge={{
+              status: t[sebBenefit.statusCode],
+              srDescription: t[sebBenefit.programCode],
+              color: StatusColors[sebBenefit.statusCode],
+              hidden: sebBenefit.statusCode === StatusCodes.activeAgreement,
+            }}
+            taskHeading={
+              TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][
+                props.locale
+              ].taskHeadingKey
+            }
+            taskGroups={
+              TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][
+                props.locale
+              ].tasksGroups
+            }
+            benefitDurationReached={t.benefitDurationReached}
+            applyForProgram={`${t.applyFor} ${t[sebBenefit.programCode]}`}
+            summaries={MapSummary(sebBenefit.summaries, t, props.locale)}
+          />
         ) : null}
 
         {/* application or "advertising" cards */}
@@ -207,7 +313,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
   return {
     props: {
       advertisingCards: getAdvertsingCards(),
-      noBenefitCards: getNoBenefitCards(),
+      noBenefitCards: getNoBenefitCards(locale),
       isAuth: true,
       locale,
       metadata,

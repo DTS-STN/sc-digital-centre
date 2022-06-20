@@ -3,7 +3,7 @@
  */
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Error404 from '../../pages/404'
+import Error404, { getStaticProps } from '../../pages/404'
 import { axe } from 'jest-axe'
 
 describe('404', () => {
@@ -25,5 +25,19 @@ describe('404', () => {
   it('has no a11y violations', async () => {
     const results = await axe(container)
     expect(results).toHaveNoViolations
+  })
+
+  it('generates static Props', async () => {
+    const returned = await getStaticProps({ locale: 'en' })
+    expect(returned.props).toBeTruthy()
+    const props = returned.props
+    expect(props.locale).toBe('en')
+    expect(props.langToggleLink).toBe('/fr/404')
+    expect(props.metadata.title).toBeTruthy()
+  })
+  it('generates static Props for French', async () => {
+    const returned = await getStaticProps({ locale: 'fr' })
+    expect(returned.props.locale).toBe('fr')
+    expect(returned.props.langToggleLink).toBe('/404')
   })
 })
