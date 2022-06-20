@@ -8,8 +8,12 @@ import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { setCookies } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
+import en from '../locales/en'
+import fr from '../locales/fr'
 
 export default function Dashboard(props) {
+  const t = props.locale === 'en' ? en : fr
+
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
   )
@@ -81,6 +85,8 @@ export default function Dashboard(props) {
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
+                  program={t[value.programCode]}
+                  summary={t.summary}
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
@@ -99,6 +105,8 @@ export default function Dashboard(props) {
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
+                  program={t[value.programCode]}
+                  summary={t.summary}
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
@@ -117,6 +125,8 @@ export default function Dashboard(props) {
                 <UniversalBenefitCard
                   key={index}
                   locale={props.locale}
+                  program={t[value.programCode]}
+                  summary={t.summary}
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
@@ -135,6 +145,8 @@ export default function Dashboard(props) {
                 <UniversalBenefitCard
                   key={index + 3}
                   locale={props.locale}
+                  program={t[value.programCode]}
+                  summary={t.summary}
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
@@ -153,6 +165,8 @@ export default function Dashboard(props) {
                 <UniversalBenefitCard
                   key={index + 3}
                   locale={props.locale}
+                  program={t[value.programCode]}
+                  summary={t.summary}
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
@@ -166,6 +180,8 @@ export default function Dashboard(props) {
         {sebBenefit ? (
           <UniversalBenefitCard
             locale={props.locale}
+            program={t[sebBenefit.programCode]}
+            summary={t.summary}
             benefit={sebBenefit}
             taskHeading={
               TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][

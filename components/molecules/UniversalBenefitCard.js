@@ -10,6 +10,7 @@ import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 import { StatusCodes } from '../../constants/StatusCodes'
 import { SummaryTypes } from '../../constants/SummaryTypes'
 import { formatMoney, formatDate } from '../../lib/Utils'
+import CardHeader from '../atoms/CardHeader'
 
 export default function UniversalBenefitCard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -22,20 +23,6 @@ export default function UniversalBenefitCard(props) {
     props.benefit.statusCode
   const benefitCardId = 'benefit-card-' + benefitUniqueId
   const taskListId = 'task-list-' + benefitUniqueId
-  //needed to flip the order of where the screen read only text is placed in relation to the header without injecting html though lanuage provider
-  const programSummaryHeader = () => {
-    return props.locale === 'en' ? (
-      <>
-        {t[props.benefit.programCode]}
-        <span className="sr-only">{t.summary}</span>
-      </>
-    ) : (
-      <>
-        <span className="sr-only">{t.summary}</span>
-        {t[props.benefit.programCode]}
-      </>
-    )
-  }
 
   return (
     <div className={`benefit-card`} id={benefitCardId}>
@@ -64,9 +51,11 @@ export default function UniversalBenefitCard(props) {
       <div className="px-6 pb-6 pt-8">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
           <div className="col-span-1 lg:px-1">
-            <h3 className="font-bold font-display text-4xl sm:text-lg md:text-xl lg:text-3xl xl:text-4xl mb-2">
-              {programSummaryHeader()}
-            </h3>
+            <CardHeader
+              text={props.program}
+              summary={props.summary}
+              locale={props.locale}
+            />
           </div>
 
           <div className="grid col-span-3">
@@ -194,6 +183,8 @@ export default function UniversalBenefitCard(props) {
 
 UniversalBenefitCard.propTypes = {
   locale: propTypes.string.isRequired,
+  program: propTypes.string.isRequired,
+  summary: propTypes.string.isRequired,
   benefit: propTypes.shape({
     programCode: propTypes.string.isRequired,
     statusCode: propTypes.string.isRequired,
