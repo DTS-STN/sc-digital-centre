@@ -12,8 +12,8 @@ export default function Error500(props) {
   )
 }
 
-export async function getStaticProps({ locale }) {
-  const langToggleLink = locale === 'en' ? '/fr/500' : '/500'
+export async function getStaticProps() {
+  //const langToggleLink = locale === 'en' ? '/fr/500' : '/500'
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
@@ -23,6 +23,6 @@ export async function getStaticProps({ locale }) {
     hideDSFooter: true,
   }
   return {
-    props: { locale, langToggleLink, metadata, display },
+    props: { metadata, display },
   }
 }
