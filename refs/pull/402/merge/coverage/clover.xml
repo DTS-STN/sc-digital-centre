@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1655738547852" clover="3.2.0">
-  <project timestamp="1655738547852" name="All files">
+<coverage generated="1655738858884" clover="3.2.0">
+  <project timestamp="1655738858884" name="All files">
     <metrics statements="283" coveredstatements="215" conditionals="230" coveredconditionals="141" methods="112" coveredmethods="87" elements="625" coveredelements="443" complexity="0" loc="283" ncloc="283" packages="7" files="46" classes="46"/>
     <package name="components.atoms">
       <metrics statements="59" coveredstatements="45" conditionals="40" coveredconditionals="29" methods="25" coveredmethods="20"/>
@@ -85,7 +85,7 @@
       </file>
       <file name="StatusBadge.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/StatusBadge.js">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="8" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="8" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="9" count="3" type="stmt"/>
         <line num="22" count="3" type="stmt"/>
       </file>
@@ -208,7 +208,7 @@
       </file>
       <file name="UniversalBenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/UniversalBenefitCard.js">
         <metrics statements="11" coveredstatements="5" conditionals="12" coveredconditionals="6" methods="4" coveredmethods="1"/>
-        <line num="11" count="2" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>

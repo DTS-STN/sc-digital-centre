@@ -216,8 +216,8 @@ SF:components/atoms/StatusBadge.js
 FN:7,StatusBadge
 FNF:1
 FNH:1
-FNDA:5,StatusBadge
-DA:8,5
+FNDA:3,StatusBadge
+DA:8,3
 DA:9,3
 DA:22,3
 LF:3
@@ -567,11 +567,11 @@ FN:78,(anonymous_2)
 FN:100,(anonymous_3)
 FNF:4
 FNH:1
-FNDA:2,UniversalBenefitCard
+FNDA:1,UniversalBenefitCard
 FNDA:0,(anonymous_1)
 FNDA:0,(anonymous_2)
 FNDA:0,(anonymous_3)
-DA:11,2
+DA:11,1
 DA:13,1
 DA:14,1
 DA:16,1
