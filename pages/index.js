@@ -9,7 +9,7 @@ export default function Index(props) {
   )
 }
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps() {
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
@@ -24,7 +24,6 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       metadata,
-      locale,
       display,
     },
   }
