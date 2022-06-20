@@ -96,6 +96,8 @@ export default function Dashboard(props) {
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
+                  benefitDurationReached={t.benefitDurationReached}
+                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
                 />
               )
             })
@@ -121,6 +123,8 @@ export default function Dashboard(props) {
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
+                  benefitDurationReached={t.benefitDurationReached}
+                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
                 />
               )
             })
@@ -146,6 +150,8 @@ export default function Dashboard(props) {
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
+                  benefitDurationReached={t.benefitDurationReached}
+                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
                 />
               )
             })
@@ -171,6 +177,8 @@ export default function Dashboard(props) {
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
+                  benefitDurationReached={t.benefitDurationReached}
+                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
                 />
               )
             })
@@ -196,6 +204,8 @@ export default function Dashboard(props) {
                   benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
+                  benefitDurationReached={t.benefitDurationReached}
+                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
                 />
               )
             })
@@ -224,6 +234,8 @@ export default function Dashboard(props) {
                 props.locale
               ].tasksGroups
             }
+            benefitDurationReached={t.benefitDurationReached}
+            applyForProgram={`${t.applyFor} ${t[sebBenefit.programCode]}`}
           />
         ) : null}
 

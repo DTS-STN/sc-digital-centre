@@ -43,7 +43,7 @@ export default function UniversalBenefitCard(props) {
             {props.benefit.summaries == null ||
             props.benefit.summaries.length <= 0 ? (
               <div className="mx-8">
-                <p className="pb-5 text-lg">{t.benefitDurationReached}</p>
+                <p className="pb-5 text-lg">{props.benefitDurationReached}</p>
                 <a
                   href=""
                   className="underline text-blue-default hover:text-blue-hover"
@@ -53,7 +53,7 @@ export default function UniversalBenefitCard(props) {
                     alt=""
                   />
                   <p className="w-36 sm:w-24 lg:w-36 pr-5 pt-3">
-                    {`${t.applyFor} ${t[props.benefit.programCode]}`}
+                    {props.applyForProgram}
                   </p>
                 </a>
               </div>
@@ -178,4 +178,6 @@ UniversalBenefitCard.propTypes = {
   }),
   taskHeading: propTypes.string,
   taskGroups: propTypes.array.isRequired,
+  benefitDurationReached: propTypes.string,
+  applyForProgram: propTypes.string,
 }
