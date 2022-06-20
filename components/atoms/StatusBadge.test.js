@@ -7,14 +7,24 @@ expect.extend(toHaveNoViolations)
 
 describe('Status Badge', () => {
   it('renders Status Badge', () => {
-    render(<StatusBadge status="status" color="bg-green-medium" />)
-    const text = screen.getByText('status')
+    render(
+      <StatusBadge
+        status="Status Text"
+        color="bg-green-medium"
+        srDescription="Status Description"
+      />
+    )
+    const text = screen.getByText('Status Text')
     expect(text).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
     const { container } = render(
-      <StatusBadge status="status" color="bg-green-medium" />
+      <StatusBadge
+        status="Status Text"
+        color="bg-green-medium"
+        srDescription="Status Description"
+      />
     )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
