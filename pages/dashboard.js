@@ -10,7 +10,7 @@ import { setCookies } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
 import en from '../locales/en'
 import fr from '../locales/fr'
-import { StatusColors } from '../constants/StatusCodes'
+import { StatusColors, StatusCodes } from '../constants/StatusCodes'
 import { MapSummary } from '../lib/mapSummaries'
 
 export default function Dashboard(props) {
@@ -89,12 +89,13 @@ export default function Dashboard(props) {
                   locale={props.locale}
                   program={t[value.programCode]}
                   summary={t.summary}
+                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
                   statusBadge={{
                     status: t[value.statusCode],
                     srDescription: t[value.programCode],
                     color: StatusColors[value.statusCode],
+                    hidden: value.statusCode === StatusCodes.activeAgreement,
                   }}
-                  benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
                   benefitDurationReached={t.benefitDurationReached}
@@ -117,12 +118,13 @@ export default function Dashboard(props) {
                   locale={props.locale}
                   program={t[value.programCode]}
                   summary={t.summary}
+                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
                   statusBadge={{
                     status: t[value.statusCode],
                     srDescription: t[value.programCode],
                     color: StatusColors[value.statusCode],
+                    hidden: value.statusCode === StatusCodes.activeAgreement,
                   }}
-                  benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
                   benefitDurationReached={t.benefitDurationReached}
@@ -145,12 +147,13 @@ export default function Dashboard(props) {
                   locale={props.locale}
                   program={t[value.programCode]}
                   summary={t.summary}
+                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
                   statusBadge={{
                     status: t[value.statusCode],
                     srDescription: t[value.programCode],
                     color: StatusColors[value.statusCode],
+                    hidden: value.statusCode === StatusCodes.activeAgreement,
                   }}
-                  benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
                   benefitDurationReached={t.benefitDurationReached}
@@ -173,12 +176,13 @@ export default function Dashboard(props) {
                   locale={props.locale}
                   program={t[value.programCode]}
                   summary={t.summary}
+                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
                   statusBadge={{
                     status: t[value.statusCode],
                     srDescription: t[value.programCode],
                     color: StatusColors[value.statusCode],
+                    hidden: value.statusCode === StatusCodes.activeAgreement,
                   }}
-                  benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
                   benefitDurationReached={t.benefitDurationReached}
@@ -201,12 +205,13 @@ export default function Dashboard(props) {
                   locale={props.locale}
                   program={t[value.programCode]}
                   summary={t.summary}
+                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
                   statusBadge={{
                     status: t[value.statusCode],
                     srDescription: t[value.programCode],
                     color: StatusColors[value.statusCode],
+                    hidden: value.statusCode === StatusCodes.activeAgreement,
                   }}
-                  benefit={value}
                   taskHeading={tasksGroups.taskHeadingKey}
                   taskGroups={tasksGroups.tasksGroups}
                   benefitDurationReached={t.benefitDurationReached}
@@ -224,12 +229,13 @@ export default function Dashboard(props) {
             locale={props.locale}
             program={t[sebBenefit.programCode]}
             summary={t.summary}
+            benefitUniqueId={`${sebBenefit.programCode}-${sebBenefit.typeCode}-${sebBenefit.statusCode}`}
             statusBadge={{
               status: t[sebBenefit.statusCode],
               srDescription: t[sebBenefit.programCode],
               color: StatusColors[sebBenefit.statusCode],
+              hidden: sebBenefit.statusCode === StatusCodes.activeAgreement,
             }}
-            benefit={sebBenefit}
             taskHeading={
               TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][
                 props.locale

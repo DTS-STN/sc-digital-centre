@@ -11,11 +11,6 @@ import { TASK_GROUPS } from '../../contents/BenefitTasksGroups'
 expect.extend(toHaveNoViolations)
 
 describe('UniversalBenefitCard', () => {
-  const benefit = MapBenefit(
-    ProgramCodes.CPP,
-    StatusCodes.inPayment,
-    TypeCodes.CPPRetirement
-  )
   const tasksGroups = TASK_GROUPS[ProgramCodes.CPP][StatusCodes.inPayment]['en']
 
   const { container } = render(
@@ -23,8 +18,8 @@ describe('UniversalBenefitCard', () => {
       locale="en"
       program="CPP"
       summary="summary"
+      benefitUniqueId={`${ProgramCodes.CPP}-${TypeCodes.CPPRetirement}-${StatusCodes.inPayment}`}
       statusBadge={{ status: 'In Payment', color: 'bg-green-medium' }}
-      benefit={benefit}
       taskHeading={tasksGroups.taskHeadingKey}
       taskGroups={tasksGroups.tasksGroups}
     />

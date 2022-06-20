@@ -5,6 +5,7 @@ import propTypes from 'prop-types'
  */
 
 export default function StatusBadge(props) {
+  if (props.hidden) return null
   return (
     <div className="flex justify-end rounded-t-lg">
       <h2
@@ -40,4 +41,9 @@ StatusBadge.propTypes = {
    * The screen reader description
    */
   srDescription: propTypes.string,
+
+  /**
+   * Hide Status badge
+   */
+  hidden: propTypes.bool,
 }

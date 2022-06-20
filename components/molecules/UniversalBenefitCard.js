@@ -5,25 +5,22 @@ import BenefitTasks from './BenefitTasks'
 import HorizontalRule from '../atoms/HorizontalRule'
 import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
-import { StatusCodes } from '../../constants/StatusCodes'
 import CardHeader from '../atoms/CardHeader'
 
 export default function UniversalBenefitCard(props) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const benefitUniqueId = `${props.benefit.programCode}-${props.benefit.typeCode}-${props.benefit.statusCode}`
-  const benefitCardId = `benefit-card-${benefitUniqueId}`
-  const taskListId = `task-list-${benefitUniqueId}`
+  const benefitCardId = `benefit-card-${props.benefitUniqueId}`
+  const taskListId = `task-list-${props.benefitUniqueId}`
 
   return (
     <div className={`benefit-card`} id={benefitCardId}>
-      {props.benefit.statusCode != StatusCodes.activeAgreement ? (
-        <StatusBadge
-          status={props.statusBadge.status}
-          srDescription={props.statusBadge.srDescription}
-          color={props.statusBadge.color}
-        />
-      ) : null}
+      <StatusBadge
+        status={props.statusBadge.status}
+        srDescription={props.statusBadge.srDescription}
+        color={props.statusBadge.color}
+        hidden={props.statusBadge.hidden}
+      />
       <div className="px-6 pb-6 pt-8">
         <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
           <div className="col-span-1 lg:px-1">
@@ -35,8 +32,7 @@ export default function UniversalBenefitCard(props) {
           </div>
 
           <div className="grid col-span-3">
-            {props.benefit.summaries == null ||
-            props.benefit.summaries.length <= 0 ? (
+            {props.summaries == null || props.summaries.length <= 0 ? (
               <div className="mx-8">
                 <p className="pb-5 text-lg">{props.benefitDurationReached}</p>
                 <a
@@ -77,8 +73,8 @@ export default function UniversalBenefitCard(props) {
       {/* Let the ViewMoreLessButton remain generic and set the heading level outside */}
       <h4>
         <ViewMoreLessButton
-          id={props.benefit.programCode + '-card-button'}
-          dataTestid={benefitUniqueId}
+          id={props.benefitUniqueId + '-card-button'}
+          dataTestid={props.benefitUniqueId}
           onClick={() => {
             const newOpenState = !isOpen
             const idToScrollTo = newOpenState ? taskListId : benefitCardId
@@ -121,15 +117,12 @@ UniversalBenefitCard.propTypes = {
   locale: propTypes.string.isRequired,
   program: propTypes.string.isRequired,
   summary: propTypes.string.isRequired,
+  benefitUniqueId: propTypes.string.isRequired,
   statusBadge: propTypes.shape({
     status: propTypes.string.isRequired,
     srDescription: propTypes.string,
     color: propTypes.string.isRequired,
-  }),
-  benefit: propTypes.shape({
-    programCode: propTypes.string.isRequired,
-    statusCode: propTypes.string.isRequired,
-    summaries: propTypes.array,
+    hidden: propTypes.bool,
   }),
   taskHeading: propTypes.string,
   taskGroups: propTypes.array.isRequired,
