@@ -12,9 +12,7 @@ export default function StatusBadge(props) {
         className={`font-medium font-display text-black text-lg px-5 py-1 w-full sm:w-1/3 sm:mr-14 rounded-t-lg sm:rounded-t-none sm:rounded-b-lg 
         ${props.color} `}
       >
-        {props.srDescription ? (
-          <span className="sr-only">{props.srDescription} </span>
-        ) : null}
+        <span className="sr-only">{props.srDescription} </span>
         {props.status}
       </h2>
     </div>
@@ -40,7 +38,7 @@ StatusBadge.propTypes = {
   /**
    * The screen reader description
    */
-  srDescription: propTypes.string,
+  srDescription: propTypes.string.isRequired,
 
   /**
    * Hide Status badge
