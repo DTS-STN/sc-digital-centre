@@ -26,7 +26,7 @@ const BenefitApplicationCard = (props) => {
   }
 
   return (
-    <div className="benefit-card px-4 md:px-6 py-7">
+    <div className="benefit-card px-4 md:px-6 py-7" data-cy="adcard">
       <div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2">
         <div
           id={`${benefitType}-${benefitSubType}-app-card`}
