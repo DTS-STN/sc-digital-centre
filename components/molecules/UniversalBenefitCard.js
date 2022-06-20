@@ -1,6 +1,4 @@
 import propTypes from 'prop-types'
-import en from '../../locales/en'
-import fr from '../../locales/fr'
 import BenefitCardHeaderSummary from './BenefitCardHeaderSummary'
 import StatusBadge from '../atoms/StatusBadge'
 import BenefitTasks from './BenefitTasks'
@@ -8,12 +6,9 @@ import HorizontalRule from '../atoms/HorizontalRule'
 import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 import { StatusCodes } from '../../constants/StatusCodes'
-import { SummaryTypes } from '../../constants/SummaryTypes'
-import { formatMoney, formatDate } from '../../lib/Utils'
 import CardHeader from '../atoms/CardHeader'
 
 export default function UniversalBenefitCard(props) {
-  const t = props.locale === 'en' ? en : fr
   const [isOpen, setIsOpen] = useState(false)
 
   const benefitUniqueId = `${props.benefit.programCode}-${props.benefit.typeCode}-${props.benefit.statusCode}`
@@ -59,57 +54,17 @@ export default function UniversalBenefitCard(props) {
               </div>
             ) : (
               <ul className="grid col-span-2 gap-y-4 gap-x-1 sm:grid-cols-3 sm:pl-8 lg:pl-10 font-display">
-                {props.benefit.summaries.map((summary, index) => {
-                  const summaryStatus =
-                    summary.type === SummaryTypes.LatestStatus
-                      ? t.eiMessages[summary.status]
-                      : summary.status
-                  const summaryStatusClassName =
-                    summary.type === SummaryTypes.LatestStatus
-                      ? 'text-lg'
-                      : 'font-bold'
-                  let summaryValue = null
-                  let summaryValueClassName = null
-                  switch (summary.type) {
-                    case SummaryTypes.PaymentAmount:
-                    case SummaryTypes.LastPayment:
-                    case SummaryTypes.LastNetPayment:
-                      summaryValue = formatMoney(summary.value, props.locale)
-                      summaryValueClassName = 'text-3xl'
-                      break
-                    case SummaryTypes.NextPayment:
-                    case SummaryTypes.NextReport:
-                    case SummaryTypes.LatestStatus:
-                    case SummaryTypes.EstimatedDecisionDate:
-                    case SummaryTypes.LastPaymentDate:
-                    case SummaryTypes.LatestStatusMessage:
-                      summaryValue = formatDate(summary.value, props.locale)
-                      summaryValueClassName = 'text-lg'
-                      break
-                    case SummaryTypes.RequestedBenefit:
-                    case SummaryTypes.BenefitAffected:
-                    case SummaryTypes.ActiveBenefit:
-                      summaryValue = t[summary.value]
-                      summaryValueClassName = 'text-lg'
-                      break
-                    case SummaryTypes.PresentStatus:
-                    case SummaryTypes.NextPaymentDate:
-                      summaryValue = summary.value
-                      summaryValueClassName = 'text-lg'
-                    default:
-                      break
-                  }
-
+                {props.summaries.map((summary, index) => {
                   return (
                     <BenefitCardHeaderSummary
                       key={index}
-                      title={t[summary.type].title}
-                      status={summaryStatus}
-                      statusClassName={summaryStatusClassName}
-                      value={summaryValue}
-                      valueClassName={summaryValueClassName}
-                      link={t[summary.type].link}
-                      linkText={t[summary.type].linkText}
+                      title={summary.title}
+                      status={summary.status}
+                      statusClassName={summary.statusClassName}
+                      value={summary.value}
+                      valueClassName={summary.valueClassName}
+                      link={summary.link}
+                      linkText={summary.linkText}
                     />
                   )
                 })}
@@ -180,4 +135,13 @@ UniversalBenefitCard.propTypes = {
   taskGroups: propTypes.array.isRequired,
   benefitDurationReached: propTypes.string,
   applyForProgram: propTypes.string,
+  summaries: propTypes.shape({
+    title: propTypes.string.isRequired,
+    status: propTypes.string,
+    statusClassName: propTypes.string,
+    value: propTypes.string.isRequired,
+    valueClassNam: propTypes.string,
+    link: propTypes.string,
+    linkText: propTypes.string,
+  }),
 }
