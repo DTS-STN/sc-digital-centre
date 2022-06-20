@@ -19,7 +19,11 @@ describe('UniversalBenefitCard', () => {
       program="CPP"
       summary="summary"
       benefitUniqueId={`${ProgramCodes.CPP}-${TypeCodes.CPPRetirement}-${StatusCodes.inPayment}`}
-      statusBadge={{ status: 'In Payment', color: 'bg-green-medium' }}
+      statusBadge={{
+        status: 'In Payment',
+        color: 'bg-green-medium',
+        srDescription: 'status',
+      }}
       taskHeading={tasksGroups.taskHeadingKey}
       taskGroups={tasksGroups.tasksGroups}
     />
