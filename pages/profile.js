@@ -4,6 +4,7 @@ import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
 import TabList from '../components/atoms/TabList'
+import { GetSession, UnauthenticatedRedirect } from '../lib/Auth'
 
 export default function Profile(props) {
   const t = props.locale === 'en' ? en : fr
@@ -191,7 +192,7 @@ export default function Profile(props) {
   )
 }
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ req, locale }) {
   const authSession = await GetSession(req)
   if (!authSession) return UnauthenticatedRedirect()
 
