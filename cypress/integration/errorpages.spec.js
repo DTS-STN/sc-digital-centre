@@ -11,7 +11,7 @@ describe('Error page accessibility test', () => {
       it(errorPage, () => {
         cy.visit(path, {failOnStatusCode: false});
    cy.get('main').each(() => {
-          cy.checkPagesA11y(
+          cy.errorPagesA11y(
             path,
             {
               runOnly: {

@@ -58,7 +58,7 @@ const severityIndicators = {
     cy.checkA11y(null, null, callback);
   })
 
-  Cypress.Commands.add("checkPagesA11y", (path) => {
+  Cypress.Commands.add("errorPagesA11y", (path) => {
     cy.visit(path, {failOnStatusCode: false});
     cy.injectAxe();
     cy.checkA11y(null, null, callback);
