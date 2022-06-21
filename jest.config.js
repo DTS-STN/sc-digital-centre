@@ -1,8 +1,9 @@
 module.exports = {
   modulePathIgnorePatterns: ['./cypress'],
   collectCoverageFrom: [
+    'lib/**/*.{js,jsx,tsx}',
     'components/**/*.{js,jsx}',
-    'pages/**/*.{js,jsx}',
+    'pages/**/*.{js,jsx,tsx}',
     '!**/node_modules/**',
     '!<rootDir>/__tests__/setup.js',
   ],
