@@ -77,8 +77,10 @@ export default function Dashboard(props) {
     <>
       <Greeting locale={props.locale} name="Mary" />
       <div className="mb-8">
-        {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
-        {cppError ?? null}
+        <div>
+          {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
+          {cppError ?? null}
+        </div>
         {cppBenefit
           ? cppBenefit.map((value, index) => {
               const tasksGroups =
@@ -106,8 +108,10 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {cppdLoaded ? null : 'Loading CPPD User Benefit Data...'}
-        {cppdError ?? null}
+        <div>
+          {cppdLoaded ? null : 'Loading CPPD User Benefit Data...'}
+          {cppdError ?? null}
+        </div>
         {cppdBenefit
           ? cppdBenefit.map((value, index) => {
               const tasksGroups =
