@@ -17,19 +17,6 @@ enableFetchMocks()
 describe('Dashboard', () => {
   getSession.mockReturnValue([true])
   const { req, res } = createMocks({ method: 'GET' })
-  let container
-  const dashboard = (
-    <Dashboard
-      advertisingCards={getAdvertsingCards()}
-      noBenefitCards={getNoBenefitCards('en')}
-      locale="en"
-      metadata={{
-        title: 'Digital Centre (en) + Digital Centre (fr)',
-        keywords: 'en + fr keywords',
-        description: 'en + fr description',
-      }}
-    />
-  )
   const sebFetchResult = {
     programCode: 'seb',
     statusCode: 'activeAgreement',
@@ -45,6 +32,7 @@ describe('Dashboard', () => {
       },
     ],
   }
+  let container
 
   beforeEach(() => {
     fetch.resetMocks()
@@ -54,33 +42,41 @@ describe('Dashboard', () => {
     //all program fetches return empty
     fetch.mockResponses(
       [JSON.stringify(''), { status: 204 }],
-      [JSON.stringify({ status: 404, text: 'Not found' }), { status: 404 }],
+      [JSON.stringify('Request Not Avalaible'), { status: 501 }],
       [JSON.stringify(''), { status: 204 }],
       [JSON.stringify(''), { status: 204 }],
       [JSON.stringify(''), { status: 204 }],
       [JSON.stringify(sebFetchResult), { status: 200 }]
     )
-    container = render(dashboard).container
-    //wait for the aysnc load to complete
-    screen.findByText('Something went wrong fetching cpp data.')
+    container = render(
+      <Dashboard
+        advertisingCards={getAdvertsingCards()}
+        noBenefitCards={getNoBenefitCards('en')}
+        locale="en"
+        metadata={{
+          title: 'Digital Centre (en) + Digital Centre (fr)',
+          keywords: 'en + fr keywords',
+          description: 'en + fr description',
+        }}
+      />
+    ).container
+
+    //ensures fetch completed before leaving act()
+    screen.findByText('Loading CPP User Benefit Data...')
   })
 
   it('renders Dashboard', () => {
     expect(container).toBeTruthy()
-  })
 
-  it('renders fetch results', () => {
-    expect(
-      screen.getAllByText('Self Employment Benefits')[0]
-    ).toBeInTheDocument()
-  })
+    //loads data
+    const sebResult = screen.getByText('Self Employment Benefits')
+    expect(sebResult).toBeInTheDocument()
 
-  it('handles empty fetch result', () => {
-    expect(screen).toContain('Something went wrong fetching cpp data.') //).toHaveLength(1)
-  })
-
-  it('handles error fetch result', () => {
-    expect(screen.getByText('Error fetching cppd data 404 - .')).toBeTruthy()
+    //handles error
+    const cppdResult = screen.getByText(
+      'Error fetching cppd data 501 - "Request Not Avalaible".'
+    )
+    expect(cppdResult).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
