@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, waitFor, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import Dashboard, { getServerSideProps } from '../../pages/dashboard'
@@ -15,8 +15,7 @@ jest.mock('next-auth/react')
 enableFetchMocks()
 
 describe('Dashboard', () => {
-  getSession.mockReturnValue([true])
-  const { req, res } = createMocks({ method: 'GET' })
+  let container
   const sebFetchResult = {
     programCode: 'seb',
     statusCode: 'activeAgreement',
@@ -32,36 +31,35 @@ describe('Dashboard', () => {
       },
     ],
   }
-  let container
+
+  // set up mocks
+  getSession.mockReturnValue([true])
+  const { req, res } = createMocks({ method: 'GET' })
 
   beforeEach(() => {
     fetch.resetMocks()
   })
 
   act(() => {
-    //all program fetches return empty
+    //set what each fetch will return in order of fetch call
     fetch.mockResponses(
-      [JSON.stringify(''), { status: 204 }],
-      [JSON.stringify('Request Not Avalaible'), { status: 501 }],
-      [JSON.stringify(''), { status: 204 }],
-      [JSON.stringify(''), { status: 204 }],
-      [JSON.stringify(''), { status: 204 }],
-      [JSON.stringify(sebFetchResult), { status: 200 }]
+      [JSON.stringify(''), { status: 204 }], //cpp
+      [JSON.stringify('Request Not Avalaible'), { status: 501 }], //cppd
+      [JSON.stringify(''), { status: 204 }], //ei
+      [JSON.stringify(''), { status: 204 }], //oas
+      [JSON.stringify(''), { status: 204 }], //gis
+      [JSON.stringify(sebFetchResult), { status: 200 }] //seb
     )
     container = render(
       <Dashboard
         advertisingCards={getAdvertsingCards()}
         noBenefitCards={getNoBenefitCards('en')}
         locale="en"
-        metadata={{
-          title: 'Digital Centre (en) + Digital Centre (fr)',
-          keywords: 'en + fr keywords',
-          description: 'en + fr description',
-        }}
+        metadata={{}}
       />
     ).container
 
-    //ensures fetch completed before leaving act()
+    //helps to ensure fetch completed before leaving act()
     screen.findByText('Loading CPP User Benefit Data...')
   })
 
@@ -83,18 +81,6 @@ describe('Dashboard', () => {
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
-
-  // it('handles fetch errors', () => {
-  //   fetch.mockResponse(JSON.stringify({status: 404, body: "Not found"}))
-  //   let errorMsg
-  //   act(() => {
-  //     render(dashboard)
-  //     //wait for load to complete
-  //     errorMsg = screen.findByText('Error fetching cpp data 404 - .')
-  //   })
-  //   expect(errorMsg).toBeTruthy()
-
-  // })
 
   it('returns expected server props', async () => {
     const result = await getServerSideProps({
