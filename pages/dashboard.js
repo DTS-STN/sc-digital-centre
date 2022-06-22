@@ -6,7 +6,7 @@ import { getAdvertsingCards } from '../contents/BenefitAdvertisingCards'
 import { getSession } from 'next-auth/react'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
-import { setCookies } from 'cookies-next'
+import { setCookies, getCookie } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
 import en from '../locales/en'
 import fr from '../locales/fr'
@@ -15,6 +15,7 @@ import { MapSummary } from '../lib/mapSummaries'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
+  const userid = getCookie('userid')
 
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
@@ -269,13 +270,16 @@ export default function Dashboard(props) {
           )
         })}
 
-        {/* {noBenefitCards.map((value, index) => {
-          return (
-            <div key={index}>
-              <NoBenefitCard locale={props.locale} benefit={value} />
-            </div>
-          )
-        })} */}
+        {/* no benefit cards display only on the "all cards" page */}
+        {userid == 'default'
+          ? noBenefitCards.map((value, index) => {
+              return (
+                <div key={index}>
+                  <NoBenefitCard locale={props.locale} benefit={value} />
+                </div>
+              )
+            })
+          : null}
       </div>
     </>
   )
