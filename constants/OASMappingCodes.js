@@ -2,7 +2,7 @@ import { TypeCodes } from './ProgramTypeCodes'
 import { StatusCodes } from './StatusCodes'
 
 export const OASTypes = {
-  OASBeneficial: TypeCodes.OASBeneficial,
+  OASBeneficial: TypeCodes.OASRetirement,
 }
 
 export const OASStatus = {

@@ -1,10 +1,11 @@
 export const TypeCodes = {
+  NotActive: 'NotActive',
+  DurationReached: 'DurationReached',
   CPPRetirement: 'CPPRetirement',
   CPPSurvivor: 'CPPSurvivor',
   CPPDisability: 'CPPDisability',
-  EIUnknown: 'EIUnknown',
-  OASBeneficial: 'OASBeneficial',
-  GISBeneficial: 'GISBeneficial',
+  OASRetirement: 'OASRetirement',
+  GISRetirement: 'GISRetirement',
   EISickness: 'EISickness',
-  SEB: 'SEB', //used as a placeholder only
+  SEBRegular: 'SEBRegular',
 }

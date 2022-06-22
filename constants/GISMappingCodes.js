@@ -2,7 +2,7 @@ import { TypeCodes } from './ProgramTypeCodes'
 import { StatusCodes } from './StatusCodes'
 
 export const GISTypes = {
-  GISBeneficial: TypeCodes.GISBeneficial,
+  GISBeneficial: TypeCodes.GISRetirement,
 }
 
 export const GISStatus = {
