@@ -12,7 +12,9 @@ export default function BenefitCardHeaderSummary(props) {
       ) : null}
 
       {/* Summary */}
-      <p className="text-3xl font-bold">{props.value}</p>
+      <p className={`font-bold ${props.valueStyle ?? 'text-3xl'}`}>
+        {props.value}
+      </p>
 
       {/* Optional Link */}
       {props.link ? (
@@ -33,4 +35,5 @@ BenefitCardHeaderSummary.propTypes = {
   value: propTypes.any.isRequired,
   link: propTypes.string,
   linkText: propTypes.string,
+  valueStyle: propTypes.string,
 }

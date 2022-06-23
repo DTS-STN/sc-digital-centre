@@ -63,6 +63,7 @@ export default function UniversalBenefitCard(props) {
                   value={summary.value}
                   link={summary.link}
                   linkText={summary.linkText}
+                  valueStyle={summary.valueStyle}
                 />
               )
             })}
@@ -134,6 +135,7 @@ UniversalBenefitCard.propTypes = {
     value: propTypes.string.isRequired,
     link: propTypes.string,
     linkText: propTypes.string,
+    valueStyle: propTypes.string,
   }),
   callout: propTypes.shape({
     label: propTypes.string.isRequired,

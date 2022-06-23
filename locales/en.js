@@ -37,6 +37,9 @@ export default {
   NextPayment: {
     title: 'Next payment date:',
   },
+  LatestStatusDate: {
+    title: 'Latest status update:',
+  },
   LatestStatus: {
     title: 'Latest status update:',
     link: '/',
