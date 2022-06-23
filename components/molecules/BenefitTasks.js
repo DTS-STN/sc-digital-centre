@@ -1,26 +1,33 @@
 import PropTypes from 'prop-types'
 import HorizontalRule from '../atoms/HorizontalRule'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faSearch,
+  faAmbulance,
+  faAnchor,
+} from '@fortawesome/free-solid-svg-icons'
 export default function BenefitTasks(props) {
   return (
     <div className="">
-      <div className="bg-gray-lighter px-4 py-3 sm:px-8 sm:py-6 h-full border-b  ">
-        <h5 className="font-display font-bold text-xl bg-yellow-200">
+      <div className="bg-gray-lighter px-4 py-3 sm:px-8 sm:py-6 h-full   ">
+        <h5 className="font-display font-bold text-xl ">
           {props.taskList.header}
+          <span></span>
         </h5>
-        <ul className="  w-full pt-6 bg-orange-300 p-2">
+        <ul className="  w-full pt-6 space-y-8">
           {props.taskList.tasks.map((task, index) => {
             return (
-              <li
-                key={index}
-                className="font-display font-bold text-left pb-7 bg-green-100"
-              >
+              <li key={index} className="font-display font-bold text-left">
                 <a
                   href={task.link}
-                  className="flex underline text-blue-default hover:text-blue-hover bg-indigo-300"
+                  className=" flex underline text-blue-default hover:text-blue-hover"
                 >
-                  <img src={task.icon} className="h-10" alt="" />
-                  <p className="font-normal relative top-2 ml-4 bg-red-300">
+                  {/* <img src={task.icon} className="h-10" alt="" /> */}
+                  <p className="font-normal text-xl">
+                    <span>
+                      {' '}
+                      <FontAwesomeIcon icon={task.icon} className="pr-4" />
+                    </span>{' '}
                     {task.task}
                   </p>
                 </a>
