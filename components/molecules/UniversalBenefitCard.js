@@ -15,12 +15,14 @@ export default function UniversalBenefitCard(props) {
 
   return (
     <div className={`benefit-card`} id={benefitCardId}>
-      <StatusBadge
-        status={props.statusBadge.status}
-        srDescription={props.statusBadge.srDescription}
-        color={props.statusBadge.color}
-        hidden={props.statusBadge.hidden}
-      />
+      <div className="h-10">
+        <StatusBadge
+          status={props.statusBadge.status}
+          srDescription={props.statusBadge.srDescription}
+          color={props.statusBadge.color}
+          hidden={props.statusBadge.hidden}
+        />
+      </div>
       <div className="px-4 sm:px-16">
         <CardHeader
           text={props.program}
