@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1655997246479" clover="3.2.0">
-  <project timestamp="1655997246479" name="All files">
-    <metrics statements="384" coveredstatements="318" conditionals="291" coveredconditionals="198" methods="122" coveredmethods="100" elements="797" coveredelements="616" complexity="0" loc="384" ncloc="384" packages="9" files="50" classes="50"/>
+<coverage generated="1655998009320" clover="3.2.0">
+  <project timestamp="1655998009320" name="All files">
+    <metrics statements="384" coveredstatements="318" conditionals="291" coveredconditionals="199" methods="122" coveredmethods="100" elements="797" coveredelements="617" complexity="0" loc="384" ncloc="384" packages="9" files="50" classes="50"/>
     <package name="components.atoms">
-      <metrics statements="50" coveredstatements="45" conditionals="40" coveredconditionals="29" methods="22" coveredmethods="20"/>
+      <metrics statements="50" coveredstatements="45" conditionals="40" coveredconditionals="30" methods="22" coveredmethods="20"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
         <metrics statements="4" coveredstatements="4" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="8" count="26" type="stmt"/>
@@ -23,9 +23,9 @@
         <line num="23" count="1" type="stmt"/>
       </file>
       <file name="CardHeader.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/CardHeader.js">
-        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
       </file>
       <file name="DateModified.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/DateModified.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
