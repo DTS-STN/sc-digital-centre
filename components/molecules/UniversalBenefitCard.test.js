@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { toHaveNoViolations, axe } from 'jest-axe'
 import '@testing-library/jest-dom/extend-expect'
 import UniversalBenefitCard from './UniversalBenefitCard'
@@ -36,5 +36,42 @@ describe('UniversalBenefitCard', () => {
   it('has no a11y violations', async () => {
     const results = await axe(container)
     expect(results).toHaveNoViolations()
+  })
+
+  it('loads apply with no summaries', () => {
+    const applyForProgramText = 'Apply for Program Text'
+    render(
+      <UniversalBenefitCard
+        summaries={[]}
+        applyForProgram={applyForProgramText}
+        locale="en"
+        program="ei"
+        summary=""
+        benefitUniqueId="test-id"
+        taskGroups={[]}
+        callout={{ label: '', text: '' }}
+        statusBadge={{ srDescription: '', status: '', color: 'bg-gray-medium' }}
+        taskHeading=""
+      />
+    )
+    expect(screen.getByText(applyForProgramText)).toBeInTheDocument()
+  })
+
+  it('loads and maps summaries', () => {
+    const summaryTitleText = 'Summary title text'
+    render(
+      <UniversalBenefitCard
+        summaries={[{ title: summaryTitleText, value: '' }]}
+        locale="en"
+        program="ei"
+        summary=""
+        benefitUniqueId="test-id"
+        taskGroups={[]}
+        callout={{ label: '', text: '' }}
+        statusBadge={{ srDescription: '', status: '', color: 'bg-gray-medium' }}
+        taskHeading=""
+      />
+    )
+    expect(screen.getByText(summaryTitleText)).toBeInTheDocument()
   })
 })

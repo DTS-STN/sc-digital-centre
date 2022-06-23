@@ -124,19 +124,21 @@ UniversalBenefitCard.propTypes = {
     srDescription: propTypes.string,
     color: propTypes.string.isRequired,
     hidden: propTypes.bool,
-  }),
-  taskHeading: propTypes.string,
+  }).isRequired,
+  taskHeading: propTypes.string.isRequired,
   taskGroups: propTypes.array.isRequired,
   benefitDurationReached: propTypes.string,
   applyForProgram: propTypes.string,
-  summaries: propTypes.shape({
-    title: propTypes.string.isRequired,
-    status: propTypes.string,
-    value: propTypes.string.isRequired,
-    link: propTypes.string,
-    linkText: propTypes.string,
-    valueStyle: propTypes.string,
-  }),
+  summaries: propTypes.arrayOf(
+    propTypes.shape({
+      title: propTypes.string.isRequired,
+      status: propTypes.string,
+      value: propTypes.string.isRequired,
+      link: propTypes.string,
+      linkText: propTypes.string,
+      valueStyle: propTypes.string,
+    })
+  ),
   callout: propTypes.shape({
     label: propTypes.string.isRequired,
     text: propTypes.string.isRequired,
