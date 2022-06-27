@@ -21,6 +21,7 @@ import {
   faLaptopFile,
   faFileSignature,
   faQuestion,
+  faStamp,
 } from '@fortawesome/free-solid-svg-icons'
 
 export const BenefitTasks_EN = {
@@ -93,12 +94,12 @@ export const BenefitTasks_EN = {
   },
   ApplyForCppDisabilityBenefits: {
     task: 'Apply for Canada Pension Plan Disability Benefits',
-    icon: faQuestion,
+    icon: faStamp,
     link: '/dashboard',
   },
   ApplyForCppRetirementPensions: {
     task: 'Apply for Canada Pension Plan Retirement Pensions',
-    icon: faQuestion,
+    icon: faStamp,
     link: '/dashboard',
   },
   EstimateMyMonthlyCppBenefits: {
@@ -113,22 +114,22 @@ export const BenefitTasks_EN = {
   },
   ApplyForCppDeathBenefits: {
     task: 'Apply for Canada Pension Plan Death Benefits',
-    icon: faQuestion,
+    icon: faStamp,
     link: '/dashboard',
   },
   ApplyForGuranteedIncomeSupplement: {
     task: 'Apply For Guranteed Income Supplement',
-    icon: faQuestion,
+    icon: faStamp,
     link: '/dashboard',
   },
   ApplyForCppSurvivorsPensionAndChildrensBenefit: {
     task: "Apply For Canada Pension Plan Survivor's Pension and Child(ren)'s Benefit",
-    icon: faQuestion,
+    icon: faStamp,
     link: '/dashboard',
   },
   ApplyForOldAgeSecurity: {
     task: 'Apply For Old Age Security',
-    icon: faQuestion,
+    icon: faStamp,
     link: '/dashboard',
   },
   // ei tasks
