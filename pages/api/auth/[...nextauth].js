@@ -26,6 +26,7 @@ export default NextAuth({
     {
       id: 'ecasProvider',
       name: 'ECAS',
+      clientId: process.env.CLIENT_ID,
       type: 'oauth',
       authorization: process.env.ECAS_AUTHORIZATION,
       token: {
