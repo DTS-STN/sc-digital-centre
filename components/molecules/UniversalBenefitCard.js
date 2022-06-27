@@ -6,6 +6,8 @@ import HorizontalRule from '../atoms/HorizontalRule'
 import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 import CardHeader from '../atoms/CardHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStamp } from '@fortawesome/free-solid-svg-icons'
 
 export default function UniversalBenefitCard(props) {
   const [isOpen, setIsOpen] = useState(false)
@@ -37,13 +39,10 @@ export default function UniversalBenefitCard(props) {
                 <p className="pb-5 text-lg">{props.benefitDurationReached}</p>
                 <a
                   href=""
-                  className="underline text-blue-default hover:text-blue-hover"
+                  className="flex items-center underline text-blue-default hover:text-blue-hover"
                 >
-                  <img
-                    src="/images/dashboard/apply-for-benefit-icon.svg"
-                    alt=""
-                  />
-                  <p className="w-36 sm:w-24 lg:w-36 pr-5 pt-3">
+                  <FontAwesomeIcon icon={faStamp} className="text-3xl pr-4 " />
+                  <p className="w-full font-normal text-xl">
                     {props.applyForProgram}
                   </p>
                 </a>
@@ -93,10 +92,13 @@ export default function UniversalBenefitCard(props) {
         {props.taskGroups == null || props.taskGroups.length <= 0 ? null : (
           <div id={taskListId} className="  ">
             {!isOpen ? null : (
-              <div className="bg-gray-lighter  grid md:grid-cols-2 grid-rows-1 md:divide-x-2 divide-x-reverse ">
+              <div className="bg-gray-lighter grid grid-rows-1 md:grid-cols-2">
                 {props.taskGroups.map((taskList, index) => {
                   return (
-                    <div key={index}>
+                    <div
+                      className="border-b-2 md:border-b-0 md:odd:border-r-2 "
+                      key={index}
+                    >
                       <BenefitTasks taskList={taskList} />
                     </div>
                   )
