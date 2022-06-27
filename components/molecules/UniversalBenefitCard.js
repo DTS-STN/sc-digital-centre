@@ -88,21 +88,23 @@ export default function UniversalBenefitCard(props) {
           caption={props.taskHeading}
         />
       </h4>
-      <div className=" flex flex-col bg-white pb-12 rounded-b-xl">
+      <div className=" flex flex-col bg-white  rounded-b-xl">
         {props.taskGroups == null || props.taskGroups.length <= 0 ? null : (
           <div id={taskListId} className="  ">
             {!isOpen ? null : (
-              <div className="bg-gray-lighter grid grid-rows-1 md:grid-cols-2">
-                {props.taskGroups.map((taskList, index) => {
-                  return (
-                    <div
-                      className="border-b-2 md:border-b-0 md:odd:border-r-2 "
-                      key={index}
-                    >
-                      <BenefitTasks taskList={taskList} />
-                    </div>
-                  )
-                })}
+              <div className="pb-12">
+                <div className="bg-gray-lighter grid grid-rows-1 md:grid-cols-2">
+                  {props.taskGroups.map((taskList, index) => {
+                    return (
+                      <div
+                        className="border-b-2 last:border-b-0 md:border-b-0 md:odd:border-r-2  my-4 "
+                        key={index}
+                      >
+                        <BenefitTasks taskList={taskList} />
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             )}
           </div>

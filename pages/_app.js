@@ -3,10 +3,6 @@ import '../styles/fonts.css'
 import Layout from '../components/organisms/Layout'
 import { useRouter } from 'next/router'
 
-import '@fortawesome/fontawesome-svg-core/styles.css' // import Font Awesome CSS
-import { config } from '@fortawesome/fontawesome-svg-core'
-config.autoAddCss = false // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
-
 export default function MyApp({ Component, pageProps }) {
   let router = useRouter()
   router ??= {}
