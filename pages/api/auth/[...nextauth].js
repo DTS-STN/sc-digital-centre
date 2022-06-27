@@ -18,6 +18,15 @@ export default NextAuth({
       type: 'oauth',
       wellKnown: process.env.WELL_KNOWN,
       authorization: { params: { scope: 'openid email profile' } },
+      /*token: {
+        url: "https://keycloak.dts-stn.com/auth/realms/dts-stn/protocol/openid-connect/token",
+        async request(context) {
+          // context contains useful properties to help you make the request.
+          const tokens = await makeTokenRequest(context)
+          return { tokens }
+        }
+      },*/
+
       idToken: true,
       checks: ['state'],
       profile(profile) {
@@ -29,12 +38,15 @@ export default NextAuth({
       },
     },
   ],
+
   theme: {
     colorScheme: 'light',
   },
+  session: { jwt: true },
   callbacks: {
     async jwt({ token }) {
       token.userRole = 'admin'
+      console.log(token)
       return token
     },
   },
