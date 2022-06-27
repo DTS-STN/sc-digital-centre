@@ -306,7 +306,7 @@ object Build_Dynamic: BuildType({
         param("env.ECAS_AUTHORIZATION", "%vault:dts-secrets-dev/data/digitalCentre!/ECAS_AUTHORIZATION%")
         param("env.ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/ECAS_TOKEN%")
         param("env.ECAS_USERINFO", "%vault:dts-secrets-dev/data/digitalCentre!/ECAS_USERINFO%")
-        param("env.AUTH_DISABLED", "false")
+        param("env.AUTH_DISABLED", "true")
         param("env.TARGET", "dev")
         param("env.BRANCH", "dyna-%teamcity.build.branch%")
     }
