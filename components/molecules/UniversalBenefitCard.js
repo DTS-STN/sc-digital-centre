@@ -53,7 +53,7 @@ export default function UniversalBenefitCard(props) {
             </a>
           </div>
         ) : (
-          <ul className="grid sm:grid-cols-3 py-6 sm:pt-2">
+          <ul className="grid sm:grid-cols-3 sm:gap-4 lg:gap-7 py-6 sm:pt-2">
             {props.summaries.map((summary, index) => {
               return (
                 <BenefitCardHeaderSummary
