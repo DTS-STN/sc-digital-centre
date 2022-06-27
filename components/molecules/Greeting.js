@@ -5,10 +5,25 @@ import fr from '../../locales/fr'
 export default function Greeting(props) {
   const t = props.locale === 'en' ? en : fr
 
+  function getGreeting() {
+    switch (true) {
+      case props.time < 12:
+        return t.morningGreeting
+      case props.time < 17:
+        return t.afternoonGreeting
+      case props.time < 24:
+        return t.eveningGreeting
+      default:
+        return t.greeting
+    }
+  }
+
   return (
     <div>
       <div className="grid grid-cols-1 divide-y divide-red-600 font-display">
-        <div className="py-4 text-4xl font-bold">{`${t.greeting} ${props.name}`}</div>
+        <div className="py-4 text-4xl font-bold">{`${getGreeting()} ${
+          props.name
+        }`}</div>
         <div className="py-4 text-xl">{t.welcome}</div>
       </div>
       <Message

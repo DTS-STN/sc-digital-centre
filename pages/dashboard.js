@@ -15,6 +15,7 @@ import { MapSummary } from '../lib/mapSummaries'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
+  let time = new Date().getHours()
 
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
@@ -75,7 +76,7 @@ export default function Dashboard(props) {
 
   return (
     <>
-      <Greeting locale={props.locale} name="Mary" />
+      <Greeting locale={props.locale} time={time} name="Mary" />
       <div className="mb-8">
         {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
         {cppError ?? null}
