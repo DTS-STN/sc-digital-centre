@@ -144,7 +144,7 @@ export const BenefitTasks_EN = {
   },
   ViewPaymentInfo: {
     task: 'View my past payments',
-    icon: faFileInvoiceDollar,
+    icon: faDollarSign,
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
   },
   AccessCode: {
