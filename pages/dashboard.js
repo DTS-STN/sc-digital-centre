@@ -12,8 +12,8 @@ import en from '../locales/en'
 import fr from '../locales/fr'
 import { StatusColors, StatusCodes } from '../constants/StatusCodes'
 import { MapSummary } from '../lib/mapSummaries'
-// import queryGraphQL from "../graphql/client";
-// import getDashboardPage from "../graphql/queries/dashboardQuery.graphql";
+import queryGraphQL from '../graphql/client'
+import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -309,7 +309,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
   // const aemContent = await queryGraphQL(getDashboardPage).then((result) => {
   //   return result;
   // });
-  //console.log(aemContent)
+  // console.log(aemContent)
 
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',

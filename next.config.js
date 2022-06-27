@@ -61,18 +61,6 @@ const config = {
   images: {
     domains: ['www.canada.ca'],
   },
-}
-
-config.headers = async () => {
-  return [
-    {
-      // Apply these headers to all routes in your application.
-      source: '/(.*)',
-      headers: securityHeaders,
-    },
-  ]
-}
-module.exports = {
   webpack: (config) => {
     //GraphQL loader for .graphql files
     config.module.rules.push({
@@ -84,3 +72,16 @@ module.exports = {
     return config
   },
 }
+
+config.headers = async () => {
+  return [
+    {
+      // Apply these headers to all routes in your application.
+      source: '/(.*)',
+      headers: securityHeaders,
+    },
+  ]
+}
+
+// module.exports = config
+module.exports = config
