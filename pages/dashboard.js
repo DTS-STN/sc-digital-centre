@@ -55,7 +55,7 @@ export default function Dashboard(props) {
           }
         } else {
           const text = await res.text()
-          setError(`Error fetching ${program} data ${res.status} - ${text}.\n`)
+          setError(`Error fetching ${program} data ${res.status} - ${text}.`)
         }
       } catch (error) {
         setError(`Something went wrong fetching ${program} data.`)
