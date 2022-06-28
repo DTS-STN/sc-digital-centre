@@ -441,12 +441,16 @@ export default {
   errorPage503message: '(FR)503 - Service unavailable error occurred',
 
   //Profile page
-  profileAndSecuritySettings: '(FR)Profile and security settings',
+  profileSettings: '(FR)Profile and security settings',
+  updateProfile: '(FR)Update your profile information',
   profileAndPreferences: 'Profil et Préférences',
   securitySettings: 'Paramètres de sécurité',
   backToDashboard: '(FR)Back to my dashboard',
   edit: 'Modifier',
   moreInfo: "Plus d'information",
+
+  //Security page
+  securitySettings: '(FR)Security settings',
 
   //Dashboard task links
   updateAccountInfoTaskLink: '/fr/profile',

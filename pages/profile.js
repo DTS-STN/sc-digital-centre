@@ -3,12 +3,10 @@ import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
-import TabList from '../components/atoms/TabList'
+import ViewMoreLessButton from '../components/atoms/ViewMoreLessButton'
 
 export default function Profile(props) {
   const t = props.locale === 'en' ? en : fr
-  const [tabSelected, setTabSelected] = useState(0)
-  const [profileTabSelected, setProfileTabSelected] = useState(0)
   const fakeFieldsEI = {
     title: 'Profile Information',
     info: [
@@ -102,88 +100,78 @@ export default function Profile(props) {
       },
     ],
   }
-  const fakeSecurityFields = {
-    title: 'Security setting information',
-    info: [
-      {
-        title: 'Multi-factor profile',
-        fields: ['Reset my multi-factor profil'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Security questions',
-        fields: ['Change/update my security questions'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Secure my account',
-        fields: [
-          "Help secure my account using Passport, Driver's License or PR Card",
-        ],
-        moreInfoURL: null,
-      },
-      {
-        title: 'GC key password',
-        fields: ['Change my GC key password'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'EI access code',
-        fields: ['Your El access code', 'XXXXXX'],
-        moreInfoURL: '#',
-      },
-    ],
-  }
+
+  const [viewCPPFields, setViewCPPFields] = useState(false)
+  const [viewEIFields, setViewEIFields] = useState(false)
+  const [viewOASFields, setViewOASFields] = useState(false)
+
+  const benefitInformations = [
+    {
+      show: viewCPPFields,
+      setShow: setViewCPPFields,
+      fields: [fakeFieldsCPP],
+      benefit: t.cpp,
+    },
+    {
+      show: viewEIFields,
+      setShow: setViewEIFields,
+      fields: [fakeFieldsEI, fakeFieldsEI2],
+      benefit: t.ei,
+    },
+    {
+      show: viewOASFields,
+      setShow: setViewOASFields,
+      fields: [fakeFieldsOAS],
+      benefit: t.oas,
+    },
+  ]
   return (
     <>
       <h1 className="py-4 text-4xl font-bold text-gray-darker">
-        {t.profileAndSecuritySettings}
+        {t.profileSettings}
       </h1>
-      <TabList
-        titles={[t.profileAndPreferences, t.securitySettings]}
-        onClick={(index) => setTabSelected(index)}
-        tabSelected={tabSelected}
-        containerStyle={'flex flex-wrap border-b border-gray-200'}
-        selectedTabStyle={
-          'bg-gray-100 active border-b-2 border-b-bright-blue-light'
-        }
-        unselectedTabStyle={
-          'text-gray-500 hover:text-gray-600 hover:bg-gray-50'
-        }
-        genericTabStyle={'inline-block text-lg py-3 px-4 text-center'}
-        locale={props.locale}
-      />
-      {tabSelected === 0 ? (
-        <>
-          <TabList
-            titles={[t.ei, t.cpp, t.oas]}
-            onClick={(index) => setProfileTabSelected(index)}
-            tabSelected={profileTabSelected}
-            containerStyle={'my-4 flex flex-wrap gap-4'}
-            selectedTabStyle={'bg-bright-blue-lighter'}
-            unselectedTabStyle={'bg-gray-lighter'}
-            genericTabStyle={
-              'text-center px-10 py-1 whitespace-nowrap rounded-xl hover:bg-bright-blue-lighter '
-            }
-            locale={props.locale}
-          ></TabList>
-          {profileTabSelected === 0 || !profileTabSelected ? (
-            <ProfileInfo
-              fields={[fakeFieldsEI, fakeFieldsEI2]}
-              locale={props.locale}
-            />
-          ) : profileTabSelected === 1 ? (
-            <ProfileInfo fields={[fakeFieldsCPP]} locale={props.locale} />
-          ) : profileTabSelected === 2 ? (
-            <ProfileInfo fields={[fakeFieldsOAS]} locale={props.locale} />
-          ) : null}
-        </>
-      ) : tabSelected === 1 ? (
-        <ProfileInfo fields={[fakeSecurityFields]} locale={props.locale} />
-      ) : null}
+      <hr className="border-1 border-red-400" />
+      <span className="text-lg">{t.updateProfile}</span>
+
+      {benefitInformations.map((benefitInfo) => {
+        return (
+          <>
+            <h2 className="text-3xl py-2 font-bold">{benefitInfo.benefit}</h2>
+            <div className="py-2 mb-4">
+              {benefitInfo.show ? (
+                <ProfileInfo
+                  fields={benefitInfo.fields}
+                  locale={props.locale}
+                />
+              ) : null}
+              <ViewMoreLessButton
+                expanded={benefitInfo.show}
+                icon={benefitInfo.show}
+                onClick={() => benefitInfo.setShow(!benefitInfo.show)}
+                caption={!benefitInfo.show ? 'View settings' : 'View less'}
+              ></ViewMoreLessButton>
+            </div>
+
+            <hr className="border-1 border-gray-500" />
+          </>
+        )
+      })}
+
+      <div className="mt-10">
+        <h2 className="text-3xl font-bold">Looking for security settings?</h2>
+        <ul className="list-disc ml-8 text-lg">
+          <Link href={'#'}>
+            <li>
+              <a className="underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600">
+                Manage your security settings
+              </a>
+            </li>
+          </Link>
+        </ul>
+      </div>
 
       <Link href="/dashboard" passHref>
-        <button className="font-normal text-center font-display w-fit text-base bg-gray-100 p-2 px-4 rounded-md text-blue-default my-10">
+        <button className="font-normal text-center font-display w-fit text-base bg-gray-lighter p-2 px-4 rounded-md text-blue-default my-10">
           {t.backToDashboard}
         </button>
       </Link>

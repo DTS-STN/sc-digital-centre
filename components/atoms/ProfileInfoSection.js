@@ -7,30 +7,29 @@ export default function ProfileInfoSection(props) {
   const t = props.locale === 'en' ? en : fr
   return (
     <>
-      <h3 className="border-b border-gray-300 font-bold w-full">
-        {props.title}
-      </h3>
-      <div className="grid gap-y-8 gap-x-40 py-8 w-full sm:grid-cols-2 md:grid-cols-3 ">
+      <div className="grid gap-y-8 gap-x-40 py-8 w-full md:grid-cols-2 ">
         {props.info.map((item) => {
           return (
             <div key={item.title}>
-              <span className="flex justify-between">
-                <h2 className="font-bold">{item.title}</h2>
-                {item.moreInfoURL ? (
-                  <Link href={item.moreInfoURL} passHref>
-                    <a className="text-right underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600">
-                      {t.moreInfo}
-                    </a>
-                  </Link>
-                ) : (
-                  <button className="underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600">
-                    {t.edit}
-                  </button>
-                )}
+              <span className="flex">
+                <h2 className="font-bold text-2xl pb-4">{item.title}</h2>
               </span>
               {item.fields?.map((field) => (
-                <p key={field}>{field}</p>
+                <p key={field} className="text-xl">
+                  {field}
+                </p>
               ))}
+              {item.moreInfoURL ? (
+                <Link href={item.moreInfoURL} passHref>
+                  <a className="text-right underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600">
+                    {t.moreInfo}
+                  </a>
+                </Link>
+              ) : (
+                <button className="mt-2 py-2 px-3 rounded border-r border-b border-gray-darker bg-gray-lighter  text-blue-default cursor-pointer">
+                  {t.edit}
+                </button>
+              )}
             </div>
           )
         })}
