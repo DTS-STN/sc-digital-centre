@@ -35,6 +35,9 @@ export default {
   NextPayment: {
     title: 'Date du prochain paiement :',
   },
+  LatestStatusDate: {
+    title: 'Dernière mise à jour :',
+  },
   LatestStatus: {
     title: 'Dernière mise à jour :',
     link: '/',
@@ -300,9 +303,18 @@ export default {
   // Benefit types
   CPPRetirement: 'Pension de retraite',
   CPPSurvivor: "(FR)Survivor's pension",
-  EISickness: 'Maladie',
-  OASBeneficial: 'Sécurité de la vieillesse',
-  GISBeneficial: 'Supplément de revenu garanti',
+  CPPDisability: '(FR)Disability Pension',
+  OASRetirement: 'Pension de retraite',
+  GISRetirement: 'Pension de retraite',
+  EISickness: 'Prestations de maladie',
+  SEBRegular: '(FR) Regular Self-Empoyment benenfit active',
+
+  //Benefit callout text status
+  NotActive: "Pas d'avantage actif",
+  DurationReached: "Votre durée d'indemnisation actuelle a été atteinte",
+  //Benefit callout labels
+  activeBenefit: 'Bénéfices actifs',
+  status: 'Status',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
@@ -319,12 +331,8 @@ export default {
   viewPaymentHistory: '(FR)View my payments',
   transactionDate: '(FR)Transaction date:',
   agreementStatus: '(FR)Agreement status:',
-  benefitDurationReached:
-    "Votre durée d'indemnisation actuelle a été atteinte.",
 
   // Benefit Card details
-  benefitDurationReached:
-    "Votre durée d'indemnisation actuelle a été atteinte.",
   applicationDate: '(FR)Application date',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages',
