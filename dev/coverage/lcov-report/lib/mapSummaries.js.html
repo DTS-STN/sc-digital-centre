@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>22/22</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/20</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -107,26 +107,19 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -139,25 +132,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,50 +165,45 @@ export function MapSummary(summaries, t, locale) {
   return summaries.map((summary) =&gt; {
     const summaryStatus =
       summary.type === SummaryTypes.LatestStatus
-        ? t.eiMessages[summary.status]
-        : summary.status
-    const summaryStatusClassName =
-      summary.type === SummaryTypes.LatestStatus ? 'text-lg' : 'font-bold'
+        ? t.eiMessages[summary.extra]
+        : summary.extra
     let summaryValue = null
-    let summaryValueClassName = null
+    let summaryValueStyle = null
     switch (summary.type) {
       case SummaryTypes.LastPayment:
       case SummaryTypes.LastNetPayment:
         summaryValue = formatMoney(summary.value, locale)
-        summaryValueClassName = 'text-3xl'
+        summaryValueStyle = 'text-4xl'
         break
       case SummaryTypes.NextPayment:
       case SummaryTypes.NextReport:
       case SummaryTypes.LatestStatus:
+      case SummaryTypes.LatestStatusDate:
       case SummaryTypes.EstimatedDecisionDate:
       case SummaryTypes.LastPaymentDate:
-      case SummaryTypes.LatestStatusMessage:
       case SummaryTypes.TransactionDate:
         summaryValue = formatDate(summary.value, locale)
-        summaryValueClassName = 'text-lg'
         break
       case SummaryTypes.RequestedBenefit:
       case SummaryTypes.BenefitAffected:
       case SummaryTypes.ActiveBenefit:
         summaryValue = t[summary.value]
-        summaryValueClassName = 'text-lg'
         break
+      case SummaryTypes.LatestStatusMessage:
       case SummaryTypes.PresentStatus:
       case SummaryTypes.NextPaymentDate:
       case SummaryTypes.AgreementStatus:
         summaryValue = summary.value
-        summaryValueClassName = 'text-lg'
       default:
         break
     }
     return {
       title: t[summary.type].title,
       status: summaryStatus,
-      statusClassName: summaryStatusClassName,
       value: summaryValue,
-      valueClassName: summaryValueClassName,
       link: t[summary.type].link,
       linkText: t[summary.type].linkText,
+      valueStyle: summaryValueStyle,
     }
   })
 }
@@ -229,7 +214,7 @@ export function MapSummary(summaries, t, locale) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jun 27 2022 19:21:32 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 28 2022 13:08:35 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
