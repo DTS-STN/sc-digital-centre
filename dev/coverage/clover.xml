@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1656421715691" clover="3.2.0">
-  <project timestamp="1656421715691" name="All files">
-    <metrics statements="384" coveredstatements="334" conditionals="291" coveredconditionals="215" methods="122" coveredmethods="101" elements="797" coveredelements="650" complexity="0" loc="384" ncloc="384" packages="9" files="50" classes="50"/>
+<coverage generated="1656430223394" clover="3.2.0">
+  <project timestamp="1656430223394" name="All files">
+    <metrics statements="401" coveredstatements="350" conditionals="299" coveredconditionals="222" methods="123" coveredmethods="102" elements="823" coveredelements="674" complexity="0" loc="401" ncloc="401" packages="9" files="50" classes="50"/>
     <package name="components.atoms">
       <metrics statements="50" coveredstatements="45" conditionals="40" coveredconditionals="30" methods="22" coveredmethods="20"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -224,13 +224,16 @@
       </file>
     </package>
     <package name="lib">
-      <metrics statements="34" coveredstatements="34" conditionals="30" coveredconditionals="30" methods="5" coveredmethods="5"/>
+      <metrics statements="37" coveredstatements="36" conditionals="32" coveredconditionals="31" methods="6" coveredmethods="6"/>
       <file name="Utils.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/lib/Utils.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
         <line num="2" count="11" type="stmt"/>
-        <line num="5" count="11" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
+        <line num="5" count="11" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="13" count="43" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
       </file>
       <file name="mapCallout.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/lib/mapCallout.js">
         <metrics statements="14" coveredstatements="14" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1"/>
@@ -270,63 +273,77 @@
       </file>
     </package>
     <package name="lib.api">
-      <metrics statements="80" coveredstatements="71" conditionals="39" coveredconditionals="31" methods="9" coveredmethods="8"/>
+      <metrics statements="94" coveredstatements="85" conditionals="45" coveredconditionals="37" methods="9" coveredmethods="8"/>
       <file name="mapBenefits.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/lib/api/mapBenefits.js">
-        <metrics statements="54" coveredstatements="54" conditionals="25" coveredconditionals="23" methods="6" coveredmethods="6"/>
-        <line num="18" count="110" type="stmt"/>
-        <line num="23" count="110" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="26" count="110" type="stmt"/>
-        <line num="30" count="41" type="stmt"/>
-        <line num="35" count="41" type="cond" truecount="2" falsecount="0"/>
-        <line num="37" count="41" type="stmt"/>
-        <line num="54" count="8" type="stmt"/>
-        <line num="55" count="8" type="stmt"/>
-        <line num="58" count="8" type="cond" truecount="5" falsecount="0"/>
-        <line num="61" count="2" type="stmt"/>
-        <line num="69" count="2" type="stmt"/>
-        <line num="72" count="4" type="stmt"/>
-        <line num="73" count="4" type="stmt"/>
-        <line num="87" count="4" type="stmt"/>
-        <line num="90" count="1" type="stmt"/>
-        <line num="94" count="1" type="stmt"/>
+        <metrics statements="68" coveredstatements="68" conditionals="31" coveredconditionals="29" methods="6" coveredmethods="6"/>
+        <line num="19" count="110" type="stmt"/>
+        <line num="24" count="110" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="27" count="110" type="stmt"/>
+        <line num="31" count="45" type="stmt"/>
+        <line num="36" count="45" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="45" type="stmt"/>
+        <line num="55" count="9" type="stmt"/>
+        <line num="56" count="9" type="stmt"/>
+        <line num="59" count="9" type="cond" truecount="5" falsecount="0"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="73" count="5" type="stmt"/>
+        <line num="76" count="5" type="stmt"/>
+        <line num="77" count="5" type="stmt"/>
+        <line num="86" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="87" count="2" type="stmt"/>
+        <line num="94" count="5" type="stmt"/>
         <line num="97" count="1" type="stmt"/>
-        <line num="99" count="8" type="stmt"/>
-        <line num="100" count="8" type="stmt"/>
-        <line num="118" count="17" type="stmt"/>
-        <line num="119" count="17" type="stmt"/>
-        <line num="120" count="17" type="stmt"/>
-        <line num="123" count="17" type="cond" truecount="5" falsecount="0"/>
-        <line num="125" count="6" type="stmt"/>
-        <line num="126" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="127" count="6" type="stmt"/>
-        <line num="129" count="6" type="stmt"/>
-        <line num="137" count="6" type="stmt"/>
-        <line num="141" count="6" type="stmt"/>
-        <line num="142" count="6" type="stmt"/>
-        <line num="150" count="6" type="stmt"/>
-        <line num="153" count="2" type="stmt"/>
-        <line num="168" count="5" type="stmt"/>
-        <line num="170" count="17" type="stmt"/>
-        <line num="171" count="17" type="stmt"/>
-        <line num="176" count="2" type="stmt"/>
-        <line num="185" count="2" type="stmt"/>
-        <line num="202" count="14" type="stmt"/>
-        <line num="203" count="14" type="stmt"/>
-        <line num="204" count="14" type="stmt"/>
-        <line num="207" count="14" type="cond" truecount="5" falsecount="0"/>
-        <line num="210" count="2" type="stmt"/>
-        <line num="211" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="213" count="2" type="stmt"/>
-        <line num="215" count="2" type="stmt"/>
-        <line num="223" count="2" type="stmt"/>
-        <line num="227" count="8" type="stmt"/>
-        <line num="228" count="8" type="stmt"/>
-        <line num="239" count="8" type="stmt"/>
-        <line num="242" count="2" type="stmt"/>
-        <line num="257" count="4" type="stmt"/>
-        <line num="260" count="14" type="stmt"/>
-        <line num="261" count="14" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="106" count="9" type="stmt"/>
+        <line num="107" count="9" type="stmt"/>
+        <line num="125" count="18" type="stmt"/>
+        <line num="126" count="18" type="stmt"/>
+        <line num="127" count="18" type="stmt"/>
+        <line num="130" count="18" type="cond" truecount="5" falsecount="0"/>
+        <line num="132" count="6" type="stmt"/>
+        <line num="133" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="134" count="6" type="stmt"/>
+        <line num="136" count="6" type="stmt"/>
+        <line num="144" count="6" type="stmt"/>
+        <line num="147" count="5" type="stmt"/>
+        <line num="148" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="149" count="5" type="stmt"/>
+        <line num="150" count="5" type="stmt"/>
+        <line num="155" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="156" count="4" type="stmt"/>
+        <line num="163" count="5" type="stmt"/>
+        <line num="166" count="2" type="stmt"/>
+        <line num="170" count="2" type="stmt"/>
+        <line num="173" count="2" type="stmt"/>
+        <line num="188" count="5" type="stmt"/>
+        <line num="190" count="18" type="stmt"/>
+        <line num="191" count="18" type="stmt"/>
+        <line num="196" count="2" type="stmt"/>
+        <line num="205" count="2" type="stmt"/>
+        <line num="222" count="16" type="stmt"/>
+        <line num="223" count="16" type="stmt"/>
+        <line num="224" count="16" type="stmt"/>
+        <line num="227" count="16" type="cond" truecount="5" falsecount="0"/>
+        <line num="230" count="2" type="stmt"/>
+        <line num="231" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="233" count="2" type="stmt"/>
+        <line num="235" count="2" type="stmt"/>
+        <line num="243" count="2" type="stmt"/>
+        <line num="246" count="7" type="stmt"/>
+        <line num="247" count="7" type="stmt"/>
+        <line num="248" count="7" type="stmt"/>
+        <line num="253" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="254" count="4" type="stmt"/>
+        <line num="261" count="7" type="stmt"/>
+        <line num="264" count="3" type="stmt"/>
+        <line num="268" count="3" type="stmt"/>
+        <line num="271" count="2" type="stmt"/>
+        <line num="286" count="4" type="stmt"/>
+        <line num="289" count="16" type="stmt"/>
+        <line num="290" count="16" type="stmt"/>
       </file>
       <file name="programData.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/lib/api/programData.js">
         <metrics statements="26" coveredstatements="17" conditionals="14" coveredconditionals="8" methods="3" coveredmethods="2"/>
