@@ -12,6 +12,7 @@ import en from '../locales/en'
 import fr from '../locales/fr'
 import { StatusColors, StatusCodes } from '../constants/StatusCodes'
 import { MapSummary } from '../lib/mapSummaries'
+import MapCallout from '../lib/mapCallout'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -101,6 +102,7 @@ export default function Dashboard(props) {
                   benefitDurationReached={t.benefitDurationReached}
                   applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
                   summaries={MapSummary(value.summaries, t, props.locale)}
+                  callout={MapCallout(value.statusCode, value.typeCode, t)}
                 />
               )
             })
@@ -130,6 +132,7 @@ export default function Dashboard(props) {
                   benefitDurationReached={t.benefitDurationReached}
                   applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
                   summaries={MapSummary(value.summaries, t, props.locale)}
+                  callout={MapCallout(value.statusCode, value.typeCode, t)}
                 />
               )
             })
@@ -159,6 +162,7 @@ export default function Dashboard(props) {
                   benefitDurationReached={t.benefitDurationReached}
                   applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
                   summaries={MapSummary(value.summaries, t, props.locale)}
+                  callout={MapCallout(value.statusCode, value.typeCode, t)}
                 />
               )
             })
@@ -188,6 +192,7 @@ export default function Dashboard(props) {
                   benefitDurationReached={t.benefitDurationReached}
                   applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
                   summaries={MapSummary(value.summaries, t, props.locale)}
+                  callout={MapCallout(value.statusCode, value.typeCode, t)}
                 />
               )
             })
@@ -217,6 +222,7 @@ export default function Dashboard(props) {
                   benefitDurationReached={t.benefitDurationReached}
                   applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
                   summaries={MapSummary(value.summaries, t, props.locale)}
+                  callout={MapCallout(value.statusCode, value.typeCode, t)}
                 />
               )
             })
@@ -249,6 +255,7 @@ export default function Dashboard(props) {
             benefitDurationReached={t.benefitDurationReached}
             applyForProgram={`${t.applyFor} ${t[sebBenefit.programCode]}`}
             summaries={MapSummary(sebBenefit.summaries, t, props.locale)}
+            callout={MapCallout(sebBenefit.statusCode, sebBenefit.typeCode, t)}
           />
         ) : null}
 

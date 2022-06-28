@@ -2,7 +2,7 @@ import { TypeCodes } from './ProgramTypeCodes'
 import { StatusCodes } from './StatusCodes'
 
 export const EITypes = {
-  1: TypeCodes.EIUnknown,
+  1: TypeCodes.EISickness,
   2: TypeCodes.EISickness,
 }
 
