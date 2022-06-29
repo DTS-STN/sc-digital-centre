@@ -42,8 +42,6 @@ describe('Dashboard', () => {
 
   // set up mocks
   getSession.mockReturnValue([true])
-  getCookie.mockReturnValue('default')
-  setCookies.mockReturnValue('default')
   const { req, res } = createMocks({ method: 'GET' })
 
   beforeEach(() => {
