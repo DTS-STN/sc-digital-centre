@@ -7,15 +7,13 @@ import { getAdvertsingCards } from '../../contents/BenefitAdvertisingCards'
 import { getNoBenefitCards } from '../../contents/NoBenefitCards'
 import { createMocks } from 'node-mocks-http'
 import { getSession } from 'next-auth/react'
-import { act } from 'react-test-renderer'
+import { act } from 'react-dom/test-utils'
 import { enableFetchMocks } from 'jest-fetch-mock'
 import { unmountComponentAtNode } from 'react-dom'
 
 expect.extend(toHaveNoViolations)
-jest.mock('next-auth/react')
-jest.mock('cookies-next')
 enableFetchMocks()
-
+jest.mock('next-auth/react')
 jest.mock('cookies-next', () => ({
   getCookie: () => 'default',
   setCookies: () => 'default',
@@ -23,10 +21,11 @@ jest.mock('cookies-next', () => ({
 
 describe('Dashboard', () => {
   let container
+  const { req, res } = createMocks({ method: 'GET' })
   const sebFetchResult = {
     programCode: 'seb',
     statusCode: 'activeAgreement',
-    typeCode: 'SEB',
+    typeCode: 'seb',
     summaries: [
       {
         type: 'TransactionDate',
@@ -38,7 +37,7 @@ describe('Dashboard', () => {
       },
     ],
   }
-  const dashboard = (
+  const defaultDashboard = (
     <Dashboard
       advertisingCards={getAdvertsingCards()}
       noBenefitCards={getNoBenefitCards('en')}
@@ -46,10 +45,6 @@ describe('Dashboard', () => {
       metadata={{}}
     />
   )
-
-  // set up mocks
-  getSession.mockReturnValue([true])
-  const { req, res } = createMocks({ method: 'GET' })
 
   beforeEach(() => {
     fetch.resetMocks()
@@ -71,28 +66,26 @@ describe('Dashboard', () => {
     container = null
   })
 
-  it('loads data', async () => {
+  it('loads api data', async () => {
     await act(async () => {
-      render(dashboard, container)
+      render(defaultDashboard, container)
     })
-    //loads data
-    const sebResult = screen.getByText('Self Employment Benefits')
+
+    const sebResult = screen.getByTestId('benefit-card-seb-seb-activeAgreement')
     expect(sebResult).toBeInTheDocument()
-
-
   })
-  
-  it('loads a nobenefitcard', () => {  
-    act(() => {
-      render(dashboard, container)
+
+  it('loads a nobenefitcard', async () => {
+    await act(async () => {
+      render(defaultDashboard, container)
     })
     const NoBenefitCard = screen.getByTestId('no-benefit-card1')
     expect(NoBenefitCard).toBeInTheDocument()
   })
-  
-  it('handles error', async () => {
+
+  it('handles api error', async () => {
     await act(async () => {
-      render(dashboard, container)
+      render(defaultDashboard, container)
     })
     //handles error
     const cppdResult = screen.getByText(
@@ -101,22 +94,23 @@ describe('Dashboard', () => {
     expect(cppdResult).toBeInTheDocument()
   })
 
-  it('renders Dashboard', () => {
-    act(() => {
-      render(dashboard, container)
+  it('renders Dashboard', async () => {
+    await act(async () => {
+      render(defaultDashboard, container)
     })
     expect(container).toBeTruthy()
   })
 
   it('has no a11y violations', async () => {
     await act(async () => {
-      render(dashboard, container)
+      render(defaultDashboard, container)
     })
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
 
   it('returns expected server props', async () => {
+    getSession.mockReturnValueOnce([true])
     const result = await getServerSideProps({
       req,
       res,

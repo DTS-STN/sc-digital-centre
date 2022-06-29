@@ -14,7 +14,11 @@ export default function UniversalBenefitCard(props) {
   const taskListId = `task-list-${props.benefitUniqueId}`
 
   return (
-    <div className={`benefit-card`} id={benefitCardId}>
+    <div
+      className={`benefit-card`}
+      id={benefitCardId}
+      data-testid={benefitCardId}
+    >
       <div className="h-10">
         <StatusBadge
           status={props.statusBadge.status}
