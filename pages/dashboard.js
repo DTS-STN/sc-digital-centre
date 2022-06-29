@@ -282,7 +282,11 @@ export default function Dashboard(props) {
           ? noBenefitCards.map((value, index) => {
               return (
                 <div key={index}>
-                  <NoBenefitCard locale={props.locale} benefit={value} />
+                  <NoBenefitCard
+                    data-testid="no-benefit-card"
+                    locale={props.locale}
+                    benefit={value}
+                  />
                 </div>
               )
             })

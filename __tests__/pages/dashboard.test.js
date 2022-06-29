@@ -78,16 +78,15 @@ describe('Dashboard', () => {
     const sebResult = screen.getByText('Self Employment Benefits')
     expect(sebResult).toBeInTheDocument()
 
+    //loads nobenefitcards
+    const NoBenefitCard = screen.getByTestId('no-benefit-card')
+    expect(NoBenefitCard).toBeInTheDocument()
+
     //handles error
     const cppdResult = screen.getByText(
       'Error fetching cppd data 501 - "Request Not Avalaible".'
     )
     expect(cppdResult).toBeInTheDocument()
-  })
-
-  it('renders NoBenefitCards', () => {
-    const NoBenefitCard = screen.getByText('Learn more about')
-    expect(NoBenefitCard).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
