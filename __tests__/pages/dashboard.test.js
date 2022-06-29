@@ -14,6 +14,7 @@ import { enableFetchMocks } from 'jest-fetch-mock'
 
 expect.extend(toHaveNoViolations)
 jest.mock('next-auth/react')
+jest.mock('cookies-next')
 enableFetchMocks()
 
 jest.mock('cookies-next', () => ({
@@ -22,18 +23,6 @@ jest.mock('cookies-next', () => ({
 }))
 
 describe('Dashboard', () => {
-  const NoBenefitCards =
-    getCookie() == 'default'
-      ? render(
-          getNoBenefitCards('en').map((value, index) => {
-            return (
-              <div key={index}>
-                <NoBenefitCard locale="en" benefit={value} />
-              </div>
-            )
-          })
-        )
-      : null
   let container
   const sebFetchResult = {
     programCode: 'seb',
@@ -53,6 +42,8 @@ describe('Dashboard', () => {
 
   // set up mocks
   getSession.mockReturnValue([true])
+  getCookie.mockReturnValue('default')
+  setCookies.mockReturnValue('default')
   const { req, res } = createMocks({ method: 'GET' })
 
   beforeEach(() => {
@@ -97,7 +88,8 @@ describe('Dashboard', () => {
   })
 
   it('renders NoBenefitCards', () => {
-    expect(NoBenefitCards).toBeTruthy()
+    const NoBenefitCard = screen.getByText('Learn more about')
+    expect(NoBenefitCard).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
