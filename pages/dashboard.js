@@ -281,12 +281,8 @@ export default function Dashboard(props) {
         {userid == 'default'
           ? noBenefitCards.map((value, index) => {
               return (
-                <div key={index}>
-                  <NoBenefitCard
-                    data-testid="no-benefit-card"
-                    locale={props.locale}
-                    benefit={value}
-                  />
+                <div key={index} data-testid={'no-benefit-card' + index}>
+                  <NoBenefitCard locale={props.locale} benefit={value} />
                 </div>
               )
             })

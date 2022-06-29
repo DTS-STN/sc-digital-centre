@@ -78,8 +78,8 @@ describe('Dashboard', () => {
     const sebResult = screen.getByText('Self Employment Benefits')
     expect(sebResult).toBeInTheDocument()
 
-    //loads nobenefitcards
-    const NoBenefitCard = screen.getByTestId('no-benefit-card')
+    //loads a nobenefitcard
+    const NoBenefitCard = screen.getByTestId('no-benefit-card1')
     expect(NoBenefitCard).toBeInTheDocument()
 
     //handles error
