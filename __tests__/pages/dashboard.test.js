@@ -12,7 +12,13 @@ import { enableFetchMocks } from 'jest-fetch-mock'
 
 expect.extend(toHaveNoViolations)
 jest.mock('next-auth/react')
+jest.mock('cookies-next')
 enableFetchMocks()
+
+jest.mock('cookies-next', () => ({
+  getCookie: () => 'default',
+  setCookies: () => 'default',
+}))
 
 describe('Dashboard', () => {
   let container
@@ -69,6 +75,10 @@ describe('Dashboard', () => {
     //loads data
     const sebResult = screen.getByText('Self Employment Benefits')
     expect(sebResult).toBeInTheDocument()
+
+    //loads a nobenefitcard
+    const NoBenefitCard = screen.getByTestId('no-benefit-card1')
+    expect(NoBenefitCard).toBeInTheDocument()
 
     //handles error
     const cppdResult = screen.getByText(
