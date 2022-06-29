@@ -9,6 +9,7 @@ import { createMocks } from 'node-mocks-http'
 import { getSession } from 'next-auth/react'
 import { act } from 'react-test-renderer'
 import { enableFetchMocks } from 'jest-fetch-mock'
+import { unmountComponentAtNode } from 'react-dom'
 
 expect.extend(toHaveNoViolations)
 jest.mock('next-auth/react')
@@ -37,6 +38,14 @@ describe('Dashboard', () => {
       },
     ],
   }
+  const dashboard = (
+    <Dashboard
+      advertisingCards={getAdvertsingCards()}
+      noBenefitCards={getNoBenefitCards('en')}
+      locale="en"
+      metadata={{}}
+    />
+  )
 
   // set up mocks
   getSession.mockReturnValue([true])
@@ -44,9 +53,6 @@ describe('Dashboard', () => {
 
   beforeEach(() => {
     fetch.resetMocks()
-  })
-
-  act(() => {
     //set what each fetch will return in order of fetch call
     fetch.mockResponses(
       [JSON.stringify(''), { status: 204 }], //cpp
@@ -56,30 +62,38 @@ describe('Dashboard', () => {
       [JSON.stringify(''), { status: 204 }], //gis
       [JSON.stringify(sebFetchResult), { status: 200 }] //seb
     )
-    container = render(
-      <Dashboard
-        advertisingCards={getAdvertsingCards()}
-        noBenefitCards={getNoBenefitCards('en')}
-        locale="en"
-        metadata={{}}
-      />
-    ).container
-
-    //helps to ensure fetch completed before leaving act()
-    screen.findByText('Loading CPP User Benefit Data...')
+    container = document.createElement('div')
+    document.body.appendChild(container)
+  })
+  afterEach(() => {
+    unmountComponentAtNode(container)
+    container.remove()
+    container = null
   })
 
-  it('renders Dashboard', () => {
-    expect(container).toBeTruthy()
-
+  it('loads data', async () => {
+    await act(async () => {
+      render(dashboard, container)
+    })
     //loads data
     const sebResult = screen.getByText('Self Employment Benefits')
     expect(sebResult).toBeInTheDocument()
 
-    //loads a nobenefitcard
+
+  })
+  
+  it('loads a nobenefitcard', () => {  
+    act(() => {
+      render(dashboard, container)
+    })
     const NoBenefitCard = screen.getByTestId('no-benefit-card1')
     expect(NoBenefitCard).toBeInTheDocument()
-
+  })
+  
+  it('handles error', async () => {
+    await act(async () => {
+      render(dashboard, container)
+    })
     //handles error
     const cppdResult = screen.getByText(
       'Error fetching cppd data 501 - "Request Not Avalaible".'
@@ -87,7 +101,17 @@ describe('Dashboard', () => {
     expect(cppdResult).toBeInTheDocument()
   })
 
+  it('renders Dashboard', () => {
+    act(() => {
+      render(dashboard, container)
+    })
+    expect(container).toBeTruthy()
+  })
+
   it('has no a11y violations', async () => {
+    await act(async () => {
+      render(dashboard, container)
+    })
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
