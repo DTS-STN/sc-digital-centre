@@ -29,4 +29,11 @@ describe('Status Badge', () => {
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
+
+  it('can hide', () => {
+    const { container } = render(
+      <StatusBadge hidden={true} status="" srDescription="" />
+    )
+    expect(container).toBeEmptyDOMElement()
+  })
 })

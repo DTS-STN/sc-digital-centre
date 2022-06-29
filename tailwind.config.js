@@ -32,9 +32,9 @@ module.exports = {
           dark: '#245C81',
         },
         'brighter-blue': {
-          light: '#BDE9EF',
-          medium: '#84D2DC',
-          dark: '#3BAFBE',
+          light: '#BDE9EF27',
+          medium: '#269ABC66',
+          dark: '#269ABC',
         },
         'blue': {
           hover: '#0535D2',
@@ -53,14 +53,14 @@ module.exports = {
           dark: '#881515',
         },
         'yellow': {
-          light: '#FFCB7C',
-          medium: '#FFB84D',
-          dark: '#E98F07',
+          light: '#EE710027',
+          medium: '#EE710080',
+          dark: '#EE7100',
         },
         'green': {
-          light: '#B0DEA0',
-          medium: '#96D77F',
-          dark: '#61C53E',
+          light: '#A3D88180',
+          medium: '#A3D881',
+          dark: '#65B234',
         },
         'purple': {
           light: '#9E81CB',

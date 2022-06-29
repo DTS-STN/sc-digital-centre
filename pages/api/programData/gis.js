@@ -1,4 +1,4 @@
-import { MapGISCard } from '../../../lib/api/mapBenefits'
+import { MapOASGISCard } from '../../../lib/api/mapBenefits'
 import { FetchProgramData, MapArrayData } from '../../../lib/api/programData'
 
 export default async function handler(req, res) {
@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     req,
     res,
     null,
-    (data) => MapArrayData(data, (item) => MapGISCard(item)),
+    (data) => MapArrayData(data, (item) => MapOASGISCard(item)),
     (mockObj) => mockObj.GIS
   )
 }
