@@ -83,5 +83,4 @@ config.headers = async () => {
   ]
 }
 
-// module.exports = config
 module.exports = config
