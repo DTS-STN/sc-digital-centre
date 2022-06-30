@@ -48,7 +48,7 @@ describe('ProfileInfo', () => {
   let container
   act(() => {
     container = render(
-      <ProfileInfo fields={[...fakeFields, ...fakeFields2]} />
+      <ProfileInfo editText="edit" fields={[...fakeFields, ...fakeFields2]} />
     ).container
   })
 
