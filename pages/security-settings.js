@@ -4,7 +4,7 @@ import InfoSection from '../components/atoms/InfoSection'
 import en from '../locales/en'
 import fr from '../locales/fr'
 
-export function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }) {
   const t = locale === 'en' ? en : fr
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',

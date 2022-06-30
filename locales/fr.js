@@ -447,10 +447,9 @@ export default {
   //Profile page
   profileAndSecuritySettings: '(FR)Profile and security settings',
   profileAndPreferences: 'Profil et Préférences',
-  securitySettings: 'Paramètres de sécurité',
 
   //Security Settings page
-  securitySettings: '(FR)Security Settings',
+  securitySettings: 'Paramètres de sécurité',
   updateSecuritySettings: '(FR)Update your security settings',
   mfa: '(FR)Multi-factor authentication',
   modifyMfa: '(FR)Modify multi-factor authentication settings',
