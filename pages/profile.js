@@ -7,99 +7,88 @@ import ViewMoreLessButton from '../components/atoms/ViewMoreLessButton'
 
 export default function Profile(props) {
   const t = props.locale === 'en' ? en : fr
-  const fakeFieldsEI = {
-    title: 'Profile Information',
-    info: [
-      {
-        title: 'Address',
-        fields: ['123 Main street', 'Montreal (Quebec)', 'A1A 1A1'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Province of residence',
-        fields: ['Ontario'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Deposit Details',
-        fields: ['Scotiabank', 'XXXXXXX-123'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Phone',
-        fields: ['XXX - XXX - 1234'],
-        moreInfoURL: null,
-      },
-    ],
-  }
-  const fakeFieldsEI2 = {
-    title: 'Preferences',
-    info: [
-      {
-        title: 'Language of correspondence',
-        fields: ['English'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Alert me',
-        fields: [
-          'Receive email notifications when new information about your claim is available',
-          'Registered',
-        ],
-        moreInfoURL: null,
-      },
-    ],
-  }
-  const fakeFieldsCPP = {
-    title: 'Profile Information',
-    info: [
-      {
-        title: 'Address',
-        fields: ['123 Main street', 'Montreal, Quebec', '1A1-1A1'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Deposit Details',
-        fields: ['Scotiabank', 'XXXXXXX-123'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Phone',
-        fields: ['XXX - XXX - 1234'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Preferences',
-        fields: ['Give consent to communicate on my behalf'],
-        moreInfoURL: null,
-      },
-    ],
-  }
-  const fakeFieldsOAS = {
-    title: 'Profile Information',
-    info: [
-      {
-        title: 'Address',
-        fields: ['123 Main street', 'Montreal, Quebec', '1A1-1A1'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Deposit Details',
-        fields: ['Scotiabank', 'XXXXXXX-123'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Phone',
-        fields: ['XXX - XXX - 1234'],
-        moreInfoURL: null,
-      },
-      {
-        title: 'Preferences',
-        fields: ['Give consent to communicate on my behalf'],
-        moreInfoURL: null,
-      },
-    ],
-  }
+  const fakeFieldsEI = [
+    {
+      title: 'Address',
+      fields: ['123 Main street', 'Montreal (Quebec)', 'A1A 1A1'],
+      moreInfoURL: null,
+    },
+    {
+      title: 'Province of residence',
+      fields: ['Ontario'],
+      moreInfoURL: null,
+    },
+    {
+      title: 'Deposit Details',
+      fields: ['Scotiabank', 'XXXXXXX-123'],
+      moreInfoURL: null,
+    },
+    {
+      title: 'Phone',
+      fields: ['XXX - XXX - 1234'],
+      moreInfoURL: null,
+    },
+  ]
+  const fakeFieldsEI2 = [
+    {
+      title: 'Language of correspondence',
+      fields: ['English'],
+      moreInfoURL: null,
+    },
+    {
+      title: 'Alert me',
+      fields: [
+        'Receive email notifications when new information about your claim is available',
+        'Registered',
+      ],
+      moreInfoURL: null,
+    },
+  ]
+
+  const fakeFieldsCPP = [
+    {
+      title: 'Address',
+      fields: ['123 Main street', 'Montreal, Quebec', '1A1-1A1'],
+      moreInfoURL: null,
+    },
+    {
+      title: 'Deposit Details',
+      fields: ['Scotiabank', 'XXXXXXX-123'],
+      moreInfoURL: null,
+    },
+    {
+      title: 'Phone',
+      fields: ['XXX - XXX - 1234'],
+      moreInfoURL: null,
+    },
+    {
+      title: 'Preferences',
+      fields: ['Give consent to communicate on my behalf'],
+      moreInfoURL: null,
+    },
+  ]
+  const fakeFieldsOAS = [
+    {
+      title: 'Address',
+      fields: ['123 Main street', 'Montreal, Quebec', '1A1-1A1'],
+      moreInfoURL: null,
+    },
+    {
+      title: 'Deposit Details',
+      fields: ['Scotiabank', 'XXXXXXX-123'],
+      moreInfoURL: null,
+    },
+    {
+      title: 'Phone',
+      fields: ['XXX - XXX - 1234'],
+      moreInfoURL: null,
+    },
+    {
+      title: 'Preferences',
+      fields: ['Give consent to communicate on my behalf'],
+      moreInfoURL: null,
+    },
+  ]
 
   const [viewCPPFields, setViewCPPFields] = useState(false)
   const [viewEIFields, setViewEIFields] = useState(false)
@@ -109,19 +98,19 @@ export default function Profile(props) {
     {
       show: viewCPPFields,
       setShow: setViewCPPFields,
-      fields: [fakeFieldsCPP],
+      fields: fakeFieldsCPP,
       benefit: t.cpp,
     },
     {
       show: viewEIFields,
       setShow: setViewEIFields,
-      fields: [fakeFieldsEI, fakeFieldsEI2],
+      fields: [...fakeFieldsEI, ...fakeFieldsEI2],
       benefit: t.ei,
     },
     {
       show: viewOASFields,
       setShow: setViewOASFields,
-      fields: [fakeFieldsOAS],
+      fields: fakeFieldsOAS,
       benefit: t.oas,
     },
   ]
@@ -149,7 +138,7 @@ export default function Profile(props) {
                 icon={benefitInfo.show}
                 onClick={() => benefitInfo.setShow(!benefitInfo.show)}
                 caption={!benefitInfo.show ? 'View settings' : 'View less'}
-              ></ViewMoreLessButton>
+              />
             </div>
 
             <hr className="border-1 border-gray-500" />
@@ -160,7 +149,7 @@ export default function Profile(props) {
       <div className="mt-10">
         <h2 className="text-3xl font-bold">Looking for security settings?</h2>
         <ul className="list-disc ml-8 text-lg">
-          <Link href={'#'}>
+          <Link href={'/security-settings'}>
             <li>
               <a className="underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600">
                 Manage your security settings
