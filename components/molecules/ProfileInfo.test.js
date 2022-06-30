@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import { act } from 'react-test-renderer'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import ProfileInfo from './ProfileInfo'
@@ -10,29 +11,29 @@ describe('ProfileInfo', () => {
     {
       title: 'Address',
       fields: ['123 Fake street', 'Ontario, Canada', '1A1-1A1'],
-      moreInfoURL: '',
+      editLink: '#',
     },
     {
       title: 'Province of residence',
       fields: ['Ontario'],
-      moreInfoURL: '',
+      editLink: '#',
     },
     {
       title: 'Bank Details',
       fields: ['Direct deposit', 'Scotiabank 8510231'],
-      moreInfoURL: '',
+      editLink: '#',
     },
     {
       title: 'Phone',
       fields: ['XXX - XXX - 1234'],
-      moreInfoURL: '',
+      editLink: '#',
     },
   ]
   const fakeFields2 = [
     {
       title: 'Written Language',
       fields: ['English'],
-      moreInfoURL: '',
+      editLink: '#',
     },
     {
       title: 'Alert me',
@@ -40,12 +41,18 @@ describe('ProfileInfo', () => {
         'Sign up to get an email when important new is available',
         'Registered',
       ],
-      moreInfoURL: '',
+      editLink: '#',
     },
   ]
 
+  let container
+  act(() => {
+    container = render(
+      <ProfileInfo fields={[...fakeFields, ...fakeFields2]} />
+    ).container
+  })
+
   it('renders ProfileInfo', () => {
-    render(<ProfileInfo fields={[...fakeFields, ...fakeFields2]} />)
     const text1 = screen.getByText('Address')
     const text2 = screen.getByText('Written Language')
     expect(text1).toBeInTheDocument()
@@ -53,9 +60,6 @@ describe('ProfileInfo', () => {
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(
-      <ProfileInfo fields={[...fakeFields, ...fakeFields2]} />
-    )
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

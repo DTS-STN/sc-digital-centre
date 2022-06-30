@@ -1,5 +1,6 @@
 import en from '../../locales/en'
 import fr from '../../locales/fr'
+import InfoSection from '../atoms/InfoSection'
 import propTypes from 'prop-types'
 import ActionButton from '../atoms/ActionButton'
 
@@ -11,23 +12,12 @@ export default function ProfileInfo(props) {
         {props.fields.map((item) => {
           return (
             <div key={item.title}>
-              <h2 className="font-bold text-2xl pb-4">{item.title}</h2>
-              {item.fields?.map((field) => (
-                <p key={field} className="text-xl">
-                  {field}
-                </p>
-              ))}
-              {item.moreInfoURL ? (
-                <Link href={item.moreInfoURL} passHref>
-                  <a className="text-right underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600">
-                    {t.moreInfo}
-                  </a>
-                </Link>
-              ) : (
-                <ActionButton className="mt-2 py-2 px-3 rounded border-r border-b border-gray-darker bg-gray-lighter text-blue-default cursor-pointer">
-                  {t.edit}
-                </ActionButton>
-              )}
+              <InfoSection
+                info={item.fields}
+                title={item.title}
+                editLink={item.editLink}
+                editText={t.edit}
+              />
             </div>
           )
         })}

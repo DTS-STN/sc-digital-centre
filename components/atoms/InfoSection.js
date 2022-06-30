@@ -13,7 +13,7 @@ export default function InfoSection(props) {
         )
       })}
       <Link href={props.editLink} passHref>
-        <a className="inline-block mt-4 p-2.5 shadow-sm shadow-gray-darker rounded bg-gray-light text-blue-default hover:bg-grey-medium hover:text-blue-hover hover:cursor-pointer focus:shadow-none">
+        <a className="inline-block w-fit h-fit mt-4 p-2.5 shadow-sm shadow-gray-darker rounded bg-gray-light text-blue-default hover:bg-grey-medium hover:text-blue-hover hover:cursor-pointer focus:shadow-none">
           {props.editText}
         </a>
       </Link>

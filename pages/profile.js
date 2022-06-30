@@ -11,29 +11,29 @@ export default function Profile(props) {
     {
       title: 'Address',
       fields: ['123 Main street', 'Montreal (Quebec)', 'A1A 1A1'],
-      moreInfoURL: null,
+      editLink: '#',
     },
     {
       title: 'Province of residence',
       fields: ['Ontario'],
-      moreInfoURL: null,
+      editLink: '#',
     },
     {
       title: 'Deposit Details',
       fields: ['Scotiabank', 'XXXXXXX-123'],
-      moreInfoURL: null,
+      editLink: '#',
     },
     {
       title: 'Phone',
       fields: ['XXX - XXX - 1234'],
-      moreInfoURL: null,
+      editLink: '#',
     },
   ]
   const fakeFieldsEI2 = [
     {
       title: 'Language of correspondence',
       fields: ['English'],
-      moreInfoURL: null,
+      editLink: '#',
     },
     {
       title: 'Alert me',
@@ -41,7 +41,7 @@ export default function Profile(props) {
         'Receive email notifications when new information about your claim is available',
         'Registered',
       ],
-      moreInfoURL: null,
+      editLink: '#',
     },
   ]
 
@@ -49,44 +49,44 @@ export default function Profile(props) {
     {
       title: 'Address',
       fields: ['123 Main street', 'Montreal, Quebec', '1A1-1A1'],
-      moreInfoURL: null,
+      editLink: '#',
     },
     {
       title: 'Deposit Details',
       fields: ['Scotiabank', 'XXXXXXX-123'],
-      moreInfoURL: null,
+      editLink: '#',
     },
     {
       title: 'Phone',
       fields: ['XXX - XXX - 1234'],
-      moreInfoURL: null,
+      editLink: '#',
     },
     {
       title: 'Preferences',
       fields: ['Give consent to communicate on my behalf'],
-      moreInfoURL: null,
+      editLink: '#',
     },
   ]
   const fakeFieldsOAS = [
     {
       title: 'Address',
       fields: ['123 Main street', 'Montreal, Quebec', '1A1-1A1'],
-      moreInfoURL: null,
+      editLink: '#',
     },
     {
       title: 'Deposit Details',
       fields: ['Scotiabank', 'XXXXXXX-123'],
-      moreInfoURL: null,
+      editLink: '#',
     },
     {
       title: 'Phone',
       fields: ['XXX - XXX - 1234'],
-      moreInfoURL: null,
+      editLink: '#',
     },
     {
       title: 'Preferences',
       fields: ['Give consent to communicate on my behalf'],
-      moreInfoURL: null,
+      editLink: '#',
     },
   ]
 
