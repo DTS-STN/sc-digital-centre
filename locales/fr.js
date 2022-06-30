@@ -198,9 +198,6 @@ export default {
   //
   //
 
-  // Words
-  edit: 'éditer',
-
   //
   // Contact us Section
   //
@@ -444,13 +441,13 @@ export default {
   profileSettings: '(FR)Profile and security settings',
   updateProfile: '(FR)Update your profile information',
   profileAndPreferences: 'Profil et Préférences',
-  securitySettings: 'Paramètres de sécurité',
   backToDashboard: '(FR)Back to my dashboard',
   edit: 'Modifier',
+  viewSettings: 'View settings',
   moreInfo: "Plus d'information",
 
   //Security page
-  securitySettings: '(FR)Security settings',
+  securitySettings: 'Paramètres de sécurité',
 
   //Dashboard task links
   updateAccountInfoTaskLink: '/fr/profile',

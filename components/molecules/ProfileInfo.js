@@ -1,11 +1,7 @@
-import en from '../../locales/en'
-import fr from '../../locales/fr'
 import InfoSection from '../atoms/InfoSection'
 import propTypes from 'prop-types'
-import ActionButton from '../atoms/ActionButton'
 
 export default function ProfileInfo(props) {
-  const t = props.locale === 'en' ? en : fr
   return (
     <div className="w-full py-4 ">
       <div className="grid gap-y-8 gap-x-40 py-8 w-full md:grid-cols-2 ">
@@ -16,7 +12,7 @@ export default function ProfileInfo(props) {
                 info={item.fields}
                 title={item.title}
                 editLink={item.editLink}
-                editText={t.edit}
+                editText={props.editText}
               />
             </div>
           )
@@ -35,4 +31,8 @@ ProfileInfo.propTypes = {
    * page locale
    */
   locale: propTypes.string,
+  /**
+   *  text to be displayed in edit buttons
+   */
+  editText: propTypes.string,
 }

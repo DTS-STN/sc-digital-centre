@@ -116,32 +116,31 @@ export default function Profile(props) {
   ]
   return (
     <>
-      <h1 className="py-4 text-4xl font-bold text-gray-darker">
+      <h1 className="py-4 text-4xl font-bold text-gray-darker border-b border-red-400">
         {t.profileSettings}
       </h1>
-      <hr className="border-1 border-red-400" />
       <span className="text-lg">{t.updateProfile}</span>
 
       {benefitInformations.map((benefitInfo) => {
         return (
           <>
             <h2 className="text-3xl py-2 font-bold">{benefitInfo.benefit}</h2>
-            <div className="py-2 mb-4">
+            <div className="py-2 mb-4 border-b border-gray-500">
               {benefitInfo.show ? (
                 <ProfileInfo
                   fields={benefitInfo.fields}
                   locale={props.locale}
+                  editText={t.edit}
                 />
               ) : null}
               <ViewMoreLessButton
                 expanded={benefitInfo.show}
                 icon={benefitInfo.show}
                 onClick={() => benefitInfo.setShow(!benefitInfo.show)}
-                caption={!benefitInfo.show ? 'View settings' : 'View less'}
+                caption={!benefitInfo.show ? t.viewSettings : t.viewLess}
+                className="pl-0 md:pl-0"
               />
             </div>
-
-            <hr className="border-1 border-gray-500" />
           </>
         )
       })}
@@ -149,7 +148,7 @@ export default function Profile(props) {
       <div className="mt-10">
         <h2 className="text-3xl font-bold">Looking for security settings?</h2>
         <ul className="list-disc ml-8 text-lg">
-          <Link href={'/security-settings'}>
+          <Link href={'/security-settings'} passHref>
             <li>
               <a className="underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600">
                 Manage your security settings
