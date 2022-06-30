@@ -431,7 +431,7 @@ export default {
   craPath:
     'https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html',
   profilePath: '/profile',
-  securityPath: '/',
+  securityPath: '/security-settings',
   signOutPath: '/',
 
   // Greeting URLs

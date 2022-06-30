@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function InfoSection(props) {
   return (
-    <>
+    <div>
       <h3 className="mt-14 pb-6 font-bold text-3xl">{props.title}</h3>
       {props.info.map((item, index) => {
         return (
@@ -17,7 +17,7 @@ export default function InfoSection(props) {
           {props.editText}
         </a>
       </Link>
-    </>
+    </div>
   )
 }
 

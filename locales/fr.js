@@ -422,7 +422,7 @@ export default {
   craPath:
     'https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-electroniques-particuliers/dossier-particuliers.html',
   profilePath: '/fr/profile',
-  securityPath: '/fr/',
+  securityPath: '/fr/security-settings',
   signOutPath: '/fr/',
 
   // Greeting URLs
