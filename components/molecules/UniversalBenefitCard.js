@@ -42,15 +42,15 @@ export default function UniversalBenefitCard(props) {
       <div className="px-4 sm:px-16">
         {props.summaries == null || props.summaries.length <= 0 ? (
           <div className="my-10">
-                <a
-                  href=""
-                  className="flex items-center underline text-blue-default hover:text-blue-hover"
-                >
-                  <FontAwesomeIcon icon={faStamp} className="text-3xl pr-4 " />
-                  <p className="w-full font-normal text-xl">
-                    {props.applyForProgram}
-                  </p>
-                </a>
+            <a
+              href=""
+              className="flex items-center underline text-blue-default hover:text-blue-hover"
+            >
+              <FontAwesomeIcon icon={faStamp} className="text-3xl pr-4 " />
+              <p className="w-full font-normal text-xl">
+                {props.applyForProgram}
+              </p>
+            </a>
           </div>
         ) : (
           <ul className="grid sm:grid-cols-3 sm:gap-4 lg:gap-7 py-6 sm:pt-2">
@@ -99,7 +99,7 @@ export default function UniversalBenefitCard(props) {
                   {props.taskGroups.map((taskList, index) => {
                     return (
                       <div
-                        className="border-b-2 last:border-b-0 md:border-b-0 md:odd:border-r-2  my-4 "
+                        className="border-b-2 last:border-b-0 md:border-b-0 md:odd:border-r-2  my-4 pl-2 sm:pl-8"
                         key={index}
                       >
                         <BenefitTasks taskList={taskList} />
