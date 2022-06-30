@@ -1,8 +1,8 @@
 import { Heading, Link } from '@dts-stn/decd-design-system'
-import en from '../locales/en'
-import fr from '../locales/fr'
 import ActionButton from '../components/atoms/ActionButton'
 import InfoSection from '../components/atoms/InfoSection'
+import en from '../locales/en'
+import fr from '../locales/fr'
 
 export function getStaticProps({ locale }) {
   const t = locale === 'en' ? en : fr
@@ -17,60 +17,61 @@ export function getStaticProps({ locale }) {
       text: t.myBenefitsAndServices,
     },
   ]
-  return { props: { metadata, breadCrumbItems } }
+  return { props: { metadata, breadCrumbItems, locale } }
 }
 
-export default function SecuritySettings() {
+export default function SecuritySettings(props) {
+  const t = props.locale === 'en' ? en : fr
+
+  const mockData = {
+    eiAccessBank: 'Scotiabank',
+    eiAccessCode: 'XXX-XXXX-123',
+  }
+
   return (
     <div className="pb-20">
-      <Heading title="Security Settings" id="security-settings" />
+      <Heading title={t.securitySettings} id="security-settings" />
       {/* <h1 className="text-3xl font-bold mt-6 pb-2 border-b border-red-light">Security Settings</h1> */}
-      <h2 className="text-xl mb-1 mt-2">Update your security settings</h2>
-      <div className="grid md:grid-cols-2 mb-3">
+      <h2 className="text-xl mb-1 mt-2">{t.updateSecuritySettings}</h2>
+      <div className="grid md:grid-cols-2 gap-x-4 mb-3">
         <InfoSection
-          title="Multi-factor authentication"
-          info={['Modify multi-factor authentication settings']}
-          editText="Edit"
-          editLink="/"
+          title={t.mfa}
+          info={[t.modifyMfa]}
+          editText={t.edit}
+          editLink={t.editMfaLink}
         />
         <InfoSection
-          title="Multi-factor authentication"
-          info={['Modify multi-factor authentication settings']}
-          editText="Edit"
-          editLink="/"
+          title={t.gcKeyPass}
+          info={[t.changeGcKeyPass]}
+          editText={t.edit}
+          editLink={t.editGcKeyPassLink}
         />
         <InfoSection
-          title="Multi-factor authentication"
-          info={['Modify multi-factor authentication settings']}
-          editText="Edit"
-          editLink="/"
+          title={t.securityQuestions}
+          info={[t.changeSecurityQuestions]}
+          editText={t.edit}
+          editLink={t.editSecurityQuestionsLink}
         />
         <InfoSection
-          title="Multi-factor authentication"
-          info={['Modify multi-factor authentication settings']}
-          editText="Edit"
-          editLink="/"
+          title={t.eiAccessCode}
+          info={[mockData.eiAccessBank, mockData.eiAccessCode]}
+          editText={t.edit}
+          editLink={t.editEiAccessCodeLink}
         />
         <InfoSection
-          title="Multi-factor authentication"
-          info={['Modify multi-factor authentication settings']}
-          editText="Edit"
-          editLink="/"
+          title={t.IdentityVerification}
+          info={[t.confirmIdentityVerification]}
+          editText={t.edit}
+          editLink={t.editIdentityVerificationLink}
         />
       </div>
-      <h2 className="pt-16 pb-3 font-bold text-4xl">
-        Looking for profile settings?
-      </h2>
+      <h2 className="pt-16 pb-3 font-bold text-4xl">{t.lookingForProfile}</h2>
       <ul className="list-disc list-inside mb-10 ml-5 text-gray-darker">
         <li>
-          <Link
-            id="profile-link"
-            text="Manage my profile settings"
-            href={'/profile'}
-          />
+          <Link id="profile-link" text={t.manageProfile} href={'/profile'} />
         </li>
       </ul>
-      <ActionButton href="/dashboard" text="Back to my Dashboard" secondary />
+      <ActionButton href="/dashboard" text={t.backToDashboard} secondary />
     </div>
   )
 }

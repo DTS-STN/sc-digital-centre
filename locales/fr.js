@@ -199,7 +199,7 @@ export default {
   //
 
   // Words
-  edit: 'éditer',
+  edit: 'Modifier',
 
   //
   // Contact us Section
@@ -440,13 +440,35 @@ export default {
   errorPage400message: '(FR)400 Error - Bad request error occurred',
   errorPage503message: '(FR)503 - Service unavailable error occurred',
 
+  // Common Pages stuff
+  moreInfo: "Plus d'information",
+  backToDashboard: '(FR)Back to my dashboard',
+
   //Profile page
   profileAndSecuritySettings: '(FR)Profile and security settings',
   profileAndPreferences: 'Profil et Préférences',
   securitySettings: 'Paramètres de sécurité',
-  backToDashboard: '(FR)Back to my dashboard',
-  edit: 'Modifier',
-  moreInfo: "Plus d'information",
+
+  //Security Settings page
+  securitySettings: '(FR)Security Settings',
+  updateSecuritySettings: '(FR)Update your security settings',
+  mfa: '(FR)Multi-factor authentication',
+  modifyMfa: '(FR)Modify multi-factor authentication settings',
+  editMfaLink: '/fr/',
+  gcKeyPass: '(FR)GCKey password',
+  changeGcKeyPass: '(FR)Change my GCKey password',
+  editGcKeyPassLink: '/fr/',
+  securityQuestions: '(FR)Security questions',
+  changeSecurityQuestions: '(FR)Change my security questions',
+  editSecurityQuestionsLink: '/fr/',
+  eiAccessCode: '(FR)Employment Insurance access code',
+  editEiAccessCodeLink: '/fr/',
+  IdentityVerification: '(FR)Identity verification',
+  confirmIdentityVerification:
+    '(FR)Confirm my identity to enhance the security of my account',
+  editIdentityVerificationLink: '/fr/',
+  lookingForProfile: '(FR)Looking for profile settings?',
+  manageProfile: '(FR)Manage my profile settings',
 
   //Dashboard task links
   updateAccountInfoTaskLink: '/fr/profile',

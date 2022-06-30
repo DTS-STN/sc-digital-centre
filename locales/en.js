@@ -201,7 +201,7 @@ export default {
   //
 
   // Words
-  edit: 'edit',
+  edit: 'Edit',
 
   //
   // Contact us Section
@@ -449,13 +449,34 @@ export default {
   errorPage400message: '400 Error - Bad request error occurred',
   errorPage503message: '503 - Service unavailable error occurred',
 
-  //Profile page
+  // Common Pages stuff
+  backToDashboard: 'Back to my dashboard',
+  moreInfo: 'More Information',
+
+  //Profile & Security page
   profileAndSecuritySettings: 'Profile and security settings',
   profileAndPreferences: 'Profile and Preferences',
+
+  //Security Settings page
   securitySettings: 'Security Settings',
-  backToDashboard: 'Back to my dashboard',
-  edit: 'Edit',
-  moreInfo: 'More Information',
+  updateSecuritySettings: 'Update your security settings',
+  mfa: 'Multi-factor authentication',
+  modifyMfa: 'Modify multi-factor authentication settings',
+  editMfaLink: '/',
+  gcKeyPass: 'GCKey password',
+  changeGcKeyPass: 'Change my GCKey password',
+  editGcKeyPassLink: '/',
+  securityQuestions: 'Security questions',
+  changeSecurityQuestions: 'Change my security questions',
+  editSecurityQuestionsLink: '/',
+  eiAccessCode: 'Employment Insurance access code',
+  editEiAccessCodeLink: '/',
+  IdentityVerification: 'Identity verification',
+  confirmIdentityVerification:
+    'Confirm my identity to enhance the security of my account',
+  editIdentityVerificationLink: '/',
+  lookingForProfile: 'Looking for profile settings?',
+  manageProfile: 'Manage my profile settings',
 
   //Dashboard task links
   updateAccountInfoTaskLink: '/profile',
