@@ -70,7 +70,7 @@ export default function SecuritySettings() {
           />
         </li>
       </ul>
-      <ActionButton href="/dashboard" text="Back to my Dashboard" />
+      <ActionButton href="/dashboard" text="Back to my Dashboard" secondary />
     </div>
   )
 }

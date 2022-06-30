@@ -1,5 +1,5 @@
 import propTypes from 'prop-types'
-import Link from 'next/link'
+import ActionButton from './ActionButton'
 
 export default function InfoSection(props) {
   return (
@@ -12,11 +12,13 @@ export default function InfoSection(props) {
           </p>
         )
       })}
-      <Link href={props.editLink} passHref>
-        <a className="inline-block mt-4 p-2.5 shadow-sm shadow-gray-darker rounded bg-gray-light text-blue-default hover:bg-grey-medium hover:text-blue-hover hover:cursor-pointer focus:shadow-none">
-          {props.editText}
-        </a>
-      </Link>
+      <ActionButton
+        id={`edit-${props.title}`}
+        href={props.editLink}
+        text={props.editText}
+        useShadow
+        secondary
+      />
     </div>
   )
 }
