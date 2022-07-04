@@ -6,6 +6,8 @@ import HorizontalRule from '../atoms/HorizontalRule'
 import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 import CardHeader from '../atoms/CardHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStamp } from '@fortawesome/free-solid-svg-icons'
 
 export default function UniversalBenefitCard(props) {
   const [isOpen, setIsOpen] = useState(false)
@@ -42,14 +44,12 @@ export default function UniversalBenefitCard(props) {
           <div className="my-10">
             <a
               href=""
-              className="text-xl underline text-blue-default hover:text-blue-hover"
+              className="flex items-center underline text-blue-default hover:text-blue-hover"
             >
-              <img
-                src="/images/dashboard/apply-for-benefit-icon.svg"
-                alt=""
-                className="inline"
-              />
-              <p className="inline pl-3">{props.applyForProgram}</p>
+              <FontAwesomeIcon icon={faStamp} className="text-3xl pr-4 " />
+              <p className="w-full font-normal text-xl">
+                {props.applyForProgram}
+              </p>
             </a>
           </div>
         ) : (
@@ -90,21 +90,23 @@ export default function UniversalBenefitCard(props) {
           caption={props.taskHeading}
         />
       </h4>
-      <div className="flex flex-col">
+      <div className=" flex flex-col bg-white  rounded-b-xl">
         {props.taskGroups == null || props.taskGroups.length <= 0 ? null : (
-          <div
-            id={taskListId}
-            className="grid bg-gray-lighter sm:grid-cols-1 rounded-lg"
-          >
+          <div id={taskListId} className="  ">
             {!isOpen ? null : (
-              <div className="bg-white pb-12 rounded-lg">
-                {props.taskGroups.map((taskList, index) => {
-                  return (
-                    <div key={index}>
-                      <BenefitTasks taskList={taskList} />
-                    </div>
-                  )
-                })}
+              <div className="pb-12">
+                <div className="bg-gray-lighter grid grid-rows-1 md:grid-cols-2">
+                  {props.taskGroups.map((taskList, index) => {
+                    return (
+                      <div
+                        className="border-b-2 last:border-b-0 md:border-b-0 md:odd:border-r-2  my-4 pl-2 sm:pl-8"
+                        key={index}
+                      >
+                        <BenefitTasks taskList={taskList} />
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             )}
           </div>

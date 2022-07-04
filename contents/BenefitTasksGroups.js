@@ -730,8 +730,8 @@ const TASK_GROUPS = {
           'Common actions, payments, taxes, reports, and account information',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS_EN,
-          ACTIVE_EI_PAYMENT_TASKS_EN,
           ACTIVE_EI_DOCS_TASKS_EN,
+          ACTIVE_EI_PAYMENT_TASKS_EN,
           ACCOUNT_INFORMATION_EN,
         ],
       },
@@ -740,8 +740,8 @@ const TASK_GROUPS = {
           'Actions courantes, paiements, impôts, rapports et renseignements personnels',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS_FR,
-          ACTIVE_EI_PAYMENT_TASKS_FR,
           ACTIVE_EI_DOCS_TASKS_FR,
+          ACTIVE_EI_PAYMENT_TASKS_FR,
           ACCOUNT_INFORMATION_FR,
         ],
       },
@@ -752,8 +752,8 @@ const TASK_GROUPS = {
           'Common actions, payments, taxes, reports, and account information',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS_EN,
-          ACTIVE_EI_PAYMENT_TASKS_EN,
           ACTIVE_EI_DOCS_TASKS_EN,
+          ACTIVE_EI_PAYMENT_TASKS_EN,
           ACCOUNT_INFORMATION_EN,
         ],
       },
@@ -762,8 +762,8 @@ const TASK_GROUPS = {
           'Actions courantes, paiements, impôts, rapports et renseignements personnels',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS_FR,
-          ACTIVE_EI_PAYMENT_TASKS_FR,
           ACTIVE_EI_DOCS_TASKS_FR,
+          ACTIVE_EI_PAYMENT_TASKS_FR,
           ACCOUNT_INFORMATION_FR,
         ],
       },
@@ -774,8 +774,8 @@ const TASK_GROUPS = {
           'Common actions, payments, taxes, reports, and account information',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS_EN,
-          ACTIVE_EI_PAYMENT_TASKS_EN,
           ACTIVE_EI_DOCS_TASKS_EN,
+          ACTIVE_EI_PAYMENT_TASKS_EN,
           ACCOUNT_INFORMATION_EN,
         ],
       },
@@ -784,8 +784,8 @@ const TASK_GROUPS = {
           'Actions courantes, paiements, impôts, rapports et renseignements personnels',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS_FR,
-          ACTIVE_EI_PAYMENT_TASKS_FR,
           ACTIVE_EI_DOCS_TASKS_FR,
+          ACTIVE_EI_PAYMENT_TASKS_FR,
           ACCOUNT_INFORMATION_FR,
         ],
       },
@@ -796,8 +796,8 @@ const TASK_GROUPS = {
           'Common actions, payments, taxes, reports, and account information',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS_EN,
-          ACTIVE_EI_PAYMENT_TASKS_EN,
           ACTIVE_EI_DOCS_TASKS_EN,
+          ACTIVE_EI_PAYMENT_TASKS_EN,
           ACCOUNT_INFORMATION_EN,
         ],
       },
@@ -806,8 +806,8 @@ const TASK_GROUPS = {
           'Actions courantes, paiements, impôts, rapports et renseignements personnels',
         tasksGroups: [
           ACTIVE_EI_COMMON_TASKS_FR,
-          ACTIVE_EI_PAYMENT_TASKS_FR,
           ACTIVE_EI_DOCS_TASKS_FR,
+          ACTIVE_EI_PAYMENT_TASKS_FR,
           ACCOUNT_INFORMATION_FR,
         ],
       },
