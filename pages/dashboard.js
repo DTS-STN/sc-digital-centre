@@ -65,7 +65,6 @@ export default function Dashboard(props) {
       async function fetchProgramData(program, setData, setError, setLoaded) {
         try {
           const res = await fetch(`/api/programData/${program}`)
-          console.log(program)
           if (res.ok) {
             if (res.status === 200) {
               setData(await res.json())
@@ -120,7 +119,6 @@ export default function Dashboard(props) {
 
       newArray.forEach((benefits) => {
         if (benefits != undefined) {
-          console.log(benefits)
           benefits.forEach((benefit) => {
             switch (benefit.statusCode) {
               case StatusCodes.paymentHold:
