@@ -82,7 +82,6 @@ export default function Dashboard(props) {
   return (
     <>
       <Greeting
-        locale={props.locale}
         greeting={t[getGreeting(time)]}
         name="Mary"
         welcome={t.welcome}
