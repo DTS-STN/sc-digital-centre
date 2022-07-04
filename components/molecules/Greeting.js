@@ -1,40 +1,23 @@
 import { Message } from '@dts-stn/decd-design-system'
-import en from '../../locales/en'
-import fr from '../../locales/fr'
 
 export default function Greeting(props) {
-  const t = props.locale === 'en' ? en : fr
-
-  function getGreeting() {
-    switch (true) {
-      case props.time < 12:
-        return t.morningGreeting
-      case props.time < 17:
-        return t.afternoonGreeting
-      case props.time < 24:
-        return t.eveningGreeting
-      default:
-        return t.greeting
-    }
-  }
-
   return (
     <div>
       <div className="grid grid-cols-1 divide-y divide-red-600 font-display">
-        <div className="py-4 text-4xl font-bold">{`${getGreeting()} ${
-          props.name
-        }`}</div>
-        <div className="py-4 text-xl">{t.welcome}</div>
+        <div className="py-4 text-4xl font-bold">{`${props.greeting} ${props.name}`}</div>
+        <div className="py-4 text-xl">{props.welcome}</div>
       </div>
       <Message
         type="success"
         id="success"
-        alert_icon_alt_text={t.alertIconAltText_success}
-        alert_icon_id={t.alertIconId_success}
-        message_heading={t.messageHeading}
-        message_body={t.messageBody}
+        alert_icon_alt_text={props.alert_icon_alt_text}
+        alert_icon_id={props.alert_icon_id}
+        message_heading={props.message_heading}
+        message_body={props.message_body}
       />
-      <h1 className="text-3xl font-bold mt-10">{t.myBenefitsAndServices}</h1>
+      <h1 className="text-3xl font-bold mt-10">
+        {props.myBenefitsAndServices}
+      </h1>
     </div>
   )
 }
