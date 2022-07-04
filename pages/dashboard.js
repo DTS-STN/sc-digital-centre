@@ -120,6 +120,7 @@ export default function Dashboard(props) {
 
       newArray.forEach((benefits) => {
         if (benefits != undefined) {
+          console.log(benefits)
           benefits.forEach((benefit) => {
             switch (benefit.statusCode) {
               case StatusCodes.paymentHold:
