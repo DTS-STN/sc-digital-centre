@@ -2,16 +2,16 @@ import { render, screen } from '@testing-library/react'
 import { toHaveNoViolations, axe } from 'jest-axe'
 import '@testing-library/jest-dom/extend-expect'
 import Greeting from './Greeting'
+import * as utils from '../../lib/Utils'
 
 expect.extend(toHaveNoViolations)
 
 //mock getGreeting
-const getGreeting = jest.fn()
-getGreeting.mockReturnValue('Good afternoon, ')
+utils.getGreeting = jest.fn().mockReturnValue('Good afternoon, ')
 
 describe('Greeting', () => {
   const { container } = render(
-    <Greeting locale="en" greeting={getGreeting()} name="Mary" />
+    <Greeting locale="en" greeting={utils.getGreeting()} name="Mary" />
   )
 
   it('renders greeting', () => {
