@@ -220,37 +220,6 @@ export default function Dashboard(props) {
             })
           : null}
 
-        {/* {sebLoaded ? null : 'Loading User Benefit Data...'}
-        {sebError}
-        {sebBenefit ? (
-          <UniversalBenefitCard
-            locale={props.locale}
-            program={t[sebBenefit.programCode]}
-            summary={t.summary}
-            benefitUniqueId={`${sebBenefit.programCode}-${sebBenefit.typeCode}-${sebBenefit.statusCode}`}
-            statusBadge={{
-              status: t[sebBenefit.statusCode],
-              srDescription: t[sebBenefit.programCode],
-              color: StatusColors[sebBenefit.statusCode],
-              hidden: sebBenefit.statusCode === StatusCodes.activeAgreement,
-            }}
-            taskHeading={
-              TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][
-                props.locale
-              ].taskHeadingKey
-            }
-            taskGroups={
-              TASK_GROUPS[sebBenefit.programCode][sebBenefit.statusCode][
-                props.locale
-              ].tasksGroups
-            }
-            benefitDurationReached={t.benefitDurationReached}
-            applyForProgram={`${t.applyFor} ${t[sebBenefit.programCode]}`}
-            summaries={MapSummary(sebBenefit.summaries, t, props.locale)}
-            callout={MapCallout(sebBenefit.statusCode, sebBenefit.typeCode, t)}
-          />
-        ) : null} */}
-
         {/* application or "advertising" cards */}
         {advertisingCards.map((value, index) => {
           if (value.benefitType === 'CPP' && cppBenefit) {
