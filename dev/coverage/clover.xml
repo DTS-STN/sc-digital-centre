@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1656937520783" clover="3.2.0">
-  <project timestamp="1656937520784" name="All files">
+<coverage generated="1656944228486" clover="3.2.0">
+  <project timestamp="1656944228486" name="All files">
     <metrics statements="409" coveredstatements="355" conditionals="301" coveredconditionals="223" methods="128" coveredmethods="105" elements="838" coveredelements="683" complexity="0" loc="409" ncloc="409" packages="9" files="52" classes="52"/>
     <package name="components.atoms">
       <metrics statements="53" coveredstatements="48" conditionals="40" coveredconditionals="30" methods="24" coveredmethods="22"/>
@@ -123,9 +123,9 @@
       </file>
       <file name="BenefitTasks.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitTasks.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="39" type="stmt"/>
-        <line num="11" count="114" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
+        <line num="5" count="41" type="stmt"/>
+        <line num="13" count="114" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
       </file>
       <file name="DSFooter.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/DSFooter.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -174,7 +174,7 @@
       <file name="NoBenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/NoBenefitCard.js">
         <metrics statements="16" coveredstatements="10" conditionals="12" coveredconditionals="2" methods="4" coveredmethods="1"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="10" count="38" type="cond" truecount="1" falsecount="1"/>
+        <line num="10" count="40" type="cond" truecount="1" falsecount="1"/>
         <line num="11" count="38" type="stmt"/>
         <line num="12" count="38" type="stmt"/>
         <line num="13" count="38" type="stmt"/>
@@ -202,17 +202,17 @@
       </file>
       <file name="UniversalBenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/UniversalBenefitCard.js">
         <metrics statements="11" coveredstatements="6" conditionals="12" coveredconditionals="9" methods="4" coveredmethods="2"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
         <line num="16" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
         <line num="58" count="5" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
         <line num="81" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="82" count="0" type="stmt"/>
         <line num="86" count="0" type="stmt"/>
-        <line num="102" count="0" type="stmt"/>
-        <line num="117" count="2" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="119" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.organisms">
