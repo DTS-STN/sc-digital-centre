@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/molecules/ProfileInfo.js</title>
+    <title>Code coverage report for components/atoms/InfoSection.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/molecules</a> ProfileInfo.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/atoms</a> InfoSection.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -85,21 +85,21 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,33 +113,63 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import ProfileInfoSection from '../atoms/ProfileInfoSection'
-import propTypes from 'prop-types'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import propTypes from 'prop-types'
+import Link from 'next/link'
 &nbsp;
-export default function ProfileInfo(props) {
+export default function InfoSection(props) {
   return (
-    &lt;div className="bg-gray-100 w-full px-8 py-4"&gt;
-      {props.fields?.map((field) =&gt; (
-        &lt;ProfileInfoSection
-          key={field.title}
-          title={field.title}
-          info={field.info}
-          locale={props.locale}
-        /&gt;
-      ))}
-    &lt;/div&gt;
+    &lt;&gt;
+      &lt;h3 className="mt-14 pb-6 font-bold text-3xl"&gt;{props.title}&lt;/h3&gt;
+      {props.info.map((item, index) =&gt; {
+        return (
+          &lt;p key={index} className="text-lg"&gt;
+            {item}
+          &lt;/p&gt;
+        )
+      })}
+      &lt;Link href={props.editLink} passHref&gt;
+        &lt;a className="inline-block mt-4 p-2.5 shadow-sm shadow-gray-darker rounded bg-gray-light text-blue-default hover:bg-grey-medium hover:text-blue-hover hover:cursor-pointer focus:shadow-none"&gt;
+          {props.editText}
+        &lt;/a&gt;
+      &lt;/Link&gt;
+    &lt;/&gt;
   )
 }
 &nbsp;
-ProfileInfo.propTypes = {
+InfoSection.propTypes = {
   /*
-   *  fields in the profile sections
+   *  Section Title
    */
-  fields: propTypes.array,
+  title: propTypes.string.isRequired,
+  /*
+   *  Information
+   */
+  info: propTypes.arrayOf(propTypes.string).isRequired,
   /**
-   * page locale
+   * link to edit the info
    */
-  locale: propTypes.string,
+  editLink: propTypes.string,
+  editText: propTypes.string,
 }
 &nbsp;</pre></td></tr></table></pre>
 
