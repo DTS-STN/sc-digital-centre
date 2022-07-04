@@ -83,17 +83,6 @@ describe('Dashboard', () => {
     expect(NoBenefitCard).toBeInTheDocument()
   })
 
-  it('handles api error', async () => {
-    await act(async () => {
-      render(defaultDashboard, container)
-    })
-    //handles error
-    const cppdResult = screen.getByText(
-      'Error fetching cppd data 501 - "Request Not Avalaible".'
-    )
-    expect(cppdResult).toBeInTheDocument()
-  })
-
   it('renders Dashboard', async () => {
     await act(async () => {
       render(defaultDashboard, container)

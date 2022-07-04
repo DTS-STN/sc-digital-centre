@@ -119,7 +119,7 @@ export default function Dashboard(props) {
       let orderedActiveAgreement = []
 
       newArray.forEach((benefits) => {
-        if (benefits) {
+        if (benefits != undefined) {
           benefits.forEach((benefit) => {
             switch (benefit.statusCode) {
               case StatusCodes.paymentHold:
