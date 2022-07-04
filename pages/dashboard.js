@@ -40,195 +40,173 @@ export default function Dashboard(props) {
 
   const [gisBenefit, setGisBenefit] = useState()
   const [gisLoaded, setGisLoaded] = useState(false)
-  const [gisError, setGisError] = useState(false)
+  const [gisError, setGisError] = useState()
 
   const [sebBenefit, setSebBenefit] = useState()
   const [sebLoaded, setSebLoaded] = useState(false)
   const [sebError, setSebError] = useState()
 
-  useEffect(() => {
-    async function fetchProgramData(program, setData, setError, setLoaded) {
-      try {
-        const res = await fetch(`/api/programData/${program}`)
-        if (res.ok) {
-          if (res.status === 200) {
-            setData(await res.json())
-          }
-        } else {
-          const text = await res.text()
-          setError(`Error fetching ${program} data ${res.status} - ${text}.`)
-        }
-      } catch (error) {
-        setError(`Something went wrong fetching ${program} data.`)
-        console.log(error)
-      } finally {
-        setLoaded(true)
-      }
-    }
+  const [allBenefits, setAllBenefits] = useState()
 
-    fetchProgramData('cpp', setCppBenefit, setCppError, setCppLoaded)
-    fetchProgramData('cppd', setCppdBenefit, setCppdError, setCppdLoaded)
-    fetchProgramData('ei', setEiBenefit, setEiError, setEiLoaded)
-    fetchProgramData('oas', setOasBenefit, setOasError, setOasLoaded)
-    fetchProgramData('gis', setGisBenefit, setGisError, setGisLoaded)
-    fetchProgramData('seb', setSebBenefit, setSebError, setSebLoaded)
-  }, [])
+  useEffect(() => {
+    if (
+      !cppLoaded &&
+      !cppdLoaded &&
+      !eiLoaded &&
+      !oasLoaded &&
+      !gisLoaded &&
+      !sebLoaded
+    ) {
+      async function fetchProgramData(program, setData, setError, setLoaded) {
+        try {
+          const res = await fetch(`/api/programData/${program}`)
+          console.log(program)
+          if (res.ok) {
+            if (res.status === 200) {
+              setData(await res.json())
+            }
+          } else {
+            const text = await res.text()
+            setError(`Error fetching ${program} data ${res.status} - ${text}.`)
+          }
+        } catch (error) {
+          setError(`Something went wrong fetching ${program} data.`)
+          console.log(error)
+        } finally {
+          setLoaded(true)
+        }
+      }
+
+      fetchProgramData('cpp', setCppBenefit, setCppError, setCppLoaded)
+      fetchProgramData('cppd', setCppdBenefit, setCppdError, setCppdLoaded)
+      fetchProgramData('ei', setEiBenefit, setEiError, setEiLoaded)
+      fetchProgramData('oas', setOasBenefit, setOasError, setOasLoaded)
+      fetchProgramData('gis', setGisBenefit, setGisError, setGisLoaded)
+      fetchProgramData('seb', setSebBenefit, setSebError, setSebLoaded)
+    }
+  }, [cppLoaded, cppdLoaded, eiLoaded, gisLoaded, oasLoaded, sebLoaded])
+
+  useEffect(() => {
+    if (
+      cppLoaded &&
+      cppdLoaded &&
+      eiLoaded &&
+      oasLoaded &&
+      gisLoaded &&
+      sebLoaded
+    ) {
+      const newArray = [
+        eiBenefit,
+        cppBenefit,
+        oasBenefit,
+        gisBenefit,
+        cppdBenefit,
+        sebBenefit,
+      ]
+
+      let orderedPaymentHold = []
+      let orderedApplicationReceived = []
+      let orderedDecisionSent = []
+      let orderedBenefitUpdate = []
+      let orderedInPayment = []
+      let orderedExhausted = []
+      let orderedInactive = []
+      let orderedActiveAgreement = []
+
+      newArray.forEach((benefits) => {
+        if (benefits) {
+          benefits.forEach((benefit) => {
+            switch (benefit.statusCode) {
+              case StatusCodes.paymentHold:
+                orderedPaymentHold.push(benefit)
+                break
+              case StatusCodes.applicationReceived:
+                orderedApplicationReceived.push(benefit)
+                break
+              case StatusCodes.decisionSent:
+                orderedDecisionSent.push(benefit)
+                break
+              case StatusCodes.benefitUpdate:
+                orderedBenefitUpdate.push(benefit)
+                break
+              case StatusCodes.inPayment:
+                orderedInPayment.push(benefit)
+                break
+              case StatusCodes.exhausted:
+                orderedExhausted.push(benefit)
+                break
+              case StatusCodes.inactive:
+                orderedInactive.push(benefit)
+                break
+              case StatusCodes.activeAgreement:
+                orderedActiveAgreement.push(benefit)
+                break
+            }
+          })
+        }
+      })
+
+      setAllBenefits([
+        orderedPaymentHold,
+        orderedApplicationReceived,
+        orderedDecisionSent,
+        orderedBenefitUpdate,
+        orderedInPayment,
+        orderedExhausted,
+        orderedInactive,
+        orderedActiveAgreement,
+      ])
+    }
+  }, [
+    cppBenefit,
+    cppdBenefit,
+    eiBenefit,
+    oasBenefit,
+    gisBenefit,
+    sebBenefit,
+    cppLoaded,
+    cppdLoaded,
+    eiLoaded,
+    oasLoaded,
+    gisLoaded,
+    sebLoaded,
+  ])
 
   return (
     <>
       <Greeting locale={props.locale} name="Mary" />
       <div className="mb-8">
-        {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
-        {cppError ?? null}
-        {cppBenefit
-          ? cppBenefit.map((value, index) => {
-              const tasksGroups =
-                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
-              return (
-                <UniversalBenefitCard
-                  key={index}
-                  locale={props.locale}
-                  program={t[value.programCode]}
-                  summary={t.summary}
-                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
-                  statusBadge={{
-                    status: t[value.statusCode],
-                    srDescription: t[value.programCode],
-                    color: StatusColors[value.statusCode],
-                    hidden: value.statusCode === StatusCodes.activeAgreement,
-                  }}
-                  taskHeading={tasksGroups.taskHeadingKey}
-                  taskGroups={tasksGroups.tasksGroups}
-                  benefitDurationReached={t.benefitDurationReached}
-                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
-                  summaries={MapSummary(value.summaries, t, props.locale)}
-                  callout={MapCallout(value.statusCode, value.typeCode, t)}
-                />
-              )
+        {allBenefits
+          ? allBenefits.map((benefits) => {
+              return benefits.map((value, index) => {
+                const tasksGroups =
+                  TASK_GROUPS[value.programCode][value.statusCode][props.locale]
+                return (
+                  <UniversalBenefitCard
+                    key={index}
+                    locale={props.locale}
+                    program={t[value.programCode]}
+                    summary={t.summary}
+                    benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
+                    statusBadge={{
+                      status: t[value.statusCode],
+                      srDescription: t[value.programCode],
+                      color: StatusColors[value.statusCode],
+                      hidden: value.statusCode === StatusCodes.activeAgreement,
+                    }}
+                    taskHeading={tasksGroups.taskHeadingKey}
+                    taskGroups={tasksGroups.tasksGroups}
+                    benefitDurationReached={t.benefitDurationReached}
+                    applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
+                    summaries={MapSummary(value.summaries, t, props.locale)}
+                    callout={MapCallout(value.statusCode, value.typeCode, t)}
+                  />
+                )
+              })
             })
           : null}
 
-        {cppdLoaded ? null : 'Loading CPPD User Benefit Data...'}
-        {cppdError ?? null}
-        {cppdBenefit
-          ? cppdBenefit.map((value, index) => {
-              const tasksGroups =
-                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
-              return (
-                <UniversalBenefitCard
-                  key={index}
-                  locale={props.locale}
-                  program={t[value.programCode]}
-                  summary={t.summary}
-                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
-                  statusBadge={{
-                    status: t[value.statusCode],
-                    srDescription: t[value.programCode],
-                    color: StatusColors[value.statusCode],
-                    hidden: value.statusCode === StatusCodes.activeAgreement,
-                  }}
-                  taskHeading={tasksGroups.taskHeadingKey}
-                  taskGroups={tasksGroups.tasksGroups}
-                  benefitDurationReached={t.benefitDurationReached}
-                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
-                  summaries={MapSummary(value.summaries, t, props.locale)}
-                  callout={MapCallout(value.statusCode, value.typeCode, t)}
-                />
-              )
-            })
-          : null}
-
-        {eiLoaded ? null : 'Loading EI User Benefit Data...'}
-        {eiError ?? null}
-        {eiBenefit
-          ? eiBenefit.map((value, index) => {
-              const tasksGroups =
-                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
-              return (
-                <UniversalBenefitCard
-                  key={index}
-                  locale={props.locale}
-                  program={t[value.programCode]}
-                  summary={t.summary}
-                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
-                  statusBadge={{
-                    status: t[value.statusCode],
-                    srDescription: t[value.programCode],
-                    color: StatusColors[value.statusCode],
-                    hidden: value.statusCode === StatusCodes.activeAgreement,
-                  }}
-                  taskHeading={tasksGroups.taskHeadingKey}
-                  taskGroups={tasksGroups.tasksGroups}
-                  benefitDurationReached={t.benefitDurationReached}
-                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
-                  summaries={MapSummary(value.summaries, t, props.locale)}
-                  callout={MapCallout(value.statusCode, value.typeCode, t)}
-                />
-              )
-            })
-          : null}
-
-        {oasLoaded ? null : 'Loading OAS User Benefit Data...'}
-        {oasError}
-        {oasBenefit
-          ? oasBenefit.map((value, index) => {
-              const tasksGroups =
-                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
-              return (
-                <UniversalBenefitCard
-                  key={index + 3}
-                  locale={props.locale}
-                  program={t[value.programCode]}
-                  summary={t.summary}
-                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
-                  statusBadge={{
-                    status: t[value.statusCode],
-                    srDescription: t[value.programCode],
-                    color: StatusColors[value.statusCode],
-                    hidden: value.statusCode === StatusCodes.activeAgreement,
-                  }}
-                  taskHeading={tasksGroups.taskHeadingKey}
-                  taskGroups={tasksGroups.tasksGroups}
-                  benefitDurationReached={t.benefitDurationReached}
-                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
-                  summaries={MapSummary(value.summaries, t, props.locale)}
-                  callout={MapCallout(value.statusCode, value.typeCode, t)}
-                />
-              )
-            })
-          : null}
-
-        {gisLoaded ? null : 'Loading User Benefit Data...'}
-        {gisError}
-        {gisBenefit
-          ? gisBenefit.map((value, index) => {
-              const tasksGroups =
-                TASK_GROUPS[value.programCode][value.statusCode][props.locale]
-              return (
-                <UniversalBenefitCard
-                  key={index + 3}
-                  locale={props.locale}
-                  program={t[value.programCode]}
-                  summary={t.summary}
-                  benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
-                  statusBadge={{
-                    status: t[value.statusCode],
-                    srDescription: t[value.programCode],
-                    color: StatusColors[value.statusCode],
-                    hidden: value.statusCode === StatusCodes.activeAgreement,
-                  }}
-                  taskHeading={tasksGroups.taskHeadingKey}
-                  taskGroups={tasksGroups.tasksGroups}
-                  benefitDurationReached={t.benefitDurationReached}
-                  applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
-                  summaries={MapSummary(value.summaries, t, props.locale)}
-                  callout={MapCallout(value.statusCode, value.typeCode, t)}
-                />
-              )
-            })
-          : null}
-
-        {sebLoaded ? null : 'Loading User Benefit Data...'}
+        {/* {sebLoaded ? null : 'Loading User Benefit Data...'}
         {sebError}
         {sebBenefit ? (
           <UniversalBenefitCard
@@ -257,7 +235,7 @@ export default function Dashboard(props) {
             summaries={MapSummary(sebBenefit.summaries, t, props.locale)}
             callout={MapCallout(sebBenefit.statusCode, sebBenefit.typeCode, t)}
           />
-        ) : null}
+        ) : null} */}
 
         {/* application or "advertising" cards */}
         {advertisingCards.map((value, index) => {
