@@ -6,16 +6,21 @@ import { getAdvertsingCards } from '../contents/BenefitAdvertisingCards'
 import { getSession } from 'next-auth/react'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
-import { setCookies } from 'cookies-next'
+import { setCookies, getCookie } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { StatusColors, StatusCodes } from '../constants/StatusCodes'
 import { MapSummary } from '../lib/mapSummaries'
+import { getGreeting } from '../lib/Utils'
+import queryGraphQL from '../graphql/client'
+import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 import MapCallout from '../lib/mapCallout'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
+  let time = new Date().getHours()
+  const userid = getCookie('userid')
 
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
@@ -174,7 +179,16 @@ export default function Dashboard(props) {
 
   return (
     <>
-      <Greeting locale={props.locale} name="Mary" />
+      <Greeting
+        greeting={t[getGreeting(time)]}
+        name="Mary"
+        welcome={t.welcome}
+        alert_icon_alt_text={t.alertIconAltText_success}
+        alert_icon_id={t.alertIconId_success}
+        message_heading={t.messageHeading}
+        message_body={t.messageBody}
+        myBenefitsAndServices={t.myBenefitsAndServices}
+      />
       <div className="mb-8">
         {allBenefits
           ? allBenefits.map((benefits) => {
@@ -254,13 +268,16 @@ export default function Dashboard(props) {
           )
         })}
 
-        {/* {noBenefitCards.map((value, index) => {
-          return (
-            <div key={index}>
-              <NoBenefitCard locale={props.locale} benefit={value} />
-            </div>
-          )
-        })} */}
+        {/* no benefit cards display only on the "all cards" page */}
+        {userid == 'default'
+          ? noBenefitCards.map((value, index) => {
+              return (
+                <div key={index} data-testid={'no-benefit-card' + index}>
+                  <NoBenefitCard locale={props.locale} benefit={value} />
+                </div>
+              )
+            })
+          : null}
       </div>
     </>
   )
@@ -288,6 +305,11 @@ export async function getServerSideProps({ req, res, locale, query }) {
       }
     }
   }
+
+  // const aemContent = await queryGraphQL(getDashboardPage).then((result) => {
+  //   return result;
+  // });
+  // console.log(aemContent)
 
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
