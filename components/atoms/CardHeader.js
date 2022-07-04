@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 export default function CardHeader(props) {
   return (
-    <h3 className="font-bold font-display text-4xl sm:text-lg md:text-xl lg:text-3xl xl:text-4xl mb-2">
+    <h3 className="font-bold font-display text-4xl sm:text-6xl py-8 sm:py-6">
       {props.locale === 'fr' ? (
         <span className="sr-only">{props.summary}</span>
       ) : null}

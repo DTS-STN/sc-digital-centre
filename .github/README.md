@@ -1,4 +1,4 @@
-# Click to view the test reports for DEV 👩‍🔬 🧪
+# Click to view the test reports for DEV 👩‍🔬🧪
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/E2E%20Test?label=E2E)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/e2e-report)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Lint%20and%20Test?label=Lint%20and%20Unit)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/lcov-report)

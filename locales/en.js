@@ -37,6 +37,9 @@ export default {
   NextPayment: {
     title: 'Next payment date:',
   },
+  LatestStatusDate: {
+    title: 'Latest status update:',
+  },
   LatestStatus: {
     title: 'Latest status update:',
     link: '/',
@@ -304,9 +307,18 @@ export default {
   // Benefit types
   CPPRetirement: 'Retirement pension',
   CPPSurvivor: "Survivor's pension",
-  EISickness: 'Sickness',
-  OASBeneficial: 'Old Age Security',
-  GISBeneficial: 'Guaranteed Income Supplement',
+  CPPDisability: 'Disability Pension',
+  OASRetirement: 'Retirement pension',
+  GISRetirement: 'Retirement pension',
+  EISickness: 'Sickness benefits',
+  SEBRegular: 'Regular Self-Empoyment benenfit active',
+
+  //Benefit callout text status
+  NotActive: 'No benefit active',
+  DurationReached: 'Your current benefits duration has been reached',
+  //Benefit callout labels
+  activeBenefit: 'Active Benefit',
+  status: 'Status',
 
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,
@@ -333,10 +345,8 @@ export default {
   nextReportDue: 'Next report due:',
   viewPaymentHistory: 'View my payments',
   agreementStatus: 'Agreement status:',
-  benefitDurationReached: 'Your current benefit duration has been reached.',
 
   // Benefit Card details
-  benefitDurationReached: 'Your current benefit duration has been reached.',
   applicationDate: 'Application date',
   latestActivity: 'Latest activity',
   viewMyStatusAndMessages: 'View my status and messages',

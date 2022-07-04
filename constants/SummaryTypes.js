@@ -2,6 +2,7 @@ export const SummaryTypes = {
   LastNetPayment: 'LastNetPayment',
   NextReport: 'NextReport',
   LatestStatus: 'LatestStatus',
+  LatestStatusDate: 'LatestStatusDate',
   LatestStatusMessage: 'LatestStatusMessage',
   NextPayment: 'NextPayment',
   RequestedBenefit: 'RequestedBenefit',
