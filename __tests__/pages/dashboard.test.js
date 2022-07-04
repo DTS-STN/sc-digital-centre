@@ -22,21 +22,23 @@ jest.mock('cookies-next', () => ({
 describe('Dashboard', () => {
   let container
   const { req, res } = createMocks({ method: 'GET' })
-  const sebFetchResult = {
-    programCode: 'seb',
-    statusCode: 'activeAgreement',
-    typeCode: 'seb',
-    summaries: [
-      {
-        type: 'TransactionDate',
-        value: '2021-09-21',
-      },
-      {
-        type: 'AgreementStatus',
-        value: 'Started',
-      },
-    ],
-  }
+  const sebFetchResult = [
+    {
+      programCode: 'seb',
+      statusCode: 'activeAgreement',
+      typeCode: 'seb',
+      summaries: [
+        {
+          type: 'TransactionDate',
+          value: '2021-09-21',
+        },
+        {
+          type: 'AgreementStatus',
+          value: 'Started',
+        },
+      ],
+    },
+  ]
   const defaultDashboard = (
     <Dashboard
       advertisingCards={getAdvertsingCards()}
