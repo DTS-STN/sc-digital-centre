@@ -61,6 +61,16 @@ const config = {
   images: {
     domains: ['www.canada.ca'],
   },
+  webpack: (config) => {
+    //GraphQL loader for .graphql files
+    config.module.rules.push({
+      test: /\.(graphql|gql)$/,
+      exclude: /node_modules/,
+      loader: 'graphql-tag/loader',
+    })
+
+    return config
+  },
 }
 
 config.headers = async () => {
@@ -72,4 +82,5 @@ config.headers = async () => {
     },
   ]
 }
+
 module.exports = config
