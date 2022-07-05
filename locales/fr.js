@@ -416,7 +416,7 @@ export default {
 
   // Dashboard benefit application card
   estimateRetirementIncome: '(FR)Estimate retirement income',
-  youMightBeEligible: 'Vous pourriez être admissible.',
+  youMightBeEligible: 'Vous pourriez être admissible',
   learnMoreAbout: '(FR)Learn more about ',
   applyFor: '(FR)Apply for',
 
