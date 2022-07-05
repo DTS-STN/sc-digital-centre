@@ -39,7 +39,7 @@ describe('BenefitApplicationCard', () => {
       />
     )
     const titleText = screen.getAllByText('Old Age Security')
-    const eligible = screen.getByText('You might be eligible.')
+    const eligible = screen.getByText('You might be eligible')
     const estimate = screen.getByText('Estimate retirement income')
 
     expect(titleText[0]).toBeInTheDocument()
