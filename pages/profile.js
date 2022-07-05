@@ -139,6 +139,7 @@ export default function Profile(props) {
                 onClick={() => benefitInfo.setShow(!benefitInfo.show)}
                 caption={!benefitInfo.show ? t.viewSettings : t.viewLess}
                 id={'view-more-less-' + index}
+                iconStyle="pl-0 pr-3"
               />
             </div>
           </>
