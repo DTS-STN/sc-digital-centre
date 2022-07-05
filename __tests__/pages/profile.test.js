@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import Profile, { getStaticProps } from '../../pages/profile'
+import Profile, { getServerSideProps } from '../../pages/profile'
 
 expect.extend(toHaveNoViolations)
 
@@ -19,7 +19,7 @@ describe('Profile', () => {
   })
 
   it('returns static props', async () => {
-    const result = await getStaticProps({ locale: 'en' })
+    const result = await getServerSideProps({ locale: 'en' })
     expect(result.props).toBeTruthy()
     expect(result.props.locale).toBe('en')
     expect(result.props.metadata).toBeTruthy()
@@ -27,7 +27,7 @@ describe('Profile', () => {
   })
 
   it('returns static french props', async () => {
-    const result = await getStaticProps({ locale: 'fr' })
+    const result = await getServerSideProps({ locale: 'fr' })
     expect(result.props).toBeTruthy()
     expect(result.props.locale).toBe('fr')
   })
