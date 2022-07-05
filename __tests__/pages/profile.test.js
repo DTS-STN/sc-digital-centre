@@ -6,6 +6,7 @@ import Profile, { getStaticProps } from '../../pages/profile'
 expect.extend(toHaveNoViolations)
 
 describe('Profile', () => {
+  process.env = { AUTH_DISABLED: 'true' }
   const { container } = render(<Profile metadata={{}} />)
 
   it('renders Profile', () => {

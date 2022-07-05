@@ -7,8 +7,12 @@ import { ProgramCodes } from '../../../../constants/ProgramCodes'
 enableFetchMocks()
 
 describe('/api/programData/ei', () => {
+  process.env = {
+    EI_ACTIVE_BENEFIT_URL: 'https://mock.interop.com/api/ei',
+    AUTH_DISABLED: 'true',
+  }
+
   test('returns api response', async () => {
-    process.env = { EI_ACTIVE_BENEFIT_URL: 'https://mock.interop.com/api/ei' }
     fetch.mockResponseOnce(JSON.stringify(eiMockResult))
 
     const { req, res } = createMocks({
