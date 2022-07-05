@@ -71,7 +71,12 @@ export default function SecuritySettings(props) {
           <Link id="profile-link" text={t.manageProfile} href={'/profile'} />
         </li>
       </ul>
-      <ActionButton href="/dashboard" text={t.backToDashboard} secondary />
+      <ActionButton
+        id="back-to-dashboard-link"
+        href="/dashboard"
+        text={t.backToDashboard}
+        secondary
+      />
     </div>
   )
 }
