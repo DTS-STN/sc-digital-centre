@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657027910753" clover="3.2.0">
-  <project timestamp="1657027910753" name="All files">
+<coverage generated="1657031752121" clover="3.2.0">
+  <project timestamp="1657031752121" name="All files">
     <metrics statements="412" coveredstatements="359" conditionals="293" coveredconditionals="225" methods="126" coveredmethods="104" elements="831" coveredelements="688" complexity="0" loc="412" ncloc="412" packages="9" files="51" classes="51"/>
     <package name="components.atoms">
       <metrics statements="48" coveredstatements="43" conditionals="36" coveredconditionals="28" methods="21" coveredmethods="19"/>
@@ -518,10 +518,10 @@
         <line num="117" count="1" type="stmt"/>
         <line num="125" count="3" type="stmt"/>
         <line num="139" count="0" type="stmt"/>
-        <line num="171" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="173" count="2" type="stmt"/>
-        <line num="179" count="2" type="stmt"/>
-        <line num="186" count="2" type="stmt"/>
+        <line num="172" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="174" count="2" type="stmt"/>
+        <line num="180" count="2" type="stmt"/>
+        <line num="187" count="2" type="stmt"/>
       </file>
       <file name="security-settings.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/security-settings.js">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
