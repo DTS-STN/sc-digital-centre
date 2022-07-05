@@ -3,8 +3,8 @@ import propTypes from 'prop-types'
 
 export default function ProfileInfo(props) {
   return (
-    <div className="w-full py-4 ">
-      <div className="grid gap-y-8 gap-x-40 py-8 w-full md:grid-cols-2 ">
+    <div className="w-full">
+      <div className="grid gap-y-8 gap-x-40 pb-20 w-full md:grid-cols-2 ">
         {props.fields.map((item) => {
           return (
             <div key={item.title}>

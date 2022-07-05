@@ -3,7 +3,9 @@ import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
+
 import ViewMoreLessButton from '../components/atoms/ViewMoreLessButton'
+import { Heading } from '@dts-stn/decd-design-system'
 
 export default function Profile(props) {
   const t = props.locale === 'en' ? en : fr
@@ -116,16 +118,14 @@ export default function Profile(props) {
   ]
   return (
     <>
-      <h1 className="py-4 text-4xl font-bold text-gray-darker border-b border-red-400">
-        {t.profileSettings}
-      </h1>
-      <span className="text-lg">{t.updateProfile}</span>
+      <Heading title={t.profileSettings} />
+      <span className="text-lg pb-5 block">{t.updateProfile}</span>
 
       {benefitInformations.map((benefitInfo, index) => {
         return (
           <>
-            <h2 className="text-3xl py-2 font-bold">{benefitInfo.benefit}</h2>
-            <div className="py-2 mb-4 border-b border-gray-500">
+            <h2 className="text-3xl pt-12 font-bold">{benefitInfo.benefit}</h2>
+            <div className="pb-16 pt-2 border-b border-gray-500">
               {benefitInfo.show ? (
                 <ProfileInfo
                   fields={benefitInfo.fields}
@@ -139,6 +139,7 @@ export default function Profile(props) {
                 onClick={() => benefitInfo.setShow(!benefitInfo.show)}
                 caption={!benefitInfo.show ? t.viewSettings : t.viewLess}
                 id={'view-more-less-' + index}
+                className="pt-6"
                 iconStyle="pl-0 pr-3"
               />
             </div>
