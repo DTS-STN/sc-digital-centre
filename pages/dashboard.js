@@ -16,6 +16,7 @@ import { getGreeting } from '../lib/Utils'
 import queryGraphQL from '../graphql/client'
 import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 import MapCallout from '../lib/mapCallout'
+import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -306,27 +307,10 @@ export default function Dashboard(props) {
 }
 
 export async function getServerSideProps({ req, res, locale, query }) {
-  let isAuth = false
+  if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
 
   const { userid } = query
   setCookies('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
-
-  if (
-    !process.env.AUTH_DISABLED ||
-    process.env.AUTH_DISABLED.toLowerCase() !== 'true'
-  ) {
-    const session = await getSession({ req })
-    isAuth = session ? true : false
-
-    if (!isAuth) {
-      return {
-        redirect: {
-          permanent: false,
-          destination: '/api/auth/signin',
-        },
-      }
-    }
-  }
 
   // const aemContent = await queryGraphQL(getDashboardPage).then((result) => {
   //   return result;

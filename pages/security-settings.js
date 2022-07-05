@@ -1,6 +1,9 @@
 import InfoSection from '../components/atoms/InfoSection'
+import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 
 export function getStaticProps() {
+  if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
+
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
     keywords: 'en + fr keywords',
