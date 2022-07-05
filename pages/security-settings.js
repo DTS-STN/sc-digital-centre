@@ -1,7 +1,7 @@
 import InfoSection from '../components/atoms/InfoSection'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 
-export async function getStaticProps() {
+export async function getStaticProps({ req }) {
   if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
 
   const metadata = {

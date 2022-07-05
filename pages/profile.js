@@ -192,7 +192,7 @@ export default function Profile(props) {
   )
 }
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale, req }) {
   if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
 
   const t = locale === 'en' ? en : fr
