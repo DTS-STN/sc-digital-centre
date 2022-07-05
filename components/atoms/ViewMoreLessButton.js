@@ -29,7 +29,7 @@ export default function ViewMoreLessButton(props) {
               alt=""
             />
           )}
-          <span className="text-left">{props.caption}</span>
+          <span className="text-left px-1">{props.caption}</span>
         </div>
       </>
     </ActionButton>

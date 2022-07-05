@@ -270,7 +270,10 @@ export default {
   //
 
   // Greeting
-  greeting: '(FR)Good morning, ',
+  greeting: '(FR)Hello, ',
+  morningGreeting: '(FR)Good morning, ',
+  afternoonGreeting: '(FR)Good afternoon, ',
+  eveningGreeting: '(FR)Good evening, ',
   welcome: '(FR)Welcome to your My Service Canada Account.',
   myBenefitsAndServices: 'Mes prestations et mes services',
   canada_ca: 'Canada.ca',
