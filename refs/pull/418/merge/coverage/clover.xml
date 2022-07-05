@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657042124162" clover="3.2.0">
-  <project timestamp="1657042124162" name="All files">
+<coverage generated="1657043486781" clover="3.2.0">
+  <project timestamp="1657043486782" name="All files">
     <metrics statements="412" coveredstatements="359" conditionals="293" coveredconditionals="225" methods="126" coveredmethods="104" elements="831" coveredelements="688" complexity="0" loc="412" ncloc="412" packages="9" files="51" classes="51"/>
     <package name="components.atoms">
       <metrics statements="48" coveredstatements="43" conditionals="36" coveredconditionals="28" methods="21" coveredmethods="19"/>
@@ -35,13 +35,13 @@
       </file>
       <file name="HorizontalRule.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/HorizontalRule.js">
         <metrics statements="7" coveredstatements="5" conditionals="8" coveredconditionals="5" methods="1" coveredmethods="1"/>
-        <line num="5" count="758" type="cond" truecount="2" falsecount="2"/>
+        <line num="5" count="761" type="cond" truecount="2" falsecount="2"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="11" count="758" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="761" type="cond" truecount="1" falsecount="1"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="17" count="758" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="761" type="cond" truecount="2" falsecount="0"/>
         <line num="18" count="728" type="stmt"/>
-        <line num="24" count="30" type="stmt"/>
+        <line num="24" count="33" type="stmt"/>
       </file>
       <file name="InfoSection.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/InfoSection.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -518,10 +518,10 @@
         <line num="119" count="1" type="stmt"/>
         <line num="125" count="3" type="stmt"/>
         <line num="139" count="0" type="stmt"/>
-        <line num="173" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="175" count="2" type="stmt"/>
-        <line num="181" count="2" type="stmt"/>
-        <line num="188" count="2" type="stmt"/>
+        <line num="174" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="176" count="2" type="stmt"/>
+        <line num="182" count="2" type="stmt"/>
+        <line num="189" count="2" type="stmt"/>
       </file>
       <file name="security-settings.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/security-settings.js">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
