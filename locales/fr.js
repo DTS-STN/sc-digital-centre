@@ -446,8 +446,10 @@ export default {
   profileAndPreferences: 'Profil et Préférences',
   backToDashboard: '(FR)Back to my dashboard',
   edit: 'Modifier',
-  viewSettings: 'View settings',
+  viewSettings: '(FR)View settings',
   moreInfo: "Plus d'information",
+  lookingForSecuritySettings: '(FR)Looking for security settings?',
+  manageSecuritySettings: '(FR)Manage your security settings',
 
   //Security page
   securitySettings: 'Paramètres de sécurité',

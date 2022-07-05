@@ -148,12 +148,12 @@ export default function Profile(props) {
       })}
 
       <div className="mt-10">
-        <h2 className="text-3xl font-bold">Looking for security settings?</h2>
+        <h2 className="text-3xl font-bold">{t.lookingForSecuritySettings}</h2>
         <ul className="list-disc ml-8 text-lg">
           <Link href={'/security-settings'} passHref>
             <li>
-              <a className="underline text-blue-600 cursor-pointer hover:text-blue-800 visited:text-purple-600">
-                Manage your security settings
+              <a className="underline text-blue-default cursor-pointer hover:text-blue-hover visited:text-purple-medium ">
+                {t.manageSecuritySettings}
               </a>
             </li>
           </Link>

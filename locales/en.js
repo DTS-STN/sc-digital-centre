@@ -457,6 +457,8 @@ export default {
   edit: 'Edit',
   moreInfo: 'More Information',
   viewSettings: 'View settings',
+  lookingForSecuritySettings: 'Looking for security settings?',
+  manageSecuritySettings: 'Manage your security settings',
 
   //Security page
   securitySettings: 'Security Settings',
