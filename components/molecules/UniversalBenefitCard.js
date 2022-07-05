@@ -92,6 +92,7 @@ export default function UniversalBenefitCard(props) {
           ariaExpanded={isOpen.toString()}
           icon={isOpen}
           caption={props.taskHeading}
+          className="py-5 px-2 sm:pl-12"
         />
       </h4>
       <div className=" flex flex-col bg-white  rounded-b-xl">

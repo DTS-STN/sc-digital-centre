@@ -198,9 +198,6 @@ export default {
   //
   //
 
-  // Words
-  edit: 'éditer',
-
   //
   // Contact us Section
   //
@@ -444,12 +441,18 @@ export default {
   errorPage503message: '(FR)503 - Service unavailable error occurred',
 
   //Profile page
-  profileAndSecuritySettings: '(FR)Profile and security settings',
+  profileSettings: '(FR)Profile and security settings',
+  updateProfile: '(FR)Update your profile information',
   profileAndPreferences: 'Profil et Préférences',
-  securitySettings: 'Paramètres de sécurité',
   backToDashboard: '(FR)Back to my dashboard',
   edit: 'Modifier',
+  viewSettings: '(FR)View settings',
   moreInfo: "Plus d'information",
+  lookingForSecuritySettings: '(FR)Looking for security settings?',
+  manageSecuritySettings: '(FR)Manage your security settings',
+
+  //Security page
+  securitySettings: 'Paramètres de sécurité',
 
   //Dashboard task links
   updateAccountInfoTaskLink: '/fr/profile',
