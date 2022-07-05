@@ -1,11 +1,11 @@
+import { Heading } from '@dts-stn/decd-design-system'
 import ProfileInfo from '../components/molecules/ProfileInfo'
+import ViewMoreLessButton from '../components/atoms/ViewMoreLessButton'
+import HorizontalRule from '../components/atoms/HorizontalRule'
 import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
-
-import ViewMoreLessButton from '../components/atoms/ViewMoreLessButton'
-import { Heading } from '@dts-stn/decd-design-system'
 
 export default function Profile(props) {
   const t = props.locale === 'en' ? en : fr
@@ -125,7 +125,7 @@ export default function Profile(props) {
         return (
           <>
             <h2 className="text-3xl pt-12 font-bold">{benefitInfo.benefit}</h2>
-            <div className="pb-16 pt-2 border-b border-gray-500">
+            <div className="pb-16 pt-2">
               {benefitInfo.show ? (
                 <ProfileInfo
                   fields={benefitInfo.fields}
@@ -143,6 +143,7 @@ export default function Profile(props) {
                 iconStyle="pl-0 pr-3"
               />
             </div>
+            <HorizontalRule />
           </>
         )
       })}
