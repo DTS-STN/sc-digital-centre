@@ -49,6 +49,7 @@ const NoBenefitCard = (props) => {
           }}
           icon={isOpen}
           caption={btnCaption}
+          className="py-5 pl-2 md:pl-6"
         />
       )}
     </div>

@@ -121,7 +121,7 @@ export default function Profile(props) {
       </h1>
       <span className="text-lg">{t.updateProfile}</span>
 
-      {benefitInformations.map((benefitInfo) => {
+      {benefitInformations.map((benefitInfo, index) => {
         return (
           <>
             <h2 className="text-3xl py-2 font-bold">{benefitInfo.benefit}</h2>
@@ -138,7 +138,7 @@ export default function Profile(props) {
                 icon={benefitInfo.show}
                 onClick={() => benefitInfo.setShow(!benefitInfo.show)}
                 caption={!benefitInfo.show ? t.viewSettings : t.viewLess}
-                className="pl-0 md:pl-0"
+                id={'view-more-less-' + index}
               />
             </div>
           </>
