@@ -3,9 +3,11 @@ import { Message } from '@dts-stn/decd-design-system'
 export default function Greeting(props) {
   return (
     <div>
-      <div className="grid grid-cols-1 divide-y divide-red-600 font-display">
-        <div className="py-4 text-4xl font-bold">{`${props.greeting} ${props.name}`}</div>
-        <div className="py-4 text-xl">{props.welcome}</div>
+      <div className="grid grWid-cols-1 divide-y divide-red-600 font-display">
+        <h1 className="py-4 text-3xl font-bold text-gray-darker">
+          {props.myBenefitsAndServices}
+        </h1>
+        <h2 className="py-4 text-3xl font-bold">{`${props.greeting} ${props.name}`}</h2>
       </div>
       <Message
         type="success"
@@ -15,9 +17,6 @@ export default function Greeting(props) {
         message_heading={props.message_heading}
         message_body={props.message_body}
       />
-      <h1 className="text-3xl font-bold mt-10">
-        {props.myBenefitsAndServices}
-      </h1>
     </div>
   )
 }
