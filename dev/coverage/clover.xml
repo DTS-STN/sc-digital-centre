@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657118262768" clover="3.2.0">
-  <project timestamp="1657118262768" name="All files">
+<coverage generated="1657131510824" clover="3.2.0">
+  <project timestamp="1657131510824" name="All files">
     <metrics statements="446" coveredstatements="392" conditionals="323" coveredconditionals="253" methods="126" coveredmethods="111" elements="895" coveredelements="756" complexity="0" loc="446" ncloc="446" packages="9" files="51" classes="51"/>
     <package name="components.atoms">
       <metrics statements="51" coveredstatements="46" conditionals="40" coveredconditionals="32" methods="21" coveredmethods="19"/>
@@ -237,9 +237,9 @@
         <line num="25" count="44" type="cond" truecount="2" falsecount="0"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="43" type="cond" truecount="2" falsecount="0"/>
-        <line num="28" count="41" type="stmt"/>
-        <line num="29" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="30" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="42" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="41" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
       </file>
       <file name="mapCallout.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/lib/mapCallout.js">
