@@ -189,11 +189,21 @@ export default function Dashboard(props) {
         myBenefitsAndServices={t.myBenefitsAndServices}
       />
       <div className="mb-8">
+        {eiLoaded ? null : <p>Loading EI User Benefit Data...</p>}
         {eiError ?? null}
+
+        {cppLoaded ? null : <p>Loading CPP User Benefit Data...</p>}
         {cppError ?? null}
+
+        {oasLoaded ? null : <p>Loading OAS User Benefit Data...</p>}
         {oasError ?? null}
+
+        {gisLoaded ? null : <p>Loading GIS User Benefit Data...</p>}
         {gisError ?? null}
+        {cppdLoaded ? null : <p>Loading CPPD User Benefit Data...</p>}
         {cppdError ?? null}
+
+        {sebLoaded ? null : <p>'Loading SEB User Benefit Data...</p>}
         {sebError ?? null}
 
         {allBenefits
