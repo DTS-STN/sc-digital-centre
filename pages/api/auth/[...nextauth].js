@@ -32,7 +32,10 @@ export default NextAuth({
       wellKnown: process.env.ECAS_WELL_KNOWN,
       authorization: {
         url: process.env.ECAS_AUTHORIZATION,
-        params: { nonce: crypto.randomBytes(16).toString('hex') },
+        params: {
+          scope: 'openid profile',
+          nonce: crypto.randomBytes(16).toString('hex'),
+        },
       },
       token: {
         url: process.env.ECAS_TOKEN,
