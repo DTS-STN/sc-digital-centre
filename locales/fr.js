@@ -273,7 +273,10 @@ export default {
   //
 
   // Greeting
-  greeting: '(FR)Good morning, ',
+  greeting: '(FR)Hello, ',
+  morningGreeting: '(FR)Good morning, ',
+  afternoonGreeting: '(FR)Good afternoon, ',
+  eveningGreeting: '(FR)Good evening, ',
   welcome: '(FR)Welcome to your My Service Canada Account.',
   myBenefitsAndServices: 'Mes prestations et mes services',
   canada_ca: 'Canada.ca',
@@ -445,8 +448,12 @@ export default {
   backToDashboard: '(FR)Back to my dashboard',
 
   //Profile page
-  profileAndSecuritySettings: '(FR)Profile and security settings',
+  profileSettings: '(FR)Profile and security settings',
+  updateProfile: '(FR)Update your profile information',
   profileAndPreferences: 'Profil et Préférences',
+  viewSettings: '(FR)View settings',
+  lookingForSecuritySettings: '(FR)Looking for security settings?',
+  manageSecuritySettings: '(FR)Manage your security settings',
 
   //Security Settings page
   securitySettings: 'Paramètres de sécurité',

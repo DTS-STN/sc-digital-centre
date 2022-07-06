@@ -12,10 +12,14 @@ import en from '../locales/en'
 import fr from '../locales/fr'
 import { StatusColors, StatusCodes } from '../constants/StatusCodes'
 import { MapSummary } from '../lib/mapSummaries'
+import { getGreeting } from '../lib/Utils'
+import queryGraphQL from '../graphql/client'
+import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 import MapCallout from '../lib/mapCallout'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
+  let time = new Date().getHours()
   const userid = getCookie('userid')
 
   const [advertisingCards, setAdvertisingCards] = useState(
@@ -77,7 +81,16 @@ export default function Dashboard(props) {
 
   return (
     <>
-      <Greeting locale={props.locale} name="Mary" />
+      <Greeting
+        greeting={t[getGreeting(time)]}
+        name="Mary"
+        welcome={t.welcome}
+        alert_icon_alt_text={t.alertIconAltText_success}
+        alert_icon_id={t.alertIconId_success}
+        message_heading={t.messageHeading}
+        message_body={t.messageBody}
+        myBenefitsAndServices={t.myBenefitsAndServices}
+      />
       <div className="mb-8">
         {cppLoaded ? null : 'Loading CPP User Benefit Data...'}
         {cppError ?? null}
@@ -314,6 +327,11 @@ export async function getServerSideProps({ req, res, locale, query }) {
       }
     }
   }
+
+  // const aemContent = await queryGraphQL(getDashboardPage).then((result) => {
+  //   return result;
+  // });
+  // console.log(aemContent)
 
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
