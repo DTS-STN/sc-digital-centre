@@ -200,6 +200,9 @@ export default {
   //
   //
 
+  // Words
+  edit: 'Edit',
+
   //
   // Contact us Section
   //
@@ -431,7 +434,7 @@ export default {
   craPath:
     'https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html',
   profilePath: '/profile',
-  securityPath: '/',
+  securityPath: '/security-settings',
   signOutPath: '/',
 
   // Greeting URLs
@@ -449,19 +452,38 @@ export default {
   errorPage400message: '400 Error - Bad request error occurred',
   errorPage503message: '503 - Service unavailable error occurred',
 
+  // Common Pages stuff
+  backToDashboard: 'Back to my dashboard',
+  moreInfo: 'More Information',
+
   //Profile page
   profileSettings: 'Profile settings',
   updateProfile: 'Update your profile information',
   profileAndPreferences: 'Profile and Preferences',
-  backToDashboard: 'Back to my dashboard',
-  edit: 'Edit',
-  moreInfo: 'More Information',
   viewSettings: 'View settings',
   lookingForSecuritySettings: 'Looking for security settings?',
   manageSecuritySettings: 'Manage your security settings',
 
-  //Security page
+  //Security Settings page
   securitySettings: 'Security Settings',
+  updateSecuritySettings: 'Update your security settings',
+  mfa: 'Multi-factor authentication',
+  modifyMfa: 'Modify multi-factor authentication settings',
+  editMfaLink: '/',
+  gcKeyPass: 'GCKey password',
+  changeGcKeyPass: 'Change my GCKey password',
+  editGcKeyPassLink: '/',
+  securityQuestions: 'Security questions',
+  changeSecurityQuestions: 'Change my security questions',
+  editSecurityQuestionsLink: '/',
+  eiAccessCode: 'Employment Insurance access code',
+  editEiAccessCodeLink: '/',
+  IdentityVerification: 'Identity verification',
+  confirmIdentityVerification:
+    'Confirm my identity to enhance the security of my account',
+  editIdentityVerificationLink: '/',
+  lookingForProfile: 'Looking for profile settings?',
+  manageProfile: 'Manage my profile settings',
 
   //Dashboard task links
   updateAccountInfoTaskLink: '/profile',

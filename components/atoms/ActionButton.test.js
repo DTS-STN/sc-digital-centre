@@ -30,6 +30,18 @@ describe('ActionButton', () => {
     expect(btn).toHaveClass('bg-red-400 text-white border')
   })
 
+  it('renders secondary style', () => {
+    render(<ActionButton id="testID" data-testid="testID" secondary />)
+    expect(screen.getByTestId('testID')).toHaveClass(
+      'bg-gray-light text-blue-default'
+    )
+  })
+
+  it('renders shadow style', () => {
+    render(<ActionButton id="testID" data-testid="testID" useShadow />)
+    expect(screen.getByTestId('testID')).toHaveClass('shadow-sm')
+  })
+
   it('has no a11y violations', async () => {
     const { container } = render(
       <ActionButton id="testID" text="test Button" />
