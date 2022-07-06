@@ -157,7 +157,21 @@
 <a name='L98'></a><a href='#L98'>98</a>
 <a name='L99'></a><a href='#L99'>99</a>
 <a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -249,6 +263,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -263,6 +287,8 @@ import PropTypes from 'prop-types'
 import HorizontalRule from '../atoms/HorizontalRule'
 import propTypes from 'prop-types'
 import { ProgramCodes } from '../../constants/ProgramCodes'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStamp } from '@fortawesome/free-solid-svg-icons'
 &nbsp;
 const BenefitApplicationCard = (props) =&gt; {
   const t = props.locale === 'en' ? en : <span class="branch-1 cbranch-no" title="branch not covered" >fr</span>
@@ -285,42 +311,36 @@ const BenefitApplicationCard = (props) =&gt; {
   }
 &nbsp;
   return (
-    &lt;div className="benefit-card px-4 md:px-6 py-7" data-cy="adcard"&gt;
-      &lt;div className="mx-auto sm:grid sm:grid-cols-4 sm:divide-x-2"&gt;
+    &lt;div className="benefit-card" data-cy="adcard"&gt;
+      &lt;div className="flex flex-col pt-6"&gt;
         &lt;div
           id={`${benefitType}-${benefitSubType}-app-card`}
-          className="col-span-1 py-4"
+          className="col-span-1 py-4  px-4 sm:px-16 pt-6"
         &gt;
-          &lt;h2 className="font-bold font-display text-4xl sm:text-lg md:text-xl lg:text-3xl xl:text-4xl"&gt;
+          &lt;h2 className="font-bold font-display text-4xl sm:text-6xl"&gt;
             {benefitName}
           &lt;/h2&gt;
-          &lt;div className="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44"&gt;
+          &lt;div className="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44 "&gt;
             {t[benefitSubType]}
           &lt;/div&gt;
+          &lt;ul className="pb-6 sm:mb-7"&gt;
+            &lt;li&gt;
+              &lt;p className="text-xl"&gt;{t.status}&lt;/p&gt;
+              &lt;p className="text-3xl font-bold mb-5 "&gt;{t.youMightBeEligible}&lt;/p&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
         &lt;/div&gt;
-        &lt;HorizontalRule width="w-1/3" visibility="sm:hidden" /&gt;
-        &lt;div className="col-span-3 sm:grid sm:grid-cols-2"&gt;
-          &lt;div className="ml-2 sm:ml-8 mt-4 xl:mt-6"&gt;
-            &lt;p className="text-3xl sm:text-2xl lg:text-3xl mb-5"&gt;
-              {t.youMightBeEligible}
-            &lt;/p&gt;
-            &lt;p className="text-xl whitespace-nowrap"&gt;{t.learnMoreAbout}&lt;/p&gt;
-            &lt;a
-              href={props.benefitApplication.learnMoreLink}
-              className="text-xl underline hover:text-bright-blue-medium whitespace-pre-wrap"
-            &gt;
-              {getBenefitNameString()}
-            &lt;/a&gt;
-          &lt;/div&gt;
-          &lt;div className="grid grid-cols-2 mt-6 sm:mt-2"&gt;
+        &lt;HorizontalRule /&gt;
+        &lt;div className="flex flex-col "&gt;
+          &lt;div className="flex flex-col py-4  px-4 sm:px-16"&gt;
             {isEstimateButtonRequired() ? (
-              &lt;div className="sm:col-span-1"&gt;
+              &lt;div className="my-4"&gt;
                 &lt;a
                   href={props.benefitApplication.estimateLink}
-                  className="font-normal float-right"
+                  className="flex items-center underline  text-blue-default hover:text-blue-hover"
                 &gt;
-                  &lt;img src={props.benefitApplication.estimateIcon} alt="" /&gt;
-                  &lt;p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"&gt;
+                  &lt;FontAwesomeIcon icon={faStamp} className="text-3xl pr-4 " /&gt;
+                  &lt;p className="font-normal text-xl pr-5 my-3 "&gt;
                     {t.estimateRetirementIncome}
                   &lt;/p&gt;
                 &lt;/a&gt;
@@ -329,17 +349,33 @@ const BenefitApplicationCard = (props) =&gt; {
               &lt;div className="hidden sm:flex"&gt;&lt;/div&gt;
             )}
 &nbsp;
-            &lt;div className="sm:col-span-1"&gt;
+            &lt;div className="my-4 "&gt;
               &lt;a
                 href={props.benefitApplication.applicationLink}
-                className="font-normal float-right"
+                className="flex items-center underline  text-blue-default hover:text-blue-hover"
               &gt;
-                &lt;img src={props.benefitApplication.applyIcon} alt="" /&gt;
-                &lt;p className="w-36 sm:w-24 lg:w-36 font-normal text-sm pr-5 mt-3"&gt;
+                &lt;FontAwesomeIcon icon={faStamp} className="text-3xl pr-4 " /&gt;
+                &lt;p className="font-normal text-xl pr-5 mt-3 "&gt;
                   {`${t.applyFor} ${getBenefitNameString()}`}
                 &lt;/p&gt;
               &lt;/a&gt;
             &lt;/div&gt;
+          &lt;/div&gt;
+&nbsp;
+          &lt;HorizontalRule /&gt;
+          &lt;div className="my-10 px-4 sm:px-16"&gt;
+            &lt;p className="text-xl whitespace-nowrap "&gt;
+              {t.learnMoreAbout}
+              &lt;span&gt;
+                {' '}
+                &lt;a
+                  href={props.benefitApplication.learnMoreLink}
+                  className="text-xl underline hover:text-bright-blue-medium whitespace-pre-wrap "
+                &gt;
+                  {getBenefitNameString()}
+                &lt;/a&gt;
+              &lt;/span&gt;
+            &lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -364,7 +400,7 @@ BenefitApplicationCard.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jul 05 2022 19:24:43 GMT+0000 (Coordinated Universal Time)
+                at Wed Jul 06 2022 13:52:08 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
