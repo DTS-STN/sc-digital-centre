@@ -11,7 +11,7 @@ export default function ActionButton(props) {
   const defaultStyle =
     'font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-blue-primary text-white text-center border border-blue-default active:bg-blue-pressed hover:bg-bright-blue-dark grid place-items-center'
   const secondaryStyle =
-    'inline-block text-xl my-4 py-1.5 px-3.5 rounded bg-gray-light text-blue-default hover:bg-grey-medium hover:text-blue-hover hover:cursor-pointer'
+    'inline-block my-4 py-2.5 px-3.5 rounded bg-gray-light text-blue-default hover:bg-grey-medium hover:text-blue-hover hover:cursor-pointer'
   let style = secondary ? secondaryStyle : defaultStyle
   if (useShadow) style += ' shadow-sm shadow-gray-darker focus:shadow-none'
 

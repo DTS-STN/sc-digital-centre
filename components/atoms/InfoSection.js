@@ -4,10 +4,10 @@ import ActionButton from './ActionButton'
 export default function InfoSection(props) {
   return (
     <div>
-      <h3 className="mt-14 pb-6 font-bold text-3xl">{props.title}</h3>
+      <h3 className="mt-14 pb-6 font-bold text-2xl">{props.title}</h3>
       {props.info.map((item, index) => {
         return (
-          <p key={index} className="text-lg">
+          <p key={index} className="text-xl">
             {item}
           </p>
         )
