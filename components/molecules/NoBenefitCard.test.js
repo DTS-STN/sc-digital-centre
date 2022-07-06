@@ -4,6 +4,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 import NoBenefitCard from './NoBenefitCard'
 import { NO_BENEFIT_EI_TASKS_EN } from '../../contents/BenefitTasksGroups'
 import en from '../../locales/en'
+import { act } from 'react-dom/test-utils'
 
 const NO_BENEFIT_EI = {
   benefitType: 'ei',
@@ -15,9 +16,14 @@ const NO_BENEFIT_EI = {
 }
 
 expect.extend(toHaveNoViolations)
+
 describe('NoBenefitCard', () => {
-  it('renders BenefitCard', () => {
-    render(<NoBenefitCard locale="en" benefit={NO_BENEFIT_EI} />)
+  const sut = <NoBenefitCard locale="en" benefit={NO_BENEFIT_EI} />
+
+  it('renders BenefitCard', async () => {
+    await act(async () => {
+      render(sut)
+    })
     const noBenefitName = screen.getAllByText('Employment Insurance')
     const commonActions = screen.getByText(en.commonActions)
 
@@ -26,9 +32,11 @@ describe('NoBenefitCard', () => {
   })
 
   it('has no a11y violations', async () => {
-    const { container } = render(
-      <NoBenefitCard locale="en" benefit={NO_BENEFIT_EI} />
-    )
+    let container = document.createElement('div')
+    document.body.appendChild(container)
+    await act(async () => {
+      render(sut, container)
+    })
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })
