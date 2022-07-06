@@ -189,6 +189,13 @@ export default function Dashboard(props) {
         myBenefitsAndServices={t.myBenefitsAndServices}
       />
       <div className="mb-8">
+        {eiError ?? null}
+        {cppError ?? null}
+        {oasError ?? null}
+        {gisError ?? null}
+        {cppdError ?? null}
+        {sebError ?? null}
+
         {allBenefits
           ? allBenefits.map((benefits) => {
               return benefits.map((value, index) => {
