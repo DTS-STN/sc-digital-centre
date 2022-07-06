@@ -16,7 +16,7 @@ describe('/api/programData/seb', () => {
     await handler(req, res)
 
     expect(res._getStatusCode()).toBe(200)
-    const result = res._getJSONData()
+    const result = res._getJSONData()[0]
     expect(result).toBeDefined
     expect(result.programCode).toBe(ProgramCodes.SEB)
   })
