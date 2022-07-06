@@ -30,7 +30,6 @@ export default NextAuth({
       type: 'oauth',
       wellKnown: process.env.ECAS_WELL_KNOWN,
       authorization: process.env.ECAS_AUTHORIZATION,
-      nonce: process.env.CLIENT_SECRET,
       token: {
         url: process.env.ECAS_TOKEN,
         async request(context) {
