@@ -422,7 +422,7 @@ export default {
 
   // Dashboard benefit application card
   estimateRetirementIncome: 'Estimate retirement income',
-  youMightBeEligible: 'You might be eligible.',
+  youMightBeEligible: 'You might be eligible',
   learnMoreAbout: 'Learn more about ',
   applyFor: 'Apply for',
 
