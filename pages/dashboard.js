@@ -203,7 +203,7 @@ export default function Dashboard(props) {
         {cppdLoaded ? null : <p>Loading CPPD User Benefit Data...</p>}
         {cppdError ?? null}
 
-        {sebLoaded ? null : <p>'Loading SEB User Benefit Data...</p>}
+        {sebLoaded ? null : <p>Loading SEB User Benefit Data...</p>}
         {sebError ?? null}
 
         {allBenefits
