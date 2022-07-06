@@ -1,4 +1,5 @@
 import NextAuth from 'next-auth'
+import crypto from 'crypto'
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -29,7 +30,10 @@ export default NextAuth({
       clientId: process.env.CLIENT_ID,
       type: 'oauth',
       wellKnown: process.env.ECAS_WELL_KNOWN,
-      authorization: process.env.ECAS_AUTHORIZATION,
+      authorization: {
+        url: process.env.ECAS_AUTHORIZATION,
+        params: { nonce: crypto.randomBytes(16).toString('hex') },
+      },
       token: {
         url: process.env.ECAS_TOKEN,
         async request(context) {
