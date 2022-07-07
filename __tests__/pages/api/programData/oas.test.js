@@ -3,6 +3,8 @@ import handler from '../../../../pages/api/programData/oas'
 import { ProgramCodes } from '../../../../constants/ProgramCodes'
 
 describe('/api/programData/oas', () => {
+  process.env = { AUTH_DISABLED: 'true' }
+
   test('returns mocked data', async () => {
     Object.defineProperty(document, 'cookie', {
       writable: true,

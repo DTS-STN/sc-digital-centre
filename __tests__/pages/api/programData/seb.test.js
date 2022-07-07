@@ -3,6 +3,8 @@ import handler from '../../../../pages/api/programData/seb'
 import { ProgramCodes } from '../../../../constants/ProgramCodes'
 
 describe('/api/programData/seb', () => {
+  process.env = { AUTH_DISABLED: 'true' }
+
   test('returns mocked data', async () => {
     Object.defineProperty(document, 'cookie', {
       writable: true,

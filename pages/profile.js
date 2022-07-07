@@ -6,6 +6,7 @@ import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
+import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 
 export default function Profile(props) {
   const t = props.locale === 'en' ? en : fr
@@ -170,7 +171,9 @@ export default function Profile(props) {
   )
 }
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale, req }) {
+  if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
+
   const t = locale === 'en' ? en : fr
 
   const metadata = {

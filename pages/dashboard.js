@@ -3,7 +3,6 @@ import BenefitApplicationCard from '../components/molecules/BenefitApplicationCa
 import Greeting from '../components/molecules/Greeting'
 import { getNoBenefitCards } from '../contents/NoBenefitCards'
 import { getAdvertsingCards } from '../contents/BenefitAdvertisingCards'
-import { getSession } from 'next-auth/react'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { setCookies, getCookie } from 'cookies-next'
@@ -16,6 +15,7 @@ import { getGreeting } from '../lib/Utils'
 import queryGraphQL from '../graphql/client'
 import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 import MapCallout from '../lib/mapCallout'
+import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -269,27 +269,10 @@ export default function Dashboard(props) {
 }
 
 export async function getServerSideProps({ req, res, locale, query }) {
-  let isAuth = false
+  if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
 
   const { userid } = query
   setCookies('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
-
-  if (
-    !process.env.AUTH_DISABLED ||
-    process.env.AUTH_DISABLED.toLowerCase() !== 'true'
-  ) {
-    const session = await getSession({ req })
-    isAuth = session ? true : false
-
-    if (!isAuth) {
-      return {
-        redirect: {
-          permanent: false,
-          destination: '/api/auth/signin',
-        },
-      }
-    }
-  }
 
   // const aemContent = await queryGraphQL(getDashboardPage).then((result) => {
   //   return result;

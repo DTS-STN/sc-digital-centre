@@ -1,10 +1,13 @@
 import { Heading, Link } from '@dts-stn/decd-design-system'
 import ActionButton from '../components/atoms/ActionButton'
 import InfoSection from '../components/atoms/InfoSection'
+import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 import en from '../locales/en'
 import fr from '../locales/fr'
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ req, locale }) {
+  if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
+
   const t = locale === 'en' ? en : fr
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
