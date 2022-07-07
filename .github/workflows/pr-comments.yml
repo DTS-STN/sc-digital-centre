@@ -33,6 +33,6 @@ jobs:
         with:
           message: |
             [Integration Deployment](https://sc-digital-centre-dyna-${{ github.head_ref }}.bdm-dev.dts-stn.com/dashboard)
-            [Jest Coverage Report](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/lcov-report') ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Lint%20and%20Test/${{ steps.extract_branch.outputs.branch }}?label=Lint%20and%20Unit)
-            [End-to-end Coverage Report](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/e2e-report) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/E2E%20Test/${{ steps.extract_branch.outputs.branch }}?label=E2E)
+            [Jest Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Lint%20and%20Test/${{ github.head_ref }}?label=Lint%20and%20Unit)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/lcov-report/) 
+            [End-to-end Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/E2E%20Test/${{ github.head_ref }}?label=E2E)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/e2e-report/) 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
