@@ -118,12 +118,12 @@ export default function Profile(props) {
   ]
   return (
     <>
-      <Heading title={t.profileSettings} />
+      <Heading id="profile-page-heading" title={t.profileSettings} />
       <span className="text-lg pb-5 block">{t.updateProfile}</span>
 
       {benefitInformations.map((benefitInfo, index) => {
         return (
-          <>
+          <div key={index}>
             <h2 className="text-3xl pt-12 font-bold">{benefitInfo.benefit}</h2>
             <div className="pb-16 pt-2">
               {benefitInfo.show ? (
@@ -144,7 +144,7 @@ export default function Profile(props) {
               />
             </div>
             <HorizontalRule />
-          </>
+          </div>
         )
       })}
 
