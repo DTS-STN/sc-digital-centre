@@ -199,7 +199,7 @@ export default {
   //
 
   // Words
-  edit: 'éditer',
+  edit: 'Modifier',
 
   //
   // Contact us Section
@@ -416,7 +416,7 @@ export default {
 
   // Dashboard benefit application card
   estimateRetirementIncome: '(FR)Estimate retirement income',
-  youMightBeEligible: 'Vous pourriez être admissible.',
+  youMightBeEligible: 'Vous pourriez être admissible',
   learnMoreAbout: '(FR)Learn more about ',
   applyFor: '(FR)Apply for',
 
@@ -425,7 +425,7 @@ export default {
   craPath:
     'https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-electroniques-particuliers/dossier-particuliers.html',
   profilePath: '/fr/profile',
-  securityPath: '/fr/',
+  securityPath: '/fr/security-settings',
   signOutPath: '/fr/',
 
   // Greeting URLs
@@ -443,13 +443,38 @@ export default {
   errorPage400message: '(FR)400 Error - Bad request error occurred',
   errorPage503message: '(FR)503 - Service unavailable error occurred',
 
-  //Profile page
-  profileAndSecuritySettings: '(FR)Profile and security settings',
-  profileAndPreferences: 'Profil et Préférences',
-  securitySettings: 'Paramètres de sécurité',
-  backToDashboard: '(FR)Back to my dashboard',
-  edit: 'Modifier',
+  // Common Pages stuff
   moreInfo: "Plus d'information",
+  backToDashboard: '(FR)Back to my dashboard',
+
+  //Profile page
+  profileSettings: '(FR)Profile and security settings',
+  updateProfile: '(FR)Update your profile information',
+  profileAndPreferences: 'Profil et Préférences',
+  viewSettings: '(FR)View settings',
+  lookingForSecuritySettings: '(FR)Looking for security settings?',
+  manageSecuritySettings: '(FR)Manage your security settings',
+
+  //Security Settings page
+  securitySettings: 'Paramètres de sécurité',
+  updateSecuritySettings: '(FR)Update your security settings',
+  mfa: '(FR)Multi-factor authentication',
+  modifyMfa: '(FR)Modify multi-factor authentication settings',
+  editMfaLink: '/fr/',
+  gcKeyPass: '(FR)GCKey password',
+  changeGcKeyPass: '(FR)Change my GCKey password',
+  editGcKeyPassLink: '/fr/',
+  securityQuestions: '(FR)Security questions',
+  changeSecurityQuestions: '(FR)Change my security questions',
+  editSecurityQuestionsLink: '/fr/',
+  eiAccessCode: '(FR)Employment Insurance access code',
+  editEiAccessCodeLink: '/fr/',
+  IdentityVerification: '(FR)Identity verification',
+  confirmIdentityVerification:
+    '(FR)Confirm my identity to enhance the security of my account',
+  editIdentityVerificationLink: '/fr/',
+  lookingForProfile: '(FR)Looking for profile settings?',
+  manageProfile: '(FR)Manage my profile settings',
 
   //Dashboard task links
   updateAccountInfoTaskLink: '/fr/profile',

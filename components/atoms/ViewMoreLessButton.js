@@ -4,7 +4,10 @@ import ActionButton from './ActionButton'
 export default function ViewMoreLessButton(props) {
   return (
     <ActionButton
-      className="text-xl leading-8 py-5 px-2 sm:pl-12 text-blue-default hover:text-blue-hover"
+      className={
+        'text-xl leading-8 text-blue-default hover:text-blue-hover ' +
+        props.className
+      }
       onClick={props.onClick}
       type="button"
       id={props.id}
@@ -15,13 +18,13 @@ export default function ViewMoreLessButton(props) {
         <div className="flex items-center ">
           {props.icon ? (
             <img
-              className="px-2 w-12 h-12"
+              className={'px-2 w-12 h-12 ' + props.iconStyle}
               src="/images/dashboard/collapse-icon.svg"
               alt=""
             />
           ) : (
             <img
-              className="px-2 w-12 h-12"
+              className={'px-2 w-12 h-12 ' + props.iconStyle}
               src="/images/dashboard/expand-icon.svg"
               alt=""
             />
@@ -40,4 +43,6 @@ ViewMoreLessButton.propTypes = {
   id: propTypes.string.isRequired,
   dataTestid: propTypes.string,
   ariaExpanded: propTypes.string,
+  iconStyle: propTypes.string,
+  className: propTypes.string,
 }
