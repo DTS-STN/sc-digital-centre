@@ -19,7 +19,10 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
-          body-includes: Integration branch
+          body-includes: |
+            [Integration Deployment :rocket:](https://sc-digital-centre-dyna-${{ github.head_ref }}.bdm-dev.dts-stn.com/dashboard)
+            [Jest Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Lint%20and%20Test/${{ github.head_ref }}?label=Lint%20and%20Unit)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/lcov-report/) 
+            [End-to-end Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/E2E%20Test/${{ github.head_ref }}?label=E2E)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/e2e-report/) 
 
       - name: Extract branch name
         shell: bash
