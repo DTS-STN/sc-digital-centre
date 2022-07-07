@@ -69,9 +69,9 @@ describe('Dashboard', () => {
   })
 
   it('loads api data', async () => {
-    // await act(async () => {
-    //   render(defaultDashboard, container)
-    // })
+    await act(async () => {
+      render(defaultDashboard, container)
+    })
 
     const sebResult = screen.getByTestId('benefit-card-seb-seb-activeAgreement')
     expect(sebResult).toBeInTheDocument()
