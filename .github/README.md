@@ -1,12 +1,12 @@
 # Click to view the test reports for DEV 👩‍🔬🧪
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/E2E%20Test?label=E2E)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/e2e-report)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Lint%20and%20Test?label=Lint%20and%20Unit)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/lcov-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/E2E%20Test/dev?label=E2E)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/e2e-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Lint%20and%20Test/dev?label=Lint%20and%20Unit)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/lcov-report)
 
 # Click to view the test reports for MAIN 🔬📊
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/E2E%20Test?color=blue&label=E2E)](https://dts-stn.github.io/sc-digital-centre/main/coverage/e2e-report)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Lint%20and%20Test?color=blue&label=Lint%20and%20Unit)](https://dts-stn.github.io/sc-digital-centre/main/coverage/lcov-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/E2E%20Test/main?color=blue&label=E2E)](https://dts-stn.github.io/sc-digital-centre/main/coverage/e2e-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Lint%20and%20Test/main?color=blue&label=Lint%20and%20Unit)](https://dts-stn.github.io/sc-digital-centre/main/coverage/lcov-report)
 
 ## Description
 
