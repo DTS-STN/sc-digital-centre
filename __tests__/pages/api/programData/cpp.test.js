@@ -7,8 +7,12 @@ import { ProgramCodes } from '../../../../constants/ProgramCodes'
 enableFetchMocks()
 
 describe('/api/programData/cpp', () => {
+  process.env = {
+    CPP_ACTIVE_BENEFIT_URL: 'https://mock.interop.com/api/cpp',
+    AUTH_DISABLED: 'true',
+  }
+
   test('returns api response', async () => {
-    process.env = { CPP_ACTIVE_BENEFIT_URL: 'https://mock.interop.com/api/cpp' }
     fetch.mockResponseOnce(JSON.stringify(cppMockResult))
 
     const { req, res } = createMocks({

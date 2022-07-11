@@ -1,16 +1,19 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import Profile, { getServerSideProps } from '../../pages/profile'
+import SecuritySettings, {
+  getServerSideProps,
+} from '../../pages/security-settings'
 
 expect.extend(toHaveNoViolations)
 
-describe('Profile', () => {
+describe('Security Settings', () => {
   process.env = { AUTH_DISABLED: 'true' }
-  const { container } = render(<Profile metadata={{}} />)
+  const { container } = render(<SecuritySettings metadata={{}} locale="en" />)
 
-  it('renders Profile', () => {
+  it('renders as expected', () => {
     expect(container).toBeTruthy()
+    expect(screen.getByText('Security Settings')).toBeInTheDocument()
   })
 
   it('has no a11y violations', async () => {
@@ -18,10 +21,14 @@ describe('Profile', () => {
     expect(results).toHaveNoViolations()
   })
 
+  it('renders in french', () => {
+    render(<SecuritySettings metadata={{}} locale="fr" />)
+    expect(screen.getByText('Paramètres de sécurité')).toBeInTheDocument()
+  })
+
   it('returns static props', async () => {
     const result = await getServerSideProps({ locale: 'en' })
     expect(result.props).toBeTruthy()
-    expect(result.props.locale).toBe('en')
     expect(result.props.metadata).toBeTruthy()
     expect(result.props.breadCrumbItems).toHaveLength(1)
   })

@@ -22,21 +22,23 @@ jest.mock('cookies-next', () => ({
 describe('Dashboard', () => {
   let container
   const { req, res } = createMocks({ method: 'GET' })
-  const sebFetchResult = {
-    programCode: 'seb',
-    statusCode: 'activeAgreement',
-    typeCode: 'seb',
-    summaries: [
-      {
-        type: 'TransactionDate',
-        value: '2021-09-21',
-      },
-      {
-        type: 'AgreementStatus',
-        value: 'Started',
-      },
-    ],
-  }
+  const sebFetchResult = [
+    {
+      programCode: 'seb',
+      statusCode: 'activeAgreement',
+      typeCode: 'seb',
+      summaries: [
+        {
+          type: 'TransactionDate',
+          value: '2021-09-21',
+        },
+        {
+          type: 'AgreementStatus',
+          value: 'Started',
+        },
+      ],
+    },
+  ]
   const defaultDashboard = (
     <Dashboard
       advertisingCards={getAdvertsingCards()}
@@ -81,17 +83,6 @@ describe('Dashboard', () => {
     })
     const NoBenefitCard = screen.getByTestId('no-benefit-card1')
     expect(NoBenefitCard).toBeInTheDocument()
-  })
-
-  it('handles api error', async () => {
-    await act(async () => {
-      render(defaultDashboard, container)
-    })
-    //handles error
-    const cppdResult = screen.getByText(
-      'Error fetching cppd data 501 - "Request Not Avalaible".'
-    )
-    expect(cppdResult).toBeInTheDocument()
   })
 
   it('renders Dashboard', async () => {
