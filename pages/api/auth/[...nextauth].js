@@ -37,13 +37,17 @@ export default NextAuth({
           nonce: crypto.randomBytes(16).toString('hex'),
         },
       },
-      token: {
+      /*token: {
         url: process.env.ECAS_TOKEN,
         async request(context) {
           // context contains useful properties to help you make the request.
           const tokens = await makeTokenRequest(context)
           return { tokens }
         },
+      },*/
+      client: {
+        token_endpoint_auth_method: 'private_key_jwt',
+        introspection_endpoint_auth_method: 'private_key_jwt',
       },
       userinfo: process.env.ECAS_USERINFO,
       idToken: true,
