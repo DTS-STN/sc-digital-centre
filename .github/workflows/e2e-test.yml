@@ -49,7 +49,7 @@ jobs:
           CI: true
 
       - name: Cypress end-to-end 🧪
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         env:
           CI: true
           NODE_ENV: production
