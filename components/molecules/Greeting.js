@@ -1,12 +1,10 @@
-import { Message } from '@dts-stn/decd-design-system'
+import { Message, Heading } from '@dts-stn/decd-design-system'
 
 export default function Greeting(props) {
   return (
     <div>
       <div className="grid grWid-cols-1 divide-y divide-red-600 font-display">
-        <p className="py-4 text-3xl font-bold text-gray-darker">
-          {props.myBenefitsAndServices}
-        </p>
+        <Heading title={props.myBenefitsAndServices} />
         <p className="py-4 text-3xl font-bold">{`${props.greeting} ${props.name}`}</p>
       </div>
       <Message
