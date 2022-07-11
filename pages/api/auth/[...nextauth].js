@@ -49,6 +49,7 @@ export default NextAuth({
         token_endpoint_auth_method: 'private_key_jwt',
         introspection_endpoint_auth_method: 'private_key_jwt',
       },
+      jwks: 'place json web key format object here',
       userinfo: process.env.ECAS_USERINFO,
       idToken: true,
       checks: ['state'],
