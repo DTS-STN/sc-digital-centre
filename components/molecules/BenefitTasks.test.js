@@ -2,21 +2,7 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import BenefitTasks from './BenefitTasks'
-
-jest.mock('next/link', () => ({
-  __esModule: true,
-  default: ({ children, href }) => (
-    <children.type {...children.props} href={href} />
-  ),
-}))
-
-jest.mock(
-  'next/image',
-  () =>
-    function Image({ imageSrc, alt }) {
-      return <img src={imageSrc} alt={alt} />
-    }
-)
+import { faCircle, faReceipt } from '@fortawesome/free-solid-svg-icons'
 
 expect.extend(toHaveNoViolations)
 
@@ -29,12 +15,12 @@ describe('BenefitTask', () => {
         tasks: [
           {
             task: 'View past payments',
-            icon: '/images/dashboard/oas-payment-icon.svg',
+            icon: faCircle,
             link: '/dashboard',
           },
           {
             task: 'View my status and messages',
-            icon: '/images/dashboard/oas-updates-message-icon.svg',
+            icon: faReceipt,
             link: '/dashboard',
           },
         ],

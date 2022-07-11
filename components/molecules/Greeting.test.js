@@ -11,7 +11,15 @@ utils.getGreeting = jest.fn().mockReturnValue('Good afternoon, ')
 
 describe('Greeting', () => {
   const { container } = render(
-    <Greeting locale="en" greeting={utils.getGreeting()} name="Mary" />
+    <Greeting
+      locale="en"
+      greeting={utils.getGreeting()}
+      name="Mary"
+      alert_icon_alt_text="alt"
+      alert_icon_id="id"
+      message_heading="heading"
+      message_body="body"
+    />
   )
 
   it('renders greeting', () => {
