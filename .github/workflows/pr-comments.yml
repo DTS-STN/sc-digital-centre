@@ -33,8 +33,8 @@ jobs:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           edit-mode: replace
-          message: |
+          body: |
             [Integration Deployment :rocket: ](https://sc-digital-centre-dyna-${{ github.head_ref }}.bdm-dev.dts-stn.com/dashboard) - [Check build status](https://teamcity.dts-stn.com/buildConfiguration/Dev_ScDigitalCentreProject_Build_Dynamic?branch=${{ github.head_ref }}&buildTypeTab=overview&mode=builds)
             [Jest Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Lint%20and%20Test/${{ github.head_ref }}?label=Lint%20and%20Unit)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/lcov-report/) 
             [End-to-end Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/E2E%20Test/${{ github.head_ref }}?label=E2E)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/e2e-report/) 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
