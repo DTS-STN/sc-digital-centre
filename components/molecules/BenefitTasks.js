@@ -5,9 +5,9 @@ import Link from 'next/link'
 export default function BenefitTasks(props) {
   return (
     <div className="bg-gray-lighter px-4 py-2 sm:px-8 md:py-0 h-full  ">
-      <h5 className="font-display font-bold text-xl ">
+      <h4 className="font-display font-bold text-xl ">
         {props.taskList.header}
-      </h5>
+      </h4>
       <ul className="w-full py-6 space-y-8">
         {props.taskList.tasks.map((task, index) => {
           return (

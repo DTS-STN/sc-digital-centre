@@ -76,7 +76,7 @@ export default function UniversalBenefitCard(props) {
       </div>
       <HorizontalRule width="w-auto sm:w-full" />
       {/* Let the ViewMoreLessButton remain generic and set the heading level outside */}
-      <h4>
+      <h3>
         <ViewMoreLessButton
           id={props.benefitUniqueId + '-card-button'}
           dataTestid={props.benefitUniqueId}
@@ -94,7 +94,7 @@ export default function UniversalBenefitCard(props) {
           caption={props.taskHeading}
           className="py-5 px-2 sm:pl-12"
         />
-      </h4>
+      </h3>
       <div className=" flex flex-col bg-white  rounded-b-xl">
         {props.taskGroups == null || props.taskGroups.length <= 0 ? null : (
           <div id={taskListId} className="  ">

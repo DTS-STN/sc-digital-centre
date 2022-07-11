@@ -181,7 +181,6 @@ export default function Dashboard(props) {
       <Greeting
         greeting={t[getGreeting(time)]}
         name="Mary"
-        welcome={t.welcome}
         alert_icon_alt_text={t.alertIconAltText_success}
         alert_icon_id={t.alertIconId_success}
         message_heading={t.messageHeading}

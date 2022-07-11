@@ -281,7 +281,7 @@ export default {
   myBenefitsAndServices: 'My benefits and services',
   canada_ca: 'Canada.ca',
   serviceCanada: 'Service Canada',
-  myBenefitsAndServices: 'My Benefits and Services',
+  myBenefitsAndServices: 'My benefits and services dashboard',
 
   // Info Message
   alertIconAltText_success: 'success icon',

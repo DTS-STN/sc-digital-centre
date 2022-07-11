@@ -274,13 +274,13 @@ export default {
 
   // Greeting
   greeting: '(FR)Hello, ',
-  morningGreeting: '(FR)Good morning, ',
+  morningGreeting: 'Bonjour, ',
   afternoonGreeting: '(FR)Good afternoon, ',
   eveningGreeting: '(FR)Good evening, ',
   welcome: '(FR)Welcome to your My Service Canada Account.',
-  myBenefitsAndServices: 'Mes prestations et mes services',
   canada_ca: 'Canada.ca',
   serviceCanada: 'Service Canada',
+  myBenefitsAndServices: 'Tableau de bord de mes prestations et mes services',
 
   // Info Message
   alertIconAltText_success: '(FR)success icon',
