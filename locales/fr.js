@@ -274,7 +274,7 @@ export default {
 
   // Greeting
   greeting: '(FR)Hello, ',
-  morningGreeting: '(FR)Good morning, ',
+  morningGreeting: 'Bonjour, ',
   afternoonGreeting: '(FR)Good afternoon, ',
   eveningGreeting: '(FR)Good evening, ',
   welcome: '(FR)Welcome to your My Service Canada Account.',

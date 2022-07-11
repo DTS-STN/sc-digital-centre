@@ -4,10 +4,10 @@ export default function Greeting(props) {
   return (
     <div>
       <div className="grid grWid-cols-1 divide-y divide-red-600 font-display">
-        <h1 className="py-4 text-3xl font-bold text-gray-darker">
+        <p className="py-4 text-3xl font-bold text-gray-darker">
           {props.myBenefitsAndServices}
-        </h1>
-        <h2 className="py-4 text-3xl font-bold">{`${props.greeting} ${props.name}`}</h2>
+        </p>
+        <p className="py-4 text-3xl font-bold">{`${props.greeting} ${props.name}`}</p>
       </div>
       <Message
         type="success"
