@@ -15,8 +15,9 @@
 
 ## Versions
 
-![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/next)
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/react)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/next)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/@dts-stn/decd-design-system)
 ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/dev/tailwindcss)
 ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/dev/jest)
 ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/dev/cypress)
