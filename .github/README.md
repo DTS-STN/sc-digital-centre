@@ -13,11 +13,6 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/E2E%20Test/main?label=E2E)](https://dts-stn.github.io/sc-digital-centre/main/coverage/e2e-report)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Lint%20and%20Test/main?label=Lint%20and%20Unit)](https://dts-stn.github.io/sc-digital-centre/main/coverage/lcov-report)
 
-![Line Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Line%20Coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fmain%2Fcoverage%2Fcoverage-summary.json)
-![Statements Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Statement%20Coverage&query=%24.total.statements.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fmain%2Fcoverage%2Fcoverage-summary.json)
-![Function Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Function%20coverage&query=%24.total.functions.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fmain%2Fcoverage%2Fcoverage-summary.json)
-![Branch Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Branch%20coverage&query=%24.total.branches.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fmain%2Fcoverage%2Fcoverage-summary.json)
-
 ## Versions
 
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/next)
