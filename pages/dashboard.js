@@ -2,11 +2,13 @@ import NoBenefitCard from '../components/molecules/NoBenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import Greeting from '../components/molecules/Greeting'
 import { getNoBenefitCards } from '../contents/NoBenefitCards'
-import { getAdvertsingCards } from '../contents/BenefitAdvertisingCards'
+import { getAdvertisingCards } from '../contents/BenefitAdvertisingCards'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { setCookies, getCookie } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
+import { ProgramCodes } from '../constants/ProgramCodes'
+import { TypeCodes } from '../constants/ProgramTypeCodes'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { StatusColors, StatusCodes } from '../constants/StatusCodes'
@@ -117,9 +119,17 @@ export default function Dashboard(props) {
       let orderedInactive = []
       let orderedActiveAgreement = []
 
+      //deep clone advertisingCards, set displayFlag for true for now
+      const newAdCards = {}
+      for (let key in advertisingCards) {
+        newAdCards[key] = { ...advertisingCards[key] }
+        newAdCards[key].displayFlag = true
+      }
+
       newArray.forEach((benefits) => {
         if (benefits != undefined) {
           benefits.forEach((benefit) => {
+            //order the benefits
             switch (benefit.statusCode) {
               case StatusCodes.paymentHold:
                 orderedPaymentHold.push(benefit)
@@ -146,9 +156,49 @@ export default function Dashboard(props) {
                 orderedActiveAgreement.push(benefit)
                 break
             }
+
+            //determine what benefits to advertise
+            if (
+              benefit.programCode === ProgramCodes.EI &&
+              benefit.statusCode === StatusCodes.inactive
+            ) {
+              newAdCards.EI.displayFlag = false
+            }
+            if (
+              benefit.programCode === ProgramCodes.CPP &&
+              benefit.typeCode === TypeCodes.CPPRetirement
+            ) {
+              //retirement benefit
+              newAdCards.CPP.displayFlag = false
+            }
+            if (benefit.typeCode === TypeCodes.OASRetirement) {
+              newAdCards.OAS.displayFlag = false
+            }
+            if (benefit.typeCode === TypeCodes.GISRetirement) {
+              newAdCards.GIS.displayFlag = false
+            }
+            if (benefit.programCode === ProgramCodes.CPPD) {
+              newAdCards.CPPD.displayFlag = false
+            }
+            if (false) {
+              //No CPP benefit card with Child's Benefit implemented
+              newAdCards.CPP_child_benefit_aged_18_25.displayFlag = false
+            }
+            if (
+              benefit.programCode === ProgramCodes.CPP &&
+              benefit.typeCode === TypeCodes.CPPSurvivor
+            ) {
+              newAdCards.CPP_survivors_pension_and_childrens_benefits.displayFlag = false
+            }
+            if (false) {
+              //No GIS benefit card with Allowance or Allowance for the Survivor benefit implemented
+              newAdCards.CPP_allowance_or_allowance_for_survivor.displayFlag = false
+            }
           })
         }
       })
+
+      setAdvertisingCards(newAdCards)
 
       setAllBenefits([
         orderedPaymentHold,
@@ -236,17 +286,15 @@ export default function Dashboard(props) {
           : null}
 
         {/* application or "advertising" cards */}
-        {advertisingCards.map((value, index) => {
-          if (value.benefitType === 'CPP' && cppBenefit) {
-            return
-          } else if (value.benefitType === 'EI' && eiBenefit) {
+        {Object.entries(advertisingCards).map(([key, benefit]) => {
+          if (!benefit.displayFlag) {
             return
           }
           return (
-            <div key={index}>
+            <div key={key}>
               <BenefitApplicationCard
                 locale={props.locale}
-                benefitApplication={value}
+                benefitApplication={benefit.adCard}
               />
             </div>
           )
@@ -286,7 +334,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
 
   return {
     props: {
-      advertisingCards: getAdvertsingCards(),
+      advertisingCards: getAdvertisingCards(),
       noBenefitCards: getNoBenefitCards(locale),
       isAuth: true,
       locale,
