@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/20</span>
+                <span class='fraction'>8/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -265,7 +265,9 @@
 <a name='L206'></a><a href='#L206'>206</a>
 <a name='L207'></a><a href='#L207'>207</a>
 <a name='L208'></a><a href='#L208'>208</a>
-<a name='L209'></a><a href='#L209'>209</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -286,23 +288,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -494,26 +498,30 @@ export default function Layout(props) {
   //catch if display is null so page renders with defaults
   const display = props.display ?? {}
 &nbsp;
-  useEffect(() =&gt; {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
-<span class="cstat-no" title="statement not covered" >      window.adobeDataLayer.push({</span>
-        event: 'pageLoad',
-        page: {
-          title: document.title,
-          language: props.locale === 'en' ? 'eng' : 'fra',
-          creator:
-            'Employment and Social Development Canada/Emploi et Développement social Canada',
-          accessRights: '2',
-          service: 'ESDC-EDSC_DC-CD',
-        },
-      })
-    }
-  }, [props.locale])
+  // Issue with Adobe Script below, see there for details
+  // useEffect(() =&gt; {
+  //   if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
+  //     window.adobeDataLayer.push({
+  //       event: 'pageLoad',
+  //       page: {
+  //         title: document.title,
+  //         language: props.locale === 'en' ? 'eng' : 'fra',
+  //         creator:
+  //           'Employment and Social Development Canada/Emploi et Développement social Canada',
+  //         accessRights: '2',
+  //         service: 'ESDC-EDSC_DC-CD',
+  //       },
+  //     })
+  //   }
+  // }, [props.locale])
 &nbsp;
   return (
     &lt;&gt;
-      {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
-<span class="branch-0 cbranch-no" title="branch not covered" >        &lt;&gt;</span>
+      {/* Adobe script use of 'beforeInteractive' won't work here
+          Needs to be moved to _document.js when re-implemented
+          conflicts with the useEffect above */}
+      {/* {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ?
+        &lt;&gt;
           &lt;Script
             strategy="beforeInteractive"
             src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL}
@@ -526,9 +534,7 @@ export default function Layout(props) {
             _satellite.pageBottom();
           &lt;/Script&gt;
         &lt;/&gt;
-      ) : (
-        ''
-      )}
+       : null } */}
       &lt;Meta lang={props.locale} metadata={props.metadata} /&gt;
 &nbsp;
       {display.showPhase ? (
@@ -688,7 +694,7 @@ Layout.defaultProps = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jul 13 2022 12:47:27 GMT+0000 (Coordinated Universal Time)
+                at Wed Jul 13 2022 13:16:08 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
