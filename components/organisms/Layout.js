@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import Script from 'next/script'
 import Meta from '../atoms/Meta'
 import PhaseBanner from '../atoms/PhaseBanner'
 import DSHeader from '../molecules/DSHeader'
 import DSFooter from '../molecules/DSFooter'
 import Footer from '../molecules/Footer'
-import { useEffect } from 'react'
+// import Script from 'next/script'
+// import { useEffect } from 'react'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
