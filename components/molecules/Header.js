@@ -18,7 +18,7 @@ export default function Header(props) {
       }
     }
     setLangToggleLink(updatedLangToggleLink)
-  }, [router?.route, router?.locale, router?.query])
+  }, [router?.route, router.locale, router.query, props.toggleLangLink])
 
   return (
     <>

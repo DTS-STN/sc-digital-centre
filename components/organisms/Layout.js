@@ -19,25 +19,29 @@ export default function Layout(props) {
   //catch if display is null so page renders with defaults
   const display = props.display ?? {}
 
-  useEffect(() => {
-    if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
-      window.adobeDataLayer.push({
-        event: 'pageLoad',
-        page: {
-          title: document.title,
-          language: props.locale === 'en' ? 'eng' : 'fra',
-          creator:
-            'Employment and Social Development Canada/Emploi et Développement social Canada',
-          accessRights: '2',
-          service: 'ESDC-EDSC_DC-CD',
-        },
-      })
-    }
-  }, [props.locale])
+  // Issue with Adobe Script below, see there for details
+  // useEffect(() => {
+  //   if (process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL) {
+  //     window.adobeDataLayer.push({
+  //       event: 'pageLoad',
+  //       page: {
+  //         title: document.title,
+  //         language: props.locale === 'en' ? 'eng' : 'fra',
+  //         creator:
+  //           'Employment and Social Development Canada/Emploi et Développement social Canada',
+  //         accessRights: '2',
+  //         service: 'ESDC-EDSC_DC-CD',
+  //       },
+  //     })
+  //   }
+  // }, [props.locale])
 
   return (
     <>
-      {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
+      {/* Adobe script use of 'beforeInteractive' won't work here
+          Needs to be moved to _document.js when re-implemented
+          conflicts with the useEffect above */}
+      {/* {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ?
         <>
           <Script
             strategy="beforeInteractive"
@@ -51,9 +55,7 @@ export default function Layout(props) {
             _satellite.pageBottom();
           </Script>
         </>
-      ) : (
-        ''
-      )}
+       : null } */}
       <Meta lang={props.locale} metadata={props.metadata} />
 
       {display.showPhase ? (

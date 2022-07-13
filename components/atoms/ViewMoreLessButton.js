@@ -17,12 +17,14 @@ export default function ViewMoreLessButton(props) {
       <>
         <div className="flex items-center ">
           {props.icon ? (
+            // todo - change to fontawesome icon
             <img
               className={'px-2 w-12 h-12 ' + props.iconStyle}
               src="/images/dashboard/collapse-icon.svg"
               alt=""
             />
           ) : (
+            // todo - change to fontawesome icon
             <img
               className={'px-2 w-12 h-12 ' + props.iconStyle}
               src="/images/dashboard/expand-icon.svg"
