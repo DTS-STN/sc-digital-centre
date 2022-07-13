@@ -50,8 +50,6 @@ const INACTIVE_CPP_TASKS_EN = {
 const INACTIVE_CPPD_TASKS_EN = {
   header: `Common actions`,
   tasks: [
-    BenefitTasks_EN.RetirementIncomeTask,
-    BenefitTasks_EN.DelayOasPensionTask,
     BenefitTasks_EN.GiveConsentTask,
     BenefitTasks_EN.UpdateAccountInfoTask,
   ],
@@ -82,7 +80,6 @@ const ACTIVE_CPPD_PAYMENT_TASKS_EN = {
 const ACTIVE_CPPD_CHANGE_TASKS_EN = {
   header: 'Make a Change',
   tasks: [
-    BenefitTasks_EN.DelayOasPensionTask,
     BenefitTasks_EN.TaxDeductionsTask,
     BenefitTasks_EN.UpdateAccountInfoTask,
     BenefitTasks_EN.GiveConsentTask,
@@ -288,8 +285,6 @@ const INACTIVE_CPP_TASKS_FR = {
 const INACTIVE_CPPD_TASKS_FR = {
   header: `Actions courantes`,
   tasks: [
-    BenefitTasks_FR.RetirementIncomeTask,
-    BenefitTasks_FR.DelayOasPensionTask,
     BenefitTasks_FR.GiveConsentTask,
     BenefitTasks_FR.UpdateAccountInfoTask,
   ],
@@ -320,7 +315,6 @@ const ACTIVE_CPPD_PAYMENT_TASKS_FR = {
 const ACTIVE_CPPD_CHANGE_TASKS_FR = {
   header: 'Faire un changement',
   tasks: [
-    BenefitTasks_FR.DelayOasPensionTask,
     BenefitTasks_FR.TaxDeductionsTask,
     BenefitTasks_FR.UpdateAccountInfoTask,
     BenefitTasks_FR.GiveConsentTask,
