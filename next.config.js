@@ -75,3 +75,8 @@ config.headers = async () => {
 module.exports = config
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
+var http = require('http-debug').http
+var https = require('http-debug').https
+
+http.debug = 1
+https.debug = 1

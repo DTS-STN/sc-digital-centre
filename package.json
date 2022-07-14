@@ -21,6 +21,7 @@
     "@dts-stn/decd-design-system": "^1.38.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "cookies-next": "^2.0.4",
+    "http-debug": "^0.1.2",
     "jest-axe": "^5.0.1",
     "jsonwebtoken": "^8.5.1",
     "next": "12.1.6",
