@@ -4,7 +4,7 @@
 name: Add Comment Links
 
 on:
-  pull_request_target
+  pull_request_target:
 
 jobs:
   comment_pr:
