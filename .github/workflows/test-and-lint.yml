@@ -35,7 +35,7 @@ jobs:
           CI: true
       
       - name: Archive code coverage results
-        uses: actions/upload-artifacts@v3
+        uses: actions/upload-artifact@v3
         with:
           name: code-coverage-report
           path: coverage
