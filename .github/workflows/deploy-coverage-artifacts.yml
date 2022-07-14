@@ -1,0 +1,28 @@
+name: Deploy Coverage Reports
+on:
+  workflow_run:
+    workflows: ["Lint and Test"]
+    types:
+      - completed
+
+jobs:
+  deploy-coverage:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Get Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: code-coverage-report
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch       
+
+      - name: Deploy Coverage Report 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          TARGET_FOLDER: ${{ steps.extract_branch.outputs.branch }}/coverage
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: coverage

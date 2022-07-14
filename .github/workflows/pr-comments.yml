@@ -6,8 +6,11 @@ name: Add Comment Links
 on:
   pull_request:
     branches:
-      - main
       - dev
+      - main
+
+permissions:
+  pull_requests: write
 
 jobs:
   comment_pr:
@@ -27,7 +30,7 @@ jobs:
         id: extract_branch   
 
       - name: Comment PR
-        if: steps.fc.outputs.comment-id == 0
+        if: steps.fc.outputs.comment-id == 0 && github.head_ref != 'dev'
         uses: peter-evans/create-or-update-comment@v1
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
@@ -37,4 +40,17 @@ jobs:
             [Integration Deployment :rocket: ](https://sc-digital-centre-dyna-${{ github.head_ref }}.bdm-dev.dts-stn.com/dashboard) - [Check build status](https://teamcity.dts-stn.com/buildConfiguration/Dev_ScDigitalCentreProject_Build_Dynamic?branch=${{ github.head_ref }}&buildTypeTab=overview&mode=builds)
             [Jest Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Lint%20and%20Test/${{ github.head_ref }}?label=Lint%20and%20Unit)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/lcov-report/) 
             [End-to-end Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/E2E%20Test/${{ github.head_ref }}?label=E2E)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/e2e-report/) 
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment PR
+        if: steps.fc.outputs.comment-id == 0 && github.head_ref == 'dev'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          edit-mode: replace
+          body: |
+            [Dev Deployment :rocket: ](https://sc-digital-centre-${{ github.head_ref }}.bdm-dev.dts-stn.com/) - [Check build status](https://teamcity.dts-stn.com/buildConfiguration/Dev_ScDigitalCentreProject_Build_Dynamic?branch=${{ github.head_ref }}&buildTypeTab=overview&mode=builds)
+            [Jest Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Lint%20and%20Test/${{ github.head_ref }}?label=Lint%20and%20Unit)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.head_ref }}/coverage/lcov-report/) 
+            [End-to-end Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/E2E%20Test/${{ github.head_ref }}?label=E2E)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.head_ref }}/coverage/e2e-report/) 
           token: ${{ secrets.GITHUB_TOKEN }}

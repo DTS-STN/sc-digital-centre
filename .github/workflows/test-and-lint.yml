@@ -4,22 +4,14 @@
 name: Lint and Test
 
 on:
-  pull_request:
-    branches: 
-      - main
-      - dev
-      - dashboard
   push:
-    branches: 
-      - main
-      - dev
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [15.x]
+        node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - name: Checkout 🔔
@@ -34,16 +26,6 @@ jobs:
         env:
           CI: true
 
-      - name: Build
-        run: npm run build
-        env:
-          NEXT_CONTENT_API: ${{ secrets.NEXT_CONTENT_API }}
-          NEXT_PUBLIC_ADOBE_ANALYTICS_URL: ${{ secrets.NEXT_PUBLIC_ADOBE_ANALYTICS_URL}}
-          OCP_APIM_SUBSCRIPTION_KEY: ${{ secrets.OCP_APIM_SUBSCRIPTION_KEY }}
-          CPP_ACTIVE_BENEFIT_URL: ${{ secrets.CPP_ACTIVE_BENEFIT_URL }}
-          EI_ACTIVE_BENEFIT_URL: ${{ secrets.EI_ACTIVE_BENEFIT_URL }}
-          CI: true
-
       - name: Linting
         run: npm run lint
 
@@ -51,15 +33,9 @@ jobs:
         run: npm run test:coverage -- -u
         env:
           CI: true
-
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch       
-
-      - name: Deploy Coverage Report 🚀
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+      
+      - name: Archive code coverage results
+        uses: actions/upload-artifacts@v3
         with:
-          TARGET_FOLDER: ${{ steps.extract_branch.outputs.branch }}/coverage
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: coverage
+          name: code-coverage-report
+          path: coverage
