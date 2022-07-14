@@ -3,9 +3,12 @@ export const TypeCodes = {
   DurationReached: 'DurationReached',
   CPPRetirement: 'CPPRetirement',
   CPPSurvivor: 'CPPSurvivor',
+  CPPChild: 'CPPChild',
   CPPDisability: 'CPPDisability',
   OASRetirement: 'OASRetirement',
   GISRetirement: 'GISRetirement',
+  GISAllowance: 'GISAllowance',
+  GISAllowanceSurvivor: 'GISAllowanceSurvivor',
   EISickness: 'EISickness',
   SEBRegular: 'SEBRegular',
 }

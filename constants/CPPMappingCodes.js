@@ -10,6 +10,7 @@ export const CPPPrograms = {
 export const CPPTypes = {
   Beneficial: TypeCodes.CPPRetirement,
   Survivor: TypeCodes.CPPSurvivor,
+  Child: TypeCodes.CPPChild,
 }
 
 export const CPPStatus = {

@@ -2,7 +2,11 @@ import NoBenefitCard from '../components/molecules/NoBenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import Greeting from '../components/molecules/Greeting'
 import { getNoBenefitCards } from '../contents/NoBenefitCards'
-import { getAdvertisingCards } from '../contents/BenefitAdvertisingCards'
+import {
+  getAdvertisingCards,
+  defaultDisplayFlags,
+  mapTypeCodesToFlags,
+} from '../contents/BenefitAdvertisingCards'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { setCookies, getCookie } from 'cookies-next'
@@ -27,6 +31,7 @@ export default function Dashboard(props) {
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
   )
+  const [adDisplayFlags, setAdDisplayFlags] = useState(defaultDisplayFlags)
   const [noBenefitCards, setNoBenefitCards] = useState(props.noBenefitCards)
 
   const [cppBenefit, setCppBenefit] = useState()
@@ -119,12 +124,7 @@ export default function Dashboard(props) {
       let orderedInactive = []
       let orderedActiveAgreement = []
 
-      //deep clone advertisingCards, set displayFlag for true for now
-      const newAdCards = {}
-      for (let key in advertisingCards) {
-        newAdCards[key] = { ...advertisingCards[key] }
-        newAdCards[key].displayFlag = true
-      }
+      const newAdFlags = defaultDisplayFlags
 
       newArray.forEach((benefits) => {
         if (benefits != undefined) {
@@ -157,48 +157,37 @@ export default function Dashboard(props) {
                 break
             }
 
-            //determine what benefits to advertise
-            if (
-              benefit.programCode === ProgramCodes.EI &&
-              benefit.statusCode === StatusCodes.inactive
-            ) {
-              newAdCards.EI.displayFlag = false
-            }
-            if (
-              benefit.programCode === ProgramCodes.CPP &&
-              benefit.typeCode === TypeCodes.CPPRetirement
-            ) {
-              //retirement benefit
-              newAdCards.CPP.displayFlag = false
-            }
-            if (benefit.typeCode === TypeCodes.OASRetirement) {
-              newAdCards.OAS.displayFlag = false
-            }
-            if (benefit.typeCode === TypeCodes.GISRetirement) {
-              newAdCards.GIS.displayFlag = false
-            }
-            if (benefit.programCode === ProgramCodes.CPPD) {
-              newAdCards.CPPD.displayFlag = false
-            }
-            if (false) {
-              //No CPP benefit card with Child's Benefit implemented
-              newAdCards.CPP_child_benefit_aged_18_25.displayFlag = false
-            }
-            if (
-              benefit.programCode === ProgramCodes.CPP &&
-              benefit.typeCode === TypeCodes.CPPSurvivor
-            ) {
-              newAdCards.CPP_survivors_pension_and_childrens_benefits.displayFlag = false
-            }
-            if (false) {
-              //No GIS benefit card with Allowance or Allowance for the Survivor benefit implemented
-              newAdCards.CPP_allowance_or_allowance_for_survivor.displayFlag = false
+            // determine what benefits to advertise
+            switch (benefit.typeCode) {
+              case TypeCodes.EISickness:
+                if (
+                  benefit.statusCode === StatusCodes.inactive &&
+                  benefit.programCode === ProgramCodes.EI
+                ) {
+                  newAdFlags.EI = false
+                }
+                break
+              case TypeCodes.GISAllowance:
+              case TypeCodes.GISAllowanceSurvivor:
+                if (benefit.programCode === ProgramCodes.GIS) {
+                  newAdFlags.CPPallowance_or_allowance_for_survivor = false
+                }
+                break
+              default:
+                //verify that the program code is valid
+                if (
+                  benefit.programCode ===
+                  ProgramCodes[benefit.programCode.toUpperCase()]
+                ) {
+                  newAdFlags[mapTypeCodesToFlags(benefit.typeCode)] = false
+                }
+                break
             }
           })
         }
       })
 
-      setAdvertisingCards(newAdCards)
+      setAdDisplayFlags(newAdFlags)
 
       setAllBenefits([
         orderedPaymentHold,
@@ -286,15 +275,16 @@ export default function Dashboard(props) {
           : null}
 
         {/* application or "advertising" cards */}
-        {Object.entries(advertisingCards).map(([key, benefit]) => {
-          if (!benefit.displayFlag) {
+        {advertisingCards.map((adCard, key) => {
+          let benefitFullType = adCard.benefitType + (adCard.subType ?? '')
+          if (!adDisplayFlags[benefitFullType]) {
             return
           }
           return (
             <div key={key}>
               <BenefitApplicationCard
                 locale={props.locale}
-                benefitApplication={benefit.adCard}
+                benefitApplication={adCard}
               />
             </div>
           )
