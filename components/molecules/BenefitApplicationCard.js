@@ -5,7 +5,7 @@ import HorizontalRule from '../atoms/HorizontalRule'
 import propTypes from 'prop-types'
 import { ProgramCodes } from '../../constants/ProgramCodes'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStamp } from '@fortawesome/free-solid-svg-icons'
+import { faStamp, faCalculator } from '@fortawesome/free-solid-svg-icons'
 
 const BenefitApplicationCard = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -32,15 +32,15 @@ const BenefitApplicationCard = (props) => {
       <div className="flex flex-col pt-6">
         <div
           id={`${benefitType}-${benefitSubType}-app-card`}
-          className="col-span-1 py-4  px-4 sm:px-16 pt-6"
+          className="col-span-1 p-4 sm:px-16 pt-6"
         >
           <h2 className="font-bold font-display text-4xl sm:text-6xl">
             {benefitName}
           </h2>
-          <div className="font-bold font-display text-md sm:text-md lg:text-md mb-2 w-44 sm:w-32 lg:w-44 ">
+          <div className="font-bold font-display text-lg  my-2 ">
             {t[benefitSubType]}
           </div>
-          <ul className="pb-6 sm:mb-7">
+          <ul className="sm:mb-8">
             <li>
               <p className="text-xl">{t.status}</p>
               <p className="text-3xl font-bold mb-5 ">{t.youMightBeEligible}</p>
@@ -51,12 +51,15 @@ const BenefitApplicationCard = (props) => {
         <div className="flex flex-col ">
           <div className="flex flex-col py-4  px-4 sm:px-16">
             {isEstimateButtonRequired() ? (
-              <div className="my-4">
+              <div className="my-2">
                 <a
                   href={props.benefitApplication.estimateLink}
                   className="flex items-center underline  text-blue-default hover:text-blue-hover"
                 >
-                  <FontAwesomeIcon icon={faStamp} className="text-3xl pr-4 " />
+                  <FontAwesomeIcon
+                    icon={faCalculator}
+                    className="text-3xl pr-4 "
+                  />
                   <p className="font-normal text-xl pr-5 my-3 ">
                     {t.estimateRetirementIncome}
                   </p>
@@ -66,13 +69,13 @@ const BenefitApplicationCard = (props) => {
               <div className="hidden sm:flex"></div>
             )}
 
-            <div className="my-4 ">
+            <div className="my-2">
               <a
                 href={props.benefitApplication.applicationLink}
                 className="flex items-center underline  text-blue-default hover:text-blue-hover"
               >
                 <FontAwesomeIcon icon={faStamp} className="text-3xl pr-4 " />
-                <p className="font-normal text-xl pr-5 mt-3 ">
+                <p className="font-normal text-xl pr-5 my-3 ">
                   {`${t.applyFor} ${getBenefitNameString()}`}
                 </p>
               </a>
@@ -80,14 +83,14 @@ const BenefitApplicationCard = (props) => {
           </div>
 
           <HorizontalRule />
-          <div className="my-10 px-4 sm:px-16">
-            <p className="text-xl whitespace-nowrap ">
+          <div className="my-6 px-4 sm:px-16">
+            <p className="text-xl whitespace-nowrap text-blue-default ">
               {t.learnMoreAbout}
               <span>
                 {' '}
                 <a
                   href={props.benefitApplication.learnMoreLink}
-                  className="text-xl underline hover:text-bright-blue-medium whitespace-pre-wrap "
+                  className="text-xl underline text-blue-default hover:text-blue-hover whitespace-pre-wrap "
                 >
                   {getBenefitNameString()}
                 </a>

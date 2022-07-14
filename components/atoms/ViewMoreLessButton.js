@@ -1,5 +1,7 @@
 import propTypes from 'prop-types'
 import ActionButton from './ActionButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleMinus, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
 export default function ViewMoreLessButton(props) {
   return (
@@ -17,16 +19,14 @@ export default function ViewMoreLessButton(props) {
       <>
         <div className="flex items-center ">
           {props.icon ? (
-            <img
-              className={'px-2 w-12 h-12 ' + props.iconStyle}
-              src="/images/dashboard/collapse-icon.svg"
-              alt=""
+            <FontAwesomeIcon
+              icon={faCircleMinus}
+              className={`text-3xl px-3 ${props.iconStyle}`}
             />
           ) : (
-            <img
-              className={'px-2 w-12 h-12 ' + props.iconStyle}
-              src="/images/dashboard/expand-icon.svg"
-              alt=""
+            <FontAwesomeIcon
+              icon={faCirclePlus}
+              className={`text-3xl px-3 ${props.iconStyle}`}
             />
           )}
           <span className="text-left px-1">{props.caption}</span>
