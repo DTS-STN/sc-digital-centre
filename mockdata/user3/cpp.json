@@ -1,22 +1,20 @@
 [
   {
-    "programCode": 32294,
-    "benefitCode": 30320,
-    "benefitType": "Beneficial",
-    "benefitStatus": "Active",
-    "lastPaymentDate": "2022-05-30",
-    "finalPaymentDate": "2022-06-29",
+    "programCode": 2,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
+    "benefitStatus": "COMPLETE",
     "netAmount": 441.75,
-    "paymentProcessType": "Monthly"
+    "paymentDate": "2022-05-30",
+    "paymentProcessType": "MONTHLY"
   },
   {
-    "programCode": 32294,
-    "benefitCode": 30320,
-    "benefitType": "Survivor",
-    "benefitStatus": "Active",
-    "lastPaymentDate": "2022-05-30",
-    "finalPaymentDate": "2022-06-29",
+    "programCode": 2,
+    "benefitCode": 16,
+    "benefitType": "SURVIVOR",
+    "benefitStatus": "COMPLETE",
     "netAmount": 329.44,
-    "paymentProcessType": "Monthly"
+    "paymentDate": "2022-05-30",
+    "paymentProcessType": "MONTHLY"
   }
 ]

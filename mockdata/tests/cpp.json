@@ -1,10 +1,9 @@
 {
-  "programCode": 32294,
-  "benefitCode": 30320,
-  "benefitType": "Beneficial",
-  "benefitStatus": "Active",
-  "lastPaymentDate": "2022-05-30",
-  "finalPaymentDate": "2022-06-29",
-  "netAmount": 441.75,
-  "paymentProcessType": "Monthly"
+  "programCode": 2,
+  "benefitCode": 1,
+  "benefitType": "RETIREMENT",
+  "benefitStatus": "COMPLETE",
+  "netAmount": 279.59,
+  "paymentDate": "2022-01-15",
+  "paymentProcessType": "MONTHLY"
 }
