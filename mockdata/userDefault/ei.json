@@ -1,29 +1,47 @@
 [
   {
     "claimStatusCode": 3435,
-    "enmBenefitType": 2,
-    "messageData": "Important message",
-    "messageId": 32,
+    "enmBenefitType": 1,
+    "messageData": [
+      {
+        "messageDataKey": "UDR",
+        "messageDataValueEn": "June 27, 2016",
+        "messageDataValueFr": "27 juin 2016"
+      }
+    ],
+    "message_id": 32,
     "publishDate": "2021-02-21",
     "nextRptDueDate": "2023-04-24",
     "programCode": 4543,
     "netAmount": 32.21
   },
   {
-    "claimStatusCode": 3433,
-    "enmBenefitType": 1,
-    "messageData": "Important message",
-    "messageId": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
-    "programCode": 4543,
-    "netAmount": 32.21
+    "programName": "EI",
+    "claimStatusCode": 1,
+    "enmBenefitType": "1",
+    "nextRptDueDate": "1900-01-01T01:01:01",
+    "message_id": 0,
+    "messageData": [
+      {
+        "messageDataKey": "UDR",
+        "messageDataValueEn": "Important Message",
+        "messageDataValueFr": "(fr)Important Message"
+      }
+    ],
+    "publishDate": "2016-08-29",
+    "netAmount": 1.0
   },
   {
     "claimStatusCode": 3434,
     "enmBenefitType": 1,
-    "messageData": "Important message",
-    "messageId": 32,
+    "messageData": [
+      {
+        "messageDataKey": "UDR",
+        "messageDataValueEn": "Important Message",
+        "messageDataValueFr": "(fr)Important Message"
+      }
+    ],
+    "message_id": 32,
     "publishDate": "2021-02-21",
     "nextRptDueDate": "2023-04-24",
     "programCode": 4543,
@@ -32,8 +50,14 @@
   {
     "claimStatusCode": 3436,
     "enmBenefitType": 1,
-    "messageData": "Important message",
-    "messageId": 32,
+    "messageData": [
+      {
+        "messageDataKey": "UDR",
+        "messageDataValueEn": "June 27, 2016",
+        "messageDataValueFr": "27 juin 2016"
+      }
+    ],
+    "message_id": 32,
     "publishDate": "2021-02-21",
     "nextRptDueDate": "2023-04-24",
     "programCode": 4543,
@@ -42,8 +66,14 @@
   {
     "claimStatusCode": 3437,
     "enmBenefitType": 1,
-    "messageData": "Important message",
-    "messageId": 32,
+    "messageData": [
+      {
+        "messageDataKey": "UDR",
+        "messageDataValueEn": "June 27, 2016",
+        "messageDataValueFr": "27 juin 2016"
+      }
+    ],
+    "message_id": 32,
     "publishDate": "2021-02-21",
     "nextRptDueDate": "2023-04-24",
     "programCode": 4543,
