@@ -1,4 +1,4 @@
-name: ZAP
+name: Dynamic Application Security Tests
 
 on:
   pull_request:
@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  zap_scan:
+  zap-proxy:
+    name: ZAP Proxy Test
     runs-on: ubuntu-latest
     name: Scan the webapplication
     steps:

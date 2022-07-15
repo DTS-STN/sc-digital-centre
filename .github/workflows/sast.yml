@@ -9,11 +9,11 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
-name: "CodeQL"
+name: Static Application Security Tests
 
 on:
   push:
-    branches: [ dev, dashboard, main, wayfind ]
+    branches: [ dev, main ]
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ dev ]
@@ -21,8 +21,8 @@ on:
     - cron: '34 18 * * 5'
 
 jobs:
-  analyze:
-    name: Analyze
+  codeql-check:
+    name: Code QL Analysis
     runs-on: ubuntu-latest
     permissions:
       actions: read
