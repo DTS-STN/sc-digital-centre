@@ -17,12 +17,6 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
-      
-      - name: Extract branch name
-        if: steps.fc.outputs.comment-id == 0
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch   
 
       - name: Comment PR
         if: steps.fc.outputs.comment-id == 0
@@ -33,6 +27,6 @@ jobs:
           edit-mode: replace
           body: |
             [Integration Deployment :rocket: ](https://sc-digital-centre-dyna-${{ github.head_ref }}.bdm-dev.dts-stn.com/dashboard) - [Check build status](https://teamcity.dts-stn.com/buildConfiguration/Dev_ScDigitalCentreProject_Build_Dynamic?branch=${{ github.head_ref }}&buildTypeTab=overview&mode=builds)
-            [Jest Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Lint%20and%20Test/${{ github.head_ref }}?label=Lint%20and%20Unit)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/lcov-report/) 
-            [End-to-end Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/E2E%20Test/${{ github.head_ref }}?label=E2E)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}/coverage/e2e-report/) 
+            [Jest Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Unit%20Checks/${{ github.head_ref }}?label=Jest%20Test)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.head_ref }}/coverage/lcov-report/) 
+            [Cypress Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/End-To-End%20Tests/${{ github.head_ref }}?label=E2E)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.head_ref }}/coverage/e2e-report/) 
           token: ${{ secrets.GITHUB_TOKEN }}
