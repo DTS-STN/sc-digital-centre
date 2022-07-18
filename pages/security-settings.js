@@ -1,4 +1,4 @@
-import { Heading, Link } from '@dts-stn/decd-design-system'
+import { Heading, Link } from '@dts-stn/service-canada-design-system'
 import ActionButton from '../components/atoms/ActionButton'
 import InfoSection from '../components/atoms/InfoSection'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
