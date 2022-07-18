@@ -116,6 +116,7 @@ export default function Dashboard(props) {
       let orderedExhausted = []
       let orderedInactive = []
       let orderedActiveAgreement = []
+      let orderedPaid = []
 
       newArray.forEach((benefits) => {
         if (benefits != undefined) {
@@ -135,6 +136,9 @@ export default function Dashboard(props) {
                 break
               case StatusCodes.inPayment:
                 orderedInPayment.push(benefit)
+                break
+              case StatusCodes.paid:
+                orderedPaid.push(benefit)
                 break
               case StatusCodes.exhausted:
                 orderedExhausted.push(benefit)
@@ -156,6 +160,7 @@ export default function Dashboard(props) {
         orderedDecisionSent,
         orderedBenefitUpdate,
         orderedInPayment,
+        orderedPaid,
         orderedExhausted,
         orderedInactive,
         orderedActiveAgreement,
