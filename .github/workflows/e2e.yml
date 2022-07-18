@@ -63,7 +63,6 @@ jobs:
         with:
           install: false
           start: npm run start
-          continue-on-error: true
 
       - name: Merge test results into one
         run: npm run report:merge
