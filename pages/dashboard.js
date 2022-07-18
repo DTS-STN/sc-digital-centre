@@ -5,17 +5,17 @@ import { getNoBenefitCards } from '../contents/NoBenefitCards'
 import { getAdvertsingCards } from '../contents/BenefitAdvertisingCards'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
-import { setCookies, getCookie } from 'cookies-next'
+import { getCookie, setCookie } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { StatusColors, StatusCodes } from '../constants/StatusCodes'
 import { MapSummary } from '../lib/mapSummaries'
 import { getGreeting } from '../lib/Utils'
-import queryGraphQL from '../graphql/client'
-import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 import MapCallout from '../lib/mapCallout'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
+// import queryGraphQL from '../graphql/client'
+// import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -271,7 +271,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
   if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
 
   const { userid } = query
-  setCookies('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
+  setCookie('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
 
   // const aemContent = await queryGraphQL(getDashboardPage).then((result) => {
   //   return result;
