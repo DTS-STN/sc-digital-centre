@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  comment_pr:
+  comment-pr:
     name: Comment on PR
     runs-on: ubuntu-latest
     steps:
