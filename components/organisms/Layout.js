@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 
 import en from '../../locales/en'
 import fr from '../../locales/fr'
-import { LayoutContainer } from '@dts-stn/decd-design-system'
+import { LayoutContainer } from '@dts-stn/service-canada-design-system'
 
 /**
  * Component which defines the layout of the page for all screen sizes
