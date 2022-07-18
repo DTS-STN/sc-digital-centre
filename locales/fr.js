@@ -300,7 +300,7 @@ export default {
   oas: 'Sécurité de la vieillesse',
   gis: 'Supplément de revenu garanti',
   ei: 'Assurance-emploi',
-  cppd: '(FR)Canada Pension Plan Disability',
+  cppd: "Prestations d'invalidité du Régime de pensions du Canada",
   seb: '(FR)Self Employment Benefits',
 
   // Benefit types
@@ -379,7 +379,7 @@ export default {
   statusUpdateTask: '(FR)View my status and messages',
   retirementIncomeTask: 'Estimer mon revenue de retraite',
   cppContributionTask: 'Consulter mes cotisations',
-  taxDeductionsTask: "Demander une retenue d'impôts",
+  taxDeductionsTask: "Modifier ma retenue d'impôt",
   delayOasPensionTask: 'Reporter le début de ma pension',
   giveConsentTask: 'Autoriser une personne à communiquer en mon nom',
   taxSlipTask: "Consulter mes feuillets d'impôts",

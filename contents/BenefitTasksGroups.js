@@ -44,6 +44,7 @@ const INACTIVE_CPP_TASKS_EN = {
     BenefitTasks_EN.DelayOasPensionTask,
     BenefitTasks_EN.GiveConsentTask,
     BenefitTasks_EN.UpdateAccountInfoTask,
+    BenefitTasks_EN.SubmitDocuments,
   ],
 }
 
@@ -52,6 +53,7 @@ const INACTIVE_CPPD_TASKS_EN = {
   tasks: [
     BenefitTasks_EN.GiveConsentTask,
     BenefitTasks_EN.UpdateAccountInfoTask,
+    BenefitTasks_EN.SubmitDocuments,
   ],
 }
 
@@ -279,6 +281,7 @@ const INACTIVE_CPP_TASKS_FR = {
     BenefitTasks_FR.DelayOasPensionTask,
     BenefitTasks_FR.GiveConsentTask,
     BenefitTasks_FR.UpdateAccountInfoTask,
+    BenefitTasks_FR.SubmitDocuments,
   ],
 }
 
@@ -287,6 +290,7 @@ const INACTIVE_CPPD_TASKS_FR = {
   tasks: [
     BenefitTasks_FR.GiveConsentTask,
     BenefitTasks_FR.UpdateAccountInfoTask,
+    BenefitTasks_FR.SubmitDocuments,
   ],
 }
 
