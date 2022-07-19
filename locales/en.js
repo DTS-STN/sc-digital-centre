@@ -400,7 +400,7 @@ export default {
   statusUpdateTask: 'View my status and messages',
   retirementIncomeTask: 'Estimate my retirement income',
   cppContributionTask: 'View my contributions',
-  taxDeductionsTask: 'My tax deductions',
+  taxDeductionsTask: 'Change my tax deductions',
   delayOasPensionTask: 'Delay receiving Old Age Security',
   giveConsentTask: 'Give consent for someone to communicate on my behalf',
   taxSlipTask: 'View my tax slips',

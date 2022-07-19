@@ -72,7 +72,7 @@ export const BenefitTasks_EN = {
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
   },
   TaxDeductionsTask: {
-    task: 'My tax deductions',
+    task: 'Change my tax deductions',
     icon: faFileLines,
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
   },
