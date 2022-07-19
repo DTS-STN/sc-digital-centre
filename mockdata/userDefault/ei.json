@@ -4,8 +4,8 @@
     "enmBenefitType": 2,
     "messageData": "Important message",
     "messageId": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
+    "publishDate": "2026-02-21",
+    "nextRptDueDate": "2028-04-24",
     "programCode": 4543,
     "netAmount": 32.21
   },
@@ -14,8 +14,8 @@
     "enmBenefitType": 1,
     "messageData": "Important message",
     "messageId": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
+    "publishDate": "2026-02-21",
+    "nextRptDueDate": "2028-04-24",
     "programCode": 4543,
     "netAmount": 32.21
   },
@@ -24,8 +24,8 @@
     "enmBenefitType": 1,
     "messageData": "Important message",
     "messageId": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
+    "publishDate": "2026-02-21",
+    "nextRptDueDate": "2028-04-24",
     "programCode": 4543,
     "netAmount": 32.21
   },
@@ -34,8 +34,8 @@
     "enmBenefitType": 1,
     "messageData": "Important message",
     "messageId": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
+    "publishDate": "2026-02-21",
+    "nextRptDueDate": "2028-04-24",
     "programCode": 4543,
     "netAmount": 32.21
   },
@@ -44,8 +44,8 @@
     "enmBenefitType": 1,
     "messageData": "Important message",
     "messageId": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
+    "publishDate": "2026-02-21",
+    "nextRptDueDate": "2028-04-24",
     "programCode": 4543,
     "netAmount": 32.21
   }
