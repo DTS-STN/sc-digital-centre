@@ -4,16 +4,12 @@ import Meta from '../atoms/Meta'
 import PhaseBanner from '../atoms/PhaseBanner'
 import DSHeader from '../molecules/DSHeader'
 import { useEffect } from 'react'
-
-import en from '../../locales/en'
-import fr from '../../locales/fr'
 import { Footer, LayoutContainer } from '@dts-stn/service-canada-design-system'
 
 /**
  * Component which defines the layout of the page for all screen sizes
  */
 export default function Layout(props) {
-  const t = props.locale === 'en' ? en : fr
   //catch if display is null so page renders with defaults
   const display = props.display ?? {}
 
@@ -110,7 +106,7 @@ Layout.propTypes = {
     /*
      * Toggle use of DS footer (default false)
      */
-    hideDSFooter: PropTypes.bool,
+    hideFooter: PropTypes.bool,
     /*
      * Toggle the LayoutContainer from Design System (default on/true)
      */
