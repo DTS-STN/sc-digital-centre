@@ -1,4 +1,4 @@
-import { ErrorPage } from '@dts-stn/decd-design-system'
+import { ErrorPage } from '@dts-stn/service-canada-design-system'
 
 export default function Error404(props) {
   const errorPageLink = props.locale === 'en' ? '/dashboard' : '/fr/dashboard'

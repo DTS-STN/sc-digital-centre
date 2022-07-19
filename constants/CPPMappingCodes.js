@@ -10,10 +10,12 @@ export const CPPPrograms = {
 export const CPPTypes = {
   Beneficial: TypeCodes.CPPRetirement,
   Survivor: TypeCodes.CPPSurvivor,
+  Death: TypeCodes.CPPDeath,
 }
 
 export const CPPStatus = {
   Active: StatusCodes.inPayment,
+  Paid: StatusCodes.paid,
   Inactive: StatusCodes.inactive,
   Received: StatusCodes.applicationReceived,
   Decision: StatusCodes.decisionSent,

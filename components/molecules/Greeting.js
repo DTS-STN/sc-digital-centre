@@ -1,4 +1,4 @@
-import { Message, Heading } from '@dts-stn/decd-design-system'
+import { Message, Heading } from '@dts-stn/service-canada-design-system'
 
 export default function Greeting(props) {
   return (

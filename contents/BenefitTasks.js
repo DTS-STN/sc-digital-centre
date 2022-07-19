@@ -131,6 +131,11 @@ export const BenefitTasks_EN = {
     icon: faStamp,
     link: '/dashboard',
   },
+  RequestAReview: {
+    task: 'Request a review of a decision',
+    icon: faComments,
+    link: '/dashboard',
+  },
   // ei tasks
   EiStatusUpdateTask: {
     task: 'View my status and messages',
@@ -316,6 +321,11 @@ export const BenefitTasks_FR = {
   ApplyForOldAgeSecurity: {
     task: '(FR)Apply For Old Age Security',
     icon: faStamp,
+    link: '/dashboard',
+  },
+  RequestAReview: {
+    task: '(FR)Request a review of a decision',
+    icon: faComments,
     link: '/dashboard',
   },
   // ei tasks

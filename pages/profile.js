@@ -1,4 +1,4 @@
-import { Heading } from '@dts-stn/decd-design-system'
+import { Heading } from '@dts-stn/service-canada-design-system'
 import ProfileInfo from '../components/molecules/ProfileInfo'
 import ViewMoreLessButton from '../components/atoms/ViewMoreLessButton'
 import HorizontalRule from '../components/atoms/HorizontalRule'
