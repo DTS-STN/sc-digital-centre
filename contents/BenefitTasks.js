@@ -72,7 +72,7 @@ export const BenefitTasks_EN = {
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
   },
   TaxDeductionsTask: {
-    task: 'Ask for tax deductions',
+    task: 'My tax deductions',
     icon: faFileLines,
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
   },
@@ -264,7 +264,7 @@ export const BenefitTasks_FR = {
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
   },
   TaxDeductionsTask: {
-    task: "Demander une retenue d'impôts",
+    task: "Modifier ma retenue d'impôt",
     icon: faFileLines,
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
   },
