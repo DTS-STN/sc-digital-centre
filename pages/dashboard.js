@@ -18,6 +18,7 @@ import fr from '../locales/fr'
 import { StatusColors, StatusCodes } from '../constants/StatusCodes'
 import { MapSummary } from '../lib/mapSummaries'
 import { getGreeting } from '../lib/Utils'
+import { mapTypeCodesToAdCards } from '../lib/mapAdCards'
 import queryGraphQL from '../graphql/client'
 import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 import MapCallout from '../lib/mapCallout'
@@ -124,8 +125,6 @@ export default function Dashboard(props) {
       let orderedInactive = []
       let orderedActiveAgreement = []
 
-      const newAdFlags = defaultDisplayFlags
-
       newArray.forEach((benefits) => {
         if (benefits != undefined) {
           benefits.forEach((benefit) => {
@@ -164,30 +163,26 @@ export default function Dashboard(props) {
                   benefit.statusCode === StatusCodes.inactive &&
                   benefit.programCode === ProgramCodes.EI
                 ) {
-                  newAdFlags.EI = false
+                  defaultDisplayFlags.EI = false
                 }
                 break
               case TypeCodes.GISAllowance:
               case TypeCodes.GISAllowanceSurvivor:
                 if (benefit.programCode === ProgramCodes.GIS) {
-                  newAdFlags.CPPallowance_or_allowance_for_survivor = false
+                  defaultDisplayFlags.CPPallowance_or_allowance_for_survivor = false
                 }
                 break
               default:
-                //verify that the program code is valid
-                if (
-                  benefit.programCode ===
-                  ProgramCodes[benefit.programCode.toUpperCase()]
-                ) {
-                  newAdFlags[mapTypeCodesToFlags(benefit.typeCode)] = false
-                }
+                defaultDisplayFlags[
+                  mapTypeCodesToAdCards(benefit.typeCode)
+                ] = false
                 break
             }
           })
         }
       })
 
-      setAdDisplayFlags(newAdFlags)
+      setAdDisplayFlags(defaultDisplayFlags)
 
       setAllBenefits([
         orderedPaymentHold,
@@ -276,7 +271,8 @@ export default function Dashboard(props) {
 
         {/* application or "advertising" cards */}
         {advertisingCards.map((adCard, key) => {
-          let benefitFullType = adCard.benefitType + (adCard.subType ?? '')
+          let benefitFullType =
+            adCard.benefitType + (adCard?.benefitSubType ?? '')
           if (!adDisplayFlags[benefitFullType]) {
             return
           }

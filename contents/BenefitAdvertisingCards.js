@@ -1,6 +1,5 @@
 const applyIcon = '/images/dashboard/apply-for-benefit-icon.svg'
 const estimateIcon = '/images/dashboard/estimate-retirement-income-icon.svg'
-import { TypeCodes } from '../constants/ProgramTypeCodes'
 
 const defaultDisplayFlags = {
   EI: true, //Always show, unless an EI inactive card is shown
@@ -15,25 +14,6 @@ const defaultDisplayFlags = {
   CPPcredit_split: true, //Always
   CPPchild_rearing_provision: true, //Always
   CPPdeath_benefit: true, //Always
-}
-
-function mapTypeCodesToFlags(typeCode) {
-  switch (typeCode) {
-    case TypeCodes.EISickness:
-      return 'EI'
-    case TypeCodes.CPPRetirement:
-      return 'CPP'
-    case TypeCodes.GISRetirement:
-      return 'GIS'
-    case TypeCodes.OASRetirement:
-      return 'OAS'
-    case TypeCodes.CPPDisability:
-      return 'CPPD'
-    case TypeCodes.CPPChild:
-      return 'CPPchild_benefit_aged_18_25'
-    case TypeCodes.CPPSurvivor:
-      return 'CPPsurvivors_pension_and_childrens_benefits'
-  }
 }
 
 const APPLICATION_CARD_OAS = {
@@ -208,5 +188,4 @@ module.exports = {
   APPLICATION_CARD_CPP_DEATH_BENEFIT,
   getAdvertisingCards,
   defaultDisplayFlags,
-  mapTypeCodesToFlags,
 }
