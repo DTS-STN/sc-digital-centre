@@ -64,6 +64,14 @@ export default {
     link: '/',
     linkText: '(FR)View my status and messages',
   },
+  PaymentDate: {
+    title: '(FR)Payment Date',
+    link: '/',
+    linkText: '(FR)View my payments',
+  },
+  Payment: {
+    title: '(FR)Payment',
+  },
   //
   // Phase banner
   phaseBannerTag: "Site d'essai",
@@ -307,6 +315,7 @@ export default {
   CPPRetirement: 'Pension de retraite',
   CPPSurvivor: "(FR)Survivor's pension",
   CPPDisability: '(FR)Disability Pension',
+  CPPDeath: '(FR)Death benefits',
   OASRetirement: 'Pension de retraite',
   GISRetirement: 'Pension de retraite',
   EISickness: 'Prestations de maladie',
@@ -354,6 +363,7 @@ export default {
   paymentHold: 'Paiement suspendu',
   benefitUpdate: 'Prestation mise à jour',
   inPayment: 'En paiement',
+  paid: '(FR)Paid',
   exhausted: 'Prestations épuisées',
   activeAgreement: '(FR)Active Agreement',
 

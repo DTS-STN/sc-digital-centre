@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
-    "@dts-stn/decd-design-system": "^1.42.0",
+    "@dts-stn/service-canada-design-system": "^1.49.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -49,7 +49,7 @@
     "cypress": "^10.3.0",
     "cypress-axe": "^1.0.0",
     "cypress-multi-reporters": "^1.6.1",
-    "eslint": "7.32.0",
+    "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
     "husky": "^8.0.1",
     "identity-obj-proxy": "^3.0.0",

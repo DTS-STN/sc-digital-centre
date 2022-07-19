@@ -1,5 +1,6 @@
 export const StatusCodes = {
   inPayment: 'inPayment',
+  paid: 'paid',
   benefitUpdate: 'benefitUpdate',
   applicationReceived: 'applicationReceived',
   inactive: 'inactive',
@@ -11,6 +12,7 @@ export const StatusCodes = {
 
 export const StatusColors = {
   inPayment: 'bg-green-medium',
+  paid: 'bg-green-medium',
   benefitUpdate: 'bg-yellow-medium',
   applicationReceived: 'bg-brighter-blue-medium',
   inactive: 'bg-gray-medium',

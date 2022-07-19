@@ -66,6 +66,14 @@ export default {
     link: '/',
     linkText: 'View my status and messages',
   },
+  PaymentDate: {
+    title: 'Payment Date',
+    link: '/',
+    linkText: 'View my payments',
+  },
+  Payment: {
+    title: 'Payment',
+  },
   //
   // Phase banner
   phaseBannerTag: 'Test Site',
@@ -308,6 +316,7 @@ export default {
   CPPRetirement: 'Retirement pension',
   CPPSurvivor: "Survivor's pension",
   CPPDisability: 'Disability Pension',
+  CPPDeath: 'Death benefits',
   OASRetirement: 'Retirement pension',
   GISRetirement: 'Retirement pension',
   EISickness: 'Sickness benefits',
@@ -365,6 +374,7 @@ export default {
   decisionSent: 'Decision letter sent',
   paymentHold: 'Payment on hold',
   inPayment: 'In payment',
+  paid: 'Paid',
   exhausted: 'Benefit exahusted',
   activeAgreement: 'Active Agreement',
 

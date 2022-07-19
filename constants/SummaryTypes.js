@@ -15,4 +15,6 @@ export const SummaryTypes = {
   ActiveBenefit: 'ActiveBenefit',
   TransactionDate: 'TransactionDate',
   AgreementStatus: 'AgreementStatus',
+  PaymentDate: 'PaymentDate',
+  Payment: 'Payment',
 }
