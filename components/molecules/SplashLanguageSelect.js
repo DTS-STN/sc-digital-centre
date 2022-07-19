@@ -66,7 +66,7 @@ export default function SplashLanguageSelect() {
             </a>
           </Link>
         </div>
-        <img className="h-auto w-24 xl:w-28" src="/wmms-blk.svg" alt="" />
+        <Image src="/wmms-blk.svg" width="112" height="27" alt="" />
       </div>
     </div>
   )

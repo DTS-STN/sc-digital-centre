@@ -38,22 +38,14 @@ export default function Layout(props) {
   return (
     <>
       {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
-        <>
-          <Script
-            strategy="beforeInteractive"
-            src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL}
-          />
-          <Script
-            strategy="afterInteractive"
-            id="AdobeSatellite"
-            type="text/javascript"
-          >
-            _satellite.pageBottom();
-          </Script>
-        </>
-      ) : (
-        ''
-      )}
+        <Script
+          strategy="afterInteractive"
+          id="AdobeSatellite"
+          type="text/javascript"
+        >
+          _satellite.pageBottom();
+        </Script>
+      ) : null}
       <Meta lang={props.locale} metadata={props.metadata} />
 
       {display.showPhase ? (
