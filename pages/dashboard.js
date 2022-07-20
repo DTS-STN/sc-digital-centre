@@ -213,29 +213,35 @@ export default function Dashboard(props) {
         {allBenefits
           ? allBenefits.map((benefits) => {
               return benefits.map((value, index) => {
-                const tasksGroups =
-                  TASK_GROUPS[value.programCode][value.statusCode][props.locale]
-                return (
-                  <UniversalBenefitCard
-                    key={index}
-                    locale={props.locale}
-                    program={t[value.programCode]}
-                    summary={t.summary}
-                    benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
-                    statusBadge={{
-                      status: t[value.statusCode],
-                      srDescription: t[value.programCode],
-                      color: StatusColors[value.statusCode],
-                      hidden: value.statusCode === StatusCodes.activeAgreement,
-                    }}
-                    taskHeading={tasksGroups.taskHeadingKey}
-                    taskGroups={tasksGroups.tasksGroups}
-                    benefitDurationReached={t.benefitDurationReached}
-                    applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
-                    summaries={MapSummary(value.summaries, t, props.locale)}
-                    callout={MapCallout(value.statusCode, value.typeCode, t)}
-                  />
-                )
+                //if we don't have these, things break
+                if (value.programCode && value.typeCode && value.statusCode) {
+                  const tasksGroups =
+                    TASK_GROUPS[value.programCode][value.statusCode][
+                      props.locale
+                    ]
+                  return (
+                    <UniversalBenefitCard
+                      key={index}
+                      locale={props.locale}
+                      program={t[value.programCode]}
+                      summary={t.summary}
+                      benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
+                      statusBadge={{
+                        status: t[value.statusCode],
+                        srDescription: t[value.programCode],
+                        color: StatusColors[value.statusCode],
+                        hidden:
+                          value.statusCode === StatusCodes.activeAgreement,
+                      }}
+                      taskHeading={tasksGroups.taskHeadingKey}
+                      taskGroups={tasksGroups.tasksGroups}
+                      benefitDurationReached={t.benefitDurationReached}
+                      applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
+                      summaries={MapSummary(value.summaries, t, props.locale)}
+                      callout={MapCallout(value.statusCode, value.typeCode, t)}
+                    />
+                  )
+                }
               })
             })
           : null}
