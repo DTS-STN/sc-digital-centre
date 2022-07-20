@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.49% </span>
+                <span class="strong">78.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>73/93</span>
+                <span class='fraction'>74/94</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.56% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>61/73</span>
+                <span class='fraction'>65/78</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.26% </span>
+                <span class="strong">78.49% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>72/92</span>
+                <span class='fraction'>73/93</span>
             </div>
         
             
@@ -364,7 +364,13 @@
 <a name='L299'></a><a href='#L299'>299</a>
 <a name='L300'></a><a href='#L300'>300</a>
 <a name='L301'></a><a href='#L301'>301</a>
-<a name='L302'></a><a href='#L302'>302</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -581,7 +587,13 @@
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -880,29 +892,35 @@ export default function Dashboard(props) {
         {allBenefits
           ? allBenefits.map((benefits) =&gt; {
               return benefits.map((value, index) =&gt; {
-                const tasksGroups =
-                  TASK_GROUPS[value.programCode][value.statusCode][props.locale]
-                return (
-                  &lt;UniversalBenefitCard
-                    key={index}
-                    locale={props.locale}
-                    program={t[value.programCode]}
-                    summary={t.summary}
-                    benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
-                    statusBadge={{
-                      status: t[value.statusCode],
-                      srDescription: t[value.programCode],
-                      color: StatusColors[value.statusCode],
-                      hidden: value.statusCode === StatusCodes.activeAgreement,
-                    }}
-                    taskHeading={tasksGroups.taskHeadingKey}
-                    taskGroups={tasksGroups.tasksGroups}
-                    benefitDurationReached={t.benefitDurationReached}
-                    applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
-                    summaries={MapSummary(value.summaries, t, props.locale)}
-                    callout={MapCallout(value.statusCode, value.typeCode, t)}
-                  /&gt;
-                )
+                //if we don't have these, things break
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (value.programCode &amp;&amp; value.typeCode &amp;&amp; value.statusCode) {
+                  const tasksGroups =
+                    TASK_GROUPS[value.programCode][value.statusCode][
+                      props.locale
+                    ]
+                  return (
+                    &lt;UniversalBenefitCard
+                      key={index}
+                      locale={props.locale}
+                      program={t[value.programCode]}
+                      summary={t.summary}
+                      benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
+                      statusBadge={{
+                        status: t[value.statusCode],
+                        srDescription: t[value.programCode],
+                        color: StatusColors[value.statusCode],
+                        hidden:
+                          value.statusCode === StatusCodes.activeAgreement,
+                      }}
+                      taskHeading={tasksGroups.taskHeadingKey}
+                      taskGroups={tasksGroups.tasksGroups}
+                      benefitDurationReached={t.benefitDurationReached}
+                      applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
+                      summaries={MapSummary(value.summaries, t, props.locale)}
+                      callout={MapCallout(value.statusCode, value.typeCode, t)}
+                    /&gt;
+                  )
+                }
               })
             })
           : null}
@@ -973,7 +991,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-07-20T17:09:48.549Z
+                at 2022-07-20T17:42:20.057Z
             </div>
         <script src="../prettify.js"></script>
         <script>
