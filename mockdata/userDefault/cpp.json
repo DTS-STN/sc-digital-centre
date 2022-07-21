@@ -39,15 +39,15 @@
     "benefitStatus": "Inactive"
   },
   {
-    "programCode": 32294,
-    "benefitCode": 30320,
+    "programCode": 2,
+    "benefitCode": 1,
     "benefitType": "Death",
     "benefitStatus": "Received",
     "lastStatusDate": "2022-08-04"
   },
   {
-    "programCode": 32294,
-    "benefitCode": 30320,
+    "programCode": 2,
+    "benefitCode": 1,
     "benefitType": "Death",
     "benefitStatus": "Paid",
     "netAmount": 2500.0,
