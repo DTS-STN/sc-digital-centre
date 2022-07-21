@@ -10,8 +10,8 @@
       }
     ],
     "message_id": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
+    "publishDate": "2026-02-21",
+    "nextRptDueDate": "2028-04-24",
     "programCode": 4543,
     "netAmount": 32.21
   },
@@ -19,7 +19,7 @@
     "programName": "EI",
     "claimStatusCode": 1,
     "enmBenefitType": "1",
-    "nextRptDueDate": "1900-01-01T01:01:01",
+    "nextRptDueDate": "2028-04-24T01:01:01",
     "message_id": 0,
     "messageData": [
       {
@@ -28,7 +28,7 @@
         "messageDataValueFr": "(fr)Important Message"
       }
     ],
-    "publishDate": "2016-08-29",
+    "publishDate": "2026-02-21",
     "netAmount": 1.0
   },
   {
@@ -42,8 +42,8 @@
       }
     ],
     "message_id": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
+    "publishDate": "2026-02-21",
+    "nextRptDueDate": "2028-04-24",
     "programCode": 4543,
     "netAmount": 32.21
   },
@@ -58,8 +58,8 @@
       }
     ],
     "message_id": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
+    "publishDate": "2026-02-21",
+    "nextRptDueDate": "2028-04-24",
     "programCode": 4543,
     "netAmount": 32.21
   },
@@ -74,8 +74,8 @@
       }
     ],
     "message_id": 32,
-    "publishDate": "2021-02-21",
-    "nextRptDueDate": "2023-04-24",
+    "publishDate": "2026-02-21",
+    "nextRptDueDate": "2028-04-24",
     "programCode": 4543,
     "netAmount": 32.21
   }

@@ -64,6 +64,14 @@ export default {
     link: '/',
     linkText: '(FR)View my status and messages',
   },
+  PaymentDate: {
+    title: '(FR)Payment Date',
+    link: '/',
+    linkText: '(FR)View my payments',
+  },
+  Payment: {
+    title: '(FR)Payment',
+  },
   //
   // Phase banner
   phaseBannerTag: "Site d'essai",
@@ -300,13 +308,14 @@ export default {
   oas: 'Sécurité de la vieillesse',
   gis: 'Supplément de revenu garanti',
   ei: 'Assurance-emploi',
-  cppd: '(FR)Canada Pension Plan Disability',
+  cppd: "Prestations d'invalidité du Régime de pensions du Canada",
   seb: '(FR)Self Employment Benefits',
 
   // Benefit types
   CPPRetirement: 'Pension de retraite',
   CPPSurvivor: "(FR)Survivor's pension",
   CPPDisability: '(FR)Disability Pension',
+  CPPDeath: '(FR)Death benefits',
   OASRetirement: 'Pension de retraite',
   GISRetirement: 'Pension de retraite',
   EISickness: 'Prestations de maladie',
@@ -354,6 +363,7 @@ export default {
   paymentHold: 'Paiement suspendu',
   benefitUpdate: 'Prestation mise à jour',
   inPayment: 'En paiement',
+  paid: '(FR)Paid',
   exhausted: 'Prestations épuisées',
   activeAgreement: '(FR)Active Agreement',
 
@@ -379,7 +389,7 @@ export default {
   statusUpdateTask: '(FR)View my status and messages',
   retirementIncomeTask: 'Estimer mon revenue de retraite',
   cppContributionTask: 'Consulter mes cotisations',
-  taxDeductionsTask: "Demander une retenue d'impôts",
+  taxDeductionsTask: "Modifier ma retenue d'impôt",
   delayOasPensionTask: 'Reporter le début de ma pension',
   giveConsentTask: 'Autoriser une personne à communiquer en mon nom',
   taxSlipTask: "Consulter mes feuillets d'impôts",

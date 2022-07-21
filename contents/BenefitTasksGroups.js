@@ -37,6 +37,23 @@ const ACTIVE_CPP_CHANGE_TASKS_EN = {
   ],
 }
 
+const PAID_CPP_PAYMENT_TASKS_EN = {
+  header: 'Payments and taxes',
+  tasks: [
+    BenefitTasks_EN.AllPaymentsTask,
+    BenefitTasks_EN.TaxSlipTask,
+    BenefitTasks_EN.TaxSlipMailingTask,
+  ],
+}
+
+const PAID_CPP_CHANGE_TASKS_EN = {
+  header: 'Make a Change',
+  tasks: [
+    BenefitTasks_EN.UpdateAccountInfoTask,
+    BenefitTasks_EN.RequestAReview,
+  ],
+}
+
 const INACTIVE_CPP_TASKS_EN = {
   header: `Common actions`,
   tasks: [
@@ -44,6 +61,7 @@ const INACTIVE_CPP_TASKS_EN = {
     BenefitTasks_EN.DelayOasPensionTask,
     BenefitTasks_EN.GiveConsentTask,
     BenefitTasks_EN.UpdateAccountInfoTask,
+    BenefitTasks_EN.SubmitDocuments,
   ],
 }
 
@@ -52,6 +70,7 @@ const INACTIVE_CPPD_TASKS_EN = {
   tasks: [
     BenefitTasks_EN.GiveConsentTask,
     BenefitTasks_EN.UpdateAccountInfoTask,
+    BenefitTasks_EN.SubmitDocuments,
   ],
 }
 
@@ -272,6 +291,23 @@ const ACTIVE_CPP_CHANGE_TASKS_FR = {
   ],
 }
 
+const PAID_CPP_PAYMENT_TASKS_FR = {
+  header: 'Paiements et impôts',
+  tasks: [
+    BenefitTasks_FR.AllPaymentsTask,
+    BenefitTasks_FR.TaxSlipTask,
+    BenefitTasks_FR.TaxSlipMailingTask,
+  ],
+}
+
+const PAID_CPP_CHANGE_TASKS_FR = {
+  header: 'Faire un changement',
+  tasks: [
+    BenefitTasks_FR.UpdateAccountInfoTask,
+    BenefitTasks_FR.RequestAReview,
+  ],
+}
+
 const INACTIVE_CPP_TASKS_FR = {
   header: `Actions courantes`,
   tasks: [
@@ -279,6 +315,7 @@ const INACTIVE_CPP_TASKS_FR = {
     BenefitTasks_FR.DelayOasPensionTask,
     BenefitTasks_FR.GiveConsentTask,
     BenefitTasks_FR.UpdateAccountInfoTask,
+    BenefitTasks_FR.SubmitDocuments,
   ],
 }
 
@@ -287,6 +324,7 @@ const INACTIVE_CPPD_TASKS_FR = {
   tasks: [
     BenefitTasks_FR.GiveConsentTask,
     BenefitTasks_FR.UpdateAccountInfoTask,
+    BenefitTasks_FR.SubmitDocuments,
   ],
 }
 
@@ -522,6 +560,16 @@ const TASK_GROUPS = {
       fr: {
         taskHeadingKey: 'Paiements, impôts, et faire un changement',
         tasksGroups: [ACTIVE_CPP_PAYMENT_TASKS_FR, ACTIVE_CPP_CHANGE_TASKS_FR],
+      },
+    },
+    [StatusCodes.paid]: {
+      en: {
+        taskHeadingKey: 'Payments, taxes, and make a change',
+        tasksGroups: [PAID_CPP_PAYMENT_TASKS_EN, PAID_CPP_CHANGE_TASKS_EN],
+      },
+      fr: {
+        taskHeadingKey: 'Paiements, impôts, et faire un changement',
+        tasksGroups: [PAID_CPP_PAYMENT_TASKS_FR, PAID_CPP_CHANGE_TASKS_FR],
       },
     },
   },

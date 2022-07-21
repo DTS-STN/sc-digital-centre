@@ -10,11 +10,13 @@ export const CPPPrograms = {
 export const CPPTypes = {
   1: TypeCodes.CPPRetirement,
   16: TypeCodes.CPPSurvivor,
+  Death: TypeCodes.CPPDeath,
 }
 
 //this will need proper logic
 export const CPPStatus = {
   COMPLETE: StatusCodes.inPayment,
+  Paid: StatusCodes.paid,
   Inactive: StatusCodes.inactive,
   Received: StatusCodes.applicationReceived,
   Decision: StatusCodes.decisionSent,

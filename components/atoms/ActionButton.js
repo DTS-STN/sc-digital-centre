@@ -18,7 +18,7 @@ export default function ActionButton(props) {
   return props.href ? (
     <Link href={props.href}>
       <a
-        className={`${props.className ?? style}`}
+        className={props.className ?? style}
         onClick={props.onClick}
         role="button"
         draggable="false"
@@ -32,8 +32,8 @@ export default function ActionButton(props) {
     </Link>
   ) : (
     <button
-      aria-expanded={`${props.ariaExpanded ? props.ariaExpanded : undefined}`}
-      className={`${props.className ?? style}`}
+      aria-expanded={props.ariaExpanded ?? undefined}
+      className={props.className ?? style}
       onClick={props.onClick}
       type={props.type}
       lang={props.lang}

@@ -4,14 +4,14 @@
     "benefitCode": 1,
     "benefitType": "RETIREMENT",
     "benefitStatus": "Received",
-    "lastStatusDate": "2022-04-04"
+    "lastStatusDate": "2027-04-04"
   },
   {
     "programCode": 2,
     "benefitCode": 1,
     "benefitType": "RETIREMENT",
     "benefitStatus": "Decision",
-    "lastStatusDate": "2022-04-04"
+    "lastStatusDate": "2027-04-04"
   },
   {
     "programCode": 2,
@@ -19,7 +19,7 @@
     "benefitType": "RETIREMENT",
     "benefitStatus": "COMPLETE",
     "netAmount": 30.32,
-    "paymentDate": "2021-02-21",
+    "paymentDate": "2026-02-21",
     "paymentProcessType": "MONTHLY"
   },
   {
@@ -27,8 +27,8 @@
     "benefitCode": 1,
     "benefitType": "RETIREMENT",
     "benefitStatus": "Hold",
-    "lastStatusDate": "2022-04-04",
-    "paymentDate": "2021-02-21",
+    "lastStatusDate": "2027-04-04",
+    "paymentDate": "2026-02-21",
     "netAmount": 30.32,
     "message": "on hold"
   },
@@ -37,5 +37,20 @@
     "benefitCode": 1,
     "benefitType": "RETIREMENT",
     "benefitStatus": "Inactive"
+  },
+  {
+    "programCode": 32294,
+    "benefitCode": 30320,
+    "benefitType": "Death",
+    "benefitStatus": "Received",
+    "lastStatusDate": "2022-08-04"
+  },
+  {
+    "programCode": 32294,
+    "benefitCode": 30320,
+    "benefitType": "Death",
+    "benefitStatus": "Paid",
+    "netAmount": 2500.0,
+    "lastStatusDate": "2022-05-30"
   }
 ]
