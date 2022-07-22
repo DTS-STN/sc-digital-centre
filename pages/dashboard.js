@@ -18,7 +18,7 @@ import fr from '../locales/fr'
 import { StatusColors, StatusCodes } from '../constants/StatusCodes'
 import { MapSummary } from '../lib/mapSummaries'
 import { getGreeting } from '../lib/Utils'
-import { mapTypeCodesToAdCards } from '../lib/mapAdCards'
+import { determineAdCards } from '../lib/mapAdCards'
 import queryGraphQL from '../graphql/client'
 import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 import MapCallout from '../lib/mapCallout'
@@ -156,28 +156,7 @@ export default function Dashboard(props) {
                 break
             }
 
-            // determine what benefits to advertise
-            switch (benefit.typeCode) {
-              case TypeCodes.EISickness:
-                if (
-                  benefit.statusCode === StatusCodes.inactive &&
-                  benefit.programCode === ProgramCodes.EI
-                ) {
-                  defaultDisplayFlags.EI = false
-                }
-                break
-              case TypeCodes.GISAllowance:
-              case TypeCodes.GISAllowanceSurvivor:
-                if (benefit.programCode === ProgramCodes.GIS) {
-                  defaultDisplayFlags.CPPallowance_or_allowance_for_survivor = false
-                }
-                break
-              default:
-                defaultDisplayFlags[
-                  mapTypeCodesToAdCards(benefit.typeCode)
-                ] = false
-                break
-            }
+            determineAdCards(benefit, defaultDisplayFlags)
           })
         }
       })
