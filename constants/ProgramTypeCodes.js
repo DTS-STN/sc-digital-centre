@@ -5,6 +5,7 @@ export const TypeCodes = {
   CPPSurvivor: 'CPPSurvivor',
   CPPChild: 'CPPChild',
   CPPDisability: 'CPPDisability',
+  CPPDeath: 'CPPDeath',
   OASRetirement: 'OASRetirement',
   GISRetirement: 'GISRetirement',
   GISAllowance: 'GISAllowance',

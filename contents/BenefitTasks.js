@@ -72,7 +72,7 @@ export const BenefitTasks_EN = {
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
   },
   TaxDeductionsTask: {
-    task: 'Ask for tax deductions',
+    task: 'Change my tax deductions',
     icon: faFileLines,
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
   },
@@ -129,6 +129,11 @@ export const BenefitTasks_EN = {
   ApplyForOldAgeSecurity: {
     task: 'Apply For Old Age Security',
     icon: faStamp,
+    link: '/dashboard',
+  },
+  RequestAReview: {
+    task: 'Request a review of a decision',
+    icon: faComments,
     link: '/dashboard',
   },
   // ei tasks
@@ -259,7 +264,7 @@ export const BenefitTasks_FR = {
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
   },
   TaxDeductionsTask: {
-    task: "Demander une retenue d'impôts",
+    task: "Modifier ma retenue d'impôt",
     icon: faFileLines,
     link: 'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
   },
@@ -316,6 +321,11 @@ export const BenefitTasks_FR = {
   ApplyForOldAgeSecurity: {
     task: '(FR)Apply For Old Age Security',
     icon: faStamp,
+    link: '/dashboard',
+  },
+  RequestAReview: {
+    task: '(FR)Request a review of a decision',
+    icon: faComments,
     link: '/dashboard',
   },
   // ei tasks

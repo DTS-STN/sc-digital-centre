@@ -10,18 +10,8 @@ describe('Error page accessibility test', () => {
   
       it(errorPage, () => {
         cy.visit(path, {failOnStatusCode: false});
-   cy.get('main').each(() => {
-          cy.errorPagesA11y(
-            path,
-            {
-              runOnly: {
-                type: 'tag',
-            values: ['wcag21a','wcag21aa'],
-              },
-            },
-           
-          );
-        });
+        cy.injectAxe();
+        cy.checkA11y('main');
       });
 
 

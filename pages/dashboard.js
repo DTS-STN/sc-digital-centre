@@ -5,24 +5,21 @@ import { getNoBenefitCards } from '../contents/NoBenefitCards'
 import {
   getAdvertisingCards,
   defaultDisplayFlags,
-  mapTypeCodesToFlags,
 } from '../contents/BenefitAdvertisingCards'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
-import { setCookies, getCookie } from 'cookies-next'
+import { getCookie, setCookie } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
-import { ProgramCodes } from '../constants/ProgramCodes'
-import { TypeCodes } from '../constants/ProgramTypeCodes'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { StatusColors, StatusCodes } from '../constants/StatusCodes'
 import { MapSummary } from '../lib/mapSummaries'
 import { getGreeting } from '../lib/Utils'
 import { determineAdCards } from '../lib/mapAdCards'
-import queryGraphQL from '../graphql/client'
-import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 import MapCallout from '../lib/mapCallout'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
+// import queryGraphQL from '../graphql/client'
+// import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -124,6 +121,7 @@ export default function Dashboard(props) {
       let orderedExhausted = []
       let orderedInactive = []
       let orderedActiveAgreement = []
+      let orderedPaid = []
 
       newArray.forEach((benefits) => {
         if (benefits != undefined) {
@@ -144,6 +142,9 @@ export default function Dashboard(props) {
                 break
               case StatusCodes.inPayment:
                 orderedInPayment.push(benefit)
+                break
+              case StatusCodes.paid:
+                orderedPaid.push(benefit)
                 break
               case StatusCodes.exhausted:
                 orderedExhausted.push(benefit)
@@ -169,6 +170,7 @@ export default function Dashboard(props) {
         orderedDecisionSent,
         orderedBenefitUpdate,
         orderedInPayment,
+        orderedPaid,
         orderedExhausted,
         orderedInactive,
         orderedActiveAgreement,
@@ -221,29 +223,35 @@ export default function Dashboard(props) {
         {allBenefits
           ? allBenefits.map((benefits) => {
               return benefits.map((value, index) => {
-                const tasksGroups =
-                  TASK_GROUPS[value.programCode][value.statusCode][props.locale]
-                return (
-                  <UniversalBenefitCard
-                    key={index}
-                    locale={props.locale}
-                    program={t[value.programCode]}
-                    summary={t.summary}
-                    benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
-                    statusBadge={{
-                      status: t[value.statusCode],
-                      srDescription: t[value.programCode],
-                      color: StatusColors[value.statusCode],
-                      hidden: value.statusCode === StatusCodes.activeAgreement,
-                    }}
-                    taskHeading={tasksGroups.taskHeadingKey}
-                    taskGroups={tasksGroups.tasksGroups}
-                    benefitDurationReached={t.benefitDurationReached}
-                    applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
-                    summaries={MapSummary(value.summaries, t, props.locale)}
-                    callout={MapCallout(value.statusCode, value.typeCode, t)}
-                  />
-                )
+                //if we don't have these, things break
+                if (value.programCode && value.typeCode && value.statusCode) {
+                  const tasksGroups =
+                    TASK_GROUPS[value.programCode][value.statusCode][
+                      props.locale
+                    ]
+                  return (
+                    <UniversalBenefitCard
+                      key={index}
+                      locale={props.locale}
+                      program={t[value.programCode]}
+                      summary={t.summary}
+                      benefitUniqueId={`${value.programCode}-${value.typeCode}-${value.statusCode}`}
+                      statusBadge={{
+                        status: t[value.statusCode],
+                        srDescription: t[value.programCode],
+                        color: StatusColors[value.statusCode],
+                        hidden:
+                          value.statusCode === StatusCodes.activeAgreement,
+                      }}
+                      taskHeading={tasksGroups.taskHeadingKey}
+                      taskGroups={tasksGroups.tasksGroups}
+                      benefitDurationReached={t.benefitDurationReached}
+                      applyForProgram={`${t.applyFor} ${t[value.programCode]}`}
+                      summaries={MapSummary(value.summaries, t, props.locale)}
+                      callout={MapCallout(value.statusCode, value.typeCode, t)}
+                    />
+                  )
+                }
               })
             })
           : null}
@@ -284,7 +292,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
   if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
 
   const { userid } = query
-  setCookies('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
+  setCookie('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
 
   // const aemContent = await queryGraphQL(getDashboardPage).then((result) => {
   //   return result;

@@ -16,7 +16,7 @@ enableFetchMocks()
 jest.mock('next-auth/react')
 jest.mock('cookies-next', () => ({
   getCookie: () => 'default',
-  setCookies: () => 'default',
+  setCookie: () => 'default',
 }))
 
 describe('Dashboard', () => {

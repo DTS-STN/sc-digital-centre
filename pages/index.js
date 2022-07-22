@@ -17,7 +17,7 @@ export async function getStaticProps() {
   }
   const display = {
     hideHeader: true,
-    hideDSFooter: true,
+    hideFooter: true,
     fullscreen: true,
   }
 
