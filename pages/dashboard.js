@@ -14,6 +14,7 @@ import { MapSummary } from '../lib/mapSummaries'
 import { getGreeting } from '../lib/Utils'
 import MapCallout from '../lib/mapCallout'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
+import LoadingState from '../components/molecules/LoadingState'
 // import queryGraphQL from '../graphql/client'
 // import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 
@@ -193,21 +194,22 @@ export default function Dashboard(props) {
         myBenefitsAndServices={t.myBenefitsAndServices}
       />
       <div className="mb-8">
-        {eiLoaded ? null : <p>Loading EI User Benefit Data...</p>}
+        {eiLoaded &&
+        cppLoaded &&
+        oasLoaded &&
+        gisLoaded &&
+        cppdLoaded &&
+        sebLoaded ? null : (
+          <>
+            <LoadingState />
+            <LoadingState />
+          </>
+        )}
         {eiError ?? null}
-
-        {cppLoaded ? null : <p>Loading CPP User Benefit Data...</p>}
         {cppError ?? null}
-
-        {oasLoaded ? null : <p>Loading OAS User Benefit Data...</p>}
         {oasError ?? null}
-
-        {gisLoaded ? null : <p>Loading GIS User Benefit Data...</p>}
         {gisError ?? null}
-        {cppdLoaded ? null : <p>Loading CPPD User Benefit Data...</p>}
         {cppdError ?? null}
-
-        {sebLoaded ? null : <p>Loading SEB User Benefit Data...</p>}
         {sebError ?? null}
 
         {allBenefits
