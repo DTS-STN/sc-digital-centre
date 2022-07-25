@@ -48,7 +48,10 @@ export default NextAuth({
       client: {
         token_endpoint_auth_method: 'private_key_jwt',
         introspection_endpoint_auth_method: 'private_key_jwt',
+        id_token_encrypted_response_alg: 'RSA-OAEP-256',
+        id_token_encrypted_response_enc: 'A256GCM',
         token_endpoint_auth_signing_alg: 'RS256',
+        id_token_signed_response_alg: 'RS512',
       },
       jwks: {
         keys: [JSON.parse(process.env.AUTH_PRIVATE)],
