@@ -156,7 +156,7 @@ export default function Dashboard(props) {
                 orderedActiveAgreement.push(benefit)
                 break
             }
-
+            console.log(benefit)
             determineAdCards(benefit, defaultDisplayFlags)
           })
         }
@@ -258,12 +258,7 @@ export default function Dashboard(props) {
 
         {/* application or "advertising" cards */}
         {advertisingCards.map((adCard, key) => {
-          let benefitFullType =
-            adCard.benefitType + (adCard?.benefitSubType ?? '')
-          if (!adDisplayFlags[benefitFullType]) {
-            return
-          }
-          return (
+          return !adDisplayFlags[adCard.benefitType][adCard.typeCode] ? null : (
             <div key={key}>
               <BenefitApplicationCard
                 locale={props.locale}
