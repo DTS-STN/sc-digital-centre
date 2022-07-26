@@ -6,24 +6,6 @@ export default NextAuth({
   // https://next-auth.js.org/configuration/providers/oauth
   providers: [
     {
-      id: 'defaultProvider',
-      name: 'Key Cloak',
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      type: 'oauth',
-      wellKnown: process.env.WELL_KNOWN,
-      authorization: { params: { scope: 'openid email profile' } },
-      idToken: true,
-      checks: ['state'],
-      profile(profile) {
-        return {
-          id: profile.sub,
-          name: profile.name,
-          email: profile.email,
-        }
-      },
-    },
-    {
       id: 'ecasProvider',
       name: 'ECAS',
       clientId: process.env.CLIENT_ID,
@@ -56,7 +38,6 @@ export default NextAuth({
       },
     },
   ],
-
   theme: {
     colorScheme: 'light',
   },
