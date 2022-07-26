@@ -3,7 +3,7 @@ import BenefitApplicationCard from '../components/molecules/BenefitApplicationCa
 import Greeting from '../components/molecules/Greeting'
 import { getNoBenefitCards } from '../contents/NoBenefitCards'
 import { getAdvertsingCards } from '../contents/BenefitAdvertisingCards'
-import { getSession } from 'next-auth/react'
+import { getSession } from '@dts-stn/next-auth/react'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { setCookies } from 'cookies-next'

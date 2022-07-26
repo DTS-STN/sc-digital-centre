@@ -1,4 +1,4 @@
-import { getToken } from 'next-auth/jwt'
+import { getToken } from '@dts-stn/next-auth/jwt'
 
 export async function middleware(req, ev) {
   if (

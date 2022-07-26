@@ -1,5 +1,4 @@
-import NextAuth from 'next-auth'
-import crypto from 'crypto'
+import NextAuth from '@dts-stn/next-auth'
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -34,17 +33,8 @@ export default NextAuth({
         url: process.env.ECAS_AUTHORIZATION,
         params: {
           scope: 'openid profile',
-          nonce: crypto.randomBytes(16).toString('hex'),
         },
       },
-      /*token: {
-        url: process.env.ECAS_TOKEN,
-        async request(context) {
-          // context contains useful properties to help you make the request.
-          const tokens = await makeTokenRequest(context)
-          return { tokens }
-        },
-      },*/
       client: {
         token_endpoint_auth_method: 'private_key_jwt',
         introspection_endpoint_auth_method: 'private_key_jwt',
@@ -58,7 +48,7 @@ export default NextAuth({
       },
       userinfo: process.env.ECAS_USERINFO,
       idToken: true,
-      checks: ['state'],
+      checks: ['state', 'nonce'],
       profile(profile) {
         return {
           id: profile.sub,
@@ -75,6 +65,7 @@ export default NextAuth({
   session: { jwt: true },
   callbacks: {
     async jwt({ token }) {
+      console.log('JWT callback...')
       token.userRole = 'admin'
       console.log(token)
       return token

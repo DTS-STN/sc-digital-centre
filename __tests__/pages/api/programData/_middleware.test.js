@@ -1,4 +1,4 @@
-import { getToken } from 'next-auth/jwt'
+import { getToken } from '@dts-stn/next-auth/jwt'
 import { createMocks } from 'node-mocks-http'
 import { middleware } from '../../../../pages/api/programData/_middleware'
 
