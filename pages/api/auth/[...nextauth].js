@@ -50,13 +50,13 @@ export default NextAuth({
   },
   logger: {
     error(code, metadata) {
-      console.log(code, metadata)
+      //console.log(code, metadata)
     },
     warn(code) {
-      console.log(code)
+      //console.log(code)
     },
     debug(code, metadata) {
-      console.log(code, metadata)
+      //console.log(code, metadata)
     },
   },
 })
