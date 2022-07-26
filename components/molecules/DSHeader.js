@@ -1,4 +1,4 @@
-import { Header } from '@dts-stn/decd-design-system'
+import { Header } from '@dts-stn/service-canada-design-system'
 import en from '../../locales/en'
 import fr from '../../locales/fr'
 import { signOut } from '@dts-stn/next-auth/react'

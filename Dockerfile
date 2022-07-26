@@ -1,4 +1,4 @@
-FROM node:18.0.0-alpine3.15 AS base
+FROM node:18.5.0-alpine3.15 AS base
 WORKDIR /base
 COPY package*.json ./
 RUN npm ci
@@ -21,7 +21,7 @@ WORKDIR /build
 COPY --from=base /base ./
 RUN npm run build
 
-FROM node:18.0.0-alpine3.15 AS production
+FROM node:18.5.0-alpine3.15 AS production
 ENV NODE_ENV=production
 SHELL ["/bin/sh", "-c"]
 RUN apk add --no-cache bash
@@ -87,5 +87,8 @@ ENV ECAS_USERINFO=$ECAS_USERINFO
 
 ARG AUTH_DISABLED
 ENV AUTH_DISABLED=$AUTH_DISABLED
+
+ARG NEXT_CONTENT_API
+ENV NEXT_CONTENT_API=$NEXT_CONTENT_API
 
 CMD npm run start

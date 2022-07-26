@@ -1,10 +1,15 @@
 import propTypes from 'prop-types'
 import ActionButton from './ActionButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleMinus, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
 export default function ViewMoreLessButton(props) {
   return (
     <ActionButton
-      className="text-xl leading-8 py-5 pl-2 md:pl-6 text-blue-default hover:text-blue-hover"
+      className={
+        'text-xl leading-8 text-blue-default hover:text-blue-hover ' +
+        props.className
+      }
       onClick={props.onClick}
       type="button"
       id={props.id}
@@ -14,19 +19,17 @@ export default function ViewMoreLessButton(props) {
       <>
         <div className="flex items-center ">
           {props.icon ? (
-            <img
-              className="px-2 w-12 h-12"
-              src="/images/dashboard/collapse-icon.svg"
-              alt=""
+            <FontAwesomeIcon
+              icon={faCircleMinus}
+              className={`text-3xl px-3 ${props.iconStyle}`}
             />
           ) : (
-            <img
-              className="px-2 w-12 h-12"
-              src="/images/dashboard/expand-icon.svg"
-              alt=""
+            <FontAwesomeIcon
+              icon={faCirclePlus}
+              className={`text-3xl px-3 ${props.iconStyle}`}
             />
           )}
-          <span className="text-left">{props.caption}</span>
+          <span className="text-left px-1">{props.caption}</span>
         </div>
       </>
     </ActionButton>
@@ -40,4 +43,6 @@ ViewMoreLessButton.propTypes = {
   id: propTypes.string.isRequired,
   dataTestid: propTypes.string,
   ariaExpanded: propTypes.string,
+  iconStyle: propTypes.string,
+  className: propTypes.string,
 }

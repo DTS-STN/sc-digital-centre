@@ -37,6 +37,9 @@ export default {
   NextPayment: {
     title: 'Next payment date:',
   },
+  LatestStatusDate: {
+    title: 'Latest status update:',
+  },
   LatestStatus: {
     title: 'Latest status update:',
     link: '/',
@@ -62,6 +65,14 @@ export default {
     title: 'Agreement status:',
     link: '/',
     linkText: 'View my status and messages',
+  },
+  PaymentDate: {
+    title: 'Payment Date',
+    link: '/',
+    linkText: 'View my payments',
+  },
+  Payment: {
+    title: 'Payment',
   },
   //
   // Phase banner
@@ -198,7 +209,7 @@ export default {
   //
 
   // Words
-  edit: 'edit',
+  edit: 'Edit',
 
   //
   // Contact us Section
@@ -270,12 +281,15 @@ export default {
   //
 
   // Greeting
-  greeting: 'Good morning, ',
+  greeting: 'Hello, ',
+  morningGreeting: 'Good morning, ',
+  afternoonGreeting: 'Good afternoon, ',
+  eveningGreeting: 'Good evening, ',
   welcome: 'Welcome to your My Service Canada Account.',
   myBenefitsAndServices: 'My benefits and services',
   canada_ca: 'Canada.ca',
   serviceCanada: 'Service Canada',
-  myBenefitsAndServices: 'My Benefits and Services',
+  myBenefitsAndServices: 'My benefits and services dashboard',
 
   // Info Message
   alertIconAltText_success: 'success icon',
@@ -301,9 +315,19 @@ export default {
   // Benefit types
   CPPRetirement: 'Retirement pension',
   CPPSurvivor: "Survivor's pension",
-  EISickness: 'Sickness',
-  OASBeneficial: 'Old Age Security',
-  GISBeneficial: 'Guaranteed Income Supplement',
+  CPPDisability: 'Disability Pension',
+  CPPDeath: 'Death benefits',
+  OASRetirement: 'Retirement pension',
+  GISRetirement: 'Retirement pension',
+  EISickness: 'Sickness benefits',
+  SEBRegular: 'Regular Self-Empoyment benenfit active',
+
+  //Benefit callout text status
+  NotActive: 'No benefit active',
+  DurationReached: 'Your current benefits duration has been reached',
+  //Benefit callout labels
+  activeBenefit: 'Active Benefit',
+  status: 'Status',
 
   // SubBenefit Names
   retirement_pension: `Retirement Pension`,
@@ -330,10 +354,8 @@ export default {
   nextReportDue: 'Next report due:',
   viewPaymentHistory: 'View my payments',
   agreementStatus: 'Agreement status:',
-  benefitDurationReached: 'Your current benefit duration has been reached.',
 
   // Benefit Card details
-  benefitDurationReached: 'Your current benefit duration has been reached.',
   applicationDate: 'Application date',
   latestActivity: 'Latest activity',
   viewMyStatusAndMessages: 'View my status and messages',
@@ -352,6 +374,7 @@ export default {
   decisionSent: 'Decision letter sent',
   paymentHold: 'Payment on hold',
   inPayment: 'In payment',
+  paid: 'Paid',
   exhausted: 'Benefit exahusted',
   activeAgreement: 'Active Agreement',
 
@@ -377,7 +400,7 @@ export default {
   statusUpdateTask: 'View my status and messages',
   retirementIncomeTask: 'Estimate my retirement income',
   cppContributionTask: 'View my contributions',
-  taxDeductionsTask: 'Ask for tax deductions',
+  taxDeductionsTask: 'Change my tax deductions',
   delayOasPensionTask: 'Delay receiving Old Age Security',
   giveConsentTask: 'Give consent for someone to communicate on my behalf',
   taxSlipTask: 'View my tax slips',
@@ -412,7 +435,7 @@ export default {
 
   // Dashboard benefit application card
   estimateRetirementIncome: 'Estimate retirement income',
-  youMightBeEligible: 'You might be eligible.',
+  youMightBeEligible: 'You might be eligible',
   learnMoreAbout: 'Learn more about ',
   applyFor: 'Apply for',
 
@@ -421,7 +444,7 @@ export default {
   craPath:
     'https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html',
   profilePath: '/profile',
-  securityPath: '/',
+  securityPath: '/security-settings',
   signOutPath: '/',
 
   // Greeting URLs
@@ -439,13 +462,38 @@ export default {
   errorPage400message: '400 Error - Bad request error occurred',
   errorPage503message: '503 - Service unavailable error occurred',
 
-  //Profile page
-  profileAndSecuritySettings: 'Profile and security settings',
-  profileAndPreferences: 'Profile and Preferences',
-  securitySettings: 'Security Settings',
+  // Common Pages stuff
   backToDashboard: 'Back to my dashboard',
-  edit: 'Edit',
   moreInfo: 'More Information',
+
+  //Profile page
+  profileSettings: 'Profile settings',
+  updateProfile: 'Update your profile information',
+  profileAndPreferences: 'Profile and Preferences',
+  viewSettings: 'View settings',
+  lookingForSecuritySettings: 'Looking for security settings?',
+  manageSecuritySettings: 'Manage your security settings',
+
+  //Security Settings page
+  securitySettings: 'Security Settings',
+  updateSecuritySettings: 'Update your security settings',
+  mfa: 'Multi-factor authentication',
+  modifyMfa: 'Modify multi-factor authentication settings',
+  editMfaLink: '/',
+  gcKeyPass: 'GCKey password',
+  changeGcKeyPass: 'Change my GCKey password',
+  editGcKeyPassLink: '/',
+  securityQuestions: 'Security questions',
+  changeSecurityQuestions: 'Change my security questions',
+  editSecurityQuestionsLink: '/',
+  eiAccessCode: 'Employment Insurance access code',
+  editEiAccessCodeLink: '/',
+  IdentityVerification: 'Identity verification',
+  confirmIdentityVerification:
+    'Confirm my identity to enhance the security of my account',
+  editIdentityVerificationLink: '/',
+  lookingForProfile: 'Looking for profile settings?',
+  manageProfile: 'Manage my profile settings',
 
   //Dashboard task links
   updateAccountInfoTaskLink: '/profile',

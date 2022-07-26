@@ -35,6 +35,9 @@ export default {
   NextPayment: {
     title: 'Date du prochain paiement :',
   },
+  LatestStatusDate: {
+    title: 'Dernière mise à jour :',
+  },
   LatestStatus: {
     title: 'Dernière mise à jour :',
     link: '/',
@@ -60,6 +63,14 @@ export default {
     title: '(FR)Agreement status:',
     link: '/',
     linkText: '(FR)View my status and messages',
+  },
+  PaymentDate: {
+    title: '(FR)Payment Date',
+    link: '/',
+    linkText: '(FR)View my payments',
+  },
+  Payment: {
+    title: '(FR)Payment',
   },
   //
   // Phase banner
@@ -196,7 +207,7 @@ export default {
   //
 
   // Words
-  edit: 'éditer',
+  edit: 'Modifier',
 
   //
   // Contact us Section
@@ -270,11 +281,14 @@ export default {
   //
 
   // Greeting
-  greeting: '(FR)Good morning, ',
+  greeting: '(FR)Hello, ',
+  morningGreeting: 'Bonjour, ',
+  afternoonGreeting: '(FR)Good afternoon, ',
+  eveningGreeting: '(FR)Good evening, ',
   welcome: '(FR)Welcome to your My Service Canada Account.',
-  myBenefitsAndServices: 'Mes prestations et mes services',
   canada_ca: 'Canada.ca',
   serviceCanada: 'Service Canada',
+  myBenefitsAndServices: 'Tableau de bord de mes prestations et mes services',
 
   // Info Message
   alertIconAltText_success: '(FR)success icon',
@@ -294,15 +308,25 @@ export default {
   oas: 'Sécurité de la vieillesse',
   gis: 'Supplément de revenu garanti',
   ei: 'Assurance-emploi',
-  cppd: '(FR)Canada Pension Plan Disability',
+  cppd: "Prestations d'invalidité du Régime de pensions du Canada",
   seb: '(FR)Self Employment Benefits',
 
   // Benefit types
   CPPRetirement: 'Pension de retraite',
   CPPSurvivor: "(FR)Survivor's pension",
-  EISickness: 'Maladie',
-  OASBeneficial: 'Sécurité de la vieillesse',
-  GISBeneficial: 'Supplément de revenu garanti',
+  CPPDisability: '(FR)Disability Pension',
+  CPPDeath: '(FR)Death benefits',
+  OASRetirement: 'Pension de retraite',
+  GISRetirement: 'Pension de retraite',
+  EISickness: 'Prestations de maladie',
+  SEBRegular: '(FR) Regular Self-Empoyment benenfit active',
+
+  //Benefit callout text status
+  NotActive: "Pas d'avantage actif",
+  DurationReached: "Votre durée d'indemnisation actuelle a été atteinte",
+  //Benefit callout labels
+  activeBenefit: 'Bénéfices actifs',
+  status: 'Status',
 
   // Benefit Card
   pendingBenefits: '(FR)Pending benefits:',
@@ -319,12 +343,8 @@ export default {
   viewPaymentHistory: '(FR)View my payments',
   transactionDate: '(FR)Transaction date:',
   agreementStatus: '(FR)Agreement status:',
-  benefitDurationReached:
-    "Votre durée d'indemnisation actuelle a été atteinte.",
 
   // Benefit Card details
-  benefitDurationReached:
-    "Votre durée d'indemnisation actuelle a été atteinte.",
   applicationDate: '(FR)Application date',
   latestActivity: '(FR)Latest activity',
   viewMyStatusAndMessages: '(FR)View my status and messages',
@@ -343,6 +363,7 @@ export default {
   paymentHold: 'Paiement suspendu',
   benefitUpdate: 'Prestation mise à jour',
   inPayment: 'En paiement',
+  paid: '(FR)Paid',
   exhausted: 'Prestations épuisées',
   activeAgreement: '(FR)Active Agreement',
 
@@ -368,7 +389,7 @@ export default {
   statusUpdateTask: '(FR)View my status and messages',
   retirementIncomeTask: 'Estimer mon revenue de retraite',
   cppContributionTask: 'Consulter mes cotisations',
-  taxDeductionsTask: "Demander une retenue d'impôts",
+  taxDeductionsTask: "Modifier ma retenue d'impôt",
   delayOasPensionTask: 'Reporter le début de ma pension',
   giveConsentTask: 'Autoriser une personne à communiquer en mon nom',
   taxSlipTask: "Consulter mes feuillets d'impôts",
@@ -405,7 +426,7 @@ export default {
 
   // Dashboard benefit application card
   estimateRetirementIncome: '(FR)Estimate retirement income',
-  youMightBeEligible: 'Vous pourriez être admissible.',
+  youMightBeEligible: 'Vous pourriez être admissible',
   learnMoreAbout: '(FR)Learn more about ',
   applyFor: '(FR)Apply for',
 
@@ -414,7 +435,7 @@ export default {
   craPath:
     'https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-electroniques-particuliers/dossier-particuliers.html',
   profilePath: '/fr/profile',
-  securityPath: '/fr/',
+  securityPath: '/fr/security-settings',
   signOutPath: '/fr/',
 
   // Greeting URLs
@@ -432,13 +453,38 @@ export default {
   errorPage400message: '(FR)400 Error - Bad request error occurred',
   errorPage503message: '(FR)503 - Service unavailable error occurred',
 
-  //Profile page
-  profileAndSecuritySettings: '(FR)Profile and security settings',
-  profileAndPreferences: 'Profil et Préférences',
-  securitySettings: 'Paramètres de sécurité',
-  backToDashboard: '(FR)Back to my dashboard',
-  edit: 'Modifier',
+  // Common Pages stuff
   moreInfo: "Plus d'information",
+  backToDashboard: '(FR)Back to my dashboard',
+
+  //Profile page
+  profileSettings: '(FR)Profile and security settings',
+  updateProfile: '(FR)Update your profile information',
+  profileAndPreferences: 'Profil et Préférences',
+  viewSettings: '(FR)View settings',
+  lookingForSecuritySettings: '(FR)Looking for security settings?',
+  manageSecuritySettings: '(FR)Manage your security settings',
+
+  //Security Settings page
+  securitySettings: 'Paramètres de sécurité',
+  updateSecuritySettings: '(FR)Update your security settings',
+  mfa: '(FR)Multi-factor authentication',
+  modifyMfa: '(FR)Modify multi-factor authentication settings',
+  editMfaLink: '/fr/',
+  gcKeyPass: '(FR)GCKey password',
+  changeGcKeyPass: '(FR)Change my GCKey password',
+  editGcKeyPassLink: '/fr/',
+  securityQuestions: '(FR)Security questions',
+  changeSecurityQuestions: '(FR)Change my security questions',
+  editSecurityQuestionsLink: '/fr/',
+  eiAccessCode: '(FR)Employment Insurance access code',
+  editEiAccessCodeLink: '/fr/',
+  IdentityVerification: '(FR)Identity verification',
+  confirmIdentityVerification:
+    '(FR)Confirm my identity to enhance the security of my account',
+  editIdentityVerificationLink: '/fr/',
+  lookingForProfile: '(FR)Looking for profile settings?',
+  manageProfile: '(FR)Manage my profile settings',
 
   //Dashboard task links
   updateAccountInfoTaskLink: '/fr/profile',

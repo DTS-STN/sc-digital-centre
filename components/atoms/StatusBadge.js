@@ -9,7 +9,7 @@ export default function StatusBadge(props) {
   return (
     <div className="flex justify-end rounded-t-lg">
       <h2
-        className={`font-medium font-display text-black text-lg px-5 py-1 w-full sm:w-1/3 sm:mr-14 rounded-t-lg sm:rounded-t-none sm:rounded-b-lg 
+        className={`text-black text-xl font-medium px-5 py-1.5 w-full sm:w-1/2 sm:mr-14 rounded-t-lg sm:rounded-t-none sm:rounded-b-2xl 
         ${props.color} `}
       >
         <span className="sr-only">{props.srDescription} </span>

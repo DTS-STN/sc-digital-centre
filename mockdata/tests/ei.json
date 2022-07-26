@@ -1,10 +1,21 @@
 {
-  "claimStatusCode": 3435,
-  "enmBenefitType": 2,
-  "messageData": "Important message",
-  "messageId": 32,
-  "publishDate": "2022-5-2",
-  "nextRptDueDate": "2022-5-30",
-  "programCode": 4543,
-  "netAmount": 32.21
+  "programName": "EI",
+  "claimStatusCode": 1,
+  "enmBenefitType": 1,
+  "nextRptDueDate": "2027-05-30T01:01:01",
+  "message_id": 0,
+  "messageData": [
+    {
+      "messageDataKey": "DefDeSt",
+      "messageDataValueEn": "June 27, 2016",
+      "messageDataValueFr": "27 juin 2016"
+    },
+    {
+      "messageDataKey": "DefDeEnd",
+      "messageDataValueEn": "October 05, 2016",
+      "messageDataValueFr": "05 octobre 2016"
+    }
+  ],
+  "publishDate": "2027-05-02",
+  "netAmount": 1.0
 }

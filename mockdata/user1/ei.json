@@ -1,11 +1,17 @@
 [
   {
     "claimStatusCode": 3435,
-    "enmBenefitType": 2,
-    "messageData": "Important message",
-    "messageId": 32,
-    "publishDate": "2022-5-2",
-    "nextRptDueDate": "2022-5-30",
+    "enmBenefitType": 1,
+    "message_id": 32,
+    "messageData": [
+      {
+        "messageDataKey": "UDR",
+        "messageDataValueEn": "May 2, 2022",
+        "messageDataValueFr": "2 mai 2022"
+      }
+    ],
+    "publishDate": "2027-05-02",
+    "nextRptDueDate": "2027-5-30",
     "programCode": 4543,
     "netAmount": 32.21
   }

@@ -3,6 +3,8 @@ import handler from '../../../../pages/api/programData/seb'
 import { ProgramCodes } from '../../../../constants/ProgramCodes'
 
 describe('/api/programData/seb', () => {
+  process.env = { AUTH_DISABLED: 'true' }
+
   test('returns mocked data', async () => {
     Object.defineProperty(document, 'cookie', {
       writable: true,
@@ -16,7 +18,7 @@ describe('/api/programData/seb', () => {
     await handler(req, res)
 
     expect(res._getStatusCode()).toBe(200)
-    const result = res._getJSONData()
+    const result = res._getJSONData()[0]
     expect(result).toBeDefined
     expect(result.programCode).toBe(ProgramCodes.SEB)
   })

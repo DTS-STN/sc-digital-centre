@@ -1,16 +1,30 @@
-# Click to view the test reports for DEV 👩‍🔬 🧪
+# Click to view the test reports for DEV 👩‍🔬🧪
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/E2E%20Test?label=E2E)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/e2e-report)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Lint%20and%20Test?label=Lint%20and%20Unit)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/lcov-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/E2E%20Test/dev?label=E2E)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/e2e-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Lint%20and%20Test/dev?label=Lint%20and%20Unit)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/lcov-report)
+
+![Line Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Line%20Coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fdev%2Fcoverage%2Fcoverage-summary.json)
+![Statements Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Statement%20Coverage&query=%24.total.statements.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fdev%2Fcoverage%2Fcoverage-summary.json)
+![Function Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Function%20coverage&query=%24.total.functions.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fdev%2Fcoverage%2Fcoverage-summary.json)
+![Branch Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Branch%20coverage&query=%24.total.branches.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fdev%2Fcoverage%2Fcoverage-summary.json)
 
 # Click to view the test reports for MAIN 🔬📊
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/E2E%20Test?color=blue&label=E2E)](https://dts-stn.github.io/sc-digital-centre/main/coverage/e2e-report)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Lint%20and%20Test?color=blue&label=Lint%20and%20Unit)](https://dts-stn.github.io/sc-digital-centre/main/coverage/lcov-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/E2E%20Test/main?label=E2E)](https://dts-stn.github.io/sc-digital-centre/main/coverage/e2e-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Lint%20and%20Test/main?label=Lint%20and%20Unit)](https://dts-stn.github.io/sc-digital-centre/main/coverage/lcov-report)
+
+## Versions
+
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/react)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/next)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/@dts-stn/service-canada-design-system?label=DECD%20Design%20System)
+![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/dev/tailwindcss)
+![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/dev/jest)
+![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/sc-digital-centre/dev/cypress)
 
 ## Description
 
-Digital Centre description coming soon!!
+Digital Centre description coming soon!!!
 
 ### Technologies Used
 

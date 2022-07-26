@@ -2,13 +2,13 @@ import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import DSFooter from './DSFooter'
+import LoadingState from './LoadingState'
 
 expect.extend(toHaveNoViolations)
 
-describe('Design System footer tests', () => {
-  const { container } = render(<DSFooter />)
-  it('renders DSFooter', () => {
+describe('LoadingState', () => {
+  const { container } = render(<LoadingState />)
+  it('renders LoadingState', () => {
     expect(container).toBeTruthy()
   })
 

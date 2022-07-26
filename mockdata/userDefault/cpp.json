@@ -1,42 +1,56 @@
 [
   {
-    "programCode": 32294,
-    "benefitCode": 30320,
-    "benefitType": "Beneficial",
+    "programCode": 2,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
     "benefitStatus": "Received",
-    "lastStatusDate": "2022-04-04"
+    "lastStatusDate": "2027-04-04"
   },
   {
-    "programCode": 32294,
-    "benefitCode": 30320,
-    "benefitType": "Beneficial",
+    "programCode": 2,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
     "benefitStatus": "Decision",
-    "lastStatusDate": "2022-04-04"
+    "lastStatusDate": "2027-04-04"
   },
   {
-    "programCode": 32294,
-    "benefitCode": 30320,
-    "benefitType": "Beneficial",
-    "benefitStatus": "Active",
-    "lastPaymentDate": "2021-02-21",
-    "finalPaymentDate": "2024-02-13",
+    "programCode": 2,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
+    "benefitStatus": "COMPLETE",
     "netAmount": 30.32,
-    "paymentProcessType": "Monthly"
+    "paymentDate": "2026-02-21",
+    "paymentProcessType": "MONTHLY"
   },
   {
-    "programCode": 32294,
-    "benefitCode": 30320,
-    "benefitType": "Beneficial",
+    "programCode": 2,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
     "benefitStatus": "Hold",
-    "lastStatusDate": "2022-04-04",
-    "lastPaymentDate": "2021-02-21",
+    "lastStatusDate": "2027-04-04",
+    "paymentDate": "2026-02-21",
     "netAmount": 30.32,
     "message": "on hold"
   },
   {
-    "programCode": 32294,
-    "benefitCode": 30320,
-    "benefitType": "Beneficial",
+    "programCode": 2,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
     "benefitStatus": "Inactive"
+  },
+  {
+    "programCode": 2,
+    "benefitCode": 1,
+    "benefitType": "Death",
+    "benefitStatus": "Received",
+    "lastStatusDate": "2022-08-04"
+  },
+  {
+    "programCode": 2,
+    "benefitCode": 1,
+    "benefitType": "Death",
+    "benefitStatus": "Paid",
+    "netAmount": 2500.0,
+    "lastStatusDate": "2022-05-30"
   }
 ]

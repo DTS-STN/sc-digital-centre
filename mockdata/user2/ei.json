@@ -1,11 +1,17 @@
 [
   {
-    "claimStatusCode": 3433,
+    "claimStatusCode": 1,
     "enmBenefitType": 1,
-    "messageData": "Training information added",
-    "messageId": 32,
-    "publishDate": "2022-05-2",
-    "nextRptDueDate": "2022-05-27",
+    "message_id": 32,
+    "messageData": [
+      {
+        "messageDataKey": "DefDeEnd",
+        "messageDataValueEn": "Training information added",
+        "messageDataValueFr": "(fr)Training information added"
+      }
+    ],
+    "publishDate": "2027-05-2",
+    "nextRptDueDate": "2027-05-27",
     "programCode": 4543,
     "netAmount": 1065.0
   }

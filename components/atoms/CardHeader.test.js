@@ -3,6 +3,8 @@ import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import CardHeader from './CardHeader'
 
+expect.extend(toHaveNoViolations)
+
 describe('CardHeader', () => {
   it('renders CardHeader', () => {
     render(<CardHeader text="Card Header Text" />)
