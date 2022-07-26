@@ -52,8 +52,6 @@ export default NextAuth({
       profile(profile) {
         return {
           id: profile.sub,
-          name: profile.name,
-          email: profile.email,
         }
       },
     },
