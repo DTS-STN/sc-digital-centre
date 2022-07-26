@@ -65,9 +65,7 @@ export default NextAuth({
   session: { jwt: true },
   callbacks: {
     async jwt({ token }) {
-      console.log('JWT callback...')
       token.userRole = 'admin'
-      console.log(token)
       return token
     },
   },
