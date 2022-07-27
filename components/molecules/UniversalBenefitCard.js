@@ -14,7 +14,7 @@ export default function UniversalBenefitCard(props) {
 
   const benefitCardId = `benefit-card-${props.benefitUniqueId}`
   const taskListId = `task-list-${props.benefitUniqueId}`
-  let accordionClass = ''
+
   return (
     <div
       className={`benefit-card`}
