@@ -14,7 +14,7 @@ export default function UniversalBenefitCard(props) {
 
   const benefitCardId = `benefit-card-${props.benefitUniqueId}`
   const taskListId = `task-list-${props.benefitUniqueId}`
-
+  let accordionClass = ''
   return (
     <div
       className={`benefit-card`}
@@ -82,11 +82,6 @@ export default function UniversalBenefitCard(props) {
           dataTestid={props.benefitUniqueId}
           onClick={() => {
             const newOpenState = !isOpen
-            const idToScrollTo = newOpenState ? taskListId : benefitCardId
-            document.getElementById(idToScrollTo).scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            })
             setIsOpen(newOpenState)
           }}
           ariaExpanded={isOpen.toString()}
@@ -95,25 +90,32 @@ export default function UniversalBenefitCard(props) {
           className="py-5 px-2 sm:pl-12"
         />
       </h3>
-      <div className=" flex flex-col bg-white  rounded-b-xl">
+      <div className="flex-col bg-white rounded-b-xl">
         {props.taskGroups == null || props.taskGroups.length <= 0 ? null : (
-          <div id={taskListId} className="  ">
-            {!isOpen ? null : (
-              <div className="pb-12">
-                <div className="bg-gray-lighter grid grid-rows-1 md:grid-cols-2">
-                  {props.taskGroups.map((taskList, index) => {
-                    return (
-                      <div
-                        className="border-b-2 last:border-b-0 md:border-b-0 md:odd:border-r-2  my-4 pl-2 sm:pl-8"
-                        key={index}
-                      >
-                        <BenefitTasks taskList={taskList} />
-                      </div>
-                    )
-                  })}
-                </div>
+          <div>
+            <div
+              id={taskListId}
+              className={`${
+                isOpen ? 'max-h-screen pb-12' : 'max-h-0'
+              } transition-all duration-700 ease-in-out`}
+            >
+              <div
+                className={`${
+                  isOpen ? 'max-h-screen pb-12' : 'max-h-0'
+                } bg-gray-lighter grid grid-rows-1 md:grid-cols-2 transition-all duration-700 ease-in-out`}
+              >
+                {props.taskGroups.map((taskList, index) => {
+                  return (
+                    <div
+                      className="overflow-hidden border-b-2 last:border-b-0 md:border-b-0 md:odd:border-r-2  my-4 pl-2 sm:pl-8"
+                      key={index}
+                    >
+                      <BenefitTasks taskList={taskList} />
+                    </div>
+                  )
+                })}
               </div>
-            )}
+            </div>
           </div>
         )}
       </div>
