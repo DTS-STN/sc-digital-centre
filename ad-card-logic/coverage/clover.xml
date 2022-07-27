@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1658863479842" clover="3.2.0">
-  <project timestamp="1658863479842" name="All files">
-    <metrics statements="443" coveredstatements="391" conditionals="325" coveredconditionals="256" methods="116" coveredmethods="103" elements="884" coveredelements="750" complexity="0" loc="443" ncloc="443" packages="9" files="47" classes="47"/>
+<coverage generated="1658941382754" clover="3.2.0">
+  <project timestamp="1658941382754" name="All files">
+    <metrics statements="442" coveredstatements="390" conditionals="325" coveredconditionals="256" methods="116" coveredmethods="103" elements="883" coveredelements="749" complexity="0" loc="442" ncloc="442" packages="9" files="47" classes="47"/>
     <package name="components.atoms">
       <metrics statements="43" coveredstatements="41" conditionals="36" coveredconditionals="31" methods="16" coveredmethods="16"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -374,7 +374,7 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="150" coveredstatements="131" conditionals="104" coveredconditionals="79" methods="30" coveredmethods="29"/>
+      <metrics statements="149" coveredstatements="130" conditionals="104" coveredconditionals="79" methods="30" coveredmethods="29"/>
       <file name="400.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/400.js">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="4" count="1" type="cond" truecount="1" falsecount="1"/>
@@ -421,7 +421,7 @@
         <line num="11" count="1" type="stmt"/>
       </file>
       <file name="dashboard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/dashboard.js">
-        <metrics statements="93" coveredstatements="75" conditionals="72" coveredconditionals="60" methods="11" coveredmethods="11"/>
+        <metrics statements="92" coveredstatements="74" conditionals="72" coveredconditionals="60" methods="11" coveredmethods="11"/>
         <line num="25" count="40" type="cond" truecount="1" falsecount="1"/>
         <line num="26" count="40" type="stmt"/>
         <line num="27" count="40" type="stmt"/>
@@ -500,21 +500,20 @@
         <line num="156" count="4" type="stmt"/>
         <line num="157" count="4" type="stmt"/>
         <line num="159" count="4" type="stmt"/>
-        <line num="160" count="4" type="stmt"/>
-        <line num="165" count="4" type="stmt"/>
-        <line num="167" count="4" type="stmt"/>
-        <line num="194" count="40" type="stmt"/>
-        <line num="225" count="36" type="stmt"/>
-        <line num="227" count="4" type="cond" truecount="4" falsecount="1"/>
-        <line num="229" count="4" type="stmt"/>
-        <line num="232" count="4" type="stmt"/>
-        <line num="261" count="480" type="cond" truecount="1" falsecount="1"/>
-        <line num="274" count="160" type="stmt"/>
-        <line num="287" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="164" count="4" type="stmt"/>
+        <line num="166" count="4" type="stmt"/>
+        <line num="193" count="40" type="stmt"/>
+        <line num="224" count="36" type="stmt"/>
+        <line num="226" count="4" type="cond" truecount="4" falsecount="1"/>
+        <line num="228" count="4" type="stmt"/>
+        <line num="231" count="4" type="stmt"/>
+        <line num="260" count="480" type="cond" truecount="1" falsecount="1"/>
+        <line num="273" count="160" type="stmt"/>
+        <line num="286" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="288" count="1" type="stmt"/>
         <line num="289" count="1" type="stmt"/>
-        <line num="290" count="1" type="stmt"/>
-        <line num="297" count="1" type="stmt"/>
-        <line num="303" count="1" type="stmt"/>
+        <line num="296" count="1" type="stmt"/>
+        <line num="302" count="1" type="stmt"/>
       </file>
       <file name="index.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/index.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
