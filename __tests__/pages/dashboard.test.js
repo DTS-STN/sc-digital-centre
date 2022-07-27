@@ -14,6 +14,9 @@ import { unmountComponentAtNode } from 'react-dom'
 expect.extend(toHaveNoViolations)
 enableFetchMocks()
 jest.mock('@dts-stn/next-auth/react')
+jest.mock('@dts-stn/next-auth/jwt', () => ({
+  getToken: () => jest.fn(),
+}))
 jest.mock('cookies-next', () => ({
   getCookie: () => 'default',
   setCookie: () => 'default',

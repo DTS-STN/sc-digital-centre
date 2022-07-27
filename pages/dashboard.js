@@ -15,7 +15,6 @@ import { getGreeting } from '../lib/Utils'
 import MapCallout from '../lib/mapCallout'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 import LoadingState from '../components/molecules/LoadingState'
-import { getToken } from '@dts-stn/next-auth/jwt'
 // import queryGraphQL from '../graphql/client'
 // import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 
@@ -282,12 +281,7 @@ export default function Dashboard(props) {
 }
 
 export async function getServerSideProps({ req, res, locale, query }) {
-  if (
-    !AuthIsDisabled() &&
-    !(await AuthIsValid(req)) &&
-    !(await getToken({ req }))
-  )
-    return Redirect()
+  if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
 
   const { userid } = query
   setCookie('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
