@@ -156,7 +156,6 @@ export default function Dashboard(props) {
                 orderedActiveAgreement.push(benefit)
                 break
             }
-            console.log(benefit)
             determineAdCards(benefit, defaultDisplayFlags)
           })
         }
