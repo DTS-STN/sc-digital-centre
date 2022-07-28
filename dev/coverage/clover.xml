@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1658936275177" clover="3.2.0">
-  <project timestamp="1658936275177" name="All files">
-    <metrics statements="432" coveredstatements="378" conditionals="311" coveredconditionals="242" methods="116" coveredmethods="103" elements="859" coveredelements="723" complexity="0" loc="432" ncloc="432" packages="9" files="47" classes="47"/>
+<coverage generated="1659015788272" clover="3.2.0">
+  <project timestamp="1659015788272" name="All files">
+    <metrics statements="443" coveredstatements="391" conditionals="321" coveredconditionals="252" methods="117" coveredmethods="104" elements="881" coveredelements="747" complexity="0" loc="443" ncloc="443" packages="9" files="48" classes="48"/>
     <package name="components.atoms">
       <metrics statements="43" coveredstatements="41" conditionals="36" coveredconditionals="31" methods="16" coveredmethods="16"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -183,7 +183,7 @@
       </file>
     </package>
     <package name="lib">
-      <metrics statements="53" coveredstatements="52" conditionals="53" coveredconditionals="51" methods="10" coveredmethods="10"/>
+      <metrics statements="65" coveredstatements="64" conditionals="69" coveredconditionals="66" methods="11" coveredmethods="11"/>
       <file name="Utils.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/lib/Utils.js">
         <metrics statements="17" coveredstatements="16" conditionals="12" coveredconditionals="11" methods="4" coveredmethods="4"/>
         <line num="2" count="15" type="stmt"/>
@@ -210,6 +210,21 @@
         <line num="11" count="2" type="stmt"/>
         <line num="13" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="mapAdCards.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/lib/mapAdCards.js">
+        <metrics statements="12" coveredstatements="12" conditionals="16" coveredconditionals="15" methods="1" coveredmethods="1"/>
+        <line num="7" count="17" type="cond" truecount="6" falsecount="0"/>
+        <line num="9" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="17" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="31" count="9" type="stmt"/>
+        <line num="33" count="17" type="stmt"/>
       </file>
       <file name="mapCallout.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/lib/mapCallout.js">
         <metrics statements="14" coveredstatements="14" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
@@ -363,7 +378,7 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="150" coveredstatements="129" conditionals="106" coveredconditionals="80" methods="30" coveredmethods="29"/>
+      <metrics statements="149" coveredstatements="130" conditionals="100" coveredconditionals="75" methods="30" coveredmethods="29"/>
       <file name="400.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/400.js">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="4" count="1" type="cond" truecount="1" falsecount="1"/>
@@ -410,69 +425,66 @@
         <line num="11" count="1" type="stmt"/>
       </file>
       <file name="dashboard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/dashboard.js">
-        <metrics statements="93" coveredstatements="73" conditionals="74" coveredconditionals="61" methods="11" coveredmethods="11"/>
-        <line num="22" count="40" type="cond" truecount="1" falsecount="1"/>
-        <line num="23" count="40" type="stmt"/>
-        <line num="24" count="40" type="stmt"/>
-        <line num="26" count="40" type="stmt"/>
-        <line num="29" count="40" type="stmt"/>
-        <line num="31" count="40" type="stmt"/>
-        <line num="32" count="40" type="stmt"/>
+        <metrics statements="92" coveredstatements="74" conditionals="68" coveredconditionals="56" methods="11" coveredmethods="11"/>
+        <line num="26" count="40" type="cond" truecount="1" falsecount="1"/>
+        <line num="27" count="40" type="stmt"/>
+        <line num="28" count="40" type="stmt"/>
+        <line num="30" count="40" type="stmt"/>
         <line num="33" count="40" type="stmt"/>
-        <line num="35" count="40" type="stmt"/>
+        <line num="34" count="40" type="stmt"/>
         <line num="36" count="40" type="stmt"/>
         <line num="37" count="40" type="stmt"/>
-        <line num="39" count="40" type="stmt"/>
+        <line num="38" count="40" type="stmt"/>
         <line num="40" count="40" type="stmt"/>
         <line num="41" count="40" type="stmt"/>
-        <line num="43" count="40" type="stmt"/>
+        <line num="42" count="40" type="stmt"/>
         <line num="44" count="40" type="stmt"/>
         <line num="45" count="40" type="stmt"/>
-        <line num="47" count="40" type="stmt"/>
+        <line num="46" count="40" type="stmt"/>
         <line num="48" count="40" type="stmt"/>
         <line num="49" count="40" type="stmt"/>
-        <line num="51" count="40" type="stmt"/>
+        <line num="50" count="40" type="stmt"/>
         <line num="52" count="40" type="stmt"/>
         <line num="53" count="40" type="stmt"/>
-        <line num="55" count="40" type="stmt"/>
+        <line num="54" count="40" type="stmt"/>
+        <line num="56" count="40" type="stmt"/>
         <line num="57" count="40" type="stmt"/>
-        <line num="58" count="28" type="cond" truecount="2" falsecount="0"/>
-        <line num="67" count="24" type="stmt"/>
-        <line num="68" count="24" type="stmt"/>
-        <line num="69" count="24" type="cond" truecount="2" falsecount="0"/>
-        <line num="70" count="20" type="cond" truecount="2" falsecount="0"/>
-        <line num="71" count="4" type="stmt"/>
-        <line num="74" count="4" type="stmt"/>
-        <line num="75" count="4" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="81" count="24" type="stmt"/>
-        <line num="85" count="4" type="stmt"/>
-        <line num="86" count="4" type="stmt"/>
-        <line num="87" count="4" type="stmt"/>
-        <line num="88" count="4" type="stmt"/>
-        <line num="89" count="4" type="stmt"/>
+        <line num="58" count="40" type="stmt"/>
+        <line num="60" count="40" type="stmt"/>
+        <line num="62" count="40" type="stmt"/>
+        <line num="63" count="28" type="cond" truecount="2" falsecount="0"/>
+        <line num="72" count="24" type="stmt"/>
+        <line num="73" count="24" type="stmt"/>
+        <line num="74" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="75" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="4" type="stmt"/>
+        <line num="79" count="4" type="stmt"/>
+        <line num="80" count="4" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="86" count="24" type="stmt"/>
         <line num="90" count="4" type="stmt"/>
-        <line num="94" count="40" type="stmt"/>
-        <line num="95" count="32" type="cond" truecount="2" falsecount="0"/>
-        <line num="103" count="4" type="stmt"/>
-        <line num="112" count="4" type="stmt"/>
-        <line num="113" count="4" type="stmt"/>
-        <line num="114" count="4" type="stmt"/>
-        <line num="115" count="4" type="stmt"/>
-        <line num="116" count="4" type="stmt"/>
+        <line num="91" count="4" type="stmt"/>
+        <line num="92" count="4" type="stmt"/>
+        <line num="93" count="4" type="stmt"/>
+        <line num="94" count="4" type="stmt"/>
+        <line num="95" count="4" type="stmt"/>
+        <line num="99" count="40" type="stmt"/>
+        <line num="100" count="32" type="cond" truecount="2" falsecount="0"/>
+        <line num="108" count="4" type="stmt"/>
         <line num="117" count="4" type="stmt"/>
         <line num="118" count="4" type="stmt"/>
         <line num="119" count="4" type="stmt"/>
         <line num="120" count="4" type="stmt"/>
+        <line num="121" count="4" type="stmt"/>
         <line num="122" count="4" type="stmt"/>
-        <line num="123" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="123" count="4" type="stmt"/>
         <line num="124" count="4" type="stmt"/>
-        <line num="125" count="4" type="cond" truecount="1" falsecount="8"/>
-        <line num="127" count="0" type="stmt"/>
-        <line num="128" count="0" type="stmt"/>
-        <line num="130" count="0" type="stmt"/>
-        <line num="131" count="0" type="stmt"/>
+        <line num="125" count="4" type="stmt"/>
+        <line num="127" count="4" type="stmt"/>
+        <line num="128" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="129" count="4" type="stmt"/>
+        <line num="131" count="4" type="cond" truecount="1" falsecount="8"/>
         <line num="133" count="0" type="stmt"/>
         <line num="134" count="0" type="stmt"/>
         <line num="136" count="0" type="stmt"/>
@@ -485,25 +497,27 @@
         <line num="146" count="0" type="stmt"/>
         <line num="148" count="0" type="stmt"/>
         <line num="149" count="0" type="stmt"/>
-        <line num="151" count="4" type="stmt"/>
-        <line num="152" count="4" type="stmt"/>
+        <line num="151" count="0" type="stmt"/>
+        <line num="152" count="0" type="stmt"/>
+        <line num="154" count="0" type="stmt"/>
+        <line num="155" count="0" type="stmt"/>
+        <line num="157" count="4" type="stmt"/>
         <line num="158" count="4" type="stmt"/>
-        <line num="185" count="40" type="stmt"/>
-        <line num="217" count="36" type="stmt"/>
-        <line num="219" count="4" type="cond" truecount="4" falsecount="1"/>
-        <line num="221" count="4" type="stmt"/>
-        <line num="224" count="4" type="stmt"/>
-        <line num="253" count="480" type="cond" truecount="3" falsecount="1"/>
-        <line num="254" count="0" type="stmt"/>
-        <line num="255" count="480" type="cond" truecount="3" falsecount="1"/>
-        <line num="256" count="0" type="stmt"/>
-        <line num="258" count="480" type="stmt"/>
-        <line num="271" count="160" type="stmt"/>
-        <line num="284" count="2" type="cond" truecount="4" falsecount="0"/>
-        <line num="286" count="1" type="stmt"/>
-        <line num="287" count="1" type="stmt"/>
-        <line num="294" count="1" type="stmt"/>
-        <line num="300" count="1" type="stmt"/>
+        <line num="160" count="4" type="stmt"/>
+        <line num="165" count="4" type="stmt"/>
+        <line num="167" count="4" type="stmt"/>
+        <line num="194" count="40" type="stmt"/>
+        <line num="226" count="36" type="stmt"/>
+        <line num="228" count="4" type="cond" truecount="4" falsecount="1"/>
+        <line num="230" count="4" type="stmt"/>
+        <line num="233" count="4" type="stmt"/>
+        <line num="262" count="480" type="cond" truecount="1" falsecount="1"/>
+        <line num="275" count="160" type="stmt"/>
+        <line num="288" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="290" count="1" type="stmt"/>
+        <line num="291" count="1" type="stmt"/>
+        <line num="298" count="1" type="stmt"/>
+        <line num="304" count="1" type="stmt"/>
       </file>
       <file name="index.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/index.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
