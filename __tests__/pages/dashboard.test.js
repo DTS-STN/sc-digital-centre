@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import Dashboard, { getServerSideProps } from '../../pages/dashboard'
-import { getAdvertsingCards } from '../../contents/BenefitAdvertisingCards'
+import { getAdvertisingCards } from '../../contents/BenefitAdvertisingCards'
 import { getNoBenefitCards } from '../../contents/NoBenefitCards'
 import { createMocks } from 'node-mocks-http'
 import { getSession } from 'next-auth/react'
@@ -41,7 +41,7 @@ describe('Dashboard', () => {
   ]
   const defaultDashboard = (
     <Dashboard
-      advertisingCards={getAdvertsingCards()}
+      advertisingCards={getAdvertisingCards()}
       noBenefitCards={getNoBenefitCards('en')}
       locale="en"
       metadata={{}}

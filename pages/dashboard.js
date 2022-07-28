@@ -2,7 +2,10 @@ import NoBenefitCard from '../components/molecules/NoBenefitCard'
 import BenefitApplicationCard from '../components/molecules/BenefitApplicationCard'
 import Greeting from '../components/molecules/Greeting'
 import { getNoBenefitCards } from '../contents/NoBenefitCards'
-import { getAdvertsingCards } from '../contents/BenefitAdvertisingCards'
+import {
+  getAdvertisingCards,
+  defaultDisplayFlags,
+} from '../contents/BenefitAdvertisingCards'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
 import { getCookie, setCookie } from 'cookies-next'
@@ -12,6 +15,7 @@ import fr from '../locales/fr'
 import { StatusColors, StatusCodes } from '../constants/StatusCodes'
 import { MapSummary } from '../lib/mapSummaries'
 import { getGreeting } from '../lib/Utils'
+import { determineAdCards } from '../lib/mapAdCards'
 import MapCallout from '../lib/mapCallout'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 import LoadingState from '../components/molecules/LoadingState'
@@ -26,6 +30,7 @@ export default function Dashboard(props) {
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
   )
+  const [adDisplayFlags, setAdDisplayFlags] = useState(defaultDisplayFlags)
   const [noBenefitCards, setNoBenefitCards] = useState(props.noBenefitCards)
 
   const [cppBenefit, setCppBenefit] = useState()
@@ -122,6 +127,7 @@ export default function Dashboard(props) {
       newArray.forEach((benefits) => {
         if (benefits != undefined) {
           benefits.forEach((benefit) => {
+            //order the benefits
             switch (benefit.statusCode) {
               case StatusCodes.paymentHold:
                 orderedPaymentHold.push(benefit)
@@ -151,9 +157,12 @@ export default function Dashboard(props) {
                 orderedActiveAgreement.push(benefit)
                 break
             }
+            determineAdCards(benefit, defaultDisplayFlags)
           })
         }
       })
+
+      setAdDisplayFlags(defaultDisplayFlags)
 
       setAllBenefits([
         orderedPaymentHold,
@@ -249,17 +258,12 @@ export default function Dashboard(props) {
           : null}
 
         {/* application or "advertising" cards */}
-        {advertisingCards.map((value, index) => {
-          if (value.benefitType === 'CPP' && cppBenefit) {
-            return
-          } else if (value.benefitType === 'EI' && eiBenefit) {
-            return
-          }
-          return (
-            <div key={index}>
+        {advertisingCards.map((adCard, key) => {
+          return !adDisplayFlags[adCard.benefitType][adCard.typeCode] ? null : (
+            <div key={key}>
               <BenefitApplicationCard
                 locale={props.locale}
-                benefitApplication={value}
+                benefitApplication={adCard}
               />
             </div>
           )
@@ -299,7 +303,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
 
   return {
     props: {
-      advertisingCards: getAdvertsingCards(),
+      advertisingCards: getAdvertisingCards(),
       noBenefitCards: getNoBenefitCards(locale),
       isAuth: true,
       locale,

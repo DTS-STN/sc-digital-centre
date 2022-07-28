@@ -11,6 +11,7 @@ export const CPPTypes = {
   1: TypeCodes.CPPRetirement,
   16: TypeCodes.CPPSurvivor,
   Death: TypeCodes.CPPDeath,
+  Child: TypeCodes.CPPChild,
 }
 
 //this will need proper logic
