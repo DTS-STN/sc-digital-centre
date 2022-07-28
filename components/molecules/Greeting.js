@@ -2,7 +2,7 @@ import { Message, Heading } from '@dts-stn/service-canada-design-system'
 
 export default function Greeting(props) {
   return (
-    <div>
+    <div id="mainContent">
       <div className="grid grWid-cols-1 divide-y divide-red-600 font-display">
         <Heading
           id="benefits-services-header"
