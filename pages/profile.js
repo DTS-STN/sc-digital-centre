@@ -149,18 +149,18 @@ export default function Profile(props) {
         )
       })}
 
-      <div className="mt-10">
-        <h2 className="text-3xl font-bold">{t.lookingForSecuritySettings}</h2>
-        <ul className="list-disc list-inside mb-10 ml-5 text-gray-darker">
-          <li>
-            <Link
-              id="security-link"
-              text={t.manageSecuritySettings}
-              href={'/security-settings'}
-            />
-          </li>
-        </ul>
-      </div>
+      <h2 className="pt-10 pb-3 font-bold text-4xl">
+        {t.lookingForSecuritySettings}
+      </h2>
+      <ul className="list-disc list-inside mb-10 ml-5 text-gray-darker">
+        <li>
+          <Link
+            id="security-link"
+            text={t.manageSecuritySettings}
+            href={'/security-settings'}
+          />
+        </li>
+      </ul>
 
       <ActionButton
         id="back-to-dashboard-link"
