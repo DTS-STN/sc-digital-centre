@@ -1,8 +1,8 @@
-import { Heading } from '@dts-stn/service-canada-design-system'
+import { Heading, Link } from '@dts-stn/service-canada-design-system'
 import ProfileInfo from '../components/molecules/ProfileInfo'
 import ViewMoreLessButton from '../components/atoms/ViewMoreLessButton'
+import ActionButton from '../components/atoms/ActionButton'
 import HorizontalRule from '../components/atoms/HorizontalRule'
-import Link from 'next/link'
 import en from '../locales/en'
 import fr from '../locales/fr'
 import { useState } from 'react'
@@ -118,7 +118,7 @@ export default function Profile(props) {
     },
   ]
   return (
-    <>
+    <div className="pb-20">
       <Heading id="profile-page-heading" title={t.profileSettings} />
       <span className="text-lg pb-5 block">{t.updateProfile}</span>
 
@@ -151,23 +151,24 @@ export default function Profile(props) {
 
       <div className="mt-10">
         <h2 className="text-3xl font-bold">{t.lookingForSecuritySettings}</h2>
-        <ul className="list-disc ml-8 text-lg">
-          <Link href={'/security-settings'} passHref>
-            <li>
-              <a className="underline text-blue-default cursor-pointer hover:text-blue-hover visited:text-purple-medium ">
-                {t.manageSecuritySettings}
-              </a>
-            </li>
-          </Link>
+        <ul className="list-disc list-inside mb-10 ml-5 text-gray-darker">
+          <li>
+            <Link
+              id="security-link"
+              text={t.manageSecuritySettings}
+              href={'/security-settings'}
+            />
+          </li>
         </ul>
       </div>
 
-      <Link href="/dashboard" passHref>
-        <button className="font-normal text-center font-display w-fit text-base bg-gray-lighter p-2 px-4 rounded-md text-blue-default my-10">
-          {t.backToDashboard}
-        </button>
-      </Link>
-    </>
+      <ActionButton
+        id="back-to-dashboard-link"
+        href="/dashboard"
+        text={t.backToDashboard}
+        secondary
+      />
+    </div>
   )
 }
 
