@@ -20,8 +20,6 @@ import MapCallout from '../lib/mapCallout'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 import LoadingState from '../components/molecules/LoadingState'
 import MapDashboard from '../lib/aem/mapper'
-// import queryGraphQL from '../graphql/client'
-// import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -292,6 +290,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
   setCookie('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
 
   // Get mapped content from AEM
+
   const aemContent = await MapDashboard()
 
   const metadata = {
