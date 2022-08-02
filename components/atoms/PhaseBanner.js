@@ -6,7 +6,7 @@ import propTypes from 'prop-types'
 
 export default function PhaseBanner(props) {
   return (
-    <div className="bg-deep-blue-solid">
+    <div className="bg-deep-blue-medium">
       <div className="block md:flex py-4 layout-container ">
         <div className="flex justify-between lg:block lg:w-max ml-4 md:ml-0  my-auto">
           <span

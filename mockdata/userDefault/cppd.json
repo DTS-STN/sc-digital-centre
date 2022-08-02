@@ -1,0 +1,41 @@
+[
+  {
+    "programCode": 32295,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
+    "benefitStatus": "Received",
+    "lastStatusDate": "2027-04-04"
+  },
+  {
+    "programCode": 32295,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
+    "benefitStatus": "Decision",
+    "lastStatusDate": "2027-04-04"
+  },
+  {
+    "programCode": 32295,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
+    "benefitStatus": "COMPLETE",
+    "paymentDate": "2026-02-21",
+    "netAmount": 30.32,
+    "paymentProcessType": "MONTHLY"
+  },
+  {
+    "programCode": 32295,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
+    "benefitStatus": "Hold",
+    "lastStatusDate": "2027-04-04",
+    "paymentDate": "2026-02-21",
+    "netAmount": 30.32,
+    "message": "on hold"
+  },
+  {
+    "programCode": 32295,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
+    "benefitStatus": "Inactive"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "programCode": "gis",
+    "benefitCode": 30320,
+    "benefitType": "GISBeneficial",
+    "benefitStatus": "Inactive"
+  },
+  {
+    "programCode": "gis",
+    "benefitCode": 30320,
+    "benefitType": "GISBeneficial",
+    "benefitStatus": "Received",
+    "lastStatusDate": "2027-04-04"
+  },
+  {
+    "programCode": "gis",
+    "benefitCode": 30320,
+    "benefitType": "GISBeneficial",
+    "benefitStatus": "Decision",
+    "lastStatusDate": "2027-04-04"
+  },
+  {
+    "programCode": "gis",
+    "benefitCode": 30320,
+    "benefitType": "GISBeneficial",
+    "benefitStatus": "Hold",
+    "lastStatusDate": "2027-04-04",
+    "lastPaymentDate": "2026-02-21",
+    "netAmount": 123.45,
+    "message": "On hold"
+  },
+  {
+    "programCode": "gis",
+    "benefitCode": 30320,
+    "benefitType": "GISBeneficial",
+    "benefitStatus": "Active",
+    "lastPaymentDate": "2026-02-21",
+    "finalPaymentDate": "2024-02-13",
+    "netAmount": 123.45,
+    "paymentProcessType": "Monthly"
+  }
+]

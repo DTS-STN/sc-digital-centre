@@ -5,15 +5,20 @@ import Link from 'next/link'
  * Button component
  */
 export default function ActionButton(props) {
-  const { ...rest } = props
+  //keep some props out of the "...rest"
+  const { secondary, useShadow, ...rest } = props
   //Styling for buttons and links
   const defaultStyle =
-    'font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-deep-blue-solid text-white text-center border border-deep-blue-solid active:bg-deep-blue-dark hover:bg-bright-blue-dark grid place-items-center'
+    'font-display rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-2 px-10 whitespace-pre bg-blue-primary text-white text-center border border-blue-default active:bg-blue-pressed hover:bg-bright-blue-dark grid place-items-center'
+  const secondaryStyle =
+    'inline-block my-4 py-2.5 px-3.5 rounded bg-gray-light text-blue-default hover:bg-grey-medium hover:text-blue-hover hover:cursor-pointer'
+  let style = secondary ? secondaryStyle : defaultStyle
+  if (useShadow) style += ' shadow-sm shadow-gray-darker focus:shadow-none'
 
   return props.href ? (
     <Link href={props.href}>
       <a
-        className={`${!props.className ? defaultStyle : props.className}`}
+        className={props.className ?? style}
         onClick={props.onClick}
         role="button"
         draggable="false"
@@ -27,7 +32,8 @@ export default function ActionButton(props) {
     </Link>
   ) : (
     <button
-      className={`${!props.className ? defaultStyle : props.className}`}
+      aria-expanded={props.ariaExpanded ?? undefined}
+      className={props.className ?? style}
       onClick={props.onClick}
       type={props.type}
       lang={props.lang}
@@ -63,7 +69,7 @@ ActionButton.propTypes = {
   /**
    * the type of the button
    */
-  type: PropTypes.oneOf(['submit', 'reset']),
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
 
   /**
    * Callback for a click event on the button
@@ -74,6 +80,9 @@ ActionButton.propTypes = {
    * CSS that overrides default styling
    */
   className: PropTypes.string,
+
+  secondary: PropTypes.bool,
+  useShadow: PropTypes.bool,
 
   /**
    * any other elements you want to add to the button
@@ -87,4 +96,8 @@ ActionButton.propTypes = {
    * ...rest
    *   Any other attribute not explicity coded, like: dataCy, dataCyButton, analyticsTracking, data-testid, aria stuff, etc.
    */
+  /**
+   * Aria expanded state
+   */
+  ariaExpanded: PropTypes.string,
 }

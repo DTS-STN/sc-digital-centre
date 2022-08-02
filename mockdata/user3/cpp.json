@@ -1,0 +1,20 @@
+[
+  {
+    "programCode": 2,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
+    "benefitStatus": "COMPLETE",
+    "netAmount": 441.75,
+    "paymentDate": "2027-05-30",
+    "paymentProcessType": "MONTHLY"
+  },
+  {
+    "programCode": 2,
+    "benefitCode": 16,
+    "benefitType": "SURVIVOR",
+    "benefitStatus": "COMPLETE",
+    "netAmount": 329.44,
+    "paymentDate": "2027-05-30",
+    "paymentProcessType": "MONTHLY"
+  }
+]

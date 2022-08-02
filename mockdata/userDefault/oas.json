@@ -1,0 +1,42 @@
+[
+  {
+    "programCode": "oas",
+    "benefitCode": 30320,
+    "benefitType": "OASBeneficial",
+    "benefitStatus": "Inactive"
+  },
+  {
+    "programCode": "oas",
+    "benefitCode": 30320,
+    "benefitType": "OASBeneficial",
+    "benefitStatus": "Received",
+    "lastStatusDate": "2027-04-04"
+  },
+  {
+    "programCode": "oas",
+    "benefitCode": 30320,
+    "benefitType": "OASBeneficial",
+    "benefitStatus": "Decision",
+    "lastStatusDate": "2027-04-04"
+  },
+  {
+    "programCode": "oas",
+    "benefitCode": 30320,
+    "benefitType": "OASBeneficial",
+    "benefitStatus": "Hold",
+    "lastStatusDate": "2027-04-04",
+    "lastPaymentDate": "2026-02-21",
+    "netAmount": 123.45,
+    "message": "On hold"
+  },
+  {
+    "programCode": "oas",
+    "benefitCode": 30320,
+    "benefitType": "OASBeneficial",
+    "benefitStatus": "Active",
+    "lastPaymentDate": "2026-02-21",
+    "finalPaymentDate": "2024-02-13",
+    "netAmount": 123.45,
+    "paymentProcessType": "Monthly"
+  }
+]

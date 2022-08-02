@@ -1,5 +1,77 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
+  // BenefitSummaries
+  RequestedBenefit: {
+    title: 'Prestation demandée :',
+  },
+  EstimatedDecisionDate: {
+    title: 'Décision prévue le : ',
+  },
+  BenefitAffected: {
+    title: 'Prestations concernées :',
+  },
+  PresentStatus: {
+    title: 'Statut actuel :',
+    link: '/',
+    linkText: 'Appelez : 1-800-555-1234',
+  },
+  LastPaymentDate: {
+    title: 'Date du dernier paiement :',
+  },
+  LastPayment: {
+    title: 'Montant net du dernier paiement : ',
+  },
+  NextPaymentDate: {
+    title: 'Date du prochain paiement :',
+  },
+  ActiveBenefit: {
+    title: 'Bénéfices actifs :',
+  },
+  PaymentAmount: {
+    title: '(FR)Payment amount',
+    link: '/',
+    linkText: 'Voir mes paiements',
+  },
+  NextPayment: {
+    title: 'Date du prochain paiement :',
+  },
+  LatestStatusDate: {
+    title: 'Dernière mise à jour :',
+  },
+  LatestStatus: {
+    title: 'Dernière mise à jour :',
+    link: '/',
+    linkText: "Consulter l'état de ma demande",
+  },
+  LatestStatusMessage: {
+    title: 'Dernière mise à jour :',
+    link: '/',
+    linkText: "Consulter l'état de ma demande",
+  },
+  LastNetPayment: {
+    title: 'Montant net du dernier paiement : ',
+    link: '/',
+    linkText: 'Voir mes paiements',
+  },
+  NextReport: {
+    title: 'Prochain rapport à remettre :',
+  },
+  TransactionDate: {
+    title: '(FR)Transaction date:',
+  },
+  AgreementStatus: {
+    title: '(FR)Agreement status:',
+    link: '/',
+    linkText: '(FR)View my status and messages',
+  },
+  PaymentDate: {
+    title: '(FR)Payment Date',
+    link: '/',
+    linkText: '(FR)View my payments',
+  },
+  Payment: {
+    title: '(FR)Payment',
+  },
   //
   // Phase banner
   phaseBannerTag: "Site d'essai",
@@ -134,6 +206,9 @@ export default {
   //
   //
 
+  // Words
+  edit: 'Modifier',
+
   //
   // Contact us Section
   //
@@ -200,4 +275,262 @@ export default {
     'https://www.canada.ca/fr/transparence/confidentialite.html',
   reportAProblemSubmit: 'Soumettre',
   topTasks: '(fr) Top Tasks',
+
+  //
+  // Dashboard
+  //
+
+  // Greeting
+  greeting: '(FR)Hello, ',
+  morningGreeting: 'Bonjour, ',
+  afternoonGreeting: '(FR)Good afternoon, ',
+  eveningGreeting: '(FR)Good evening, ',
+  welcome: '(FR)Welcome to your My Service Canada Account.',
+  canada_ca: 'Canada.ca',
+  serviceCanada: 'Service Canada',
+  myBenefitsAndServices: 'Tableau de bord de mes prestations et mes services',
+
+  // Info Message
+  alertIconAltText_success: '(FR)success icon',
+  alertIconId_success: '(FR)success icon',
+  alertIconAltText_warning: '(FR)warning icon',
+  alertIconId_warning: '(FR)warning icon',
+  alertIconAltText_info: '(FR)info icon',
+  alertIconId_info: '(FR)info icon',
+  alertIconAltText_danger: '(FR)danger icon',
+  alertIconId_danger: '(FR)danger icon',
+  messageHeading: '(FR)COVID-19 New services and service changes',
+  messageBody:
+    '(FR)Find out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affectedFind out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affected',
+
+  // Benefit Names
+  cpp: 'Régime de pensions du Canada',
+  oas: 'Sécurité de la vieillesse',
+  gis: 'Supplément de revenu garanti',
+  ei: 'Assurance-emploi',
+  cppd: "Prestations d'invalidité du Régime de pensions du Canada",
+  seb: '(FR)Self Employment Benefits',
+
+  // Benefit types
+  CPPRetirement: 'Pension de retraite',
+  CPPSurvivor: "(FR)Survivor's pension",
+  CPPDisability: '(FR)Disability Pension',
+  CPPDeath: '(FR)Death benefits',
+  OASRetirement: 'Pension de retraite',
+  GISRetirement: 'Pension de retraite',
+  EISickness: 'Prestations de maladie',
+  SEBRegular: '(FR) Regular Self-Empoyment benenfit active',
+
+  //Benefit callout text status
+  NotActive: "Pas d'avantage actif",
+  DurationReached: "Votre durée d'indemnisation actuelle a été atteinte",
+  //Benefit callout labels
+  activeBenefit: 'Bénéfices actifs',
+  status: 'Status',
+
+  // Benefit Card
+  pendingBenefits: '(FR)Pending benefits:',
+  activeBenefits: '(FR)Active benefits:',
+
+  // Benefit Card Header
+  summary: 'résumé de',
+  applicationSubmitted: '(FR)Application submitted on:',
+  estimatedDateOfDecision: '(FR)Estimated date of decision',
+  paymentAmount: '(FR)Payment amount',
+  latestStatus: '(FR)Latest status:',
+  daysUntilNextPayment: '(FR)Next payment:',
+  nextReportDue: '(FR)Next report due:',
+  viewPaymentHistory: '(FR)View my payments',
+  transactionDate: '(FR)Transaction date:',
+  agreementStatus: '(FR)Agreement status:',
+
+  // Benefit Card details
+  applicationDate: '(FR)Application date',
+  latestActivity: '(FR)Latest activity',
+  viewMyStatusAndMessages: '(FR)View my status and messages',
+  nextPayment: '(FR)Next payment',
+  lastPayment: '(FR)Last payment',
+  benefitStartDate: '(FR)Benefit start date',
+  pensionStartDate: '(FR)Pension start date',
+  eiMessages: {
+    32: 'Documents examinés',
+  },
+
+  // Benefit Card Status'
+  inactive: 'Inactif',
+  applicationReceived: 'Demande reçue',
+  decisionSent: 'Lettre de décision envoyée',
+  paymentHold: 'Paiement suspendu',
+  benefitUpdate: 'Prestation mise à jour',
+  inPayment: 'En paiement',
+  paid: '(FR)Paid',
+  exhausted: 'Prestations épuisées',
+  activeAgreement: '(FR)Active Agreement',
+
+  // dashboard benefit task headers
+  estimate: '(FR)Estimate',
+  paymentTasks: 'Paiements et impôts',
+  changeTasks: 'Faire un changement',
+  paymentClaimsTaxTasks: 'Paiements et impôts :',
+  documentsReportsTasks: 'Rapports et documents',
+  commonActions: 'Actions courantes',
+  accountInformation: 'Renseignements personnels',
+
+  //benefit task headings
+  exploreCommonActions: 'Explorer les actions courantes',
+  viewLess: 'Voir moins',
+  paymentsTaxesAccount: 'Paiements, impôts, et faire un changement',
+  commonPaymentsTaxesAccount:
+    'Actions courantes, paiements, impôts, rapports et renseignements personnels',
+
+  // dashboard benefits tasks
+  updateAccountInfoTask: 'Mettre à jour les informations de mon compte',
+  allPaymentsTask: 'Consulter mes paiements',
+  statusUpdateTask: '(FR)View my status and messages',
+  retirementIncomeTask: 'Estimer mon revenue de retraite',
+  cppContributionTask: 'Consulter mes cotisations',
+  taxDeductionsTask: "Modifier ma retenue d'impôt",
+  delayOasPensionTask: 'Reporter le début de ma pension',
+  giveConsentTask: 'Autoriser une personne à communiquer en mon nom',
+  taxSlipTask: "Consulter mes feuillets d'impôts",
+  taxSlipT4eTask: '(FR)View tax slips, T4E',
+  taxSlipT4aAndNr4Task: '(FR)View tax slips, T4A and NR4',
+  reconsiderationTask: 'Faire une demande de révision',
+  taxSlipMailingTask: "Options d’expédition des feuillets d'impôt",
+  completeInsuranceReportTask:
+    "Soumettre une déclarations de l'assurance-emploi",
+  viewPaymentInfo: 'Consulter mes paiements',
+  submitDocuments: 'Soumettre des documents',
+  viewDocuments: 'Consulter mes documents',
+  viewLatestClaimTask: 'Consulter ma dernière demande',
+  viewPastClaimsTask: 'Consulter mes demandes antérieures',
+  submitEformsTask: 'Soumettre des formulaires électroniques',
+  registerForAlerts: "S'inscrire aux alertes",
+  recordOfEmployment: 'Consulter mes relevés d’emploi',
+  reportMistake: 'Communiquer une erreur',
+  uploadMyDocuments: '(FR)Upload my documents',
+  accessCode: "Consulter mon code d'accès",
+  viewAgreementStatus: '(FR)View my agreement status details',
+
+  applyForCppDisabilityBenefits:
+    '(FR)Apply for Canada Pension Plan Disability Benefits',
+  applyForCppRetirementPensions:
+    '(FR)Apply for Canada Pension Plan Retirement Pensions',
+  estimateMyMonthlyCppBenefits: '(FR)Estimate my monthly CPP Benefits',
+  viewMyCppContributions: '(FR)View my CPP Contributions',
+  applyForCppDeathBenefits: '(FR)Apply for Canada Pension Plan Death Benefits',
+  applyForGuranteedIncomeSupplement:
+    '(FR)Apply For Guranteed Income Supplement',
+  applyForOldAgeSecurity: '(FR)Apply For Old Age Security',
+  applyForCppSurvivorsPensionAndChildrensBenefit: `(FR)Apply For Canada Pension Plan Survivor's Pension and Child(ren)'s Benefit`,
+
+  // Dashboard benefit application card
+  estimateRetirementIncome: '(FR)Estimate retirement income',
+  youMightBeEligible: 'Vous pourriez être admissible',
+  learnMoreAbout: '(FR)Learn more about ',
+  applyFor: '(FR)Apply for',
+
+  // Header URLs
+  dashboardPath: '/fr/dashboard',
+  craPath:
+    'https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-electroniques-particuliers/dossier-particuliers.html',
+  profilePath: '/fr/profile',
+  securityPath: '/fr/security-settings',
+  signOutPath: '/fr/',
+
+  // Greeting URLs
+  url_canada_ca: 'https://www.canada.ca/home.html',
+  url_serviceCanada:
+    'https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html',
+  url_myBenefitsAndServices: '/fr/dashboard',
+  url_profileAndSecuritySettings: '/fr/profile',
+
+  // Benefit card header URLs
+  url_statusAndMessages: '/fr/dashboard',
+
+  //Error pages
+  errorPage400ReturnToDashboard: '(FR)Return to dashboard main page',
+  errorPage400message: '(FR)400 Error - Bad request error occurred',
+  errorPage503message: '(FR)503 - Service unavailable error occurred',
+
+  // Common Pages stuff
+  moreInfo: "Plus d'information",
+  backToDashboard: '(FR)Back to my dashboard',
+
+  //Profile page
+  profileSettings: '(FR)Profile and security settings',
+  updateProfile: '(FR)Update your profile information',
+  profileAndPreferences: 'Profil et Préférences',
+  viewSettings: '(FR)View settings',
+  lookingForSecuritySettings: '(FR)Looking for security settings?',
+  manageSecuritySettings: '(FR)Manage your security settings',
+
+  //Security Settings page
+  securitySettings: 'Paramètres de sécurité',
+  updateSecuritySettings: '(FR)Update your security settings',
+  mfa: '(FR)Multi-factor authentication',
+  modifyMfa: '(FR)Modify multi-factor authentication settings',
+  editMfaLink: '/fr/',
+  gcKeyPass: '(FR)GCKey password',
+  changeGcKeyPass: '(FR)Change my GCKey password',
+  editGcKeyPassLink: '/fr/',
+  securityQuestions: '(FR)Security questions',
+  changeSecurityQuestions: '(FR)Change my security questions',
+  editSecurityQuestionsLink: '/fr/',
+  eiAccessCode: '(FR)Employment Insurance access code',
+  editEiAccessCodeLink: '/fr/',
+  IdentityVerification: '(FR)Identity verification',
+  confirmIdentityVerification:
+    '(FR)Confirm my identity to enhance the security of my account',
+  editIdentityVerificationLink: '/fr/',
+  lookingForProfile: '(FR)Looking for profile settings?',
+  manageProfile: '(FR)Manage my profile settings',
+
+  //Dashboard task links
+  updateAccountInfoTaskLink: '/fr/profile',
+  viewPaymentInfoLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPayments.aspx?prov=6',
+  viewDocumentsLink:
+    'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/321',
+  viewLatestClaimLink: '',
+  viewPastClaimsLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyPastClaims.aspx?prov=6',
+  submitFormsLink:
+    'https://srv136.services.gc.ca/msca-mdsc/eq-qe/proxy/index/256',
+  taxSlipMailingLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/mailing-option',
+  allPaymentsTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-payment-information.action',
+  statusUpdateTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vmas-vemd/view-application-status.action',
+  retirementIncomeTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/estimated-benefits',
+  cppContributionTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/socv-vecc/socv/earnings-contributions',
+  taxDeductionsTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-tax-deduction.action',
+  delayOasPensionTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/delay-oas-pension.action',
+  giveConsentTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/vupi-vupi/view-consent-to-communicate.action',
+  taxSlipTaskLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/tiso-frfd/tax-slip',
+  reconsiderationLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/reqr-demr/',
+  uploadMyDocumentsLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/cppd-rpci/doc-upload',
+
+  //EI
+  eiStatusAndMessages:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-correspondence',
+  completeInsuranceReportLink:
+    'https://www.canada.ca/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service',
+  eiUploadDocuments:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/ei-doc-upload-instruction',
+  eiRegisterForAlerts:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/home-accueil/alert-me/confirm?action=confirm&return=ei-landing',
+  recordOfEmploymentLink:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyRoeList.aspx?prov=6',
+  eiReportMistake:
+    'https://srv136.services.gc.ca/sc/msca-mdsc/portal-portail/pro/ei-ae/meiio-mraed/Pages/MyMessages.aspx?mt=3&prov=6',
 }

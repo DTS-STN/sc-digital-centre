@@ -1,0 +1,11 @@
+[
+  {
+    "programCode": 2,
+    "benefitCode": 1,
+    "benefitType": "RETIREMENT",
+    "benefitStatus": "COMPLETE",
+    "netAmount": 441.75,
+    "paymentDate": "2026-05-30",
+    "paymentProcessType": "MONTHLY"
+  }
+]
