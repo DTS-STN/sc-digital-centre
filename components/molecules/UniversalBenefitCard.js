@@ -96,12 +96,7 @@ export default function UniversalBenefitCard(props) {
         } flex-col bg-white rounded-b-xl transition-all duration-700 ease-in-out`}
       >
         {props.taskGroups == null || props.taskGroups.length <= 0 ? null : (
-          <div
-            id={taskListId}
-            className={`${
-              isOpen ? 'max-h-screen' : 'max-h-0'
-            } transition-all duration-700 ease-in-out`}
-          >
+          <div id={taskListId}>
             <div
               className={`${
                 isOpen ? 'max-h-screen' : 'max-h-0'
