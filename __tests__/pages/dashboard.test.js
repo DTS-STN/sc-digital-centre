@@ -19,7 +19,7 @@ jest.mock('cookies-next', () => ({
   getCookie: () => 'default',
   setCookie: () => 'default',
 }))
-jest.mock('@apollo/client')
+jest.mock('../../lib/aem/mapper')
 
 describe('Dashboard', () => {
   let container
@@ -111,6 +111,7 @@ describe('Dashboard', () => {
       locale: 'en',
       query: {},
     })
+    console.log(result)
     expect(result.props).toBeTruthy()
     expect(result.props.advertisingCards).toBeTruthy()
     expect(result.props.noBenefitCards).toBeTruthy()

@@ -292,7 +292,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
   // Get mapped content from AEM
   let aemContent
   try {
-    aemContent = await getDashboardContent()
+    aemContent = (await getDashboardContent()) || {}
   } catch (e) {
     return {
       redirect: {
