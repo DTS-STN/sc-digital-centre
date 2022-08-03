@@ -90,17 +90,21 @@ export default function UniversalBenefitCard(props) {
           className="py-5 px-2 sm:pl-12"
         />
       </h3>
-      <div className="flex-col bg-white rounded-b-xl">
+      <div
+        className={`${
+          isOpen ? 'pb-12' : null
+        } flex-col bg-white rounded-b-xl transition-all duration-700 ease-in-out`}
+      >
         {props.taskGroups == null || props.taskGroups.length <= 0 ? null : (
           <div
             id={taskListId}
             className={`${
-              isOpen ? 'max-h-screen pb-12' : 'max-h-0'
+              isOpen ? 'max-h-screen' : 'max-h-0'
             } transition-all duration-700 ease-in-out`}
           >
             <div
               className={`${
-                isOpen ? 'max-h-screen pb-12' : 'max-h-0'
+                isOpen ? 'max-h-screen' : 'max-h-0'
               } overflow-hidden bg-gray-lighter grid grid-rows-1 md:grid-cols-2 transition-all duration-700 ease-in-out`}
             >
               {props.taskGroups.map((taskList, index) => {
