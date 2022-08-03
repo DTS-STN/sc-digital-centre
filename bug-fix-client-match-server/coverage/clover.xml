@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1659537670485" clover="3.2.0">
-  <project timestamp="1659537670486" name="All files">
-    <metrics statements="443" coveredstatements="391" conditionals="321" coveredconditionals="252" methods="117" coveredmethods="104" elements="881" coveredelements="747" complexity="0" loc="443" ncloc="443" packages="9" files="48" classes="48"/>
+<coverage generated="1659537900013" clover="3.2.0">
+  <project timestamp="1659537900013" name="All files">
+    <metrics statements="444" coveredstatements="392" conditionals="321" coveredconditionals="252" methods="117" coveredmethods="104" elements="882" coveredelements="748" complexity="0" loc="444" ncloc="444" packages="9" files="48" classes="48"/>
     <package name="components.atoms">
       <metrics statements="43" coveredstatements="41" conditionals="36" coveredconditionals="31" methods="16" coveredmethods="16"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -85,7 +85,7 @@
       </file>
     </package>
     <package name="components.molecules">
-      <metrics statements="53" coveredstatements="41" conditionals="43" coveredconditionals="26" methods="23" coveredmethods="15"/>
+      <metrics statements="54" coveredstatements="42" conditionals="43" coveredconditionals="26" methods="23" coveredmethods="15"/>
       <file name="BenefitApplicationCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitApplicationCard.js">
         <metrics statements="11" coveredstatements="11" conditionals="9" coveredconditionals="8" methods="3" coveredmethods="3"/>
         <line num="10" count="2" type="stmt"/>
@@ -112,11 +112,12 @@
         <line num="32" count="4" type="stmt"/>
       </file>
       <file name="DSHeader.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/DSHeader.js">
-        <metrics statements="4" coveredstatements="3" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="1"/>
+        <metrics statements="5" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="1"/>
         <line num="7" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="8" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
       </file>
       <file name="Greeting.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/Greeting.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
