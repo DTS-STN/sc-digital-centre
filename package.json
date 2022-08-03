@@ -43,13 +43,13 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
     "@types/react": "^18.0.8",
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "^10.4.8",
     "axe-core": "^4.4.3",
     "babel-jest": "^28.1.2",
-    "cypress": "^10.3.1",
+    "cypress": "^10.4.0",
     "cypress-axe": "^1.0.0",
     "cypress-multi-reporters": "^1.6.1",
-    "eslint": "8.20.0",
+    "eslint": "8.21.0",
     "eslint-config-next": "12.2.3",
     "husky": "^8.0.1",
     "identity-obj-proxy": "^3.0.0",
@@ -67,7 +67,7 @@
     "prettier": "^2.7.1",
     "react-test-renderer": "^17.0.2",
     "start-server-and-test": "^1.14.0",
-    "tailwindcss": "^3.1.6"
+    "tailwindcss": "^3.1.7"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json,md}": [
