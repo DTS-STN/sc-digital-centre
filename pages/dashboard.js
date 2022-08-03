@@ -8,7 +8,7 @@ import {
 } from '../contents/BenefitAdvertisingCards'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
-import { getCookie, setCookie } from 'cookies-next'
+import { setCookie } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
 import en from '../locales/en'
 import fr from '../locales/fr'
@@ -25,7 +25,6 @@ import LoadingState from '../components/molecules/LoadingState'
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
   let time = new Date().getHours()
-  const userid = getCookie('userid')
 
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
@@ -269,16 +268,13 @@ export default function Dashboard(props) {
           )
         })}
 
-        {/* no benefit cards display only on the "all cards" page */}
-        {userid == 'default'
-          ? noBenefitCards.map((value, index) => {
-              return (
-                <div key={index} data-testid={'no-benefit-card' + index}>
-                  <NoBenefitCard locale={props.locale} benefit={value} />
-                </div>
-              )
-            })
-          : null}
+        {noBenefitCards.map((value, index) => {
+          return (
+            <div key={index} data-testid={'no-benefit-card' + index}>
+              <NoBenefitCard locale={props.locale} benefit={value} />
+            </div>
+          )
+        })}
       </div>
     </>
   )
@@ -301,10 +297,13 @@ export async function getServerSideProps({ req, res, locale, query }) {
     description: 'en + fr description',
   }
 
+  //no benefit cards display only on the "all cards" page
+  const noBenefitCards = userid === 'default' ? getNoBenefitCards(locale) : []
+
   return {
     props: {
       advertisingCards: getAdvertisingCards(),
-      noBenefitCards: getNoBenefitCards(locale),
+      noBenefitCards,
       isAuth: true,
       locale,
       metadata,
