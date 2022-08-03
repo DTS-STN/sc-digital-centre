@@ -92,29 +92,27 @@ export default function UniversalBenefitCard(props) {
       </h3>
       <div className="flex-col bg-white rounded-b-xl">
         {props.taskGroups == null || props.taskGroups.length <= 0 ? null : (
-          <div>
+          <div
+            id={taskListId}
+            className={`${
+              isOpen ? 'max-h-screen pb-12' : 'max-h-0'
+            } transition-all duration-700 ease-in-out`}
+          >
             <div
-              id={taskListId}
               className={`${
                 isOpen ? 'max-h-screen pb-12' : 'max-h-0'
-              } transition-all duration-700 ease-in-out`}
+              } overflow-hidden bg-gray-lighter grid grid-rows-1 md:grid-cols-2 transition-all duration-700 ease-in-out`}
             >
-              <div
-                className={`${
-                  isOpen ? 'max-h-screen pb-12' : 'max-h-0'
-                } bg-gray-lighter grid grid-rows-1 md:grid-cols-2 transition-all duration-700 ease-in-out`}
-              >
-                {props.taskGroups.map((taskList, index) => {
-                  return (
-                    <div
-                      className="overflow-hidden border-b-2 last:border-b-0 md:border-b-0 md:odd:border-r-2  my-4 pl-2 sm:pl-8"
-                      key={index}
-                    >
-                      <BenefitTasks taskList={taskList} />
-                    </div>
-                  )
-                })}
-              </div>
+              {props.taskGroups.map((taskList, index) => {
+                return (
+                  <div
+                    className="border-b-2 last:border-b-0 md:border-b-0 md:odd:border-r-2  my-4 pl-2 sm:pl-8"
+                    key={index}
+                  >
+                    <BenefitTasks taskList={taskList} />
+                  </div>
+                )
+              })}
             </div>
           </div>
         )}
