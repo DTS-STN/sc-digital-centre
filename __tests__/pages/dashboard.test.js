@@ -6,14 +6,17 @@ import Dashboard, { getServerSideProps } from '../../pages/dashboard'
 import { getAdvertisingCards } from '../../contents/BenefitAdvertisingCards'
 import { getNoBenefitCards } from '../../contents/NoBenefitCards'
 import { createMocks } from 'node-mocks-http'
-import { getSession } from 'next-auth/react'
+import { getSession } from '@dts-stn/next-auth/react'
 import { act } from 'react-dom/test-utils'
 import { enableFetchMocks } from 'jest-fetch-mock'
 import { unmountComponentAtNode } from 'react-dom'
 
 expect.extend(toHaveNoViolations)
 enableFetchMocks()
-jest.mock('next-auth/react')
+jest.mock('@dts-stn/next-auth/react')
+jest.mock('@dts-stn/next-auth/jwt', () => ({
+  getToken: () => jest.fn(),
+}))
 jest.mock('cookies-next', () => ({
   getCookie: () => 'default',
   setCookie: () => 'default',

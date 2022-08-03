@@ -4,6 +4,9 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 import Profile, { getServerSideProps } from '../../pages/profile'
 
 expect.extend(toHaveNoViolations)
+jest.mock('@dts-stn/next-auth/jwt', () => ({
+  getToken: () => jest.fn(),
+}))
 
 describe('Profile', () => {
   process.env = { AUTH_DISABLED: 'true' }
