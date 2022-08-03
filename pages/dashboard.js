@@ -19,8 +19,7 @@ import { determineAdCards } from '../lib/mapAdCards'
 import MapCallout from '../lib/mapCallout'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 import LoadingState from '../components/molecules/LoadingState'
-// import queryGraphQL from '../graphql/client'
-// import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
+import getDashboardContent from '../lib/aem/mapper'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
@@ -286,10 +285,17 @@ export async function getServerSideProps({ req, res, locale, query }) {
   const { userid } = query
   setCookie('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
 
-  // const aemContent = await queryGraphQL(getDashboardPage).then((result) => {
-  //   return result;
-  // });
-  // console.log(aemContent)
+  // Get mapped content from AEM
+  let aemContent
+  try {
+    aemContent = await getDashboardContent()
+  } catch (e) {
+    return {
+      redirect: {
+        destination: '/500',
+      },
+    }
+  }
 
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
@@ -307,6 +313,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
       isAuth: true,
       locale,
       metadata,
+      aemContent,
     },
   }
 }

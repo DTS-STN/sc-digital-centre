@@ -10,6 +10,7 @@ import { getSession } from 'next-auth/react'
 import { act } from 'react-dom/test-utils'
 import { enableFetchMocks } from 'jest-fetch-mock'
 import { unmountComponentAtNode } from 'react-dom'
+import { dashboardData } from '../../__mocks__/aemMock'
 
 expect.extend(toHaveNoViolations)
 enableFetchMocks()
@@ -18,6 +19,7 @@ jest.mock('cookies-next', () => ({
   getCookie: () => 'default',
   setCookie: () => 'default',
 }))
+jest.mock('@apollo/client')
 
 describe('Dashboard', () => {
   let container
@@ -45,6 +47,7 @@ describe('Dashboard', () => {
       noBenefitCards={getNoBenefitCards('en')}
       locale="en"
       metadata={{}}
+      aemContent={dashboardData.data.alphaSCHPageByPath}
     />
   )
 
@@ -114,6 +117,7 @@ describe('Dashboard', () => {
     expect(result.props.isAuth).toBeDefined()
     expect(result.props.locale).toBe('en')
     expect(result.props.metadata).toBeTruthy()
+    expect(result.props.aemContent).toBeTruthy()
   })
 
   it('redirects for invalid session', async () => {

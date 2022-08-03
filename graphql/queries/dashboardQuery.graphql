@@ -1,12 +1,12 @@
 query getDashboardPage {
-	scLabsErrorPageByPath(_path: "/content/dam/decd-endc/content-fragments/alpha/sclabs/pages/500-error-page") {
-	    item {
-            sclContentEn {
-                json
-            }
-            sclContentFr {
-                json
-            }
-        }
-	}
+  alphaSCHPageByPath(
+    _path: "/content/dam/decd-endc/content-fragments/alpha/secure-client-hub/pages/dashboard"
+  ) {
+    item {
+      scPageNameEn
+      scPageNameFr
+      scTitleEn
+      scTitleFr
+    }
+  }
 }
