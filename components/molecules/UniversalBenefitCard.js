@@ -15,6 +15,30 @@ export default function UniversalBenefitCard(props) {
   const benefitCardId = `benefit-card-${props.benefitUniqueId}`
   const taskListId = `task-list-${props.benefitUniqueId}`
 
+  function moveBetweenTaskLists(e, indexedTaskListId) {
+    e.stopPropagation()
+    switch (e.code) {
+      case 'ArrowLeft':
+        if (e.target.previousElementSibling) {
+          e.target.previousElementSibling.focus()
+        }
+        break
+      case 'ArrowRight':
+        if (e.target.nextElementSibling) {
+          e.target.nextElementSibling.focus()
+        }
+        break
+      case 'ArrowDown': //enter tasklist
+      case 'ArrowUp':
+      case 'Enter':
+        e.preventDefault()
+        document.getElementById(indexedTaskListId + '-0').focus() //focus on the first task in the tasklist
+        break
+      default:
+        return
+    }
+  }
+
   return (
     <div
       className={`benefit-card`}
@@ -102,12 +126,21 @@ export default function UniversalBenefitCard(props) {
               <div className="pb-12">
                 <div className="bg-gray-lighter grid grid-rows-1 md:grid-cols-2">
                   {props.taskGroups.map((taskList, index) => {
+                    const indexedTaskListId = taskListId + '-' + index
                     return (
                       <div
-                        className="border-b-2 last:border-b-0 md:border-b-0 md:odd:border-r-2  my-4 pl-2 sm:pl-8"
+                        className="border-b-2 last:border-b-0 md:border-b-0 md:odd:border-r-2 my-4 pl-2 sm:pl-8"
+                        tabIndex={0}
+                        id={indexedTaskListId}
                         key={index}
+                        onKeyDown={(e) =>
+                          moveBetweenTaskLists(e, indexedTaskListId)
+                        }
                       >
-                        <BenefitTasks taskList={taskList} />
+                        <BenefitTasks
+                          indexedTaskListId={indexedTaskListId}
+                          taskList={taskList}
+                        />
                       </div>
                     )
                   })}
