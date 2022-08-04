@@ -11,6 +11,7 @@ import { act } from 'react-dom/test-utils'
 import { enableFetchMocks } from 'jest-fetch-mock'
 import { unmountComponentAtNode } from 'react-dom'
 import { dashboardData } from '../../__mocks__/aemMock'
+import getDashboardContent from '../../lib/aem/mapper'
 
 expect.extend(toHaveNoViolations)
 enableFetchMocks()
@@ -105,6 +106,7 @@ describe('Dashboard', () => {
 
   it('returns expected server props', async () => {
     getSession.mockReturnValueOnce([true])
+    getDashboardContent.mockReturnValueOnce({})
     const result = await getServerSideProps({
       req,
       res,
