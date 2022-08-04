@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1659617384376" clover="3.2.0">
-  <project timestamp="1659617384376" name="All files">
+<coverage generated="1659624253795" clover="3.2.0">
+  <project timestamp="1659624253795" name="All files">
     <metrics statements="444" coveredstatements="392" conditionals="321" coveredconditionals="252" methods="117" coveredmethods="104" elements="882" coveredelements="748" complexity="0" loc="444" ncloc="444" packages="9" files="48" classes="48"/>
     <package name="components.atoms">
       <metrics statements="43" coveredstatements="41" conditionals="36" coveredconditionals="31" methods="16" coveredmethods="16"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
         <metrics statements="7" coveredstatements="7" conditionals="12" coveredconditionals="12" methods="1" coveredmethods="1"/>
-        <line num="9" count="48" type="stmt"/>
-        <line num="12" count="48" type="stmt"/>
-        <line num="14" count="48" type="stmt"/>
-        <line num="15" count="48" type="cond" truecount="2" falsecount="0"/>
-        <line num="16" count="48" type="cond" truecount="2" falsecount="0"/>
-        <line num="18" count="48" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="49" type="stmt"/>
+        <line num="12" count="49" type="stmt"/>
+        <line num="14" count="49" type="stmt"/>
+        <line num="15" count="49" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="49" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="49" type="cond" truecount="2" falsecount="0"/>
         <line num="49" count="13" type="stmt"/>
       </file>
       <file name="Breadcrumb.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/Breadcrumb.js">
@@ -542,11 +542,11 @@
         <line num="120" count="1" type="stmt"/>
         <line num="126" count="3" type="stmt"/>
         <line num="140" count="0" type="stmt"/>
-        <line num="175" count="2" type="cond" truecount="2" falsecount="2"/>
-        <line num="177" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="179" count="2" type="stmt"/>
-        <line num="185" count="2" type="stmt"/>
-        <line num="192" count="2" type="stmt"/>
+        <line num="176" count="2" type="cond" truecount="2" falsecount="2"/>
+        <line num="178" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="180" count="2" type="stmt"/>
+        <line num="186" count="2" type="stmt"/>
+        <line num="193" count="2" type="stmt"/>
       </file>
       <file name="security-settings.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/security-settings.js">
         <metrics statements="8" coveredstatements="8" conditionals="8" coveredconditionals="6" methods="2" coveredmethods="2"/>
