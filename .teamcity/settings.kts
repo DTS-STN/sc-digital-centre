@@ -88,7 +88,7 @@ object Build_Staging: BuildType({
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-staging.bdm-dev.dts-stn.com")
         param("env.WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/WELL_KNOWN%")
         param("env.AUTH_DISABLED", "false")
-        param("env.TARGET", "dev")
+        param("env.TARGET", "main")
         param("env.BRANCH", "staging")
     }
     paused = true
