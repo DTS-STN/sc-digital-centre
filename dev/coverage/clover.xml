@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1659707959216" clover="3.2.0">
-  <project timestamp="1659707959217" name="All files">
-    <metrics statements="451" coveredstatements="394" conditionals="321" coveredconditionals="252" methods="119" coveredmethods="104" elements="891" coveredelements="750" complexity="0" loc="451" ncloc="451" packages="10" files="49" classes="49"/>
+<coverage generated="1659962998080" clover="3.2.0">
+  <project timestamp="1659962998080" name="All files">
+    <metrics statements="449" coveredstatements="394" conditionals="319" coveredconditionals="252" methods="119" coveredmethods="104" elements="887" coveredelements="750" complexity="0" loc="449" ncloc="449" packages="10" files="49" classes="49"/>
     <package name="components.atoms">
       <metrics statements="43" coveredstatements="41" conditionals="36" coveredconditionals="31" methods="16" coveredmethods="16"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -85,7 +85,7 @@
       </file>
     </package>
     <package name="components.molecules">
-      <metrics statements="54" coveredstatements="42" conditionals="43" coveredconditionals="26" methods="23" coveredmethods="15"/>
+      <metrics statements="52" coveredstatements="42" conditionals="41" coveredconditionals="26" methods="23" coveredmethods="15"/>
       <file name="BenefitApplicationCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitApplicationCard.js">
         <metrics statements="11" coveredstatements="11" conditionals="9" coveredconditionals="8" methods="3" coveredmethods="3"/>
         <line num="10" count="2" type="stmt"/>
@@ -157,18 +157,16 @@
         <line num="6" count="4" type="stmt"/>
       </file>
       <file name="UniversalBenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/UniversalBenefitCard.js">
-        <metrics statements="11" coveredstatements="6" conditionals="12" coveredconditionals="9" methods="4" coveredmethods="2"/>
+        <metrics statements="9" coveredstatements="6" conditionals="10" coveredconditionals="9" methods="4" coveredmethods="2"/>
         <line num="13" count="7" type="stmt"/>
         <line num="15" count="7" type="stmt"/>
         <line num="16" count="7" type="stmt"/>
         <line num="18" count="7" type="stmt"/>
         <line num="62" count="9" type="stmt"/>
         <line num="84" count="0" type="stmt"/>
-        <line num="85" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="86" count="0" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
-        <line num="105" count="0" type="stmt"/>
-        <line num="124" count="2" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="119" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.organisms">
