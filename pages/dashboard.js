@@ -283,7 +283,14 @@ export async function getServerSideProps({ req, res, locale, query }) {
   if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
 
   const { userid } = query
-  setCookie('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
+  setCookie('userid', userid, {
+    req,
+    res,
+    maxAge: 60 * 6 * 24,
+    httpOnly: true,
+    secure: true,
+    sameSite: true,
+  })
 
   // Get mapped content from AEM
   let aemContent
