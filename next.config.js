@@ -77,7 +77,7 @@ config.headers = async () => {
   return [
     {
       // Apply these headers to all routes in your application.
-      source: '/(.*)',
+      source: '/:path*',
       headers: securityHeaders,
     },
   ]
