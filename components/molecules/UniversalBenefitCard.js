@@ -92,7 +92,7 @@ export default function UniversalBenefitCard(props) {
       </h3>
       <div className=" flex flex-col bg-white  rounded-b-xl">
         {props.taskGroups == null || props.taskGroups.length <= 0 ? null : (
-          <div className="  ">
+          <div id={taskListId}>
             {!isOpen ? null : (
               <div className="pb-12">
                 <div className="bg-gray-lighter grid grid-rows-1 md:grid-cols-2">
