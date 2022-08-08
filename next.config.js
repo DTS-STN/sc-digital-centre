@@ -55,6 +55,8 @@ const config = {
     defaultLocale: 'en',
     localDetection: true,
   },
+  //disable X-Powered-By
+  poweredByHeader: false,
   //
   // Image configured host
   //
