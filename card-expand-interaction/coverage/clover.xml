@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1659552962625" clover="3.2.0">
-  <project timestamp="1659552962625" name="All files">
+<coverage generated="1659962706781" clover="3.2.0">
+  <project timestamp="1659962706781" name="All files">
     <metrics statements="430" coveredstatements="378" conditionals="309" coveredconditionals="242" methods="116" coveredmethods="103" elements="855" coveredelements="723" complexity="0" loc="430" ncloc="430" packages="9" files="47" classes="47"/>
     <package name="components.atoms">
       <metrics statements="43" coveredstatements="41" conditionals="36" coveredconditionals="31" methods="16" coveredmethods="16"/>
@@ -197,9 +197,9 @@
         <line num="32" count="44" type="cond" truecount="2" falsecount="0"/>
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="43" type="cond" truecount="2" falsecount="0"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="42" type="cond" truecount="2" falsecount="0"/>
-        <line num="37" count="41" type="stmt"/>
+        <line num="35" count="41" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
       </file>
       <file name="auth.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/lib/auth.js">
