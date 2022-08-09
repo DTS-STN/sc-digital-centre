@@ -68,7 +68,7 @@ object HttpsGithubComDtsStnScDigitalCentreDynamic : GitVcsRoot({
 //such as: https://sc-digital-center-staging/blahblahblah.com
 object Build_Staging: BuildType({
     name = "Build_Staging"
-    description = "Deploys Dev to staging envrionment when the button is pushed"
+    description = "Deploys Main to staging envrionment when the button is pushed"
     params {
         param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
         param("env.PROJECT", "sc-digital-centre")
