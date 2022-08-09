@@ -53,7 +53,7 @@ const config = {
   i18n: {
     locales: ['en', 'fr'],
     defaultLocale: 'en',
-    localDetection: true,
+    localeDetection: true,
   },
   //disable X-Powered-By
   poweredByHeader: false,
