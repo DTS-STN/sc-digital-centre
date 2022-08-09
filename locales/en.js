@@ -286,7 +286,6 @@ export default {
   afternoonGreeting: 'Good afternoon, ',
   eveningGreeting: 'Good evening, ',
   welcome: 'Welcome to your My Service Canada Account.',
-  myBenefitsAndServices: 'My benefits and services',
   canada_ca: 'Canada.ca',
   serviceCanada: 'Service Canada',
   myBenefitsAndServices: 'My benefits and services dashboard',
