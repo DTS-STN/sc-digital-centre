@@ -60,13 +60,17 @@ For every Kubernetes cluster, a context.sh file needs to be defined. For example
 
 For more information, please visit the [DTS SRE deployment templates](https://github.com/DTS-STN/dts-sre-deployment-templates/tree/main/kubernetes-helm-template).
 
-## PR Procedures/Definition of done
+## PR Procedures
 
-We need to have at least one person reviewing each PR before it can be merged. Also, each branch should be prefixed by the relevant Jira issue, if possible e.g. **DC-13**-comprehensive-readme.
+We need to have at least one person reviewing each PR before it can be merged.
+Also, each _feature_ branch should be prefixed by the relevant ADO issue, if possible e.g. **66013**-comprehensive-readme.
+The desciption should be kept very short, so that the dynamic build works.
 
-Follow the [DC Branching Strategy](https://confluence.dts-stn.com/display/DD/DC+branching+strategy) when creating your PR
+Follow the [Branching Strategy](/wiki/Branching-Strategy) when creating your PR
 
 ## Useful Links
+
+[Project Wiki](/wiki)
 
 [TeamCity Link](https://teamcity.dts-stn.com/)
 
