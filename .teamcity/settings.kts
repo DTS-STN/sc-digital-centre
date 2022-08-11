@@ -316,6 +316,19 @@ object Build_Dynamic: BuildType({
     }
    
     steps {
+        powershell {
+            name = "Create custom branch name"
+            scriptContent = """
+                $buildName = "%teamcity.build.branch%"
+                try {
+                    (GC $buildName).Replace("dependabot-npm_and_yarn", "dp-").Replace("-.*_(\d+(\.\d+){1,3}).*", "").subString(0,100) | Set-Content $buildName
+                    Write-Output $buildName
+                } catch [System.Exception] {
+                    Write-Output $_
+                    Exit 1
+                }
+            """.trimIndent()
+        }
         dockerCommand {
             name = "Build & Tag Docker Image"
             commandType = build {
