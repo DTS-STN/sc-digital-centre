@@ -316,6 +316,19 @@ object Build_Dynamic: BuildType({
     }
    
     steps {
+        script {
+            name = "Create custom branch name"
+            scriptContent = """
+                branchName="%env.BRANCH%"
+                branchName=${branchName/dependabot/dp}
+                branchName=${branchName/-npm_and_yarn/}
+                branchName=${branchName/-github_actions/}
+                branchName=${branchName//./}
+                branchName=${branchName:0:27}
+                branchName=${branchName%-}
+                ##teamcity[setParameter name='env.BRANCH' value='${branchName}']
+            """.trimIndent()
+        }
         dockerCommand {
             name = "Build & Tag Docker Image"
             commandType = build {
