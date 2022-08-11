@@ -70,11 +70,9 @@ Follow the [Branching Strategy](/wiki/Branching-Strategy) when creating your PR
 
 ## Useful Links
 
-[Project Wiki](/wiki)
-
-[TeamCity Link](https://teamcity.dts-stn.com/)
-
-[Next API routes](https://nextjs.org/docs/api-routes/introduction)
+- [Project Wiki](/wiki)
+- [TeamCity Link](https://teamcity.dts-stn.com/)
+- [Next API routes](https://nextjs.org/docs/api-routes/introduction)
 
 ## Learn More
 
