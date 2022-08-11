@@ -316,17 +316,17 @@ object Build_Dynamic: BuildType({
     }
    
     steps {
-        powershell {
+        script {
             name = "Create custom branch name"
             scriptContent = """
-                $buildName = "%teamcity.build.branch%"
-                try {
-                    (GC $buildName).Replace("dependabot-npm_and_yarn", "dp-").Replace("-.*_(\d+(\.\d+){1,3}).*", "").subString(0,100) | Set-Content $buildName
-                    Write-Output $buildName
-                } catch [System.Exception] {
-                    Write-Output $_
-                    Exit 1
-                }
+                branchName="%env.BRANCH%"
+                branchName=${branchName/dependabot/dp}
+                branchName=${branchName/-npm_and_yarn/}
+                branchName=${branchName/-github_actions/}
+                branchName=${branchName//./}
+                branchName=${branchName:0:27}
+                branchName=${branchName%-}
+                ##teamcity[setParameter name='env.BRANCH' value='${branchName}']
             """.trimIndent()
         }
         dockerCommand {
