@@ -319,6 +319,9 @@ object Build_Dynamic: BuildType({
         script {
             name = "Create custom branch name"
             scriptContent = """
+                #!/bin/bash
+                set -e
+                
                 branchName="%env.BRANCH%"
                 branchName=${branchName/dependabot/dp}
                 branchName=${branchName/-npm_and_yarn/}
