@@ -113,7 +113,6 @@ describe('Dashboard', () => {
       locale: 'en',
       query: {},
     })
-    console.log(result)
     expect(result.props).toBeTruthy()
     expect(result.props.advertisingCards).toBeTruthy()
     expect(result.props.noBenefitCards).toBeTruthy()
