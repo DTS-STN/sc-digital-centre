@@ -8,11 +8,11 @@ export default NextAuth({
     {
       id: 'ecasProvider',
       name: 'ECAS',
-      clientId: process.env.CLIENT_ID,
+      clientId: process.env.AUTH_ECAS_CLIENT_ID,
       type: 'oauth',
-      wellKnown: process.env.ECAS_WELL_KNOWN,
+      wellKnown: process.env.AUTH_ECAS_WELL_KNOWN,
       authorization: {
-        url: process.env.ECAS_AUTHORIZATION,
+        url: process.env.AUTH_ECAS_AUTHORIZATION,
         params: {
           scope: 'openid profile',
         },
@@ -28,7 +28,7 @@ export default NextAuth({
       jwks: {
         keys: [JSON.parse(process.env.AUTH_PRIVATE)],
       },
-      userinfo: process.env.ECAS_USERINFO,
+      userinfo: process.env.AUTH_ECAS_USERINFO,
       idToken: true,
       checks: ['state', 'nonce'],
       profile(profile) {
