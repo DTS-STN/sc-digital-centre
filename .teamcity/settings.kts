@@ -85,7 +85,7 @@ object Build_Staging: BuildType({
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-staging.bdm-dev.dts-stn.com")
         param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
-        param("env.AUTH_ECAS_CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_CLIENT_ID%")
+        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
         param("env.AUTH_ECAS_WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_WELL_KNOWN%")
         param("env.AUTH_ECAS_AUTHORIZATION", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_AUTHORIZATION%")
         param("env.AUTH_ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_TOKEN%")
@@ -119,7 +119,7 @@ object Build_Staging: BuildType({
                 --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% 
                 --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% 
                 --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% 
-                --build-arg AUTH_ECAS_CLIENT_ID=%env.AUTH_ECAS_CLIENT_ID% 
+                --build-arg CLIENT_ID=%env.CLIENT_ID% 
                 --build-arg AUTH_ECAS_AUTHORIZATION=%env.AUTH_ECAS_AUTHORIZATION% 
                 --build-arg AUTH_ECAS_TOKEN=%env.AUTH_ECAS_TOKEN% 
                 --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
@@ -178,7 +178,7 @@ object Build_Dev: BuildType({
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-dev.bdm-dev.dts-stn.com")
         param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
-        param("env.AUTH_ECAS_CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_CLIENT_ID%")
+        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
         param("env.AUTH_ECAS_WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_WELL_KNOWN%")
         param("env.AUTH_ECAS_AUTHORIZATION", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_AUTHORIZATION%")
         param("env.AUTH_ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_TOKEN%")
@@ -211,7 +211,7 @@ object Build_Dev: BuildType({
                 --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% 
                 --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% 
                 --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% 
-                --build-arg AUTH_ECAS_CLIENT_ID=%env.AUTH_ECAS_CLIENT_ID% 
+                --build-arg CLIENT_ID=%env.CLIENT_ID% 
                 --build-arg AUTH_ECAS_AUTHORIZATION=%env.AUTH_ECAS_AUTHORIZATION% 
                 --build-arg AUTH_ECAS_TOKEN=%env.AUTH_ECAS_TOKEN% 
                 --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
@@ -270,7 +270,7 @@ object Build_Perf: BuildType({
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-perf.bdm-dev.dts-stn.com")
         param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
-        param("env.AUTH_ECAS_CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_CLIENT_ID%")
+        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
         param("env.AUTH_ECAS_WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_WELL_KNOWN%")
         param("env.AUTH_ECAS_AUTHORIZATION", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_AUTHORIZATION%")
         param("env.AUTH_ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_TOKEN%")
@@ -304,7 +304,7 @@ object Build_Perf: BuildType({
                 --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% 
                 --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% 
                 --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% 
-                --build-arg AUTH_ECAS_CLIENT_ID=%env.AUTH_ECAS_CLIENT_ID% 
+                --build-arg CLIENT_ID=%env.CLIENT_ID% 
                 --build-arg AUTH_ECAS_AUTHORIZATION=%env.AUTH_ECAS_AUTHORIZATION% 
                 --build-arg AUTH_ECAS_TOKEN=%env.AUTH_ECAS_TOKEN% 
                 --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
@@ -363,7 +363,7 @@ object Build_Dynamic: BuildType({
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-dyna-%teamcity.build.branch%.bdm-dev.dts-stn.com")
         param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
-        param("env.AUTH_ECAS_CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_CLIENT_ID%")
+        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
         param("env.AUTH_ECAS_WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_WELL_KNOWN%")
         param("env.AUTH_ECAS_AUTHORIZATION", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_AUTHORIZATION%")
         param("env.AUTH_ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_TOKEN%")
@@ -396,7 +396,7 @@ object Build_Dynamic: BuildType({
                 --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% 
                 --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% 
                 --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% 
-                --build-arg AUTH_ECAS_CLIENT_ID=%env.AUTH_ECAS_CLIENT_ID% 
+                --build-arg CLIENT_ID=%env.CLIENT_ID% 
                 --build-arg AUTH_ECAS_AUTHORIZATION=%env.AUTH_ECAS_AUTHORIZATION% 
                 --build-arg AUTH_ECAS_TOKEN=%env.AUTH_ECAS_TOKEN% 
                 --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
