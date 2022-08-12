@@ -9,6 +9,8 @@ export const OASGISPrograms = {
 export const OASGISTypes = {
   OASBeneficial: TypeCodes.OASRetirement,
   GISBeneficial: TypeCodes.GISRetirement,
+  GISAllowance: TypeCodes.GISAllowance,
+  GISAllowanceSurvivor: TypeCodes.GISAllowanceSurvivor,
 }
 
 export const OASGISStatus = {

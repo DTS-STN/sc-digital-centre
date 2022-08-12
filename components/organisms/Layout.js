@@ -61,7 +61,7 @@ export default function Layout(props) {
         />
       )}
 
-      <main>
+      <main id="mainContent">
         {display.fullscreen ? (
           props.children
         ) : (

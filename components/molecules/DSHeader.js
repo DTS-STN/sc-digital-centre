@@ -15,6 +15,12 @@ export default function DSHeader(props) {
       text: t.serviceCanada,
     },
   ]
+  const topnavProps = {
+    skipToMainPath: '#mainContent',
+    skipToAboutPath: '#page-footer',
+    switchToBasicPath: '',
+    displayAlternateLink: false,
+  }
   return (
     <Header
       id="header"
@@ -25,6 +31,7 @@ export default function DSHeader(props) {
           ? defaultBreadcrumbs.concat(props.breadCrumbItems)
           : defaultBreadcrumbs
       }
+      topnavProps={topnavProps}
       isAuthenticated={props.isAuth}
       menuProps={{
         craPath: t.craPath,

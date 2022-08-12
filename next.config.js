@@ -55,6 +55,8 @@ const config = {
     defaultLocale: 'en',
     localDetection: true,
   },
+  //disable X-Powered-By
+  poweredByHeader: false,
   //
   // Image configured host
   //
@@ -77,7 +79,7 @@ config.headers = async () => {
   return [
     {
       // Apply these headers to all routes in your application.
-      source: '/(.*)',
+      source: '/:path*',
       headers: securityHeaders,
     },
   ]

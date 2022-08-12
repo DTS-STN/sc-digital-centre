@@ -1,12 +1,12 @@
-## [DCWC-XXX](https://jira-dev.bdm-dev.dts-stn.com/browse/DCWC-XXX) (Jira Issue)
+## Description of Changes
 
-### Description
-
-List of proposed changes:
-
--
--
+### [ADO Work Item XXX](https://dev.azure.com/VP-BD/DECD/_workitems/edit/XXX)
 
 ### What to test for/How to test
 
 ### Additional Notes
+
+## Checklist
+
+- [ ] Tests added for key features and bugs
+- [ ] Deployment working

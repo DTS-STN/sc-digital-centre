@@ -3,13 +3,15 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import Dashboard, { getServerSideProps } from '../../pages/dashboard'
-import { getAdvertsingCards } from '../../contents/BenefitAdvertisingCards'
+import { getAdvertisingCards } from '../../contents/BenefitAdvertisingCards'
 import { getNoBenefitCards } from '../../contents/NoBenefitCards'
 import { createMocks } from 'node-mocks-http'
 import { getSession } from '@dts-stn/next-auth/react'
 import { act } from 'react-dom/test-utils'
 import { enableFetchMocks } from 'jest-fetch-mock'
 import { unmountComponentAtNode } from 'react-dom'
+import { dashboardData } from '../../__mocks__/aemMock'
+import getDashboardContent from '../../lib/aem/mapper'
 
 expect.extend(toHaveNoViolations)
 enableFetchMocks()
@@ -21,6 +23,7 @@ jest.mock('cookies-next', () => ({
   getCookie: () => 'default',
   setCookie: () => 'default',
 }))
+jest.mock('../../lib/aem/mapper')
 
 describe('Dashboard', () => {
   let container
@@ -44,10 +47,11 @@ describe('Dashboard', () => {
   ]
   const defaultDashboard = (
     <Dashboard
-      advertisingCards={getAdvertsingCards()}
+      advertisingCards={getAdvertisingCards()}
       noBenefitCards={getNoBenefitCards('en')}
       locale="en"
       metadata={{}}
+      aemContent={dashboardData.data.alphaSCHPageByPath}
     />
   )
 
@@ -105,18 +109,21 @@ describe('Dashboard', () => {
 
   it('returns expected server props', async () => {
     getSession.mockReturnValueOnce([true])
+    getDashboardContent.mockReturnValueOnce({})
     const result = await getServerSideProps({
       req,
       res,
       locale: 'en',
       query: {},
     })
+    console.log(result)
     expect(result.props).toBeTruthy()
     expect(result.props.advertisingCards).toBeTruthy()
     expect(result.props.noBenefitCards).toBeTruthy()
     expect(result.props.isAuth).toBeDefined()
     expect(result.props.locale).toBe('en')
     expect(result.props.metadata).toBeTruthy()
+    expect(result.props.aemContent).toBeTruthy()
   })
 
   it('redirects for invalid session', async () => {

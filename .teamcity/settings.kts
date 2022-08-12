@@ -27,7 +27,7 @@ version = "2021.2"
 project {
     vcsRoot(HttpsGithubComDtsStnScDigitalCentreDev)
     vcsRoot(HttpsGithubComDtsStnScDigitalCentreDynamic)
-    buildType(Build_Release)
+    buildType(Build_Staging)
     buildType(Build_Dev)
     buildType(Build_Perf)
     buildType(Build_Dynamic)
@@ -63,12 +63,12 @@ object HttpsGithubComDtsStnScDigitalCentreDynamic : GitVcsRoot({
 //BUILD CONFIGURATIONS
 //Note: BRANCH variable is used to create dynamic urls, using
 //the branch name most of the time.  in some circumstances
-//like the release build below, we do not want to use the branch
+//like the staging build below, we do not want to use the branch
 //name, so we inject a hardcoded value to create a url that works
-//such as: https://sc-digital-center-release/blahblahblah.com
-object Build_Release: BuildType({
-    name = "Build_Release"
-    description = "Deploys Dev to release envrionment when the button is pushed"
+//such as: https://sc-digital-center-staging/blahblahblah.com
+object Build_Staging: BuildType({
+    name = "Build_Staging"
+    description = "Deploys Dev to staging envrionment when the button is pushed"
     params {
         param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
         param("env.PROJECT", "sc-digital-centre")
@@ -85,11 +85,11 @@ object Build_Release: BuildType({
         param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
         param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
-        param("env.NEXTAUTH_URL", "https://sc-digital-centre-release.bdm-dev.dts-stn.com")
+        param("env.NEXTAUTH_URL", "https://sc-digital-centre-staging.bdm-dev.dts-stn.com")
         param("env.WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/WELL_KNOWN%")
         param("env.AUTH_DISABLED", "false")
         param("env.TARGET", "dev")
-        param("env.BRANCH", "release")
+        param("env.BRANCH", "staging")
     }
     paused = true
     vcs {
