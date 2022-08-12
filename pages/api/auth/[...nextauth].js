@@ -43,7 +43,8 @@ export default NextAuth({
   },
   session: { jwt: true },
   callbacks: {
-    async jwt({ token }) {
+    async jwt({ token, user, account }) {
+      token.access_token = account?.access_token
       token.userRole = 'admin'
       return token
     },
