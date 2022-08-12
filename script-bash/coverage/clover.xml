@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660306256945" clover="3.2.0">
-  <project timestamp="1660306256945" name="All files">
+<coverage generated="1660306287520" clover="3.2.0">
+  <project timestamp="1660306287520" name="All files">
     <metrics statements="449" coveredstatements="394" conditionals="319" coveredconditionals="252" methods="119" coveredmethods="104" elements="887" coveredelements="750" complexity="0" loc="449" ncloc="449" packages="10" files="49" classes="49"/>
     <package name="components.atoms">
       <metrics statements="43" coveredstatements="41" conditionals="36" coveredconditionals="31" methods="16" coveredmethods="16"/>
@@ -107,7 +107,7 @@
       </file>
       <file name="BenefitTasks.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitTasks.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="6" count="163" type="stmt"/>
+        <line num="6" count="164" type="stmt"/>
         <line num="13" count="486" type="stmt"/>
         <line num="32" count="4" type="stmt"/>
       </file>
@@ -130,7 +130,7 @@
       <file name="NoBenefitCard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/NoBenefitCard.js">
         <metrics statements="16" coveredstatements="10" conditionals="12" coveredconditionals="2" methods="4" coveredmethods="1"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="10" count="162" type="cond" truecount="1" falsecount="1"/>
+        <line num="10" count="163" type="cond" truecount="1" falsecount="1"/>
         <line num="11" count="162" type="stmt"/>
         <line num="12" count="162" type="stmt"/>
         <line num="13" count="162" type="stmt"/>
