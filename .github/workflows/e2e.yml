@@ -42,7 +42,7 @@ jobs:
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-          AUTH_ECAS_CLIENT_ID: ${{ secrets.AUTH_ECAS_CLIENT_ID }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CI: true
 
       - name: Cypress end-to-end 🧪
@@ -56,7 +56,7 @@ jobs:
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-          AUTH_ECAS_CLIENT_ID: ${{ secrets.AUTH_ECAS_CLIENT_ID }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
           AUTH_DISABLED: ${{ secrets.AUTH_DISABLED }}
         with:
           install: false
