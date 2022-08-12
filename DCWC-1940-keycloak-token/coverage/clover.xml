@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1659704950375" clover="3.2.0">
-  <project timestamp="1659704950375" name="All files">
-    <metrics statements="435" coveredstatements="380" conditionals="313" coveredconditionals="244" methods="120" coveredmethods="104" elements="868" coveredelements="728" complexity="0" loc="435" ncloc="435" packages="9" files="47" classes="47"/>
+<coverage generated="1660308173896" clover="3.2.0">
+  <project timestamp="1660308173896" name="All files">
+    <metrics statements="436" coveredstatements="380" conditionals="313" coveredconditionals="244" methods="120" coveredmethods="104" elements="869" coveredelements="728" complexity="0" loc="436" ncloc="436" packages="9" files="47" classes="47"/>
     <package name="components.atoms">
       <metrics statements="43" coveredstatements="41" conditionals="36" coveredconditionals="31" methods="16" coveredmethods="16"/>
       <file name="ActionButton.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/atoms/ActionButton.js">
@@ -557,13 +557,14 @@
       </file>
     </package>
     <package name="pages.api.auth">
-      <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
       <file name="[...nextauth].js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/api/auth/[...nextauth].js">
-        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <line num="35" count="0" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
       </file>
     </package>
     <package name="pages.api.programData">
