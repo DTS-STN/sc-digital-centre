@@ -37,10 +37,11 @@ This project uses [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tail
 
 ## How to Implement/Get Started
 
-After cloning the repository, run the development server:
+After cloning the repository, follow the (Proxy Configuration)[https://github.com/DTS-STN/sc-digital-centre/wiki/Proxy-Configuration] guide, then run the development server:
 
 ```bash
 npm i
+npm run proxystart
 npm run dev
 ```
 
