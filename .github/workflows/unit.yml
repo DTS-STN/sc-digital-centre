@@ -38,7 +38,6 @@ jobs:
         id: extract_branch       
 
       - name: Deploy Coverage Report 🚀
-        if: ${{ github.actor == 'dependabot[bot]' }}
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           TARGET_FOLDER: ${{ steps.extract_branch.outputs.branch }}/coverage
