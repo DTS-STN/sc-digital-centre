@@ -2,7 +2,6 @@
 
 ### [ADO Work Item XXX](https://dev.azure.com/VP-BD/DECD/_workitems/edit/XXX)
 
-
 ### What to test for/How to test
 
 ### Additional Notes

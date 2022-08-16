@@ -6,6 +6,9 @@ import SecuritySettings, {
 } from '../../pages/security-settings'
 
 expect.extend(toHaveNoViolations)
+jest.mock('@dts-stn/next-auth/jwt', () => ({
+  getToken: () => jest.fn(),
+}))
 
 describe('Security Settings', () => {
   process.env = { AUTH_DISABLED: 'true' }
