@@ -6,7 +6,7 @@ import Dashboard, { getServerSideProps } from '../../pages/dashboard'
 import { getAdvertisingCards } from '../../contents/BenefitAdvertisingCards'
 import { getNoBenefitCards } from '../../contents/NoBenefitCards'
 import { createMocks } from 'node-mocks-http'
-import { getSession } from 'next-auth/react'
+import { getSession } from '@dts-stn/next-auth/react'
 import { act } from 'react-dom/test-utils'
 import { enableFetchMocks } from 'jest-fetch-mock'
 import { unmountComponentAtNode } from 'react-dom'
@@ -15,7 +15,10 @@ import getDashboardContent from '../../lib/aem/mapper'
 
 expect.extend(toHaveNoViolations)
 enableFetchMocks()
-jest.mock('next-auth/react')
+jest.mock('@dts-stn/next-auth/react')
+jest.mock('@dts-stn/next-auth/jwt', () => ({
+  getToken: () => jest.fn(),
+}))
 jest.mock('cookies-next', () => ({
   getCookie: () => 'default',
   setCookie: () => 'default',
@@ -113,7 +116,6 @@ describe('Dashboard', () => {
       locale: 'en',
       query: {},
     })
-    console.log(result)
     expect(result.props).toBeTruthy()
     expect(result.props.advertisingCards).toBeTruthy()
     expect(result.props.noBenefitCards).toBeTruthy()

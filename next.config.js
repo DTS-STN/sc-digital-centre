@@ -53,7 +53,7 @@ const config = {
   i18n: {
     locales: ['en', 'fr'],
     defaultLocale: 'en',
-    localDetection: true,
+    localeDetection: true,
   },
   //disable X-Powered-By
   poweredByHeader: false,
@@ -86,3 +86,5 @@ config.headers = async () => {
 }
 
 module.exports = config
+
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
