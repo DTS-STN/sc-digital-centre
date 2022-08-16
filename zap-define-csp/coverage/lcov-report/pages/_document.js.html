@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>15/16</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>15/16</span>
             </div>
         
             
@@ -124,30 +124,9 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,9 +136,24 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -197,35 +191,32 @@ import Script from 'next/script'
 &nbsp;
 let prod = process.env.NODE_ENV == 'production'
 &nbsp;
-function getCsp(nonce) {
-  let csp = ``
-  csp += `base-uri 'self';`
-  csp += `form-action 'self';`
-  csp += `default-src 'self';`
-  csp += `script-src 'self' 'nonce-${nonce}' ${prod ? <span class="branch-0 cbranch-no" title="branch not covered" >'' </span>: "'unsafe-eval'"};`
-  csp += `style-src 'self' fonts.googleapis.com 'unsafe-inline';`
-  csp += `img-src 'self' data: blob:;`
-  csp += `font-src 'self' https://fonts.gstatic.com data:;`
-  return csp
-}
-&nbsp;
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
+    const nonce = generateNonce()
     const initialProps = await Document.getInitialProps(ctx)
+    //set csp
+    let csp = ``
+    csp += `base-uri 'self';`
+    csp += `form-action 'self';`
+    csp += `default-src 'self';`
+    csp += `script-src 'self' 'nonce-${nonce}' 'unsafe-eval';`
+    csp += `style-src 'self' fonts.googleapis.com 'unsafe-inline';`
+    csp += `img-src 'self' data: blob:;`
+    csp += `font-src 'self' https://fonts.gstatic.com data:;`
 &nbsp;
-    return { ...initialProps }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (ctx.res) {
+<span class="cstat-no" title="statement not covered" >      ctx.res.setHeader('content-security-policy', csp)</span>
+    }
+&nbsp;
+    return { ...initialProps, nonce }
   }
 &nbsp;
   render() {
-    const nonce = generateNonce()
-    let referrer = 'strict-origin'
-&nbsp;
+    const { nonce } = this.props
     return (
       &lt;Html className="no-js" dir="ltr" xmlns="http://www.w3.org/1999/xhtml"&gt;
-        &lt;Head nonce={nonce} prefix="og:http://ogp.me/ns#"&gt;
-          &lt;meta httpEquiv="Content-Security-Policy" content={getCsp(nonce)} /&gt;
-          &lt;meta name="referrer" content={referrer} /&gt;
-        &lt;/Head&gt;
+        &lt;Head nonce={nonce} prefix="og:http://ogp.me/ns#"&gt;&lt;/Head&gt;
         &lt;body&gt;
           &lt;Main /&gt;
           &lt;NextScript /&gt;
@@ -262,7 +253,7 @@ export default MyDocument
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-08-16T15:32:22.653Z
+                at 2022-08-16T18:07:27.684Z
             </div>
         <script src="../prettify.js"></script>
         <script>
