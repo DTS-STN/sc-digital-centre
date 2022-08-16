@@ -2,8 +2,6 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { generateNonce } from '../lib/Utils.js'
 import Script from 'next/script'
 
-let prod = process.env.NODE_ENV == 'production'
-
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const nonce = generateNonce()
@@ -14,12 +12,13 @@ class MyDocument extends Document {
     csp += `form-action 'self';`
     csp += `default-src 'self';`
     csp += `script-src 'self' 'nonce-${nonce}' 'unsafe-eval';`
-    csp += `style-src 'self' fonts.googleapis.com 'unsafe-inline';`
+    csp += `style-src 'self' https://fonts.googleapis.com 'unsafe-inline';`
     csp += `img-src 'self' data: blob:;`
     csp += `font-src 'self' https://fonts.gstatic.com data:;`
+    csp += `frame-ancestors 'self';`
 
     if (ctx.res) {
-      ctx.res.setHeader('content-security-policy', csp)
+      ctx.res.setHeader('Content-Security-Policy', csp)
     }
 
     return { ...initialProps, nonce }
@@ -32,7 +31,7 @@ class MyDocument extends Document {
         <Head nonce={nonce} prefix="og:http://ogp.me/ns#"></Head>
         <body>
           <Main />
-          <NextScript />
+          <NextScript nonce={nonce} />
           <script
             async
             src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
