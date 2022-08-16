@@ -82,11 +82,15 @@ object Build_Staging: BuildType({
         param("env.OCP_APIM_SUBSCRIPTION_KEY", "%vault:dts-secrets-dev/data/digitalCentre!/OCP_APIM_SUBSCRIPTION_KEY%")
         param("env.CPP_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/data/digitalCentre!/CPP_ACTIVE_BENEFIT_URL%")
         param("env.EI_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/data/digitalCentre!/EI_ACTIVE_BENEFIT_URL%")
-        param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
-        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-staging.bdm-dev.dts-stn.com")
-        param("env.WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/WELL_KNOWN%")
+        param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
+        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
+        param("env.AUTH_ECAS_WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_WELL_KNOWN%")
+        param("env.AUTH_ECAS_AUTHORIZATION", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_AUTHORIZATION%")
+        param("env.AUTH_ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_TOKEN%")
+        param("env.AUTH_ECAS_USERINFO", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_USERINFO%")
+        param("env.AUTH_PRIVATE", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_PRIVATE%")
         param("env.AUTH_DISABLED", "false")
         param("env.TARGET", "main")
         param("env.BRANCH", "staging")
@@ -104,7 +108,24 @@ object Build_Staging: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL% --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% --build-arg CLIENT_ID=%env.CLIENT_ID% --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% --build-arg WELL_KNOWN=%env.WELL_KNOWN% --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
+                commandArgs = "--pull 
+                --build-arg NEXT_BUILD_DATE=%system.build.start.date% 
+                --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% 
+                --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% 
+                --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% 
+                --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% 
+                --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% 
+                --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL% 
+                --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% 
+                --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% 
+                --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% 
+                --build-arg CLIENT_ID=%env.CLIENT_ID% 
+                --build-arg AUTH_ECAS_AUTHORIZATION=%env.AUTH_ECAS_AUTHORIZATION% 
+                --build-arg AUTH_ECAS_TOKEN=%env.AUTH_ECAS_TOKEN% 
+                --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
+                --build-arg AUTH_ECAS_WELL_KNOWN=%env.AUTH_ECAS_WELL_KNOWN% 
+                --build-arg 'AUTH_PRIVATE=%env.AUTH_PRIVATE%' 
+                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
             }
         }
         script {
@@ -154,11 +175,15 @@ object Build_Dev: BuildType({
         param("env.OCP_APIM_SUBSCRIPTION_KEY", "%vault:dts-secrets-dev/data/digitalCentre!/OCP_APIM_SUBSCRIPTION_KEY%")
         param("env.CPP_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/data/digitalCentre!/CPP_ACTIVE_BENEFIT_URL%")
         param("env.EI_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/data/digitalCentre!/EI_ACTIVE_BENEFIT_URL%")
-        param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
-        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-dev.bdm-dev.dts-stn.com")
-        param("env.WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/WELL_KNOWN%")
+        param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
+        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
+        param("env.AUTH_ECAS_WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_WELL_KNOWN%")
+        param("env.AUTH_ECAS_AUTHORIZATION", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_AUTHORIZATION%")
+        param("env.AUTH_ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_TOKEN%")
+        param("env.AUTH_ECAS_USERINFO", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_USERINFO%")
+        param("env.AUTH_PRIVATE", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_PRIVATE%")
         param("env.AUTH_DISABLED", "true")
         param("env.TARGET", "dev")
         param("env.BRANCH", "dev")
@@ -175,7 +200,24 @@ object Build_Dev: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL% --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% --build-arg CLIENT_ID=%env.CLIENT_ID% --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% --build-arg WELL_KNOWN=%env.WELL_KNOWN% --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
+                commandArgs = "--pull 
+                --build-arg NEXT_BUILD_DATE=%system.build.start.date% 
+                --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% 
+                --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% 
+                --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% 
+                --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% 
+                --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% 
+                --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL% 
+                --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% 
+                --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% 
+                --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% 
+                --build-arg CLIENT_ID=%env.CLIENT_ID% 
+                --build-arg AUTH_ECAS_AUTHORIZATION=%env.AUTH_ECAS_AUTHORIZATION% 
+                --build-arg AUTH_ECAS_TOKEN=%env.AUTH_ECAS_TOKEN% 
+                --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
+                --build-arg AUTH_ECAS_WELL_KNOWN=%env.AUTH_ECAS_WELL_KNOWN% 
+                --build-arg 'AUTH_PRIVATE=%env.AUTH_PRIVATE%' 
+                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
             }
         }
         script {
@@ -225,11 +267,15 @@ object Build_Perf: BuildType({
         param("env.OCP_APIM_SUBSCRIPTION_KEY", "%vault:dts-secrets-dev/data/digitalCentre!/OCP_APIM_SUBSCRIPTION_KEY%")
         param("env.CPP_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/data/digitalCentre!/CPP_ACTIVE_BENEFIT_URL%")
         param("env.EI_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/data/digitalCentre!/EI_ACTIVE_BENEFIT_URL%")
-        param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
-        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-perf.bdm-dev.dts-stn.com")
-        param("env.WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/WELL_KNOWN%")
+        param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
+        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
+        param("env.AUTH_ECAS_WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_WELL_KNOWN%")
+        param("env.AUTH_ECAS_AUTHORIZATION", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_AUTHORIZATION%")
+        param("env.AUTH_ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_TOKEN%")
+        param("env.AUTH_ECAS_USERINFO", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_USERINFO%")
+        param("env.AUTH_PRIVATE", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_PRIVATE%")
         param("env.AUTH_DISABLED", "true")
         param("env.TARGET", "dev")
         param("env.BRANCH", "perf")
@@ -247,7 +293,24 @@ object Build_Perf: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL% --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% --build-arg CLIENT_ID=%env.CLIENT_ID% --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% --build-arg WELL_KNOWN=%env.WELL_KNOWN% --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
+                commandArgs = "--pull 
+                --build-arg NEXT_BUILD_DATE=%system.build.start.date% 
+                --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% 
+                --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% 
+                --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% 
+                --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% 
+                --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% 
+                --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL% 
+                --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% 
+                --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% 
+                --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% 
+                --build-arg CLIENT_ID=%env.CLIENT_ID% 
+                --build-arg AUTH_ECAS_AUTHORIZATION=%env.AUTH_ECAS_AUTHORIZATION% 
+                --build-arg AUTH_ECAS_TOKEN=%env.AUTH_ECAS_TOKEN% 
+                --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
+                --build-arg AUTH_ECAS_WELL_KNOWN=%env.AUTH_ECAS_WELL_KNOWN% 
+                --build-arg 'AUTH_PRIVATE=%env.AUTH_PRIVATE%' 
+                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
             }
         }
         script {
@@ -297,16 +360,15 @@ object Build_Dynamic: BuildType({
         param("env.OCP_APIM_SUBSCRIPTION_KEY", "%vault:dts-secrets-dev/data/digitalCentre!/OCP_APIM_SUBSCRIPTION_KEY%")
         param("env.CPP_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/data/digitalCentre!/CPP_ACTIVE_BENEFIT_URL%")
         param("env.EI_ACTIVE_BENEFIT_URL", "%vault:dts-secrets-dev/data/digitalCentre!/EI_ACTIVE_BENEFIT_URL%")
-        param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
-        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
         param("env.NEXTAUTH_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/NEXTAUTH_SECRET%")
         param("env.NEXTAUTH_URL", "https://sc-digital-centre-dyna-%teamcity.build.branch%.bdm-dev.dts-stn.com")
-        param("env.WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/WELL_KNOWN%")
+        param("env.CLIENT_SECRET", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_SECRET%")
+        param("env.CLIENT_ID", "%vault:dts-secrets-dev/data/digitalCentre!/CLIENT_ID%")
+        param("env.AUTH_ECAS_WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_WELL_KNOWN%")
+        param("env.AUTH_ECAS_AUTHORIZATION", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_AUTHORIZATION%")
+        param("env.AUTH_ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_TOKEN%")
+        param("env.AUTH_ECAS_USERINFO", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_USERINFO%")
         param("env.AUTH_PRIVATE", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_PRIVATE%")
-        param("env.ECAS_WELL_KNOWN", "%vault:dts-secrets-dev/data/digitalCentre!/ECAS_WELL_KNOWN%")
-        param("env.ECAS_AUTHORIZATION", "%vault:dts-secrets-dev/data/digitalCentre!/ECAS_AUTHORIZATION%")
-        param("env.ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/ECAS_TOKEN%")
-        param("env.ECAS_USERINFO", "%vault:dts-secrets-dev/data/digitalCentre!/ECAS_USERINFO%")
         param("env.AUTH_DISABLED", "true")
         param("env.TARGET", "dev")
         param("env.BRANCH", "dyna-%teamcity.build.branch%")
@@ -323,7 +385,24 @@ object Build_Dynamic: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull --build-arg NEXT_BUILD_DATE=%system.build.start.date% --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL% --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% --build-arg CLIENT_ID=%env.CLIENT_ID% --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% --build-arg WELL_KNOWN=%env.WELL_KNOWN% --build-arg 'AUTH_PRIVATE=%env.AUTH_PRIVATE%' --build-arg ECAS_AUTHORIZATION=%env.ECAS_AUTHORIZATION% --build-arg ECAS_TOKEN=%env.ECAS_TOKEN% --build-arg ECAS_USERINFO=%env.ECAS_USERINFO% --build-arg ECAS_WELL_KNOWN=%env.ECAS_WELL_KNOWN% --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
+                commandArgs = "--pull 
+                --build-arg NEXT_BUILD_DATE=%system.build.start.date% 
+                --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% 
+                --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% 
+                --build-arg NEXT_PUBLIC_ADOBE_ANALYTICS_URL=%env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL% 
+                --build-arg OCP_APIM_SUBSCRIPTION_KEY=%env.OCP_APIM_SUBSCRIPTION_KEY% 
+                --build-arg CPP_ACTIVE_BENEFIT_URL=%env.CPP_ACTIVE_BENEFIT_URL% 
+                --build-arg EI_ACTIVE_BENEFIT_URL=%env.EI_ACTIVE_BENEFIT_URL% 
+                --build-arg NEXTAUTH_SECRET=%env.NEXTAUTH_SECRET% 
+                --build-arg NEXTAUTH_URL=%env.NEXTAUTH_URL% 
+                --build-arg CLIENT_SECRET=%env.CLIENT_SECRET% 
+                --build-arg CLIENT_ID=%env.CLIENT_ID% 
+                --build-arg AUTH_ECAS_AUTHORIZATION=%env.AUTH_ECAS_AUTHORIZATION% 
+                --build-arg AUTH_ECAS_TOKEN=%env.AUTH_ECAS_TOKEN% 
+                --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
+                --build-arg AUTH_ECAS_WELL_KNOWN=%env.AUTH_ECAS_WELL_KNOWN% 
+                --build-arg 'AUTH_PRIVATE=%env.AUTH_PRIVATE%' 
+                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
             }
         }
         script {
