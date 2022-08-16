@@ -20,9 +20,9 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - name: Checkout 🔔
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: "Building and Unit Tests Against Node"
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -39,11 +39,10 @@ jobs:
           OCP_APIM_SUBSCRIPTION_KEY: ${{ secrets.OCP_APIM_SUBSCRIPTION_KEY }}
           CPP_ACTIVE_BENEFIT_URL: ${{ secrets.CPP_ACTIVE_BENEFIT_URL }}
           EI_ACTIVE_BENEFIT_URL: ${{ secrets.EI_ACTIVE_BENEFIT_URL }}
-          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
-          WELL_KNOWN: ${{ secrets.WELL_KNOWN }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CI: true
 
       - name: Cypress end-to-end 🧪
@@ -54,11 +53,10 @@ jobs:
           OCP_APIM_SUBSCRIPTION_KEY: ${{ secrets.OCP_APIM_SUBSCRIPTION_KEY }}
           CPP_ACTIVE_BENEFIT_URL: ${{ secrets.CPP_ACTIVE_BENEFIT_URL }}
           EI_ACTIVE_BENEFIT_URL: ${{ secrets.EI_ACTIVE_BENEFIT_URL }}
-          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
-          WELL_KNOWN: ${{ secrets.WELL_KNOWN }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
           AUTH_DISABLED: ${{ secrets.AUTH_DISABLED }}
         with:
           install: false

@@ -18,12 +18,14 @@ const NO_BENEFIT_EI = {
 expect.extend(toHaveNoViolations)
 
 describe('NoBenefitCard', () => {
-  const sut = <NoBenefitCard locale="en" benefit={NO_BENEFIT_EI} />
+  let container
+  act(() => {
+    container = document.createElement('div')
+    document.body.appendChild(container)
+    render(<NoBenefitCard locale="en" benefit={NO_BENEFIT_EI} />, container)
+  })
 
   it('renders BenefitCard', async () => {
-    await act(async () => {
-      render(sut)
-    })
     const noBenefitName = screen.getAllByText('Employment Insurance')
     const commonActions = screen.getByText(en.commonActions)
 
@@ -32,11 +34,6 @@ describe('NoBenefitCard', () => {
   })
 
   it('has no a11y violations', async () => {
-    let container = document.createElement('div')
-    document.body.appendChild(container)
-    await act(async () => {
-      render(sut, container)
-    })
     const results = await axe(container)
     expect(results).toHaveNoViolations()
   })

@@ -8,7 +8,7 @@ import {
 } from '../contents/BenefitAdvertisingCards'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
-import { getCookie, setCookie } from 'cookies-next'
+import { setCookie } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
 import en from '../locales/en'
 import fr from '../locales/fr'
@@ -19,13 +19,11 @@ import { determineAdCards } from '../lib/mapAdCards'
 import MapCallout from '../lib/mapCallout'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 import LoadingState from '../components/molecules/LoadingState'
-// import queryGraphQL from '../graphql/client'
-// import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
+import getDashboardContent from '../lib/aem/mapper'
 
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : fr
   let time = new Date().getHours()
-  const userid = getCookie('userid')
 
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
@@ -269,16 +267,13 @@ export default function Dashboard(props) {
           )
         })}
 
-        {/* no benefit cards display only on the "all cards" page */}
-        {userid == 'default'
-          ? noBenefitCards.map((value, index) => {
-              return (
-                <div key={index} data-testid={'no-benefit-card' + index}>
-                  <NoBenefitCard locale={props.locale} benefit={value} />
-                </div>
-              )
-            })
-          : null}
+        {noBenefitCards.map((value, index) => {
+          return (
+            <div key={index} data-testid={'no-benefit-card' + index}>
+              <NoBenefitCard locale={props.locale} benefit={value} />
+            </div>
+          )
+        })}
       </div>
     </>
   )
@@ -288,12 +283,26 @@ export async function getServerSideProps({ req, res, locale, query }) {
   if (!AuthIsDisabled() && !(await AuthIsValid(req))) return Redirect()
 
   const { userid } = query
-  setCookie('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
+  setCookie('userid', userid, {
+    req,
+    res,
+    maxAge: 60 * 6 * 24,
+    httpOnly: true,
+    secure: true,
+    sameSite: true,
+  })
 
-  // const aemContent = await queryGraphQL(getDashboardPage).then((result) => {
-  //   return result;
-  // });
-  // console.log(aemContent)
+  // Get mapped content from AEM
+  let aemContent
+  try {
+    aemContent = await getDashboardContent()
+  } catch (e) {
+    return {
+      redirect: {
+        destination: '/500',
+      },
+    }
+  }
 
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
@@ -301,13 +310,17 @@ export async function getServerSideProps({ req, res, locale, query }) {
     description: 'en + fr description',
   }
 
+  //no benefit cards display only on the "all cards" page
+  const noBenefitCards = userid === 'default' ? getNoBenefitCards(locale) : []
+
   return {
     props: {
       advertisingCards: getAdvertisingCards(),
-      noBenefitCards: getNoBenefitCards(locale),
+      noBenefitCards,
       isAuth: true,
       locale,
       metadata,
+      aemContent,
     },
   }
 }

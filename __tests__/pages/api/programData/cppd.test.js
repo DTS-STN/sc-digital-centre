@@ -2,6 +2,10 @@ import { createMocks } from 'node-mocks-http'
 import handler from '../../../../pages/api/programData/cppd'
 import { ProgramCodes } from '../../../../constants/ProgramCodes'
 
+jest.mock('@dts-stn/next-auth/jwt', () => ({
+  getToken: () => jest.fn(),
+}))
+
 describe('/api/programData/cppd', () => {
   process.env = { AUTH_DISABLED: 'true' }
 

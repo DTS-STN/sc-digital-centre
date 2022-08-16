@@ -1,30 +1,39 @@
-import NextAuth from 'next-auth'
+import NextAuth from '@dts-stn/next-auth'
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
   // https://next-auth.js.org/configuration/providers/oauth
   providers: [
-    /* EmailProvider({
-         server: process.env.EMAIL_SERVER,
-         from: process.env.EMAIL_FROM,
-       }),
-    */
     {
-      id: 'customProvider',
-      name: 'customProvider',
+      id: 'ecasProvider',
+      name: 'ECAS',
       clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
       type: 'oauth',
-      wellKnown: process.env.WELL_KNOWN,
-      authorization: { params: { scope: 'openid email profile' } },
+      wellKnown: process.env.AUTH_ECAS_WELL_KNOWN,
+      authorization: {
+        url: process.env.AUTH_ECAS_AUTHORIZATION,
+        params: {
+          scope: 'openid profile',
+        },
+      },
+      client: {
+        token_endpoint_auth_method: 'private_key_jwt',
+        introspection_endpoint_auth_method: 'private_key_jwt',
+        id_token_encrypted_response_alg: 'RSA-OAEP-256',
+        id_token_encrypted_response_enc: 'A256GCM',
+        token_endpoint_auth_signing_alg: 'RS256',
+        id_token_signed_response_alg: 'RS512',
+      },
+      jwks: {
+        keys: [JSON.parse(process.env.AUTH_PRIVATE)],
+      },
+      userinfo: process.env.AUTH_ECAS_USERINFO,
       idToken: true,
-      checks: ['state'],
+      checks: ['state', 'nonce'],
       profile(profile) {
         return {
           id: profile.sub,
-          name: profile.name,
-          email: profile.email,
         }
       },
     },
@@ -32,10 +41,23 @@ export default NextAuth({
   theme: {
     colorScheme: 'light',
   },
+  session: { jwt: true },
   callbacks: {
-    async jwt({ token }) {
+    async jwt({ token, user, account }) {
+      token.access_token = account?.access_token
       token.userRole = 'admin'
       return token
+    },
+  },
+  logger: {
+    error(code, metadata) {
+      console.log(code, metadata)
+    },
+    warn(code) {
+      //console.log(code)
+    },
+    debug(code, metadata) {
+      //console.log(code, metadata)
     },
   },
 })

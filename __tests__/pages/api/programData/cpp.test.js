@@ -5,6 +5,9 @@ import cppMockResult from '../../../../mockdata/tests/cpp.json'
 import { ProgramCodes } from '../../../../constants/ProgramCodes'
 
 enableFetchMocks()
+jest.mock('@dts-stn/next-auth/jwt', () => ({
+  getToken: () => jest.fn(),
+}))
 
 describe('/api/programData/cpp', () => {
   process.env = {
