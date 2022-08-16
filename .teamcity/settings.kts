@@ -108,7 +108,7 @@ object Build_Staging: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull 
+                commandArgs = """--pull 
                 --build-arg NEXT_BUILD_DATE=%system.build.start.date% 
                 --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% 
                 --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% 
@@ -125,7 +125,7 @@ object Build_Staging: BuildType({
                 --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
                 --build-arg AUTH_ECAS_WELL_KNOWN=%env.AUTH_ECAS_WELL_KNOWN% 
                 --build-arg 'AUTH_PRIVATE=%env.AUTH_PRIVATE%' 
-                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
+                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"""
             }
         }
         script {
@@ -200,7 +200,7 @@ object Build_Dev: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull 
+                commandArgs = """--pull 
                 --build-arg NEXT_BUILD_DATE=%system.build.start.date% 
                 --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% 
                 --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% 
@@ -217,7 +217,7 @@ object Build_Dev: BuildType({
                 --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
                 --build-arg AUTH_ECAS_WELL_KNOWN=%env.AUTH_ECAS_WELL_KNOWN% 
                 --build-arg 'AUTH_PRIVATE=%env.AUTH_PRIVATE%' 
-                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
+                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"""
             }
         }
         script {
@@ -293,7 +293,7 @@ object Build_Perf: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull 
+                commandArgs = """--pull 
                 --build-arg NEXT_BUILD_DATE=%system.build.start.date% 
                 --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% 
                 --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% 
@@ -310,7 +310,7 @@ object Build_Perf: BuildType({
                 --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
                 --build-arg AUTH_ECAS_WELL_KNOWN=%env.AUTH_ECAS_WELL_KNOWN% 
                 --build-arg 'AUTH_PRIVATE=%env.AUTH_PRIVATE%' 
-                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
+                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"""
             }
         }
         script {
@@ -385,7 +385,7 @@ object Build_Dynamic: BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%env.ACR_DOMAIN%/%env.PROJECT%:%env.DOCKER_TAG%"
-                commandArgs = "--pull 
+                commandArgs = """--pull 
                 --build-arg NEXT_BUILD_DATE=%system.build.start.date% 
                 --build-arg NEXT_PUBLIC_FEEDBACK_API=%env.NEXT_PUBLIC_FEEDBACK_API% 
                 --build-arg NEXT_CONTENT_API=%env.NEXT_CONTENT_API% 
@@ -402,7 +402,7 @@ object Build_Dynamic: BuildType({
                 --build-arg AUTH_ECAS_USERINFO=%env.AUTH_ECAS_USERINFO% 
                 --build-arg AUTH_ECAS_WELL_KNOWN=%env.AUTH_ECAS_WELL_KNOWN% 
                 --build-arg 'AUTH_PRIVATE=%env.AUTH_PRIVATE%' 
-                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"
+                --build-arg AUTH_DISABLED=%env.AUTH_DISABLED%"""
             }
         }
         script {
