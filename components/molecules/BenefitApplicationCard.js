@@ -5,7 +5,7 @@ import HorizontalRule from '../atoms/HorizontalRule'
 import propTypes from 'prop-types'
 import { ProgramCodes } from '../../constants/ProgramCodes'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStamp, faCalculator } from '@fortawesome/free-solid-svg-icons'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const BenefitApplicationCard = (props) => {
   const t = props.locale === 'en' ? en : fr
@@ -57,7 +57,7 @@ const BenefitApplicationCard = (props) => {
                   className="flex items-center underline  text-blue-default hover:text-blue-hover"
                 >
                   <FontAwesomeIcon
-                    icon={faCalculator}
+                    icon={solid('calculator')}
                     className="text-3xl pr-4 "
                   />
                   <p className="font-normal text-xl pr-5 my-3 ">
@@ -74,7 +74,10 @@ const BenefitApplicationCard = (props) => {
                 href={props.benefitApplication.applicationLink}
                 className="flex items-center underline  text-blue-default hover:text-blue-hover"
               >
-                <FontAwesomeIcon icon={faStamp} className="text-3xl pr-4 " />
+                <FontAwesomeIcon
+                  icon={solid('stamp')}
+                  className="text-3xl pr-4 "
+                />
                 <p className="font-normal text-xl pr-5 my-3 ">
                   {`${t.applyFor} ${getBenefitNameString()}`}
                 </p>
