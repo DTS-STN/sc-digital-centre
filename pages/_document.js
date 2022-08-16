@@ -10,9 +10,7 @@ function getCsp(nonce) {
   csp += `form-action 'self';`
   csp += `default-src 'self';`
   csp += `script-src 'self' 'nonce-${nonce}' ${prod ? '' : "'unsafe-eval'"};`
-  csp += `style-src 'self' fonts.googleapis.com ${
-    prod ? '' : "'unsafe-inline'"
-  };`
+  csp += `style-src 'self' fonts.googleapis.com 'unsafe-inline';`
   csp += `img-src 'self' data: blob:;`
   csp += `font-src 'self' https://fonts.gstatic.com data:;`
   return csp
@@ -48,6 +46,7 @@ class MyDocument extends Document {
           ></script>
           {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
             <Script
+              id="1"
               strategy="beforeInteractive"
               src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL}
               nonce={nonce}
