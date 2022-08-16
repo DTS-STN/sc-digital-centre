@@ -8,7 +8,6 @@ class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const nonce = generateNonce()
     const initialProps = await Document.getInitialProps(ctx)
-
     //set csp
     let csp = ``
     csp += `base-uri 'self';`
