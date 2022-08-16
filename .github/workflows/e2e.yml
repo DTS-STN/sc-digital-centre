@@ -69,6 +69,7 @@ jobs:
         run: npm run report:generate
 
       - name: Deploy Coverage Report 🚀
+        if: ${{ github.actor != 'dependabot[bot]' }}
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           TARGET_FOLDER: ${{ github.head_ref }}/coverage/e2e-report
