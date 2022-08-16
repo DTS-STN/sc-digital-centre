@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660673247667" clover="3.2.0">
-  <project timestamp="1660673247667" name="All files">
+<coverage generated="1660675660255" clover="3.2.0">
+  <project timestamp="1660675660255" name="All files">
     <metrics statements="467" coveredstatements="380" conditionals="323" coveredconditionals="237" methods="124" coveredmethods="105" elements="914" coveredelements="722" complexity="0" loc="467" ncloc="467" packages="10" files="50" classes="50"/>
     <package name="components.atoms">
       <metrics statements="43" coveredstatements="41" conditionals="36" coveredconditionals="31" methods="16" coveredmethods="16"/>
@@ -435,9 +435,10 @@
       </file>
       <file name="_document.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/_document.js">
         <metrics statements="16" coveredstatements="15" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
@@ -445,12 +446,11 @@
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
       </file>
       <file name="dashboard.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/pages/dashboard.js">
         <metrics statements="95" coveredstatements="76" conditionals="68" coveredconditionals="56" methods="11" coveredmethods="11"/>
