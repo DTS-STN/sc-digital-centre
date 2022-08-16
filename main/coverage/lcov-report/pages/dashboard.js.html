@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.64% </span>
+                <span class="strong">80.2% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>75/93</span>
+                <span class='fraction'>77/96</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.43% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>74/92</span>
+                <span class='fraction'>76/95</span>
             </div>
         
             
@@ -376,7 +376,20 @@
 <a name='L311'></a><a href='#L311'>311</a>
 <a name='L312'></a><a href='#L312'>312</a>
 <a name='L313'></a><a href='#L313'>313</a>
-<a name='L314'></a><a href='#L314'>314</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -400,8 +413,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -648,10 +659,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">160x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -673,13 +681,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -699,7 +725,7 @@ import {
 } from '../contents/BenefitAdvertisingCards'
 import UniversalBenefitCard from '../components/molecules/UniversalBenefitCard'
 import { useEffect, useState } from 'react'
-import { getCookie, setCookie } from 'cookies-next'
+import { setCookie } from 'cookies-next'
 import { TASK_GROUPS } from '../contents/BenefitTasksGroups'
 import en from '../locales/en'
 import fr from '../locales/fr'
@@ -710,13 +736,11 @@ import { determineAdCards } from '../lib/mapAdCards'
 import MapCallout from '../lib/mapCallout'
 import { AuthIsDisabled, AuthIsValid, Redirect } from '../lib/auth'
 import LoadingState from '../components/molecules/LoadingState'
-// import queryGraphQL from '../graphql/client'
-// import getDashboardPage from '../graphql/queries/dashboardQuery.graphql'
+import getDashboardContent from '../lib/aem/mapper'
 &nbsp;
 export default function Dashboard(props) {
   const t = props.locale === 'en' ? en : <span class="branch-1 cbranch-no" title="branch not covered" >fr</span>
   let time = new Date().getHours()
-  const userid = getCookie('userid')
 &nbsp;
   const [advertisingCards, setAdvertisingCards] = useState(
     props.advertisingCards
@@ -960,16 +984,13 @@ export default function Dashboard(props) {
           )
         })}
 &nbsp;
-        {/* no benefit cards display only on the "all cards" page */}
-        {userid == 'default'
-          ? noBenefitCards.map((value, index) =&gt; {
-              return (
-                &lt;div key={index} data-testid={'no-benefit-card' + index}&gt;
-                  &lt;NoBenefitCard locale={props.locale} benefit={value} /&gt;
-                &lt;/div&gt;
-              )
-            })
-          : <span class="branch-1 cbranch-no" title="branch not covered" >null}</span>
+        {noBenefitCards.map((value, index) =&gt; {
+          return (
+            &lt;div key={index} data-testid={'no-benefit-card' + index}&gt;
+              &lt;NoBenefitCard locale={props.locale} benefit={value} /&gt;
+            &lt;/div&gt;
+          )
+        })}
       &lt;/div&gt;
     &lt;/&gt;
   )
@@ -979,12 +1000,26 @@ export async function getServerSideProps({ req, res, locale, query }) {
   if (!AuthIsDisabled() &amp;&amp; !(await AuthIsValid(req))) return Redirect()
 &nbsp;
   const { userid } = query
-  setCookie('userid', userid, { req, res, maxAge: 60 * 6 * 24 })
+  setCookie('userid', userid, {
+    req,
+    res,
+    maxAge: 60 * 6 * 24,
+    httpOnly: true,
+    secure: true,
+    sameSite: true,
+  })
 &nbsp;
-  // const aemContent = await queryGraphQL(getDashboardPage).then((result) =&gt; {
-  //   return result;
-  // });
-  // console.log(aemContent)
+  // Get mapped content from AEM
+  let aemContent
+  try {
+    aemContent = await getDashboardContent()
+  } catch (e) {
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      redirect: {
+        destination: '/500',
+      },
+    }
+  }
 &nbsp;
   const metadata = {
     title: 'Digital Centre (en) + Digital Centre (fr)',
@@ -992,13 +1027,17 @@ export async function getServerSideProps({ req, res, locale, query }) {
     description: 'en + fr description',
   }
 &nbsp;
+  //no benefit cards display only on the "all cards" page
+  const noBenefitCards = userid === 'default' ? <span class="branch-0 cbranch-no" title="branch not covered" >getNoBenefitCards(locale) </span>: []
+&nbsp;
   return {
     props: {
       advertisingCards: getAdvertisingCards(),
-      noBenefitCards: getNoBenefitCards(locale),
+      noBenefitCards,
       isAuth: true,
       locale,
       metadata,
+      aemContent,
     },
   }
 }
@@ -1009,7 +1048,7 @@ export async function getServerSideProps({ req, res, locale, query }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-08-02T18:34:04.274Z
+                at 2022-08-16T18:10:15.102Z
             </div>
         <script src="../prettify.js"></script>
         <script>
