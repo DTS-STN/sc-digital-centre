@@ -68,7 +68,7 @@ object HttpsGithubComDtsStnScDigitalCentreDynamic : GitVcsRoot({
 //such as: https://sc-digital-center-staging/blahblahblah.com
 object Build_Staging: BuildType({
     name = "Build_Staging"
-    description = "Deploys Dev to staging envrionment when the button is pushed"
+    description = "Deploys Main to staging envrionment when the button is pushed"
     params {
         param("teamcity.vcsTrigger.runBuildInNewEmptyBranch", "true")
         param("env.PROJECT", "sc-digital-centre")
@@ -91,8 +91,8 @@ object Build_Staging: BuildType({
         param("env.AUTH_ECAS_TOKEN", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_TOKEN%")
         param("env.AUTH_ECAS_USERINFO", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_ECAS_USERINFO%")
         param("env.AUTH_PRIVATE", "%vault:dts-secrets-dev/data/digitalCentre!/AUTH_PRIVATE%")
-        param("env.AUTH_DISABLED", "true")
-        param("env.TARGET", "dev")
+        param("env.AUTH_DISABLED", "false")
+        param("env.TARGET", "main")
         param("env.BRANCH", "staging")
     }
     paused = true
