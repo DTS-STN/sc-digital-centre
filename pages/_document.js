@@ -4,35 +4,33 @@ import Script from 'next/script'
 
 let prod = process.env.NODE_ENV == 'production'
 
-function getCsp(nonce) {
-  let csp = ``
-  csp += `base-uri 'self';`
-  csp += `form-action 'self';`
-  csp += `default-src 'self';`
-  csp += `script-src 'self' 'nonce-${nonce}' ${prod ? '' : "'unsafe-eval'"};`
-  csp += `style-src 'self' fonts.googleapis.com 'unsafe-inline';`
-  csp += `img-src 'self' data: blob:;`
-  csp += `font-src 'self' https://fonts.gstatic.com data:;`
-  return csp
-}
-
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
+    const nonce = generateNonce()
     const initialProps = await Document.getInitialProps(ctx)
 
-    return { ...initialProps }
+    //set csp
+    let csp = ``
+    csp += `base-uri 'self';`
+    csp += `form-action 'self';`
+    csp += `default-src 'self';`
+    csp += `script-src 'self' 'nonce-${nonce}' 'unsafe-eval';`
+    csp += `style-src 'self' fonts.googleapis.com 'unsafe-inline';`
+    csp += `img-src 'self' data: blob:;`
+    csp += `font-src 'self' https://fonts.gstatic.com data:;`
+
+    if (ctx.res) {
+      ctx.res.setHeader('content-security-policy', csp)
+    }
+
+    return { ...initialProps, nonce }
   }
 
   render() {
-    const nonce = generateNonce()
-    let referrer = 'strict-origin'
-
+    const { nonce } = this.props
     return (
       <Html className="no-js" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
-        <Head nonce={nonce} prefix="og:http://ogp.me/ns#">
-          <meta httpEquiv="Content-Security-Policy" content={getCsp(nonce)} />
-          <meta name="referrer" content={referrer} />
-        </Head>
+        <Head nonce={nonce} prefix="og:http://ogp.me/ns#"></Head>
         <body>
           <Main />
           <NextScript />
