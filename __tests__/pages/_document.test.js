@@ -1,9 +1,12 @@
 import '@testing-library/jest-dom'
 import MyDocument from '../../pages/_document'
-import * as utils from '../../lib/Utils.js'
+
+//mocks
+jest.mock('../../lib/Utils', () => ({
+  generateNonce: jest.fn().mockReturnValue('test'),
+}))
 
 describe('_document', () => {
-  jest.spyOn(utils, 'generateNonce').mockReturnValue('test')
   it('returns initialProps', async () => {
     const props = {
       html: 'html',

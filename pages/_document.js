@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { generateNonce } from '../lib/Utils.js'
+import { generateNonce } from '../lib/Utils'
 import Script from 'next/script'
 
 class MyDocument extends Document {
