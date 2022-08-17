@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - name: Checkout 🔔
@@ -70,8 +70,7 @@ jobs:
 
       - name: Deploy Coverage Report 🚀
         if: ${{ github.actor != 'dependabot[bot]' }}
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          TARGET_FOLDER: ${{ github.head_ref }}/coverage/e2e-report
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: report
+          target-folder: ${{ github.head_ref }}/e2e-report
+          folder: report

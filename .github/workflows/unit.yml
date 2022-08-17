@@ -1,7 +1,14 @@
 name: Unit Checks
 
 on:
+  pull_request:
+    branches:
+      - main
+      - dev
   push:
+    branches: 
+      - main
+      - dev  
 
 jobs:
   unit:
@@ -9,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - name: Checkout 🔔
@@ -18,7 +25,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
+        
       - name: Install
         run: npm install
         env:
@@ -32,15 +39,9 @@ jobs:
         env:
           CI: true
 
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch       
-
       - name: Deploy Coverage Report 🚀
         if: ${{ github.actor != 'dependabot[bot]' }}
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          TARGET_FOLDER: ${{ steps.extract_branch.outputs.branch }}/coverage
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: coverage
+          target-folder: ${{ github.head_ref }}/coverage
+          folder: coverage
