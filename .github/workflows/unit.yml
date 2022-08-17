@@ -43,5 +43,5 @@ jobs:
         if: ${{ github.actor != 'dependabot[bot]' }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          target-folder: ${{ github.head_ref }}/coverage
+          target-folder: ${{ github.ref }}/coverage
           folder: coverage

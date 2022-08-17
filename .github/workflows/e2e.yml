@@ -72,5 +72,5 @@ jobs:
         if: ${{ github.actor != 'dependabot[bot]' }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          target-folder: ${{ github.head_ref }}/e2e-report
+          target-folder: ${{ github.ref }}/e2e-report
           folder: report
