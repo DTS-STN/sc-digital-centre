@@ -28,6 +28,6 @@ jobs:
           edit-mode: replace
           body: |
             [Integration Deployment :rocket: ](https://sc-digital-centre-dyna-${{ github.head_ref }}.bdm-dev.dts-stn.com/dashboard) - [Check build status](https://teamcity.dts-stn.com/buildConfiguration/Dev_ScDigitalCentreProject_Build_Dynamic?branch=${{ github.head_ref }}&buildTypeTab=overview&mode=builds)
-            [Jest Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Unit%20Checks/${{ github.ref }}?label=Jest%20Test)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.ref }}/coverage/lcov-report/) 
-            [Cypress Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/End-To-End%20Tests/${{ github.ref }}?label=E2E)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.ref }}/e2e-report/) 
+            [Jest Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/Unit%20Checks/${{ github.ref_head }}?label=Jest%20Test)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.ref }}/coverage/lcov-report/) 
+            [Cypress Coverage Report ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/${{ github.event.pull_request.base.repo.name }}/End-To-End%20Tests/${{ github.ref_head }}?label=E2E)](https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ github.ref }}/e2e-report/) 
           token: ${{ secrets.GITHUB_TOKEN }}
