@@ -41,8 +41,7 @@ jobs:
 
       - name: Deploy Coverage Report 🚀
         if: ${{ github.actor != 'dependabot[bot]' }}
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          TARGET_FOLDER: ${{ github.head_ref }}/coverage
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: coverage
+          target-folder: ${{ github.head_ref }}/coverage
+          folder: coverage
