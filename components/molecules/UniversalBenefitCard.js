@@ -7,7 +7,7 @@ import { useState } from 'react'
 import ViewMoreLessButton from '../atoms/ViewMoreLessButton'
 import CardHeader from '../atoms/CardHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStamp } from '@fortawesome/free-solid-svg-icons'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 export default function UniversalBenefitCard(props) {
   const [isOpen, setIsOpen] = useState(false)
@@ -50,7 +50,10 @@ export default function UniversalBenefitCard(props) {
               href=""
               className="flex items-center underline text-blue-default hover:text-blue-hover"
             >
-              <FontAwesomeIcon icon={faStamp} className="text-3xl pr-4 " />
+              <FontAwesomeIcon
+                icon={solid('stamp')}
+                className="text-3xl pr-4 "
+              />
               <p className="w-full font-normal text-xl">
                 {props.applyForProgram}
               </p>
