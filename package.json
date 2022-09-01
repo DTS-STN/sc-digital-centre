@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run proxyconfig & next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -16,7 +16,9 @@
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "jest",
     "test:coverage": "jest --coverage --forceExit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "proxyconfig": "cp -R ./proxyconfig/client.js ./node_modules/@dts-stn/next-auth/core/lib/oauth/client.js",
+    "proxystart": "kubectl port-forward $(kubectl get pods -n squidproxy-int | awk '{print $1}' | grep squidproxy) 3128:3128 -n squidproxy-int"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
