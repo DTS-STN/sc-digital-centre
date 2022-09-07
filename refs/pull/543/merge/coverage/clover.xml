@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660765911658" clover="3.2.0">
-  <project timestamp="1660765911658" name="All files">
+<coverage generated="1662570082824" clover="3.2.0">
+  <project timestamp="1662570082824" name="All files">
     <metrics statements="467" coveredstatements="380" conditionals="323" coveredconditionals="237" methods="124" coveredmethods="105" elements="914" coveredelements="722" complexity="0" loc="467" ncloc="467" packages="10" files="50" classes="50"/>
     <package name="components.atoms">
       <metrics statements="43" coveredstatements="41" conditionals="36" coveredconditionals="31" methods="16" coveredmethods="16"/>
@@ -98,7 +98,7 @@
         <line num="24" count="483" type="stmt"/>
         <line num="25" count="966" type="cond" truecount="2" falsecount="0"/>
         <line num="30" count="483" type="stmt"/>
-        <line num="108" count="2" type="stmt"/>
+        <line num="111" count="2" type="stmt"/>
       </file>
       <file name="BenefitCardHeaderSummary.js" path="/home/runner/work/sc-digital-centre/sc-digital-centre/components/molecules/BenefitCardHeaderSummary.js">
         <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
@@ -162,11 +162,11 @@
         <line num="15" count="7" type="stmt"/>
         <line num="16" count="7" type="stmt"/>
         <line num="18" count="7" type="stmt"/>
-        <line num="62" count="9" type="stmt"/>
-        <line num="84" count="0" type="stmt"/>
-        <line num="85" count="0" type="stmt"/>
-        <line num="100" count="0" type="stmt"/>
-        <line num="119" count="2" type="stmt"/>
+        <line num="65" count="9" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="122" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.organisms">
