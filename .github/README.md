@@ -1,22 +1,22 @@
-# Click to view the test reports for DEV 👩‍🔬🧪
+# Click to view the test reports for DEV 👩‍🔬 🧪
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/End-To-End%20Tests/dev?label=End-To-End%20Tests)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/e2e-report)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Unit%20Checks/dev?label=Lint%20and%20Unit%20Checks)](https://dts-stn.github.io/sc-digital-centre/dev/coverage/lcov-report)
 
-![Line Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Line%20Coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fdev%2Fcoverage%2Fcoverage-summary.json)
-![Statements Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Statement%20Coverage&query=%24.total.statements.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fdev%2Fcoverage%2Fcoverage-summary.json)
-![Function Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Function%20coverage&query=%24.total.functions.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fdev%2Fcoverage%2Fcoverage-summary.json)
-![Branch Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Branch%20coverage&query=%24.total.branches.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fdev%2Fcoverage%2Fcoverage-summary.json)
+![Line Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Line%20Coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Frefs%2Fheads%2Fdev%2Fcoverage%2Fcoverage-summary.json)
+![Statements Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Statement%20Coverage&query=%24.total.statements.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Frefs%2Fheads%2Fdev%2Fcoverage%2Fcoverage-summary.json)
+![Function Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Function%20coverage&query=%24.total.functions.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Frefs%2Fheads%2Fdev%2Fcoverage%2Fcoverage-summary.json)
+![Branch Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Branch%20coverage&query=%24.total.branches.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Frefs%2Fheads%2Fdev%2Fcoverage%2Fcoverage-summary.json)
 
-# Click to view the test reports for MAIN 🔬📊
+# Click to view the test reports for MAIN 🔬 📊
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/End-To-End%20Tests/main?label=End-To-End%20Tests)](https://dts-stn.github.io/sc-digital-centre/main/coverage/e2e-report)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/sc-digital-centre/Unit%20Checks/main?label=Lint%20and%20Unit%20Checks)](https://dts-stn.github.io/sc-digital-centre/main/coverage/lcov-report)
 
-![Line Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Line%20Coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fmain%2Fcoverage%2Fcoverage-summary.json)
-![Statements Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Statement%20Coverage&query=%24.total.statements.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fmain%2Fcoverage%2Fcoverage-summary.json)
-![Function Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Function%20coverage&query=%24.total.functions.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fmain%2Fcoverage%2Fcoverage-summary.json)
-![Branch Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Branch%20coverage&query=%24.total.branches.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Fmain%2Fcoverage%2Fcoverage-summary.json)
+![Line Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Line%20Coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
+![Statements Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Statement%20Coverage&query=%24.total.statements.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
+![Function Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Function%20coverage&query=%24.total.functions.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
+![Branch Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Branch%20coverage&query=%24.total.branches.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fsc-digital-centre%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
 
 ## Versions
 
@@ -37,10 +37,11 @@ This project uses [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tail
 
 ## How to Implement/Get Started
 
-After cloning the repository, run the development server:
+After cloning the repository, follow the (Proxy Configuration)[https://github.com/DTS-STN/sc-digital-centre/wiki/Proxy-Configuration] guide, then run the development server:
 
 ```bash
 npm i
+npm run proxystart
 npm run dev
 ```
 
