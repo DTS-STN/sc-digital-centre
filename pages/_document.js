@@ -36,9 +36,6 @@ class MyDocument extends Document {
             async
             src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
             nonce={nonce}
-            dangerouslySetInnerHTML={{
-              __html: `window.__webpack_nonce__ = "${nonce}"`,
-            }}
           ></script>
           {process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL ? (
             <Script
@@ -46,9 +43,6 @@ class MyDocument extends Document {
               strategy="beforeInteractive"
               src={process.env.NEXT_PUBLIC_ADOBE_ANALYTICS_URL}
               nonce={nonce}
-              dangerouslySetInnerHTML={{
-                __html: `window.__webpack_nonce__ = "${nonce}"`,
-              }}
             />
           ) : null}
         </body>
