@@ -6,18 +6,11 @@ class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const nonce = generateNonce()
     const initialProps = await Document.getInitialProps(ctx)
-    //set csp
-    let csp = ``
-    csp += `base-uri 'self';`
-    csp += `form-action 'self';`
-    csp += `default-src 'self';`
-    csp += `script-src 'self' 'nonce-${nonce}' 'unsafe-eval';`
-    csp += `style-src 'self' https://fonts.googleapis.com 'unsafe-inline';`
-    csp += `img-src 'self' data: blob:;`
-    csp += `font-src 'self' https://fonts.gstatic.com data:;`
-    csp += `frame-ancestors 'self';`
 
     if (ctx.res) {
+      //append dynamic headers
+      let csp = ctx.res.getHeader('Content-Security-Policy')
+      csp += `script-src 'self' 'nonce-${nonce}' 'unsafe-eval';`
       ctx.res.setHeader('Content-Security-Policy', csp)
     }
 
