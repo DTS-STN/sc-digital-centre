@@ -32,12 +32,13 @@ const securityHeaders = [
     value: 'same-origin',
   },
   {
-    key: 'Content-Security-Policy',
-    value: `frame-ancestors 'self'`,
-  },
-  {
     key: 'X-Frame-Options',
     value: 'SAMEORIGIN',
+  },
+  {
+    key: 'Content-Security-Policy',
+    value:
+      "base-uri 'self';form-action 'self';default-src 'self';style-src 'self' https://fonts.googleapis.com 'unsafe-inline';img-src 'self' data: blob:;font-src 'self' https://fonts.gstatic.com data:;frame-ancestors 'self';",
   },
 ]
 
